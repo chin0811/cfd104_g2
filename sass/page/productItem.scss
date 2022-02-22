@@ -1,0 +1,233 @@
+/* 麵包屑 */
+.SingleProductHead{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.SingleProductHead .productBread{
+    margin: auto;
+    width: 90%;
+    margin-bottom: 1%;
+}
+/* 商品介紹 */
+.SingleProductIntro{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 5%;
+}
+.SingleProductIntro .sizeAdjustBox{
+    width: 90%;
+    margin: auto;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .sizeAdjustBox{
+        display: flex;
+        flex-wrap: nowrap;
+        border-bottom: solid 2px black;
+    }
+}
+.SingleProductIntro .imgBox{
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .imgBox{
+        width: 50%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 3% 0 0;
+        margin-bottom: 2%;
+    }
+}
+.SingleProductIntro .imgBox img{
+    width: 100%;
+    vertical-align: top;
+}
+.SingleProductIntro .imgBox>img{
+    flex-shrink: 0;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .imgBox img:first-child{
+        margin-bottom: 3%;
+    }
+    .SingleProductIntro .imgBox img:not(:first-child){
+        width: 30%;
+    }
+}
+/* 圖片上的連結按鈕 */
+.SingleProductIntro .imgBox .linkItem{
+    position: absolute;
+}
+.SingleProductIntro .imgBox .arrowButton{
+    display: flex;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+.SingleProductIntro .imgBox .right{
+    right: 0%;
+}
+.SingleProductIntro .imgBox .arrowButton .leftArrow,
+.SingleProductIntro .imgBox .arrowButton .rightArrow{
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 36, 36);
+}
+.SingleProductIntro .imgBox .changeButton{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.SingleProductIntro .imgBox .changeButton .circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-right: 3%;
+}
+.SingleProductIntro .imgBox .changeButton .circle:last-child{
+    margin-right: 0;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .imgBox .linkItem{
+        display: none;
+    }
+}
+/* 商品介紹文字區 */
+.SingleProductIntro{
+    width: 100%;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .introAll{
+        width: 50%;
+    }
+}
+.SingleProductIntro .introBox{
+    box-sizing: border-box;
+    padding: 0 0 0 2%;
+    border-left: 3px solid #000;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    position: relative;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .introBox{
+        border-left: none;
+        padding: 0 0 0 0;
+    }
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .introAll{
+        box-sizing: border-box;
+        padding: 0 0 0 3%;
+        border-left: 2px solid #000;
+    }
+}
+.SingleProductIntro .introBox h2{
+    margin-bottom: 3%;
+}
+.SingleProductIntro .introBox .introtext{
+    margin-bottom: 3%;
+}
+.SingleProductIntro .introBox .time{
+    color: rgb(82, 93, 156);
+    margin-bottom: 6%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+.SingleProductIntro .introBox .time span{
+    margin-right: 2%;
+}
+.SingleProductIntro .introBox .time span:nth-child(2){
+    font-size: 0.5em;
+    font-weight: 1000;
+}
+.SingleProductIntro .introBox .bidBox{
+    display: flex;
+    margin-bottom: 2%;
+}
+.SingleProductIntro .introBox .bid div,
+.SingleProductIntro .introBox .buy div{
+    width: 20%;
+}
+.SingleProductIntro .introBox .bid p{
+    font-size: 1.8em;
+}
+.SingleProductIntro .introBox .buy p{
+    font-size: 1.5em;
+}
+.SingleProductIntro .introBox .like{
+    position: absolute;
+    top: 2%;
+    right:2%;
+    border-radius:800px;
+    width: 10%;
+    box-sizing: border-box;
+    padding: 1.5% 0%;
+    text-align: center;
+    opacity: 50%;
+    font-size: 0.5em;
+}
+/* 商品介紹按鈕 */
+.SingleProductIntro .introButton{
+    display: flex;
+    justify-content: center;
+}
+.SingleProductIntro .introButton .introButtonItem:first-child{
+    margin-right: 3%;
+}
+/* 更多商品 */
+.SingleProductMoreP{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 5%;
+}
+.SingleProductMoreP h3{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+.SingleProductMoreP .productBox{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+}
+@media screen and (min-width:992px){
+    .SingleProductMoreP .productBox{
+        justify-content: space-between;
+    }
+}
+.SingleProductMoreP .productBox .img{
+    width: 30%;
+    margin-right: 3.333333%;
+    flex-shrink: 0;
+}
+@media screen and (min-width:992px){
+    .SingleProductMoreP .productBox .img{
+        width: 18%;
+        margin-right: 0%;
+    }
+}
+.SingleProductMoreP .productBox .img img{
+    vertical-align: middle;
+    width: 100%;
+}
