@@ -14,11 +14,11 @@ header{
     justify-content: space-between;
 }
 /* ------所有a設定 ------*/
-.mainMenu a{
+.headerContain .mainMenu a{
     text-decoration: none;
     font-size: 1em;
 }
-.mainMenu a:hover{
+.headerContain .mainMenu a:hover{
     color: #394897;
     font-weight: 500;
     transition: .5s;
@@ -71,10 +71,10 @@ header{
     transition: .3s;
 }
 .headerContain .mainMenu li .memberList .icon:first-child img:hover{
-    content: url(../image/home_header_iconBellHover.png);
+    content: url(assets/image/home_header_iconBellHover.png);
 }
 .headerContain .mainMenu li .memberList .icon:last-child img:hover{
-    content: url(../image/home_header_iconMemberHover.png);
+    content: url(assets/image/home_header_iconMemberHover.png);
 }
 /*------ 控制下拉式選單 ------*/
 /* 隱藏input按鈕 */
@@ -82,7 +82,7 @@ header{
     display: none;
 }
 /* 隱藏下拉式選單 */
-.mainMenu ul li:first-child ul{
+.headerContain .mainMenu ul li:first-child ul{
     display: none;
 }
 /* 按鈕按到打開下拉式選單 */
@@ -145,11 +145,11 @@ header{
     align-items: center; 
 }
 /* login的a覆寫所有a:hover */
-.mainMenu .login a:hover{
+.headerContain .mainMenu .login a:hover{
     color: #FFFFFF;
 }
 /* ----關閉符號---- */
-.mainMenu .close {
+.headerContain .mainMenu .close {
     /* 定位在header */
     position: absolute;
     top: 2%;
@@ -159,12 +159,12 @@ header{
     transform: rotate(45deg);
     cursor: pointer;
 }
-.mainMenu .close div {
+.headerContain .mainMenu .close div {
     width: 32px;
     height: 32px;
     overflow: hidden;
 }
-.mainMenu .close div:before, .mainMenu .close div:after {
+.headerContain .mainMenu .close div:before,.headerContain .mainMenu .close div:after {
     content: "";
     width: 100%;
     height: 2px;
@@ -172,18 +172,18 @@ header{
     position: absolute;
     border-radius: 5px;
 }
-.mainMenu .close div:after {
+.headerContain .mainMenu .close div:after {
     transform: rotate(90deg);
     background: #394897;
 }
-.mainMenu.active {
+.headerContain .mainMenu.active {
     clip-path: circle(140% at 96.5% 4%);
     transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
 }
-.mainMenu.active ul > li {
+.headerContain .mainMenu.active ul > li {
     animation: animateIn 360ms ease-in-out calc(var(--animation-order) * 100ms) both;
 }
-.mainMenu.reverse_anim {
+.headerContain .mainMenu.reverse_anim {
     clip-path: circle(0% at 96.5% 4%);
     opacity: 0.6;
     transition: all 0.4s cubic-bezier(0.23, 0.93, 0.23, 0.93);
@@ -199,7 +199,7 @@ header{
 }
 /* 手機的位置close */
 @media screen and (max-width:768px){
-    .mainMenu .close {
+    .headerContain .mainMenu .close {
         top: 5%;
         right: 2rem;
     }
