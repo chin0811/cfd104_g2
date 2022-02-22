@@ -1,0 +1,384 @@
+/* 介紹圖文 */
+.homeIntro{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    /* background-color: #f00; */
+}
+.homeIntro .intro{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.homeIntro .intro .pic{
+    /* 定位在homeIntro */
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+}
+.homeIntro .intro .pic img{
+    width: 100%;
+}
+.homeIntro .intro h1{
+    /* 定位在homeIntro */
+    position: absolute;
+    top: 20%;
+    /* transform: translateY(-50%); */
+    right: 100%;
+    width: 100%;
+}
+/* 滑鼠標示 */
+.homeIntro .scrollMouse{
+    /* 定位在homeIntro */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    display: block;
+    margin:100px auto;
+    animation-name:updown;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+}
+/* 滑鼠動畫 */
+@keyframes updown {
+    0%{ 
+        transform: translateY(0px);
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100%{
+        transform: translateY(20px);
+        opacity: 0.6;
+    }
+}
+.homeIntro .scrollMouse .pic{
+    width: 40px;
+    margin: auto;
+}
+.homeIntro .scrollMouse .pic img{
+    width: 100%;
+    opacity: 0.5;
+}
+.homeIntro .scrollMouse p{
+    text-align: center;
+}
+@media screen and (min-width:768px){
+    .homeIntro .intro .pic{
+        position: absolute;
+        width: 600px;
+        bottom: 0;
+    }
+    .homeIntro .intro .pic img{
+        width: 100%;
+    }
+    .homeIntro .intro h1{
+        /* 定位在homeIntro */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+        width: 100%;
+    }
+}
+/* 分類區 */
+.homeCatalog{
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    background-color: #FBF7F3;
+    /* background-color: #f00; */
+}
+/* 分類區圖文設定*/
+.homeCatalog .catalog{
+    display: flex;
+}
+.homeCatalog .catalog .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100vw;
+}
+.homeCatalog .catalog .card .pic{
+    width: 250px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+.homeCatalog .catalog .card .pic img{
+    width: 100%;
+}
+.homeCatalog .catalog .brame .pic img{
+    z-index: 9999;
+}
+.homeCatalog .catalog .card .txt{
+    display: block;
+    width: 200px;
+}
+.homeCatalog .catalog .card button{
+    margin-top: 20px;
+}
+@media screen and (min-width:768px){
+    .homeCatalog .catalog .card .pic{
+        width: 400px;
+    }
+    .homeCatalog .catalog .card .txt{
+        width: 400px;
+    }
+}
+/* 藝廊區 */
+.homeGallery{
+    /* width: 90%;
+    max-width: 1200px; */
+    /* height: 100vh; */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 901;
+}
+.homeGallery .scrollPic{
+    width: 200px;
+    /* 定位在.homeGallery */
+    position: absolute;
+    top: -220px;
+    left: 2%;
+    z-index: 999;
+}
+.homeGallery .scrollPic img{
+    width: 100%;
+}
+.homeGallery .pic{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.homeGallery .pic img{
+    height: 100%;
+}
+@media screen and (min-width:768px){
+    .homeGallery .scrollPic{
+        width: 300px;
+        top: -320px;
+        left:27%;
+        z-index: 999;
+    }
+}
+/* 會員中心 */
+.homeMember{
+    /* width: 90%;
+    max-width: 1200px; */
+    /* height: 100; */
+    margin: auto;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    position: relative;
+}
+.homeMember .scrollPic{
+    width: 200px;
+    /* 定位在.homeGallery */
+    position: absolute;
+    top: -220px;
+    left: 2%;
+    z-index: 900;
+}
+.homeMember .scrollPic img{
+    width: 100%;
+}
+.homeMember .pic{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.homeMember .pic img{
+    height: 100%;
+}
+@media screen and (min-width:768px){
+    .homeMember .scrollPic{
+        width: 300px;
+        top: -320px;
+        left:27%;
+    }
+}
+/* 藝論 */
+.homeNews{
+    height: 100vh;
+    width: 100%;
+    display: block;
+    /* background-color: rgb(241, 154, 154); */
+    justify-content: center;
+    align-items: center;
+    padding: 40% 0;
+    position: relative;
+    overflow: hidden;
+}
+.homeNews .newsContain{
+    width: 90%;
+    margin: auto;
+    background-color: #FBF7F3;
+    display: block;
+}
+.homeNews .zigzag{
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+.homeNews .zigzag img{
+    width: 100%;
+}
+.homeNews .newsContain h2{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px 10px;
+    position: relative;
+}
+.homeNews .newsContain h2:before{
+    content: '';
+    background-color: #d1d1d157;
+    width: 90%;
+    height: 2px;
+    /* 定位在.homeNews .newsContain h2 */
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.homeNews .newsContain h2:after{
+    content: '';
+    background-color: #d1d1d157;
+    width: 90%;
+    height: 2px;
+    /* 定位在.homeNews .newsContain h2 */
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.homeNews .newsContain .item{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+.homeNews .newsContain .item .pic{
+    width: 250px;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+}
+.homeNews .newsContain .item .pic img{
+    width: 100%;
+}
+.homeNews .newsContain .item .content{
+    width: 200px;
+    margin: auto;
+   
+}
+.homeNews .newsContain .item .content button{
+    margin: 20px auto 0px auto;
+    display: block;
+    white-space:nowrap;
+}
+@media screen and (min-width:768px){
+    .homeNews .newsContain{
+        width: 60%;
+    }
+    .homeNews .newsContain .item .pic{
+        width: 40%;
+        padding: 20px;
+    }
+    .homeNews .newsContain .item .content{
+        width: 40%;
+    }
+    .homeNews .newsContain .item{
+        display: flex;
+        justify-content: center;
+    }
+    .homeNews .newsContain .item .pic{
+        margin: 0;
+    }
+    .homeNews .newsContain .item .content{
+        margin: 0;
+    }
+    .homeNews .zigzag{
+        width: 60%;
+    }
+    .homeNews .newsContain .item .content button{
+        margin: 20px auto 0px 0;
+        white-space:nowrap;
+    }
+}
+/* 裝飾圖片 以下都定位在.homeNews*/
+.homeNews .decorate.Pictopleft{
+    position: absolute;
+    width: 150px;
+    top:5%;
+    left: -15%;
+}
+.homeNews .decorate.Pictopright{
+    position: absolute;
+    width: 300px;
+    top:10%;
+    right: -50%;
+}
+.homeNews .decorate.Picbottomleft{
+    position: absolute;
+    width: 150px;
+    bottom:10%;
+    left: -30%;
+}
+.homeNews .decorate.Picbottomright{
+    position: absolute;
+    width: 300px;
+    bottom:5%;
+    right: -50%;
+}
+.homeNews .decorate img{
+    width: 100%;
+}
+@media screen and (min-width:768px){
+    .homeNews .decorate.Pictopleft{
+        width: 400px;
+        top: 15%;
+        left: -10%;
+    }
+    .homeNews .decorate.Pictopright{
+        position: absolute;
+        width: 800px;
+        top:5%;
+        right: -30%;
+    }
+    .homeNews .decorate.Picbottomleft{
+        width: 300px;
+        bottom:13%;
+        left: -10%;
+    }
+    .homeNews .decorate.Picbottomright{
+        position: absolute;
+        width: 700px;
+        bottom:10%;
+        right: -20%;
+    }
+}
+
+
+
+
+
+
+
+

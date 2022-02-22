@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Page</title>
+	<link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/uiSet.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/articlePage.css">
+    <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/header.js"></script>
+</head>
+<body>
+    <!-- 主標32px letter-spacing:-0.512px line-height:40px
+    副標22px letter-spacing:normal line-height:28px
+    內文20px letter-spacing:-0.06px line-height:32px -->
+    <header>
+        <section class="headerContain">
+            <section class="logoContain">
+                <section class="logo">
+                    <a href="">
+                        <img src="../image/home_header_logo.png">
+                    </a>
+                </section>
+            </section>
+            <section class="hamburger"></section>
+            <nav class="mainMenu fullscreen">
+                <ul>
+                    <li style="--animation-order: 1;">
+                        <input id="navMenu" type="checkbox">
+                        <label for="navMenu" class="deepColor">
+                                <span>藝廊</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                        </label>
+                        <ul>
+                            <li><a href="" class="lightColor">展示區</a></li>
+                            <li><a href="" class="lightColor">雕塑類</a></li>
+                            <li><a href="" class="lightColor">畫作類</a></li>
+                            <li><a href="" class="lightColor">公仔類</a></li>
+                            <li><a href="" class="lightColor">品牌合作</a></li>
+                        </ul>
+                    </li>
+                    <li style="--animation-order: 2;"><a href="" class="deepColor">拍賣廳</a></li>
+                    <li style="--animation-order: 3;"><a href="" class="deepColor">藝論</a></li>
+                    <li style="--animation-order: 4;"><a href="" class="deepColor">關於我們</a></li>
+                    <li style="--animation-order: 5;"><a href="" class="deepColor">會員中心</a></li>
+                    <li style="--animation-order: 6;">
+                        <section class="memberList">
+                            <section class="icon">
+                                <a href="">
+                                    <img src="../image/home_header_iconSearch.png">
+                                </a>
+                            </section>
+                            <section class="icon">
+                                <a href="">
+                                    <img src="../image/home_header_iconBell.png">
+                                </a>
+                            </section>
+                            <section class="icon">
+                                <a href="">
+                                    <img src="../image/home_header_iconMember.png">
+                                </a>
+                            </section>
+                        </section>
+                    </li>
+                    <li style="--animation-order: 7;">
+                        <section class="login">
+                            <a href="" class="deepColor">登入</a>
+                            <a href="" class="deepColor epFBgColor">上架</a>
+                        </section>
+                    </li>
+                </ul>
+                <section class="close">
+                    <div></div>
+                </section>
+            </nav>       
+        </section>
+    </header>
+    <section class="articlePageContent">
+        <section class="articlePageWrap">
+            <section class="pageContent">
+                <section class="breadcrumb">
+                    <ul>
+                        <li><a href="" class="lightColor">首頁></a></li>
+                        <li ><a href="" class="lightColor">藝論></a></li>
+                        <li><a href="" class="epBColor">這篇文章</a></li>
+                    </ul>
+                </section>
+                <section class="authorShortIntro">
+                    <section class="pic">
+                        <img src="https://picsum.photos/90/90/?random=10">
+                    </section>
+                    <section class="txt">
+                        <h4 class="deepColor">h4JERRY</h4>
+                        <p class="lightColor small">Feb 6 .2021</p>
+                    </section>
+                </section>
+                <article class="page">
+                    <h2 class="deepColor"> h2一篇測試用的文章</h2>
+                    <article class="item PicTxtItem">
+                        <section class="pic">
+                            <img src="https://picsum.photos/500/400/?random=10">
+                        </section>
+                        <section class="txt">
+                            <h3 class="deepColor">h3 第一個標題</h3>
+                            <h4 class="deepColor">h4 第二個標題</h4>
+                            <p class="deepColor small">p small這篇文章在講甚麼？</p>
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </section>
+                    </article>
+                    <article class="item TxtItem">
+                        <section class="txt">
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </section>
+                    </article>
+                    <article class="item TxtItem">
+                        <section class="txt">
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </section>
+                    </article>
+                    <section class="shareBar">
+                        <section class="pic">
+                            <img src="../image/articlePage_shareBar_comment.png">
+                        </section>
+                        <section class="socialMedia">
+                            <section class="pic">
+                                <a href="">
+                                    <img src="../image/home_footer_facebook.png">
+                                </a>
+                            </section>
+                            <section class="pic">
+                                <a href="">
+                                    <img src="../image/home_footer_instagram.png">
+                                </a>
+                            </section>
+                            <section class="pic">
+                                <a href="">
+                                    <img src="../image/home_footer_twitter.png">
+                                </a>
+                            </section>
+                            <section class="pic">
+                                <a href="">
+                                    <img src="../image/home_footer_line.png">
+                                </a>
+                            </section>
+                        </section>
+                    </section>
+                </article>
+                <section class="relative">
+                    <h2>h2相關文章</h2>
+                    <section class="item">
+                        <section class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </section>
+                        <section class="txt">
+                            <h4>h4下面的文章</h4>
+                            <p>p這篇文章在講甚麼？</p>
+                        </section>
+                    </section>
+                    <section class="item">
+                        <section class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </section>
+                        <section class="txt">
+                            <h4>h4下面的文章</h4>
+                            <p>p這篇文章在講甚麼？</p>
+                        </section>
+                    </section>
+                    <section class="item">
+                        <section class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </section>
+                        <section class="txt">
+                            <h4>h3下面的文章</h4>
+                            <p>p這篇文章在講甚麼？</p>
+                        </section>
+                    </section>
+                </section>
+            </section>            
+            <aside class="sideInfo">
+                <section class="authorIntro">
+                    <section class="pic">
+                        <img src="https://picsum.photos/200/200/?random=10">
+                    </section>
+                    <section class="txt">
+                        <p>p JERRY</p>
+                        <p class="lightColor small">p small 我是誰？皮卡丘。分享關於神奇寶貝的最新資訊，皮卡皮卡啾~
+                        </p>
+                    </section>
+                </section>
+                <section class="relativeSide">
+                    <h4>h4我的文章</h4>
+                    <section class="item">
+                        <a href="">
+                        <section class="pic">
+                            <img src="https://picsum.photos/300/300/?random=10">
+                        </section>
+                        <section class="txt">
+                            <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                        </section>
+                        </a>
+                    </section>
+                    <section class="item">
+                        <a href="">
+                            <section class="pic">
+                                <img src="https://picsum.photos/300/300/?random=10">
+                            </section>
+                            <section class="txt">
+                                <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                            </section>
+                        </a>
+                    </section>
+                    <section class="item">
+                        <a href="">
+                            <section class="pic">
+                                <img src="https://picsum.photos/300/300/?random=10">
+                            </section>
+                            <section class="txt">
+                                <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                            </section>
+                        </a>
+                    </section>
+                </section>
+            </aside>
+        </section>
+    </section>
+    <footer>
+        <section class="footerContain">
+            <section class="logoContain">
+                <section class="logo">
+                    <img src="../image/home_header_logo.png">
+                </section>
+            </section>
+            <section class="socialContain">
+                <section class="logo">
+                    <a href="">
+                        <img src="../image/home_footer_facebook.png">
+                    </a>
+                </section>
+                <section class="logo">
+                    <a href="">
+                        <img src="../image/home_footer_instagram.png">
+                    </a>
+                </section>
+                <section class="logo">
+                    <a href="">
+                        <img src="../image/home_footer_twitter.png">
+                    </a>
+                </section>
+                <section class="logo">
+                    <a href="">
+                        <img src="../image/home_footer_line.png">
+                    </a>
+                </section>
+            </section>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">藝廊</a>
+                    </li>
+                    <li>
+                        <a href="">拍賣廳</a>
+                    </li>
+                    <li>
+                        <a href="">藝論</a>
+                    </li>
+                    <li>
+                        <a href="">關於我們</a>
+                    </li>
+                    <li>
+                        <a href="">會員中心</a>
+                    </li>
+                </ul>
+            </nav>
+            <section class="copyright">
+                <p>@2022 Powered by 藝論 Right Reserved<br>本網站為緯育Tibame前端設計工程師班專題作業，本平台僅供學習、展示之用。</p>
+            </section>
+        </section>
+    </footer>
+</body>
+</html>
