@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/uiSet.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <!-- 登入註冊區 -->
+    <section class="loginArea aidBgColor">
+        <!-- 切換顯示用input display:none -->
+        <input type="checkbox" id="changeBtn">
+        <article class="size">
+            <!-- 輸入區 -->
+            <article>
+                <form action="#" >
+                    <input type="text" placeholder="帳號">
+                    <input type="password" placeholder="密碼">
+                    <input type="submit" value="登入" class="round">
+                </form>
+                <form action="#" >
+                    <input type="text" placeholder="帳號" required>
+                    <input type="password" placeholder="密碼" required>
+                    <input type="password" placeholder="確認密碼" required> 
+                    <input type="email" placeholder="信箱" required>
+                    <input type="submit" value="註冊" class="round">
+                </form>  
+            </article>
+            <!-- 切換按鈕區 -->
+            <article class="aidBgColor">
+                <article>
+                    <img src="assets/imges/logo-1-01.png" alt="">
+                    <label for="changeBtn" class="roundOutline ">註冊</label>
+                    <!-- <button>註冊</button> -->
+                </article>
+                <article>
+                    <img src="assets/imges/logo-1-01.png" alt="">
+                    <label for="changeBtn" class="roundOutline ">登入</label>
+                    <!-- <button>登入</button> -->
+                </article>
+            </article>
+        </article>
+    </section>
+</body>
+</html>
