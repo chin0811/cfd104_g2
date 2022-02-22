@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
                 scrub:true,
 				pin:".homeIntro",
 				pinSpace:true,
-                markers:true,
-				id:"介紹區"
+                // markers:true,
+				// id:"介紹區"
             },
     });
 	t1.from(".homeIntro .intro h1",{
@@ -26,8 +26,8 @@ gsap.registerPlugin(ScrollTrigger);
             scrub:true,
 			pin:".homeIntro",
 			pinSpace:true,
-            markers:true,
-			id:"介紹區"
+            // markers:true,
+			// id:"介紹區"
 		},
 	});
 	t2.from(".homeIntro .intro .pic",{
