@@ -1,1 +1,116 @@
-20220221測試
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品單頁</title>
+    <link rel="stylesheet" href="css/productItem.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/uiSet.css">
+    <link rel="stylesheet" href="button.css">
+</head>
+<body>
+<!-- 許瑀芹 -->
+<!-- 麵包屑 -->
+    <section class="SingleProductHead">
+        <div class="productBread">
+            <p>
+                <span>logo</span>
+                <span>>雕塑類</span>
+                <span>>芹芹的大師之作</span>
+            </p>
+        </div>
+    </section>
+<!-- 許瑀芹 -->
+<!-- 商品介紹 -->
+    <section class="SingleProductIntro">
+        <div class="sizeAdjustBox">
+            <div class="imgBox">
+                <img src="https://picsum.photos/600/400/?random=10">
+                <img src="https://picsum.photos/600/400/?random=3">
+                <img src="https://picsum.photos/600/400/?random=1">
+                <img src="https://picsum.photos/600/400/?random=9">
+                <!-- 定位absolute，父層imgBox，定位position -->
+                <div class="arrowButton linkItem">
+                    <div class="leftArrow">
+                        &#60;
+                    </div>
+                </div>
+                <div class="arrowButton right linkItem">
+                    <div class="rightArrow">
+                        &#62;
+                    </div>
+                </div>
+                <div class="changeButton linkItem">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="introAll">
+                <article class="introBox">
+                    <h2>芹芹的大師之作</h2>
+                    <div class="introtext">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestias magni quos nesciunt minus. Doloremque vero odit, ipsa consequatur et, molestias earum alias unde veniam praesentium eveniet omnis? Minima, a?
+                    </div>
+                    <div class="time">
+                        <span>2小時47分17秒結束</span>
+                        <span>&#124;</span>
+                        <span>星期一，中午12點27分</span>
+                    </div>
+                    <div class="bidBox bid">  
+                        <div><p>目前出價</p></div>
+                        <div><p>$5,000</p></div>
+                        <div>
+                            <a href="">
+                                <span>投標</span>
+                                <span>30筆</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bidBox buy">  
+                        <div><p>直購價</p></div>
+                        <div><p>$50,000</p></div>
+                    </div>
+                    <div class="bidBox inputBox">
+                        <input type="text">
+                    </div>
+                    <div class="bidBox hint">
+                        投入$5300元或更多
+                    </div>
+                    <div class="like mainColor deepBgColor">
+                        75
+                    </div>
+                </article>
+                <div class="introButton">
+                    <button class="squareOutline introButtonItem">出價</button>
+                    <button class="square introButtonItem">直接價購買</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- 許瑀芹 -->
+<!-- 更多商品 -->
+    <section class="SingleProductMoreP">
+        <h3>相似商品</h3>
+        <section class="productBox">
+            <div class="img">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
+            <div class="img">
+                <img src="https://picsum.photos/300/200/?random=9">
+            </div>
+            <div class="img">
+                <img src="https://picsum.photos/300/200/?random=1">
+            </div>
+            <div class="img">
+                <img src="https://picsum.photos/300/200/?random=1">
+            </div>
+            <div class="img">
+                <img src="https://picsum.photos/300/200/?random=1">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
