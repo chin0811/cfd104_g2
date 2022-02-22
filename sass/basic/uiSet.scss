@@ -1,0 +1,213 @@
+/* 網頁字體載入 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+/* 網頁字體和背景顏色 */
+*{
+    font-family: 'Noto Serif TC', serif;
+}
+body{
+    /* font-family: 'Noto Sans TC', sans-serif; */
+    font-family: 'Noto Serif TC', serif;
+    color: #141414;
+}
+/* 主要的顏色 */
+.mainColor{
+    color:#FFFFFF;
+}
+/* 主要的背景色 */
+.mainBgColor{
+    background-color:#FFFFFF;
+}
+/* 按鈕的強調色 */
+.epFColor{
+    color:#FFD60A;
+}
+/* 按鈕背景的強調色 */
+.epFBgColor{
+    background-color:#FFD60A;
+}
+/* 文字的強調色 */
+.epBColor{
+    color:#394897;
+}
+/* 文字背景的強調色 */
+.epBBgColor{
+    background-color:#394897;
+}
+/* 文字顏色(深色) */
+.deepColor{
+    color: #141414;
+}
+/* 文字背景色(深色) */
+.deepBgColor{
+    background-color:#141414;
+}
+/* 文字顏色(淺色) */
+.lightColor{
+    color: #BCBCBC;
+}
+/* 文字背景色(淺色) */
+.lightBgColor{
+    color: #BCBCBC;
+}
+/* 錯誤時使用色(輔色) */
+.aidEColor{
+    color:#EF5C5C;
+}
+/* 錯誤時背景使用色(輔色) */
+.aidEBgColor{
+    background-color:#EF5C5C;
+}
+/* 正確時使用色(輔色) */
+.aidRColor{
+    color:#7AC74F;
+}
+/* 正確時背景使用色(輔色) */
+.aidRBgColor{
+    background-color:#7AC74F;
+}
+/* 背景輔助色 */
+.aidBgColor{
+    background-color: #FBF7F3;
+}
+/* 主標文字大小 */
+h1{
+    /* font-size: 70px; */
+    font-size: 4.375em;
+    line-height: 3;
+}
+/* 副標文字大小 */
+h2{
+    /* font-size: 40px; */
+    font-size: 2.5em;
+    line-height: 3;
+	letter-spacing:2px;
+}
+/* 內文標題大小 */
+h3{
+    /* font-size: 30px; */
+    font-size: 1.875em;
+    line-height: 3;
+	letter-spacing:2px;
+}
+/* 內文副標大小 */
+h4{
+    /* font-size: 24px; */
+    font-size: 1.5em;
+    line-height: 2;
+	letter-spacing:2px;
+}
+/* 內文文字大小 */
+p{  
+    /* font-size: 20px; */
+    font-size:1.25em;
+    line-height: 1.3;
+	letter-spacing:3px;
+}
+p.small{  
+    /* font-size: 13px; */
+    font-size:0.875em;
+    line-height: 1.5;
+	letter-spacing:2px;
+}
+/* 橢圓形實心按鈕 */
+.round{
+    color: #141414;
+    font-size: 1em;
+    background-color: #FFD60A;
+    /* font-weight: 600; */
+    padding: 10px 30px;
+    border-radius: 200px;
+    border: 2px solid #FFD60A;
+    transition: .3s;
+}
+/* 方形實心按鈕 */
+.square{
+    color: #141414;
+    font-size: 1em;
+    background-color: #FFD60A;
+    /* font-weight: 600; */
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid #FFD60A;
+    transition: .3s;
+}
+/* 空白橢圓按鈕 */
+.whiteRound{
+    color: #141414;
+    font-size: 1em;
+    padding: 10px 30px;
+    border-radius: 200px;
+    border: 2px solid transparent;
+    transition: .3s;
+}
+/* 空白方形按鈕 */
+.whiteSquare{
+    color: #141414;
+    font-size: 1em;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: .3s;
+}
+/* 實心按鈕hover */
+.whiteRound:hover,.whiteSquare,.round:hover,.square:hover{
+    color: #FFFFFF;
+    background-color: #141414;
+    border: 2px solid #141414;
+}
+/* 橢圓形外框按鈕 */
+.roundOutline{
+    color: #141414;
+    font-size: 1em;
+    background-color: transparent;
+    /* font-weight: 600; */
+    padding: 10px 30px;
+    border-radius: 200px;
+    border: 2px solid #FFD60A;
+    transition: .3s;
+}
+/* 方形外框按鈕 */
+.squareOutline{
+    color: #141414;
+    font-size: 1em;
+    background-color: transparent;
+    /* font-weight: 600; */
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid #FFD60A;
+    transition: .3s;
+}
+/* 外框按鈕hover */
+.roundOutline:hover,.squareOutline:hover{
+    color: #FFFFFF;
+    background-color: #141414;
+    border: 2px solid #141414;
+}
+
+@media screen and (max-width:768px){
+    /* 主標文字大小(手機) */
+    h1{
+        /* font-size: 50px; */
+        font-size: 3.125em;
+    }
+    /* 副標文字大小(手機) */
+    h2{
+        /* font-size: 32px; */
+        font-size: 2em;
+    }
+    /* 內文標題大小(手機) */
+    h3{
+        /* font-size: 22.4px; */
+        font-size: 1.4em;
+    }
+    /* 內文副標大小(手機) */
+    h4{
+        /* font-size: 20px; */
+        font-size: 1.25em;
+    }
+    /* 內文文字大小(手機) */
+    p{
+        /* font-size:18px; */
+        font-size: 1.125em;
+    }
+}
