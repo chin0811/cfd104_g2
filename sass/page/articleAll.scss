@@ -1,0 +1,343 @@
+.articleContent{
+    width: 90%;
+    background-color:#FBF7F3;
+    padding: 10px;
+    margin:60px auto ;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px #d1d1d1;
+}
+h2{
+    text-align: center;
+    position: relative;
+}
+.articleContent h2:before{
+    content: '';
+    background-color: #d1d1d157;
+    width: 100%;
+    height: 2px;
+    /* 定位在.homeNews .newsContain h2 */
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.articleContent h2:after{
+    content: '';
+    background-color: #d1d1d157;
+    width: 100%;
+    height: 2px;
+    /* 定位在.homeNews .newsContain h2 */
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/* 隱藏按鈕 */
+.articleContent .listchoose{
+    display: none;
+}
+/* 切換按鈕 */
+.articleContent .switchBar{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border-bottom:1px solid #d1d1d1 ;
+    position: relative;
+}
+.articleContent .switchBar label{
+    margin:0 10px;
+    padding:10px 0 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+/* 刊登按鈕 */
+.articleContent .switchBar button{
+    /* 定位在.articleContent .switchBar */
+    position: absolute;
+    right: 0px;
+    padding: 10px 15px;
+}
+/* 文章切換 */
+.content{
+    display:none;
+} 
+.switchBar [for="officePost"],.switchBar [for="memberPost"]{
+    position: relative;
+}
+#officePost:checked ~ .switchBar [for="officePost"],#memberPost:checked ~ .switchBar [for="memberPost"]{
+    color: #394897;
+}
+#officePost:checked ~ .switchBar [for="officePost"]::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #394897;
+    border-left: 10px solid transparent;
+    /* 定位在.officePost */
+    position: absolute;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin: auto;
+} 
+#memberPost:checked ~ .switchBar [for="memberPost"]::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #394897;
+    border-left: 10px solid transparent;
+    /* 定位在.memberPost */
+    position: absolute;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin: auto;
+} 
+#officePost:checked ~ .content_group .officePost,
+#memberPost:checked ~ .content_group .memberPost{
+    display:grid;
+}
+/* 手機圖片設定 */
+.articleContent .content .pic{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+.articleContent .content .pic img{
+    height: 100%;
+}
+/* 手機特定照片修改 */
+.articleContent .officePost .article3 .pic{
+    width: 100%;
+    height: auto;
+}
+.articleContent .officePost .article3 .pic img{
+    width: 100%;
+    height: auto;
+}
+/* 手機p設定 */
+.articleContent .content_group .content article p{
+    box-sizing: border-box;
+    line-height:2;
+    letter-spacing: 2px;
+    margin:0 0 10px ;
+}
+/* 文章連結樣式消除 */
+.content_group .content a{
+    text-decoration: none;
+}
+/* 文章hover背景色 */
+.articleContent .officePost article:hover,
+.articleContent .memberPost article:hover{
+    background-color: #FFD60A;
+    box-shadow: 1px 1px 3px #b49600 inset;
+    transition: .3s;
+}
+
+/* 手機grid設定 */
+.articleContent .officePost,.articleContent .memberPost {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+}
+/* 官方文章排版 */
+.articleContent .officePost .article1 {
+    grid-area: 1 / 1 / 2/ 4;
+}
+.articleContent .officePost .article2 {
+     grid-area: 2 / 1 / 3 / 4;
+}
+.articleContent .officePost .article3 {
+     grid-area: 3 / 1 / 4 / 4; 
+}
+.articleContent .officePost .article4 {
+     grid-area: 4 / 1 / 5 / 4; 
+}
+.articleContent .officePost .article5 {
+     grid-area: 5 / 1 / 6 / 4; 
+}
+.articleContent .officePost .article6 {
+     grid-area: 6 / 1 / 7 / 4; 
+}
+/* 會員文章排版 */
+.articleContent .memberPost .article1 {
+    grid-area: 1 / 1 / 2 / 4; 
+}
+.articleContent .memberPost .article2 {
+    grid-area: 2 / 1 / 3 / 4; 
+}
+.articleContent .memberPost .article3 {
+    grid-area: 3 / 1 / 4 / 4; 
+}
+.articleContent .memberPost .article4 {
+    grid-area: 4 / 1 / 5 / 4; 
+}
+.articleContent .memberPost .article5 {
+    grid-area: 5 / 1 / 6 / 4; 
+}
+.articleContent .memberPost .article6 {
+    grid-area: 6 / 1 / 7 / 4; 
+}
+
+@media screen and (min-width:768px){
+    .articleContent{
+        padding:0 120px 100px;
+    }
+    /* 刊登按鈕 */
+    .articleContent .switchBar button{
+        /* 定位在.articleContent .switchBar */
+        padding: 10px 30px;
+    }
+    
+    /* 手機以上grid設定 */
+    .articleContent .officePost{
+        display: none;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        /* grid-template-rows: repeat(5, 1fr); */
+        grid-template-rows: 0.3fr 0.2fr 0.2fr 0.5fr 0.5fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 10px;
+        /* height: 100vh; */
+    }
+    .articleContent .memberPost {
+        display: none;
+        grid-template-columns: 0.6fr 0.3fr 0.2fr;
+        /* grid-template-rows: repeat(5, 1fr); */
+        grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 10px;
+        /* height: 100vh; */
+    }
+    .articleContent .content_group .content article h3{
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 2;
+	    letter-spacing:2px;
+    }
+    .articleContent .content_group .content article h4{
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height:3;
+	    letter-spacing:3px;
+    }
+    /* 手機以上p設定 */
+    .articleContent .content_group .content article p{
+        padding: 0 10px;
+    }
+    /* 官方文章排版 */
+    .articleContent .officePost .article1 {
+         grid-area: 1 / 1 / 4 / 2;
+         /* background-color: #f00;  */
+    }
+    .articleContent .officePost .article2 {
+         grid-area: 4/ 1 / 6 / 2;
+         /* background-color: #ff0;  */
+    }
+    .articleContent .officePost .article3 {
+         grid-area: 1 / 2 / 5 / 3;
+         /* background-color: #f0f;  */
+    }
+    .articleContent .officePost .article3 .pic{
+        width: 100%;
+        height: auto;
+    }
+    .articleContent .officePost .article4 {
+         grid-area: 5 /2 / 6 / 3; 
+         /* background-color: #00f; */
+         display: flex;
+         align-items: center;
+    }
+    .articleContent .officePost .article4 a{
+        display: flex;
+        align-items: center;
+    }
+    .articleContent .officePost .article4 .pic{
+        width: 100%;
+        height: 360px;
+    }
+    .articleContent .officePost .article5 {
+         grid-area: 1 / 3 / 5 / 4;
+         /* background-color: #0ff;  */
+    }
+    .articleContent .officePost .article5 .pic{
+        height: 300px;
+    }
+    .articleContent .officePost .article6 {
+         grid-area: 5 / 3 / 6 / 4; 
+         /* background-color: #f0f; */
+    }
+    /* .articleContent .officePost .article7 {
+         grid-area: 1 / 5 / 4 / 6;
+         background-color: #ff0; 
+    } */
+    /* 會員文章排版 */
+    .articleContent .memberPost .article1 {
+        grid-area: 1 / 1 / 4 / 2; 
+        /* background-color: #f0f; */
+        display: flex;
+        align-items: center;
+    }
+    .articleContent .memberPost .article1 a{
+        display: flex;
+        align-items: center;
+    }
+    .articleContent .memberPost .article1 .pic{
+        width: auto;
+        height: 500px;
+    }
+    .articleContent .memberPost .article2 {
+        grid-area: 4 / 1 / 6 / 2;
+        /* background-color: #0ff;  */
+        display: flex;
+        align-items: center;
+    }
+    .articleContent .memberPost .article2 a{
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    .articleContent .memberPost .article2 .pic{
+        width: auto;
+        height: 400px;
+    }
+    .articleContent .memberPost .article3 {
+        grid-area: 1 / 2 / 5 / 3;
+        /* background-color: #00f; */
+    }
+    .articleContent .memberPost .article3 .pic{
+        width: auto;
+        height: 350px;
+    }
+    .articleContent .memberPost .article4 {
+        grid-area: 5 / 2 / 6 / 3; 
+        /* background-color: #f0f;  */
+    }
+    .articleContent .memberPost .article5 {
+        grid-area: 1 / 3 / 4 / 4;
+        /* background-color: #ff0;  */
+    }
+    .articleContent .memberPost .article5 .pic{
+        width: auto;
+        height: 200px;
+    }
+    .articleContent .memberPost .article6 {
+        grid-area: 4 / 3 / 6 / 4; 
+        /* background-color: #f00;  */
+    }
+    /* .articleContent .memberPost .article7 {
+        grid-area: 6 / 5 / 11 / 6;
+    } */
+}
+
+footer{
+    margin-top: 100px;
+}

@@ -5,7 +5,7 @@ header{
     z-index: 9999;
     /* background-color: #ff0; */
 }
-.headerContain{
+.headerNormalContain{
     display: flex;
     margin: auto;
     width: 90%;
@@ -13,66 +13,66 @@ header{
     justify-content: space-between;
 }
 /* logo */
-.headerContain .logoContain{
+.headerNormalContain .logoContain{
     display: flex;
     align-items: center;
     flex-grow: 1;
 }
-.headerContain .logoContain .logo {
+.headerNormalContain .logoContain .logo {
     width: 70px;
 }
-.headerContain .logoContain .logo img{
+.headerNormalContain .logoContain .logo img{
     width: 100%;
     vertical-align: middle;
 }
 /* 藝廊pointer */
-.headerContain .mainMenu ul li label{
+.headerNormalContain .mainMenu ul li label{
     cursor: pointer;
 }
 /* 所有a樣式 */
-.headerContain .mainMenu a{
+.headerNormalContain .mainMenu a{
     font-size: 1em;
     text-decoration: none;
     display: block;
 }
-.headerContain .mainMenu ul li ul li a{
+.headerNormalContain .mainMenu ul li ul li a{
     font-size: 0.8em;
 }
-.headerContain .mainMenu a:hover{
+.headerNormalContain .mainMenu a:hover{
     color: #394897;
     font-weight: 500;
 }
-.headerContain .mainMenu li .memberList{
+.headerNormalContain .mainMenu li .memberList{
     display: flex;
     align-items: center;
 }
-.headerContain .mainMenu li .memberList .icon{
+.headerNormalContain .mainMenu li .memberList .icon{
     width: 30px;
     margin: 0 10px;
 }
-.headerContain .mainMenu li .memberList .icon img{
+.headerNormalContain .mainMenu li .memberList .icon img{
     width:100%;
     vertical-align: middle;
     cursor: pointer;
 }
-.headerContain .mainMenu li .memberList .icon img:hover{
+.headerNormalContain .mainMenu li .memberList .icon img:hover{
     transform: scale(1.1);
     transition: .3s;
 }
-.headerContain .mainMenu li .memberList .icon:first-child img:hover{
+.headerNormalContain .mainMenu li .memberList .icon:first-child img:hover{
     content: url(../image/home_header_iconSearchHover.png);
 }
-.headerContain .mainMenu li .memberList .icon:nth-child(2) img:hover{
+.headerNormalContain .mainMenu li .memberList .icon:nth-child(2) img:hover{
     content: url(../image/home_header_iconBellHover.png);
 }
-.headerContain .mainMenu li .memberList .icon:nth-child(3) img:hover{
+.headerNormalContain .mainMenu li .memberList .icon:nth-child(3) img:hover{
     content: url(../image/home_header_iconMemberHover.png);
 }
-.headerContain .mainMenu li .login{
+.headerNormalContain .mainMenu li .login{
     display: flex;
     align-items: center; 
 }
-.headerContain .mainMenu li .login a{
+.headerNormalContain .mainMenu li .login a{
     text-decoration: none;
     font-size: 16px;
     padding: 10px 30px;
@@ -82,14 +82,14 @@ header{
     margin: 0 2px;
 }
 /* 登入按鈕 */
-/* .headerContain .mainMenu li .login a:first-child{
+/* .headerNormalContain .mainMenu li .login a:first-child{
     border: none;
 } */
-.headerContain .login{
+.headerNormalContain .login{
     display: flex;
     align-items: center; 
 }
-.headerContain .login a:hover{
+.headerNormalContain .login a:hover{
     background-color: #141414;
     color: #FFFFFF;
 }
@@ -130,7 +130,7 @@ header{
         font-size: 1em;
     }
     /* 漢堡選單 */
-    .headerContain .hamburger{
+    .headerNormalContain .hamburger{
         width: 30px;
         height: 2px;
         margin: auto;
@@ -172,11 +172,11 @@ header{
         align-items: center;
         font-size: 10px;
     }
-    .headerContain .login{
+    .headerNormalContain .login{
         display: flex;
         align-items: center; 
     }
-    .headerContain .login a{
+    .headerNormalContain .login a{
         text-decoration: none;
         font-size: 1em;
         padding: 10px 30px;
@@ -235,14 +235,14 @@ header{
     }
 }
 @media screen and (min-width:768px){
-    .headerContain .mainMenu ul {
+    .headerNormalContain .mainMenu ul {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
         height: auto;
     }
-    .headerContain .mainMenu ul li{
+    .headerNormalContain .mainMenu ul li{
         margin: 0 10px;
         flex-shrink: 1;
     }
@@ -251,19 +251,19 @@ header{
         justify-content: center;
     }
     /*隱藏次選單*/
-    .headerContain .mainMenu ul ul {
+    .headerNormalContain .mainMenu ul ul {
         display: none;
     }
-    .headerContain .mainMenu ul li {
+    .headerNormalContain .mainMenu ul li {
         position: relative;
     }
-    .headerContain .mainMenu ul ul li{
+    .headerNormalContain .mainMenu ul ul li{
         white-space: nowrap;
         margin: 15px 0;
     }
     /* 滑鼠滑入展開次選單*/
-    .headerContain .mainMenu ul li ul{
-    /* 定位在.headerContain .mainMenu ul li */
+    .headerNormalContain .mainMenu ul li ul{
+    /* 定位在.headerNormalContain .mainMenu ul li */
         position: absolute;
         top: 100%;
         left: 0;
