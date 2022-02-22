@@ -4,8 +4,8 @@ gsap.timeline()
     .set('.ring', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
     .set('.img',  { // apply transform rotations to each image
         rotateY: (i)=> i*-72,
-        transformOrigin: '50% 50% 500px',
-        z: -500,
+        transformOrigin: '50% 50% 600px',
+        z: -600,
         backgroundPosition:(i)=>getBgPos(i),
         backfaceVisibility:'hidden'
     })    
@@ -13,7 +13,7 @@ gsap.timeline()
         duration:1.5,
         y:200,
         opacity:0,
-        stagger:0.1,
+        stagger:0.3,
         ease:'expo'
     })
     .add(()=>{
@@ -53,5 +53,5 @@ function dragEnd(e){
 }
 
 function getBgPos(i){ //returns the background-position string to create parallax movement in each image
-    return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*72)/360*500 )+'px 0px';
+    return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*72)/360*600 )+'px 0px';
 }
