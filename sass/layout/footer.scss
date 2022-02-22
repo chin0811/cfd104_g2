@@ -1,0 +1,91 @@
+.main{
+    height: 100vh;
+    background-color: #fff;
+}
+footer{
+    background-color: #FBF7F3;
+    padding: 20px 0;
+}
+.footerContain{
+    margin: auto;
+    width: 100%;
+    max-width: 1400px;
+}
+.footerContain .logoContain{
+    width: 100px;
+    margin: auto;
+    padding: 40px 0 25px;
+    box-sizing: border-box;
+}
+.footerContain .logoContain .logo img{
+    width: 100%;
+}
+.footerContain .socialContain{
+    display: flex;
+    justify-content: center;
+}
+.footerContain .socialContain .logo{
+    width: 22px;
+    margin: 0px 10px;
+}
+.footerContain .socialContain .logo img:hover{
+    transform: scale(1.03);
+    transition: .3s;
+}
+.footerContain .socialContain .logo:nth-child(1) img:hover{
+    content: url(../image/home_footer_facebookHover.png);
+}
+.footerContain .socialContain .logo:nth-child(2) img:hover{
+    content: url(../image/home_footer_instagramHover.png);
+}
+.footerContain .socialContain .logo:nth-child(3) img:hover{
+    content: url(../image/home_footer_twitterHover.png);
+}
+.footerContain .socialContain .logo:nth-child(4) img:hover{
+    content: url(../image/home_footer_lineHover.png);
+}
+.footerContain .socialContain .logo img{
+    width: 100%;
+}
+.footerContain nav ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: flex;
+}
+.footerContain nav ul li{
+    list-style: none;
+    margin: 30px 10px 50px;
+    flex-wrap: flex;
+}
+.footerContain nav ul li a{
+    text-decoration: none;
+    font-size: 0.8em;
+    color:#141414;
+    display: flex;
+}
+.footerContain nav ul li a:hover{
+    color:#394897;
+    font-weight: 500;
+    transition: .3s;
+}
+.footerContain .copyright p{
+    text-align: center;
+    color: #BCBCBC;
+    font-size: 0.5em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    padding: 2em 0;
+    border-top: 1px solid #e7e7e7;
+}
+@media screen and (min-width:768px){
+    .footerContain .socialContain .logo{
+        width: 30px;
+    }
+    .footerContain nav ul li a{
+        font-size: 1em;
+        flex-shrink: 0;
+    }
+    .footerContain .copyright p{
+        font-size: 0.8em;
+    }
+}
