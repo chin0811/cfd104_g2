@@ -1,0 +1,271 @@
+header{
+    position: sticky;
+    top: 0px;
+    padding-top: 20px;
+    z-index: 9999;
+    /* background-color: #ff0; */
+}
+.headerContain{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+/* logo */
+.headerContain .logoContain{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.headerContain .logoContain .logo {
+    width: 70px;
+}
+.headerContain .logoContain .logo img{
+    width: 100%;
+    vertical-align: middle;
+}
+/* 藝廊pointer */
+.headerContain .mainMenu ul li label{
+    cursor: pointer;
+}
+/* 所有a樣式 */
+.headerContain .mainMenu a{
+    font-size: 1em;
+    text-decoration: none;
+    display: block;
+}
+.headerContain .mainMenu ul li ul li a{
+    font-size: 0.8em;
+}
+.headerContain .mainMenu a:hover{
+    color: #394897;
+    font-weight: 500;
+}
+.headerContain .mainMenu li .memberList{
+    display: flex;
+    align-items: center;
+}
+.headerContain .mainMenu li .memberList .icon{
+    width: 30px;
+    margin: 0 10px;
+}
+.headerContain .mainMenu li .memberList .icon img{
+    width:100%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.headerContain .mainMenu li .memberList .icon img:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+.headerContain .mainMenu li .memberList .icon:first-child img:hover{
+    content: url(../image/home_header_iconSearchHover.png);
+}
+.headerContain .mainMenu li .memberList .icon:nth-child(2) img:hover{
+    content: url(../image/home_header_iconBellHover.png);
+}
+.headerContain .mainMenu li .memberList .icon:nth-child(3) img:hover{
+    content: url(../image/home_header_iconMemberHover.png);
+}
+.headerContain .mainMenu li .login{
+    display: flex;
+    align-items: center; 
+}
+.headerContain .mainMenu li .login a{
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 200px;
+    transition: .3s;
+    margin: 0 2px;
+}
+/* 登入按鈕 */
+/* .headerContain .mainMenu li .login a:first-child{
+    border: none;
+} */
+.headerContain .login{
+    display: flex;
+    align-items: center; 
+}
+.headerContain .login a:hover{
+    background-color: #141414;
+    color: #FFFFFF;
+}
+/* 控制下拉式選單 */
+#navMenu{
+    display: none;
+}
+.mainMenu ul li:first-child {
+    display: block;
+    text-align: center;
+}
+.mainMenu ul li:first-child ul{
+    display: none;
+}
+#navMenu:checked ~ ul{
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+#navMenu:checked ~ ul li{
+    text-align: center;
+    justify-content: center
+}
+/* 手機的漢堡 */
+@media screen and (max-width: 768px) {
+    .mainMenu {
+        clip-path: circle(0% at 96.5% 4%);
+        /* 定位在header */
+        position: absolute;
+        background:  linear-gradient(#fff, #FBF7F3);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        transition: all 0.5s cubic-bezier(0.23, 093,0.23, 0.93);
+    }
+    .mainMenu a{
+        font-size: 1em;
+    }
+    /* 漢堡選單 */
+    .headerContain .hamburger{
+        width: 30px;
+        height: 2px;
+        margin: auto;
+        /* background-color: #000; */
+        border: 1px #394897 solid;
+        border-radius: 5px;
+        box-shadow: 0px 10px 0px #394897,
+                    0px -10px 0px #394897;
+        cursor: pointer;
+    }
+    .mainMenu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: auto;
+    }
+    .mainMenu ul ul {
+        height: auto;
+    }
+    .mainMenu ul li:first-child {
+        display: block;
+        text-align: center;
+    }
+    .mainMenu ul li:first-child ul{
+        display: none;
+    }
+    .mainMenu ul li {
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+    .mainMenu ul li label{
+        display: flex;
+        justify-content: center;
+    }
+    .mainMenu ul li label i{
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+    }
+    .headerContain .login{
+        display: flex;
+        align-items: center; 
+    }
+    .headerContain .login a{
+        text-decoration: none;
+        font-size: 1em;
+        padding: 10px 30px;
+        box-sizing: border-box;
+        border-radius: 100px;
+        transition: .3s;
+        margin: 0 2px;
+    }
+    /* 關閉符號 */
+    .mainMenu .close {
+        position: absolute;
+        top: 0.7rem;
+        right: 3rem;
+        width: 2rem;
+        height: 2rem;
+        transform: rotate(45deg);
+        cursor: pointer;
+    }
+    .mainMenu .close div {
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+    }
+    .mainMenu .close div:before, .mainMenu .close div:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        border: 1px solid #394897;
+        position: absolute;
+        border-radius: 5px;
+    }
+    .mainMenu .close div:after {
+        transform: rotate(90deg);
+        background: #394897;
+    }
+    .mainMenu.active {
+        clip-path: circle(140% at 96.5% 4%);
+        transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+    }
+    .mainMenu.active ul > li {
+        animation: animateIn 360ms ease-in-out calc(var(--animation-order) * 100ms) both;
+    }
+    .mainMenu.reverse_anim {
+        clip-path: circle(0% at 96.5% 4%);
+        opacity: 0.6;
+        transition: all 0.4s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+    }
+    @keyframes animateIn {
+      0% {
+        opacity: 0;
+        transform: translateX(10px) rotate(2deg);
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+}
+@media screen and (min-width:768px){
+    .headerContain .mainMenu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: auto;
+    }
+    .headerContain .mainMenu ul li{
+        margin: 0 10px;
+        flex-shrink: 1;
+    }
+    .mainMenu ul li label{
+        display: flex;
+        justify-content: center;
+    }
+    /*隱藏次選單*/
+    .headerContain .mainMenu ul ul {
+        display: none;
+    }
+    .headerContain .mainMenu ul li {
+        position: relative;
+    }
+    .headerContain .mainMenu ul ul li{
+        white-space: nowrap;
+        margin: 15px 0;
+    }
+    /* 滑鼠滑入展開次選單*/
+    .headerContain .mainMenu ul li ul{
+    /* 定位在.headerContain .mainMenu ul li */
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
