@@ -1,0 +1,160 @@
+/* 共用小物件 */
+/* 按鈕 */
+.round{
+    font-size: 16px;
+    background-color: #FFD60A;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 200px;
+    border: none;
+}
+/* 麵包屑和商品分類導覽 */
+.productHead{
+    width: 100%;
+    margin-bottom: 10%;
+}
+.productHead .productBread{
+    margin: auto;
+    width: 90%;
+    margin-bottom: 1%;
+}
+.productHead .sideNav{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: baseline;
+}
+.productHead .sideNav a{
+    text-decoration: none;
+    color: #141414;
+}
+.productHead .sideNav .sideNavTitle{
+    display: inline-block;
+    width: 25%;
+    border-right: 0.1em solid black;
+    margin-right: 3%;
+}
+.productHead .sideNav ul{
+    width: 60%;
+    display: flex;
+}
+.productHead .sideNav ul li{
+    width: 25%;
+}
+/* 商品Item共用設計 */
+.productMainSection .commomItem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.productMainSection .commomItem .like{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    border-radius:800px;
+    width: 25%;
+    box-sizing: border-box;
+    padding: 3% 0%;
+    text-align: center;
+    opacity: 50%;
+    font-size: 0.5em;
+}
+.productMainSection .commomItem .img img{
+    width: 100%;
+}
+.productMainSection .commomItem .text{
+    flex-grow: 1;
+}
+.productMainSection .commomItem .footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+/* 商品輪播 */
+.productMainCarousel{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10%;
+}
+.productMainCarousel h3{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+.productMainCarousel .carouselBox{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.productMainCarousel .carouselBox .prouductItem{
+    width:66%;
+    flex-shrink: 0;
+}
+@media screen and (min-width:992px){
+    .productMainCarousel .carouselBox .prouductItem{
+        width:26%;
+        flex-shrink: 0;
+    }
+}
+.productMainCarousel .carouselBox .prouductItem{
+    margin-right: 8%;
+}
+@media screen and (min-width:992px){
+    .productMainCarousel .carouselBox .prouductItem{
+        margin-right: 4%;
+    }
+}
+/* 商品區塊 */
+.productiMainProduct{
+    width: 100%;
+    margin-bottom: 5%;
+}
+.productiMainProduct .productSection{
+    width: 90%;
+    margin: auto;
+}
+.productiMainProduct .titleBox{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+/* 商品欄 */
+.productiMainProduct .productSection .column{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* 單一商品物件Item */
+.productiMainProduct .productSection .column .prouductItem{
+    width: 46%;
+    flex-shrink: 0;
+    margin-bottom: 5%;
+}
+.productiMainProduct .productSection .column .prouductItem:nth-child(odd){
+    margin-right: 8%;
+}
+@media screen and (min-width:992px){
+    .productiMainProduct .productSection .column .prouductItem{
+        width: 23%;
+        margin-bottom: 2%;
+    }
+    .productiMainProduct .productSection .column .prouductItem:nth-child(odd){
+        margin-right: 0;
+    }
+}
+/* 換頁 */
+.productPageChange{
+    width: 100%;
+}
+.productPageChange .pageBox{
+    margin: auto;
+    width: 90%;
+}
+.productPageChange .pageBox .itemBox{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
