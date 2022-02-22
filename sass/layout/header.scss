@@ -1,0 +1,206 @@
+header{
+    /* margin: 20px 0px; */
+    position: sticky;
+    top: 0px;
+    padding-top: 20px;
+    z-index: 9999;
+}
+/* header容器 */
+.headerContain{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+/* ------所有a設定 ------*/
+.mainMenu a{
+    text-decoration: none;
+    font-size: 1em;
+}
+.mainMenu a:hover{
+    color: #394897;
+    font-weight: 500;
+    transition: .5s;
+}
+/* logo */
+.headerContain .logoContain{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.headerContain .logoContain .logo {
+    width: 70px;
+}
+.headerContain .logoContain .logo img{
+    width: 100%;
+    vertical-align: middle;
+}
+/* 漢堡選單 */
+.headerContain .hamburger{
+    width: 30px;
+    height: 2px;
+    margin: auto;
+    /* background-color: #000; */
+    border: 1px #394897 solid;
+    border-radius: 5px;
+    box-shadow: 0px 10px 0px #394897,
+                0px -10px 0px #394897;
+    cursor: pointer;
+}
+/* ------藝廊pointer------ */
+.headerContain .mainMenu ul li label{
+    cursor: pointer;
+}
+/*------ 兩顆icon ------*/
+.headerContain .mainMenu li .memberList{
+    display: flex;
+    align-items: center;
+}
+.headerContain .mainMenu li .memberList .icon{
+    width: 30px;
+    margin: 0 10px;
+}
+.headerContain .mainMenu li .memberList .icon img{
+    width:100%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.headerContain .mainMenu li .memberList .icon img:hover{
+    transform: scale(1.02);
+    transition: .3s;
+}
+.headerContain .mainMenu li .memberList .icon:first-child img:hover{
+    content: url(../image/home_header_iconBellHover.png);
+}
+.headerContain .mainMenu li .memberList .icon:last-child img:hover{
+    content: url(../image/home_header_iconMemberHover.png);
+}
+/*------ 控制下拉式選單 ------*/
+/* 隱藏input按鈕 */
+#navMenu{
+    display: none;
+}
+/* 隱藏下拉式選單 */
+.mainMenu ul li:first-child ul{
+    display: none;
+}
+/* 按鈕按到打開下拉式選單 */
+#navMenu:checked ~ ul{
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+#navMenu:checked ~ ul li{
+    text-align: center;
+    justify-content: center
+}
+
+.headerContain .mainMenu {
+    clip-path: circle(0% at 96.5% 4%);
+    /* 定位在header */
+    position: absolute;
+    background:  linear-gradient(#fff, #FBF7F3);
+    width: 100%;
+    height: 100vh;
+    /* 點開漢堡後整個頁面會被占據的位置 */
+    top: 0;
+    left: 0;
+    transition: all 0.5s cubic-bezier(0.23, 093,0.23, 0.93);
+}
+.headerContain .mainMenu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.headerContain .mainMenu ul ul {
+    height: auto;
+}
+.headerContain .mainMenu ul li:first-child {
+    /* 讓下拉式選單能夠往下直排 */
+    display: block;
+    text-align: center;
+}
+/* li上下間距 */
+.headerContain .mainMenu ul li {
+    padding: 10px 0;
+    box-sizing: border-box;
+    /* 讓li文字左右排 */
+    display: flex;
+}
+.headerContain .mainMenu ul li label{
+    display: flex;
+    justify-content: center;
+}
+.headerContain .mainMenu ul li label i{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+/* 登入刊登 */
+.headerContain .login{
+    display: flex;
+    align-items: center; 
+}
+/* login的a覆寫所有a:hover */
+.mainMenu .login a:hover{
+    color: #FFFFFF;
+}
+/* ----關閉符號---- */
+.mainMenu .close {
+    /* 定位在header */
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.mainMenu .close div {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+.mainMenu .close div:before, .mainMenu .close div:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    border: 1px solid #394897;
+    position: absolute;
+    border-radius: 5px;
+}
+.mainMenu .close div:after {
+    transform: rotate(90deg);
+    background: #394897;
+}
+.mainMenu.active {
+    clip-path: circle(140% at 96.5% 4%);
+    transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+}
+.mainMenu.active ul > li {
+    animation: animateIn 360ms ease-in-out calc(var(--animation-order) * 100ms) both;
+}
+.mainMenu.reverse_anim {
+    clip-path: circle(0% at 96.5% 4%);
+    opacity: 0.6;
+    transition: all 0.4s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+}
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: translateX(10px) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* 手機的位置close */
+@media screen and (max-width:768px){
+    .mainMenu .close {
+        top: 5%;
+        right: 2rem;
+    }
+}
