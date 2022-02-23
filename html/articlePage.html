@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/assets/css/footer.css">
     <link rel="stylesheet" href="assets/assets/css/articlePage.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/articlePage.js"></script>
 </head>
 <body>
     <!-- 主標32px letter-spacing:-0.512px line-height:40px
@@ -125,7 +127,7 @@
                         </div>
                     </div>
                 </section>
-            </div>            
+            </div>           
             <aside class="sideInfo">
                 <div class="authorIntro">
                     <div class="pic">
@@ -171,9 +173,76 @@
                     </div>
                 </div>
             </aside>
-        </section>
-        <section class="comment">
-            
+            <!-- 要隱藏留言區用的 -->
+            <section class="hiddenArea">
+                <section class="commentArea">
+                    <div class="commentClose"></div>
+                    <h4>回應(<span>6</span>)</h4>
+                    <div class="commentInput">
+                        <div class="memberIcon">
+                            <div class="pic">
+                                <img src="https://picsum.photos/100/100/?random=20">
+                            </div>
+                            <div class="txt">
+                                <p class="deepColor">JEERY</p>
+                            </div>
+                        </div>
+                        <div class="txtArea">
+                            <form action="">
+                                <textarea name="" id=""></textarea>
+                                <div class="item">
+                                    <input class="round" type="submit" value="評論" >
+                                    <input class="roundOutline" type="reset" value="取消">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="commentElse">
+                        <div class="item">
+                            <div class="memberIcon">
+                                <div class="pic">
+                                    <img src="https://picsum.photos/100/100/?random=15">
+                                </div>
+                                <div class="txt">
+                                    <p class="deepColor small">FIREDRAGON</p>
+                                    <p class="lightColor small"><span>1</span>天前</p>
+                                </div>
+                            </div>
+                            <div class="reply">
+                                <p class="deepColor small">我覺得這篇文章不錯，因為是我切的板所以不錯。</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberIcon">
+                                <div class="pic">
+                                    <img src="https://picsum.photos/100/100/?random=12">
+                                </div>
+                                <div class="txt">
+                                    <p class="deepColor small">PIKACHU</p>
+                                    <p class="lightColor small"><span>1</span>天前</p>
+                                </div>
+                            </div>
+                            <div class="reply">
+                                <p class="deepColor small">我覺得這篇文章不錯，因為是我切的板所以不錯。</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberIcon">
+                                <div class="pic">
+                                    <img src="https://picsum.photos/100/100/?random=19">
+                                </div>
+                                <div class="txt">
+                                    <p class="deepColor small">FROGGY</p>
+                                    <p class="lightColor small"><span>1</span>天前</p>
+                                </div>
+                            </div>
+                            <div class="reply">
+                                <p class="deepColor small">我覺得這篇文章不錯，因為是我切的板所以不錯。我覺得這篇文章不錯，因為是我切的板所以不錯。</p>
+                            </div>
+                        </div>   
+                    </div>
+                </section>  
+            </section>                
         </section>
     </section>
     @@include('layout/footer.html')
