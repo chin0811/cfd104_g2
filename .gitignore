@@ -1,4 +1,5 @@
 node_modules
 css
 .vscode
+*.html
 package-lock.json
