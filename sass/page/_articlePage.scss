@@ -1,8 +1,18 @@
-.articlePageContent{
+.articlePageContent .articlePageWrap{
     width: 90%;
     max-width: 1200px;
-    /* background-color: #0ff; */
+    // 給報紙外框，不要讓它貼邊
+    border: 10px solid #FBF7F3;
+    // background-color: #FBF7F3;
     margin:40px auto;
+
+    // 紙材質
+    background-color: #FBF7F3;
+    opacity: 1;
+    background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;  
+    box-shadow: 2px 0 10px #8888;
 }
 /* 所有a設定 */
 .articlePageContent a{
@@ -18,6 +28,8 @@
 .articlePageContent .articlePageWrap .pageContent{
     width: 100%;
     position: relative;
+    padding:10% 5% 10%;
+    box-sizing: border-box;
 }
 /* 麵包屑 */
 .articlePageContent .articlePageWrap .pageContent .breadcrumb ul{
@@ -46,8 +58,16 @@
     justify-content: space-between;
     margin: 80px 0 150px;
     padding: 20px 15px 15px;
-    background-color: #fff;
+    // background-color: #FBF7F3;
+    
+    // 紙材質
+    background-color: #FBF7F3;
+    opacity: 1;
+    background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;  
     border-top: 1px solid #8888;
+
     /* 定位在.articlePageWrap .pageContent .page*/
     position: sticky;
     bottom: 0;
@@ -82,34 +102,36 @@
     content: url(../image/home_footer_lineHover.png);
 }
 /* 下方相關文章 */
+.articlePageContent .articlePageWrap .pageContent .relative{
+    display: block;
+    margin: auto;
+}
+.articlePageContent .articlePageWrap .pageContent .relative h2{
+    border-bottom: 2px solid #8888;
+}
 .articlePageContent .articlePageWrap .pageContent .relative .item{
     display: flex;
     margin: 20px 0;
     align-items: center;
+    justify-content: center;
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item .pic{
     width: 80px;
     height: 80px;
     overflow: hidden;
+    border-radius: 5px;
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item .txt{
+    width: 70%;
     padding: 10px;
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
 @media screen and (min-width:768px){
     .articlePageContent .articlePageWrap{
         display: flex;
     }
-    
     .articlePageContent .articlePageWrap .pageContent{
-        padding:0 10%;
+        padding:0 10% 15%;
         width: 75%;
         box-sizing: border-box;
         /* border: 1px solid #000; */
@@ -119,8 +141,8 @@
         display: flex;
         /* 定位在.articlePageContent .articlePageWrap .pageContent */
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 1%;
+        left: 2%;
     }
     .articlePageContent .articlePageWrap .pageContent .breadcrumb ul li{
         font-size: 0.5em;
@@ -135,7 +157,7 @@
         padding:3% 2% 0;
         box-sizing: border-box;
         /* border: 1px solid #000; */
-        border-left: 1px solid #8888;
+        border-left: 2px solid #8888;
     }
     /* 測欄作者 */
     .articlePageContent .articlePageWrap .sideInfo .authorIntro .txt p:first-child{
@@ -173,6 +195,4 @@
         font-size: 13px;
         line-height: 1.5;
     }
-    
-    
 }
