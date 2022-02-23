@@ -3,3 +3,4 @@ css
 .vscode
 *.html
 package-lock.json
+dist
