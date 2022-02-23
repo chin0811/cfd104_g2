@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="vue.js/vue.js"></script>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/uiSet.css">
-    <link rel="stylesheet" href="assets/css/listing1.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="css/uiSet.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/listing1.css"> -->
     <script src="vue.js/vue.js"></script>
     <script src="//code.jquery.com/jquery-3.3.1.js"></script>
-    <link rel="icon" type="image/png" href="pic/log_blank.png" />
+    <link rel="icon" type="image/png" href="assets/image/log_blank.png" />
     <title>listing1</title>
     <style>
         /* h1{font-size: 36px;font-family: 'Iceberg', cursive; font-weight: bold;}
@@ -25,39 +26,39 @@
 </head>
 
 <body>
-
+    @@include('layout/header.html')
     <section>
         <div class="listingSteps aidBgColor">
             <h2 class="epBColor">上架競拍流程</h2>
             <h4>馬上開啟您的個人拍賣會</h4>
             <div class="steps">
                 <div class="step">
-                    <img src="/pic/enroll_membership_icon.png">
+                    <img src="/assets/image/enroll_membership_icon.png">
                     <h4>步驟一: 註冊並登入</h4>
                     <p>上架您的藝術品進行競拍活動之前，請先註冊為「藝起」之會員。</p>
                 </div>
                 <div class="step">
-                    <img src="pic/find_page_icon.png">
+                    <img src="assets/image/find_page_icon.png">
                     <h4>步驟二: 找到競拍頁面</h4>
                     <p>請到導覽列中按下"藝術品上架"，連結到賣家上架頁面。</p>
                 </div>
                 <div class="step">
-                    <img src="pic/write_info_icon.png">
+                    <img src="assets/image/write_info_icon.png">
                     <h4>步驟三: 填入商品資訊</h4>
-                    <p>完成填寫商品資訊，放上您吸引眼球的商品圖片，並注意<img src="pic/help_question_icon.png" alt="none">圖示的說明。</p>
+                    <p>完成填寫商品資訊，放上您吸引眼球的商品圖片，並注意<img src="assets/image/help_question_icon.png" alt="none">圖示的說明。</p>
                 </div>
                 <div class="step">
-                    <img src="pic/preview_check_icon.png">
+                    <img src="assets/image/preview_check_icon.png">
                     <h4>步驟四: 上架前預覽</h4>
                     <p>案下"預覽畫面"按鈕，檢視您所填寫商品資訊，因為限時競拍系統，商品上架後將不可進行編輯，請務必確認填寫正確後才進行下一步。</p>
                 </div>
                 <div class="step">
-                    <img src="pic/audit_icon.png">
+                    <img src="assets/image/audit_icon.png">
                     <h4>步驟五: 等待審核上架</h4>
                     <p>按下"確認送出"按鈕，待工作人員審核。</p>
                 </div>
                 <div class="step">
-                    <img src="pic/auction_icon.png">
+                    <img src="assets/image/auction_icon.png">
                     <h4>步驟六: 商品競拍開始</h4>
                     <p>工作人員審核通過後，將再會於中心發出通知，商品立即開始上架計時競拍。</p>
                 </div>
@@ -159,7 +160,7 @@
             </div>
             <div class="ad">
                 <div class="show">
-                    <h4>藝廊廣告需求:<span><img src="pic/help_question_icon.png" alt="none"></span></h4>
+                    <h4>藝廊廣告需求:<span><img src="assets/image/help_question_icon.png" alt="none"></span></h4>
                     <div class="qAnswer">
                         <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。<br>(如右方)達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
                     </div>
@@ -189,11 +190,11 @@
                 <ol class="uploadPicture">
                     <li>
                         <input type="file" id="pic" name="pic" accept="image/*" required>
-                        <label for="pic"><img src="pic/upload_image_icon.png" alt="none"></label>
+                        <label for="pic"><img src="assets/image/upload_image_icon.png" alt="none"></label>
                     </li>
                     <li>
                         <input type="file" id="pic" name="pic" accept="image/*">
-                        <label for="pic"><img src="pic/add_icon.png" alt="none"></label>
+                        <label for="pic"><img src="assets/image/add_icon.png" alt="none"></label>
                     </li>
                     <!--
                     <li></li>
@@ -205,7 +206,7 @@
                 <h4>藝術證明:</h4>
                 <div class="certification">
                     <input type="file" id="paper" name="paper" required>
-                    <label for="paper"><img src="pic/add_icon.png" alt="none"></label>
+                    <label for="paper"><img src="assets/image/add_icon.png" alt="none"></label>
                 </div>
             </div>
             <!-- <form action="ckeditor.php"> -->
@@ -283,11 +284,11 @@
                 <ol class="uploadPicture">
                     <li>
                         <input type="file" id="pic" name="pic" accept="image/*" required>
-                        <label for="pic"><img src="pic/upload_image_icon.png" alt="none"></label>
+                        <label for="pic"><img src="assets/image/upload_image_icon.png" alt="none"></label>
                     </li>
                     <li>
                         <input type="file" id="pic" name="pic" accept="image/*">
-                        <label for="pic"><img src="pic/add_icon.png" alt="none"></label>
+                        <label for="pic"><img src="assets/image/add_icon.png" alt="none"></label>
                     </li>
                     <!--
                     <li></li>
@@ -299,7 +300,7 @@
                 <h4>藝術證明:</h4>
                 <div class="certification">
                     <input type="file" id="paper" name="paper" required>
-                    <label for="paper"><img src="pic/add_icon.png" alt="none"></label>
+                    <label for="paper"><img src="assets/image/add_icon.png" alt="none"></label>
                 </div>
             </div>
             <!-- <form action="ckeditor.php"> -->
@@ -396,7 +397,7 @@
     <!-- // }); -->
     <!-- // </script> -->
 
-
+    @@include('layout/footer.html')
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </body>
 
