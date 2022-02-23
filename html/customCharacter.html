@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cssReset.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="css/customCharacter.css">
+    <script src="https://kit.fontawesome.com/90d222f595.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button class="button bouncingButton">按鈕</button>
+
+    <section class="bouncingBox">
+        <section class="title">
+            <p>客製化人物
+                <span class="titleButton">
+                    <button class="button" type="button">修改資料</button>
+                    <button class="button" type="button">確認資料</button>
+                </span>
+            </p>
+            <span class="close"><i class="fas fa-times"></i></span>
+        </section>
+        <main>
+            <section class="main">
+                <section class="avatar">
+                    <section class="img"><img src="https://fakeimg.pl/200/394897/fff" alt="頭像"></section>
+                    <section class="controller"><span class="circle"></span><span class="circle"></span><span class="circle"></span></section>
+                </section>
+                <section class="adjust">
+                    <section><p>性別：<input class="checkbox" type="checkbox"></input>男<input class="checkbox" type="checkbox"></input>女</p></section>
+                    <section>
+                        <span>膚色：</span>
+                        <span class="adjustmentLever">
+                            <span class="adjustmentLeverContent"></span>
+                        </span>
+                    </section>
+                    <section>
+                        <span>風格：</span>
+                        <span class="adjustmentLever">
+                            <span class="adjustmentLeverContent"></span>
+                        </span>
+                    </section>
+                    <section>
+                        <span>髮型：</span>
+                        <span class="adjustmentLever">
+                            <span class="adjustmentLeverContent"></span>
+                        </span>
+                    </section>
+                    <section>
+                        <span>服裝：</span>
+                        <span class="adjustmentLever">
+                            <span class="adjustmentLeverContent"></span>
+                        </span>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </section>
+
+    <script src="js/bouncingBox.js"></script>
+</body>
+</html>
