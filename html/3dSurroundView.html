@@ -31,6 +31,7 @@
 </head>
 
 <body>
+    @@include('layout/header.html')
     <!--3D背景-->
     <div id="panorama">
         <button type="button" class="navButtonClick_button">導覽列</button>
@@ -50,16 +51,28 @@
             <button type="button" class="noticeContain_button button_unread" onclick="unreadShow()">未讀</button>
             <!-- 全部與未讀切換 欄位-->
             <div class="noticeContain_outsideBox">
-            <div class="noticeContain_box noticeContain_all">
-                <div class="noticeContain_message"><p>全部：第一條訊息</p></div>
-                <div class="noticeContain_message"><p>全部：第二條訊息</p></div>
-            </div>
-            <div class="noticeContain_box noticeContain_unread">
-                <div class="noticeContain_message"><p>未讀：第一條訊息</p></div>
-                <div class="noticeContain_message"><p>未讀：第二條訊息</p></div>
-                <div class="noticeContain_message"><p>未讀：第二條訊息</p></div>
-                <div class="noticeContain_message"><p>未讀：第二條訊息</p></div>
-            </div>
+                <div class="noticeContain_box noticeContain_all">
+                    <div class="noticeContain_message">
+                        <p>全部：第一條訊息</p>
+                    </div>
+                    <div class="noticeContain_message">
+                        <p>全部：第二條訊息</p>
+                    </div>
+                </div>
+                <div class="noticeContain_box noticeContain_unread">
+                    <div class="noticeContain_message">
+                        <p>未讀：第一條訊息</p>
+                    </div>
+                    <div class="noticeContain_message">
+                        <p>未讀：第二條訊息</p>
+                    </div>
+                    <div class="noticeContain_message">
+                        <p>未讀：第二條訊息</p>
+                    </div>
+                    <div class="noticeContain_message">
+                        <p>未讀：第二條訊息</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
