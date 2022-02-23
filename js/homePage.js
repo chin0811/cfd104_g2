@@ -73,7 +73,7 @@ gsap.to(".homeCatalog .catalog .brame .pic img", {
 });
 //藝廊圖片下移區
 gsap.to(".homeGallery .scrollPic", {
-	y: 1800,
+	top:"100%",
 	ease: "none",
 	scrollTrigger: {
 		trigger: ".homeGallery",
