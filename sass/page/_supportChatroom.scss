@@ -36,6 +36,27 @@ $uiColor:(
 //     top: -1.5em;
 //     white-space: nowrap;
 // }
+.supportChatroom{
+    .round {
+        /* 橢圓形實心按鈕 */
+        font-size: 16px;
+        background-color: #FFD60A;
+        font-weight: 600;
+        padding: 10px 30px;
+        border-radius: 200px;
+        border: none;
+    }
+
+    .round:hover, .square:hover {
+        /* 實心按鈕hover */
+        color: #FFFFFF;
+        background-color: #141414;
+    }
+}
+
+
+
+
 .supportChatroom.active{
     /* 客服聯天室區 */
     border-radius: 5px;
@@ -78,6 +99,10 @@ $uiColor:(
     // }
     .selectRoom{
         
+
+
+
+
         >.titleCell{
             display: flex;
             justify-content: space-between;
@@ -380,19 +405,4 @@ $uiColor:(
         }
     }
     
-}
-.round {
-    /* 橢圓形實心按鈕 */
-    font-size: 16px;
-    background-color: #FFD60A;
-    font-weight: 600;
-    padding: 10px 30px;
-    border-radius: 200px;
-    border: none;
-}
-
-.round:hover, .square:hover {
-    /* 實心按鈕hover */
-    color: #FFFFFF;
-    background-color: #141414;
 }
