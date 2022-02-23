@@ -1,0 +1,68 @@
+.collect_bouncing main{
+    margin-top: 1em;
+}
+.collect_bouncing main .commodityGroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.collect_bouncing main .commodityGroup .commodity{
+    margin-top: 1em;
+}
+
+/* 圖文 */
+.collect_bouncing main .commodityGroup .commodity .graphics{
+    position: relative;
+}
+.collect_bouncing main .commodityGroup .commodity .graphics .love{
+    background: #eee;
+    width: 3em;
+    padding: 4px;
+    border-radius: 30px;
+    position: absolute; /* .collect_bouncing main .commodityGroup .commodity .graphics */
+    top: .5em;
+    left: 0.5em;
+}
+.collect_bouncing main .commodityGroup .commodity .graphics p{
+    line-height: 1.5;
+}
+
+/* 競標 */
+.collect_bouncing main .commodityGroup .commodity .bid>*{
+    margin-top: 1em;
+}
+.collect_bouncing main .commodityGroup .commodity .bid .information{
+    display: flex;
+    flex-direction: column;
+}
+.collect_bouncing main .commodityGroup .commodity .bid .information .time{
+    margin-top: 1em;
+    color: #999;
+}
+.collect_bouncing main .commodityGroup .commodity .bid .button{
+    font-weight: 900;
+}
+/*
+.collect_bouncing main .commodityGroup .commodity .bid .button:hover{
+    background: #fff;
+}
+*/
+
+/* RWD */
+@media(min-width:769px){
+    .collect_bouncing main .commodityGroup{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .collect_bouncing main .commodityGroup .commodity{
+        width: 40%;
+    }
+    .collect_bouncing main .commodityGroup .commodity .bid .information .time{
+        margin-top: 0em;
+    }
+    .collect_bouncing main .commodityGroup .commodity .bid .information{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

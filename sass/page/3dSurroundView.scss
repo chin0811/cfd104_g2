@@ -1,0 +1,130 @@
+#panorama {
+    width: 100vw;
+    height: 100vh;
+}
+.custom-hotspot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #FF8F59;
+}
+div.custom-tooltip span {
+    visibility: hidden;
+    position: absolute;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    max-width: 200px;
+    padding: 5px 10px;
+    margin-left: -220px;
+    cursor: default;
+}
+div.custom-tooltip:hover span{
+    visibility: visible;
+}
+/* 文字下方三角形
+div.custom-tooltip:hover span:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    bottom: -20px;
+    left: -10px;
+    margin: 0 50%;
+}
+*/
+
+/* 按鈕動態 */
+div.custom-tooltip span {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-animation-name: hvr-hang-sink, hvr-hang, bounce;
+    animation-name: hvr-hang-sink, hvr-hang, bounce;
+    -webkit-animation-duration: .3s, 1.5s, 1s;
+    animation-duration: .3s, 1.5s, 1s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite, infinite;
+    animation-iteration-count: 1, infinite, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+
+    /* bounce */
+    position: relative;
+    /*animation: bounce 1s;*/
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
+
+/* 導覽列 */
+.navButtonClick_button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+}
+.bouncingBox.bouncingBox_bouncing{
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+}
+
+
+
+@media(min-width:769px){
+    .custom-hotspot {
+        height: 50px;
+        width: 50px;
+    }
+
+    div.custom-tooltip span:before {
+        /* bounce */
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0; left: 0; right: 0; bottom: 0;
+        
+        transform-origin: 100% 50%;
+        animation: bounce_before 1s;
+        animation-iteration-count: infinite;
+        
+    }
+    @keyframes bounce{
+        0%{ 
+            color: #000;
+        }
+        100%{
+            color: #fff;
+        }
+    }
+    @keyframes bounce_before{
+        0%{ 
+            transform: scaleX(0);
+            transition: transform 0.5s ease-out;
+            background: none;
+        }
+        100%{
+            transform: scaleX(1);
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            background: #2098D1;
+        }
+    }
+}
