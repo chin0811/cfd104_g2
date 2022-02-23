@@ -8,80 +8,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
 	<!-- <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/uiSet.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="assets/css/headerNormal.css">
-    <link rel="stylesheet" href="assets/css/footer.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/footer.css"> -->
     <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/header.js"></script>
 </head>
 <body>   
-    <header>
-        <section class="headerNormalContain">
-            <section class="logoContain">
-                <div class="logo">
-                        <a href="">
-                            <img src="assets/image/home_header_logo.png">
-                        </a>
-                </div>
-            </section>
-            <div class="hamburger"></div>
-            <nav class="mainMenu fullscreen">
-                <ul>
-                    <li style="--animation-order: 1;">
-                        <input id="navMenu" type="checkbox">
-                        <label for="navMenu" class="deepColor">
-                                <span>藝廊</span>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </a>
-                        </label>
-                        <ul>
-                            <li><a href="" class="lightColor">展示區</a></li>
-                            <li><a href="" class="lightColor">雕塑類</a></li>
-                            <li><a href="" class="lightColor">畫作類</a></li>
-                            <li><a href="" class="lightColor">公仔類</a></li>
-                            <li><a href="" class="lightColor">品牌合作</a></li>
-                        </ul>
-                    </li>
-                    <li style="--animation-order: 2;" >
-                        <a href="/" class="deepColor">拍賣廳</a>
-                    </li>
-                    <li style="--animation-order: 3;">
-                        <a href="/" class="deepColor">藝論</a>
-                    </li>
-                    <li style="--animation-order: 4;">
-                        <a href="/" class="deepColor">關於我們</a>
-                    </li>
-                    <li style="--animation-order: 5;">
-                        <a href="/" class="deepColor">會員中心</a>
-                    </li>
-                    <li style="--animation-order: 6;">
-                        <section class="memberList">
-                            <div class="icon">
-                                    <a href="">
-                                        <img src="assets/image/home_header_iconBell.png">
-                                    </a>
-                            </div>
-                            <div class="icon">
-                                    <a href="">
-                                        <img src="assets/image/home_header_iconMember.png">
-                                    </a>
-                            </div>
-                        </section>
-                    </li>
-                    <li style="--animation-order: 7;">
-                        <div class="login">
-                            <a href="" class="deepColor">登入</a>
-                            <a href="" class="deepColor epFBgColor round">上架</a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="close">
-                    <div></div>
-                </div>
-            </nav>
-        </section>
-    </header>
+    @@include('layout/headerNormal.html')
     <section class="homeIntro">
         <div class="intro">
             <section class="pic">
@@ -190,59 +125,7 @@
             <img src="assets/image/galley__lavKoonsbag.png" alt="">
         </section>
     </section>
-    <footer>
-        <section class="footerContain">
-            <div class="logoContain">
-                    <div class="logo">
-                        <img src="assets/image/home_header_logo.png">
-                    </div>
-            </div>
-            <div class="socialContain">
-                    <div class="logo">
-                        <a href="">
-                            <img src="assets/image/home_footer_facebook.png">
-                        </a>
-                    </div>
-                    <div class="logo">
-                        <a href="">
-                            <img src="assets/image/home_footer_instagram.png">
-                        </a>
-                    </div>
-                    <div class="logo">
-                        <a href="">
-                            <img src="assets/image/home_footer_twitter.png">
-                        </a>
-                    </div>
-                    <div class="logo">
-                        <a href="">
-                            <img src="assets/image/home_footer_line.png">
-                        </a>
-                    </div>
-            </div>
-            <nav>
-                    <ul>
-                        <li>
-                            <a href="">藝廊</a>
-                        </li>
-                        <li>
-                            <a href="">拍賣廳</a>
-                        </li>
-                        <li>
-                            <a href="">藝論</a>
-                        </li>
-                        <li>
-                            <a href="">關於我們</a>
-                        </li>
-                        <li>
-                            <a href="">會員中心</a>
-                        </li>
-                    </ul>
-            </nav>
-            <div class="copyright">
-                    <p>@2022 Powered by 藝論 Right Reserved<br>本網站為緯育Tibame前端設計工程師班專題作業，本平台僅供學習、展示之用。</p>
-            </div>
-        </section>
-    </footer>
+    @@include('layout/footer.html')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="js/homePage.js"></script>

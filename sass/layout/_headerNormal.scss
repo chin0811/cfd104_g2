@@ -60,13 +60,10 @@ header{
     transition: .3s;
 }
 .headerNormalContain .mainMenu li .memberList .icon:first-child img:hover{
-    content: url(assets/image/home_header_iconSearchHover.png);
+    content: url(../image/home_header_iconBellHover.png);
 }
-.headerNormalContain .mainMenu li .memberList .icon:nth-child(2) img:hover{
-    content: url(assets/image/home_header_iconBellHover.png);
-}
-.headerNormalContain .mainMenu li .memberList .icon:nth-child(3) img:hover{
-    content: url(assets/image/home_header_iconMemberHover.png);
+.headerNormalContain .mainMenu li .memberList .icon:last-child img:hover{
+    content: url(../image/home_header_iconMemberHover.png);
 }
 .headerNormalContain .mainMenu li .login{
     display: flex;

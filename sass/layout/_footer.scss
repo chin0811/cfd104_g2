@@ -29,16 +29,16 @@ footer{
     transition: .3s;
 }
 .footerContain .socialContain .logo:nth-child(1) img:hover{
-    content: url(assets/image/home_footer_facebookHover.png);
+    content: url(../image/home_footer_facebookHover.png);
 }
 .footerContain .socialContain .logo:nth-child(2) img:hover{
-    content: url(assets/image/home_footer_instagramHover.png);
+    content: url(../image/home_footer_instagramHover.png);
 }
 .footerContain .socialContain .logo:nth-child(3) img:hover{
-    content: url(assets/image/home_footer_twitterHover.png);
+    content: url(../image/home_footer_twitterHover.png);
 }
 .footerContain .socialContain .logo:nth-child(4) img:hover{
-    content: url(assets/image/home_footer_lineHover.png);
+    content: url(../image/home_footer_lineHover.png);
 }
 .footerContain .socialContain .logo img{
     width: 100%;
