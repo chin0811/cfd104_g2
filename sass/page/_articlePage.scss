@@ -38,15 +38,29 @@
 /* 文章上面作者縮圖 */
 .articlePageContent .articlePageWrap .pageContent .authorShortIntro{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 10% 0 3%;
 }
-.articlePageContent .articlePageWrap .pageContent .authorShortIntro .pic{
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .item{
+    display: flex;
+    align-items: center;
+}
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .item .pic{
     width: 40px;
     height: 40px;
     border-radius: 300px;
     overflow: hidden;
     margin-right:15px;
+}
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report .pic{
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+    transform: scale(1.02);
+}
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report .pic img:hover{
+    content: url(../image/articlePage_authorShortIntro_exclamationHover.png);
 }
 /* 文章內容 */
 .articlePageContent .articlePageWrap .pageContent .page .pic{
@@ -77,12 +91,19 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
+    transition: .3s;
+    transform: scale(1.02);
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .pic:first-child img:hover{
+    content: url(../image/articlePage_shareBar_commentHover.png);
 }
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia{
     display: flex;
 }
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia .pic{
     margin: 0px 5px;
+    transition: .3s;
+    transform: scale(1.02);
 }
 /* 分享圖片hover */
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia .pic img:hover{
