@@ -1,17 +1,25 @@
+//css歸零+共用
 @import 'basic/reset';
+@import 'basic/uiSet';
+//頁首頁尾
 @import 'layout/header';
 @import 'layout/headerNormal';
 @import 'layout/footer';
+//首頁
 @import 'page/homePage';
+//關於我們
 @import 'page/about';
+//登入
 @import 'page/login';
+//客服
 @import 'page/supportChatroom';
-// @import 'page/galleryDoor';
+//商品頁
 @import 'page/product';
 @import 'page/productItem';
+//文章
 @import 'page/articleAll';
 @import 'page/articlePage';
-@import 'basic/uiSet';
+@import 'page/articlePost';
 //會員中心
 @import 'page/3dSurroundView';
 @import 'page/accountManagement';
@@ -22,6 +30,5 @@
 @import 'page/customCharacter';
 @import 'page/myListing';
 @import 'page/notice';
-
-
+//商品刊登
 @import 'page/listing';
