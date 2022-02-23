@@ -54,113 +54,113 @@ window.setInterval(function(){
     adjustmentArr[2] = adjustmentLever[1].value
     if(adjustmentArr[0]==0){
         if(adjustmentArr[1]==0){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Christopher001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Christopher001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Christopher002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Christopher002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Christopher003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Christopher003.png");
             }
         }
         if(adjustmentArr[1]==1){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Eric001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Eric001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Eric002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Eric002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Eric003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Eric003.png");
             }
         }
         if(adjustmentArr[1]==2){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Liam001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Liam001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Liam002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Liam002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Liam003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Liam003.png");
             }
         }
         if(adjustmentArr[1]==3){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Mark001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Mark001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Mark002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Mark002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Mark003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Mark003.png");
             }
         }
         if(adjustmentArr[1]==4){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Owen001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Owen001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Owen002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Owen002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Owen003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Owen003.png");
             }
         }
         if(adjustmentArr[1]==5){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Simon001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Simon001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Simon002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Simon002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Simon003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Simon003.png");
             }
         }
     }
     if(adjustmentArr[0]==1){
         if(adjustmentArr[1]==0){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Emma001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Emma001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Emma002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Emma002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Emma003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Emma003.png");
             }
         }
         if(adjustmentArr[1]==1){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Evelyn001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Evelyn001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Evelyn002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Evelyn002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Evelyn003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Evelyn003.png");
             }
         }
         if(adjustmentArr[1]==2){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Jane001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Jane001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Jane002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Jane002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Jane003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Jane003.png");
             }
         }
         if(adjustmentArr[1]==3){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Lilly001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Lilly001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Lilly002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Lilly002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Lilly003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Lilly003.png");
             }
         }
         if(adjustmentArr[1]==4){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Marilyn001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Marilyn001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Marilyn002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Marilyn002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Marilyn003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Marilyn003.png");
             }
         }
         if(adjustmentArr[1]==5){
-            characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Melissa001.png");
+            characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Melissa001.png");
             if(adjustmentArr[2]==1){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Melissa002.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Melissa002.png");
             }
             if(adjustmentArr[2]==2){
-                characterAdjustment.setAttribute("src","img/customCharacter/PowerPeople_Melissa003.png");
+                characterAdjustment.setAttribute("src","assets/image/customCharacter/PowerPeople_Melissa003.png");
             }
         }
     }
