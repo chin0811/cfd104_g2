@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Page</title>
+	<!-- <link rel="stylesheet" href="assets/assets/css/reset.css">
+    <link rel="stylesheet" href="assets/assets/css/uiSet.css">
+    <link rel="stylesheet" href="assets/assets/css/index.css">
+    <link rel="stylesheet" href="assets/assets/css/header.css">
+    <link rel="stylesheet" href="assets/assets/css/footer.css">
+    <link rel="stylesheet" href="assets/assets/css/articlePage.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- 主標32px letter-spacing:-0.512px line-height:40px
+    副標22px letter-spacing:normal line-height:28px
+    內文20px letter-spacing:-0.06px line-height:32px -->
+    
+<script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/header.js"></script>
+
+<header>
+    <section class="headerContain">
+        <div class="logoContain">
+            <div class="logo">
+                <a href="">
+                    <img src="assets/image/home_header_logo.png">
+                </a>
+            </div>
+        </div>
+        <div class="hamburger"></div>
+        <nav class="mainMenu fullscreen">
+            <ul>
+                <li style="--animation-order: 1;">
+                    <input id="navMenu" type="checkbox">
+                    <label for="navMenu" class="deepColor">
+                            <span>藝廊</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </label>
+                    <ul>
+                        <li><a href="" class="lightColor">展示區</a></li>
+                        <li><a href="" class="lightColor">雕塑類</a></li>
+                        <li><a href="" class="lightColor">畫作類</a></li>
+                        <li><a href="" class="lightColor">公仔類</a></li>
+                        <li><a href="" class="lightColor">品牌合作</a></li>
+                    </ul>
+                </li>
+                <li style="--animation-order: 2;" >
+                    <a href="/" class="deepColor">拍賣廳</a>
+                </li>
+                <li style="--animation-order: 3;">
+                    <a href="/" class="deepColor">藝論</a>
+                </li>
+                <li style="--animation-order: 4;">
+                    <a href="/" class="deepColor">關於我們</a>
+                </li>
+                <li style="--animation-order: 5;">
+                    <a href="/" class="deepColor">會員中心</a>
+                </li>
+                <li style="--animation-order: 6;">
+                    <div class="memberList">
+                        <div class="icon">
+                            <a href="">
+                                <img src="assets/image/home_header_iconBell.png">
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="">
+                                <img src="assets/image/home_header_iconMember.png">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li style="--animation-order: 7;">
+                    <div class="login">
+                        <a href="" class="whiteRound">登入</a>
+                        <a href="" class="round">上架</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="close">
+                <div></div>
+            </div>
+        </nav>
+    </section>
+</header>
+
+    <section class="articlePageContent">
+        <section class="articlePageWrap">
+            <div class="pageContent">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="" class="lightColor">首頁></a></li>
+                        <li ><a href="" class="lightColor">藝論></a></li>
+                        <li><a href="" class="epBColor">這篇文章</a></li>
+                    </ul>
+                </div>
+                <div class="authorShortIntro">
+                    <div class="item">
+                        <div class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </div>
+                        <div class="txt">
+                            <h4 class="deepColor">h4JERRY</h4>
+                            <p class="lightColor small">Feb 6 .2021</p>
+                        </div>
+                    </div>
+                    <div class="report">
+                        <div class="pic">
+                            <img src="assets/image/articlePage_authorShortIntro_exclamation.png">
+                        </div>
+                    </div>
+                </div>
+                <article class="page">
+                    <h2 class="deepColor"> h2一篇測試用的文章</h2>
+                    <article class="item PicTxtItem">
+                        <div class="pic">
+                            <img src="https://picsum.photos/500/400/?random=10">
+                        </div>
+                        <div class="txt">
+                            <h3 class="deepColor">h3 第一個標題</h3>
+                            <h4 class="deepColor">h4 第二個標題</h4>
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </article>
+                    <article class="item TxtItem">
+                        <div class="txt">
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </article>
+                    <article class="item TxtItem">
+                        <div class="txt">
+                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </article>
+                    <div class="shareBar">
+                        <div class="pic">
+                            <img src="assets/image/articlePage_shareBar_comment.png">
+                        </div>
+                        <div class="socialMedia">
+                            <div class="pic">
+                                <a href="">
+                                    <img src="assets/image/home_footer_facebook.png">
+                                </a>
+                            </div>
+                            <div class="pic">
+                                <a href="">
+                                    <img src="assets/image/home_footer_instagram.png">
+                                </a>
+                            </div>
+                            <div class="pic">
+                                <a href="">
+                                    <img src="assets/image/home_footer_twitter.png">
+                                </a>
+                            </div>
+                            <div class="pic">
+                                <a href="">
+                                    <img src="assets/image/home_footer_line.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <section class="relative">
+                    <h2>h2相關文章</h2>
+                    <div class="item">
+                        <div class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </div>
+                        <div class="txt">
+                            <h4>h4下面的文章</h4>
+                            <p class="deepColor small">p small這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </div>
+                        <div class="txt">
+                            <h4>h4下面的文章</h4>
+                            <p class="deepColor small">p small這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pic">
+                            <img src="https://picsum.photos/90/90/?random=10">
+                        </div>
+                        <div class="txt">
+                            <h4>h4下面的文章</h4>
+                            <p class="deepColor small">p small這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </div>
+                </section>
+            </div>            
+            <aside class="sideInfo">
+                <div class="authorIntro">
+                    <div class="pic">
+                        <img src="https://picsum.photos/200/200/?random=10">
+                    </div>
+                    <div class="txt">
+                        <p>p JERRY</p>
+                        <p class="lightColor small">p small 我是誰？皮卡丘。分享關於神奇寶貝的最新資訊，皮卡皮卡啾~
+                        </p>
+                    </div>
+                </div>
+                <div class="relativeSide">
+                    <h4>h4我的文章</h4>
+                    <div class="item">
+                        <a href="">
+                        <div class="pic">
+                            <img src="https://picsum.photos/300/300/?random=10">
+                        </div>
+                        <div class="txt">
+                            <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <div class="pic">
+                                <img src="https://picsum.photos/300/300/?random=10">
+                            </div>
+                            <div class="txt">
+                                <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <div class="pic">
+                                <img src="https://picsum.photos/300/300/?random=10">
+                            </div>
+                            <div class="txt">
+                                <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </section>
+        <section class="comment">
+            
+        </section>
+    </section>
+    
+<script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<footer>
+    <section class="footerContain">
+        <div class="logoContain">
+                <div class="logo">
+                    <img src="assets/image/home_header_logo.png">
+                </div>
+        </div>
+        <div class="socialContain">
+                <div class="logo">
+                    <a href="">
+                        <img src="assets/image/home_footer_facebook.png">
+                    </a>
+                </div>
+                <div class="logo">
+                    <a href="">
+                        <img src="assets/image/home_footer_instagram.png">
+                    </a>
+                </div>
+                <div class="logo">
+                    <a href="">
+                        <img src="assets/image/home_footer_twitter.png">
+                    </a>
+                </div>
+                <div class="logo">
+                    <a href="">
+                        <img src="assets/image/home_footer_line.png">
+                    </a>
+                </div>
+        </div>
+        <nav>
+                <ul>
+                    <li>
+                        <a href="">藝廊</a>
+                    </li>
+                    <li>
+                        <a href="">拍賣廳</a>
+                    </li>
+                    <li>
+                        <a href="">藝論</a>
+                    </li>
+                    <li>
+                        <a href="">關於我們</a>
+                    </li>
+                    <li>
+                        <a href="">會員中心</a>
+                    </li>
+                </ul>
+        </nav>
+        <div class="copyright">
+                <p>@2022 Powered by 藝論 Right Reserved<br>本網站為緯育Tibame前端設計工程師班專題作業，本平台僅供學習、展示之用。</p>
+        </div>
+    </section>
+</footer>
+
+</body>
+</html>

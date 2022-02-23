@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js/vue.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/uiSet.css">
+    <link rel="stylesheet" href="assets/css/listing1.css">
+    <script src="vue.js/vue.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="icon" type="image/png" href="pic/log_blank.png" />
+    <title>listing1</title>
+    <style>
+        /* h1{font-size: 36px;font-family: 'Iceberg', cursive; font-weight: bold;}
+        h2{font-size: 32px;font-family: 'Iceberg', cursive; font-weight: bold;}
+        h3{font-size: 28px;font-family: 'Iceberg', cursive; font-weight: bold;}
+        h4{font-size: 24px;font-family: 'Iceberg', cursive; font-weight: bold;}
+        h5{font-size: 20px;font-family: 'Iceberg', cursive; font-weight: bold;}
+        h6{font-size: 10px;font-family: 'Iceberg', cursive; font-weight: bold;}
+        p{font-size: 16px;font-family: Arial,sans-serif;} */
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="listingSteps aidBgColor">
+            <h2 class="epBColor">上架競拍流程</h2>
+            <h4>馬上開啟您的個人拍賣會</h4>
+            <div class="steps">
+                <div class="step">
+                    <img src="/pic/enroll_membership_icon.png">
+                    <h4>步驟一: 註冊並登入</h4>
+                    <p>上架您的藝術品進行競拍活動之前，請先註冊為「藝起」之會員。</p>
+                </div>
+                <div class="step">
+                    <img src="pic/find_page_icon.png">
+                    <h4>步驟二: 找到競拍頁面</h4>
+                    <p>請到導覽列中按下"藝術品上架"，連結到賣家上架頁面。</p>
+                </div>
+                <div class="step">
+                    <img src="pic/write_info_icon.png">
+                    <h4>步驟三: 填入商品資訊</h4>
+                    <p>完成填寫商品資訊，放上您吸引眼球的商品圖片，並注意<img src="pic/help_question_icon.png" alt="none">圖示的說明。</p>
+                </div>
+                <div class="step">
+                    <img src="pic/preview_check_icon.png">
+                    <h4>步驟四: 上架前預覽</h4>
+                    <p>案下"預覽畫面"按鈕，檢視您所填寫商品資訊，因為限時競拍系統，商品上架後將不可進行編輯，請務必確認填寫正確後才進行下一步。</p>
+                </div>
+                <div class="step">
+                    <img src="pic/audit_icon.png">
+                    <h4>步驟五: 等待審核上架</h4>
+                    <p>按下"確認送出"按鈕，待工作人員審核。</p>
+                </div>
+                <div class="step">
+                    <img src="pic/auction_icon.png">
+                    <h4>步驟六: 商品競拍開始</h4>
+                    <p>工作人員審核通過後，將再會於中心發出通知，商品立即開始上架計時競拍。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tab-content">
+        <input type="radio" id="tab1" name="mytabs" checked="checked" required>
+        <label for="tab1" class="tag epBColor">上架競標藝術品</label>
+        <!-- 上架競拍顯示 -->
+        <form action="listing1.html" class="content aidBgColor" name="page1" method="post">
+            <h4>上架資訊:</h4>
+            <div class="artTitle">
+                <label for="">
+                        <h5>藝術品名</h5>
+                    </label>
+                <input type="text" class="textBox" id="" name="artName" value="" placeholder="請輸入" required>
+            </div>
+            <div class="artist">
+                <label for="">
+                        <h5>藝術品創作者</h5>
+                        <input type="text" class="textBox" id="" name="artistName" value="" placeholder="請輸入" required>
+                    </label>
+            </div>
+            <div class="bidTime">
+                <label for="">
+                        <h5>競標時間</h5>
+                        <select name="time" class="aidBgColor" required>
+                            <option value="">請選擇</option>
+                            <option value="1">24小時</option>
+                            <option value="2">3天</option>
+                            <option value="3">7天</option>
+                            <option value="4">10天</option>
+                            <option value="5">15天</option>
+                            <option value="6">21天</option>
+                            <option value="7">30天</option>
+                        </select>
+                    </label>
+            </div>
+            <div class="startPrice">
+                <label for="">
+                    <h5>起標價</h5>
+                </label>
+                <input type="text" class="textBox" id="" name="starPrice" value="" placeholder="請輸入" required>
+            </div>
+            <div class="bidPitch">
+                <label for="">
+                    <h5>每次標價間距</h5>
+                    <select name="bidPitch" class="aidBgColor" required>
+                        <option value="">請選擇</option>
+                        <option value="100">NT 100</option>
+                        <option value="200">NT 200</option>
+                        <option value="500">NT 500</option>
+                        <option value="1000">NT 1,000</option>
+                        <option value="2000">NT 2,000</option>
+                        <option value="5000">NT 5,000</option>
+                        <option value="10000">NT 10,000</option>
+                        <option value="20000">NT 20,000</option>
+                        <option value="50000">NT 50,000</option>
+                        <option value="100000">NT 100,000</option>
+                    </select>
+                </label>
+            </div>
+            <div class="price">
+                <label for="">
+                    <h5>定價</h5>
+                </label>
+                <input type="text" class="textBox" id="price" name="" value="" placeholder="請輸入" required>
+            </div>
+            <div class="productType">
+                <h4>產品種類:</h4>
+                <div class="allType">
+                    <div class="type">
+                        <label>
+                            <input type="radio" name="type" required>
+                            畫作品
+                        </label>
+                    </div>
+                    <div class="type">
+                        <label>
+                            <input type="radio" name="type">
+                            雕像/模型/公仔
+                        </label>
+                    </div>
+                    <div class="type">
+                        <label>
+                            <input type="radio" name="type">
+                            裝置藝術品
+                        </label>
+                    </div>
+                    <div class="type">
+                        <label>
+                            <input type="radio" name="type">
+                            街頭藝術品
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="ad">
+                <div class="show">
+                    <h4>藝廊廣告需求:<span><img src="pic/help_question_icon.png" alt="none"></span></h4>
+                    <div class="qAnswer">
+                        <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。<br>(如右方)達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
+                    </div>
+                </div>
+                <label>
+                    <input type="radio" name="ad" required>
+                    購買廣告
+                </label>
+                <label>
+                    <input type="radio" name="ad">
+                    暫無需求
+                </label>
+            </div>
+            <section>
+                <div class="cube">
+                    <div class="top"></div>
+                    <div>
+                        <span style="--i:0"></span>
+                        <span style="--i:1"></span>
+                        <span style="--i:2"></span>
+                        <span style="--i:3"></span>
+                    </div>
+                </div>
+            </section>
+            <div class="uploadFile">
+                <h4>藝術品圖檔上傳:</h4>
+                <ol class="uploadPicture">
+                    <li>
+                        <input type="file" id="pic" name="pic" accept="image/*" required>
+                        <label for="pic"><img src="pic/upload_image_icon.png" alt="none"></label>
+                    </li>
+                    <li>
+                        <input type="file" id="pic" name="pic" accept="image/*">
+                        <label for="pic"><img src="pic/add_icon.png" alt="none"></label>
+                    </li>
+                    <!--
+                    <li></li>
+                    <li></li>
+                    <li></li> -->
+                </ol>
+            </div>
+            <div class="uploadCertification">
+                <h4>藝術證明:</h4>
+                <div class="certification">
+                    <input type="file" id="paper" name="paper" required>
+                    <label for="paper"><img src="pic/add_icon.png" alt="none"></label>
+                </div>
+            </div>
+            <!-- <form action="ckeditor.php"> -->
+            <div class="productIntro">
+                <h4>商品介紹(商品描述):</h4>
+                <textarea name="productIntro" id="productIntro" cols="80" rows="10" name="goods" required></textarea>
+            </div>
+            <div class="sellerIntro">
+                <h4>賣家介紹(自我推薦):</h4>
+                <textarea name="sellerIntro" id="sellerIntro" cols="80" rows="10" name="sellerIntro" required></textarea>
+            </div>
+            <!-- </form> -->
+            <section class="btn">
+                <input type="button" class="btnProduct mainBgColor" value="預覽畫面" id="btnProduct">
+                <input type="submit" class="btnProduct epFBgColor" value="確認送出(審核)" onclick="check()">
+                <!--onclick="location.href='listing.html'"-->
+            </section>
+        </form>
+        <!--<script type="text/javascript">
+            //此check()函式在最後的「傳送」案鈕會用到
+            // function check()
+            // {
+                    //若<form>屬性name:page1裡的商品介紹為空字串，則顯示「請填寫商品說明」
+                // if(page1.productIntro.value == "")
+                // {
+                    // alert("請填寫商品說明");
+                // }
+                //若<form>屬性name:page1裡的賣家介紹為空字串，則顯示「請填寫賣家介紹
+                // else if(page1.sellerIntro.value == "")
+                // {
+                    // alert("請填寫賣家介紹");
+                // }
+                // else if(page1.sellerIntro.value == "")
+                // {
+                    // alert("請填寫賣家介紹");
+                // }
+                // else if(page1.sellerIntro.value == "")
+                // {
+                    // alert("請填寫賣家介紹");
+                // }
+                //若<form>屬性name:page1裡的文字方塊與下拉式選單值為空字串或是沒有選擇月或日，則顯示「未輸入完整生日日期」
+                // else if(page1.year.value == "" || reg.month.value == "00" || reg.day.value == "00")
+                // {
+                //     alert("請填寫賣家介紹~!");
+                // }
+                //若<form>屬性name值為reg裡的核取方塊沒有選擇，則顯示「未選擇性別」
+                // else if(!page1.sex[0].checked && !reg.sex[1].checked)
+                // {
+                //     alert("未選擇性別");
+                // }
+                //若以上條件皆不符合，也就是表單資料皆有填寫的話，則將資料送出
+                // else page1.submit();
+            // }
+        // </script>-->
+
+        <input type="radio" id="tab2" name="mytabs">
+        <label for="tab2" class="tag epBColor">展覽藝術品</label>
+        <!-- 展覽品頁面顯示 -->
+        <form action="#" class="content aidBgColor" name="pag2" method="post">
+            <h4>上架資訊:</h4>
+            <div class="artTitle">
+                <label for="">
+                    <h5>藝術品名</h5>
+                </label>
+                <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
+            </div>
+            <div class="artist">
+                <label for="">
+                    <h5>藝術品創作者</h5>
+                </label>
+                <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
+            </div>
+            <div class="uploadFile">
+                <h4>藝術品圖檔上傳:</h4>
+                <ol class="uploadPicture">
+                    <li>
+                        <input type="file" id="pic" name="pic" accept="image/*" required>
+                        <label for="pic"><img src="pic/upload_image_icon.png" alt="none"></label>
+                    </li>
+                    <li>
+                        <input type="file" id="pic" name="pic" accept="image/*">
+                        <label for="pic"><img src="pic/add_icon.png" alt="none"></label>
+                    </li>
+                    <!--
+                    <li></li>
+                    <li></li>
+                    <li></li> -->
+                </ol>
+            </div>
+            <div class="uploadCertification">
+                <h4>藝術證明:</h4>
+                <div class="certification">
+                    <input type="file" id="paper" name="paper" required>
+                    <label for="paper"><img src="pic/add_icon.png" alt="none"></label>
+                </div>
+            </div>
+            <!-- <form action="ckeditor.php"> -->
+            <div class="productIntro">
+                <h4>商品介紹(商品描述):</h4>
+                <textarea name="productIntro1" id="productIntro1" cols="80" rows="10" name="goods" required></textarea>
+            </div>
+            <div class="sellerIntro">
+                <h4>賣家介紹(自我推薦):</h4>
+                <textarea name="sellerIntro1" id="sellerIntro1" cols="80" rows="10" name="sellerIntro" required></textarea>
+            </div>
+            <!-- </form> -->
+            <section class="btn">
+                <input type="button" class="btnProduct epFBgColor" id="btnProduct1" value="預覽畫面">
+                <input type="submit" class="btnProduct epFBgColor" value="確認送出(審核)">
+            </section>
+        </form>
+    </section>
+
+    <!-- 文字編輯顯示畫面ckeditor (rich text editor)-->
+    <!-- <script src="ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('productIntro')
+        CKEDITOR.replace('sellerIntro')
+        CKEDITOR.replace('productIntro1')
+        CKEDITOR.replace('sellerIntro1')
+    </script> -->
+
+    <!-- 燈箱預覽畫面 -->
+    <section>
+        <div class="modal-container" id="modal_container">
+            <div class="modal">
+                <img src="https://picsum.photos/500/450/?random=10">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, quasi!</p>
+            </div>
+            <input type="button" value="確認" class="lightboxBtn epFBgColor" id="lightboxBtn">
+        </div>
+    </section>
+    <script>
+        const open = document.getElementById('btnProduct');
+        const close = document.getElementById('lightboxBtn');
+        const modal = document.getElementById('modal_container');
+        open.addEventListener('click', () => {
+            modal.classList.add('show');
+        });
+        close.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+    </script>
+
+
+
+
+    <!-- <section>
+        <div class="modal-container1" id="modal_container1">
+            <div class="modal">
+                <img src="https://picsum.photos/500/450/?random=10">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, quasi!</p>
+            </div>
+            <input type="button" value="確認" class="lightboxBtn1 epFBgColor" id="lightboxBtn1">
+        </div>
+    </section>
+
+    <script>
+        const open = document.getElementById('btnProduct1');
+        const close = document.getElementById('lightboxBtn1');
+        const modal = document.getElementById('modal_container1');
+        open.addEventListener('click', () => {
+            modal.classList.add('show1');
+        });
+        close.addEventListener('click', () => {
+            modal.classList.remove('show1');
+        });
+    </script> -->
+
+
+    <!-- <div id="app"> -->
+    <!-- <h1>{{message}}</h1> 印出下方message變數的資料 -->
+    <!-- <h2>{{score*0.8}}</h2> -->
+    <!-- <input type="text" v-model="message"> v-model(雙向綁定)要告訴"綁定下方vue的哪裡" -->
+    <!-- </div> -->
+    <!-- <div id="app2"></div> -->
+
+    <!-- <script> -->
+    <!-- // new Vue({ -->
+    <!-- // el:'#app', -->
+    <!-- // data: { -->
+    <!-- // message: 'Hello', //變數 -->
+    <!-- // score: 100, -->
+    <!-- // }, -->
+    <!-- //屬性el:,data:，屬性值:''字串,{}物件, -->
+    <!-- // }); -->
+    <!-- // </script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</body>
+
+</html>
