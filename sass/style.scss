@@ -1,12 +1,17 @@
+
+@import 'basic/reset';
+
+@import 'layout/header';
+@import 'layout/headerNormal';
+@import 'layout/footer';
+@import 'page/homePage';
 @import 'page/about';
 @import 'page/login';
 @import 'page/supportChatroom';
-@import 'page/homePage';
 // @import 'page/galleryDoor';
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/headerNormal';
 @import 'page/product';
 @import 'page/productItem';
 @import 'page/articleAll';
 @import 'page/articlePage';
+
+@import 'basic/uiSet';

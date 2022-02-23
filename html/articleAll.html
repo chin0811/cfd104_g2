@@ -8,88 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/uiSet.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/articleAll.css">
+	<!-- <link rel="stylesheet" href="assets/css/css/reset.css">
+    <link rel="stylesheet" href="assets/css/css/uiSet.css">
+    <link rel="stylesheet" href="assets/css/css/index.css">
+    <link rel="stylesheet" href="assets/css/css/header.css">
+    <link rel="stylesheet" href="assets/css/css/footer.css">
+    <link rel="stylesheet" href="assets/css/css/articleAll.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="js/header.js"></script>
 </head>
-<body>
-    <header>
-        <section class="headerContain">
-            <section class="logoContain">
-                <section class="logo">
-                    <a href="">
-                        <img src="../image/home_header_logo.png">
-                    </a>
-                </section>
-            </section>
-            <section class="hamburger"></section>
-            <nav class="mainMenu fullscreen">
-                <ul>
-                    <li style="--animation-order: 1;">
-                        <input id="navMenu" type="checkbox">
-                        <label for="navMenu" class="deepColor">
-                                <span>藝廊</span>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </a>
-                        </label>
-                        <ul>
-                            <li><a href="" class="lightColor">展示區</a></li>
-                            <li><a href="" class="lightColor">雕塑類</a></li>
-                            <li><a href="" class="lightColor">畫作類</a></li>
-                            <li><a href="" class="lightColor">公仔類</a></li>
-                            <li><a href="" class="lightColor">品牌合作</a></li>
-                        </ul>
-                    </li>
-                    <li style="--animation-order: 2;" >
-                        <a href="/" class="deepColor">拍賣廳</a>
-                    </li>
-                    <li style="--animation-order: 3;">
-                        <a href="/" class="deepColor">藝論</a>
-                    </li>
-                    <li style="--animation-order: 4;">
-                        <a href="/" class="deepColor">關於我們</a>
-                    </li>
-                    <li style="--animation-order: 5;">
-                        <a href="/" class="deepColor">會員中心</a>
-                    </li>
-                    <li style="--animation-order: 6;">
-                        <section class="memberList">
-                            <section class="icon">
-                                <a href="">
-                                    <img src="../image/home_header_iconSearch.png">
-                                </a>
-                            </section>
-                            <section class="icon">
-                                <a href="">
-                                    <img src="../image/home_header_iconBell.png">
-                                </a>
-                            </section>
-                            <section class="icon">
-                                <a href="">
-                                    <img src="../image/home_header_iconMember.png">
-                                </a>
-                            </section>
-                        </section>
-                    </li>
-                    <li style="--animation-order: 7;">
-                        <section class="login">
-                            <a href="" class="deepColor">登入</a>
-                            <a href="" class="deepColor epFBgColor">上架</a>
-                        </section>
-                    </li>
-                </ul>
-                <section class="close">
-                    <div></div>
-                </section>
-            </nav>
-        </section>
-    </header>
+    @@include('layout/header.html')
     <section class="articleContent">
         <h2 class="deepColor">藝論</h2>
         <input type="radio" name="whoPost" class="listchoose" id="officePost" checked>
@@ -104,7 +34,7 @@
                 <article class="article1">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_bag.png" alt="">
+                            <img src="assets/image/article_articleContent_bag.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">這是一個背包</h4>
@@ -115,7 +45,7 @@
                 <article class="article2">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_jeffBollun.png" alt="">
+                            <img src="assets/image/article_articleContent_jeffBollun.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">看起來普通的氣球</h4>
@@ -127,7 +57,7 @@
                 <article class="article3">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_threeMonster.jpg" alt="">
+                            <img src="assets/image/article_articleContent_threeMonster.jpg" alt="">
                         </section>
                         <section class="txt">
                             <h3 class="deepColor">盤子的歷史</h3>
@@ -143,7 +73,7 @@
                 <article class="article4">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_sculpt.png" alt="">
+                            <img src="assets/image/article_articleContent_sculpt.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">雕刻的意義</h4>
@@ -154,7 +84,7 @@
                 <article class="article5">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_flowerPainting.jpeg" alt="">
+                            <img src="assets/image/article_articleContent_flowerPainting.jpeg" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">花畫畫畫花</h4>
@@ -177,7 +107,7 @@
                 <article class="article6">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_bighead.png" alt="">
+                            <img src="assets/image/article_articleContent_bighead.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">屎臉</h4>
@@ -188,7 +118,7 @@
                 <!-- <article class="article7">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/home_homeCatalog_elmoSculpt.png" alt="">
+                            <img src="assets/image/home_homeCatalog_elmoSculpt.png" alt="">
                         </section>
                         <h4 class="deepColor">第三章</h4>
                         <p class="lightColor">程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場，所有人選項服飾</p>
@@ -199,7 +129,7 @@
                 <article class="article1">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/home_homeCatalog_smilePaint.png" alt="">
+                            <img src="assets/image/home_homeCatalog_smilePaint.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">蒙娜麗莎在笑你</h4>
@@ -210,7 +140,7 @@
                 <article class="article2">
                     <a href="">
                         <section class="pic">
-                                <img src="../image/home_homeCatalog_lavbag.png" alt="">
+                                <img src="assets/image/home_homeCatalog_lavbag.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">LV的包包</h4>
@@ -221,7 +151,7 @@
                 <article class="article3">
                     <a href="">
                         <section class="pic">
-                                <img src="../image/article_articleContent_flowerPainting.jpeg" alt="">
+                                <img src="assets/image/article_articleContent_flowerPainting.jpeg" alt="">
                             </section>
                             <section class="txt">
                                 <h4 class="deepColor">花畫畫畫花</h4>
@@ -244,7 +174,7 @@
                 <article class="article4">
                     <a href="">
                         <section class="pic">
-                                <img src="../image/home_homeIntro_suitcase.png" alt="">
+                                <img src="assets/image/home_homeIntro_suitcase.png" alt="">
                             </section>
                             <section class="txt">
                                 <h4 class="deepColor">超貴的行李箱</h4>
@@ -255,7 +185,7 @@
                 <article class="article5">
                     <a href="">
                         <section class="pic">
-                                <img src="../image/galley__lavKoonsbag.png" alt="">
+                                <img src="assets/image/galley__lavKoonsbag.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">另一個很貴的包包</h4>
@@ -266,7 +196,7 @@
                 <article class="article6">
                     <a href="">
                         <section class="pic">
-                                <img src="../image/article_articleContent_sculpt.png" alt="">
+                                <img src="assets/image/article_articleContent_sculpt.png" alt="">
                         </section>
                         <section class="txt">
                             <h4 class="deepColor">雕刻的意義</h4>
@@ -277,7 +207,7 @@
                 <!-- <article class="article7">
                     <a href="">
                         <section class="pic">
-                            <img src="../image/article_articleContent_flowerPainting.jpeg" alt="">
+                            <img src="assets/image/article_articleContent_flowerPainting.jpeg" alt="">
                         </section>
                         <h4 class="deepColor">第三章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
@@ -290,14 +220,14 @@
                 <section class="leftArticle">
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_bag.png" alt="">
+                            <img src="assets/image/article_articleContent_bag.png" alt="">
                         </section>
                         <h4 class="deepColor">第一章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
                     </article>
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_jeffBollun.png" alt="">
+                            <img src="assets/image/article_articleContent_jeffBollun.png" alt="">
                         </section>
                         <h4 class="deepColor">第二章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
@@ -306,14 +236,14 @@
                 <section class="rightArticle">
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_kawsHolding.png" alt="">
+                            <img src="assets/image/article_articleContent_kawsHolding.png" alt="">
                         </section>
                         <h4 class="deepColor">第三章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
                     </article>
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_plate.png" alt="">
+                            <img src="assets/image/article_articleContent_plate.png" alt="">
                         </section>
                         <h4 class="deepColor">第四章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
@@ -324,14 +254,14 @@
                 <section class="leftArticle">
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_beBear.png" alt="">
+                            <img src="assets/image/article_articleContent_beBear.png" alt="">
                         </section>
                         <h4 class="deepColor">第一章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
                     </article>
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_sculpt.png" alt="">
+                            <img src="assets/image/article_articleContent_sculpt.png" alt="">
                         </section>
                         <h4 class="deepColor">第二章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
@@ -340,14 +270,14 @@
                 <section class="rightArticle">
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_flowerPainting.jpeg" alt="">
+                            <img src="assets/image/article_articleContent_flowerPainting.jpeg" alt="">
                         </section>
                         <h4 class="deepColor">第三章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
                     </article>
                     <article>
                         <section class="pic">
-                            <img src="../image/article_articleContent_bighead.png" alt="">
+                            <img src="assets/image/article_articleContent_bighead.png" alt="">
                         </section>
                         <h4 class="deepColor">第四章</h4>
                         <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
@@ -356,59 +286,6 @@
             </section>
         </section> -->
     </section>
-    <footer>
-                <section class="footerContain">
-                    <section class="logoContain">
-                        <section class="logo">
-                            <img src="../image/home_header_logo.png">
-                        </section>
-                    </section>
-                    <section class="socialContain">
-                        <section class="logo">
-                            <a href="">
-                                <img src="../image/home_footer_facebook.png">
-                            </a>
-                        </section>
-                        <section class="logo">
-                            <a href="">
-                                <img src="../image/home_footer_instagram.png">
-                            </a>
-                        </section>
-                        <section class="logo">
-                            <a href="">
-                                <img src="../image/home_footer_twitter.png">
-                            </a>
-                        </section>
-                        <section class="logo">
-                            <a href="">
-                                <img src="../image/home_footer_line.png">
-                            </a>
-                        </section>
-                    </section>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="">藝廊</a>
-                            </li>
-                            <li>
-                                <a href="">拍賣廳</a>
-                            </li>
-                            <li>
-                                <a href="">藝論</a>
-                            </li>
-                            <li>
-                                <a href="">關於我們</a>
-                            </li>
-                            <li>
-                                <a href="">會員中心</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <section class="copyright">
-                        <p class="lightColor">@2022 Powered by 藝論 Right Reserved<br>本網站為緯育Tibame前端設計工程師班專題作業，本平台僅供學習、展示之用。</p>
-                    </section>
-                </section>
-    </footer> 
-
+    @@include('layout/footer.html')
 </body>
 </html>
