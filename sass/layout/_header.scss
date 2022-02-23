@@ -71,10 +71,10 @@ header{
     transition: .3s;
 }
 .headerContain .mainMenu li .memberList .icon:first-child img:hover{
-    content: url(assets/image/home_header_iconBellHover.png);
+    content: url(../image/home_header_iconBellHover.png);
 }
 .headerContain .mainMenu li .memberList .icon:last-child img:hover{
-    content: url(assets/image/home_header_iconMemberHover.png);
+    content: url(../image/home_header_iconMemberHover.png);
 }
 /*------ 控制下拉式選單 ------*/
 /* 隱藏input按鈕 */
