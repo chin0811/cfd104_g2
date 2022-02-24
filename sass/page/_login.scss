@@ -1,50 +1,9 @@
 
 .loginArea{
-    .round{
-        /* 橢圓形實心按鈕 */
-        font-size: 16px;
-        background-color: #FFD60A;
-        font-weight: 600;
-        padding: 10px 30px;
-        border-radius: 200px;
-        border: none;
-    }
-    .round:hover,.square:hover{
-        /* 實心按鈕hover */
-        color: #FFFFFF;
-        background-color: #141414;
-    }
-    .roundOutline{
-        /* 橢圓形外框按鈕 */
-        font-size: 16px;
-        font-weight: 600;
-        padding: 10px 30px;
-        border-radius: 200px;
-        border: 2px solid #FFD60A;
-        Box-shadow: 0px 0px 5px 0px #00000055 ;
-        transform: scale(1);
-        background-color: transparent;
-    }
-    .roundOutline:hover,.squareOutline:hover{
-        /* hover橢圓形外框按鈕 */
-        color: #FFFFFF;
-        background-color: #141414;
-        border: 2px solid #141414;
-        cursor: pointer;
-        transform: scale(0.95);
-        transition: transform 0.5s ;
-    }
-
-
-
-
-
-
     /* 登入註冊區的最外層section */
     width: 100%;
     box-sizing: border-box;
     padding: 5em 0em;
-
     #changeBtn{
         /* 隱藏切換顯示用input的checkbox */
         display: none;
