@@ -231,12 +231,12 @@
 // 隱藏區 //
 .articlePageContent .articlePageWrap .hiddenArea{
     // 定位在.articlePageContent .articlePageWrap
-    position: absolute;
+    position: sticky;
     top:0;
     right: 0;
     width: 100%;
     height: 100%;
-    // border: 1px solid #f00;
+    border: 1px solid #f00;
     overflow: hidden;
 }
 // 留言區 //
