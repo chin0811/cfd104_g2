@@ -1,0 +1,67 @@
+.consumptionRecord_bouncing main{
+    margin-top: 1em;
+}
+
+/* 紀錄方框 */
+.consumptionRecord_bouncing main .record{
+    border: 1px solid #000;
+    margin-top: 1em;
+}
+.consumptionRecord_bouncing main .record>section{
+    padding: 1em;
+    border-bottom: 1px solid #000;
+}
+.consumptionRecord_bouncing main .record section:last-child{
+    border-bottom: 0px solid #000;
+}
+
+/* 第一格標題 */
+.consumptionRecord_bouncing main .record .recordTitle p{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 第二格圖文 */
+.consumptionRecord_bouncing main .record .recordGraphics{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsGraphics{
+    display: flex;
+    flex-direction: column;
+}
+.consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsGraphics>*{
+    margin-bottom: 1em;
+}
+.consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsText{
+    display: flex;
+    align-items: flex-end;
+}
+
+/* 第三格底部 */
+.consumptionRecord_bouncing main .record .recordFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.consumptionRecord_bouncing main .record .recordFooter .buttonGroup{
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media(min-width:769px){
+    .consumptionRecord_bouncing main .record .recordGraphics,
+    .consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsGraphics{
+        flex-direction: row;
+    }
+    .consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsGraphics>*{
+        margin-right: 1em;
+        margin-bottom: 0em;
+    }
+    .consumptionRecord_bouncing main .record .recordFooter .buttonGroup{
+        display: block;
+    }
+}

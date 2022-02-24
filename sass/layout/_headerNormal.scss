@@ -1,7 +1,7 @@
 header{
     position: sticky;
-    top: 0px;
-    padding-top: 20px;
+    top: 20px;
+    // padding-top: 20px;
     z-index: 9999;
     /* background-color: #ff0; */
 }
@@ -60,12 +60,9 @@ header{
     transition: .3s;
 }
 .headerNormalContain .mainMenu li .memberList .icon:first-child img:hover{
-    content: url(../image/home_header_iconSearchHover.png);
-}
-.headerNormalContain .mainMenu li .memberList .icon:nth-child(2) img:hover{
     content: url(../image/home_header_iconBellHover.png);
 }
-.headerNormalContain .mainMenu li .memberList .icon:nth-child(3) img:hover{
+.headerNormalContain .mainMenu li .memberList .icon:last-child img:hover{
     content: url(../image/home_header_iconMemberHover.png);
 }
 .headerNormalContain .mainMenu li .login{
@@ -97,11 +94,11 @@ header{
 #navMenu{
     display: none;
 }
-.mainMenu ul li:first-child {
+.headerNormalContain .mainMenu ul li:first-child {
     display: block;
     text-align: center;
 }
-.mainMenu ul li:first-child ul{
+.headerNormalContain .mainMenu ul li:first-child ul{
     display: none;
 }
 #navMenu:checked ~ ul{
@@ -115,7 +112,7 @@ header{
 }
 /* 手機的漢堡 */
 @media screen and (max-width: 768px) {
-    .mainMenu {
+    .headerNormalContain .mainMenu {
         clip-path: circle(0% at 96.5% 4%);
         /* 定位在header */
         position: absolute;
@@ -126,7 +123,7 @@ header{
         left: 0;
         transition: all 0.5s cubic-bezier(0.23, 093,0.23, 0.93);
     }
-    .mainMenu a{
+    .headerNormalContain .mainMenu a{
         font-size: 1em;
     }
     /* 漢堡選單 */
@@ -141,7 +138,7 @@ header{
                     0px -10px 0px #394897;
         cursor: pointer;
     }
-    .mainMenu ul {
+    .headerNormalContain .mainMenu ul {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -149,25 +146,25 @@ header{
         height: 100vh;
         margin: auto;
     }
-    .mainMenu ul ul {
+    .headerNormalContain .mainMenu ul ul {
         height: auto;
     }
-    .mainMenu ul li:first-child {
+    .headerNormalContain .mainMenu ul li:first-child {
         display: block;
         text-align: center;
     }
-    .mainMenu ul li:first-child ul{
+    .headerNormalContain .mainMenu ul li:first-child ul{
         display: none;
     }
-    .mainMenu ul li {
+    .headerNormalContain .mainMenu ul li {
         padding: 10px 0;
         box-sizing: border-box;
     }
-    .mainMenu ul li label{
+    .headerNormalContain .mainMenu ul li label{
         display: flex;
         justify-content: center;
     }
-    .mainMenu ul li label i{
+    .headerNormalContain .mainMenu ul li label i{
         display: flex;
         align-items: center;
         font-size: 10px;
@@ -186,7 +183,7 @@ header{
         margin: 0 2px;
     }
     /* 關閉符號 */
-    .mainMenu .close {
+    .headerNormalContain .mainMenu .close {
         position: absolute;
         top: 0.7rem;
         right: 3rem;
@@ -195,12 +192,12 @@ header{
         transform: rotate(45deg);
         cursor: pointer;
     }
-    .mainMenu .close div {
+    .headerNormalContain .mainMenu .close div {
         width: 32px;
         height: 32px;
         overflow: hidden;
     }
-    .mainMenu .close div:before, .mainMenu .close div:after {
+    .headerNormalContain .mainMenu .close div:before,.headerNormalContain .mainMenu .close div:after {
         content: "";
         width: 100%;
         height: 2px;
@@ -208,18 +205,18 @@ header{
         position: absolute;
         border-radius: 5px;
     }
-    .mainMenu .close div:after {
+    .headerNormalContain .mainMenu .close div:after {
         transform: rotate(90deg);
         background: #394897;
     }
-    .mainMenu.active {
+    .headerNormalContain .mainMenu.active {
         clip-path: circle(140% at 96.5% 4%);
         transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
     }
-    .mainMenu.active ul > li {
+    .headerNormalContain .mainMenu.active ul > li {
         animation: animateIn 360ms ease-in-out calc(var(--animation-order) * 100ms) both;
     }
-    .mainMenu.reverse_anim {
+    .headerNormalContain .mainMenu.reverse_anim {
         clip-path: circle(0% at 96.5% 4%);
         opacity: 0.6;
         transition: all 0.4s cubic-bezier(0.23, 0.93, 0.23, 0.93);
@@ -246,7 +243,7 @@ header{
         margin: 0 10px;
         flex-shrink: 1;
     }
-    .mainMenu ul li label{
+    .headerNormalContain .mainMenu ul li label{
         display: flex;
         justify-content: center;
     }

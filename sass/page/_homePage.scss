@@ -150,7 +150,7 @@
     width: 200px;
     /* 定位在.homeGallery */
     position: absolute;
-    top: -220px;
+    top: -30%;
     left: 2%;
     z-index: 999;
 }
@@ -169,7 +169,7 @@
 @media screen and (min-width:768px){
     .homeGallery .scrollPic{
         width: 300px;
-        top: -320px;
+        top: -30%;
         left:27%;
         z-index: 999;
     }
@@ -188,7 +188,7 @@
     width: 200px;
     /* 定位在.homeGallery */
     position: absolute;
-    top: -220px;
+    top: -30%;
     left: 2%;
     z-index: 900;
 }
@@ -207,7 +207,7 @@
 @media screen and (min-width:768px){
     .homeMember .scrollPic{
         width: 300px;
-        top: -320px;
+        top: -30%;
         left:27%;
     }
 }

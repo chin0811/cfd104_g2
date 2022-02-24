@@ -1,0 +1,105 @@
+.myListing_bouncing main{
+    margin-top: 1em;
+
+}
+.myListing_bouncing main .commodityGroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.myListing_bouncing main .commodityGroup .commodity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #000;
+    margin-top: 2em;
+}
+
+.myListing_bouncing main .commodityGroup .commodity:first-child{
+    margin-top: 1em;
+}
+
+.myListing_bouncing main .commodityGroup .commodity:last-child{
+    border-bottom: 0px solid #000;
+}
+
+/* 圖文 */
+.myListing_bouncing main .commodityGroup .commodity .graphics{
+    position: relative;
+}
+.myListing_bouncing main .commodityGroup .commodity .graphics .love{
+    background: #eee;
+    width: 3em;
+    padding: 4px;
+    border-radius: 30px;
+    position: absolute; /* .myListing_bouncing main .commodityGroup .commodity .graphics */
+    top: .5em;
+    left: 0.5em;
+}
+.myListing_bouncing main .commodityGroup .commodity .graphics p{
+    line-height: 1.5;
+}
+
+/* 競標 */
+.myListing_bouncing main .commodityGroup .commodity .bid>*{
+    margin-top: 1em;
+}
+.myListing_bouncing main .commodityGroup .commodity .bid .information{
+    display: flex;
+    flex-direction: column;
+}
+.myListing_bouncing main .commodityGroup .commodity .bid .information>*{
+    display: flex;
+    justify-content: space-between;
+}
+.myListing_bouncing main .commodityGroup .commodity .bid .information .time{
+    margin-top: 1em;
+    color: #999;
+}
+.myListing_bouncing main .commodityGroup .commodity .bid .information .timeAndButton{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.myListing_bouncing main .commodityGroup .commodity .bid .information .timeAndButton>*{
+    margin-bottom: 1em;
+}
+.myListing_bouncing main .commodityGroup .commodity .bid .button{
+    font-weight: 900;
+}
+/*
+.myListing_bouncing main .commodityGroup .commodity .bid .button:hover{
+    background: #fff;
+}
+*/
+
+
+
+/* RWD */
+@media(min-width:769px){
+    .myListing_bouncing main{
+        margin-top: 1em;
+    }
+    .myListing_bouncing main .commodityGroup .commodity{
+        flex-direction: row;
+        justify-content: center;
+    }
+    /*
+    .myListing_bouncing main .commodityGroup .commodity>*{
+        width: 40%;
+    }
+    */
+    .myListing_bouncing main .commodityGroup .commodity .bid{
+        padding-left: 3em;
+    }
+    .myListing_bouncing main .commodityGroup .commodity .bid .information .time{
+        margin-top: 0em;
+    }
+    .myListing_bouncing main .commodityGroup .commodity .bid .information{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

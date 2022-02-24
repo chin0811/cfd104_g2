@@ -1,10 +1,25 @@
-.articlePageContent{
+.articlePageContent .articlePageWrap{
+    position: relative;
     width: 90%;
     max-width: 1200px;
-    /* background-color: #0ff; */
+    // 給報紙外框，不要讓它貼邊
+    // border: 10px solid #FBF7F3;
+    padding:20px 2px 0;
+    box-sizing: border-box;
+    // background-color: #FBF7F3;
     margin:40px auto;
+    // 紙材質
+    background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;  
+    box-shadow: 2px 0 10px #8888;
+    // // 隱藏留言區
+    // overflow: hidden;
 }
 /* 所有a設定 */
+.articlePageContent{
+    position: relative;
+}
 .articlePageContent a{
     text-decoration: none;
 }
@@ -18,6 +33,8 @@
 .articlePageContent .articlePageWrap .pageContent{
     width: 100%;
     position: relative;
+    padding:10% 5% 10%;
+    box-sizing: border-box;
 }
 /* 麵包屑 */
 .articlePageContent .articlePageWrap .pageContent .breadcrumb ul{
@@ -26,15 +43,30 @@
 /* 文章上面作者縮圖 */
 .articlePageContent .articlePageWrap .pageContent .authorShortIntro{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 10% 0 3%;
 }
-.articlePageContent .articlePageWrap .pageContent .authorShortIntro .pic{
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .item{
+    display: flex;
+    align-items: center;
+}
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .item .pic{
     width: 40px;
     height: 40px;
     border-radius: 300px;
     overflow: hidden;
     margin-right:15px;
+}
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report .pic{
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report .pic img:hover{
+    content: url(../image/articlePage_authorShortIntro_exclamationHover.png);
 }
 /* 文章內容 */
 .articlePageContent .articlePageWrap .pageContent .page .pic{
@@ -46,23 +78,43 @@
     justify-content: space-between;
     margin: 80px 0 150px;
     padding: 20px 15px 15px;
-    background-color: #fff;
+    // background-color: #FBF7F3;
+    
+    // 紙材質
+    background-color: #FBF7F3;
+    opacity: 1;
+    background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;  
     border-top: 1px solid #8888;
+
     /* 定位在.articlePageWrap .pageContent .page*/
     position: sticky;
     bottom: 0;
+    // 比slideIn 留言區低
+    z-index: 50;
 }
 /* 文章分享列所有圖片設定 */
 .articlePageContent .articlePageWrap .pageContent .shareBar .pic{
     width: 30px;
     height: 30px;
     cursor: pointer;
+    transition: .3s;
+    transform: scale(1.02);
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment{
+    display: flex;
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .pic:first-child img:hover{
+    content: url(../image/articlePage_shareBar_commentHover.png);
 }
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia{
     display: flex;
 }
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia .pic{
     margin: 0px 5px;
+    transition: .3s;
+    transform: scale(1.02);
 }
 /* 分享圖片hover */
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia .pic img:hover{
@@ -82,34 +134,36 @@
     content: url(../image/home_footer_lineHover.png);
 }
 /* 下方相關文章 */
+.articlePageContent .articlePageWrap .pageContent .relative{
+    display: block;
+    margin: auto;
+}
+.articlePageContent .articlePageWrap .pageContent .relative h2{
+    border-bottom: 2px solid #8888;
+}
 .articlePageContent .articlePageWrap .pageContent .relative .item{
     display: flex;
     margin: 20px 0;
     align-items: center;
+    justify-content: center;
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item .pic{
     width: 80px;
     height: 80px;
     overflow: hidden;
+    border-radius: 5px;
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item .txt{
+    width: 70%;
     padding: 10px;
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
 @media screen and (min-width:768px){
     .articlePageContent .articlePageWrap{
         display: flex;
     }
-    
     .articlePageContent .articlePageWrap .pageContent{
-        padding:0 10%;
+        padding:0 10% 15%;
         width: 75%;
         box-sizing: border-box;
         /* border: 1px solid #000; */
@@ -119,8 +173,8 @@
         display: flex;
         /* 定位在.articlePageContent .articlePageWrap .pageContent */
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 1%;
+        left: 2%;
     }
     .articlePageContent .articlePageWrap .pageContent .breadcrumb ul li{
         font-size: 0.5em;
@@ -128,14 +182,16 @@
     /* 測欄 */
     .articlePageContent .articlePageWrap .sideInfo{
         display: block;
+        // 定位在.articlePageWrap
         position: sticky;
         top: 60px;
+        right: 0;
         height: 100%;
         width: 25%;
         padding:3% 2% 0;
         box-sizing: border-box;
         /* border: 1px solid #000; */
-        border-left: 1px solid #8888;
+        border-left: 2px solid #8888;
     }
     /* 測欄作者 */
     .articlePageContent .articlePageWrap .sideInfo .authorIntro .txt p:first-child{
@@ -173,6 +229,146 @@
         font-size: 13px;
         line-height: 1.5;
     }
+}
+
+// 隱藏區 //
+.articlePageContent .articlePageWrap .hiddenArea{
+    // 定位在.articlePageContent .articlePageWrap
+    position: sticky;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f00;
+    overflow: hidden;
+}
+// 留言區 //
+.articlePageContent .articlePageWrap .commentArea{
+    // 定位在.articlePageContent .articlePageWrap .hiddenArea
+    transition: .3s;
+    position: absolute;
+    right: -600%;
+}
+// 留言區滑入 //
+.articlePageContent .articlePageWrap .commentArea.slideIn{
+    // 定位在.articlePageContent .articlePageWrap .hiddenArea
+    position: absolute;
+    top: 0;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fbf7f3;
+    padding:20px 5px 0;
+    box-sizing: border-box;
+    transition: .3s;
+    // 比shareBar高
+    z-index: 60;
+    box-shadow: 0px 0px 3px #8888;
+}
+// 留言關閉 //
+.articlePageContent .articlePageWrap .commentArea .commentClose{
+    // 定位在.articlePageContent .articlePageWrap .commentArea
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    // background-color: aqua;
+    width: 2rem;
+    height: 2px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    border: 1px solid #394897;
+    border-radius: 5px;
+}
+.articlePageContent .articlePageWrap .commentArea .commentClose::before{
+    // 定位在.articlePageContent .articlePageWrap .commentArea .commentClose
+    content: '';
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    // background-color: aqua;
+    width: 2rem;
+    height: 4px;
+    transform: rotate(90deg);
+    cursor: pointer;
+    background-color:#394897;
+    border-radius: 5px;
+}
+// 輸入區 //
+.articlePageContent .articlePageWrap .commentArea .commentInput{
+    margin-bottom: 10%;
+}
+//輸入區會員頭像 //
+.articlePageContent .articlePageWrap .commentArea .commentInput .memberIcon{
+    display: flex;
+    align-items: center;
+    margin: 20px 0 10px;
+}
+.articlePageContent .articlePageWrap .commentArea .commentInput .memberIcon .pic{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 600px;
+    margin-right: 10px;
+}
+//輸入區輸入 //
+.articlePageContent .articlePageWrap .commentArea .commentInput .txtArea textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+    box-shadow:inset 0 0 5px #8888;
+    resize: none;
+    font-size: 16px;
+}
+// 輸入區按鈕 //
+.articlePageContent .articlePageWrap .commentArea .commentInput .txtArea .item{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 5px;
+}
+// 其他人回應區 //
+.articlePageContent .articlePageWrap .commentArea .commentElse{
+    padding-top: 5%;
+    border-top: 1px solid #8888;
+}
+.articlePageContent .articlePageWrap .commentArea .commentElse .item{
+    margin-bottom: 5%;
+    border-bottom: 1px solid #8888;
     
-    
+}
+// 其他人頭像 //
+.articlePageContent .articlePageWrap .commentArea .commentElse .item .memberIcon{
+    display: flex;
+}
+.articlePageContent .articlePageWrap .commentArea .commentElse .item .memberIcon .pic{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 200px;
+    margin-right: 2%;
+}
+
+// 其他人回應 //
+.articlePageContent .articlePageWrap .commentArea .commentElse .item .reply{
+    padding:10px 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width:768px){
+    // 隱藏區 //
+    .articlePageContent .articlePageWrap .hiddenArea{
+        // 定位在.articlePageContent .articlePageWrap
+        position: absolute;
+        top:0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+    // 留言區滑入 //
+    .articlePageContent .articlePageWrap .commentArea.slideIn{
+        // 定位在.articlePageContent .articlePageWrap
+        padding:20px 20px 0;
+    }
 }
