@@ -102,6 +102,9 @@
     transition: .3s;
     transform: scale(1.02);
 }
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment{
+    display: flex;
+}
 .articlePageContent .articlePageWrap .pageContent .shareBar .pic:first-child img:hover{
     content: url(../image/articlePage_shareBar_commentHover.png);
 }
