@@ -183,6 +183,10 @@ p.small{
     background-color: #141414;
     border: 2px solid #141414;
 }
+.size{
+    max-width: 1200px;
+    width: 90%;
+}
 
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
