@@ -6,13 +6,25 @@
     // border: 10px solid #FBF7F3;
     padding:20px 2px 0;
     box-sizing: border-box;
-    // background-color: #FBF7F3;
     margin:40px auto;
+    background-color: #fbf7f3;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+
+    // 透明底色
+    // background-color: #3e444a05;
+    // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    // border: 1px solid #94969b50;
+    // border-right: 1px solid #55595e20;
+    // border-bottom: 1px solid #55595e20;
+    // border-left: 1px solid #ffffff30;
+    // backdrop-filter: blur(0.5em);
+
     // 紙材質
-    background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0,10px 10px;  
-    box-shadow: 2px 0 10px #8888;
+    // background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
+    // background-size: 20px 20px;
+    // background-position: 0 0,10px 10px;  
+    // box-shadow: 2px 0 10px #8888;
     // // 隱藏留言區
     // overflow: hidden;
 }
@@ -80,13 +92,23 @@
     padding: 20px 15px 15px;
     // background-color: #FBF7F3;
     
+    // 透明底色
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+
     // 紙材質
-    background-color: #FBF7F3;
-    opacity: 1;
-    background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0,10px 10px;  
-    border-top: 1px solid #8888;
+    // background-color: #FBF7F3;
+    // opacity: 1;
+    // background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
+    // background-size: 20px 20px;
+    // background-position: 0 0,10px 10px;  
+    // border-top: 1px solid #8888;
 
     /* 定位在.articlePageWrap .pageContent .page*/
     position: sticky;
@@ -99,13 +121,26 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    transition: .3s;
-    transform: scale(1.02);
 }
 .articlePageContent .articlePageWrap .pageContent .shareBar .shareComment{
     display: flex;
 }
-.articlePageContent .articlePageWrap .pageContent .shareBar .pic:first-child img:hover{
+// share圖片hover變大
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .pic:hover{
+    transition: .3s;
+    transform: scale(1.02);
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment  .pic:last-child{
+    margin-left: 20px;
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like{
+    display: flex;
+    align-items: center;
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like .pic img:hover{
+    content: url(../image/articlePage_shareBar_likeHover.png);
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .pic:last-child img:hover{
     content: url(../image/articlePage_shareBar_commentHover.png);
 }
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia{
@@ -234,12 +269,12 @@
 // 隱藏區 //
 .articlePageContent .articlePageWrap .hiddenArea{
     // 定位在.articlePageContent .articlePageWrap
-    position: sticky;
+    position: absolute;
     top:0;
     right: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid #f00;
+    // border: 1px solid #f00;
     overflow: hidden;
 }
 // 留言區 //
@@ -264,7 +299,16 @@
     transition: .3s;
     // 比shareBar高
     z-index: 60;
+    // 透明底色
     box-shadow: 0px 0px 3px #8888;
+    background-color: #FBF7F350;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(2em);
 }
 // 留言關閉 //
 .articlePageContent .articlePageWrap .commentArea .commentClose{
