@@ -43,8 +43,8 @@ body{
 }
 /* 文字顏色(淺色) */
 .lightColor{
-    color: #BCBCBC;
-}
+    color: #4b4b4b;
+}   
 /* 文字背景色(淺色) */
 .lightBgColor{
     color: #BCBCBC;
@@ -183,7 +183,16 @@ p.small{
     background-color: #141414;
     border: 2px solid #141414;
 }
-
+.size{
+    max-width: 1200px;
+    width: 90%;
+}
+.marginAuto{
+    margin: auto;
+}
+.displayNone{
+    display: none;
+}
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
     h1{
@@ -211,3 +220,12 @@ p.small{
         font-size: 1.125em;
     }
 }
+// ======= input ==== //樣式
+// font-size: 1em;
+// border-radius: 200px;
+// box-sizing: border-box;
+// padding: 0.5em 1em;
+// border:none;
+// box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+// line-height: 2em;
+// background-color: transparent;

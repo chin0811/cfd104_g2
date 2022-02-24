@@ -1,60 +1,29 @@
 
 .loginArea{
-    .round{
-        /* 橢圓形實心按鈕 */
-        font-size: 16px;
-        background-color: #FFD60A;
-        font-weight: 600;
-        padding: 10px 30px;
-        border-radius: 200px;
-        border: none;
-    }
-    .round:hover,.square:hover{
-        /* 實心按鈕hover */
-        color: #FFFFFF;
-        background-color: #141414;
-    }
-    .roundOutline{
-        /* 橢圓形外框按鈕 */
-        font-size: 16px;
-        font-weight: 600;
-        padding: 10px 30px;
-        border-radius: 200px;
-        border: 2px solid #FFD60A;
-        Box-shadow: 0px 0px 5px 0px #00000055 ;
-        transform: scale(1);
-        background-color: transparent;
-    }
-    .roundOutline:hover,.squareOutline:hover{
-        /* hover橢圓形外框按鈕 */
-        color: #FFFFFF;
-        background-color: #141414;
-        border: 2px solid #141414;
-        cursor: pointer;
-        transform: scale(0.95);
-        transition: transform 0.5s ;
-    }
-
-
-
-
-
-
     /* 登入註冊區的最外層section */
     width: 100%;
     box-sizing: border-box;
     padding: 5em 0em;
-
     #changeBtn{
         /* 隱藏切換顯示用input的checkbox */
         display: none;
     }
     >article{
+        // background-color: #3e444a05;
+        // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+        // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+        // border: 1px solid #94969b50;
+        // border-right: 1px solid #55595e20;
+        // border-bottom: 1px solid #55595e20;
+        // border-left: 1px solid #ffffff30;
+        // backdrop-filter: blur(0.5em);
+
+
         /* 登入註冊區操作區大小 */
         /* 定位內部2塊 登入註冊區 切換區 定位用 */
         display: flex;
         flex-wrap: wrap;
-        min-height: 700px;
+        min-height: 500px;
         margin: auto;
         position: relative;
         border-radius: 10px;
@@ -64,6 +33,7 @@
             height: auto;
         }
         >article{
+
             /* 選取登入註冊輸入區、登入註冊切換區 */
             position: absolute;
             box-sizing: border-box;
@@ -136,6 +106,27 @@
             box-shadow: 0px 0px 8px 1px #aaaaaa55 ;
             top: 25em;
             transition: top 1s ;
+            // background-color: #fde465 ;
+            background-color: #3e444a05;
+            // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+            // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+            // border: 1px solid #94969b50;
+            // border-right: 1px solid #55595e20;
+            // border-bottom: 1px solid #55595e20;
+            // border-left: 1px solid #ffffff30;
+            backdrop-filter: blur(0.5em);
+            .roundOutline{
+                /* 橢圓形外框按鈕 */
+                // Box-shadow: 0px 0px 5px 0px #00000055 ;
+                transform: scale(1);
+            }
+            .roundOutline:hover,.squareOutline:hover{
+                /* hover橢圓形外框按鈕 */
+                transform: scale(0.95);
+                transition: transform 0.5s ;
+            }
+
+
             @media screen and (min-width:768px) {
                 top: 0;
                 width: calc( 100%/5 * 2 );

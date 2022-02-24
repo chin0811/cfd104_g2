@@ -5,234 +5,191 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品頁</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/uiSet.css">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <script src="js/vue/vue.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="js/product.js" defer></script>
 </head>
 <body>
     <!-- 許瑀芹 -->
-    <!-- 商品頁分類導覽 -->`
+    <!-- 商品頁分類導覽 -->
+    @@include('layout/header.html')
     <section class="productHead">
-        <div class="productBread">
+        <div class="productBread size marginAuto">
             <p>
                 <span>logo</span>
                 <span>>雕塑類</span>
             </p>
         </div>
-        <nav class="sideNav">
-            <div class="sideNavTitle">
-                <a href="">
-                    <h2>
-                        <span>雕塑類</span>
-                    </h2>
-                </a>
+        <div class="adjustBox size marginAuto">
+            <nav class="sideNav">
+                <div class="sideNavTitle">
+                    <a href="">
+                        <h2>
+                            <span>雕塑類</span>
+                        </h2>
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <a href=""><h3>全部</h3></a>
+                    </li>
+                    <li>
+                        <a href=""><h3>分類</h3></a>
+                    </li>
+                    <li>
+                        <a href=""><h3>分類</h3></a>
+                    </li>
+                </ul>   
+            </nav>
+            <div class="inputBox">
+                <form>
+                    <input type="text" placeholder="請輸入搜尋項目" class="inputItem">
+                </form>
             </div>
-            <ul>
-                <li>
-                    <a href=""><h3>全部</h3></a>
-                </li>
-                <li>
-                    <a href=""><h3>分類</h3></a>
-                </li>
-                <li>
-                    <a href=""><h3>分類</h3></a>
-                </li>
-            </ul>   
-        </nav>
+        </div>
     </section>
     <!-- 許瑀芹 -->
     <!-- 商品頁熱門商品輪播 -->
-    <section class="productMainCarousel productMainSection"> 
-        <h3>拍賣即將結束</h3>
-        <section class="carouselBox">
-            <article class="prouductItem commomItem aidBgColor">
-                <div class="img">
-                    <img src="https://picsum.photos/300/200/?random=10">
+    <div id="app">
+        <section class="productMainCarousel productMainSection"> 
+            <h3>拍賣即將結束</h3>
+            <section class="carouselBox">
+                <!-- 定位absolute，父層carouselBox，定位position -->
+                <div class="arrowButton linkItem" >
+                    <div class="leftArrow" v-on:click="changeIndex(-1)">
+                        &#60;
+                    </div>
                 </div>
-                <div class="text">
-                    <h4>我是標題</h4>
-                    <p>
-                        <span>創作者：</span>
-                        <span>可愛芹芹</span>
-                    </p>
+                <div class="arrowButton right linkItem" >
+                    <div class="rightArrow" v-on:click="changeIndex(1)">
+                        &#62;
+                    </div>
                 </div>
-                <div class="footer">
-                    <span>錢錢錢</span>
-                    <span>時間哦哦哦哦</span>
-                </div>
-                <div class="productButton">
-                    <button class="round">上架</button>
-                </div>
-                <!-- 定位absolute，父層prouductItem，定位position -->
-                <div class="like mainColor deepBgColor">
-                    75
-                </div>
-            </article>
-            <article class="prouductItem commomItem aidBgColor">
-                <div class="img">
-                    <img src="https://picsum.photos/300/200/?random=10">
-                </div>
-                <div class="text">
-                    <h4>我是標題</h4>
-                    <p>
-                        <span>創作者：</span>
-                        <span>可愛芹芹</span>
-                    </p>
-                </div>
-                <div class="footer">
-                    <span>錢錢錢</span>
-                    <span>時間哦哦哦哦</span>
-                </div>
-                <div class="productButton">
-                    <button class="round">上架</button>
-                </div>
-                <!-- 定位absolute，父層prouductItem，定位position -->
-                <div class="like mainColor deepBgColor">
-                    75
-                </div>
-            </article>
-            <article class="prouductItem commomItem aidBgColor">
-                <div class="img">
-                    <img src="https://picsum.photos/300/200/?random=10">
-                </div>
-                <div class="text">
-                    <h4>我是標題</h4>
-                    <p>
-                        <span>創作者：</span>
-                        <span>可愛芹芹</span>
-                    </p>
-                </div>
-                <div class="footer">
-                    <span>錢錢錢</span>
-                    <span>時間哦哦哦哦</span>
-                </div>
-                <div class="productButton">
-                    <button class="round">上架</button>
-                </div>
-                <!-- 定位absolute，父層prouductItem，定位position -->
-                <div class="like mainColor deepBgColor">
-                    75
-                </div>
-            </article>
-            <article class="prouductItem commomItem aidBgColor">
-                <div class="img">
-                    <img src="https://picsum.photos/300/200/?random=10">
-                </div>
-                <div class="text">
-                    <h4>我是標題</h4>
-                    <p>
-                        <span>創作者：</span>
-                        <span>可愛芹芹</span>
-                    </p>
-                </div>
-                <div class="footer">
-                    <span>錢錢錢</span>
-                    <span>時間哦哦哦哦</span>
-                </div>
-                <div class="productButton">
-                    <button class="round">上架</button>
-                </div>
-                <!-- 定位absolute，父層prouductItem，定位position -->
-                <div class="like mainColor deepBgColor">
-                    75
-                </div>
-            </article>
+                
+                <article class="prouductItem commomItem aidBgColor">
+                    <div class="img">
+                        <img :src="item[index].img">
+                    </div>
+                    <div class="text">
+                        <h4>{{item[index].title}}</h4>
+                        <p>
+                            <span>創作者：</span>
+                            <span>{{item[index].creator}}</span>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <span>{{item[index].price}}</span>
+                        <span>{{item[index].time}}</span>
+                    </div>
+                    <div class="productButton">
+                        <button class="round">上架</button>
+                    </div>
+                    <!-- 定位absolute，父層prouductItem，定位position -->
+                    <div class="like mainColor deepBgColor">
+                        75
+                    </div>
+                </article>
+                <article class="prouductItem commomItem aidBgColor">
+                    <div class="img">
+                        <img :src="item[index+1].img">
+                    </div>
+                    <div class="text">
+                        <h4>{{item[index+1].title}}</h4>
+                        <p>
+                            <span>創作者：</span>
+                            <span>{{item[index+1].creator}}</span>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <span>{{item[index+1].price}}</span>
+                        <span>{{item[index+1].time}}</span>
+                    </div>
+                    <div class="productButton">
+                        <button class="round">上架</button>
+                    </div>
+                    <!-- 定位absolute，父層prouductItem，定位position -->
+                    <div class="like mainColor deepBgColor">
+                        75
+                    </div>
+                </article>
+                <article class="prouductItem commomItem aidBgColor">
+                    <div class="img">
+                        <img :src="item[index+2].img">
+                    </div>
+                    <div class="text">
+                        <h4>{{item[index+2].title}}</h4>
+                        <p>
+                            <span>創作者：</span>
+                            <span>{{item[index+2].creator}}</span>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <span>{{item[index+2].price}}</span>
+                        <span>{{item[index+2].time}}</span>
+                    </div>
+                    <div class="productButton">
+                        <button class="round">上架</button>
+                    </div>
+                    <!-- 定位absolute，父層prouductItem，定位position -->
+                    <div class="like mainColor deepBgColor">
+                        75
+                    </div>
+                </article>
+                <article class="prouductItem commomItem aidBgColor">
+                    <div class="img">
+                        <img :src="item[index+3].img">
+                    </div>
+                    <div class="text">
+                        <h4>{{item[index+3].title}}</h4>
+                        <p>
+                            <span>創作者：</span>
+                            <span>{{item[index+3].creator}}</span>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <span>{{item[index+3].price}}</span>
+                        <span>{{item[index+3].time}}</span>
+                    </div>
+                    <div class="productButton">
+                        <button class="round">上架</button>
+                    </div>
+                    <!-- 定位absolute，父層prouductItem，定位position -->
+                    <div class="like mainColor deepBgColor">
+                        75
+                    </div>
+                </article>
+            </section>
         </section>
-    </section>
+    </div>
     <!-- 許瑀芹 -->
     <!-- 商品頁商品區塊 -->
-    <section class="productiMainProduct productMainSection">
-        <div class="titleBox">
-            <h4>124件商品</h4>
-            <div class="buttonBox">
-                <button>篩選器</button>
+    <div id="app2">
+        <section class="productiMainProduct productMainSection">
+            <div class="titleBox size marginAuto">
+                <h4>124件商品</h4>
+                <div class="buttonBox">
+                    <button id="selectorButton">篩選器</button>
+                </div>
             </div>
-        </div>
-        <div class="productSection">
-            <div class="column">
-                <article class="prouductItem commomItem aidBgColor">
+            <section class="productSelector displayNone size marginAuto" id="productSelector">
+                aaa
+            </section>
+            <div class="productSection size marginAuto">
+                <article class="prouductItem commomItem aidBgColor" v-for="product in products">
                     <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
+                        <img :src="product.img">
                     </div>
                     <div class="text">
-                        <h4>我是標題</h4>
+                        <h4>{{product.title}}</h4>
                         <p>
                             <span>創作者：</span>
-                            <span>可愛芹芹</span>
+                            <span>{{product.creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
+                        <span>{{product.price}}</span>
+                        <span>{{product.time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
@@ -243,106 +200,12 @@
                     </div>
                 </article>
             </div>
-            <div class="column">
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-                <article class="prouductItem commomItem aidBgColor">
-                    <div class="img">
-                        <img src="https://picsum.photos/300/200/?random=10">
-                    </div>
-                    <div class="text">
-                        <h4>我是標題</h4>
-                        <p>
-                            <span>創作者：</span>
-                            <span>可愛芹芹</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span>錢錢錢</span>
-                        <span>時間哦哦哦哦</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">上架</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        75
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <!-- 許瑀芹 -->
     <!-- 換頁按鈕 -->
     <div class="productPageChange">
-        <div class="pageBox">
+        <div class="pageBox size marginAuto">
             <div class="itemBox">
                 <button><<</button>
                 <button>1</button>
@@ -355,5 +218,6 @@
             </div>
         </div>
     </div>
+    @@include('layout/footer.html')
 </body>
 </html>

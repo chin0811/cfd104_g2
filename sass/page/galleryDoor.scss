@@ -4,16 +4,13 @@ html, body, .stage, .ring, .img {
     transform-style: preserve-3d;
     user-select:none;
 }
-
 html, body, .stage {
     overflow:hidden;
     background:#fff;
 }
-
 div, svg {
     position: absolute;
 }
-
 .container {
     perspective: 1000px;
     width: 300px;
@@ -22,7 +19,6 @@ div, svg {
     top:50%;
     transform:translate(-50%,-50%);
 }
-
 .img{
     border-radius: 555em 555em 0 0;
     overflow:hidden;

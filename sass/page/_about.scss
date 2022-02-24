@@ -3,9 +3,7 @@
     max-width: 1200px;
     margin: auto;
     box-sizing: border-box;
-    border: 1px solid peachpuff;
 }
-
 main .introduceCardWrap .introduceCard, main .introduceCardWrapPC .introduceCard {
     width: 15em;
     height: 20em;
@@ -107,7 +105,6 @@ main .page {
     box-sizing: border-box;
     line-height: 2;
 }
-
 main .page:nth-child(even) {
     clear: both;
 }
@@ -152,6 +149,7 @@ main .flipBookWrap .page {
     -ms-user-select: none;
     user-select: none;
     background-color: #f0f0f0;
+    
 }
 
 main .flipBookWrap .page::before {
