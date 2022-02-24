@@ -187,7 +187,12 @@ p.small{
     max-width: 1200px;
     width: 90%;
 }
-
+.marginAuto{
+    margin: auto;
+}
+.displayNone{
+    display: none;
+}
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
     h1{
