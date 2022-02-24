@@ -22,6 +22,8 @@
 }
 @media screen and (min-width:992px){
     .SingleProductIntro .sizeAdjustBox{
+        box-sizing: border-box;
+        padding-bottom: 1.5%;
         display: flex;
         flex-wrap: nowrap;
         border-bottom: solid 2px black;
@@ -41,8 +43,8 @@
         flex-wrap: wrap;
         justify-content: space-between;
         box-sizing: border-box;
-        padding: 0 3% 0 0;
-        margin-bottom: 2%;
+        padding: 0 2% 0 0;
+        margin-bottom: 0;
     }
 }
 .SingleProductIntro .imgBox img{
