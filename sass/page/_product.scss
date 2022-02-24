@@ -1,10 +1,8 @@
-.displayNone{
-    display: none;
-}
 /* 麵包屑和商品分類導覽 */
 .productHead{
     width: 100%;
     margin-bottom: 10%;
+    margin-top: 60px;
 }
 .productHead .productBread{
     margin: auto;
@@ -162,6 +160,8 @@
 .productiMainProduct .productSection{
     width: 90%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 .productiMainProduct .titleBox{
     width: 90%;
@@ -180,20 +180,18 @@
 .productiMainProduct .productSection{
     width: 90%;
     margin: auto;
-    background-color: #FFD60A;
     display: flex;
     flex-wrap: wrap;
 }
 .productiMainProduct article{
-    width: 50%;
+    width: 48%;
     box-sizing: border-box;
-    padding: 1%;
+    margin-bottom: 1%;
+    
 }
 @media screen and (min-width:992px){
     .productiMainProduct article{
-        width: 25%;
-        box-sizing: border-box;
-        padding: 1%;
+        width: 24%;
     }
 }
 /* 換頁 */

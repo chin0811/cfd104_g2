@@ -16,7 +16,7 @@
 <!-- 許瑀芹 -->
 <!-- 麵包屑 -->
     <section class="SingleProductHead">
-        <div class="productBread">
+        <div class="productBread size marginAuto">
             <p>
                 <span>logo</span>
                 <span>>雕塑類</span>
@@ -28,7 +28,7 @@
 <!-- 商品介紹 -->
     <div id="app">
         <section class="SingleProductIntro">
-            <div class="sizeAdjustBox">
+            <div class="sizeAdjustBox size marginAuto">
                 <div class="imgBox">
                     <img :src="imgs[index+n]" id="img01">
                     <img :src="imgs[index+x]" id="img02" v-on:click="smallToBig(index,x)">
@@ -98,7 +98,7 @@
 <!-- 更多商品 -->
     <section class="SingleProductMoreP">
         <h3>相似商品</h3>
-        <section class="productBox">
+        <section class="productBox size marginAuto">
             <div class="img">
                 <img src="https://picsum.photos/300/200/?random=10">
             </div>
