@@ -1,3 +1,4 @@
+let scrollold = 0;
 $(document).ready(function(){
     $(".hamburger").on("click", () => {
         $(".mainMenu").toggleClass("active").removeClass("reverse_anim");
@@ -9,14 +10,21 @@ $(document).ready(function(){
 });
 
 window.addEventListener("scroll",function(){
-  if(document.documentElement.scrollTop>300){
+  // if(document.documentElement.scrollTop>300){
+  //     document.querySelector("header").style.top="-100px";
+  // }else{
+  //     document.querySelector("header").style.top="0px";
+  // }
+  if(this.scrollY > scrollold){
       document.querySelector("header").style.top="-100px";
   }else{
       document.querySelector("header").style.top="0px";
   }
+  // scrollold = this.scrollY;
+  scrollold = this.scrollY;
+  // console.log(window.scrollY)
+  // console.log(this.scrollY)
 
-  // if(document.documentElement.scrollTop>300){ document.getElementById("header").classList.add("smallPanel");
-  // }
-  // else{ document.getElementById("header").classList.remove("smallPanel");
-  // }
+
 })
+
