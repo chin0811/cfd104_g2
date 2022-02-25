@@ -2,15 +2,22 @@
 .productHead{
     width: 100%;
     margin-bottom: 10%;
+    margin-top: 60px;
 }
 .productHead .productBread{
     margin: auto;
     width: 90%;
     margin-bottom: 1%;
 }
-.productHead .sideNav{
+.productHead .adjustBox{
     margin: auto;
     width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.productHead .sideNav{
+    width: 60%;
     display: flex;
     align-items: baseline;
 }
@@ -19,9 +26,7 @@
     color: #141414;
 }
 .productHead .sideNav .sideNavTitle{
-    display: inline-block;
     width: 25%;
-    border-right: 0.1em solid black;
     margin-right: 3%;
 }
 .productHead .sideNav ul{
@@ -31,6 +36,13 @@
 .productHead .sideNav ul li{
     width: 25%;
 }
+/* 輸入盒子 */
+.productHead .adjustBox .inputBox{
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+} 
 /* 商品Item共用設計 */
 .productMainSection .commomItem{
     position: relative;
@@ -76,6 +88,7 @@
     margin: auto;
     display: flex;
     flex-wrap: nowrap;
+    position: relative;
 }
 .productMainCarousel .carouselBox .prouductItem{
     width:66%;
@@ -95,6 +108,50 @@
         margin-right: 4%;
     }
 }
+/* 圖片上的連結按鈕 */
+.productMainCarousel .linkItem{
+    position: absolute;
+    z-index: 1;
+}
+.productMainCarousel .arrowButton{
+    display: flex;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+.productMainCarousel .right{
+    right: -5.5%;
+}
+.productMainCarousel .arrowButton .leftArrow,
+.productMainCarousel .arrowButton .rightArrow{
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 36, 36);
+}
+.productMainCarousel .changeButton{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.productMainCarousel .changeButton .circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-right: 3%;
+}
+.productMainCarousel .changeButton .circle:last-child{
+    margin-right: 0;
+}
 /* 商品區塊 */
 .productiMainProduct{
     width: 100%;
@@ -103,36 +160,38 @@
 .productiMainProduct .productSection{
     width: 90%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 .productiMainProduct .titleBox{
     width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3%;
+    margin-bottom: 0.5%;
+}
+/* 篩選器項目 */
+.productiMainProduct .productSelector{
+    width: 90%;
+    margin: auto;
+    background-color: #FFD60A;
 }
 /* 商品欄 */
-.productiMainProduct .productSection .column{
+.productiMainProduct .productSection{
+    width: 90%;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
-/* 單一商品物件Item */
-.productiMainProduct .productSection .column .prouductItem{
-    width: 46%;
-    flex-shrink: 0;
-    margin-bottom: 5%;
-}
-.productiMainProduct .productSection .column .prouductItem:nth-child(odd){
-    margin-right: 8%;
+.productiMainProduct article{
+    width: 48%;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    
 }
 @media screen and (min-width:992px){
-    .productiMainProduct .productSection .column .prouductItem{
-        width: 23%;
-        margin-bottom: 2%;
-    }
-    .productiMainProduct .productSection .column .prouductItem:nth-child(odd){
-        margin-right: 0;
+    .productiMainProduct article{
+        width: 24%;
     }
 }
 /* 換頁 */

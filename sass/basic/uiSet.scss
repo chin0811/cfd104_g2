@@ -73,20 +73,20 @@ body{
 h1{
     /* font-size: 70px; */
     font-size: 4.375em;
-    line-height: 3;
+    line-height: 2;
 }
 /* 副標文字大小 */
 h2{
     /* font-size: 40px; */
     font-size: 2.5em;
-    line-height: 3;
+    line-height: 2;
 	letter-spacing:2px;
 }
 /* 內文標題大小 */
 h3{
     /* font-size: 30px; */
     font-size: 1.875em;
-    line-height: 3;
+    line-height: 2;
 	letter-spacing:2px;
 }
 /* 內文副標大小 */
@@ -115,7 +115,8 @@ p.small{
     font-size: 1em;
     background-color: #FFD60A;
     /* font-weight: 600; */
-    padding: 10px 30px;
+    // padding: 10px 30px;修改前
+    padding: 5px 20px;
     border-radius: 200px;
     border: 2px solid #FFD60A;
     transition: .3s;
@@ -126,7 +127,7 @@ p.small{
     font-size: 1em;
     background-color: #FFD60A;
     /* font-weight: 600; */
-    padding: 10px 30px;
+    padding: 5px 20px;
     border-radius: 5px;
     border: 2px solid #FFD60A;
     transition: .3s;
@@ -135,7 +136,7 @@ p.small{
 .whiteRound{
     color: #141414;
     font-size: 1em;
-    padding: 10px 30px;
+    padding: 5px 20px;
     border-radius: 200px;
     border: 2px solid transparent;
     transition: .3s;
@@ -144,7 +145,7 @@ p.small{
 .whiteSquare{
     color: #141414;
     font-size: 1em;
-    padding: 10px 30px;
+    padding: 5px 20px;
     border-radius: 5px;
     border: 2px solid transparent;
     transition: .3s;
@@ -161,7 +162,7 @@ p.small{
     font-size: 1em;
     background-color: transparent;
     /* font-weight: 600; */
-    padding: 10px 30px;
+    padding: 5px 20px;
     border-radius: 200px;
     border: 2px solid #FFD60A;
     transition: .3s;
@@ -172,7 +173,7 @@ p.small{
     font-size: 1em;
     background-color: transparent;
     /* font-weight: 600; */
-    padding: 10px 30px;
+    padding: 5px 20px;
     border-radius: 5px;
     border: 2px solid #FFD60A;
     transition: .3s;
@@ -183,11 +184,19 @@ p.small{
     background-color: #141414;
     border: 2px solid #141414;
 }
+/* 90%外層 */
 .size{
     max-width: 1200px;
     width: 90%;
 }
-
+/* 置中 */
+.marginAuto{
+    margin: auto;
+}
+/* 消失 */
+.displayNone{
+    display: none;
+}
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
     h1{
