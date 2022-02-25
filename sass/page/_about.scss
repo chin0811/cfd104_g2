@@ -4,7 +4,7 @@
     margin: auto;
     box-sizing: border-box;
 }
-main .introduceCardWrap .introduceCard, main .introduceCardWrapPC .introduceCard {
+.aboutMain .introduceCardWrap .introduceCard, .aboutMain .introduceCardWrapPC .introduceCard {
     width: 15em;
     height: 20em;
     margin: 2em auto;
@@ -26,11 +26,11 @@ main .introduceCardWrap .introduceCard, main .introduceCardWrapPC .introduceCard
     cursor: pointer;
 }
 
-main .introduceCardWrap .introduceCard a, main .introduceCardWrapPC .introduceCard a {
+.aboutMain .introduceCardWrap .introduceCard a, .aboutMain .introduceCardWrapPC .introduceCard a {
     text-decoration: none;
 }
 
-main .introduceCardWrap .introduceCard h3, main .introduceCardWrapPC .introduceCard h3 {
+.aboutMain .introduceCardWrap .introduceCard h3, .aboutMain .introduceCardWrapPC .introduceCard h3 {
     font-size: 5em;
     position: absolute;
     top: 0.65em;
@@ -39,14 +39,14 @@ main .introduceCardWrap .introduceCard h3, main .introduceCardWrapPC .introduceC
     color: #14141410;
 }
 
-main .introduceCardWrap .introduceCard h2, main .introduceCardWrapPC .introduceCard h2 {
+.aboutMain .introduceCardWrap .introduceCard h2, .aboutMain .introduceCardWrapPC .introduceCard h2 {
     font-size: 2em;
     letter-spacing: 0.1ch;
     line-height: 4;
     color: #14141480;
 }
 
-main .introduceCardWrap .introduceCard p, main .introduceCardWrapPC .introduceCard p {
+.aboutMain .introduceCardWrap .introduceCard p, .aboutMain .introduceCardWrapPC .introduceCard p {
     color: #14141480;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -57,7 +57,7 @@ main .introduceCardWrap .introduceCard p, main .introduceCardWrapPC .introduceCa
     line-height: 3em;
 }
 
-main .introduceCardWrap .bookshelf, main .introduceCardWrapPC .bookshelf {
+.aboutMain .introduceCardWrap .bookshelf, .aboutMain .introduceCardWrapPC .bookshelf {
     width: 100%;
     height: 2.5em;
     display: inline-block;
@@ -67,7 +67,7 @@ main .introduceCardWrap .bookshelf, main .introduceCardWrapPC .bookshelf {
     left: 0;
 }
 
-main .introduceCardWrap .bookshelf::before, main .introduceCardWrapPC .bookshelf::before {
+.aboutMain .introduceCardWrap .bookshelf::before, .aboutMain .introduceCardWrapPC .bookshelf::before {
     content: '';
     width: 100%;
     height: 4em;
@@ -82,20 +82,20 @@ main .introduceCardWrap .bookshelf::before, main .introduceCardWrapPC .bookshelf
     left: 0;
 }
 
-main .flipBookWrap {
+.aboutMain .flipBookWrap {
     margin: 10em auto;
 }
 
-main .flipBookWrap {
+.aboutMain .flipBookWrap {
     -webkit-transition: opacity 0.4s 0.2s;
     transition: opacity 0.4s 0.2s;
 }
 
-main .flipBookWrapCover {
+.aboutMain .flipBookWrapCover {
     background-color: #FFD60A;
 }
 
-main .page {
+.aboutMain .page {
     width: 40vw;
     height: 53em;
     float: left;
@@ -105,16 +105,16 @@ main .page {
     box-sizing: border-box;
     line-height: 2;
 }
-main .page:nth-child(even) {
+.aboutMain .page:nth-child(even) {
     clear: both;
 }
 
-main .flipBookWrap {
+.aboutMain .flipBookWrap {
     -webkit-perspective: 250vw;
     perspective: 250vw;
 }
 
-main .flipBookWrap .pages {
+.aboutMain .flipBookWrap .pages {
     width: 80vw;
     height: 53em;
     position: relative;
@@ -125,7 +125,7 @@ main .flipBookWrap .pages {
     border-radius: 4px;
 }
 
-main .flipBookWrap .page {
+.aboutMain .flipBookWrap .page {
     float: none;
     clear: none;
     margin: 0;
@@ -152,7 +152,7 @@ main .flipBookWrap .page {
     
 }
 
-main .flipBookWrap .page::before {
+.aboutMain .flipBookWrap .page::before {
     content: '';
     position: absolute;
     top: 0;
@@ -164,7 +164,7 @@ main .flipBookWrap .page::before {
     z-index: 2;
 }
 
-main .flipBookWrap .page:nth-child(odd) {
+.aboutMain .flipBookWrap .page:nth-child(odd) {
     pointer-events: all;
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
@@ -172,20 +172,20 @@ main .flipBookWrap .page:nth-child(odd) {
     border-radius: 0 4px 4px 0;
 }
 
-main .flipBookWrap .page:nth-child(odd):hover {
+.aboutMain .flipBookWrap .page:nth-child(odd):hover {
     -webkit-transform: rotateY(-15deg);
     transform: rotateY(-15deg);
 }
 
-main .flipBookWrap .page:nth-child(odd):hover::before {
+.aboutMain .flipBookWrap .page:nth-child(odd):hover::before {
     background: rgba(0, 0, 0, 0.03);
 }
 
-main .flipBookWrap .page:nth-child(odd)::before {
+.aboutMain .flipBookWrap .page:nth-child(odd)::before {
     background: rgba(0, 0, 0, 0);
 }
 
-main .flipBookWrap .page:nth-child(even) {
+.aboutMain .flipBookWrap .page:nth-child(even) {
     pointer-events: none;
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
@@ -196,45 +196,45 @@ main .flipBookWrap .page:nth-child(even) {
     border-color: #141414;
 }
 
-main .flipBookWrap .page:nth-child(even)::before {
+.aboutMain .flipBookWrap .page:nth-child(even)::before {
     background: rgba(0, 0, 0, 0.02);
 }
 
-main .flipBookWrap .page.grabbing {
+.aboutMain .flipBookWrap .page.grabbing {
     -webkit-transition: none;
     transition: none;
 }
 
-main .flipBookWrap .page.flipped:nth-child(odd) {
+.aboutMain .flipBookWrap .page.flipped:nth-child(odd) {
     pointer-events: none;
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
 
-main .flipBookWrap .page.flipped:nth-child(odd)::before {
+.aboutMain .flipBookWrap .page.flipped:nth-child(odd)::before {
     background: rgba(0, 0, 0, 0.02);
 }
 
-main .flipBookWrap .page.flipped:nth-child(even) {
+.aboutMain .flipBookWrap .page.flipped:nth-child(even) {
     pointer-events: all;
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
 
-main .flipBookWrap .page.flipped:nth-child(even):hover {
+.aboutMain .flipBookWrap .page.flipped:nth-child(even):hover {
     -webkit-transform: rotateY(15deg);
     transform: rotateY(15deg);
 }
 
-main .flipBookWrap .page.flipped:nth-child(even):hover::before {
+.aboutMain .flipBookWrap .page.flipped:nth-child(even):hover::before {
     background: rgba(0, 0, 0, 0.03);
 }
 
-main .flipBookWrap .page.flipped:nth-child(even)::before {
+.aboutMain .flipBookWrap .page.flipped:nth-child(even)::before {
     background: rgba(0, 0, 0, 0);
 }
 
-main .page:nth-child(odd) {
+.aboutMain .page:nth-child(odd) {
     background-position: right top;
 }
 
