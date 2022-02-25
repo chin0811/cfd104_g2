@@ -1,8 +1,10 @@
 let xPos = 0;
 
 gsap.timeline()
-    .set('.ring', { rotationY:180, cursor:'grab' }) //set initial rotationY so the parallax jump happens off screen
-    .set('.door',  { // apply transform rotations to each image
+    //set initial rotationY so the parallax jump happens off screen
+    .set('.ring', { rotationY:180, cursor:'grab' }) 
+    // apply transform rotations to each image
+    .set('.door',  { 
         rotateY: (i)=> i*-72,
         transformOrigin: '50% 50% 500px',
         z: -500,
@@ -54,3 +56,10 @@ function dragEnd(e){
 function getBgPos(i){ //returns the background-position string to create parallax movement in each image
     return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*72)/360*500 )+'px 0px';
 }
+
+// $(".door").click(function(){
+//     gsap.to($(this),{
+//         opacity:0,
+//         scale:5,
+//     });
+// });
