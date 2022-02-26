@@ -2,7 +2,7 @@
 viewer = pannellum.viewer('panorama', {
     "type": "equirectangular",
     //背景圖
-    "panorama": "assets/image/3dSurroundView.jpg",
+    "panorama": "../assets/image/3dSurroundView.jpg",
     "hfov": "120",
     "autoLoad": true,
     "hotSpots": [{
