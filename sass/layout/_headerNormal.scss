@@ -1,9 +1,16 @@
 header{
     position: sticky;
-    top: 20px;
-    // padding-top: 20px;
+    top:0;
     z-index: 9999;
-    /* background-color: #ff0; */
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.2em 0.2em #252b3010;
+    border: 1px solid #94969b00;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+    padding: 1em 0;
+    transition: top .3s;
 }
 .headerNormalContain{
     display: flex;

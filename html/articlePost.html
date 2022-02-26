@@ -9,40 +9,41 @@
 </head>
 <body>
     @@include('layout/header.html')
-    <section class="articlePostContent">
-
-        <section class="articleEdit">
-            <h2>編輯你的文章</h2>
-            <form action="">
-                <label for="articleTitle">
-                    <h3>主標題</h3>
-                    <input type="text" name="" id="articleTitle">
-                </label>
-                <label for="articleArea">
-                    <h3>內容</h3>
-                    <textarea id="articleArea" name="" cols="30" rows="10"></textarea>
-                </label>
-                <label for="articlePic">
-                    <h3>附圖</h3>
-                    <input type="file" id="articlePic" accept="image/png, image/jpeg">
-                </label>
-                <div class="buttonList">
-                    <input type="reset" value="取消">
-                    <input type="submit" value="刊登">
-                </div>
-            </form>
-        </section>
-        <aside class="articlePreview">
-            <h2 class="deepColor"> h2一篇測試用的文章</h2>
-                <div class="item PicTxtItem">
-                    <div class="pic">
-                            <img src="https://picsum.photos/500/400/?random=10">
-                        </div>
-                        <div class="txt">
-                            <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+    <section class="articlePostWrap">
+        <section class="articlePostContent marginAuto">
+            <section class="articleEdit">
+                <h2>編輯你的文章</h2>
+                <form action="">
+                    <label for="articleTitle">
+                        <h3>主標題</h3>
+                        <input type="text" name="" id="articleTitle">
+                    </label>
+                    <label for="articleArea">
+                        <h3>內容</h3>
+                        <textarea id="articleArea" name="" cols="30" rows="10"></textarea>
+                    </label>
+                    <label for="articlePic">
+                        <h3>附圖</h3>
+                        <input type="file" id="articlePic" accept="image/png, image/jpeg">
+                    </label>
+                    <div class="buttonList">
+                        <input class="squareOutline" type="reset" value="取消">
+                        <input class="square" type="submit" value="刊登">
                     </div>
-                </div>
-        </aside>
+                </form>
+            </section>
+            <aside class="articlePreview">
+                <h2 class="deepColor"> h2一篇測試用的文章</h2>
+                    <div class="item PicTxtItem">
+                        <div class="pic">
+                                <img src="https://picsum.photos/500/400/?random=10">
+                            </div>
+                            <div class="txt">
+                                <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
+                        </div>
+                    </div>
+            </aside>
+        </section>
     </section>
     @@include('layout/footer.html')
 </body>

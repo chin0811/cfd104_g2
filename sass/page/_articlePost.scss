@@ -1,1 +1,56 @@
-// TEST
+.articlePostWrap{
+    width: 100%;
+}
+.articlePostContent{
+    width: 90%;
+    max-width: 1200px;
+    display: block;
+}
+// 所有圖片設定 //
+.articlePostContent img{
+    width: 100%;
+}
+// 編輯區 //
+.articlePostContent .articleEdit{
+    width: 100%;
+}
+.articlePostContent #articleTitle{
+    font-size: 1em;
+    border-radius: 200px;
+    box-sizing: border-box;
+    padding: 0.2em 0.5em;
+    border:none;
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
+}
+.articlePostContent #articleArea{
+    resize: none;
+    width: 90%;
+    height: 20%;
+    font-size: 1em;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0.2em 0.5em;
+    border:none;
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
+}
+// 預覽區 //
+.articlePostContent .articlePreview{
+    width: 100%;
+}
+@media screen and (min-width:768px){
+    .articlePostContent{
+        display: flex;
+    }
+    //編輯區
+    .articlePostContent .articleEdit{
+        width: 60%;
+    }
+    // 預覽區 //
+    .articlePostContent .articlePreview{
+        width: 40%;
+    }
+}

@@ -1,9 +1,16 @@
 header{
-    /* margin: 20px 0px; */
     position: sticky;
-    top: 20px;
-    // padding-top: 20px;
+    top:0;
     z-index: 9999;
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.2em 0.2em #252b3010;
+    border: 1px solid #94969b00;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+    padding: 1em 0;
+    transition: top .3s;
 }
 /* header容器 */
 .headerContain{
@@ -36,17 +43,41 @@ header{
     width: 100%;
     vertical-align: middle;
 }
-/* 漢堡選單 */
+/* 漢堡選單 (舊)*/
+// .headerContain .hamburger{
+//     width: 30px;
+//     height: 2px;
+//     margin: auto;
+//     /* background-color: #000; */
+//     border: 1px #394897 solid;
+//     border-radius: 5px;
+//     box-shadow: 0px 10px 0px #394897,
+//                 0px -10px 0px #394897;
+//     cursor: pointer;
+// }
+/* 漢堡選單 (新) */
 .headerContain .hamburger{
-    width: 30px;
-    height: 2px;
-    margin: auto;
-    /* background-color: #000; */
-    border: 1px #394897 solid;
-    border-radius: 5px;
-    box-shadow: 0px 10px 0px #394897,
-                0px -10px 0px #394897;
+    width: 40px;
+    height: 45px;
     cursor: pointer;
+    position: relative;
+    &::after{
+        //  偽類 定位在原生物件上(.hamburger)
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        content: '';
+        width: 30px;
+        height: 2px;
+        margin: auto;
+        /* background-color: #000; */
+        border: 1px #394897 solid;
+        border-radius: 5px;
+        box-shadow: 0px 10px 0px #394897,
+                    0px -10px 0px #394897;
+    }
 }
 /* ------藝廊pointer------ */
 .headerContain .mainMenu ul li label{
