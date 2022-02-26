@@ -1,23 +1,27 @@
-gsap.registerPlugin(ScrollTrigger);
+// alert(window.innerWidth);
+ gsap.registerPlugin(ScrollTrigger);
 	// 介紹區
-    let t1 =gsap.timeline({
-            scrollTrigger:{
-                trigger:".homeIntro .intro",
-                start:"top top",
-                end:"40% top",
-                scrub:true,
-				pin:".homeIntro",
-				pinSpace:true,
-                // markers:true,
-				// id:"介紹區"
-            },
-    });
-	t1.from(".homeIntro .intro h1",{
-		right:"100%",
-	});
-    t1.to(".homeIntro .intro h1",{
-        right:"-10%",
-    });
+
+
+	// 原本h1
+    // let t1 =gsap.timeline({
+    //         scrollTrigger:{
+    //             trigger:".homeIntro .intro",
+    //             start:"top top",
+    //             end:"40% top",
+    //             scrub:true,
+	// 			pin:".homeIntro",
+	// 			pinSpace:true,
+    //             // markers:true,
+	// 			// id:"介紹區"
+    //         },
+    // });
+	// // t1.from(".homeIntro .intro h1",{
+	// // 	left:"-10%",
+	// // });
+    // // t1.to(".homeIntro .intro h1",{
+    // //     left:"10%",
+    // // });
 	let t2 =gsap.timeline({
 		scrollTrigger:{
 			trigger:".homeIntro .intro",
@@ -71,6 +75,30 @@ gsap.to(".homeCatalog .catalog .brame .pic img", {
 		// pinSpacing:false
 	}
 });
+
+// 取得藝廊下移圖片輪播
+let GaPic =document.querySelector(".homeGallery .scrollPic img");
+let imgList = [
+	"../assets/image/article_articleContent_coverFace.png",
+	"../assets/image/article_articleContent_bag.png",
+	"../assets/image/article_articleContent_jeffBollun.png",
+	"../assets/image/article_articleContent_bighead.png",
+	"../assets/image/article_articleContent_beBear.png",
+	"../assets/image/home_homeCatalog_lavbag.png",
+];
+let i=0; 
+setInterval("changeImg()",800); 
+function changeImg(){
+	if(i == imgList.length-1){
+		i=0
+		GaPic.setAttribute("src",imgList[i]);
+	}else if(i == i){
+		i++;
+		GaPic.setAttribute("src",imgList[i]);
+	}
+}; 
+window.addEventListener("load",changeImg);
+
 //藝廊圖片下移區
 gsap.to(".homeGallery .scrollPic", {
 	top:"100%",

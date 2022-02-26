@@ -95,12 +95,24 @@ h4{
 }
 /* 內文文字大小 */
 p{  
-    /* font-size: 16px; */
-    font-size:1em;
+    /* font-size: 20px; */
+    font-size:1.25em;
     line-height: 1.3;
-	letter-spacing:3px;
+    letter-spacing:3px;
 }
 p.small{  
+    /* font-size: 12.8px; */
+    font-size:0.8em;
+    line-height: 1.5;
+	letter-spacing:2px;
+}
+span{
+    /* font-size: 20px; */
+    font-size:1.25em;
+    line-height: 1.3;
+    letter-spacing:3px;
+}
+span.small{
     /* font-size: 12.8px; */
     font-size:0.8em;
     line-height: 1.5;
@@ -122,7 +134,6 @@ p.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-    /* font-weight: 600; */
     padding: 5px 20px;
     border-radius: 5px;
     border: 2px solid #FFD60A;
@@ -208,8 +219,8 @@ p.small{
     }
     /* 內文副標大小 */
     h4{
-        /* font-size: 20px; */
-        font-size: 1.25em;
+        /* font-size: 22px; */
+        font-size: 1.375em;
     }
     /* 內文文字大小 */
     p{  
@@ -224,15 +235,18 @@ p.small{
         line-height: 1.5;
         letter-spacing:2px;
     }
-
-
-
-
-
-
-
-
-
+    span{
+        /* font-size: 16px; */
+        font-size:1em;
+        line-height: 1.3;
+        letter-spacing:3px;
+    }
+    span.small{
+        /* font-size: 12.8px; */
+        font-size:0.8em;
+        line-height: 1.5;
+        letter-spacing:2px;
+    }
 }
 // ======= input ==== //樣式
 // font-size: 1em;
@@ -243,3 +257,18 @@ p.small{
 // box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
 // line-height: 2em;
 // background-color: transparent;
+
+
+// ======= 透明卡片======= //
+// border-radius: 1em;
+// background-color: #3e444a05;
+// box-shadow: 0.1em 0.5em 0.5em #252b3020;
+// border: 1px solid #94969b50;
+// border-right: 1px solid #55595e20;
+// border-bottom: 1px solid #55595e20;
+// border-left: 1px solid #ffffff30;
+// backdrop-filter: blur(0.5em);
+
+// ======= hover改變大小======= //
+// transform: scale(1.02);
+// transition: .3s;
