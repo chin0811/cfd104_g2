@@ -1,3 +1,44 @@
+//會員中心 header 
+.SurroundViewHeader{
+    position: fixed ;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    padding: 0;
+    .headerContain{
+        //最大寬度 .size 覆蓋
+        // max-width: none;
+        // width: 100%;
+        .hamburger,.logo{
+            position: fixed ;
+            top: 10px;
+            // background-color: #3e444a05;
+            box-shadow: 0.1em 0.2em 0.2em #252b3010;
+            border: 1px solid #94969b00;
+            border-right: 1px solid #55595e20;
+            border-bottom: 1px solid #55595e20;
+            border-left: 1px solid #ffffff30;
+            background: #eeeeee66;
+            backdrop-filter: blur(0.5em);
+        }
+        .hamburger{
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+        }
+        .logo{
+            left: 50px;
+            padding: 0em 0.5em;
+            border-radius: 10px
+        }
+    }
+}
+
 #panorama {
     width: 100vw;
     height: 100vh;

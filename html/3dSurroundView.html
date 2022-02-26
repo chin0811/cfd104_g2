@@ -28,9 +28,11 @@
 
     <title>會員中心</title>
 </head>
-
 <body>
-    @@include('layout/header.html')
+        @@include('layout/header.html',{
+            "headerClass":"SurroundViewHeader"
+        })
+    
     <!--3D背景-->
     <div id="panorama">
         <!-- <button type="button" class="navButtonClick_button">導覽列</button> -->
