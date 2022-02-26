@@ -20,12 +20,18 @@
                     </label>
                     <label for="articleArea">
                         <h3>內容</h3>
-                        <textarea id="articleArea" name="" cols="30" rows="10"></textarea>
+                        <textarea id="articleArea" name=""></textarea>
                     </label>
+                    <h3>附圖</h3>
                     <label for="articlePic">
-                        <h3>附圖</h3>
-                        <input type="file" id="articlePic" accept="image/png, image/jpeg">
+                        <!-- 選到圖片的容器 -->
+                        <div class="selectPic displayNone"></div>
+                        <div class="pic">
+                                <!-- 後端抓到資料庫要替換掉 -->
+                                <img src="assets/image/upload_image_icon.png" alt="">
+                        </div>
                     </label>
+                    <input type="file" id="articlePic" accept="image/png, image/jpeg">
                     <div class="buttonList">
                         <input class="squareOutline" type="reset" value="取消">
                         <input class="square" type="submit" value="刊登">
@@ -33,15 +39,18 @@
                 </form>
             </section>
             <aside class="articlePreview">
-                <h2 class="deepColor"> h2一篇測試用的文章</h2>
+                <h2 class="deepColor">文章預覽</h2>
+                <div class="page">
+                    <h3 class="deepColor"> h2一篇測試用的文章</h3>
                     <div class="item PicTxtItem">
-                        <div class="pic">
-                                <img src="https://picsum.photos/500/400/?random=10">
+                            <div class="pic">
+                                    <img src="https://picsum.photos/500/400/?random=10">
+                                </div>
+                                <div class="txt">
+                                    <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
                             </div>
-                            <div class="txt">
-                                <p class="deepColor">這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
-                        </div>
                     </div>
+                </div>
             </aside>
         </section>
     </section>
