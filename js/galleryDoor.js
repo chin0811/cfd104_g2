@@ -57,9 +57,35 @@ function getBgPos(i){ //returns the background-position string to create paralla
     return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*72)/360*500 )+'px 0px';
 }
 
-// $(".door").click(function(){
-//     gsap.to($(this),{
-//         opacity:0,
-//         scale:5,
-//     });
+//hover時分類名稱放大
+var textHover;
+$('.door').hover(function() {
+    textHover = new TimelineMax();
+    textHover.to( $(this).find('p'), {
+        scale: 2,
+        y: 20,
+    });
+},function() {
+    textHover.reverse();
+});
+
+// 點擊連結後播放完動畫才跳轉網頁
+$("#toys").click(function(e){
+    e.preventDefault();
+    // console.log($(this).find('a').attr('href'));
+    var url = $(this).find('a').attr('href');
+    TweenMax.to("#toys",1, {
+        // opacity:0,
+        scale: 5,
+        
+        onComplete: function(){
+                location.href = url;                           
+        },
+    }, 0.1);
+});
+
+
+// $("#toys").click(function() {
+//     $('body').css('background', '#141414');
+//     $('body').css('zIndex','99999999999999');
 // });
