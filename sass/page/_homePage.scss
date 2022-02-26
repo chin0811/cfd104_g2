@@ -1,3 +1,14 @@
+// #mouse負片效果(待寫){
+//     width: 100px;
+//     height: 100px;
+//     background-color: firebrick;
+//     border-radius: 200px;
+//     // filter:invert(1);
+//     position: absolute;
+//     top: 100px;
+//     left: 0%;
+//     z-index: 99999;
+// }
 .homeWrap{
     width: 100%;
 }
@@ -352,9 +363,47 @@
 .homeNews .newsContain{
     width: 90%;
     margin: auto;
-    background-color: #FBF7F3;
     display: block;
+    background-color: #fbf7f3;
+    border: 1px solid #ccc;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 8;
 }
+
+
+// .homeNews .newsContain:before,
+// .homeNews .newsContain:after  {
+//     background-color: #fbf7f3;
+//     border: 1px solid #ccc;
+//     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+//     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+// }
+.homeNews .newsContain:before, .homeNews .newsContain:after  {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(2.5deg);
+    z-index: 0;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+
+}
+.homeNews .newsContain:after  {
+    transform: rotateZ(-2.5deg);
+}
+
+
+
+
+
+
+
+
+
 .homeNews .zigzag{
     width: 90%;
     margin: auto;

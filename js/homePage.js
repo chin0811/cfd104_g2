@@ -1,27 +1,15 @@
-// alert(window.innerWidth);
+// 滑鼠負片效果(待寫)
+// let mouse = document.getElementById("mouse").style.width;
+// console.log(mouse);
+// function pos(e){
+// 	var posX = e.clientX;
+// 	var posY = e.clientY;
+// }
+// window.addEventListener("mousemove",pos)
+
+
  gsap.registerPlugin(ScrollTrigger);
 	// 介紹區
-
-
-	// 原本h1
-    // let t1 =gsap.timeline({
-    //         scrollTrigger:{
-    //             trigger:".homeIntro .intro",
-    //             start:"top top",
-    //             end:"40% top",
-    //             scrub:true,
-	// 			pin:".homeIntro",
-	// 			pinSpace:true,
-    //             // markers:true,
-	// 			// id:"介紹區"
-    //         },
-    // });
-	// // t1.from(".homeIntro .intro h1",{
-	// // 	left:"-10%",
-	// // });
-    // // t1.to(".homeIntro .intro h1",{
-    // //     left:"10%",
-    // // });
 	let t2 =gsap.timeline({
 		scrollTrigger:{
 			trigger:".homeIntro .intro",
@@ -173,9 +161,8 @@ gsap.to(".homeNews .decorate.Picbottomright", {
 	}
 });
 
-
-
-
-
-
 ScrollTrigger.refresh();
+
+
+
+
