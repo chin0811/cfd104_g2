@@ -6,24 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--共用-->
-    <!-- <link rel="stylesheet" href="css/cssReset.css"> -->
-    <!-- <link rel="stylesheet" href="css/uiSet.css"> -->
-    <!-- <link rel="stylesheet" href="css/component.css"> -->
-    <!-- <link rel="stylesheet" href="css/buttonStyle.css"> -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/uiSet.css">
+    <link rel="stylesheet" href="../assets/css/component.css">
+    <link rel="stylesheet" href="../assets/css/buttonStyle.css">
     <script src="https://kit.fontawesome.com/90d222f595.js" crossorigin="anonymous"></script>
     <!--燈箱-->
-    <!-- <link rel="stylesheet" href="css/accountManagement.css">
-    <link rel="stylesheet" href="css/collect.css">
-    <link rel="stylesheet" href="css/consumptionRecord.css">
-    <link rel="stylesheet" href="css/customCharacter.css">
-    <link rel="stylesheet" href="css/myListing.css">
-    <link rel="stylesheet" href="css/navButtonClick.css"> -->
+    <link rel="stylesheet" href="../assets/css/accountManagement.css">
+    <link rel="stylesheet" href="../assets/css/collect.css">
+    <link rel="stylesheet" href="../assets/css/consumptionRecord.css">
+    <link rel="stylesheet" href="../assets/css/customCharacter.css">
+    <link rel="stylesheet" href="../assets/css/myListing.css">
+    <!-- <link rel="stylesheet" href="css/navButtonClick.css"> -->
     <!--這頁的樣式-->
-    <!-- <link rel="stylesheet" href="css/3dSurroundView.css"> -->
+    <link rel="stylesheet" href="../assets/css/3dSurroundView.css">
     <!--按鈕通知-->
-    <!-- <link rel="stylesheet" href="css/notice.css"> -->
+    <link rel="stylesheet" href="../assets/css/notice.css">
     <!-- 3D套件 --->
-    <link rel="stylesheet" href="assets\css\style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
@@ -31,10 +30,9 @@
 </head>
 
 <body>
-    @@include('layout/header.html')
     <!--3D背景-->
     <div id="panorama">
-        <button type="button" class="navButtonClick_button">導覽列</button>
+        <!-- <button type="button" class="navButtonClick_button">導覽列</button> -->
         <!-- notice 鈴鐺通知按紐 -->
         <div class="notice" onclick="noticeShow()">
             <i class="fas fa-bell"></i>
@@ -88,28 +86,23 @@
             <span class="close"><i class="fas fa-times"></i></span>
         </section>
         <main>
-            <p class="information">會員編號：<span>ink（pk）</span></p>
-            <p class="information">會員暱稱：<input class="changeValue" value="text" disabled></input>
+            <p class="information">會員編號：<span class="small">0123456（pk）</span></p>
+            <p class="information">會員暱稱：<span class="small showChangeValue" name="1">text</span> <input class="changeValue" value="text" nmae="1"></input>
             </p>
-            <p class="information">會員帳號：<span>ink（pk）</span></p>
-            <p class="information">會員密碼：<input class="changeValue" disabled></input>
+            <p class="information">會員帳號：<span>milktea</span></p>
+            <p class="information">會員密碼：<span>20190119</span></p>
             </p>
-            <p class="information">姓名：<input class="changeValue" value="text" disabled></input>
+            <p class="information">姓名：<span class="small showChangeValue" name="2">text</span><input class="changeValue" value="text" nmae="2"></input>
             </p>
-            <p class="information">信箱：<input class="changeValue" value="text" disabled></input>
+            <p class="information">信箱：<span class="small showChangeValue" name="3">text</span><input class="changeValue" value="text" nmae="3"></input>
             </p>
-            <p class="information">電話：<input class="changeValue" value="varchar" disabled></input>
+            <p class="information">電話：<span class="small showChangeValue" name="4">text</span><input class="changeValue" value="varchar" nmae="4"></input>
             </p>
-            <p class="information">地址：<input class="changeValue" value="text" disabled></input>
+            <p class="information">地址：<span class="small showChangeValue" name="5">text</span><input class="changeValue" value="text" nmae="5"></input>
             </p>
-            <p class="information">信用卡：<input class="changeValue" value="int" disabled></input>
+            <p class="information">信用卡：<span class="small showChangeValue" name="6">text</span><input class="changeValue" value="int" nmae="6"></input>
             </p>
-            <p class="information">註冊日期：<input class="changeValue" value="date" disabled></input>
-            </p>
-            <p class="information">是否要收到最新消息信件 <i class="fas fa-question"></i></p>
-            <p>
-                <input class="radio changeValue" type="radio" name="radio" id="" value="true" checked disabled><span>是</span>
-                <input class="radio changeValue" type="radio" name="radio" id="" value="false" disabled><span>否</span>
+            <p class="information">註冊日期：<span>20220224</span>
             </p>
         </main>
     </section>
@@ -120,7 +113,6 @@
                 <span class="titleLine">收藏</span>
                 <span class="subtitle">全部</span>
                 <span class="subtitle">分類</span>
-                <span class="subtitle">全部</span>
             </p>
             <span class="close"><i class="fas fa-times"></i></span>
         </section>
@@ -130,7 +122,7 @@
                     <section class="graphics">
                         <section class="love"><i class="fas fa-heart"></i> <span>75</span></section>
                         <section class="img"><img src="https://fakeimg.pl/300x250/394897/fff" alt="拍攝商品圖"></section>
-                        <p>第人道臺葉小天體其識檢重論大除飛構從量我早正快本正</p>
+                        <p>奶茶弟弟的超級肉肉</p>
                     </section>
                     <section class="bid">
                         <p class="information">
@@ -144,7 +136,7 @@
                     <section class="graphics">
                         <section class="love"><i class="fas fa-heart"></i> <span>75</span></section>
                         <section class="img"><img src="https://fakeimg.pl/300x250/394897/fff" alt="拍攝商品圖"></section>
-                        <p>第人道臺葉小天體其識檢重論大除飛構從量我早正快本正</p>
+                        <p>珍珠妹妹的無敵雞腿</p>
                     </section>
                     <section class="bid">
                         <p class="information">
@@ -173,24 +165,28 @@
             <section class="record">
                 <section class="recordTitle">
                     <p>
-                        <span>標題</span>
-                        <span>副標題</span>
+                        <span>訂單編號:0123456789</span>
+                        <span>訂購日期:20220224</span>
                     </p>
                 </section>
                 <section class="recordGraphics">
                     <section class="recordGraphicsGraphics">
                         <section class="img"><img src="https://fakeimg.pl/100/394897/fff" alt="商品圖"></section>
-                        <section>
+                        <section class="recordGraphicsOrderlist">
                             <p>商品名稱</p>
+                            <p>數量 : 1</p>
+                            <p>訂單狀態 : 已付款</p>
+                            <p>物流配送狀態 : 已配送</p>
+                            <!-- <p>$3000</p> -->
                         </section>
                     </section>
                     <section class="recordGraphicsText">
-                        <p>recordGraphicsText</p>
+                        <p>$3000</p>
                     </section>
                 </section>
                 <section class="recordFooter">
                     <section>
-                        <p>藝益黨帶復學</p>
+                        <p>訂單金額:$3000</p>
                     </section>
                     <section class="buttonGroup">
                         <button class="button epFBgColor" type="button">按鈕</button>
@@ -285,18 +281,18 @@
                     </section>
                 </section>
                 <section class="clickPeople mask">
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Christopher001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Eric001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Liam001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Mark001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Owen001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Simon001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Emma001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Evelyn001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Jane001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Lilly001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Marilyn001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Melissa001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Christopher001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Eric001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Liam001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Mark001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Owen001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Simon001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Emma001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Evelyn001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Jane001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Lilly001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Marilyn001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Melissa001.png" alt="頭像"></section>
                 </section>
             </section>
         </main>
@@ -310,8 +306,8 @@
                 <span class="subtitle">分類</span>
             </p>
             <section class="buttonGroup">
-                <button class="button epFBgColor" type="button">目前上架</button>
-                <button class="button epFBgColor" type="button">瀏覽紀錄</button>
+                <!-- <button class="button epFBgColor" type="button">目前上架</button> -->
+                <!-- <button class="button epFBgColor" type="button">瀏覽紀錄</button> -->
             </section>
             <span class="close"><i class="fas fa-times"></i></span>
         </section>
@@ -330,7 +326,7 @@
                             </section>
                             <section class="timeAndButton">
                                 <span class="time">剩餘2小時47分17秒</span>
-                                <button class="button epFBgColor" type="button">我要競標</button>
+                                <button class="button epFBgColor" type="button">前往商品頁面</button>
                             </section>
                         </section>
 
@@ -349,7 +345,7 @@
                             </section>
                             <section class="timeAndButton">
                                 <span class="time">剩餘2小時47分17秒</span>
-                                <button class="button epFBgColor" type="button">我要競標</button>
+                                <button class="button epFBgColor" type="button">前往商品頁面</button>
                             </section>
                         </section>
 
@@ -359,7 +355,7 @@
         </main>
     </section>
     <!--預設的導覽列位置-->
-    <nav class="bouncingBox bouncingBox_bouncing mainBgColor">
+    <!-- <nav class="bouncingBox bouncingBox_bouncing mainBgColor">
         <section class="item link">
             <span>藝廊 <i class="fas fa-angle-down"></i></span>
             <span>拍賣會</span>
@@ -376,15 +372,15 @@
             <p class="login">登入</p>
             <button class="button epFBgColor" type="button">上架</button>
         </section>
-    </nav>
+    </nav> -->
     <!--3D背景的js-->
-    <script src="js/3dSurroundView.js"></script>
+    <script src="../js/3dSurroundView.js"></script>
     <!--客製化人物的js-->
-    <script src="js/customCharacter.js"></script>
+    <script src="../js/customCharacter.js"></script>
     <!--帳號管理的js-->
-    <script src="js/changeValue.js"></script>
+    <script src="../js/changeValue.js"></script>
     <!--按鈕通知的js-->
-    <script src="js/notice.js"></script>
+    <script src="../js/notice.js"></script>
 </body>
 
 </html>
