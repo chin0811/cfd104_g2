@@ -68,15 +68,9 @@ body{
 }
 /* 主標文字大小 */
 h1{
-<<<<<<< HEAD
-    /* font-size: 100px; */
-    font-size: 6.25em;
-    line-height: 3;
-=======
     /* font-size: 70px; */
     font-size: 4.375em;
     line-height: 2;
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
 }
 /* 副標文字大小 */
 h2{
@@ -117,14 +111,9 @@ p.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-=======
     /* font-weight: 600; */
     // padding: 10px 30px;修改前
     padding: 5px 20px;
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
     border-radius: 200px;
     border: none;
 }
@@ -133,12 +122,6 @@ p.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-    border-radius: 5px;
-    border: none;
-=======
     /* font-weight: 600; */
     padding: 5px 20px;
     border-radius: 5px;
@@ -162,7 +145,6 @@ p.small{
     border-radius: 5px;
     border: 2px solid transparent;
     transition: .3s;
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
 }
 /* 實心按鈕hover */
 .round:hover,.square:hover{
@@ -174,13 +156,8 @@ p.small{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-=======
     /* font-weight: 600; */
     padding: 5px 20px;
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
     border-radius: 200px;
     border: 2px solid #FFD60A;
 }
@@ -189,13 +166,8 @@ p.small{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-=======
     /* font-weight: 600; */
     padding: 5px 20px;
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
     border-radius: 5px;
     border: 2px solid #FFD60A;
 }
@@ -205,9 +177,6 @@ p.small{
     background-color: #141414;
     border: 2px solid #141414;
 }
-<<<<<<< HEAD
-
-=======
 /* 90%外層 */
 .size{
     max-width: 1200px;
@@ -221,7 +190,6 @@ p.small{
 .displayNone{
     display: none;
 }
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
     h1{
@@ -250,9 +218,6 @@ p.small{
         line-height: 1.3;
         letter-spacing:3px;
     }
-<<<<<<< HEAD
-}
-=======
     p.small{  
         /* font-size: 12.8px; */
         font-size:0.8em;
@@ -278,4 +243,3 @@ p.small{
 // box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
 // line-height: 2em;
 // background-color: transparent;
->>>>>>> 9b83784433d434dd397f2705f6d99a54d2d08774
