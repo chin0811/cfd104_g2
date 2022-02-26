@@ -9,24 +9,8 @@
     margin:40px auto;
     background-color: #fbf7f3;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-
-    // 透明底色
-    // background-color: #3e444a05;
-    // box-shadow: 0.1em 0.5em 0.5em #252b3020;
-    // box-shadow: 0.1em 0.5em 0.5em #252b3020;
-    // border: 1px solid #94969b50;
-    // border-right: 1px solid #55595e20;
-    // border-bottom: 1px solid #55595e20;
-    // border-left: 1px solid #ffffff30;
-    // backdrop-filter: blur(0.5em);
-
-    // 紙材質
-    // background-image:  radial-gradient(#868686 0.5px, transparent 0.5px), radial-gradient(#868686 0.5px, #FBF7F3 0.5px);
-    // background-size: 20px 20px;
-    // background-position: 0 0,10px 10px;  
-    // box-shadow: 2px 0 10px #8888;
-    // // 隱藏留言區
-    // overflow: hidden;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020,
+                0.3em 0.6em 0.5em #252b3020;
 }
 /* 所有a設定 */
 .articlePageContent{
@@ -81,8 +65,11 @@
     content: url(../image/articlePage_authorShortIntro_exclamationHover.png);
 }
 /* 文章內容 */
-.articlePageContent .articlePageWrap .pageContent .page .pic{
+.articlePageContent .articlePageWrap .pageContent .page .picTxtitem .pic{
     width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 /* 文章分享列 */
 .articlePageContent .articlePageWrap .pageContent .shareBar{
@@ -91,7 +78,6 @@
     margin: 80px 0 150px;
     padding: 20px 15px 15px;
     // background-color: #FBF7F3;
-    
     // 透明底色
     background-color: #3e444a05;
     box-shadow: 0.1em 0.5em 0.5em #252b3020;
@@ -180,11 +166,10 @@
     display: flex;
     margin: 20px 0;
     align-items: center;
-    justify-content: center;
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item .pic{
-    width: 80px;
-    height: 80px;
+    width: 30%;
+    max-height: 80px;
     overflow: hidden;
     border-radius: 5px;
 }
@@ -226,7 +211,7 @@
         padding:3% 2% 0;
         box-sizing: border-box;
         /* border: 1px solid #000; */
-        border-left: 2px solid #8888;
+        border-left: 1px solid #8888;
     }
     /* 測欄作者 */
     .articlePageContent .articlePageWrap .sideInfo .authorIntro .txt p:first-child{
@@ -240,6 +225,14 @@
         height: 100px;
         border-radius: 300px;
         overflow: hidden;
+    }
+    /*下方相關文章*/
+    .articlePageContent .articlePageWrap .pageContent .relative .item .pic{
+        width: 20%;
+        max-height: 100px;
+    }
+    .articlePageContent .articlePageWrap .pageContent .relative .item .txt{
+        width: 80%;
     }
     /* 測欄相關文章 */
     .articlePageContent .articlePageWrap .sideInfo .relativeSide{
@@ -359,11 +352,17 @@
 .articlePageContent .articlePageWrap .commentArea .commentInput .txtArea textarea {
     width: 100%;
     height: 200px;
-    border: none;
-    border-radius: 5px;
-    box-shadow:inset 0 0 5px #8888;
     resize: none;
-    font-size: 16px;
+    
+    // 共用設定
+    font-size: 1em;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+    border:1px solid rgba(136, 136, 136, 0.233);
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px     1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
 }
 // 輸入區按鈕 //
 .articlePageContent .articlePageWrap .commentArea .commentInput .txtArea .item{
