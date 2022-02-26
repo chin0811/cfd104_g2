@@ -1,9 +1,6 @@
 /* 網頁字體載入 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
 /* 網頁字體和背景顏色 */
-*{
-    font-family: 'Noto Serif TC', serif;
-}
 body{
     /* font-family: 'Noto Sans TC', sans-serif; */
     font-family: 'Noto Serif TC', serif;
@@ -43,8 +40,8 @@ body{
 }
 /* 文字顏色(淺色) */
 .lightColor{
-    color: #4b4b4b;
-}   
+    color: #BCBCBC;
+}
 /* 文字背景色(淺色) */
 .lightBgColor{
     color: #BCBCBC;
@@ -71,8 +68,8 @@ body{
 }
 /* 主標文字大小 */
 h1{
-    /* font-size: 70px; */
-    font-size: 4.375em;
+    /* font-size: 100px; */
+    font-size: 6.25em;
     line-height: 3;
 }
 /* 副標文字大小 */
@@ -114,68 +111,45 @@ p.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-    /* font-weight: 600; */
+    font-weight: 600;
     padding: 10px 30px;
     border-radius: 200px;
-    border: 2px solid #FFD60A;
-    transition: .3s;
+    border: none;
 }
 /* 方形實心按鈕 */
 .square{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-    /* font-weight: 600; */
+    font-weight: 600;
     padding: 10px 30px;
     border-radius: 5px;
-    border: 2px solid #FFD60A;
-    transition: .3s;
-}
-/* 空白橢圓按鈕 */
-.whiteRound{
-    color: #141414;
-    font-size: 1em;
-    padding: 10px 30px;
-    border-radius: 200px;
-    border: 2px solid transparent;
-    transition: .3s;
-}
-/* 空白方形按鈕 */
-.whiteSquare{
-    color: #141414;
-    font-size: 1em;
-    padding: 10px 30px;
-    border-radius: 5px;
-    border: 2px solid transparent;
-    transition: .3s;
+    border: none;
 }
 /* 實心按鈕hover */
-.whiteRound:hover,.whiteSquare,.round:hover,.square:hover{
+.round:hover,.square:hover{
     color: #FFFFFF;
     background-color: #141414;
-    border: 2px solid #141414;
 }
 /* 橢圓形外框按鈕 */
 .roundOutline{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-    /* font-weight: 600; */
+    font-weight: 600;
     padding: 10px 30px;
     border-radius: 200px;
     border: 2px solid #FFD60A;
-    transition: .3s;
 }
 /* 方形外框按鈕 */
 .squareOutline{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-    /* font-weight: 600; */
+    font-weight: 600;
     padding: 10px 30px;
     border-radius: 5px;
     border: 2px solid #FFD60A;
-    transition: .3s;
 }
 /* 外框按鈕hover */
 .roundOutline:hover,.squareOutline:hover{
@@ -183,21 +157,12 @@ p.small{
     background-color: #141414;
     border: 2px solid #141414;
 }
-.size{
-    max-width: 1200px;
-    width: 90%;
-}
-.marginAuto{
-    margin: auto;
-}
-.displayNone{
-    display: none;
-}
+
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
     h1{
-        /* font-size: 50px; */
-        font-size: 3.125em;
+        /* font-size: 70px; */
+        font-size: 4.375em;
     }
     /* 副標文字大小(手機) */
     h2{
@@ -220,12 +185,3 @@ p.small{
         font-size: 1.125em;
     }
 }
-// ======= input ==== //樣式
-// font-size: 1em;
-// border-radius: 200px;
-// box-sizing: border-box;
-// padding: 0.5em 1em;
-// border:none;
-// box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
-// line-height: 2em;
-// background-color: transparent;

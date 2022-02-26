@@ -2,14 +2,79 @@
     width: 100vw;
     height: 100vh;
 }
+
 .custom-hotspot {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #FF8F59;
+    background: #FFD60A;
+    opacity: .8;
 }
+
+
+/* 圓圈動畫 */
+
+.custom-hotspot::before {
+    content: '';
+    position: absolute;
+    /* .custom-hotspot */
+    /* 同 .custom-hotspot */
+    background: #FFD60A;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    opacity: .7;
+    animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+    animation-delay: 200ms;
+    transition: 0.5s all ease;
+    transform: scale(1);
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+        opacity: .7;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: .1;
+    }
+}
+
+.accountManagement span {
+    width: 65px;
+    margin-left: -14px;
+    margin-top: -70px;
+}
+
+.consumptionRecord span {
+    width: 65px;
+    margin-left: -14px;
+    margin-top: -70px;
+}
+
+.collect span {
+    width: 65px;
+    margin-left: -14px;
+    margin-top: -70px;
+}
+
+.myListing span {
+    width: 65px;
+    margin-left: -14px;
+    margin-top: -70px;
+}
+
+.customCharacter span {
+    width: 80px;
+    margin-left: -21.5px;
+    margin-top: -64px;
+}
+
+
+/* 文字 */
+
 div.custom-tooltip span {
-    visibility: hidden;
     position: absolute;
     border-radius: 3px;
     background-color: #fff;
@@ -18,27 +83,46 @@ div.custom-tooltip span {
     max-width: 200px;
     padding: 5px 10px;
     margin-left: -220px;
+    margin-left: 0px;
     cursor: default;
 }
-div.custom-tooltip:hover span{
+
+div.custom-tooltip:hover span {
     visibility: visible;
 }
-/* 文字下方三角形
-div.custom-tooltip:hover span:after {
+
+
+/* 文字下方三角形 */
+
+div.custom-tooltip span:after {
     content: '';
     position: absolute;
     width: 0;
     height: 0;
-    border-width: 10px;
+    border-width: 5px;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
-    bottom: -20px;
+    bottom: -10px;
     left: -10px;
     margin: 0 50%;
 }
-*/
+
+
+/* Bubble Bottom */
+
+@keyframes Bubble_Bottom {
+    0% {
+        border-color: transparent transparent transparent transparent;
+        bottom: -10px;
+    }
+    100% {
+        bottom: -20px;
+    }
+}
+
 
 /* 按鈕動態 */
+
 div.custom-tooltip span {
     display: inline-block;
     vertical-align: middle;
@@ -59,7 +143,6 @@ div.custom-tooltip span {
     animation-fill-mode: forwards;
     -webkit-animation-direction: normal, alternate;
     animation-direction: normal, alternate;
-
     /* bounce */
     position: relative;
     /*animation: bounce 1s;*/
@@ -67,12 +150,9 @@ div.custom-tooltip span {
 }
 
 
-
-
-
-
 /* 導覽列 */
-.navButtonClick_button{
+
+.navButtonClick_button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -81,50 +161,82 @@ div.custom-tooltip span {
     border: none;
     border-radius: 50%;
 }
-.bouncingBox.bouncingBox_bouncing{
+
+.bouncingBox.bouncingBox_bouncing {
     position: absolute;
     top: 0;
     margin-top: 0;
 }
 
-
-
-@media(min-width:769px){
+@media(min-width:769px) {
     .custom-hotspot {
         height: 50px;
         width: 50px;
     }
-
+    .custom-hotspot::before {
+        /* 同 .custom-hotspot */
+        width: 50px;
+        height: 50px;
+    }
+    /* 電腦版效果顯示*/
+    div.custom-tooltip span {
+        /* visibility: hidden; */
+    }
+    div.custom-tooltip:hover span:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #2098D1 transparent transparent transparent;
+        bottom: -20px;
+        animation: Bubble_Bottom .5s ease;
+        left: -10px;
+        margin: 0 50%;
+    }
     div.custom-tooltip span:before {
         /* bounce */
         content: "";
         position: absolute;
         z-index: -1;
-        top: 0; left: 0; right: 0; bottom: 0;
-        
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         transform-origin: 100% 50%;
         animation: bounce_before 1s;
         animation-iteration-count: infinite;
-        
     }
-    @keyframes bounce{
-        0%{ 
+    @keyframes bounce {
+        0% {
             color: #000;
         }
-        100%{
+        100% {
             color: #fff;
         }
     }
-    @keyframes bounce_before{
-        0%{ 
+    @keyframes bounce_before {
+        0% {
             transform: scaleX(0);
             transition: transform 0.5s ease-out;
             background: none;
         }
-        100%{
+        100% {
             transform: scaleX(1);
             transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
             background: #2098D1;
         }
+    }
+}
+
+@media(max-width:768px) {
+    .consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsOrderlist {
+        display: flex;
+        align-items: flex-start;
+        width: 70%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 }

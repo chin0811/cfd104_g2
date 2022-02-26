@@ -6,43 +6,48 @@ viewer = pannellum.viewer('panorama', {
     "hfov": "120",
     "autoLoad": true,
     "hotSpots": [{
+            "id": "accountManagement",
             "pitch": -30,
             "yaw": 50,
             "cssClass": "custom-hotspot accountManagement",
             "createTooltipFunc": hotspot,
-            "createTooltipArgs": "accountManagement",
+            "createTooltipArgs": "帳號管理",
             "clickHandlerFunc": accountManagement
         },
         {
+            "id": "collect",
             "pitch": 25,
             "yaw": 160,
             "cssClass": "custom-hotspot collect",
             "createTooltipFunc": hotspot,
-            "createTooltipArgs": "collect",
+            "createTooltipArgs": "收藏",
             "clickHandlerFunc": collect
         },
         {
+            "id": "consumptionRecord",
             "pitch": -25,
             "yaw": 76,
             "cssClass": "custom-hotspot consumptionRecord",
             "createTooltipFunc": hotspot,
-            "createTooltipArgs": "consumptionRecord",
+            "createTooltipArgs": "消費紀錄",
             "clickHandlerFunc": consumptionRecord
         },
         {
+            "id": "customCharacter",
             "pitch": -10,
             "yaw": 218,
             "cssClass": "custom-hotspot customCharacter",
             "createTooltipFunc": hotspot,
-            "createTooltipArgs": "customCharacter",
+            "createTooltipArgs": "客製化人物",
             "clickHandlerFunc": customCharacter
         },
         {
+            "id": "myListing",
             "pitch": 25,
             "yaw": 348,
             "cssClass": "custom-hotspot myListing",
             "createTooltipFunc": hotspot,
-            "createTooltipArgs": "myListing",
+            "createTooltipArgs": "我的上架",
             "clickHandlerFunc": myListing
         }
     ]
@@ -68,9 +73,68 @@ function hotspot(hotSpotDiv, args) {
     span.innerHTML = args;
     hotSpotDiv.appendChild(span);
     span.style.width = span.scrollWidth - 20 + 'px';
-    span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
-    span.style.marginTop = -span.scrollHeight - 12 + 'px';
+    span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 4 + 'px';
+    span.style.marginTop = -span.scrollHeight - 12 - 10 + 'px';
+    if (screen.width >= 769) {
+        span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
+        span.style.marginTop = -span.scrollHeight - 12 + 'px';
+    }
 }
+window.onresize = function() {
+    viewer.removeHotSpot("accountManagement");
+    viewer.removeHotSpot("collect");
+    viewer.removeHotSpot("consumptionRecord");
+    viewer.removeHotSpot("customCharacter");
+    viewer.removeHotSpot("myListing");
+    viewer.addHotSpot({
+        "id": "accountManagement",
+        "pitch": -30,
+        "yaw": 50,
+        "cssClass": "custom-hotspot accountManagement",
+        "createTooltipFunc": hotspot,
+        "createTooltipArgs": "帳號管理",
+        "clickHandlerFunc": accountManagement
+    });
+    viewer.addHotSpot({
+        "id": "collect",
+        "pitch": 25,
+        "yaw": 160,
+        "cssClass": "custom-hotspot collect",
+        "createTooltipFunc": hotspot,
+        "createTooltipArgs": "收藏",
+        "clickHandlerFunc": collect
+    });
+    viewer.addHotSpot({
+        "id": "consumptionRecord",
+        "pitch": -25,
+        "yaw": 76,
+        "cssClass": "custom-hotspot consumptionRecord",
+        "createTooltipFunc": hotspot,
+        "createTooltipArgs": "消費紀錄",
+        "clickHandlerFunc": consumptionRecord
+    });
+    viewer.addHotSpot({
+        "id": "customCharacter",
+        "pitch": -10,
+        "yaw": 218,
+        "cssClass": "custom-hotspot customCharacter",
+        "createTooltipFunc": hotspot,
+        "createTooltipArgs": "客製化人物",
+        "clickHandlerFunc": customCharacter
+    });
+    viewer.addHotSpot({
+        "id": "myListing",
+        "pitch": 25,
+        "yaw": 348,
+        "cssClass": "custom-hotspot myListing",
+        "createTooltipFunc": hotspot,
+        "createTooltipArgs": "我的上架",
+        "clickHandlerFunc": myListing
+    });
+}
+
+
+
 //帳號管理
 function accountManagement() {
     accountManagement_bouncing.style.display = "block"
@@ -108,13 +172,13 @@ closes[4].onclick = function(e) {
         bouncingBox[4].style.display = "none"
     }
     //導覽列
-const navButtonClick_button = document.querySelector(".navButtonClick_button");
-const bouncingBox_bouncing = document.querySelector(".bouncingBox_bouncing");
-bouncingBox_bouncing.style.display = "none"
-navButtonClick_button.onclick = function(e) {
-    if (bouncingBox_bouncing.style.display == "none") {
-        bouncingBox_bouncing.style.display = "flex"
-    } else {
-        bouncingBox_bouncing.style.display = "none"
-    }
-}
+    // const navButtonClick_button = document.querySelector(".navButtonClick_button");
+    // const bouncingBox_bouncing = document.querySelector(".bouncingBox_bouncing");
+    // bouncingBox_bouncing.style.display = "none"
+    // navButtonClick_button.onclick = function(e) {
+    //     if (bouncingBox_bouncing.style.display == "none") {
+    //         bouncingBox_bouncing.style.display = "flex"
+    //     } else {
+    //         bouncingBox_bouncing.style.display = "none"
+    //     }
+    // }
