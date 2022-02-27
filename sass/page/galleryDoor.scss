@@ -24,7 +24,7 @@
                 position: absolute;
                 perspective: 1000px;
                 width: 300px;
-                height: 450px;  
+                height: 400px;  
                 left:50%;
                 top:50%;
                 transform:translate(-50%,-50%);
@@ -33,33 +33,43 @@
                     @extend %the3D;
                     //定位父層galleryDoorMain
                     position: absolute;
+
                     .door{
                         @extend %the3D;
                         //定位父層galleryDoorMain
                         position: absolute;
-                        border-radius: 555em 555em 0 0;
-                        overflow:hidden;
                         -webkit-box-reflect:
                         below 5px 
                         -webkit-gradient(linear, left top, left bottom, from(transparent), 
                         color-stop(0.5, transparent), 
                         to(rgba(255, 255, 255, 0.5)));
+
                         a{
                             text-decoration: none;
                             color: #141414;
 
-                            img{
-                                width: 100%;
-                                height: auto;
-                            }
-                            .text{
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
+                            .wrap{
+                                position: relative;
 
-                                p{
-                                    font-size: 1.5em;
-                                    font-weight: 600;
+                                .pic{
+                                    overflow:hidden;
+                                    border-radius: 555em 555em 0 0;
+
+                                    img{
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                }
+                                .text{
+                                    //定位父層wrap
+                                    position: absolute;
+                                    left: -35%;
+                                    top: 50%;
+                                    opacity: 0;
+                                    
+                                    p{
+                                        font-size: 1.2em;
+                                    }
                                 }
                             }
                         }

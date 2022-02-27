@@ -57,18 +57,6 @@ function getBgPos(i){ //returns the background-position string to create paralla
     return ( 100-gsap.utils.wrap(0,360,gsap.getProperty('.ring', 'rotationY')-180-i*72)/360*500 )+'px 0px';
 }
 
-//hover時分類名稱放大
-var textHover;
-$('.door').hover(function() {
-    textHover = new TimelineMax();
-    textHover.to( $(this).find('p'), {
-        scale: 2,
-        y: 20,
-    });
-},function() {
-    textHover.reverse();
-});
-
 // 點擊連結後播放完動畫才跳轉網頁
 $("#toys").click(function(e){
     e.preventDefault();
@@ -84,8 +72,12 @@ $("#toys").click(function(e){
     }, 0.1);
 });
 
+// hover顯示字
+$(".door").each(function(index, element){
+    var anim  = TweenLite.to($(this).find(".text"),1,{scale:1,opacity:1,y:-10,paused:true});
+    element.animation = anim ;
+});
 
-// $("#toys").click(function() {
-//     $('body').css('background', '#141414');
-//     $('body').css('zIndex','99999999999999');
-// });
+$(".door").hover(over, out);
+function over(){ this.animation.play() };
+function out(){ this.animation.reverse() };
