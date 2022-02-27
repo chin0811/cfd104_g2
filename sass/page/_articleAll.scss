@@ -16,56 +16,140 @@
 // articleContent所有img設定
 .articleContent img{
     width: 100%;
+    vertical-align: middle;
+    transition: .3s;
+    filter: saturate(30%);
 }
-.articleContent h2{
+.articleContent img:hover{
+    transform: scale(1.02);
+    filter: saturate(100%);
+}
+// 主標
+.articleContent .mainTitle h1{
+    text-align: center;
+}
+// .articleContent .mainTitle p{
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: 5%;
+//     border: 1px solid #000;
+//     border-style:double;
+//     border-width: 5px;
+//     display: inline-block;
+// }
+// 次標
+.articleContent .subTitle{
+    position: relative;
+    margin-bottom: 15%;
+}
+.articleContent .subTitle  h2{
     text-align: center;
     position: relative;
     // 90%裡面80%
-    width: 80%;
+    width: 90%;
     margin: auto;
+    // 手機特製h2大小
+    font-size: 0.8em;
+    line-height: 5;
 }
-.articleContent h2:before,
-.articleContent h2:after{
+.articleContent .subTitle h2:before,
+.articleContent .subTitle h2:after{
     content: '';
-    background-color: #d1d1d157;
+    background-color: #222222b2;
     width: 100%;
-    height: 2px;
+    height: 3px;
     /* 定位在.homeNews .newsContain h2 */
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
 }
-.articleContent h2:before{
+.articleContent .subTitle h2:before{
     top: 10px;
 }
-.articleContent h2:after{
+.articleContent .subTitle h2:after{
     bottom: 10px;
+}
+.articleContent .subTitle a{
+    // 定位在.subTitle
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 105%;
 }
 // 手機直向排列設定
 .articleContent .wrap{
     display: block;
     // 90%裡面90%
     width: 90%;
-    margin: auto;
+    margin:auto;
 } 
-.articleContent .flat .pic{
-    width: 90%;
-    border: 1px solid #000;
+.articleContent .wrap .item .pic{
+    width: 100%;
     max-height: 150px;
     overflow: hidden;
 }
-// .articleContent .flat .pic{
-//     width: 90%;
-// }
+.articleContent .wrap .item{
+    margin-bottom: 10%;
+}
 @media screen and (min-width:768px){
-    // 手機橫向排列設定
-    // .articleContent .wrap{
-    //     display: flex;
-    // }
-    // .articleContent .flat a{
-        //     width: 30%;
-        // }
+    // 電腦橫向排列設定
+    .articleContent .wrap{
+        display: flex;
+        margin:0 auto 2%;
+    }
+    // 次標
+    .articleContent .subTitle{
+        margin-bottom: 0%;
+    }
+    .articleContent .subTitle  h2{
+        text-align: center;
+        position: relative;
+        // 90%裡面80%
+        width: 90%;
+        margin: auto;
+        font-size: 1.953em;
+        line-height: 3;
+    }
+    .articleContent .subTitle a{
+        // 定位在.subTitle
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5%;
+        // 覆寫rwd
+        left: auto;
+        transform: translateX(0%);
+    }
+    .articleContent .wrap:not(:last-child){
+        border-bottom: 8px solid #222222b2;
+    }
+    // 四欄設計
+    .articleContent .flat a,.articleContent .fourRows a{
+        width: calc(100%/4);
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    // 二欄設計
+    .articleContent .twoRows a{
+        width: calc(100%/2);
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    .articleContent .twoRows .item .pic{
+        max-height: 200px;
+    }
+    // 三欄設計
+    .articleContent .threeRows a{
+        width: calc(100%/3);
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    .articleContent .threeRows .item .pic{
+        max-height: 300px;
+    }
+
 }
 
 
