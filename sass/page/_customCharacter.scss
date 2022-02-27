@@ -3,50 +3,64 @@
     padding-top: 2em;
 }
 */
-.customCharacter_bouncing main .main{
+
+.customCharacter_bouncing main .main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
 /* 點擊人物更換 */
-.customCharacter_bouncing main .main .clickPeople{
+
+.customCharacter_bouncing main .main .clickPeople {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     width: 50%;
-
     position: relative;
 }
-.customCharacter_bouncing main .main .clickPeople .img{
+
+.customCharacter_bouncing main .main .clickPeople .img {
     width: 20%;
     margin: 4px;
 }
+
+
 /* 滑桿更換人物 */
-.customCharacter_bouncing main .main .sliderCharacters{
+
+.customCharacter_bouncing main .main .sliderCharacters {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
 }
+
+
 /* 人像*/
-.customCharacter_bouncing main .main .sliderCharacters .avatar{
+
+.customCharacter_bouncing main .main .sliderCharacters .avatar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.customCharacter_bouncing main .main .sliderCharacters .avatar .img{
+
+.customCharacter_bouncing main .main .sliderCharacters .avatar .img {
     border-radius: 30px;
     overflow: hidden;
 }
+
+
 /* 人像控制桿 */
-.customCharacter_bouncing main .main .sliderCharacters .avatar .controller{
+
+.customCharacter_bouncing main .main .sliderCharacters .avatar .controller {
     margin-top: 0.5em;
 }
-.customCharacter_bouncing main .main .sliderCharacters .avatar .controller .circle{
+
+.customCharacter_bouncing main .main .sliderCharacters .avatar .controller .circle {
     display: inline-block;
     margin: 0 4px;
     width: 1em;
@@ -55,15 +69,18 @@
     background: #394897;
 }
 
+
 /* 控制桿 */
-.customCharacter_bouncing main .main .sliderCharacters .adjust{
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust {
     margin-top: 1em;
     line-height: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever{
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever {
     display: inline-block;
     width: 10em;
     height: 1em;
@@ -71,8 +88,10 @@
     background: #999;
     position: relative;
 }
-.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever .adjustmentLeverContent{
-    position: absolute; /* .customCharacter_bouncing main .sliderCharacters .adjust .adjustmentLever */
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever .adjustmentLeverContent {
+    position: absolute;
+    /* .customCharacter_bouncing main .sliderCharacters .adjust .adjustmentLever */
     width: 3em;
     height: inherit;
     border: 1px solid #000;
@@ -80,21 +99,27 @@
     background: #FFD60A;
 }
 
-/* 修改遮罩 */
-.mask:after{
-    content: "";
-    position: absolute; /* .customCharacter_bouncing main .main .clickPeople */
-    top: 0; left: 0;
 
+/* 修改遮罩 */
+
+.mask:after {
+    content: "";
+    position: absolute;
+    /* .customCharacter_bouncing main .main .clickPeople */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
-.mask .img{
-    filter:grayscale(1);
+
+.mask .img {
+    filter: grayscale(1);
 }
 
+
 /* RWD */
-@media(min-width:769px){
+
+@media(min-width:769px) {
     /*
     .customCharacter_bouncing main .main .sliderCharacters{
         flex-direction: row;
@@ -107,10 +132,10 @@
         margin-left: 6em;
     }
     */
-    .customCharacter_bouncing main .main{
+    .customCharacter_bouncing main .main {
         flex-direction: row-reverse;
     }
-    .customCharacter_bouncing main .main .sliderCharacters .avatar .img{
+    .customCharacter_bouncing main .main .sliderCharacters .avatar .img {
         width: 40%;
     }
 }

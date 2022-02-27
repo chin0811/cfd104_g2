@@ -78,11 +78,11 @@ img {
     justify-content: flex-start;
 }
 
-.bouncingBox .title .close {
+.bouncingBox .title .close3D {
     padding-left: 1em;
 }
 
-.bouncingBox .title .close .fa-times {
+.bouncingBox .title .close3D .fa-times {
     cursor: pointer;
 }
 
@@ -138,7 +138,7 @@ img {
         max-width: 1200px;
         margin: auto;
         max-height: 560px;
-        border-radius: 0px;
+        // border-radius: 0px;
     }
     .customCharacter_bouncing main {
         overflow-y: hidden;

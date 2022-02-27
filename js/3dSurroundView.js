@@ -61,7 +61,7 @@ const customCharacter_bouncing = document.querySelector(".customCharacter_bounci
 const myListing_bouncing = document.querySelector(".myListing_bouncing");
 
 const bouncingBox = document.querySelectorAll(".bouncingBox");
-const closes = document.querySelectorAll(".close");
+const closes3D = document.querySelectorAll(".close3D");
 for (let i = 0; 5 > i; i++) {
     bouncingBox[i].style.display = "none"
 }
@@ -156,19 +156,19 @@ function myListing() {
     myListing_bouncing.style.display = "block"
 }
 
-closes[0].onclick = function(e) {
+closes3D[0].onclick = function(e) {
     bouncingBox[0].style.display = "none"
 }
-closes[1].onclick = function(e) {
+closes3D[1].onclick = function(e) {
     bouncingBox[1].style.display = "none"
 }
-closes[2].onclick = function(e) {
+closes3D[2].onclick = function(e) {
     bouncingBox[2].style.display = "none"
 }
-closes[3].onclick = function(e) {
+closes3D[3].onclick = function(e) {
     bouncingBox[3].style.display = "none"
 }
-closes[4].onclick = function(e) {
+closes3D[4].onclick = function(e) {
         bouncingBox[4].style.display = "none"
     }
     //導覽列
