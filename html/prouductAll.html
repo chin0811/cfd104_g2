@@ -19,7 +19,7 @@
         <div class="productBread size marginAuto">
             <p>
                 <span>logo</span>
-                <span>>雕塑類</span>
+                <span>>雕塑類&emsp;</span>
             </p>
         </div>
         <div class="adjustBox size marginAuto">
@@ -27,19 +27,19 @@
                 <div class="sideNavTitle">
                     <a href="">
                         <h2>
-                            <span>雕塑類</span>
+                            <span>雕塑類&emsp;</span>
                         </h2>
                     </a>
                 </div>
                 <ul>
                     <li>
-                        <a href=""><h3>全部</h3></a>
+                        <a href=""><h3>畫作類</h3></a>
                     </li>
                     <li>
-                        <a href=""><h3>分類</h3></a>
+                        <a href=""><h3>公仔類</h3></a>
                     </li>
                     <li>
-                        <a href=""><h3>分類</h3></a>
+                        <a href=""><h3>品牌合作</h3></a>
                     </li>
                 </ul>   
             </nav>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index].img">
                     </div>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index].price}}</span>
-                        <span>{{item[index].time}}</span>
+                        <span class="small">{{item[index].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
@@ -91,7 +91,7 @@
                         75
                     </div>
                 </article>
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+1].img">
                     </div>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index+1].price}}</span>
-                        <span>{{item[index+1].time}}</span>
+                        <span class="small">{{item[index+1].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
@@ -114,7 +114,7 @@
                         75
                     </div>
                 </article>
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+2].img">
                     </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index+2].price}}</span>
-                        <span>{{item[index+2].time}}</span>
+                        <span class="small">{{item[index+2].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
@@ -137,7 +137,7 @@
                         75
                     </div>
                 </article>
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+3].img">
                     </div>
@@ -150,7 +150,7 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index+3].price}}</span>
-                        <span>{{item[index+3].time}}</span>
+                        <span class="small">{{item[index+3].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
@@ -177,7 +177,7 @@
                 aaa
             </section>
             <div class="productSection size marginAuto">
-                <article class="prouductItem commomItem aidBgColor" v-for="product in products">
+                <article class="prouductItem commomItem" v-for="product in products">
                     <div class="img">
                         <img :src="product.img">
                     </div>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="footer">
                         <span>{{product.price}}</span>
-                        <span>{{product.time}}</span>
+                        <span class="small">{{product.time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>

@@ -10,321 +10,555 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="js/jquery/jquery.js"></script>
 	<script src="js/jquery/jquery-ui.js"></script>
+    <script src="js/vue/vue.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-
     <title>listing</title>
 
     <!-- 拍賣步驟收起 -->
     <script>
 		$(function () {
 			$(`#slideButton`).click(function(){
-				// $('p')是整個 $('img') 會往左上收起
 				$('.toggleFrame').slideToggle();
-				// $('span').slideToggle();
+                $(".arrow").toggleClass("active");
                 // $('b').rotateToggle();
 			});
 		});
 	</script>
 </head>
 <body>
-    @@include('layout/headerNormal.html')
+    <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/header.js"></script>
+    <header>
+        <section class="headerNormalContain">
+            <section class="logoContain">
+                <div class="logo">
+                        <a href="">
+                            <img src="assets/image/all_logo.png">
+                        </a>
+                </div>
+            </section>
+            <div class="hamburger"></div>
+            <nav class="mainMenu fullscreen">
+                <ul>
+                    <li style="--animation-order: 1;">
+                        <input id="navMenu" type="checkbox">
+                        <label for="navMenu" class="deepColor">
+                                <span>藝廊</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                        </label>
+                        <ul>
+                            <li><a href="" class="lightColor">展示區</a></li>
+                            <li><a href="" class="lightColor">雕塑類</a></li>
+                            <li><a href="" class="lightColor">畫作類</a></li>
+                            <li><a href="" class="lightColor">公仔類</a></li>
+                            <li><a href="" class="lightColor">品牌合作</a></li>
+                        </ul>
+                    </li>
+                    <li style="--animation-order: 2;" >
+                        <a href="/" class="deepColor">拍賣廳</a>
+                    </li>
+                    <li style="--animation-order: 3;">
+                        <a href="/" class="deepColor">藝論</a>
+                    </li>
+                    <li style="--animation-order: 4;">
+                        <a href="/" class="deepColor">關於我們</a>
+                    </li>
+                    <li style="--animation-order: 5;">
+                        <a href="/" class="deepColor">會員中心</a>
+                    </li>
+                    <li style="--animation-order: 6;">
+                        <section class="memberList">
+                            <div class="icon">
+                                    <a href="">
+                                        <img src="assets/image/home_header_iconBell.png">
+                                    </a>
+                            </div>
+                            <div class="icon">
+                                    <a href="">
+                                        <img src="assets/image/home_header_iconMember.png">
+                                    </a>
+                            </div>
+                        </section>
+                    </li>
+                    <li style="--animation-order: 7;">
+                        <div class="login">
+                            <a href="" class="whiteRound">登入</a>
+                            <a href="" class="round">上架</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="close">
+                    <div></div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
     <!-- 拍賣流程步驟 -->
-    <section>
-        <div class="listingSteps">
-            <h2 class="epBColor">上架競拍流程</h2>
-            <h4>馬上開啟您的個人拍賣會</h4>
-            <!-- 收起按鈕 -->
-            <button id="slideButton" class="roundOutline"><h6>上架流程步驟 +</h6><b class="rowDiv" @click="arrowClick">▼</b></button>
-            <!-- 按鈕收起span框 -->
-            <span class="toggleFrame">
-                <div class="steps">
-                    <div class="step mainBgColor">
-                        <div class="stepTitle">
-                            <img src="/assets/image/listingImage/enroll_membership_icon.png">
-                            <h6>步驟一: 註冊並且登入</h6>
+    <section id="listingVue">
+        <section>
+            <div class="listingSteps">
+                <h2 class="epBColor">上架競拍流程</h2>
+                <h4>馬上開啟您的個人拍賣會</h4>
+                <!-- 收起按鈕 -->
+                <button id="slideButton" class="roundOutline"><h6>上架流程步驟 &nbsp;</h6><b class="arrow">▲</b></button>
+                <!-- 按鈕收起span框 -->
+                <span class="toggleFrame">
+                    <div class="steps">
+                        <div class="step aidBgColor">
+                            <div class="stepTitle">
+                                <img src="/assets/image/listingImage/enroll_membership_icon.png">
+                                <h6>步驟一: 註冊並且登入</h6>
+                            </div>
+                            <p>上架您的藝術品進行競拍活動之前，請先註冊為「藝起」之會員。</p>
                         </div>
-                        <p>上架您的藝術品進行競拍活動之前，請先註冊為「藝起」之會員。</p>
+                        <div class="step aidBgColor">
+                            <div class="stepTitle">
+                                <img src="assets/image/listingImage/find_page_icon.png">
+                                <h6>步驟二: 找到競拍頁面</h6>
+                            </div>
+                            <p>請到導覽列中按下"藝術品上架"，連結到賣家上架頁面。</p>
+                        </div>
+                        <div class="step aidBgColor">
+                            <div class="stepTitle">
+                                <img src="assets/image/listingImage/write_info_icon.png">
+                                <h6>步驟三: 填入商品資訊</h6>
+                            </div>
+                            <p>完成填寫商品資訊，放上您吸引眼球的商品圖片，並注意<img src="assets/image/listingImage/help_question_icon.png" alt="none">圖示的說明。</p>
+                        </div>
+                        <div class="step aidBgColor">
+                            <div class="stepTitle">
+                                <img src="assets/image/listingImage/preview_check_icon.png">
+                                <h6>步驟四: 上架前之預覽</h6>
+                            </div>
+                            <p>案下"預覽畫面"按鈕，檢視您所填寫商品資訊，因為限時競拍系統，商品上架後將不可進行編輯，請務必確認填寫正確後才進行下一步。</p>
+                        </div>
+                        <div class="step aidBgColor">
+                            <div class="stepTitle">
+                                <img src="assets/image/listingImage/audit_icon.png">
+                                <h6>步驟五: 等待審核上架</h6>
+                            </div>
+                            <p>按下"確認送出"按鈕，待工作人員審核。</p>
+                        </div>
+                        <div class="step aidBgColor">
+                            <div class="stepTitle">
+                                <img src="assets/image/listingImage/auction_icon.png">
+                                <h6>步驟六: 商品競拍開始</h6>
+                            </div>
+                            <p>工作人員審核通過後，將再會於中心發出通知，商品立即開始上架計時競拍。</p>
+                        </div>
                     </div>
-                    <div class="step mainBgColor">
-                        <div class="stepTitle">
-                            <img src="assets/image/listingImage/find_page_icon.png">
-                            <h6>步驟二: 找到競拍頁面</h6>
-                        </div>
-                        <p>請到導覽列中按下"藝術品上架"，連結到賣家上架頁面。</p>
+                </span>
+            </div>
+        </section>
+        <section>
+            <div class="bannerAdTopic">
+                <h4 class="epBColor">藝廊效果廣告展示</h4>
+            </div>
+        </section>
+
+        <!-- 產品效果廣告展示 -->
+        <div class="owl-carousel owl-theme">
+        <div class="cube">
+            <div class="top"></div>
+            <div>
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+            </div>
+        </div>
+        <div class="cigarette">
+            <div class="cigaretteBody">
+                <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+            <div class="cigaretteBody">
+                <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="assets/image/listingImage/about_city3.png" alt="none">
+        </div>
+        </div>
+        <script src="js/carousel.js"></script>
+        <section class="tab-content">
+            <!--分頁bar1 -->
+            <input type="radio" id="tab1" class="" name="mytabs" checked="checked" required>
+            <label for="tab1" class="tag epBColor">上架競標藝術品</label>
+            <!-- 上架競標藝術品頁面 -->
+            <form action="#" class="content aidBgColor" name="page1" method="post">
+                <div class="listingBgPic1">
+                    <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
+                </div>
+                <div class="listingBgPic2">
+                    <img src="assets/image/listingImage/listing_bg_picture2.png" alt="none">
+                </div>
+                <div class="listingBgPic3">
+                    <img src="assets/image/listingImage/listing_bg_picture3.png" alt="none">
+                </div>
+                <div class="listingBgPic4">
+                    <img src="assets/image/listingImage/kaws_action_figure.png" alt="none">
+                </div>
+                    <h5>上架資訊:</h5>
+                    <div class="artTitle">
+                        <label for="">
+                            <h6>藝術品名</h6>
+                        </label>
+                        <input type="text" class="textBox" id="" name="artName" value="" v-model="message" placeholder="請輸入" required>
                     </div>
-                    <div class="step mainBgColor">
-                        <div class="stepTitle">
-                            <img src="assets/image/listingImage/write_info_icon.png">
-                            <h6>步驟三: 填入商品資訊</h6>
-                        </div>
-                        <p>完成填寫商品資訊，放上您吸引眼球的商品圖片，並注意<img src="assets/image/listingImage/help_question_icon.png" alt="none">圖示的說明。</p>
+                    <div class="artist">
+                        <label for="">
+                            <h6>藝術品創作者</h6>
+                            <input type="text" class="textBox" id="" name="artistName" value="" v-model="message1" placeholder="請輸入" required>
+                        </label>
                     </div>
-                    <div class="step mainBgColor">
-                        <div class="stepTitle">
-                            <img src="assets/image/listingImage/preview_check_icon.png">
-                            <h6>步驟四: 上架前之預覽</h6>
-                        </div>
-                        <p>案下"預覽畫面"按鈕，檢視您所填寫商品資訊，因為限時競拍系統，商品上架後將不可進行編輯，請務必確認填寫正確後才進行下一步。</p>
+                    <div class="bidTime">
+                        <label for="">
+                            <h6>競標時間</h6>
+                            <select name="time" class="aidBgColor" required>
+                                <option value="">請選擇</option>
+                                <option value="1">24小時</option>
+                                <option value="2">3天</option>
+                                <option value="3">7天</option>
+                                <option value="4">10天</option>
+                                <option value="5">15天</option>
+                                <option value="6">21天</option>
+                                <option value="7">30天</option>
+                            </select>
+                        </label>
                     </div>
-                    <div class="step mainBgColor">
-                        <div class="stepTitle">
-                            <img src="assets/image/listingImage/audit_icon.png">
-                            <h6>步驟五: 等待審核上架</h6>
+                <div class="startPrice">
+                    <label for="">
+                        <h6>起標價</h6>
+                    </label>
+                    <input type="text" class="textBox" id="" name="starPrice" value="" v-model="score" placeholder="請輸入" required>
+                </div>
+                <div class="bidPitch">
+                    <label for="">
+                        <h6>每次標價間距</h6>
+                        <select name="bidPitch" class="aidBgColor" required>
+                            <option value="">請選擇</option>
+                            <option value="100">NT 100</option>
+                            <option value="200">NT 200</option>
+                            <option value="500">NT 500</option>
+                            <option value="1000">NT 1,000</option>
+                            <option value="2000">NT 2,000</option>
+                            <option value="5000">NT 5,000</option>
+                            <option value="10000">NT 10,000</option>
+                            <option value="20000">NT 20,000</option>
+                            <option value="50000">NT 50,000</option>
+                            <option value="100000">NT 100,000</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="price">
+                    <label for="">
+                        <h6>定價</h6>
+                    </label>
+                    <input type="text" class="textBox" id="price" name="" value="" v-model="score1" placeholder="請輸入" required>
+                </div>
+                <div class="productType">
+                    <h5>產品種類:</h5>
+                    <div class="allType">
+                        <div class="type">
+                            <label>
+                                <input type="radio" name="type" required>
+                                畫作品
+                            </label>
                         </div>
-                        <p>按下"確認送出"按鈕，待工作人員審核。</p>
-                    </div>
-                    <div class="step mainBgColor">
-                        <div class="stepTitle">
-                            <img src="assets/image/listingImage/auction_icon.png">
-                            <h6>步驟六: 商品競拍開始</h6>
+                        <div class="type">
+                            <label>
+                                <input type="radio" name="type">
+                                雕像/模型/公仔
+                            </label>
                         </div>
-                        <p>工作人員審核通過後，將再會於中心發出通知，商品立即開始上架計時競拍。</p>
+                        <div class="type">
+                            <label>
+                                <input type="radio" name="type">
+                                裝置藝術品
+                            </label>
+                        </div>
+                        <div class="type">
+                            <label>
+                                <input type="radio" name="type">
+                                街頭藝術品
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </span>
-        </div>
-    </section>
-
-<!-- 產品效果廣告展示 -->
-<div class="owl-carousel owl-theme">
-    <div class="cube">
-        <div class="top"></div>
-        <div>
-            <span style="--i:0"></span>
-            <span style="--i:1"></span>
-            <span style="--i:2"></span>
-            <span style="--i:3"></span>
-        </div>
-    </div>
-    <div class="banner">
-        <img src="assets/image/listingImage/about_purple.png" alt="none">
-    </div>
-    <div class="banner">
-        <img src="assets/image/listingImage/about_city6.png" alt="none">
-    </div>
-    <div class="banner">
-        <img src="assets/image/listingImage/about_city3.png" alt="none">
-    </div>
-</div>
-<script src="js/carousel.js"></script>
-
-    <section class="tab-content">
-        <!--分頁bar1 -->
-        <input type="radio" id="tab1" name="mytabs" checked="checked" required>
-        <label for="tab1" class="tag">上架競標藝術品</label>
-        <!-- 上架競標藝術品頁面 -->
-        <form action="listing1.html" class="content mainBgColor" name="page1" method="post">
+                <div class="ad">
+                    <div class="show">
+                        <h5>藝廊廣告需求:<span><img src="assets/image/listingImage/help_question_icon.png" alt="none"></span></h5>
+                        <div class="qAnswer">
+                            <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。<br>(如右方)達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
+                        </div>
+                    </div>
+                    <label>
+                        <input type="radio" name="ad" required>
+                        購買廣告
+                    </label>
+                    <label>
+                        <input type="radio" name="ad">
+                        暫無需求
+                    </label>
+                </div>
+                <div class="uploadFile">
+                    <h5>藝術品圖檔上傳:</h5>
+                    <ol class="uploadPicture">
+                        <li>
+                            <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
+                            <label for="pic"><img src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
+                        </li>
+                        <li>
+                            <input type="file" id="pic" name="pic" accept=".png,.jpg">
+                            <label for="pic"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                        </li>
+                        <!--
+                        <li></li>
+                        <li></li>
+                        <li></li> -->
+                    </ol>
+                </div>
+                <div class="uploadCertification">
+                    <h5>藝術證明:</h5>
+                        <div class="certification">
+                            <input type="file" id="paper" name="paper" accept=".pdf" required>
+                            <label for="paper"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                        </div>
+                </div>
+                    <div class="productIntro">
+                            <h5>商品介紹(商品描述):</h5>
+                            <textarea name="productIntro" id="productIntro" cols="100" rows="10" name="goods" v-model="message2" placeholder="請輸入" required></textarea>
+                    </div>
+                    <div class="sellerIntro">
+                            <h5>賣家介紹(自我推薦):</h5>
+                            <textarea name="sellerIntro" id="sellerIntro" cols="80" rows="10" name="sellerIntro" placeholder="請輸入" required></textarea>
+                    </div>
+                <section class="btn">
+                    <input type="button" class="btnProduct roundOutline" value="預覽畫面" id="btnProduct">
+                    <input type="submit" class="btnProduct round" value="確認送出(審核)" onclick="check()"> <!--onclick="location.href='listing.html'"-->
+                </section>
+            </form>
+            <!--分頁bar2 -->
+            <input type="radio" id="tab2" name="mytabs">
+            <label for="tab2" class="tag epBColor">展覽藝術品(非賣)</label>
+            <!-- 展覽品頁面顯示 -->
+            <form action="#" class="content aidBgColor" name="pag2" method="post">
+                <div class="listingBgPic1">
+                    <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
+                </div>
+                <div class="listingBgPic2">
+                    <img src="assets/image/listingImage/listing_bg_picture2.png" alt="none">
+                </div>
+                <div class="listingBgPic3">
+                    <img src="assets/image/listingImage/listing_bg_picture3.png" alt="none">
+                </div>
+                <div class="listingBgPic4">
+                    <img src="assets/image/listingImage/kaws_action_figure.png" alt="none">
+                </div>
                 <h5>上架資訊:</h5>
                 <div class="artTitle">
                     <label for="">
                         <h6>藝術品名</h6>
                     </label>
-                    <input type="text" class="textBox" id="" name="artName" value="" placeholder="請輸入" required>
+                    <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
                 </div>
                 <div class="artist">
                     <label for="">
                         <h6>藝術品創作者</h6>
-                        <input type="text" class="textBox" id="" name="artistName" value="" placeholder="請輸入" required>
                     </label>
+                    <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
                 </div>
-                <div class="bidTime">
-                    <label for="">
-                        <h6>競標時間</h6>
-                        <select name="time" class="aidBgColor" required>
-                            <option value="">請選擇</option>
-                            <option value="1">24小時</option>
-                            <option value="2">3天</option>
-                            <option value="3">7天</option>
-                            <option value="4">10天</option>
-                            <option value="5">15天</option>
-                            <option value="6">21天</option>
-                            <option value="7">30天</option>
-                        </select>
-                    </label>
+                <div class="uploadFile">
+                    <h5>藝術品圖檔上傳:</h5>
+                    <ol class="uploadPicture">
+                        <li>
+                            <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
+                            <label for="pic"><img src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
+                        </li>
+                        <li>
+                            <input type="file" id="pic" name="pic" accept=".png,.jpg">
+                            <label for="pic"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                        </li>
+                        <!--
+                        <li></li>
+                        <li></li>
+                        <li></li> -->
+                    </ol>
                 </div>
-            <div class="startPrice">
-                <label for="">
-                    <h6>起標價</h6>
-                </label>
-                <input type="text" class="textBox" id="" name="starPrice" value="" placeholder="請輸入" required>
-            </div>
-            <div class="bidPitch">
-                <label for="">
-                    <h6>每次標價間距</h6>
-                    <select name="bidPitch" class="aidBgColor" required>
-                        <option value="">請選擇</option>
-                        <option value="100">NT 100</option>
-                        <option value="200">NT 200</option>
-                        <option value="500">NT 500</option>
-                        <option value="1000">NT 1,000</option>
-                        <option value="2000">NT 2,000</option>
-                        <option value="5000">NT 5,000</option>
-                        <option value="10000">NT 10,000</option>
-                        <option value="20000">NT 20,000</option>
-                        <option value="50000">NT 50,000</option>
-                        <option value="100000">NT 100,000</option>
-                    </select>
-                </label>
-            </div>
-            <div class="price">
-                <label for="">
-                    <h6>定價</h6>
-                </label>
-                <input type="text" class="textBox" id="price" name="" value="" placeholder="請輸入" required>
-            </div>
-            <div class="productType">
-                <h5>產品種類:</h5>
-                <div class="allType">
-                    <div class="type">
-                        <label>
-                            <input type="radio" name="type" required>
-                            畫作品
-                        </label>
-                    </div>
-                    <div class="type">
-                        <label>
-                            <input type="radio" name="type">
-                            雕像/模型/公仔
-                        </label>
-                    </div>
-                    <div class="type">
-                        <label>
-                            <input type="radio" name="type">
-                            裝置藝術品
-                        </label>
-                    </div>
-                    <div class="type">
-                        <label>
-                            <input type="radio" name="type">
-                            街頭藝術品
-                        </label>
-                    </div>
+                <div class="uploadCertification">
+                    <h5>藝術證明:</h5>
+                        <div class="certification">
+                            <input type="file" id="paper" name="paper"  accept=".pdf" required>
+                            <label for="paper"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                        </div>
                 </div>
-            </div>
-            <div class="ad">
-                <div class="show">
-                    <h5 class="epBColor">藝廊廣告需求:<span><img src="assets/image/listingImage/help_question_icon.png" alt="none"></span></h6>
-                    <div class="qAnswer">
-                        <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。<br>(如右方)達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
-                    </div>
-                </div>
-                <label>
-                    <input type="radio" name="ad" required>
-                    購買廣告
-                </label>
-                <label>
-                    <input type="radio" name="ad">
-                    暫無需求
-                </label>
-            </div>
-            <div class="uploadFile">
-                <h5>藝術品圖檔上傳:</h5>
-                <ol class="uploadPicture">
-                    <li>
-                        <input type="file" id="pic" name="pic" accept="image/*" required>
-                        <label for="pic"><img src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
-                    </li>
-                    <li>
-                        <input type="file" id="pic" name="pic" accept="image/*">
-                        <label for="pic"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
-                    </li>
-                    <!--
-                    <li></li>
-                    <li></li>
-                    <li></li> -->
-                </ol>
-            </div>
-            <div class="uploadCertification">
-                <h5>藝術證明:</h5>
-                    <div class="certification">
-                        <input type="file" id="paper" name="paper" required>
-                        <label for="paper"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
-                    </div>
-            </div>
                 <div class="productIntro">
                         <h5>商品介紹(商品描述):</h5>
-                        <textarea name="productIntro" id="productIntro" cols="100" rows="20" name="goods" required></textarea>
+                        <textarea name="productIntro" id="productIntro" cols="80" rows="10" name="goods" required></textarea>
                 </div>
                 <div class="sellerIntro">
                         <h5>賣家介紹(自我推薦):</h5>
                         <textarea name="sellerIntro" id="sellerIntro" cols="80" rows="10" name="sellerIntro" required></textarea>
                 </div>
-            <section class="btn">
-                <input type="button" class="btnProduct roundOutline" value="預覽畫面" id="btnProduct">
-                <input type="submit" class="btnProduct round" value="確認送出(審核)" onclick="check()"> <!--onclick="location.href='listing.html'"-->
-            </section>
-        </form>
+                <section class="btn">
+                    <input type="button" class="btnProduct roundOutline" id="btnProduct1" value="預覽畫面">
+                    <input type="submit" class="btnProduct round" value="確認送出(審核)">
+                </section>
+            </form>
+        </section>
+        <!-- 燈箱預覽畫面 -->
+        <section>
+            <div class="modal-container" id="modal_container">
+                <div class="modal">
+                    <div class="modalPic">
+                        <img src="https://picsum.photos/300/250/?random=10">
+                    </div>
+                    <div class="modalProductInfo">
+                        <div class="modalProductInput">
+                            <h6>藝術品名:</h6>
+                            <p>{{message}}</p>
+                            <h6>藝術作者:</h6>
+                            <p>{{message1}}</p>
+                            <h6>商品描述:</h6>
+                            <p>{{message2}}</p>
+                            <h6>時間:</h6>
+                        </div>
+                        <div class="bidButton">
+                            <div class="currentPrice">
+                                <h6>目前出價金額:</h6>
+                                <p>{{score}}</p>
+                                <h5>(每一標NT{{}})</h5>
+                            </div>
+                            <button class="roundOutline">出價</button>
+                        </div>
+                        <div class="priceButton">
+                            <div class="price">
+                                <h6>直接出售價格:</h6>
+                                <p>{{score1}}</p>
+                            </div>
+                            <button class="round">直接購買</button>
+                        </div>
+                    </div>
+                </div>
+                <input type="button" value="確認" class="lightboxBtn round" id="lightboxBtn">
+            </div>
+        </section>
+    </section>
 
-        <!--分頁bar2 -->
-        <input type="radio" id="tab2" name="mytabs">
-        <label for="tab2" class="tag epBColor">展覽藝術品</label>
-        <!-- 展覽品頁面顯示 -->
-        <form action="#" class="content aidBgColor" name="pag2" method="post">
-            <h5>上架資訊:</h5>
-            <div class="artTitle">
-                <label for="">
-                    <h6>藝術品名</h6>
-                </label>
-                <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
-            </div>
-            <div class="artist">
-                <label for="">
-                    <h6>藝術品創作者</h6>
-                </label>
-                <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
-            </div>
-            <div class="uploadFile">
-                <h5>藝術品圖檔上傳:</h5>
-                <ol class="uploadPicture">
-                    <li>
-                        <input type="file" id="pic" name="pic" accept="image/*" required>
-                        <label for="pic"><img src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
-                    </li>
-                    <li>
-                        <input type="file" id="pic" name="pic" accept="image/*">
-                        <label for="pic"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
-                    </li>
-                    <!--
-                    <li></li>
-                    <li></li>
-                    <li></li> -->
-                </ol>
-            </div>
-            <div class="uploadCertification">
-                <h5>藝術證明:</h5>
-                    <div class="certification">
-                        <input type="file" id="paper" name="paper" required>
-                        <label for="paper"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+    <script>
+        new Vue({
+            el: '#listingVue',
+            data: {     //變數放在這!
+                message: '',
+                message1:'',
+                message2:'',
+                message3:'',
+                score:'',
+                score1:'',
+            },
+            methods: {  //函數大部份放在這!
+                setMessage(e){
+                    this.message = e.target.value;
+                },
+            },
+            computed: {  //函數也可以放在這!但是放在這裡的函數，不能傳參數，一定要有回傳值
+                preserve(){
+                    return{
+                        whiteSpace: 'pre',
+                        font: '13.333px monospace'
+                    };
+                }
+            },
+        });
+    </script>
+
+
+
+
+
+        <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <footer>
+        <section class="footerContain">
+            <div class="logoContain">
+                    <div class="logo">
+                        <img src="assets/image/all_logo.png">
                     </div>
             </div>
-            <div class="productIntro">
-                    <h5>商品介紹(商品描述):</h5>
-                    <textarea name="productIntro1" id="productIntro1" cols="80" rows="10" name="goods" required></textarea>
+            <div class="socialContain">
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_facebook.png">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_instagram.png">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_twitter.png">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_line.png">
+                        </a>
+                    </div>
             </div>
-            <div class="sellerIntro">
-                    <h5>賣家介紹(自我推薦):</h5>
-                    <textarea name="sellerIntro1" id="sellerIntro1" cols="80" rows="10" name="sellerIntro" required></textarea>
+            <nav>
+                    <ul>
+                        <li>
+                            <a href="">藝廊</a>
+                        </li>
+                        <li>
+                            <a href="">拍賣廳</a>
+                        </li>
+                        <li>
+                            <a href="">藝論</a>
+                        </li>
+                        <li>
+                            <a href="">關於我們</a>
+                        </li>
+                        <li>
+                            <a href="">會員中心</a>
+                        </li>
+                    </ul>
+            </nav>
+            <div class="copyright">
+                    <p>@2022 Powered by 藝論 Right Reserved<br>本網站為緯育Tibame前端設計工程師班專題作業，本平台僅供學習、展示之用。</p>
             </div>
-            <section class="btn">
-                <input type="button" class="btnProduct roundOutline" id="btnProduct1" value="預覽畫面">
-                <input type="submit" class="btnProduct round" value="確認送出(審核)">
-            </section>
-        </form>
-    </section>
+        </section>
+    </footer>
 
-    <!-- 燈箱預覽畫面 -->
-    <section>
-        <div class="modal-container" id="modal_container">
-            <div class="modal">
-                <img src="https://picsum.photos/500/450/?random=10">
-                <h6>title</h6>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, quasi!</p>
-            </div>
-            <input type="button" value="確認" class="lightboxBtn round" id="lightboxBtn">
-        </div>
-    </section>
-
-    @@include('layout/footer.html')
 
     <script>
         const open = document.getElementById('btnProduct');

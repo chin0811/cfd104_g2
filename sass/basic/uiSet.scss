@@ -7,6 +7,20 @@ body{
 }
 button{
     font-family: 'Noto Serif TC', serif;
+    cursor: pointer;
+}
+input{
+    font-family: 'Noto Serif TC', serif;
+}
+// input check添加陰影
+input:not([type*="submit"]):focus,
+input:not([type*="reset"]):focus{
+    /* 輸入框非送出非重整 */
+    outline: none;
+    box-shadow: -2px -2px 3px 3px #ffffff inset,2px 2px 5px 1px #aaaaaaaa inset;
+}
+textarea{
+    font-family: 'Noto Serif TC', serif;
 }
 /* 主要的顏色 */
 .mainColor{
@@ -97,8 +111,8 @@ h4{
 }
 /* 內文文字大小 */
 p{  
-    /* font-size: 20px; */
-    font-size:1.25em;
+    /* font-size: 16px; */
+    font-size:1em;
     line-height: 1.3;
     letter-spacing:3px;
 }
@@ -109,8 +123,8 @@ p.small{
 	letter-spacing:2px;
 }
 span{
-    /* font-size: 20px; */
-    font-size:1.25em;
+    /* font-size: 16px; */
+    font-size:1em;
     line-height: 1.3;
     letter-spacing:3px;
 }
