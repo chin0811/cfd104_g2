@@ -3,12 +3,11 @@
     width: 90%;
     max-width: 1200px;
     // 給報紙外框，不要讓它貼邊
-    // border: 10px solid #FBF7F3;
     padding:20px 2px 0;
     box-sizing: border-box;
     margin:40px auto;
+    // 報紙效果
     background-color: #fbf7f3;
-    border: 1px solid #ccc;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
 }
