@@ -8,17 +8,33 @@ $uiColor:(
     "correct":#7AC74F,
     "background":#FBF7F3,
 );
+#supportApp{
+    //客服最外層section
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    &[class*="active"]{
+        // 開啟客服時
+        position: fixed;
+        // z-index: 10;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        content: '';
+        background-color: #3e444a05;
+        // background-color: #aaa;
+        backdrop-filter: blur(0.5em);
+    }
+}
 .supportChatroom:not([class*="active"]){
     /* 客服聯天室在首頁button */
     /* 圓 */
     border-radius: 50%;
     aspect-ratio: 1/1;
     width: 4em;
-    // background-color: #fff;
     background-color:transparent;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
     cursor: pointer;
     article,button{
         display: none;
@@ -28,48 +44,16 @@ $uiColor:(
         font-size: 4em;
     }
 }
-// .supportChatroomAA::after{
-//     // 客服聯天室在首頁button的標語
-//     content: '需要幫助嗎？';
-//     font-size: 1em;
-//     position: absolute;
-//     top: -1.5em;
-//     white-space: nowrap;
-// }
-.supportChatroom{
-    .round {
-        /* 橢圓形實心按鈕 */
-        font-size: 16px;
-        background-color: #FFD60A;
-        font-weight: 600;
-        padding: 10px 30px;
-        border-radius: 200px;
-        border: none;
-    }
-
-    .round:hover, .square:hover {
-        /* 實心按鈕hover */
-        color: #FFFFFF;
-        background-color: #141414;
-    }
-}
-
-
-
-
 .supportChatroom.active{
     /* 客服聯天室區 */
     border-radius: 5px;
-    position: fixed;
-    right: 0;
-    bottom: 2em;
-    left: 0;
-    // top: 0;
-    margin: auto;
+    position: absolute;
     padding: 20px;
-    width: 90%;
-    max-height: 90%;
-    // height: 90%;
+    width: 100%;
+    margin:auto ;
+    // max-width: 90%;
+    right: 1em;
+    bottom: 1em;
     box-sizing: border-box;
     box-shadow: 1px 1px 5px 0px #aaaaaa ;
     >span{
@@ -78,40 +62,15 @@ $uiColor:(
     .chatroom{
         display: none;
     }
-    // .selectRoom.active{
-    //     display: none;
-    // }
-    // .selectRoom.active ~ .chatroom,.selectRoom{
-    //     >.titleCell{
-    //         display: flex;
-    //         justify-content: center;
-    //         align-content: center;
-    //         align-items: center;
-    //         >h3{
-    //             flex-grow: 1;
-    //             // margin-left: 1em;
-    //         }
-    //         >span{
-    //             cursor: pointer;
-    //         }
-    //     }
-        
-    // }
     .selectRoom{
-        
-
-
-
-
         >.titleCell{
             display: flex;
             justify-content: space-between;
             align-content: center;
             align-items: center;
         }
-      
         .selectBtn{
-            width: 100%;
+            // width: 100%;
             font-size: 0px;
             div{
                 display: inline-block;
@@ -130,121 +89,12 @@ $uiColor:(
                     
                 }
             }
-           
         }
     }
-    // .selectRoom.active ~ .chatroom{
-    //     // display: block;
-    //     height: 100%;
-    //     display: flex;
-    //     flex-direction: column;
-        
-    //     .titleCell{
-    //         // display: flex;
-    //         // justify-content: center;
-    //         // align-content: center;
-    //         // align-items: center;
-    //         >h3{
-    //         //     flex-grow: 1;
-    //             margin-left: 1em;
-    //         }
-    //         >h3::after{
-    //             /* 客服聯天室標語 */
-    //             content: '您好，有甚麼需要幫忙的嗎？';
-    //             font-size: 16px;
-    //             margin-left: 2em;
-    //             white-space:nowrap;
-    //         }
-            
-    //     }
-    //     .txtArea{
-    //         margin: 1em 0em;
-    //         flex-grow: 1;
-    //         padding: 0em 1em;
-    //         // overflow: scroll;
-    //         overflow-y: scroll;
-
-    //         >article{
-    //             margin: 3em 0em;
-    //             width: 100%;
-    //             display: flex;
-    //             p{
-    //                 // background-color: #aaa;
-    //                 color: map-get( $uiColor , "main" );
-    //                 background-color: map-get($uiColor, "strongTxt" );
-    //                 border-radius: 20px;
-    //                 box-sizing: border-box;
-    //                 padding: 1em 1em;
-    //                 max-width: 70%;
-    //             }
-    //         }
-    //         >.meTxt{
-    //             flex-direction: row-reverse;
-    //         }
-    //     }
-    //     .keyButton{
-    //         /* 機器人客服聯天室選項 */
-    //         box-sizing: border-box;
-    //         // border-radius: 10px;
-    //         white-space:nowrap;
-    //         padding: 0.2em;
-    //         // overflow-x: scroll;
-    //         // height: 5.8em;
-
-    //        >button{
-    //             /* 機器人客服聯天室選項button */
-    //             font-size: 1em;
-    //             box-sizing: border-box;
-    //             color: map-get( $uiColor , "main" );
-    //             background-color: map-get($uiColor, "strongTxt" );
-    //             padding: 0.3em 1em ;
-    //             border-radius: 200px;
-    //             border: none;
-    //             margin: 0em 0.3em;
-    //             cursor: pointer;
-    //         }
-    //     }
-    //     >.inputArea{
-    //          /* 真人客服聯天室輸入區 */
-    //         display: flex;
-    //         box-sizing: border-box;
-    //         padding: 1em 0em;
-    //         >textarea{
-    //             /* 客服聯天室輸入區輸入框 */
-    //             resize: none;
-    //             outline: none;
-    //             border: none;
-    //             box-sizing: border-box;
-    //             line-height: 1.5em;
-    //             // width: 100%;
-    //             font-size: 1em;
-    //             border-radius: 10px;
-    //             border:none;
-    //             box-shadow: -1px -1px 3px 2px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
-    //             margin: 0px 0px 20px 0px;
-    //             background-color: transparent;
-    //             box-sizing: border-box;
-    //             padding: 0.5em 1em;
-    //             // padding: 0.5em 3em 1em 2em;
-    //             flex-grow: 1;
-    //             height: 100%;
-    //        }
-    //        >textarea:focus{
-    //         outline: none;
-    //         box-shadow: -2px -2px 3px 3px #ffffff inset,2px 2px 5px 1px #aaaaaaaa inset;
-    //         }
-    //         >span{
-    //             padding: 0.2em;
-    //             cursor: pointer;
-    //         }
-    //     }
-    // }
     @media screen and (min-width:768px) {
         right: 1em;
-        bottom: 1em;
+        // bottom: 1em;
         left: auto;
-        // top: auto;
-        // max-height: 90vh;
         margin: auto;
         padding: 20px;
         min-width: 40%;
@@ -253,7 +103,7 @@ $uiColor:(
     }
 }
 .selectRoomActive.active{
-    top: 0;
+    top: 1em;
     >.selectRoom{
         display: none;
     }
@@ -294,9 +144,6 @@ $uiColor:(
             }
             
         }
-        // .txtArea::-webkit-scrollbar {
-        //     width: 10px;
-        // }
         .txtArea{
             /*對話紀錄區*/
             margin: 1em 0em;
@@ -304,24 +151,20 @@ $uiColor:(
             padding: 0em 1em;
             overflow-y: scroll;
             -webkit-appearance: none;
-
-
+            
             //這定義了卷軸的寬度，有兩個值auto 和 thin。不好的地方就是，我們不能像webkit的語法那樣定義一個具體的數位。
-            scrollbar-width: thin;
+            // scrollbar-width: thin;
             //可以為卷軸 track和thumb定義成對值的顏色
-            scrollbar-color: #6969dd #e0e0e0;
-            scrollbar-width: thin;
-
+            // scrollbar-color: #6969dd #e0e0e0;
+            // scrollbar-width: thin;
             //儘管這個新語法很簡單，但它是有限制的。我們只能新增顏色。我們不能新增shadows`、gradients、rounded，或任何類似的東西，我們被允許客製化的只是顏色。
 
-            //https://tw511.com/a/01/36932.html 
 
         &::-webkit-scrollbar {
             /*卷軸的寬度*/
             // 首先，我們需要定義卷軸的大小。這可以是垂直卷軸的寬度，也可以是水平卷軸的高度。
             width: 5px;
             background-color: transparent;
-            
         }
         &::-webkit-scrollbar-track {
             // 卷軸 track
@@ -331,7 +174,19 @@ $uiColor:(
         &::-webkit-scrollbar-thumb {
             //卷軸 thumb
             //準備好了卷軸的基礎後，我們就需要對卷軸的thumb進行樣式設計。這很重要，因為使用者可能會拖動這個thumb與卷軸進行互動。
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #aaa;
+            color: #000;
+            border-radius: 200px ;
+            // background-color: #fde465 ;
+            // background-color: #3e444a05;
+            box-shadow: 0.1em 0.5em 0.5em #252b3020;
+            // border: 1px solid #94969b50;
+            // border-right: 1px solid #55595e20;
+            // border-bottom: 1px solid #55595e20;
+            // border-left: 1px solid #ffffff30;
+            backdrop-filter: blur(0.5em);
+            
         }
             >article{
                 /*單個對話紀錄框*/
@@ -340,16 +195,22 @@ $uiColor:(
                 display: flex;
                 p{
                     /*對話紀錄內文*/
-                    color: map-get( $uiColor , "main" );
-                    background-color: map-get($uiColor, "strongTxt" );
+                    color: map-get( $uiColor , "strongTxt" );
+                    background-color: map-get($uiColor, "main" );
                     border-radius: 20px;
                     box-sizing: border-box;
                     padding: 1em 1em;
                     max-width: 70%;
+                    box-shadow: 1px 1px 5px 0px #aaa5;
                 }
             }
             >.meTxt{
                 flex-direction: row-reverse;
+                p{
+                    /*對話紀錄內文*/
+                    color: map-get( $uiColor , "main" );
+                    background-color: map-get($uiColor, "strongTxt" );
+                }
             }
         }
         .keyButton{
@@ -357,7 +218,8 @@ $uiColor:(
             box-sizing: border-box;
             white-space:nowrap;
             padding: 0.2em;
-
+            overflow-x: scroll;
+            min-height: 2.5em;
            >button{
                 /* 機器人客服聯天室選項button */
                 font-size: 1em;
@@ -367,7 +229,7 @@ $uiColor:(
                 padding: 0.3em 1em ;
                 border-radius: 200px;
                 border: none;
-                margin: 0em 0.3em;
+                margin: auto 0.3em;
                 cursor: pointer;
             }
         }
@@ -393,16 +255,34 @@ $uiColor:(
                 padding: 0.5em 1em;
                 flex-grow: 1;
                 height: 100%;
+                -webkit-appearance: none;
            }
            >textarea:focus{
             outline: none;
             box-shadow: -2px -2px 3px 3px #ffffff inset,2px 2px 5px 1px #aaaaaaaa inset;
             }
-            >span{
-                padding: 0.2em;
+            >img{
+                // padding: 0.2em;
+                width: 2em;
+                margin-bottom: auto;
                 cursor: pointer;
             }
         }
     }
     
+}
+.round {
+    /* 橢圓形實心按鈕 */
+    font-size: 16px;
+    background-color: #FFD60A;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 200px;
+    border: none;
+}
+
+.round:hover, .square:hover {
+    /* 實心按鈕hover */
+    color: #FFFFFF;
+    background-color: #141414;
 }
