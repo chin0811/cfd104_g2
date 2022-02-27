@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets\css\style.css">
     <script src="js/vue/vue.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <script src="js/product.js" defer></script>
 </head>
 <body>
@@ -16,30 +17,42 @@
     <!-- @@include('layout/header.html') -->
     @@include('layout/header.html',{"headerClass":""})
     <section class="productHead">
-        <div class="productBread size marginAuto">
+        <!-- <div class="productBread size marginAuto">
             <p>
-                <span>logo</span>
-                <span>>雕塑類&emsp;</span>
+                <span class="small lightColor">logo</span>
+                <span class="small epBColor">>雕塑類</span>
             </p>
-        </div>
+        </div> -->
         <div class="adjustBox size marginAuto">
             <nav class="sideNav">
-                <div class="sideNavTitle">
-                    <a href="">
-                        <h2>
-                            <span>雕塑類&emsp;</span>
-                        </h2>
-                    </a>
-                </div>
                 <ul>
                     <li>
-                        <a href=""><h3>畫作類</h3></a>
+                        <a href="">
+                            <h2 class="epBColor">
+                                雕塑類
+                            </h2>
+                        </a>
                     </li>
                     <li>
-                        <a href=""><h3>公仔類</h3></a>
+                        <a href="">
+                            <p>
+                                畫作類
+                            </p>
+                        </a>
                     </li>
                     <li>
-                        <a href=""><h3>品牌合作</h3></a>
+                        <a href="">
+                            <p>
+                                公仔類
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <p>
+                                品牌合作
+                            </p>
+                        </a>
                     </li>
                 </ul>   
             </nav>
@@ -88,7 +101,12 @@
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
                 <article class="prouductItem commomItem">
@@ -111,7 +129,12 @@
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
                 <article class="prouductItem commomItem">
@@ -134,7 +157,12 @@
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
                 <article class="prouductItem commomItem">
@@ -157,7 +185,12 @@
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
             </section>
@@ -170,7 +203,7 @@
             <div class="titleBox size marginAuto">
                 <h4>124件商品</h4>
                 <div class="buttonBox">
-                    <button id="selectorButton">篩選器</button>
+                    <button class="square" id="selectorButton">篩選器</button>
                 </div>
             </div>
             <section class="productSelector displayNone size marginAuto" id="productSelector">
@@ -197,7 +230,12 @@
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
             </div>

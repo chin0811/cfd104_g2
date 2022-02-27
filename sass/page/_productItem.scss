@@ -146,10 +146,6 @@
         border-left: 1px solid #8888;
     }
 }
-//舊
-// .SingleProductIntro .introBox h2{
-//     margin-bottom: 3%;
-// }
 .SingleProductIntro .introBox .introtext{
     margin-bottom: 10%;
 }
@@ -230,37 +226,37 @@
 .SingleProductIntro .bidBox.hint span{
     white-space: nowrap;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 收藏按鈕
 .SingleProductIntro .introBox .like{
+    // 定位在.SingleProductIntro .introBox
     position: absolute;
-    top: 2%;
+    top: 5%;
     right:2%;
-    border-radius:800px;
-    width: 10%;
-    box-sizing: border-box;
-    padding: 1.5% 0%;
-    text-align: center;
+    display: flex;
+    border-radius:600px;
     opacity: 50%;
+    box-sizing: border-box;
+    padding: 8px 15px;
+    align-items: center;
+    cursor: pointer;
+}
+// 愛心
+.SingleProductIntro .introBox .like .pic{
+    width: 20px;
+}
+.SingleProductIntro .introBox .like .pic img{
+    width: 100%;
+    vertical-align: bottom;
+    transition: .3s;
+}
+// 愛心換顏色
+.SingleProductIntro .introBox .like .pic img:hover{
+    content: url(../image/articlePage_shareBar_likeHover.png);
+    transform: scale(1.02);
+    vertical-align: bottom;
+}
+.SingleProductIntro .introBox .like span{
+    margin: 0 5px;
 }
 /* 商品介紹按鈕 */
 .SingleProductIntro .introButton{
@@ -279,6 +275,7 @@
 }
 .SingleProductMoreP h3{
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     margin-bottom: 3%;
 }
