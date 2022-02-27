@@ -84,15 +84,9 @@ textarea{
 }
 /* 主標文字大小 */
 h1{
-<<<<<<< HEAD
-    /* font-size: 100px; */
-    font-size: 6.25em;
-    line-height: 3;
-=======
     /* font-size: 70px; */
     font-size: 4.375em;
     line-height: 2;
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
 }
 /* 副標文字大小 */
 h2{
@@ -145,12 +139,7 @@ span.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-=======
     padding: 5px 20px;
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
     border-radius: 200px;
     border: 2px solid #FFD60A;
     border: none;
@@ -160,12 +149,6 @@ span.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-    border-radius: 5px;
-    border: none;
-=======
     padding: 5px 20px;
     border-radius: 5px;
     border: 2px solid #FFD60A;
@@ -188,7 +171,6 @@ span.small{
     border-radius: 5px;
     border: 2px solid transparent;
     transition: .3s;
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
 }
 /* 實心按鈕hover */
 .round:hover,.square:hover{
@@ -201,12 +183,7 @@ span.small{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-=======
     padding: 5px 20px;
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
     border-radius: 200px;
     border: 2px solid #FFD60A;
 }
@@ -215,13 +192,8 @@ span.small{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-<<<<<<< HEAD
-    font-weight: 600;
-    padding: 10px 30px;
-=======
     /* font-weight: 600; */
     padding: 5px 20px;
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
     border-radius: 5px;
     border: 2px solid #FFD60A;
 }
@@ -231,9 +203,6 @@ span.small{
     background-color: #141414;
     border: 2px solid #141414;
 }
-<<<<<<< HEAD
-
-=======
 /* 90%外層 */
 .size{
     max-width: 1200px;
@@ -247,7 +216,6 @@ span.small{
 .displayNone{
     display: none;
 }
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
 @media screen and (max-width:768px){
     /* 主標文字大小(手機) */
     h1{
@@ -274,9 +242,6 @@ span.small{
         /* font-size:18px; */
         font-size: 1.125em;
     }
-<<<<<<< HEAD
-}
-=======
     p.small{  
         /* font-size: 12.8px; */
         font-size:0.8em;
@@ -320,4 +285,3 @@ span.small{
 // ======= hover改變大小======= //
 // transform: scale(1.02);
 // transition: .3s;
->>>>>>> 06178930f723d6f6ac1630416652a41c648003b5
