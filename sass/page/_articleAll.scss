@@ -1,5 +1,6 @@
 .articleContent{
     width: 90%;
+    max-width: 1200px;
     padding: 10px;
     margin:60px auto ;
     box-sizing: border-box;
@@ -7,6 +8,14 @@
     background-color: #fbf7f3;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+}
+// articleContent所有a設定
+.articleContent a{
+    text-decoration: none;
+}
+// articleContent所有img設定
+.articleContent img{
+    width: 100%;
 }
 .articleContent h2{
     text-align: center;
@@ -33,18 +42,23 @@
 .articleContent h2:after{
     bottom: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.articleContent .flat{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+.articleContent .flat a{
+    width: 30%;
+}
+.articleContent .flat .pic{
+    width: 90%;
+    border: 1px solid #000;
+    max-height: 150px;
+    overflow: hidden;
+}
+.articleContent .flat .pic{
+    width: 90%;
+}
 
 
 
