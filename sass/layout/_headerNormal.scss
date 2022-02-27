@@ -41,6 +41,8 @@ header{
     font-size: 1em;
     text-decoration: none;
     display: block;
+    // 不換行 
+    white-space:nowrap;
 }
 .headerNormalContain .mainMenu ul li ul li a{
     font-size: 0.8em;

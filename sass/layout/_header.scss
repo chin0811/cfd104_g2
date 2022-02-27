@@ -24,6 +24,8 @@ header{
 .headerContain .mainMenu a{
     text-decoration: none;
     font-size: 1em;
+      // 不換行 
+      white-space:nowrap;
 }
 .headerContain .mainMenu a:hover{
     color: #394897;
