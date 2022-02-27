@@ -195,6 +195,10 @@
     animation-timing-function:ease-in-out;
     animation-direction: alternate;
 }
+// 特別挑整手機h1大小，讓他不縮排
+.homeCatalog .catalog .card.start .txt h1{
+    font-size: 1.953em;
+}
 @keyframes blur {
     from{
         left: 0%;
@@ -209,6 +213,10 @@
     }
     .homeCatalog .catalog .card .txt{
         width: 400px;
+    }
+    // 確保h1不覆寫
+    .homeCatalog .catalog .card.start .txt h1{
+        font-size: 4.375em;
     }
 }
 /* 藝廊區 */
@@ -364,15 +372,13 @@
     width: 90%;
     margin: auto;
     display: block;
-    
+    // 報紙效果
     background-color: #fbf7f3;
-    border: 1px solid #ccc;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
     position: relative;
-    z-index: 8;
 }
-// 報紙效果
+// 報紙後層效果
 .homeNews .newsContain:before, .homeNews .newsContain:after  {
     content: "";
     position: absolute;
@@ -381,45 +387,21 @@
     width: 100%;
     height: 100%;
     transform: rotateZ(2.5deg);
-    z-index: 0;
+    z-index: -1;
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
-
 }
 .homeNews .newsContain:after  {
     transform: rotateZ(-2.5deg);
 }
-// .homeNews .zigzag{
-//     width: 90%;
-//     margin: auto;
-//     display: block;
-// }
-// .homeNews .zigzag img{
-//     width: 100%;
-// }
-// .homeNews .newsContain h2{
-//     text-align: center;
-//     width: 90%;
-//     margin: auto;
-//     padding: 20px 0px 10px;
-//     position: relative;
-// }
-.homeNews .newsContain h2:before{
-    content: '';
-    background-color: #d1d1d157;
-    width: 90%;
-    height: 2px;
-    /* 定位在.homeNews .newsContain h2 */
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    margin: auto;
+.homeNews .newsContain h2{
+    text-align: center;
+    position: relative;
 }
 .homeNews .newsContain h2:after{
     content: '';
-    background-color: #d1d1d157;
-    width: 90%;
-    height: 2px;
+    background-color: #797979fd;
+    width: 60%;
+    height: 3px;
     /* 定位在.homeNews .newsContain h2 */
     position: absolute;
     bottom: 10px;
@@ -427,58 +409,48 @@
     right: 0;
     margin: auto;
 }
-
 .homeNews .newsContain .item{
     display: block;
-    width: 90%;
+    // 90%裡面的80%
+    width: 80%;
     margin: auto;
 }
-.homeNews .newsContain .item .pic{
-    width: 250px;
-    padding: 10px;
+.homeNews .newsContain .item .pic,.homeNews .newsContain .item .txtContent{
+    width: 100%;
     margin: auto;
+    padding: 10px;
     box-sizing: border-box;
 }
 .homeNews .newsContain .item .pic img{
     width: 100%;
 }
-.homeNews .newsContain .item .content{
-    width: 200px;
-    margin: auto;
-   
-}
-.homeNews .newsContain .item .content button{
-    margin: 20px auto 0px auto;
-    display: block;
+.homeNews .newsContain .item .txtContent button{
+    margin: 20px auto;
+    display: flex;
     white-space:nowrap;
+    z-index: 5;
 }
 @media screen and (min-width:768px){
     .homeNews .newsContain{
-        width: 60%;
-    }
-    .homeNews .newsContain .item .pic{
-        width: 40%;
-        padding: 20px;
-    }
-    .homeNews .newsContain .item .content{
-        width: 40%;
+        width: 70%;
     }
     .homeNews .newsContain .item{
+        // 70%裡面的70%
         display: flex;
-        justify-content: center;
+        width: 70%;
+    }
+    .homeNews .newsContain .item .pic{
+        width: 50%;
+        padding: 20px;
+    }
+    .homeNews .newsContain .item .txtContent{
+        width: 50%;
     }
     .homeNews .newsContain .item .pic{
         margin: 0;
     }
-    .homeNews .newsContain .item .content{
-        margin: 0;
-    }
-    .homeNews .zigzag{
-        width: 60%;
-    }
-    .homeNews .newsContain .item .content button{
-        margin: 20px auto 0px 0;
-        white-space:nowrap;
+    .homeNews .newsContain .item .txtContent button{
+        margin: 20px 0px;
     }
 }
 /* 裝飾圖片 以下都定位在.homeNews*/
@@ -487,24 +459,28 @@
     width: 150px;
     top:5%;
     left: -15%;
+    z-index: 2;
 }
 .homeNews .decorate.Pictopright{
     position: absolute;
     width: 300px;
     top:10%;
     right: -50%;
+    z-index: 2;
 }
 .homeNews .decorate.Picbottomleft{
     position: absolute;
     width: 150px;
     bottom:10%;
     left: -30%;
+    z-index: 2;
 }
 .homeNews .decorate.Picbottomright{
     position: absolute;
     width: 300px;
     bottom:5%;
     right: -50%;
+    z-index: 2;
 }
 .homeNews .decorate img{
     width: 100%;
