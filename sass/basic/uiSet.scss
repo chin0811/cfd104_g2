@@ -139,10 +139,9 @@ span.small{
     color: #141414;
     font-size: 1em;
     background-color: #FFD60A;
-    /* font-weight: 600; */
-    // padding: 10px 30px;修改前
     padding: 5px 20px;
     border-radius: 200px;
+    border: 2px solid #FFD60A;
     border: none;
 }
 /* 方形實心按鈕 */
@@ -177,13 +176,13 @@ span.small{
 .round:hover,.square:hover{
     color: #FFFFFF;
     background-color: #141414;
+    border: 2px solid #141414;
 }
 /* 橢圓形外框按鈕 */
 .roundOutline{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
-    /* font-weight: 600; */
     padding: 5px 20px;
     border-radius: 200px;
     border: 2px solid #FFD60A;
