@@ -1,33 +1,43 @@
 /* 彈跳視窗 */
-.bouncingBox{
+
+.bouncingBox {
     z-index: 10;
     border-radius: 30px;
     padding: 2em;
     /* 置中 */
     margin: auto;
     position: absolute;
-    top: 0;bottom: 0;right: 0;left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     /* 固定高度 */
     max-height: 100%;
 }
 
+
 /* 滾動卷軸 */
-.bouncingBox main{
+
+.bouncingBox main {
     padding-right: 2.5em;
     max-height: 85%;
     overflow-y: scroll;
 }
 
+
 /*共通元件*/
-.img{
+
+.img {
     display: block;
     max-width: 100%;
     height: auto;
 }
-img{
+
+img {
     width: 100%;
 }
-.button{
+
+.button {
     border: 1px solid #FFD60A;
     /*background: #fff;*/
     min-width: 6em;
@@ -35,19 +45,23 @@ img{
     border-radius: 8px;
     margin-bottom: 4px;
 }
-.button:hover{
+
+.button:hover {
     background: #141414;
     color: #fff;
 }
 
+
 /* 標題*/
-.bouncingBox .title{
+
+.bouncingBox .title {
     font-size: 1.5em;
     display: flex;
     justify-content: space-between;
     position: relative;
 }
-.bouncingBox .title p{
+
+.bouncingBox .title p {
     flex-grow: 1;
     padding: 0.5em 0;
     border-bottom: 1px solid #000;
@@ -56,27 +70,35 @@ img{
     justify-content: space-between;
     align-items: center;
 }
+
+
 /* 為了 分類標題 設置*/
-.bouncingBox .title p.categoryTitle{
+
+.bouncingBox .title p.categoryTitle {
     justify-content: flex-start;
 }
 
-.bouncingBox .title .close{
+.bouncingBox .title .close {
     padding-left: 1em;
 }
-.bouncingBox .title .close .fa-times{
+
+.bouncingBox .title .close .fa-times {
     cursor: pointer;
 }
 
+
 /* 副競標 */
-.bouncingBox .title p .titleLine{
+
+.bouncingBox .title p .titleLine {
     border-right: 1px solid #000;
     padding-right: 1em;
 }
-.bouncingBox .title p .subtitle{
+
+.bouncingBox .title p .subtitle {
     font-size: 0.5em;
     margin-left: 1em;
 }
+
 
 /* 按鈕集合 
 .bouncingBox .title .buttonGroup{
@@ -84,56 +106,73 @@ img{
     bottom: -2em;
 }
 */
-.bouncingBox .title .buttonGroup{
+
+.bouncingBox .title .buttonGroup {
     border-bottom: 1px solid #000;
     text-align: right;
     display: block;
 }
-.bouncingBox .title p .titleButton{
+
+.bouncingBox .title p .titleButton {
     display: flex;
     /*flex-direction: column;*/
 }
-.bouncingBox .title p .titleButton button{
+
+.bouncingBox .title p .titleButton button {
     margin-right: 10px;
 }
 
+
 /* 環景 */
+
 #panorama {
     width: 100vw;
     height: 100vh;
 }
 
+
 /* RWD */
-@media(min-width:769px){
-    .bouncingBox{
+
+@media(min-width:769px) {
+    .bouncingBox {
         max-width: 1200px;
         margin: auto;
         max-height: 560px;
+        border-radius: 0px;
+    }
+    .customCharacter_bouncing main {
+        overflow-y: hidden;
     }
     /* 滾動卷軸 */
-    .bouncingBox main{
+    .bouncingBox main {
         max-height: 400px;
     }
-    .bouncingBox .title{
+    .bouncingBox .title {
         font-size: 2.125em;
     }
-    .bouncingBox .title p .subtitle:first-child{
+    .bouncingBox .title p .subtitle:first-child {
         padding-right: 2em;
     }
-    .bouncingBox .title p .subtitle{
+    .bouncingBox .title p .subtitle {
         font-size: 0.5em;
         margin-left: 3em;
     }
-    .button{
+    .button {
         margin-bottom: 0px;
     }
-    .bouncingBox .title p .titleButton{
+    .bouncingBox .title p .titleButton {
         display: inline;
     }
-    .bouncingBox .title .buttonGroup{
+    .bouncingBox .title .buttonGroup {
         /*position: static;*/
         border-bottom: 1px solid #000;
         display: inline-block;
         padding-top: 0em;
+    }
+}
+
+@media(max-width:768px) {
+    .bouncingBox {
+        border-radius: 0px;
     }
 }

@@ -1,3 +1,14 @@
+// #mouse負片效果(待寫){
+//     width: 100px;
+//     height: 100px;
+//     background-color: firebrick;
+//     border-radius: 200px;
+//     // filter:invert(1);
+//     position: absolute;
+//     top: 100px;
+//     left: 0%;
+//     z-index: 99999;
+// }
 .homeWrap{
     width: 100%;
 }
@@ -21,7 +32,7 @@
     position: absolute;
     width: 400px;
     top: 50%;
-    left: 100%;
+    left: 50%;
     transform: translateY(-50%);
 }
 .homeIntro .intro .pic img{
@@ -29,11 +40,13 @@
 }
 .homeIntro .intro h1{
     /* 定位在homeIntro */
+    display: inline-block;
     position: absolute;
-    top: 20%;
-    /* transform: translateY(-50%); */
-    right: 100%;
-    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 6em;
+    font-weight:550;
 }
 /* 滑鼠標示 */
 .homeIntro .scrollMouse{
@@ -79,18 +92,32 @@
     .homeIntro .intro .pic{
         position: absolute;
         width: 600px;
-        bottom: 0;
     }
     .homeIntro .intro .pic img{
         width: 100%;
     }
     .homeIntro .intro h1{
         /* 定位在homeIntro */
-        position: absolute;
+        display: inline-block;
+        border-right: 2px solid #8888;
+        position: absolute;    
         top: 50%;
         transform: translateY(-50%);
         right: 100%;
-        width: 100%;
+        width:13em;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3s steps(13),    
+                    caret .3s steps(1);
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+    }
+    // h1打字機效果
+    @keyframes typing {
+        from { width: 0 }
+    }
+    @keyframes caret {
+    50% { border-color: transparent; }
     }
 }
 /* 分類區 */
@@ -127,9 +154,54 @@
 .homeCatalog .catalog .card .txt{
     display: block;
     width: 200px;
+    padding: 0px 5px;
+    box-sizing: border-box;
 }
 .homeCatalog .catalog .card button{
     margin-top: 20px;
+}
+// start card設定
+.homeCatalog .catalog .card.start .txt{
+    display: block;
+    width: auto;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.homeCatalog .catalog .card.start .txt mark{
+    background-color: transparent;
+    font-weight: 500;
+}
+// start card毛玻璃
+.homeCatalog .catalog .card.start .txt:before{
+    content: '';
+    // 定位在.card.start
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 90%;
+    border-radius: 1em;
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+    animation: blur 2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes blur {
+    from{
+        left: 0%;
+    }
+    to{
+        left: 50%;
+    }
 }
 @media screen and (min-width:768px){
     .homeCatalog .catalog .card .pic{
@@ -149,17 +221,19 @@
     overflow: hidden;
     z-index: 901;
 }
+// 滑動假圖
 .homeGallery .scrollPic{
-    width: 200px;
+    width: 50%;
     /* 定位在.homeGallery */
     position: absolute;
     top: -30%;
-    left: 2%;
+    left: 50%;
     z-index: 999;
 }
 .homeGallery .scrollPic img{
     width: 100%;
 }
+// 背景圖
 .homeGallery .pic{
     height: 100vh;
     width: auto;
@@ -169,12 +243,41 @@
 .homeGallery .pic img{
     height: 100%;
 }
+// 展間內容
+.homeGallery .txt{
+    /* 定位在.homeGallery */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-radius: 1em;
+    padding: 10px 10px 10px 20px;
+    box-sizing: border-box;
+    // 透明卡片
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+}
+.homeGallery .txt h2,.homeGallery .txt p{
+    width: 50%;
+}
+.homeGallery .txt button{
+    margin: 30px 0 0px;
+}
 @media screen and (min-width:768px){
     .homeGallery .scrollPic{
         width: 300px;
         top: -30%;
-        left:27%;
-        z-index: 999;
+        left:50%;
+    }
+    .homeGallery .txt{
+        width: 30%;
     }
 }
 /* 會員中心 */
@@ -188,13 +291,14 @@
     position: relative;
 }
 .homeMember .scrollPic{
-    width: 200px;
-    /* 定位在.homeGallery */
+    width: 50%;
+    /* 定位在.homeMember */
     position: absolute;
     top: -30%;
-    left: 2%;
+    left: 50%;
     z-index: 900;
 }
+// 展間內容
 .homeMember .scrollPic img{
     width: 100%;
 }
@@ -207,11 +311,41 @@
 .homeMember .pic img{
     height: 100%;
 }
+.homeMember .txt{
+    /* 定位在.homeMember */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-radius: 1em;
+    padding: 10px 10px 10px 20px;
+    box-sizing: border-box;
+    // 透明卡片
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+}
+.homeMember .txt h2,.homeMember .txt p{
+    width: 50%;
+}
+.homeMember .txt button{
+    margin: 30px 0 0px;
+}
 @media screen and (min-width:768px){
     .homeMember .scrollPic{
         width: 300px;
         top: -30%;
-        left:27%;
+        left:50%;
+        z-index: 999;
+    }
+    .homeMember .txt{
+        width: 30%;
     }
 }
 /* 藝論 */
@@ -229,24 +363,46 @@
 .homeNews .newsContain{
     width: 90%;
     margin: auto;
-    background-color: #FBF7F3;
     display: block;
-}
-.homeNews .zigzag{
-    width: 90%;
-    margin: auto;
-    display: block;
-}
-.homeNews .zigzag img{
-    width: 100%;
-}
-.homeNews .newsContain h2{
-    text-align: center;
-    width: 90%;
-    margin: auto;
-    padding: 20px 0px 10px;
+    
+    background-color: #fbf7f3;
+    border: 1px solid #ccc;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
     position: relative;
+    z-index: 8;
 }
+// 報紙效果
+.homeNews .newsContain:before, .homeNews .newsContain:after  {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(2.5deg);
+    z-index: 0;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+
+}
+.homeNews .newsContain:after  {
+    transform: rotateZ(-2.5deg);
+}
+// .homeNews .zigzag{
+//     width: 90%;
+//     margin: auto;
+//     display: block;
+// }
+// .homeNews .zigzag img{
+//     width: 100%;
+// }
+// .homeNews .newsContain h2{
+//     text-align: center;
+//     width: 90%;
+//     margin: auto;
+//     padding: 20px 0px 10px;
+//     position: relative;
+// }
 .homeNews .newsContain h2:before{
     content: '';
     background-color: #d1d1d157;

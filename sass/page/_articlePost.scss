@@ -1,1 +1,156 @@
-// TEST
+.articlePostWrap{
+    width: 100%;
+    padding: 50px 0 100px;
+    box-sizing: border-box;
+}
+.articlePostContent{
+    width: 90%;
+    max-width: 1200px;
+    display: block;
+    // 透明卡片
+    border-radius: 1em;
+    background-color: #3e444a05;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+    position: relative;
+}
+// 所有圖片設定 //
+.articlePostContent img{
+    width: 100%;
+}
+// 編輯區 //
+.articlePostContent .articleEdit{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;;
+    position: relative;
+}
+// 上下分割線
+.articlePostContent .articleEdit::before{
+    // 定位在.articleEdit
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 90%;
+    height: 1px;
+    background-color: #8888; 
+}
+// input主標題
+.articlePostContent #articleTitle{
+    width: 100%;
+    // 共用設定
+    font-size: 1em;
+    border-radius: 200px;
+    box-sizing: border-box;
+    padding: 0.2em 0.5em;
+    border:1px solid rgba(136, 136, 136, 0.233);
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
+}
+// input內容
+.articlePostContent #articleArea{
+    resize: none;
+    width: 100%;
+    height: 500px;
+    // 共用設定
+    font-size: 1em;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0.2em 0.5em;
+    border:1px solid rgba(136, 136, 136, 0.233);
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
+}
+// 加圖區
+.articlePostContent .articleEdit label[for=articlePic]{
+    display: flex;
+}
+.articlePostContent .articleEdit label[for=articlePic] .selectPic{
+    width: 400px;
+}
+.articlePostContent .articleEdit label[for=articlePic] .pic{
+    width: 100px;
+    cursor: pointer;
+}
+.articlePostContent .articleEdit label[for=articlePic] .pic img:hover{
+    content: url(../image/upload_image_iconHover.png);
+    transform: scale(1.02);
+    transition: .3s;
+}
+.articlePostContent .articleEdit #articlePic{
+    display: none;
+}
+// 按鈕列
+.articlePostContent .articleEdit .buttonList{
+    display: flex;
+    justify-content: center;
+}
+.articlePostContent .articleEdit .buttonList input{
+    margin: 10px;
+}
+// 預覽區 //
+.articlePostContent .articlePreview .page{
+    width: 98%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: block;
+    margin:0 auto 20px;
+    background-color: #fbf7f3; 
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+}
+.articlePostContent .articlePreview .item .pic{
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width:768px){
+    .articlePostContent{
+        display: flex;
+    }
+    //編輯區
+    .articlePostContent .articleEdit{
+        width: 60%;
+    }
+    // input主標題
+    .articlePostContent #articleTitle{
+        width: 60%;
+    }
+    // input內容
+    .articlePostContent #articleArea{
+        width: 100%;
+    }
+    // 按鈕列
+    .articlePostContent .articleEdit .buttonList{
+        display: flex;
+        justify-content: center;
+    }
+    // 預覽區 //
+    .articlePostContent .articlePreview{
+        width: 38%;
+        margin:auto;
+        position: sticky;
+        top: 0;
+    }
+    //轉成左右分割線
+    .articlePostContent .articleEdit::before{
+        // 定位在.articleEdit
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 0;
+        content: '';
+        width: 1px;
+        height: 95%;
+        background-color: #8888; 
+    }
+}

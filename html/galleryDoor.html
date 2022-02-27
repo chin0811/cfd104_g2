@@ -7,30 +7,63 @@
     <title>galleryDoor</title>
     <!-- galleryDoor.css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/galleryDoor.css">
 </head>
 <body>
-    <!-- 關於我們_頁首區域 -->
-    @@include('layout/header.html')
+    <div class="galleryDoorWrap">
+        <!-- 關於我們_頁首區域 -->
+    <!-- @@include('layout/header.html') -->
+    @@include('layout/header.html',{"headerClass":""})
 
     <!-- 伶_藝廊大門_main區域 -->
-    <main>
+    <main class="galleryDoorMain">
         <div class="stage">
-            <div class="container">
+            <div class="size">
                 <div class="ring">
-                    <div class="img">
-                        <img src="https://picsum.photos/id/1/600/800" alt="">
+                    <!-- 公仔類 -->
+                    <div class="door" id="toys">
+                        <a href="./gellery.html">
+                            <img src="../assets/image/galleryDoor_door04.gif" alt="gelleryDoorImage">
+                            <div class="text">
+                                <p>公仔類</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="img">
-                        <img src="https://picsum.photos/id/50/600/800" alt="">
+                    <!-- 品牌合作 -->
+                    <div class="door">
+                        <a href="./gellery.html">
+                            <img src="../assets/image/galleryDoor_door05.gif" alt="gelleryDoorImage">
+                            <div class="text">
+                                <p>品牌合作</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="img">
-                        <img src="https://picsum.photos/id/80/600/800" alt="">
+                    <!-- 展示區 -->
+                    <div class="door">
+                        <a href="./gellery.html">
+                            <img src="../assets/image/galleryDoor_door01.gif" alt="gelleryDoorImage">
+                            <div class="text">
+                                <p>展示區</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="img">
-                        <img src="https://picsum.photos/id/325/600/800" alt="">
+                    <!-- 雕塑類 -->
+                    <div class="door">
+                        <a href="./gellery.html">
+                            <img src="../assets/image/galleryDoor_door02.gif" alt="gelleryDoorImage">
+                            <div class="text">
+                                <p>雕塑類</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="img">
-                        <img src="https://picsum.photos/id/72/600/800" alt="">
+                    <!-- 畫作類 -->
+                    <div class="door">
+                        <a href="https://www.facebook.com/">
+                            <img src="../assets/image/galleryDoor_door03.gif" alt="gelleryDoorImage">
+                            <div class="text">
+                                <p>畫作類</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -38,11 +71,12 @@
     </main>
 
     <!-- Jquery.js -->
-    <script src="../js/jquery/jquery.js"></script>
-    <!-- LINK -->
+    <script src="js/jquery/jquery.js"></script>
+    <!-- gsap.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
     <!-- galleryDoor.js -->
-    <script src="../js/galleryDoor.js"></script>
+    <script src="js/galleryDoor.js"></script>
+    </div>
 </body>
 </html>
