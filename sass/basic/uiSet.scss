@@ -12,6 +12,7 @@ button{
 input{
     font-family: 'Noto Serif TC', serif;
 }
+// input check添加陰影
 input:not([type*="submit"]):focus,
 input:not([type*="reset"]):focus{
     /* 輸入框非送出非重整 */
