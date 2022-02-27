@@ -42,22 +42,30 @@
 .articleContent h2:after{
     bottom: 10px;
 }
-.articleContent .flat{
-    display: flex;
+// 手機直向排列設定
+.articleContent .wrap{
+    display: block;
+    // 90%裡面90%
     width: 90%;
     margin: auto;
-}
-.articleContent .flat a{
-    width: 30%;
-}
+} 
 .articleContent .flat .pic{
     width: 90%;
     border: 1px solid #000;
     max-height: 150px;
     overflow: hidden;
 }
-.articleContent .flat .pic{
-    width: 90%;
+// .articleContent .flat .pic{
+//     width: 90%;
+// }
+@media screen and (min-width:768px){
+    // 手機橫向排列設定
+    // .articleContent .wrap{
+    //     display: flex;
+    // }
+    // .articleContent .flat a{
+        //     width: 30%;
+        // }
 }
 
 
