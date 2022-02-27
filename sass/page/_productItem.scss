@@ -1,8 +1,6 @@
 /* 麵包屑 */
 .SingleProductHead{
-    width: 100%;
-    margin: auto;
-    margin-top: 60px;
+    display: none;
 }
 .SingleProductHead .productBread{
     margin: auto;
@@ -20,12 +18,19 @@
     margin: auto;
 }
 @media screen and (min-width:992px){
+    /* 麵包屑 */
+    .SingleProductHead{
+        display: block;
+        width: 100%;
+        margin: auto;
+        margin-top: 60px;
+    }
     .SingleProductIntro .sizeAdjustBox{
         box-sizing: border-box;
         padding-bottom: 1.5%;
         display: flex;
         flex-wrap: nowrap;
-        border-bottom: solid 2px black;
+        border-bottom:1px  solid #8888;
     }
 }
 .SingleProductIntro .imgBox{
@@ -49,6 +54,7 @@
 .SingleProductIntro .imgBox img{
     width: 100%;
     vertical-align: top;
+    cursor: pointer;
 }
 .SingleProductIntro .imgBox>img{
     flex-shrink: 0;
@@ -121,7 +127,7 @@
 .SingleProductIntro .introBox{
     box-sizing: border-box;
     padding: 0 0 0 2%;
-    border-left: 3px solid #000;
+    border-left: 1px solid #888;
     display: flex;
     flex-direction: column;
     margin-bottom: 5%;
@@ -137,54 +143,120 @@
     .SingleProductIntro .introAll{
         box-sizing: border-box;
         padding: 0 0 0 3%;
-        border-left: 2px solid #000;
+        border-left: 1px solid #8888;
     }
 }
-.SingleProductIntro .introBox h2{
-    margin-bottom: 3%;
-}
 .SingleProductIntro .introBox .introtext{
-    margin-bottom: 3%;
+    margin-bottom: 10%;
 }
 .SingleProductIntro .introBox .time{
-    color: rgb(82, 93, 156);
-    margin-bottom: 6%;
     vertical-align: middle;
     display: flex;
     align-items: center;
 }
-.SingleProductIntro .introBox .time span{
-    margin-right: 2%;
+// 剩餘時間
+.SingleProductIntro .introBox .time{
+    // 手機直向排列
+    display: block;
+    margin-bottom: 5%;
 }
-.SingleProductIntro .introBox .time span:nth-child(2){
-    font-size: 0.5em;
-    font-weight: 1000;
+// 第二個p上面空間
+.SingleProductIntro .introBox .time p+p{
+    display: block;
+    margin-top:1% ;
 }
-.SingleProductIntro .introBox .bidBox{
+@media screen and (min-width:992px){
+    .SingleProductIntro .introBox .time{
+        display: flex;
+    }
+    .SingleProductIntro .introBox .time p{
+        margin-top: auto;
+        margin-right: 2%;
+    }
+}
+// bidBox除了第一個設margin-top
+.SingleProductIntro .bidBox+.bidBox{
+    margin-top: 2%;
+}
+// 目前出價
+.SingleProductIntro .bidBox{
     display: flex;
-    margin-bottom: 2%;
+    justify-content: space-between;
+    align-items: baseline;
 }
-.SingleProductIntro .introBox .bid div,
-.SingleProductIntro .introBox .buy div{
-    width: 20%;
+.SingleProductIntro .bidBox.bid div{
+    display: flex;
+    white-space: nowrap;
 }
-.SingleProductIntro .introBox .bid p{
-    font-size: 1.8em;
+.SingleProductIntro .bidBox.bid div a{
+    text-decoration: none;
 }
-.SingleProductIntro .introBox .buy p{
-    font-size: 1.5em;
+.SingleProductIntro .bidBox.bid div a:hover{
+    transform: scale(1.02);
 }
-.SingleProductIntro .introBox .like{
-    position: absolute;
-    top: 2%;
-    right:2%;
-    border-radius:800px;
-    width: 10%;
+.SingleProductIntro .bidBox.bid div a span:nth-child(2){
+    border-bottom: 1px solid #8888;
+}
+// 直購價
+.SingleProductIntro .bidBox.buy div{
+    display: flex;
+    white-space: nowrap;
+}
+// 價格輸入框
+.SingleProductIntro .bidBox.inputBox{
+    margin-top: 5%;
+}
+.SingleProductIntro .bidBox.inputBox input{
+    width: 100%;
+    font-size: 1em;
+    border-radius: 200px;
     box-sizing: border-box;
-    padding: 1.5% 0%;
-    text-align: center;
+    padding: 0.5em 1em;
+    border:1px solid rgba(136, 136, 136, 0.233);
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
+}
+@media screen and (min-width:992px){
+    .SingleProductIntro .bidBox.inputBox input{
+        width: 80%;
+    }
+}
+// 提示
+.SingleProductIntro .bidBox.hint span{
+    white-space: nowrap;
+}
+// 收藏按鈕
+.SingleProductIntro .introBox .like{
+    // 定位在.SingleProductIntro .introBox
+    position: absolute;
+    top: 5%;
+    right:2%;
+    display: flex;
+    border-radius:600px;
     opacity: 50%;
-    font-size: 0.5em;
+    box-sizing: border-box;
+    padding: 8px 15px;
+    align-items: center;
+    cursor: pointer;
+}
+// 愛心
+.SingleProductIntro .introBox .like .pic{
+    width: 20px;
+}
+.SingleProductIntro .introBox .like .pic img{
+    width: 100%;
+    vertical-align: bottom;
+    transition: .3s;
+}
+// 愛心換顏色
+.SingleProductIntro .introBox .like .pic img:hover{
+    content: url(../image/articlePage_shareBar_likeHover.png);
+    transform: scale(1.02);
+    vertical-align: bottom;
+}
+.SingleProductIntro .introBox .like span{
+    margin: 0 5px;
 }
 /* 商品介紹按鈕 */
 .SingleProductIntro .introButton{
@@ -194,6 +266,7 @@
 .SingleProductIntro .introButton .introButtonItem:first-child{
     margin-right: 3%;
 }
+
 /* 更多商品 */
 .SingleProductMoreP{
     width: 100%;
@@ -202,6 +275,7 @@
 }
 .SingleProductMoreP h3{
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     margin-bottom: 3%;
 }

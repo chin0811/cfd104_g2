@@ -8,37 +8,51 @@
     <link rel="stylesheet" href="assets\css\style.css">
     <script src="js/vue/vue.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <script src="js/product.js" defer></script>
 </head>
 <body>
     <!-- 許瑀芹 -->
     <!-- 商品頁分類導覽 -->
-    @@include('layout/header.html')
+    <!-- @@include('layout/header.html') -->
+    @@include('layout/header.html',{"headerClass":""})
     <section class="productHead">
-        <div class="productBread size marginAuto">
+        <!-- <div class="productBread size marginAuto">
             <p>
-                <span>logo</span>
-                <span>>雕塑類</span>
+                <span class="small lightColor">logo</span>
+                <span class="small epBColor">>雕塑類</span>
             </p>
-        </div>
+        </div> -->
         <div class="adjustBox size marginAuto">
             <nav class="sideNav">
-                <div class="sideNavTitle">
-                    <a href="">
-                        <h2>
-                            <span>雕塑類</span>
-                        </h2>
-                    </a>
-                </div>
                 <ul>
                     <li>
-                        <a href=""><h3>全部</h3></a>
+                        <a href="">
+                            <h2 class="epBColor">
+                                雕塑類
+                            </h2>
+                        </a>
                     </li>
                     <li>
-                        <a href=""><h3>分類</h3></a>
+                        <a href="">
+                            <p>
+                                畫作類
+                            </p>
+                        </a>
                     </li>
                     <li>
-                        <a href=""><h3>分類</h3></a>
+                        <a href="">
+                            <p>
+                                公仔類
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <p>
+                                品牌合作
+                            </p>
+                        </a>
                     </li>
                 </ul>   
             </nav>
@@ -67,7 +81,7 @@
                     </div>
                 </div>
                 
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index].img">
                     </div>
@@ -80,17 +94,22 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index].price}}</span>
-                        <span>{{item[index].time}}</span>
+                        <span class="small">{{item[index].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+1].img">
                     </div>
@@ -103,17 +122,22 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index+1].price}}</span>
-                        <span>{{item[index+1].time}}</span>
+                        <span class="small">{{item[index+1].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+2].img">
                     </div>
@@ -126,17 +150,22 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index+2].price}}</span>
-                        <span>{{item[index+2].time}}</span>
+                        <span class="small">{{item[index+2].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
-                <article class="prouductItem commomItem aidBgColor">
+                <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+3].img">
                     </div>
@@ -149,14 +178,19 @@
                     </div>
                     <div class="footer">
                         <span>{{item[index+3].price}}</span>
-                        <span>{{item[index+3].time}}</span>
+                        <span class="small">{{item[index+3].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
             </section>
@@ -169,14 +203,14 @@
             <div class="titleBox size marginAuto">
                 <h4>124件商品</h4>
                 <div class="buttonBox">
-                    <button id="selectorButton">篩選器</button>
+                    <button class="square" id="selectorButton">篩選器</button>
                 </div>
             </div>
             <section class="productSelector displayNone size marginAuto" id="productSelector">
                 aaa
             </section>
             <div class="productSection size marginAuto">
-                <article class="prouductItem commomItem aidBgColor" v-for="product in products">
+                <article class="prouductItem commomItem" v-for="product in products">
                     <div class="img">
                         <img :src="product.img">
                     </div>
@@ -189,14 +223,19 @@
                     </div>
                     <div class="footer">
                         <span>{{product.price}}</span>
-                        <span>{{product.time}}</span>
+                        <span class="small">{{product.time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
-                        75
+                        <div class="pic">
+                            <img src="assets/image/products_like_likeWhite.png" alt="">
+                        </div>
+                        <span class="small">
+                            75
+                        </span>
                     </div>
                 </article>
             </div>

@@ -1,66 +1,162 @@
 /* 麵包屑和商品分類導覽 */
 .productHead{
     width: 100%;
-    margin-bottom: 10%;
-    margin-top: 60px;
+    margin-bottom: 5%;
+    // border-bottom: 1px solid #8888;
 }
-.productHead .productBread{
-    margin: auto;
-    width: 90%;
-    margin-bottom: 1%;
-}
+// .productHead .productBread{
+//     margin-bottom: 1%;
+// }
+// 主導覽列+input
 .productHead .adjustBox{
-    margin: auto;
-    width: 90%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
+    display: block;
 }
-.productHead .sideNav{
-    width: 60%;
+// 主導覽列a樣式清除
+.productHead .adjustBox a{
+    text-decoration: none;
+}
+.productHead .adjustBox .sideNav ul{
     display: flex;
     align-items: baseline;
 }
-.productHead .sideNav a{
-    text-decoration: none;
-    color: #141414;
+// 第一個li給定位
+.sideNav ul li:first-child{
+    position: relative;
 }
-.productHead .sideNav .sideNavTitle{
-    width: 25%;
-    margin-right: 3%;
+// 主類別＋右分隔線
+.productHead .adjustBox .sideNav ul li:first-child::after{
+    content: '';
+    // 定位在.sideNav ul li:first-child
+    position: absolute;
+    right: -10%;
+    top: 0;
+    bottom:0;
+    margin: auto;
+    width: 3px;
+    height: 30%;
+    background-color: #394897;
 }
-.productHead .sideNav ul{
-    width: 60%;
-    display: flex;
+.productHead .adjustBox .sideNav ul li+li{
+    margin-left: 6%;
 }
-.productHead .sideNav ul li{
-    width: 25%;
+.productHead .sideNav ul li a{
+    color: #BCBCBC;
+    white-space: nowrap;
+}
+// 次類別 hover色彩
+.productHead .sideNav ul li a:hover{
+    color: #394897;
+}
+@media screen and (min-width:992px){
+    // 主導覽列+input
+    .productHead .adjustBox{
+        display: flex;
+        align-items: baseline;
+    }
+    .productHead .adjustBox .sideNav{
+        flex-grow: 1;
+    }
 }
 /* 輸入盒子 */
 .productHead .adjustBox .inputBox{
-    width: 40%;
-    display: flex;
-    justify-content: end;
+    // width: 40%;
+    // display: flex;
+    // justify-content: end;
     align-items: center;
+} 
+/* 輸入盒子共用樣式 */
+.productHead .adjustBox .inputBox .inputItem{
+    font-size: 1em;
+    border-radius: 200px;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+    border:1px solid #ccc;
+    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+    line-height: 2em;
+    background-color: transparent;
 } 
 /* 商品Item共用設計 */
 .productMainSection .commomItem{
     position: relative;
     display: flex;
     flex-direction: column;
-}
-.productMainSection .commomItem .like{
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    border-radius:800px;
-    width: 25%;
+    // 透明卡片
     box-sizing: border-box;
-    padding: 3% 0%;
-    text-align: center;
-    opacity: 50%;
-    font-size: 0.5em;
+    padding: 20px;
+    background-color: #3e444a05;
+    box-shadow: 0.3em 0.3em 0.3em #252b3010;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff10;
+    backdrop-filter: blur(0.5em);
+    border-radius: 0.5em;
 }
+// .productMainSection .commomItem .like{
+//     position: absolute;
+//     top: 7%;
+//     left: 7%;
+//     border-radius:800px;
+//     width: 20%;
+//     box-sizing: border-box;
+//     padding: 3% 0%;
+//     text-align: center;
+//     opacity: 50%;
+//     font-size: 0.5em;
+// }
+// 收藏按鈕
+.productMainSection .commomItem .like{
+    // 定位在.SingleProductIntro .introBox
+    position: absolute;
+    top: 5%;
+    right:2%;
+    display: flex;
+    border-radius:600px;
+    opacity: 50%;
+    box-sizing: border-box;
+    padding: 8px 15px;
+    align-items: center;
+    cursor: pointer;
+}
+// 愛心
+.productMainSection .commomItem .like .pic{
+    width: 20px;
+}
+.productMainSection .commomItem .like .pic img{
+    width: 100%;
+    vertical-align: bottom;
+    transition: .3s;
+}
+// 愛心換顏色
+.productMainSection .commomItem .like .pic img:hover{
+    content: url(../image/articlePage_shareBar_likeHover.png);
+    transform: scale(1.02);
+    vertical-align: bottom;
+}
+.productMainSection .commomItem .like span{
+    margin: 0 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .productMainSection .commomItem .img img{
     width: 100%;
 }
@@ -70,18 +166,21 @@
 .productMainSection .commomItem .footer{
     display: flex;
     justify-content: space-between;
-    margin-top: 5%;
+    margin: 3% 0;
 }
 /* 商品輪播 */
 .productMainCarousel{
     width: 100%;
     overflow: hidden;
     margin-bottom: 10%;
+    background-color: #FBF7F3;
+    padding:0 0 3% ;
+    box-sizing: border-box;
 }
 .productMainCarousel h3{
     width: 90%;
-    margin: auto;
-    margin-bottom: 3%;
+    max-width: 1200px;
+    margin: 3% auto;
 }
 .productMainCarousel .carouselBox{
     width: 90%;
@@ -89,6 +188,7 @@
     display: flex;
     flex-wrap: nowrap;
     position: relative;
+    padding-bottom: 1em;
 }
 .productMainCarousel .carouselBox .prouductItem{
     width:66%;
@@ -170,6 +270,9 @@
     justify-content: space-between;
     margin-bottom: 0.5%;
 }
+.productiMainProduct .productSection .prouductItem{
+    margin-bottom: 3em;
+}
 /* 篩選器項目 */
 .productiMainProduct .productSelector{
     width: 90%;
@@ -187,7 +290,6 @@
     width: 48%;
     box-sizing: border-box;
     margin-bottom: 1%;
-    
 }
 @media screen and (min-width:992px){
     .productiMainProduct article{

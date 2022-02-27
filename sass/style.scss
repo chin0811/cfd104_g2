@@ -12,7 +12,7 @@
 //登入
 @import 'page/login';
 //客服
-@import 'page/supportChatroom';
+@import 'layout/supportChatroom';
 //商品頁
 @import 'page/product';
 @import 'page/productItem';
@@ -32,3 +32,5 @@
 @import 'page/notice';
 //商品刊登
 @import 'page/listing';
+//藝廊
+@import 'page/galleryDoor';

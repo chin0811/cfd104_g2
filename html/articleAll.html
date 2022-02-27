@@ -10,10 +10,157 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-    @@include('layout/header.html')
+    <!-- @@include('layout/header.html') -->
+    @@include('layout/header.html',{"headerClass":""})
     <section class="articleContent">
         <h2 class="deepColor">藝論</h2>
-        <input type="radio" name="whoPost" class="listchoose" id="officePost" checked>
+        <section class="wrap flat">
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+                        <img src="assets/image/articleAll_articleContent_silk.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">這是一個背包</h4>
+                            <p class="lightColor small">這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+                        <img src="assets/image/articleAll_articleContent_hermesHelmetpng.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">看起來普通的氣球</h4>
+                        <p class="lightColor small">它不只是一顆氣球，nonono它是一顆氣球。跟知名大師聯名，買到賺到，因為它是一顆金屬氣球，怎麼樣玩它都不會破。</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+                        <img src="assets/image/articleAll_articleContent_glass.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">盤子的歷史</h4>
+                        <p class="lightColor small">
+                            你是否常常也有一樣的疑問，為什麼我買的東西就是比較貴？物價飆漲，甚麼都漲就連海平面也漲，為什麼我的錢包就是沒有漲？為了這個問題，我深入研究了許久，終於得到答案。
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+                        <img src="assets/image/articleAll_articleContent_sotheby.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">花畫畫畫花</h4>
+                            <p class="lightColor small">
+                                雨 我是大雨降落在你身上 卻弄壞衣裳我只是想 和你玩耍待在你身旁 欣賞你的光芒。但你不願 你不再 你不再 你不願再想起,有我的過去 有我的記憶,你曾說 曾經你說過 我藏著秘密，我不夠透明 我不夠真心。
+                            </p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="wrap newest">
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="wrap threeRows">
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="wrap fourRows">
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item">
+                    <div class="pic">
+
+                    </div>
+                    <div class="txt">
+
+                    </div>
+                </div>
+            </a>
+        </section>
+        <!-- <input type="radio" name="whoPost" class="listchoose" id="officePost" checked>
         <input type="radio" name="whoPost" class="listchoose" id="memberPost">
         <section class="switchBar">
             <label for="officePost">熱門文章</label>
@@ -106,15 +253,6 @@
                         </section>
                     </a>
                 </article>
-                <!-- <article class="article7">
-                    <a href="">
-                        <section class="pic">
-                            <img src="assets/image/home_homeCatalog_elmoSculpt.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第三章</h4>
-                        <p class="lightColor">程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場，所有人選項服飾</p>
-                    </a>
-                </article> -->
             </section>
             <section class="content memberPost">
                 <article class="article1">
@@ -195,85 +333,6 @@
                         </section>
                     </a>
                 </article>
-                <!-- <article class="article7">
-                    <a href="">
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_flowerPainting.jpeg" alt="">
-                        </section>
-                        <h4 class="deepColor">第三章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </a>
-                </article> -->
-            </section>
-        </section>
-        <!-- <section class="content_group">
-            <section class="content officePost">
-                <section class="leftArticle">
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_bag.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第一章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_jeffBollun.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第二章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                </section>
-                <section class="rightArticle">
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_kawsHolding.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第三章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_plate.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第四章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                </section>
-            </section>
-            <section class="content memberPost">
-                <section class="leftArticle">
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_beBear.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第一章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_sculpt.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第二章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                </section>
-                <section class="rightArticle">
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_flowerPainting.jpeg" alt="">
-                        </section>
-                        <h4 class="deepColor">第三章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                    <article>
-                        <section class="pic">
-                            <img src="assets/image/article_articleContent_bighead.png" alt="">
-                        </section>
-                        <h4 class="deepColor">第四章</h4>
-                        <p class="lightColor">h4程式溝通那位朋友翻譯銷售，作品採訪民族一點，管理員一邊現場。</p>
-                    </article>
-                </section>
             </section>
         </section> -->
     </section>

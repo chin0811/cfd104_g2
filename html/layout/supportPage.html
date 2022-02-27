@@ -1,0 +1,116 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="js/vue/vue.min.js"></script>
+
+
+    <!-- 客服區 -->
+    <section id="supportApp" :class='openSelect ? "active":"" '>
+        <article :class="btnClass"   > 
+            <span class="material-icons" @click="openSelect = !openSelect">help</span>
+            <article class="selectRoom">
+                <article class="titleCell">
+                    <h3>客服</h3>
+                    <span class="material-icons" @click="openSelect = !openSelect">close</span>
+                </article>
+                <article class="selectBtn">
+                    <div @click="openRobotBool = true">
+                        <img src="assets/image/supportPage_robot_icon.svg" alt="">
+                        <p>智能客服</p>
+                    </div>
+                    <div @click="openPeopleBool = true">
+                        <img src="assets/image/supportPage_people_icon.svg" alt="">
+                        <p>線上客服</p>
+                    </div>
+                </article>
+                <article>
+
+                </article>
+            </article>
+            <article class="chatroom "> 
+                <!-- active -->
+                <article class="titleCell">
+                    <span class="material-icons" @click="closedRoom">arrow_back_ios</span>
+                    <h3>Name</h3>
+                    <span class="material-icons" @click="openSelect = !openSelect">close</span>
+                </article>
+                <article class="txtArea">
+                    <article class="meTxt">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                </article>
+                <article class="keyButton" v-show="openRobotBool">
+                    <button>AAAA</button>
+                    <button>AAAA</button>
+                    <button>AAAA</button>
+                    <button>AAAA</button>
+                </article>
+                <article action="#" class="inputArea" v-show="openPeopleBool">
+                    <textarea name="" id="" ></textarea>
+                   <img src="assets/image/supportPage_send_icon.svg" alt="">
+                </article>
+           </article>
+        </article>
+    </section>
+    <script>
+        new Vue({
+            el: '#supportApp',
+            // el:document.getElementById('app'), //可以這樣寫
+            data: {         //變數放在這裡
+                message:'',
+                openSelect:false,
+                openRobotBool:false,
+                openPeopleBool:false
+            },
+            methods: {  //函數大部分放在這裡
+                closedRoom(){
+                    this.openPeopleBool = false;
+                    this.openRobotBool = false;
+                }
+            },
+            computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值
+                btnClass(){
+                        return {
+                            supportChatroom:true,
+                            aidBgColor:true,
+                            active: this.openSelect,
+                            selectRoomActive:this.openRobotBool  || this.openPeopleBool,
+                        };
+                },
+                btnSelectClass(){
+                    return{
+                        selectRoom:true,
+                        active: this.openRobotBool  || this.openPeopleBool,
+                    }
+                } 
+            },
+        });
+        
+
+    </script>

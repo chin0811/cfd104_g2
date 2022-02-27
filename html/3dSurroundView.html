@@ -6,30 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--共用-->
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/uiSet.css">
-    <link rel="stylesheet" href="../assets/css/component.css">
-    <link rel="stylesheet" href="../assets/css/buttonStyle.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/uiSet.css">
+    <link rel="stylesheet" href="assets/css/component.css">
+    <link rel="stylesheet" href="assets/css/buttonStyle.css"> -->
     <script src="https://kit.fontawesome.com/90d222f595.js" crossorigin="anonymous"></script>
     <!--燈箱-->
-    <link rel="stylesheet" href="../assets/css/accountManagement.css">
-    <link rel="stylesheet" href="../assets/css/collect.css">
-    <link rel="stylesheet" href="../assets/css/consumptionRecord.css">
-    <link rel="stylesheet" href="../assets/css/customCharacter.css">
-    <link rel="stylesheet" href="../assets/css/myListing.css">
+    <!-- <link rel="stylesheet" href="assets/css/accountManagement.css">
+    <link rel="stylesheet" href="assets/css/collect.css">
+    <link rel="stylesheet" href="assets/css/consumptionRecord.css">
+    <link rel="stylesheet" href="assets/css/customCharacter.css">
+    <link rel="stylesheet" href="assets/css/myListing.css"> -->
     <!-- <link rel="stylesheet" href="css/navButtonClick.css"> -->
     <!--這頁的樣式-->
-    <link rel="stylesheet" href="../assets/css/3dSurroundView.css">
+    <!-- <link rel="stylesheet" href="assets/css/3dSurroundView.css"> -->
     <!--按鈕通知-->
-    <link rel="stylesheet" href="../assets/css/notice.css">
+    <!-- <link rel="stylesheet" href="assets/css/notice.css"> -->
     <!-- 3D套件 --->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
     <title>會員中心</title>
 </head>
-
 <body>
+        @@include('layout/header.html',{
+            "headerClass":"SurroundViewHeader"
+        })
+    
     <!--3D背景-->
     <div id="panorama">
         <!-- <button type="button" class="navButtonClick_button">導覽列</button> -->
@@ -281,18 +284,18 @@
                     </section>
                 </section>
                 <section class="clickPeople mask">
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Christopher001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Eric001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Liam001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Mark001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Owen001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Simon001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Emma001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Evelyn001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Jane001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Lilly001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Marilyn001.png" alt="頭像"></section>
-                    <section class="img pictureChange"><img class="characterAdjustment" src="../assets/image/customCharacter/PowerPeople_Melissa001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Christopher001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Eric001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Liam001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Mark001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Owen001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Simon001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Emma001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Evelyn001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Jane001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Lilly001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Marilyn001.png" alt="頭像"></section>
+                    <section class="img pictureChange"><img class="characterAdjustment" src="assets/image/customCharacter/PowerPeople_Melissa001.png" alt="頭像"></section>
                 </section>
             </section>
         </main>
@@ -374,13 +377,13 @@
         </section>
     </nav> -->
     <!--3D背景的js-->
-    <script src="../js/3dSurroundView.js"></script>
+    <script src="js/3dSurroundView.js"></script>
     <!--客製化人物的js-->
-    <script src="../js/customCharacter.js"></script>
+    <script src="js/customCharacter.js"></script>
     <!--帳號管理的js-->
-    <script src="../js/changeValue.js"></script>
+    <script src="js/changeValue.js"></script>
     <!--按鈕通知的js-->
-    <script src="../js/notice.js"></script>
+    <script src="js/notice.js"></script>
 </body>
 
 </html>
