@@ -13,7 +13,6 @@
     <script src="js/vue/vue.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>listing</title>
-
     <!-- 拍賣步驟收起 -->
     <script>
 		$(function () {
@@ -29,8 +28,7 @@
     <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/header.js"></script>
-    @@include('layout/headerNormal.html')
-    <!-- <header>
+    <header>
         <section class="headerNormalContain">
             <section class="logoContain">
                 <div class="logo">
@@ -95,11 +93,11 @@
                 </div>
             </nav>
         </section>
-    </header> -->
+    </header>
 
     <!-- 拍賣流程步驟 -->
     <section id="listingVue">
-        <section>
+        <section class="safeFrame">
             <div class="listingSteps">
                 <h2 class="epBColor">上架競拍流程</h2>
                 <h4>馬上開啟您的個人拍賣會</h4>
@@ -154,135 +152,141 @@
                 </span>
             </div>
         </section>
-        <section>
+
+        <section class="safeframe">
             <div class="bannerAdTopic">
                 <h4 class="epBColor">藝廊效果廣告展示</h4>
             </div>
         </section>
 
         <!-- 產品效果廣告展示 -->
-        <div class="owl-carousel owl-theme">
-        <div class="cube">
-            <div class="top"></div>
-            <div>
-                <span style="--i:0"></span>
-                <span style="--i:1"></span>
-                <span style="--i:2"></span>
-                <span style="--i:3"></span>
+        <section>
+            <div class="owl-carousel owl-theme">
+                <div class="cube">
+                    <!-- <button id="cubeBtn" class="round">點我</button>     方塊收起按鈕 -->
+                    <div class="top"></div>
+                    <div>
+                        <span style="--i:0"></span>
+                        <span style="--i:1"></span>
+                        <span style="--i:2"></span>
+                        <span style="--i:3"></span>
+                    </div>
             </div>
-        </div>
-        <div class="cigarette">
-            <div class="cigaretteBody">
-                <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            <div class="cigarette">
+                <div class="cigaretteBody">
+                    <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
             </div>
-            <div class="cigaretteBody">
-                <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+            <div class="banner">
+                <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
             </div>
-            <div class="cigaretteBody">
-                <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
             </div>
-            <div class="cigaretteBody">
-                <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-            <div class="cigaretteBody">
-                <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-            <div class="cigaretteBody">
-                <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-            <div class="cigaretteBody">
-                <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-            <div class="cigaretteBody">
-                <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-            <div class="cigaretteBody">
-                <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-            <div class="cigaretteBody">
-                <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-            </div>
-        </div>
-        <div class="banner">
-            <img src="assets/image/listingImage/about_city3.png" alt="none">
-        </div>
-        </div>
+        </section>
         <script src="js/carousel.js"></script>
-        <section class="tab-content">
+
+        <!-- 上架填寫分頁1+分頁2 -->
+        <section class="tab-content safeframe">
+            <div class="listingBgPic1">
+                <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
+            </div>
+            <div class="listingBgPic2">
+                <img src="assets/image/listingImage/listing_bg_picture2.png" alt="none">
+            </div>
+            <div class="listingBgPic3">
+                <img src="assets/image/listingImage/listing_bg_picture3.png" alt="none">
+            </div>
+            <div class="listingBgPic4">
+                <img src="assets/image/listingImage/kaws_action_figure.png" alt="none">
+            </div>
             <!--分頁bar1 -->
             <input type="radio" id="tab1" class="" name="mytabs" checked="checked" required>
             <label for="tab1" class="tag epBColor">上架競標藝術品</label>
             <!-- 上架競標藝術品頁面 -->
-            <form action="#" class="content aidBgColor" name="page1" method="post">
-                <div class="listingBgPic1">
-                    <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
-                </div>
-                <div class="listingBgPic2">
-                    <img src="assets/image/listingImage/listing_bg_picture2.png" alt="none">
-                </div>
-                <div class="listingBgPic3">
-                    <img src="assets/image/listingImage/listing_bg_picture3.png" alt="none">
-                </div>
-                <div class="listingBgPic4">
-                    <img src="assets/image/listingImage/kaws_action_figure.png" alt="none">
-                </div>
-                    <h5>上架資訊:</h5>
+            <form action="homePage.html" id="form1" class="content aidBgColor" name="page1" method="get">  <!--onclick="return false"-->
+                    <h5>-上架資訊-</h5>
                     <div class="artTitle">
                         <label for="">
-                            <h6>藝術品名</h6>
+                            <h6>藝術品名:</h6>
                         </label>
-                        <input type="text" class="textBox" id="" name="artName" value="" v-model="message" placeholder="請輸入" required>
+                        <input type="text" class="textBox" id="artName" name="artName" value="" v-model="message" placeholder="請輸入" autocomplete="on" required>
                     </div>
                     <div class="artist">
                         <label for="">
-                            <h6>藝術品創作者</h6>
-                            <input type="text" class="textBox" id="" name="artistName" value="" v-model="message1" placeholder="請輸入" required>
+                            <h6>藝術品創作者:</h6>
+                            <input type="text" class="textBox" id="artistName" name="artistName" value="" v-model="message1" placeholder="請輸入" required>
                         </label>
                     </div>
                     <div class="bidTime">
                         <label for="">
-                            <h6>競標時間</h6>
-                            <select name="time" class="aidBgColor" required>
+                            <h6>競標時間:</h6>
+                            <select name="time" class="aidBgColor" v-model="time" required>
                                 <option value="">請選擇</option>
-                                <option value="1">24小時</option>
-                                <option value="2">3天</option>
-                                <option value="3">7天</option>
-                                <option value="4">10天</option>
-                                <option value="5">15天</option>
-                                <option value="6">21天</option>
-                                <option value="7">30天</option>
+                                <option value="23h 59m 59s">24小時</option>
+                                <option value="2d 23h 59m 59s">3天</option>
+                                <option value="6d 23h 59m 59s">7天</option>
+                                <option value="9d 23h 59m 59s">10天</option>
+                                <option value="14d 23h 59m 59s">15天</option>
+                                <option value="20d 23h 59m 59s">21天</option>
+                                <option value="29d 23h 59m 59s">30天</option>
                             </select>
                         </label>
                     </div>
                 <div class="startPrice">
                     <label for="">
-                        <h6>起標價</h6>
+                        <h6>起標價:</h6>
                     </label>
                     <input type="text" class="textBox" id="" name="starPrice" value="" v-model="score" placeholder="請輸入" required>
                 </div>
                 <div class="bidPitch">
                     <label for="">
-                        <h6>每次標價間距</h6>
-                        <select name="bidPitch" class="aidBgColor" required>
+                        <h6>每次標價間距:</h6>
+                        <select name="bidPitch" class="aidBgColor" v-model="pitch" required>
                             <option value="">請選擇</option>
                             <option value="100">NT 100</option>
                             <option value="200">NT 200</option>
                             <option value="500">NT 500</option>
-                            <option value="1000">NT 1,000</option>
-                            <option value="2000">NT 2,000</option>
-                            <option value="5000">NT 5,000</option>
-                            <option value="10000">NT 10,000</option>
-                            <option value="20000">NT 20,000</option>
-                            <option value="50000">NT 50,000</option>
-                            <option value="100000">NT 100,000</option>
+                            <option value="1,000">NT 1,000</option>
+                            <option value="2,000">NT 2,000</option>
+                            <option value="5,000">NT 5,000</option>
+                            <option value="10,000">NT 10,000</option>
+                            <option value="20,000">NT 20,000</option>
+                            <option value="50,000">NT 50,000</option>
+                            <option value="100,000">NT 100,000</option>
                         </select>
                     </label>
                 </div>
                 <div class="price">
                     <label for="">
-                        <h6>定價</h6>
+                        <h6>定價:</h6>
                     </label>
-                    <input type="text" class="textBox" id="price" name="" value="" v-model="score1" placeholder="請輸入" required>
+                    <input type="text" class="textBox" id="price" name="price" value="" v-model="score1" placeholder="請輸入" required>
                 </div>
                 <div class="productType">
                     <h5>產品種類:</h5>
@@ -290,32 +294,32 @@
                         <div class="type">
                             <label>
                                 <input type="radio" name="type" required>
-                                畫作品
+                                畫作類
                             </label>
                         </div>
                         <div class="type">
                             <label>
                                 <input type="radio" name="type">
-                                雕像/模型/公仔
+                                雕塑類
                             </label>
                         </div>
                         <div class="type">
                             <label>
                                 <input type="radio" name="type">
-                                裝置藝術品
+                                公仔類
                             </label>
                         </div>
                         <div class="type">
                             <label>
                                 <input type="radio" name="type">
-                                街頭藝術品
+                                品牌合作類
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="ad">
                     <div class="show">
-                        <h5>藝廊廣告需求:<span><img src="assets/image/listingImage/help_question_icon.png" alt="none"></span></h5>
+                        <h5>-藝廊廣告需求-<span><img src="assets/image/listingImage/help_question_icon.png" alt="none"></span></h5>
                         <div class="qAnswer">
                             <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。<br>(如右方)達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
                         </div>
@@ -330,11 +334,11 @@
                     </label>
                 </div>
                 <div class="uploadFile">
-                    <h5>藝術品圖檔上傳:</h5>
+                    <h5>-藝術品圖檔上傳-</h5>
                     <ol class="uploadPicture">
                         <li>
-                            <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
-                            <label for="pic"><img src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
+                            <input type="file" id="pic" name="pic" accept=".png,.jpg" data-target='preview_product_image' Enctype="multipart/form-data" required>
+                            <label for="pic"><img id="preview_product_image" src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
                         </li>
                         <li>
                             <input type="file" id="pic" name="pic" accept=".png,.jpg">
@@ -347,7 +351,7 @@
                     </ol>
                 </div>
                 <div class="uploadCertification">
-                    <h5>藝術證明:</h5>
+                    <h5>-藝術證明-</h5>
                         <div class="certification">
                             <input type="file" id="paper" name="paper" accept=".pdf" required>
                             <label for="paper"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
@@ -363,41 +367,41 @@
                     </div>
                 <section class="btn">
                     <input type="button" class="btnProduct roundOutline" value="預覽畫面" id="btnProduct">
-                    <input type="submit" class="btnProduct round" value="確認送出(審核)" onclick="check()"> <!--onclick="location.href='listing.html'"-->
+                    <input type="submit" class="btnProduct round" id="btnProduct1" value="確認送出(審核)"> <!--onclick="location.href='listing.html'"-->
                 </section>
             </form>
             <!--分頁bar2 -->
             <input type="radio" id="tab2" name="mytabs">
             <label for="tab2" class="tag epBColor">展覽藝術品(非賣)</label>
-            <!-- 展覽品頁面顯示 -->
-            <form action="#" class="content aidBgColor" name="pag2" method="post">
-                <div class="listingBgPic1">
-                    <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
-                </div>
-                <div class="listingBgPic2">
-                    <img src="assets/image/listingImage/listing_bg_picture2.png" alt="none">
-                </div>
-                <div class="listingBgPic3">
-                    <img src="assets/image/listingImage/listing_bg_picture3.png" alt="none">
-                </div>
-                <div class="listingBgPic4">
-                    <img src="assets/image/listingImage/kaws_action_figure.png" alt="none">
-                </div>
-                <h5>上架資訊:</h5>
+            <!-- 展覽品頁面 -->
+            <!-- <div class="listingBgPic1">
+                <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
+            </div>
+            <div class="listingBgPic2">
+                <img src="assets/image/listingImage/listing_bg_picture2.png" alt="none">
+            </div>
+            <div class="listingBgPic3">
+                <img src="assets/image/listingImage/listing_bg_picture3.png" alt="none">
+            </div>
+            <div class="listingBgPic4">
+                <img src="assets/image/listingImage/kaws_action_figure.png" alt="none">
+            </div> -->
+            <form action="homePage.html" class="content aidBgColor" name="pag2" method="get">
+                <h5>-上架資訊-</h5>
                 <div class="artTitle">
                     <label for="">
-                        <h6>藝術品名</h6>
+                        <h6>藝術品名:</h6>
                     </label>
                     <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
                 </div>
                 <div class="artist">
                     <label for="">
-                        <h6>藝術品創作者</h6>
+                        <h6>藝術品創作者:</h6>
                     </label>
                     <input type="text" class="textBox" id="" name="" value="" placeholder="請輸入" required>
                 </div>
                 <div class="uploadFile">
-                    <h5>藝術品圖檔上傳:</h5>
+                    <h5>-藝術品圖檔上傳-</h5>
                     <ol class="uploadPicture">
                         <li>
                             <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
@@ -414,28 +418,79 @@
                     </ol>
                 </div>
                 <div class="uploadCertification">
-                    <h5>藝術證明:</h5>
+                    <h5>-藝術證明-</h5>
                         <div class="certification">
                             <input type="file" id="paper" name="paper"  accept=".pdf" required>
                             <label for="paper"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
                         </div>
                 </div>
                 <div class="productIntro">
-                        <h5>商品介紹(商品描述):</h5>
+                        <h5>-商品介紹(商品描述)-</h5>
                         <textarea name="productIntro" id="productIntro" cols="80" rows="10" name="goods" required></textarea>
                 </div>
                 <div class="sellerIntro">
-                        <h5>賣家介紹(自我推薦):</h5>
+                        <h5>-賣家介紹(自我推薦)-</h5>
                         <textarea name="sellerIntro" id="sellerIntro" cols="80" rows="10" name="sellerIntro" required></textarea>
                 </div>
                 <section class="btn">
-                    <input type="button" class="btnProduct roundOutline" id="btnProduct1" value="預覽畫面">
-                    <input type="submit" class="btnProduct round" value="確認送出(審核)">
+                    <input type="button" class="btnProduct roundOutline" id="btnProduct2" value="預覽畫面">
+                    <input type="submit" class="btnProduct round" id="btnProduct3" value="確認送出(審核)" onclick="window.alert('上架提交成功')">
                 </section>
             </form>
         </section>
+
+        <!-- <script>
+            $(document).ready(function(){
+            $("#btnProduct1").click(function(){
+                if($("#artName").val()==""){
+                    alert("你尚未填寫藝術品名稱");
+                    eval("document.form1['artName'].focus()");
+                }else if($("#artistName").val()==""){
+                    // alert("你尚未填寫電話");
+                    eval("document.form1['artistName'].focus()");
+                }else if($("#time").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['time'].focus()");
+                }else if($("#starPrice").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['starPrice'].focus()");
+                }else if($("#bidPitch").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['bidPitch'].focus()");
+                }else if($("#price").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['price'].focus()");
+                }else if($("#type").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['type'].focus()");
+                }else if($("#ad").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['ad'].focus()");
+                }else if($("#pic").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['pic'].focus()");
+                }else if($("#paper").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['paper'].focus()");
+                }else if($("#pic").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['pic'].focus()");
+                }else if($("#productIntro").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['productIntro'].focus()");
+                }else if($("#sellerIntro").val()==""){
+                    // alert("你尚未填寫地址");
+                    eval("document.form1['sellerIntro'].focus()");
+                }else{
+                    alert("上架提交成功");
+                    document.form1.submit();
+                }
+            })
+            })
+        </script> -->
+
         <!-- 燈箱預覽畫面 -->
-        <section>
+        <section class="safeframe">
             <div class="modal-container" id="modal_container">
                 <div class="modal">
                     <div class="modalPic">
@@ -449,19 +504,20 @@
                             <p>{{message1}}</p>
                             <h6>商品描述:</h6>
                             <p>{{message2}}</p>
-                            <h6>時間:</h6>
+                            <h6>競拍時間區間:</h6>
+                            <p>{{time}}</p>
                         </div>
                         <div class="bidButton">
                             <div class="currentPrice">
                                 <h6>目前出價金額:</h6>
+                                <h5>(每一標+NT{{pitch}})</h5>
                                 <p>{{score}}</p>
-                                <h5>(每一標NT{{}})</h5>
                             </div>
                             <button class="roundOutline">出價</button>
                         </div>
                         <div class="priceButton">
                             <div class="price">
-                                <h6>直接出售價格:</h6>
+                                <h6>定價:</h6>
                                 <p>{{score1}}</p>
                             </div>
                             <button class="round">直接購買</button>
@@ -473,6 +529,7 @@
         </section>
     </section>
 
+    <!-- vue框架 -->
     <script>
         new Vue({
             el: '#listingVue',
@@ -483,6 +540,8 @@
                 message3:'',
                 score:'',
                 score1:'',
+                time:'',
+                pitch:'',
             },
             methods: {  //函數大部份放在這!
                 setMessage(e){
@@ -500,11 +559,7 @@
         });
     </script>
 
-
-
-
-
-        <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <footer>
         <section class="footerContain">
@@ -560,26 +615,25 @@
         </section>
     </footer>
 
-
-    <script>
-        const open = document.getElementById('btnProduct');
-        const open1 = document.getElementById('btnProduct1');
-        const close = document.getElementById('lightboxBtn');
-        const modal = document.getElementById('modal_container');
-        open.addEventListener('click', () => {
-            modal.classList.add('show');
-        });
-        open1.addEventListener('click', () => {
-            modal.classList.add('show');
-        });
-        close.addEventListener('click', () => {
-            modal.classList.remove('show');
-        });
-    </script>
+        <!-- 燈箱js -->
+        <script>
+            const open = document.getElementById('btnProduct');
+            const open1 = document.getElementById('btnProduct2');
+            const close = document.getElementById('lightboxBtn');
+            const modal = document.getElementById('modal_container');
+            open.addEventListener('click', () => {
+                modal.classList.add('show');
+            });
+            open1.addEventListener('click', () => {
+                modal.classList.add('show');
+            });
+            close.addEventListener('click', () => {
+                modal.classList.remove('show');
+            });
+        </script>
 
     <!-- 貓頭鷹連結 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/owl/owl.carousel.min.js"></script>
-
 </body>
 </html>
