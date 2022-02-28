@@ -14,7 +14,8 @@ input{
 }
 // input check添加陰影
 input:not([type*="submit"]):focus,
-input:not([type*="reset"]):focus{
+input:not([type*="reset"]):focus,
+textarea:focus{
     /* 輸入框非送出非重整 */
     outline: none;
     box-shadow: -2px -2px 3px 3px #ffffff inset,2px 2px 5px 1px #aaaaaaaa inset;
@@ -111,13 +112,13 @@ h4{
 }
 /* 內文文字大小 */
 p{  
-    /* font-size: 20px; */
-    font-size:1.25em;
+    /* font-size: 16px; */
+    font-size:1em;
     line-height: 1.3;
     letter-spacing:3px;
 }
 p.small{  
-    /* font-size: 13px; */
+    /* font-size: 12.8px; */
     font-size:0.875em;
     line-height: 1.5;
 	letter-spacing:2px;
@@ -130,7 +131,7 @@ span{
 }
 span.small{
     /* font-size: 12.8px; */
-    font-size:0.8em;
+    font-size:0.875em;
     line-height: 1.5;
 	letter-spacing:2px;
 }
@@ -142,7 +143,6 @@ span.small{
     padding: 5px 20px;
     border-radius: 200px;
     border: 2px solid #FFD60A;
-    border: none;
 }
 /* 方形實心按鈕 */
 .square{
@@ -239,26 +239,20 @@ span.small{
     }
     /* 內文文字大小(手機) */
     p{
-        /* font-size:18px; */
-        font-size: 1.125em;
+        /* font-size:16px; */
+        font-size: 1em;
     }
     p.small{  
         /* font-size: 12.8px; */
         font-size:0.8em;
-        line-height: 1.5;
-        letter-spacing:2px;
     }
     span{
         /* font-size: 16px; */
         font-size:1em;
-        line-height: 1.3;
-        letter-spacing:3px;
     }
     span.small{
         /* font-size: 12.8px; */
         font-size:0.8em;
-        line-height: 1.5;
-        letter-spacing:2px;
     }
 }
 // ======= input ==== //樣式

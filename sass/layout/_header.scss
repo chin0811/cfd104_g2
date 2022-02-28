@@ -128,7 +128,6 @@ header{
     text-align: center;
     justify-content: center
 }
-
 .headerContain .mainMenu {
     clip-path: circle(0% at 96.5% 4%);
     /* 定位在header */
@@ -180,6 +179,16 @@ header{
 /* login的a覆寫所有a:hover */
 .headerContain .mainMenu .login a:hover{
     color: #FFFFFF;
+}
+.headerContain .mainMenu .notice.header{
+    position: static;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+}
+.headerContain .mainMenu .notice.header .notice_dot{
+    top: -5px;
+    right: -6px;
 }
 /* ----關閉符號---- */
 .headerContain .mainMenu .close {

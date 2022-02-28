@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Post</title>
+    <!-- 頁籤icon -->
+    <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -13,17 +15,17 @@
     <section class="articlePostWrap">
         <section class="articlePostContent marginAuto">
             <section class="articleEdit">
-                <h2>編輯你的文章</h2>
+                <h3>編輯你的文章</h3>
                 <form action="">
                     <label for="articleTitle">
-                        <h3>主標題</h3>
-                        <input type="text" name="" id="articleTitle">
+                        <h4>主標題</h4>
+                        <input type="text" name="" id="articleTitle" required>
                     </label>
                     <label for="articleArea">
-                        <h3>內容</h3>
-                        <textarea id="articleArea" name=""></textarea>
+                        <h4>內容</h4>
+                        <textarea id="articleArea" name="" required></textarea>
                     </label>
-                    <h3>附圖</h3>
+                    <h4>附圖</h4>
                     <label for="articlePic">
                         <!-- 選到圖片的容器 -->
                         <div class="selectPic displayNone"></div>
@@ -32,17 +34,17 @@
                                 <img src="assets/image/upload_image_icon.png" alt="">
                         </div>
                     </label>
-                    <input type="file" id="articlePic" accept="image/png, image/jpeg">
+                    <input type="file" id="articlePic" accept="image/png, image/jpeg" required>
                     <div class="buttonList">
-                        <input class="squareOutline" type="reset" value="取消">
+                        <input class="squareOutline" type="reset" value="取消" >
                         <input class="square" type="submit" value="刊登">
                     </div>
                 </form>
             </section>
             <aside class="articlePreview">
-                <h2 class="deepColor">文章預覽</h2>
+                <h3 class="deepColor">文章預覽</h3>
                 <div class="page">
-                    <h3 class="deepColor"> h2一篇測試用的文章</h3>
+                    <h4 class="deepColor"> h2一篇測試用的文章</h4>
                     <div class="item PicTxtItem">
                             <div class="pic">
                                     <img src="https://picsum.photos/500/400/?random=10">
