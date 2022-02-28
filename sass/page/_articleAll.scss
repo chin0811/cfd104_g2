@@ -120,7 +120,6 @@
         right: 5%;
         // 覆寫rwd
         left: auto;
-        transform: translateX(0%);
     }
     .articleContent .wrap:not(:last-child){
         border-bottom: 8px solid #222222b2;
@@ -150,6 +149,23 @@
         max-height: 300px;
     }
 
+}
+// 切換數字
+.articletPageChange{
+    margin: 5% auto 7% auto;
+}
+.articletPageChange ul{
+    display: flex;
+    justify-content: center;
+}
+.articletPageChange ul li{
+    margin:0 1%;
+}
+.articletPageChange ul li a{
+    color: #BCBCBC;
+}
+.articletPageChange ul li a:hover{
+    color: #394897;
 }
 
 

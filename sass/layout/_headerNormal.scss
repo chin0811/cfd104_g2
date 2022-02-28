@@ -80,12 +80,21 @@ header{
 }
 .headerNormalContain .mainMenu li .login a{
     text-decoration: none;
-    font-size: 16px;
-    padding: 10px 30px;
+    padding: 10px 25px;
     box-sizing: border-box;
     border-radius: 200px;
     transition: .3s;
     margin: 0 2px;
+}
+.headerNormalContain .mainMenu .notice.header{
+    position: static;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+}
+.headerNormalContain .mainMenu .notice.header .notice_dot{
+    top: -5px;
+    right: -6px;
 }
 /* 登入按鈕 */
 /* .headerNormalContain .mainMenu li .login a:first-child{
@@ -173,10 +182,10 @@ header{
         display: flex;
         justify-content: center;
     }
-    .headerNormalContain .mainMenu ul li label i{
+    .headerNormalContain .mainMenu ul li label span{
         display: flex;
         align-items: center;
-        font-size: 10px;
+        font-size: 1px;
     }
     .headerNormalContain .login{
         display: flex;
