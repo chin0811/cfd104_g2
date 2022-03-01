@@ -69,9 +69,9 @@ function initAbout(){
     buyerBook = document.querySelector("#buyerBook");
 
     seller =  document.querySelector("#seller");
-    seller.addEventListener("click", function(){switchCard(4)},false);
     sellerBook = document.querySelector("#sellerBook");
-
+    seller.addEventListener("click", function(){switchCard(99)},false);
+    
     contact =  document.querySelector("#contact");
     contact.addEventListener("click", function(){switchCard(5)},false);
     contactBook = document.querySelector("#contactBook");
@@ -97,6 +97,7 @@ function initAbout(){
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
         }else if(i==3){
+            console.log("pull 3")
             buyerBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
             ruleBook.classList.add("displayNone");
@@ -104,12 +105,13 @@ function initAbout(){
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
         }else if(i==4){
+            console.log("按下4")
             sellerBook.classList.toggle("displayNone");
-            aboutMeBook.classList.add("displayNone");
-            ruleBook.classList.add("displayNone");
-            buyerBook.classList.add("displayNone");
-            contactBook.classList.add("displayNone");
-            cooperateBook.classList.add("displayNone");
+            // aboutMeBook.classList.add("displayNone");
+            // ruleBook.classList.add("displayNone");
+            // buyerBook.classList.add("displayNone");
+            // contactBook.classList.add("displayNone");
+            // cooperateBook.classList.add("displayNone");
         }else if(i==5){
             contactBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -124,6 +126,8 @@ function initAbout(){
             buyerBook.classList.add("displayNone");
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
+        }else if(i==99){
+            console.log("99")
         }
     }
 }
