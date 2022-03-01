@@ -47,7 +47,7 @@
     /* margin: 20px 0px 20px 0px; */
 }
 .listingSteps .steps{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -726,8 +726,22 @@ box-sizing: border-box;
 
 /* web視窗 */
 @media screen and (min-width:768px){
+    /* 100%安全框 */
+.listingVue{
+    width: 100%;
+}
+.safeFrame{
+    // width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
     // listing頁面標題
-
+    .listingSteps{
+        width: 100%;
+    }
+    .bannerAdTopic h4{
+        width: 100%;
+    }
     /*輪播dots*/
     .owl-dots{
         position: absolute;
@@ -861,6 +875,7 @@ box-sizing: border-box;
 
     .tab-content{
         position: relative;
+        max-width: 1200px;
     }
     .tab-content .tag:first-of-type{
         margin-right: 1.3%;
@@ -912,6 +927,7 @@ box-sizing: border-box;
     .tab-content .content{
         order: 1; /*全部排下*/
         display: none;
+        max-width: 1200px;
     }
     .tab-content input[type='radio']:checked + .tag + .content{
         display: block;
