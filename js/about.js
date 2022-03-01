@@ -75,3 +75,6 @@ function initAbout(){
         // console.log("出來囉")
     }
 }
+$('.btn').click(function(){
+    
+});
