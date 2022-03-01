@@ -12,9 +12,15 @@ $uiColor:(
     //客服最外層section
     transition: right 0.3s;
     position: fixed;
+    // padding: 0.5em;
     right: 20px;
     bottom: 20px;
     z-index: 9999999999;
+    background-color: #3e444a05;
+    backdrop-filter: blur(0.5em);
+    // border: 1px solid #000;
+    border-radius: 50%;
+
     &[class*="active"]{
         // 開啟客服時
         position: fixed;
@@ -42,7 +48,10 @@ $uiColor:(
     }
     >img{
         display: block;
-        font-size: 4em;
+        // font-size: 2em;
+        // width: 3em;
+        aspect-ratio: 1/1;
+        margin: auto;
     }
 }
 .supportChatroom.active{
