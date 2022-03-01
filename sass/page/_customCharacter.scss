@@ -12,13 +12,17 @@
 
 
 /* 點擊性別更換 */
-.customCharacter_bouncing main .main .controlBlock{
+
+.customCharacter_bouncing main .main .controlBlock {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
+
+
 /* 男女轉換 */
-.switchBetween{
+
+.switchBetween {
     margin: 30px 20px;
     width: 50px;
     height: 30px;
@@ -29,18 +33,19 @@
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    .switchBetween_round{
+    .switchBetween_round {
         z-index: 1;
         display: inline-block;
         width: 26px;
         height: 26px;
         border-radius: 50%;
         background: #FFD60A;
-        position: absolute; /* .switchBetween */
+        position: absolute;
+        /* .switchBetween */
         right: -9px;
         transition: all .5s ease;
     }
-    .switchBetween_text{
+    .switchBetween_text {
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -52,11 +57,12 @@
         position: relative;
         left: 12px;
     }
-    .text_boy{
+    .text_boy {
         left: -12px;
         justify-content: flex-end;
     }
 }
+
 
 /* 點擊人物更換 */
 
@@ -70,7 +76,7 @@
 }
 
 .customCharacter_bouncing main .main .clickPeople .img {
-    width: 30%;
+    width: 25%;
     margin: 4px;
 }
 
@@ -97,8 +103,8 @@
 
 .customCharacter_bouncing main .main .sliderCharacters .avatar .img {
     overflow: hidden;
-    
 }
+
 
 /* 人像控制桿 */
 
@@ -117,11 +123,13 @@
     background: #FFD60A;
     z-index: 1;
 }
-.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound:nth-child(3){
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound:nth-child(3) {
     background: #394897;
     z-index: 1;
 }
-.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound:nth-child(4){
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound:nth-child(4) {
     background: #BCBCBC;
     z-index: 1;
 }
@@ -146,8 +154,11 @@
     background: #999;
     position: relative;
 }
+
+
 /* 將人物設定的滾條弄消失 */
-.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever_hidden{
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever_hidden {
     visibility: hidden;
     position: absolute;
 }
@@ -194,8 +205,22 @@
     */
     .customCharacter_bouncing main .main {
         flex-direction: row-reverse;
+        display: flex;
+        align-items: flex-end;
     }
     .customCharacter_bouncing main .main .sliderCharacters .avatar .img {
         width: 40%;
+    }
+}
+
+@media(max-width:768px) {
+    .customCharacter_bouncing main .main {
+        margin-top: 1em;
+    }
+    .customCharacter_bouncing main .main .sliderCharacters {
+        width: 70%;
+    }
+    .customCharacter_bouncing main .main .controlBlock {
+        width: 75%;
     }
 }
