@@ -17,7 +17,7 @@
     <!-- 許瑀芹 -->
     <!-- 商品頁分類導覽 -->
     <!-- @@include('layout/header.html') -->
-    @@include('layout/header.html',{"headerClass":""})
+    @@include('layout/headerNormal.html',{"headerClass":""})
     <section class="productHead">
         <!-- <div class="productBread size marginAuto">
             <p>
@@ -99,7 +99,7 @@
                         <span class="small">{{item[index].time}}</span>
                     </div>
                     <div class="productButton">
-                        <button class="round">上架</button>
+                        <button class="round">出價</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
@@ -127,7 +127,7 @@
                         <span class="small">{{item[index+1].time}}</span>
                     </div>
                     <div class="productButton">
-                        <button class="round">上架</button>
+                        <button class="round">出價</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
@@ -155,7 +155,7 @@
                         <span class="small">{{item[index+2].time}}</span>
                     </div>
                     <div class="productButton">
-                        <button class="round">上架</button>
+                        <button class="round">出價</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
@@ -183,7 +183,7 @@
                         <span class="small">{{item[index+3].time}}</span>
                     </div>
                     <div class="productButton">
-                        <button class="round">上架</button>
+                        <button class="round">出價</button>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
@@ -228,7 +228,9 @@
                         <span class="small">{{product.time}}</span>
                     </div>
                     <div class="productButton">
-                        <button class="round">上架</button>
+                        <a href="productSingle.html">
+                            <button class="round">出價</button>
+                        </a>
                     </div>
                     <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
