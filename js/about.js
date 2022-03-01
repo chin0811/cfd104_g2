@@ -50,16 +50,6 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 })
 
-
-$(".btn").click(function(e){ 
-    $(".a").toggle();
-});
-$(".btn").click(function(e){ 
-    $(".b").toggle();
-});
-$(".btn").click(function(e){ 
-    $(".c").toggle();
-});
-$(".btn").click(function(e){ 
-    $(".d").toggle();
+$('#aboutUsBtn').click(function(){
+    
 });
