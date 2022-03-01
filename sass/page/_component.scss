@@ -59,6 +59,7 @@ img {
     display: flex;
     justify-content: space-between;
     position: relative;
+    z-index: 10;
 }
 
 .bouncingBox .title p {
@@ -122,6 +123,25 @@ img {
     margin-right: 10px;
 }
 
+/* 愛心 */
+.love {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #141414;
+    opacity: 0.5;
+}
+.love .bi-heart,
+.love span{
+    opacity: 1;
+    color: #fff;
+}
+
+.characterAdjustment_box{
+    overflow: hidden;
+    background: #FFD60A;
+    border-radius: 50%;
+}
 
 /* 環景 */
 

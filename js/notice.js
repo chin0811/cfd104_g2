@@ -16,7 +16,7 @@ function noticeShow(){
     notice.style.color = '#000';
   }else{
     noticeContain.style.display = 'block';
-    notice.style.background = '#0D6EFD';
+    notice.style.background = '#141414';
     notice.style.color = '#fff';
   }
 }
@@ -25,15 +25,15 @@ function noticeShow(){
 function allShow(){
   noticeContain_unread.style.display = 'none';
   noticeContain_all.style.display = 'block';
-  button_unread.style.background = '#6c757d';
-  button＿all.style.background = '#0D6EFD';
+  button_unread.style.background = '#FFD60A';
+  button＿all.style.background = '#141414';
 }
 // 點擊未讀按紐 開啟未讀欄位
 function unreadShow(){
   noticeContain_all.style.display = 'none';
   noticeContain_unread.style.display = 'block';
-  button＿all.style.background = '#6c757d';
-  button_unread.style.background = '#0D6EFD';
+  button＿all.style.background = '#FFD60A';
+  button_unread.style.background = '#141414';
 }
 
 // 紅點

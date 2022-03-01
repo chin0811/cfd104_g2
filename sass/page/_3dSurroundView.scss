@@ -155,7 +155,7 @@ div.custom-tooltip span:after {
     border-style: solid;
     border-color: #fff transparent transparent transparent;
     bottom: -10px;
-    left: -10px;
+    left: -5px;
     margin: 0 50%;
 }
 
@@ -234,6 +234,7 @@ div.custom-tooltip span {
     // div.custom-tooltip span {
     //     visibility: hidden;
     // }
+
     div.custom-tooltip:hover span:after {
         content: '';
         position: absolute;
@@ -241,14 +242,15 @@ div.custom-tooltip span {
         height: 0;
         border-width: 10px;
         border-style: solid;
-        border-color: #2098D1 transparent transparent transparent;
+        border-color: #fff transparent transparent transparent;
         bottom: -20px;
         animation: Bubble_Bottom .5s ease;
         left: -10px;
         margin: 0 50%;
     }
+    /*
     div.custom-tooltip span:before {
-        /* bounce */
+        /* bounce 
         content: "";
         position: absolute;
         z-index: -1;
@@ -260,6 +262,7 @@ div.custom-tooltip span {
         animation: bounce_before 1s;
         animation-iteration-count: infinite;
     }
+    
     @keyframes bounce {
         0% {
             color: #000;
@@ -268,6 +271,7 @@ div.custom-tooltip span {
             color: #fff;
         }
     }
+    */
     @keyframes bounce_before {
         0% {
             transform: scaleX(0);
@@ -277,7 +281,7 @@ div.custom-tooltip span {
         100% {
             transform: scaleX(1);
             transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-            background: #2098D1;
+            background: #fff;
         }
     }
 }

@@ -33,8 +33,31 @@
     line-height: 2;
     border-left: 3px solid #141414;
     color: #141414;
+    display: flex;
+    justify-content: space-between;
 }
 
+/* 頭像 */
+.accountManagement_bouncing main>*{
+    width: 50%;
+}
+.accountManagement_bouncing main .profilePicture{
+    display: flex;
+    align-items: flex-end;
+}
+.accountManagement_bouncing main .img{
+    width: 50%;
+}
+
+.question{
+    display: flex;
+    justify-content: flex-end;
+}
+.fa-question{
+    border-radius: 50%;
+    padding: 8px 10px;
+    border: 1px solid #000;
+}
 
 /* input */
 
@@ -54,10 +77,17 @@
     border: none;
     /* -webkit-box-shadow: -1px -1px 2px 0px #ffffff inset, 1px 1px 3px 0px #aaaaaaaa inset; */
     box-shadow: -1px -1px 2px 0px #ffffff inset, 1px 1px 3px 0px #aaaaaaaa inset;
-    margin: 0px 0px 20px 0px;
+    /* margin: 0px 0px 20px 0px; */
     /* width: 80%; */
     line-height: 2em;
     background-color: transparent;
+}
+
+/* input 樣式更改 */
+.accountManagement_bouncing main input.changeValue{
+    height: 35px;
+    padding-left: 15px;
+    margin: 10px 0 20px 0;
 }
 
 .accountManagement_bouncing main .changeValue:focus {
