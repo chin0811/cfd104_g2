@@ -1,7 +1,6 @@
 /* 麵包屑和商品分類導覽 */
 .productHead{
     width: 100%;
-    margin-bottom: 5%;
     // border-bottom: 1px solid #8888;
 }
 // .productHead .productBread{
@@ -80,9 +79,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    // 透明卡片
+    padding: 1% 1% 2%;
     box-sizing: border-box;
-    padding: 20px;
+    // 透明卡片
     background-color: #3e444a05;
     box-shadow: 0.3em 0.3em 0.3em #252b3010;
     border: 1px solid #94969b50;
@@ -92,29 +91,21 @@
     backdrop-filter: blur(0.5em);
     border-radius: 0.5em;
 }
-// .productMainSection .commomItem .like{
-//     position: absolute;
-//     top: 7%;
-//     left: 7%;
-//     border-radius:800px;
-//     width: 20%;
-//     box-sizing: border-box;
-//     padding: 3% 0%;
-//     text-align: center;
-//     opacity: 50%;
-//     font-size: 0.5em;
-// }
+//定位在圖片
+.productMainSection .commomItem .img{
+    position: relative;
+}
 // 收藏按鈕
 .productMainSection .commomItem .like{
-    // 定位在.SingleProductIntro .introBox
+    // 定位在.prouductItem .commomItem .img
     position: absolute;
-    top: 5%;
-    right:2%;
+    top: 0%;
+    right:0%;
     display: flex;
     border-radius:600px;
     opacity: 50%;
-    box-sizing: border-box;
     padding: 8px 15px;
+    box-sizing: border-box;
     align-items: center;
     cursor: pointer;
 }
@@ -296,16 +287,34 @@
         width: 24%;
     }
 }
-/* 換頁 */
+// /* 舊的換頁 */
+// .productPageChange{
+//     width: 100%;
+// }
+// .productPageChange .pageBox{
+//     margin: auto;
+//     width: 90%;
+// }
+// .productPageChange .pageBox .itemBox{
+//     margin: auto;
+//     display: flex;
+//     justify-content: center;
+// }
+/* 新的換頁 */
 .productPageChange{
-    width: 100%;
+    margin: 5% auto 7% auto;
 }
-.productPageChange .pageBox{
-    margin: auto;
-    width: 90%;
-}
-.productPageChange .pageBox .itemBox{
-    margin: auto;
+.productPageChange ul{
     display: flex;
     justify-content: center;
+}
+.productPageChange ul li{
+    margin:0 1%;
+}
+.productPageChange ul li a{
+    color: #BCBCBC;
+    text-decoration: none;
+}
+.productPageChange ul li a:hover{
+    color: #394897;
 }

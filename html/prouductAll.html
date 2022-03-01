@@ -17,7 +17,7 @@
     <!-- 許瑀芹 -->
     <!-- 商品頁分類導覽 -->
     <!-- @@include('layout/header.html') -->
-    @@include('layout/header.html',{"headerClass":""})
+    @@include('layout/headerNormal.html',{"headerClass":""})
     <section class="productHead">
         <!-- <div class="productBread size marginAuto">
             <p>
@@ -86,6 +86,15 @@
                 <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index].img">
+                        <!-- 定位absolute，父層prouductItem，定位position -->
+                        <div class="like mainColor deepBgColor">
+                            <div class="pic">
+                                <img src="assets/image/products_like_likeWhite.png" alt="">
+                            </div>
+                            <span class="small">
+                                75
+                            </span>
+                    </div>
                     </div>
                     <div class="text">
                         <h4>{{item[index].title}}</h4>
@@ -101,19 +110,12 @@
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        <div class="pic">
-                            <img src="assets/image/products_like_likeWhite.png" alt="">
-                        </div>
-                        <span class="small">
-                            75
-                        </span>
-                    </div>
+                    
                 </article>
                 <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+1].img">
+                        <!-- 定位absolute，父層prouductItem，定位position -->
                     </div>
                     <div class="text">
                         <h4>{{item[index+1].title}}</h4>
@@ -129,7 +131,6 @@
                     <div class="productButton">
                         <button class="round">上架</button>
                     </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
                     <div class="like mainColor deepBgColor">
                         <div class="pic">
                             <img src="assets/image/products_like_likeWhite.png" alt="">
@@ -245,7 +246,8 @@
     </div>
     <!-- 許瑀芹 -->
     <!-- 換頁按鈕 -->
-    <div class="productPageChange">
+    <!-- 原本 -->
+    <!-- <div class="productPageChange">
         <div class="pageBox size marginAuto">
             <div class="itemBox">
                 <button>&laquo;</button>
@@ -258,6 +260,23 @@
                 <button>&raquo;</button>
             </div>
         </div>
+    </div> -->
+    <!-- 新的 -->
+    <div class="productPageChange">
+        <ul>
+            <li><a href="">&laquo;</a></li>
+            <li><a href="" class="small">1</a></li>
+            <li><a href="" class="small">2</a></li>
+            <li><a href="" class="small">3</a></li>
+            <li><a href="" class="small">4</a></li>
+            <li><a href="" class="small">5</a></li>
+            <li><a href="" class="small">6</a></li>
+            <li><a href="" class="small">7</a></li>
+            <li><a href="" class="small">8</a></li>
+            <li><a href="" class="small">9</a></li>
+            <li><a href="" class="small">10</a></li>
+            <li><a href="">&raquo;</a></li>
+        </ul>
     </div>
     @@include('layout/footer.html')
 </body>
