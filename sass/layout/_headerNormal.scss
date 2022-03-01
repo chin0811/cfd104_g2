@@ -56,23 +56,23 @@ header{
     color: #394897;
     font-weight: 500;
 }
-.headerNormalContain .mainMenu li .memberList{
-    display: flex;
-    align-items: center;
-}
-.headerNormalContain .mainMenu li .memberList .icon{
-    width: 30px;
-    margin: 0 10px;
-}
-.headerNormalContain .mainMenu li .memberList .icon img{
-    width:100%;
-    vertical-align: middle;
-    cursor: pointer;
-}
-.headerNormalContain .mainMenu li .memberList .icon img:hover{
-    transform: scale(1.1);
-    transition: .3s;
-}
+// .headerNormalContain .mainMenu li .memberList{
+//     display: flex;
+//     align-items: center;
+// }
+// .headerNormalContain .mainMenu li .memberList .icon{
+//     width: 30px;
+//     margin: 0 10px;
+// }
+// .headerNormalContain .mainMenu li .memberList .icon img{
+//     width:100%;
+//     vertical-align: middle;
+//     cursor: pointer;
+// }
+// .headerNormalContain .mainMenu li .memberList .icon img:hover{
+//     transform: scale(1.1);
+//     transition: .3s;
+// }
 // 原兩顆icon
 // .headerNormalContain .mainMenu li .memberList .icon:first-child img:hover{
 //     content: url(../image/home_header_iconBellHover.png);
@@ -101,6 +101,10 @@ header{
 .headerNormalContain .mainMenu .notice.header .notice_dot{
     top: -5px;
     right: -6px;
+}
+// 紅點文字
+.headerNormalContain .mainMenu ul li:last-child span{
+    letter-spacing: 0;
 }
 /* 登入按鈕 */
 /* .headerNormalContain .mainMenu li .login a:first-child{

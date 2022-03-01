@@ -85,24 +85,24 @@ header{
 .headerContain .mainMenu ul li label{
     cursor: pointer;
 }
-/*------ 兩顆icon ------*/
-.headerContain .mainMenu li .memberList{
-    display: flex;
-    align-items: center;
-}
-.headerContain .mainMenu li .memberList .icon{
-    width: 30px;
-    margin: 0 10px;
-}
-.headerContain .mainMenu li .memberList .icon img{
-    width:100%;
-    vertical-align: middle;
-    cursor: pointer;
-}
-.headerContain .mainMenu li .memberList .icon img:hover{
-    transform: scale(1.02);
-    transition: .3s;
-}
+// /*------ 兩顆icon ------*/
+// .headerContain .mainMenu li .memberList{
+//     display: flex;
+//     align-items: center;
+// }
+// .headerContain .mainMenu li .memberList .icon{
+//     width: 30px;
+//     margin: 0 10px;
+// }
+// .headerContain .mainMenu li .memberList .icon img{
+//     width:100%;
+//     vertical-align: middle;
+//     cursor: pointer;
+// }
+// .headerContain .mainMenu li .memberList .icon img:hover{
+//     transform: scale(1.02);
+//     transition: .3s;
+// }
 // 原兩顆icon
 // .headerContain .mainMenu li .memberList .icon:first-child img:hover{
 //     content: url(../image/home_header_iconBellHover.png);
@@ -176,6 +176,10 @@ header{
     display: flex;
     align-items: center;
     font-size: 10px;
+}
+// 紅點文字
+.headerContain .mainMenu ul li:last-child span{
+    letter-spacing: 0;
 }
 /* 登入刊登 */
 .headerContain .login{

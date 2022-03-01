@@ -1,3 +1,7 @@
+// 所有a設定
+a{
+    text-decoration: none;
+}
 /* 麵包屑 */
 .SingleProductHead{
     display: none;
@@ -6,6 +10,9 @@
     margin: auto;
     width: 90%;
     margin-bottom: 1%;
+}
+.SingleProductHead .productBread a{
+    font-size: 0.5em;
 }
 /* 商品介紹 */
 .SingleProductIntro{
