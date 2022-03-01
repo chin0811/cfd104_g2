@@ -69,9 +69,9 @@ function initAbout(){
     buyerBook = document.querySelector("#buyerBook");
 
     seller =  document.querySelector("#seller");
+    seller.addEventListener("click", function(){switchCard(4)},false);
     sellerBook = document.querySelector("#sellerBook");
-    seller.addEventListener("click", function(){switchCard(99)},false);
-    
+
     contact =  document.querySelector("#contact");
     contact.addEventListener("click", function(){switchCard(5)},false);
     contactBook = document.querySelector("#contactBook");
@@ -79,6 +79,31 @@ function initAbout(){
     cooperate =  document.querySelector("#cooperate");
     cooperate.addEventListener("click", function(){switchCard(6)},false);
     cooperateBook = document.querySelector("#cooperateBook");
+    
+    aboutMePC =  document.querySelector("#aboutMePC");
+    aboutMePC.addEventListener("click", function(){switchCard(1)},false);
+    aboutMeBook = document.querySelector("#aboutMeBook");
+
+    rulePC =  document.querySelector("#rulePC");
+    rulePC.addEventListener("click", function(){switchCard(2)},false);
+    ruleBook = document.querySelector("#ruleBook");
+
+    buyerPC =  document.querySelector("#buyerPC");
+    buyerPC.addEventListener("click", function(){switchCard(3)},false);
+    buyerBook = document.querySelector("#buyerBook");
+
+    sellerPC =  document.querySelector("#sellerPC");
+    sellerPC.addEventListener("click", function(){switchCard(4)},false);
+    sellerBook = document.querySelector("#sellerBook");
+
+    contactPC =  document.querySelector("#contactPC");
+    contactPC.addEventListener("click", function(){switchCard(5)},false);
+    contactBook = document.querySelector("#contactBook");
+
+    cooperatePC =  document.querySelector("#cooperatePC");
+    cooperatePC.addEventListener("click", function(){switchCard(6)},false);
+    cooperateBook = document.querySelector("#cooperateBook");
+
 
     // 功能
     function switchCard(i){
@@ -89,6 +114,7 @@ function initAbout(){
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
+            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
         }else if(i==2){
             ruleBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -96,22 +122,23 @@ function initAbout(){
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
+            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
         }else if(i==3){
-            console.log("pull 3")
             buyerBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
             ruleBook.classList.add("displayNone");
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
+            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
         }else if(i==4){
-            console.log("按下4")
             sellerBook.classList.toggle("displayNone");
-            // aboutMeBook.classList.add("displayNone");
-            // ruleBook.classList.add("displayNone");
-            // buyerBook.classList.add("displayNone");
-            // contactBook.classList.add("displayNone");
-            // cooperateBook.classList.add("displayNone");
+            aboutMeBook.classList.add("displayNone");
+            ruleBook.classList.add("displayNone");
+            buyerBook.classList.add("displayNone");
+            contactBook.classList.add("displayNone");
+            cooperateBook.classList.add("displayNone");
+            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
         }else if(i==5){
             contactBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -119,6 +146,7 @@ function initAbout(){
             buyerBook.classList.add("displayNone");
             sellerBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
+            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
         }else if(i==6){
             cooperateBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -126,8 +154,19 @@ function initAbout(){
             buyerBook.classList.add("displayNone");
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
-        }else if(i==99){
-            console.log("99")
+            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
         }
     }
 }
+
+// 回到最上方按鈕
+myButton = document.getElementById("BackToTopBtn");
+function topFunction() {
+    window.scrollTo({
+        // 滾到最上面
+        top: 0,
+        // 慢慢滾
+        behavior: 'smooth',
+    });
+};
+
