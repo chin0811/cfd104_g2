@@ -1,16 +1,19 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="js/vue/vue.min.js"></script>
+<script src="js/supportPage.js"></script>
 
 
     <!-- 客服區 -->
     <section id="supportApp" :class='openSelect ? "active":"" '>
         <article :class="btnClass"   > 
-            <span class="material-icons" @click="openSelect = !openSelect">help</span>
+            <!-- <span class="material-icons" >help</span> -->
+            <img src="assets\image\supportPage_message_icon.svg" alt="" @click="openSelect = !openSelect">
             <article class="selectRoom">
                 <article class="titleCell">
                     <h3>客服</h3>
-                    <span class="material-icons" @click="openSelect = !openSelect">close</span>
+                    <!-- <span class="material-icons" @click="openSelect = !openSelect">close</span> -->
+                    <img src="assets\image\supportPage_close_icon.svg" alt="" @click="openSelect = !openSelect">
                 </article>
                 <article class="selectBtn">
                     <div @click="openRobotBool = true">
@@ -31,38 +34,39 @@
                 <article class="titleCell">
                     <span class="material-icons" @click="closedRoom">arrow_back_ios</span>
                     <h3>Name</h3>
-                    <span class="material-icons" @click="openSelect = !openSelect">close</span>
+                    <!-- <span class="material-icons" @click="openSelect = !openSelect">close</span> -->
+                    <img src="assets\image\supportPage_close_icon.svg" alt="" @click="openSelect = !openSelect">
                 </article>
                 <article class="txtArea">
                     <article class="meTxt">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article class="meTxt">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article class="meTxt">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article class="meTxt">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article class="meTxt">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article class="meTxt">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                 </article>
                 <article class="keyButton" v-show="openRobotBool">
@@ -73,7 +77,7 @@
                 </article>
                 <article action="#" class="inputArea" v-show="openPeopleBool">
                     <textarea name="" id="" ></textarea>
-                   <img src="assets/image/supportPage_send_icon.svg" alt="">
+                   <img src="assets/image/supportPage_sent_icon.png" alt="">
                 </article>
            </article>
         </article>
