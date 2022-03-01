@@ -14,13 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .aa{
-            background-color: antiquewhite;
-            width: 400px;
-            height: 400px;
-        }
-    </style>
 </head>
 <body>
     <!-- 關於我們_頁首區域 -->
@@ -32,15 +25,15 @@
         <!-- 伶_關於我們_書架區_RWD -->
         <section class="size introduceCardWrap introduceCardWrapRWD">
             <div class="raw owl-carousel owl-theme">
-                <div class="introduceCard">
-                    <a href="#" class="btn" id="aboutMe">
+                <div class="introduceCard" id="aboutMe">
+                    <a href="#" class="btn">
                         <h2>01</h2>
                         <h3>關於我們</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
-                    <a href="#" class="btn" id="rule">
+                <div class="introduceCard" id="rule">
+                    <a href="#" class="btn">
                         <h2>02</h2>
                         <h3>交易規範</h3>
                         <p>more</p>
@@ -53,22 +46,22 @@
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
-                    <a href="#" class="btn" id="seller">
+                <div class="introduceCard" id="seller">
+                    <a href="#" class="btn">
                         <h2>04</h2>
                         <h3>賣家條款</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
-                    <a href="#" class="btn" id="contact">
+                <div class="introduceCard" id="contact">
+                    <a href="#" class="btn">
                         <h2>05</h2>
                         <h3>聯絡我們</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
-                    <a href="#" class="btn" id="cooperate">
+                <div class="introduceCard" id="cooperate">
+                    <a href="#" class="btn">
                         <h2>06</h2>
                         <h3>合作品牌</h3>
                         <p>more</p>
@@ -81,21 +74,21 @@
         <!-- 伶_關於我們_書架區_PC端 -->
         <section class="size introduceCardWrap introduceCardWrapPC">
             <div class="raw">
-                <div class="introduceCard">
+                <div class="introduceCard" id="aboutMePC">
                     <a href="#" class="btn">
                         <h2>01</h2>
                         <h3>關於我們</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
+                <div class="introduceCard" id="rulePC">
                     <a href="#" class="btn">
                         <h2>02</h2>
                         <h3>交易規範</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
+                <div class="introduceCard" id="buyerPC">
                     <a href="#" class="btn">
                         <h2>03</h2>
                         <h3>買家條款</h3>
@@ -108,21 +101,21 @@
         </section>
         <section class="size introduceCardWrap introduceCardWrapPC">
             <div class="raw">
-                <div class="introduceCard">
+                <div class="introduceCard" id="sellerPC">
                     <a href="#" class="btn">
                         <h2>04</h2> 
                         <h3>賣家條款</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
+                <div class="introduceCard" id="contactPC">
                     <a href="#" class="btn">
                         <h2>05</h2>
                         <h3>聯絡我們</h3>
                         <p>more</p>
                     </a>
                 </div>
-                <div class="introduceCard">
+                <div class="introduceCard" id="cooperatePC">
                     <a href="#" class="btn">
                         <h2>06</h2>
                         <h3>合作品牌</h3>
@@ -290,24 +283,25 @@
                         <hr>
                     </div>
                     <div class="pageContent">
-                        <div class="pageContentTxt">
-                            <p>本網站為緯育TibaMe_前端設計工程師班第104期學員專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊 緯育TibaMe，後續會由專人協助處理。</p><br>
-                            
+                        <div class="pic">
+                            <img src="../assets/image/logo_cooperate.png" alt="logo">
                         </div>
                     </div>
                 </div>
-                <div class="page">
-                    <div class="pageContent">
-                        <div class="pageContentTxt"></div>
-                    </div>
-                </div>
+                <div class="page"></div>
                 <div class="page pageCover"></div>
             </div>
         </section>
+        <div class="backToTop" id="backToTop">
+            <a onclick="topFunction()" id="BackToTopBtn">
+                <i class="fas fa-chevron-up"></i>
+                <p>TOP</p>
+            </a>
+        </div>
     </main>
 
     <!-- 關於我們_頁尾區域 -->
-    <!-- @@include('layout/footer.html') -->
+    @@include('layout/footer.html')
 
     <!-- Jquery.js -->
     <script src="js/jquery/jquery.js"></script>
