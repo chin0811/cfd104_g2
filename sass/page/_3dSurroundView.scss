@@ -12,8 +12,7 @@
         //最大寬度 .size 覆蓋
         // max-width: none;
         // width: 100%;
-        .hamburger,
-        .logo {
+        .hamburger{
             position: fixed;
             top: 10px;
             // background-color: #3e444a05;
@@ -25,6 +24,7 @@
             background: #eeeeee66;
             backdrop-filter: blur(0.5em);
         }
+    
         .hamburger {
             right: 10px;
             width: 50px;
@@ -33,6 +33,8 @@
             border-radius: 50%;
         }
         .logo {
+            position: fixed;
+            top: 10px;
             left: 50px;
             padding: 0em 0.5em;
             border-radius: 10px
