@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+body{
+    background-color: #000;
+}
+.cigarette{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+    transform: rotate(-25deg);
+}
+.cigarette .cigaretteBody{
+    transform-style: preserve-3d;
+    animation: cigarette 15s linear infinite;
+    margin-top: 15%;
+}
+@keyframes cigarette {
+    0%{
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateX(360deg);
+    }
+}
+.cigarette .cigaretteBody span{
+    position: absolute;
+    color: #fff;
+    font-size: 1.4em;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 100;
+    text-align: uppercase;
+    line-height: 1.76em;
+    transform-style: preserve-3d;
+    transform: translate(-60%,-60%)
+    rotateX(calc(var(--i)*36deg))translateZ(25px);
+}
+.cigarette .cigaretteBody span i{
+    font-style: normal;
+    color: #ec9535;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 100;
+}
+.cigarette .cigaretteBody span i:first-child:after{
+    content: 'L';
+    color: #ccc;
+    text-transform: lowercase;
+}
+.cigarette .cigaretteBody span i:last-child{
+    color: #f00;
+    filter: blur(5px);
+    text-shadow: -4px 0 2px #000,
+    8px 0 20px #f00,
+    8px 0 25px #f00,
+    8px 0 0 #222,
+    12px 0 #555,
+    16px 0 #666,
+    20px 0 #888,
+    24px 0 #999;
+}
