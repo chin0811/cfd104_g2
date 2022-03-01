@@ -1,32 +1,7 @@
 .aboutMain{
-    .pic{
-        width: 100%;
-        margin-bottom: 1em;
+    .a,.b,.c,.d{
+        display: none;
     }
-
-    .pageContentTxt{
-        position: relative;
-        line-height: 2;
-        ul{
-            li{
-                line-height: 3;
-            }
-        }
-        .pageContentLogo{
-            width: 20%;
-        }
-        a{
-            text-decoration: none;
-            color: #141414;
-        }
-        a:hover{
-            color: #394897;
-        }
-        p{
-            line-height: 2;
-        }
-    }
-
     .introduceCardWrap{
         margin: auto;
         // 書櫃
@@ -125,13 +100,6 @@
                 }
             }
         }
-        .aboutUsWrap{
-            margin:5em auto;
-            background-color: #f0f0f0;
-            padding: 3em;
-            box-sizing: border-box;
-            border-radius: 0.2em;
-        }
     }
 }
 
@@ -149,117 +117,6 @@
                 .introduceCard{
                     margin: 1em 3em;
                     padding: 4.5em 2.5em;
-                }
-            }
-        }
-        .flipBookWrap {
-            margin: 10em auto;
-            transition: opacity 0.4s 0.2s;
-            perspective: 250vw;
-    
-            .pages{
-                width: 80vw;
-                height: 53em;
-                position: relative;
-                transform-style: preserve-3d;
-                backface-visibility: hidden;
-                border-radius: 4px;
-    
-                .page {
-                    width: 40vw;
-                    height: 53em;
-                    margin-bottom: 0.5em;
-                    padding: 3em 4em;
-                    box-sizing: border-box;
-                    line-height: 2;
-                    float: none;
-                    clear: none;
-                    margin: 0;
-                    position: absolute;
-                    top: 0;
-                    width: 40vw;
-                    height: 53em;
-                    transform-origin: 0 0;
-                    transition: transform 1.4s;
-                    transform-style: preserve-3d;
-                    backface-visibility: hidden;
-                    cursor: pointer;
-                    user-select: none;
-                    background-color: #f0f0f0;
-                }
-                .page:nth-child(even) {
-                    clear: both;
-                }
-                .page::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    transition: background 0.7s;
-                    z-index: 2;
-                }
-                .page:nth-child(odd) {
-                    pointer-events: all;
-                    transform: rotateY(0deg);
-                    right: 0;
-                    border-radius: 0 4px 4px 0;
-                }
-                .page:nth-child(odd):hover {
-                    transform: rotateY(-15deg);
-                }
-                .page:nth-child(odd):hover::before {
-                    background: rgba(0, 0, 0, 0.03);
-                }
-                .page:nth-child(odd)::before {
-                    background: rgba(0, 0, 0, 0);
-                }
-                .page:nth-child(even) {
-                    pointer-events: none;
-                    -webkit-transform: rotateY(180deg);
-                    transform: rotateY(180deg);
-                    -webkit-transform-origin: 100% 0;
-                    transform-origin: 100% 0;
-                    left: 0;
-                    border-radius: 4px 0 0 4px;
-                    border-color: #141414;
-                }
-                .page:nth-child(even)::before {
-                    background: rgba(0, 0, 0, 0.02);
-                }
-                .page.grabbing {
-                    -webkit-transition: none;
-                    transition: none;
-                }
-                .page.flipped:nth-child(odd) {
-                    pointer-events: none;
-                    -webkit-transform: rotateY(-180deg);
-                    transform: rotateY(-180deg);
-                }
-                .page.flipped:nth-child(odd)::before {
-                    background: rgba(0, 0, 0, 0.02);
-                }
-                .page.flipped:nth-child(even) {
-                    pointer-events: all;
-                    -webkit-transform: rotateY(0deg);
-                    transform: rotateY(0deg);
-                }
-                .page.flipped:nth-child(even):hover {
-                    -webkit-transform: rotateY(15deg);
-                    transform: rotateY(15deg);
-                }
-                .page.flipped:nth-child(even):hover::before {
-                    background: rgba(0, 0, 0, 0.03);
-                }
-                .page.flipped:nth-child(even)::before {
-                    background: rgba(0, 0, 0, 0);
-                }
-                .page:nth-child(odd) {
-                    background-position: right top;
-                }
-                .pageCover{
-                    background:url(../../assets/image/about_flipBook.jpg) scroll no-repeat 50% 50% / 100% auto;
                 }
             }
         }

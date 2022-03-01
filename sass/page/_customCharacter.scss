@@ -11,6 +11,53 @@
 }
 
 
+/* 點擊性別更換 */
+.customCharacter_bouncing main .main .controlBlock{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+/* 男女轉換 */
+.switchBetween{
+    margin: 30px 20px;
+    width: 50px;
+    height: 30px;
+    background: #394897;
+    position: relative;
+    /* 男女文字位置擺放 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    .switchBetween_round{
+        z-index: 1;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #FFD60A;
+        position: absolute; /* .switchBetween */
+        right: -9px;
+        transition: all .5s ease;
+    }
+    .switchBetween_text{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: red;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background: inherit;
+        position: relative;
+        left: 12px;
+    }
+    .text_boy{
+        left: -12px;
+        justify-content: flex-end;
+    }
+}
+
 /* 點擊人物更換 */
 
 .customCharacter_bouncing main .main .clickPeople {
@@ -18,12 +65,12 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    width: 50%;
     position: relative;
+    z-index: 1;
 }
 
 .customCharacter_bouncing main .main .clickPeople .img {
-    width: 20%;
+    width: 30%;
     margin: 4px;
 }
 
@@ -49,30 +96,41 @@
 }
 
 .customCharacter_bouncing main .main .sliderCharacters .avatar .img {
-    border-radius: 30px;
     overflow: hidden;
+    
 }
-
 
 /* 人像控制桿 */
 
-.customCharacter_bouncing main .main .sliderCharacters .avatar .controller {
+.customCharacter_bouncing main .main .sliderCharacters .adjust .controller {
     margin-top: 0.5em;
+    line-height: 1.5em;
+    z-index: 1;
 }
 
-.customCharacter_bouncing main .main .sliderCharacters .avatar .controller .circle {
+.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound {
     display: inline-block;
     margin: 0 4px;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     border-radius: 50%;
+    background: #FFD60A;
+    z-index: 1;
+}
+.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound:nth-child(3){
     background: #394897;
+    z-index: 1;
+}
+.customCharacter_bouncing main .main .sliderCharacters .adjust .controller .styleRound:nth-child(4){
+    background: #BCBCBC;
+    z-index: 1;
 }
 
 
 /* 控制桿 */
 
 .customCharacter_bouncing main .main .sliderCharacters .adjust {
+    z-index: 1;
     margin-top: 1em;
     line-height: 2;
     display: flex;
@@ -87,6 +145,11 @@
     border-radius: 16px;
     background: #999;
     position: relative;
+}
+/* 將人物設定的滾條弄消失 */
+.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever_hidden{
+    visibility: hidden;
+    position: absolute;
 }
 
 .customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever .adjustmentLeverContent {
@@ -110,10 +173,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.mask .img {
-    filter: grayscale(1);
+    z-index: 1;
 }
 
 

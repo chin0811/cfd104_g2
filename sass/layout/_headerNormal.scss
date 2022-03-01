@@ -56,23 +56,23 @@ header{
     color: #394897;
     font-weight: 500;
 }
-.headerNormalContain .mainMenu li .memberList{
-    display: flex;
-    align-items: center;
-}
-.headerNormalContain .mainMenu li .memberList .icon{
-    width: 30px;
-    margin: 0 10px;
-}
-.headerNormalContain .mainMenu li .memberList .icon img{
-    width:100%;
-    vertical-align: middle;
-    cursor: pointer;
-}
-.headerNormalContain .mainMenu li .memberList .icon img:hover{
-    transform: scale(1.1);
-    transition: .3s;
-}
+// .headerNormalContain .mainMenu li .memberList{
+//     display: flex;
+//     align-items: center;
+// }
+// .headerNormalContain .mainMenu li .memberList .icon{
+//     width: 30px;
+//     margin: 0 10px;
+// }
+// .headerNormalContain .mainMenu li .memberList .icon img{
+//     width:100%;
+//     vertical-align: middle;
+//     cursor: pointer;
+// }
+// .headerNormalContain .mainMenu li .memberList .icon img:hover{
+//     transform: scale(1.1);
+//     transition: .3s;
+// }
 // 原兩顆icon
 // .headerNormalContain .mainMenu li .memberList .icon:first-child img:hover{
 //     content: url(../image/home_header_iconBellHover.png);
@@ -101,6 +101,10 @@ header{
 .headerNormalContain .mainMenu .notice.header .notice_dot{
     top: -5px;
     right: -6px;
+}
+// 紅點文字
+.headerNormalContain .mainMenu ul li:last-child span{
+    letter-spacing: 0;
 }
 /* 登入按鈕 */
 /* .headerNormalContain .mainMenu li .login a:first-child{
@@ -152,15 +156,27 @@ header{
     }
     /* 漢堡選單 */
     .headerNormalContain .hamburger{
-        width: 30px;
-        height: 2px;
-        margin: auto;
-        /* background-color: #000; */
-        border: 1px #394897 solid;
-        border-radius: 5px;
-        box-shadow: 0px 10px 0px #394897,
-                    0px -10px 0px #394897;
+        width: 40px;
+        height: 45px;
         cursor: pointer;
+        position: relative;
+        &::after{
+            //  偽類 定位在原生物件上(.hamburger)
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            content: '';
+            width: 30px;
+            height: 2px;
+            margin: auto;
+            /* background-color: #000; */
+            border: 1px #394897 solid;
+            border-radius: 5px;
+            box-shadow: 0px 10px 0px #394897,
+                        0px -10px 0px #394897;
+        }
     }
     .headerNormalContain .mainMenu ul {
         display: flex;
@@ -219,9 +235,16 @@ header{
     .headerNormalContain .mainMenu .close div {
         width: 32px;
         height: 32px;
-        overflow: hidden;
+        // overflow: hidden;
+        position: relative;
     }
     .headerNormalContain .mainMenu .close div:before,.headerNormalContain .mainMenu .close div:after {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
         content: "";
         width: 100%;
         height: 2px;
