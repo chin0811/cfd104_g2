@@ -50,6 +50,6 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 })
 
-$('#aboutUsBtn').click(function(){
+$('.btn').click(function(){
     
 });
