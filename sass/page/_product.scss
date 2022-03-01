@@ -16,7 +16,7 @@
 }
 .productHead .adjustBox .sideNav ul{
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 // 第一個li給定位
 .sideNav ul li:first-child{
@@ -50,7 +50,7 @@
     // 主導覽列+input
     .productHead .adjustBox{
         display: flex;
-        align-items: baseline;
+        align-items: center;
     }
     .productHead .adjustBox .sideNav{
         flex-grow: 1;
@@ -79,7 +79,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 1% 1% 2%;
+    padding: 0% 0% 2%;
     box-sizing: border-box;
     // 透明卡片
     background-color: #3e444a05;
@@ -91,9 +91,20 @@
     backdrop-filter: blur(0.5em);
     border-radius: 0.5em;
 }
+/* 商品Item文字共用設計 */
+.productMainSection .commomItem .text,
+.productMainSection .commomItem .footer,
+.productMainSection .commomItem .productButton{
+    padding: 0% 2%;
+}
 //定位在圖片
 .productMainSection .commomItem .img{
     position: relative;
+}
+// 圖片左上右上原角
+.productMainSection .commomItem .img img{
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
 }
 // 收藏按鈕
 .productMainSection .commomItem .like{
@@ -127,37 +138,23 @@
 .productMainSection .commomItem .like span{
     margin: 0 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .productMainSection .commomItem .img img{
     width: 100%;
 }
+// 創作者名字
 .productMainSection .commomItem .text{
     flex-grow: 1;
+}
+// 價格和日期
+.productMainSection .commomItem .footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 6% 0 3%;
 }
 .productMainSection .commomItem .footer{
     display: flex;
     justify-content: space-between;
-    margin: 3% 0;
+    margin: 6% 0 3%;
 }
 /* 商品輪播 */
 .productMainCarousel{
@@ -286,6 +283,11 @@
     .productiMainProduct article{
         width: 24%;
     }
+}
+.productButton{
+    display: flex;
+    // justify-content: end;
+    // margin-top: 5%;
 }
 // /* 舊的換頁 */
 // .productPageChange{

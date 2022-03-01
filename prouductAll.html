@@ -84,7 +84,7 @@
                                 <i class="fas fa-bell"></i>
                                 <!-- 通知紅點 -->
                                 <span class="notice_dot">
-                                    <span class="notice_dotNumber"></span>
+                                    <span class="notice_dotNumber">99</span>
                                 </span>
                             </div>
                         </div>
@@ -109,30 +109,22 @@
                 <ul>
                     <li>
                         <a href="">
-                            <h2 class="epBColor">
-                                雕塑類
-                            </h2>
+                            <h2 class="epBColor">雕塑類</h2>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <p>
-                                畫作類
-                            </p>
+                            <p>畫作類</p>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <p>
-                                公仔類
-                            </p>
+                            <p>公仔類</p>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <p>
-                                品牌合作
-                            </p>
+                            <p>品牌合作</p>
                         </a>
                     </li>
                 </ul>   
@@ -178,12 +170,12 @@
                     <div class="text">
                         <h4>{{item[index].title}}</h4>
                         <p>
-                            <span>創作者：</span>
-                            <span>{{item[index].creator}}</span>
+                            <span class="small lightColor">創作者：</span>
+                            <span class="small lightColor">{{item[index].creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span>{{item[index].price}}</span>
+                        <span class="epBColor">{{item[index].price}}</span>
                         <span class="small">{{item[index].time}}</span>
                     </div>
                     <div class="productButton">
@@ -195,85 +187,87 @@
                     <div class="img">
                         <img :src="item[index+1].img">
                         <!-- 定位absolute，父層prouductItem，定位position -->
+                        <div class="like mainColor deepBgColor">
+                            <div class="pic">
+                                <img src="assets/image/products_like_likeWhite.png" alt="">
+                            </div>
+                            <span class="small">
+                                75
+                            </span>
+                        </div>
                     </div>
                     <div class="text">
                         <h4>{{item[index+1].title}}</h4>
                         <p>
-                            <span>創作者：</span>
-                            <span>{{item[index+1].creator}}</span>
+                            <span class="small lightColor">創作者：</span>
+                            <span class="small lightColor">{{item[index+1].creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span>{{item[index+1].price}}</span>
+                        <span class="epBColor">{{item[index+1].price}}</span>
                         <span class="small">{{item[index+1].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">出價</button>
                     </div>
-                    <div class="like mainColor deepBgColor">
-                        <div class="pic">
-                            <img src="assets/image/products_like_likeWhite.png" alt="">
-                        </div>
-                        <span class="small">
-                            75
-                        </span>
-                    </div>
+                    
                 </article>
                 <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+2].img">
+                        <!-- 定位absolute，父層prouductItem，定位position -->
+                        <div class="like mainColor deepBgColor">
+                            <div class="pic">
+                                <img src="assets/image/products_like_likeWhite.png" alt="">
+                            </div>
+                            <span class="small">
+                                75
+                            </span>
+                        </div>
                     </div>
                     <div class="text">
                         <h4>{{item[index+2].title}}</h4>
                         <p>
-                            <span>創作者：</span>
-                            <span>{{item[index+2].creator}}</span>
+                            <span class="small lightColor">創作者：</span>
+                            <span class="small lightColor">{{item[index+2].creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span>{{item[index+2].price}}</span>
+                        <span class="epBColor">{{item[index+2].price}}</span>
                         <span class="small">{{item[index+2].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">出價</button>
                     </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        <div class="pic">
-                            <img src="assets/image/products_like_likeWhite.png" alt="">
-                        </div>
-                        <span class="small">
-                            75
-                        </span>
-                    </div>
+                    
                 </article>
                 <article class="prouductItem commomItem">
                     <div class="img">
                         <img :src="item[index+3].img">
+                        <!-- 定位absolute，父層prouductItem，定位position -->
+                        <div class="like mainColor deepBgColor">
+                            <div class="pic">
+                                <img src="assets/image/products_like_likeWhite.png" alt="">
+                            </div>
+                            <span class="small">
+                                75
+                            </span>
+                        </div>
                     </div>
                     <div class="text">
                         <h4>{{item[index+3].title}}</h4>
                         <p>
-                            <span>創作者：</span>
-                            <span>{{item[index+3].creator}}</span>
+                            <span class="small lightColor">創作者：</span>
+                            <span class="small lightColor">{{item[index+3].creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span>{{item[index+3].price}}</span>
+                        <span class="epBColor">{{item[index+3].price}}</span>
                         <span class="small">{{item[index+3].time}}</span>
                     </div>
                     <div class="productButton">
                         <button class="round">出價</button>
-                    </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        <div class="pic">
-                            <img src="assets/image/products_like_likeWhite.png" alt="">
-                        </div>
-                        <span class="small">
-                            75
-                        </span>
-                    </div>
+                    </div> 
                 </article>
             </section>
         </section>
@@ -295,32 +289,33 @@
                 <article class="prouductItem commomItem" v-for="product in products">
                     <div class="img">
                         <img :src="product.img">
+                        <!-- 定位absolute，父層prouductItem，定位position -->
+                        <div class="like mainColor deepBgColor">
+                            <div class="pic">
+                                <img src="assets/image/products_like_likeWhite.png" alt="">
+                            </div>
+                            <span class="small">
+                                75
+                            </span>
+                        </div>
                     </div>
                     <div class="text">
-                        <h4>{{product.title}}</h4>
+                        <h4 class="deepColor">{{product.title}}</h4>
                         <p>
-                            <span>創作者：</span>
-                            <span>{{product.creator}}</span>
+                            <span class="small lightColor">創作者：</span>
+                            <span class="small lightColor">{{product.creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span>{{product.price}}</span>
-                        <span class="small">{{product.time}}</span>
+                        <span class="epBColor">{{product.price}}</span>
+                        <span class="small deepColor">{{product.time}}</span>
                     </div>
                     <div class="productButton">
                         <a href="productSingle.html">
                             <button class="round">出價</button>
                         </a>
                     </div>
-                    <!-- 定位absolute，父層prouductItem，定位position -->
-                    <div class="like mainColor deepBgColor">
-                        <div class="pic">
-                            <img src="assets/image/products_like_likeWhite.png" alt="">
-                        </div>
-                        <span class="small">
-                            75
-                        </span>
-                    </div>
+                    
                 </article>
             </div>
         </section>
