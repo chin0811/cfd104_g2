@@ -47,7 +47,7 @@
 			// id:"分類區"
 		}
 	});
-//分類圖片下移區
+// 分類圖片下移區
 gsap.to(".homeCatalog .catalog .brame .pic img", {
 	y:1000,
 	ease: "none",
@@ -65,60 +65,115 @@ gsap.to(".homeCatalog .catalog .brame .pic img", {
 });
 
 // 取得藝廊下移圖片輪播
-let GaPic =document.querySelector(".homeGallery .scrollPic img");
-let imgList = [
-	"../assets/image/article_articleContent_coverFace.png",
-	"../assets/image/article_articleContent_bag.png",
-	"../assets/image/article_articleContent_jeffBollun.png",
-	"../assets/image/article_articleContent_bighead.png",
-	"../assets/image/article_articleContent_beBear.png",
-	"../assets/image/home_homeCatalog_lavbag.png",
-];
-let i=0; 
-setInterval("changeImg()",800); 
-function changeImg(){
-	if(i == imgList.length-1){
-		i=0
-		GaPic.setAttribute("src",imgList[i]);
-	}else if(i == i){
-		i++;
-		GaPic.setAttribute("src",imgList[i]);
-	}
-}; 
-window.addEventListener("load",changeImg);
+// let GaPic =document.querySelector(".homeGallery .scrollPic img");
+// let imgList = [
+// 	"../assets/image/article_articleContent_coverFace.png",
+// 	"../assets/image/article_articleContent_bag.png",
+// 	"../assets/image/article_articleContent_jeffBollun.png",
+// 	"../assets/image/article_articleContent_bighead.png",
+// 	"../assets/image/article_articleContent_beBear.png",
+// 	"../assets/image/home_homeCatalog_lavbag.png",
+// ];
+// let i=0; 
+// setInterval("changeImg()",800); 
+// function changeImg(){
+// 	if(i == imgList.length-1){
+// 		i=0
+// 		GaPic.setAttribute("src",imgList[i]);
+// 	}else if(i == i){
+// 		i++;
+// 		GaPic.setAttribute("src",imgList[i]);
+// 	}
+// }; 
+// window.addEventListener("load",changeImg);
 
-//藝廊圖片下移區
-gsap.to(".homeGallery .scrollPic", {
-	top:"100%",
-	ease: "none",
-	scrollTrigger: {
-		trigger: ".homeGallery",
-		start:"top top",
-		pin: ".homeGallery .pic",
-		scrub: true,
-		// endTrigger: ".homeMember",
-		// end:"bottom bottom",
-		// markers:true,
-		// id:"藝廊區",
-		// pinSpacing:false
-	}
-});
-//會員中心圖片下移區
-gsap.to(".homeMember .scrollPic", {
-	top:"45%",
-	ease: "none",
-	scrollTrigger: {
-		trigger: ".homeMember",
-		start:"top top",
-		pin: ".homeMember .pic",
-		scrub: true,
-		endTrigger: ".homeMember",
-		end:"center top",
-		// markers:true,
-		// id:"會員區",
-		// pinSpacing:false
-	}
-});
+
+// 滑動區圖片下移
+let windowWidth = window.innerWidth;
+if(windowWidth>=768){
+	gsap.to(".scrollDown .scrollPic",{
+		bottom:"10%",
+		scrollTrigger:{
+			trigger: ".scrollDown",
+			start:"-20% top",
+			// pin: true,
+			scrub: true,
+			endTrigger: ".homeMember",
+			end:"top top",
+			// markers:true,
+			// id:"滑-1"
+		},
+	});
+}else{
+	gsap.to(".scrollDown .scrollPic",{
+		bottom:"10%",
+		scrollTrigger:{
+			trigger: ".scrollDown",
+			start:"top top",
+			// pin: true,
+			scrub: true,
+			endTrigger: ".homeMember",
+			end:"top top",
+			// markers:true,
+			// id:"滑-1"
+		},
+	});
+}
+
+
+
+
+// 滑動區圖片下移
+// gsap.to(".scrollDown .scrollPic", {
+// 	top:"100%",
+// 	ease: "none",
+// 	scrollTrigger: {
+// 		trigger: ".scrollDown",
+// 		start:"0% center",
+// 		pin: ".scrollDown .scrollPic",
+// 		scrub: true,
+// 		endTrigger: ".scrollDown .homeMember",
+// 		end:"center center",
+// 		markers:true,
+// 		id:"滑動區",
+// 	}
+// });
+
+
+// //藝廊圖片下移區
+// gsap.to(".homeGallery .scrollPic", {
+// 	y:10000,
+// 	bottom: "auto",
+// 	ease: "none",
+// 	scrollTrigger: {
+// 		trigger: ".homeGallery",
+// 		start:"top top",
+// 		pin: ".homeGallery .pic",
+// 		scrub: true,
+// 		endTrigger: ".homeGallery",
+// 		end:"center bottom",
+// 		markers:true,
+// 		id:"藝廊區",
+// 		// pinSpacing:false
+// 	}
+// });
+// //會員中心圖片下移區
+// gsap.to(".homeMember .scrollPic", {
+// 	bottom:"50%",
+// 	ease: "none",
+// 	scrollTrigger: {
+// 		trigger: ".homeMember",
+// 		start:"top top",
+// 		pin: ".homeMember .pic",
+// 		scrub: true,
+// 		endTrigger: ".homeMember",
+// 		end:"center top",
+// 		markers:true,
+// 		id:"會員區",
+// 		// pinSpacing:false
+// 	}
+// });
+
 // 新聞裝飾圖片
 gsap.to(".homeNews .decorate.Pictopleft", {
 	xPercent:10,

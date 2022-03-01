@@ -79,12 +79,8 @@
     // background-color: #FBF7F3;
     // 透明底色
     background-color: #3e444a05;
-    box-shadow: 0.1em 0.5em 0.5em #252b3020;
-    box-shadow: 0.1em 0.5em 0.5em #252b3020;
-    border: 1px solid #94969b50;
-    border-right: 1px solid #55595e20;
+    box-shadow: 0.1em 0.5em 0.5em #252b300a;
     border-bottom: 1px solid #55595e20;
-    border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
 
     // 紙材質
@@ -170,7 +166,6 @@
     width: 30%;
     max-height: 80px;
     overflow: hidden;
-    border-radius: 5px;
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item .txt{
     width: 70%;
@@ -192,7 +187,7 @@
         display: flex;
         /* 定位在.articlePageContent .articlePageWrap .pageContent */
         position: absolute;
-        top: 1%;
+        top: 0%;
         left: 2%;
     }
     .articlePageContent .articlePageWrap .pageContent .breadcrumb ul li{

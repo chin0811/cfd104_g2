@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:0,
+    margin:10,
     nav:true,
     dots:false,
     responsive:{
@@ -49,3 +49,17 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     }
 })
+
+
+$(".btn").click(function(e){ 
+    $(".a").toggle();
+});
+$(".btn").click(function(e){ 
+    $(".b").toggle();
+});
+$(".btn").click(function(e){ 
+    $(".c").toggle();
+});
+$(".btn").click(function(e){ 
+    $(".d").toggle();
+});
