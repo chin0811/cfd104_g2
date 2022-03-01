@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-body{
-    background-color: #000;
-}
 .cigarette{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 50px;
+    // margin-top: 50px;
     transform: rotate(-25deg);
 }
 .cigarette .cigaretteBody{
     transform-style: preserve-3d;
     animation: cigarette 15s linear infinite;
-    margin-top: 15%;
+    // margin-top: 15%;
 }
 @keyframes cigarette {
     0%{
