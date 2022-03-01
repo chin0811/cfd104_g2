@@ -103,12 +103,13 @@ header{
     transform: scale(1.02);
     transition: .3s;
 }
-.headerContain .mainMenu li .memberList .icon:first-child img:hover{
-    content: url(../image/home_header_iconBellHover.png);
-}
-.headerContain .mainMenu li .memberList .icon:last-child img:hover{
-    content: url(../image/home_header_iconMemberHover.png);
-}
+// 原兩顆icon
+// .headerContain .mainMenu li .memberList .icon:first-child img:hover{
+//     content: url(../image/home_header_iconBellHover.png);
+// }
+// .headerContain .mainMenu li .memberList .icon:last-child img:hover{
+//     content: url(../image/home_header_iconMemberHover.png);
+// }
 /*------ 控制下拉式選單 ------*/
 /* 隱藏input按鈕 */
 #navMenu{
@@ -127,6 +128,11 @@ header{
 #navMenu:checked ~ ul li{
     text-align: center;
     justify-content: center
+}
+// 箭頭大小
+.headerContain .mainMenu ul li b{
+    font-size: 0.5em;
+    margin: 0 0 0 3px;
 }
 .headerContain .mainMenu {
     clip-path: circle(0% at 96.5% 4%);
