@@ -51,15 +51,30 @@ document.addEventListener("DOMContentLoaded",function(){
 })
 
 
-$(".btn").click(function(e){ 
-    $(".a").toggle();
-});
-$(".btn").click(function(e){ 
-    $(".b").toggle();
-});
-$(".btn").click(function(e){ 
-    $(".c").toggle();
-});
-$(".btn").click(function(e){ 
-    $(".d").toggle();
+
+// 許瑀芹
+window.onload = function(){
+    initAbout();
+};
+function initAbout(){
+    aboutMe =  document.querySelector("#aboutMe");
+    console.log(aboutMe);
+    aboutMe.addEventListener("click", function(){switchCard(1)},false);
+    aboutMeCard = document.querySelector("#aboutMeCard");
+    console.log(aboutMeCard);
+    // 功能
+    function switchCard(i){
+        console.log("hahaha")
+        if(i==1){
+            aboutMeCard.classList.toggle("displayNone")
+            console.log("出來囉")
+        }else{
+            console.log("出4拉阿伯")
+        }
+        // aboutMeCard.classList.toggle("displayNone")
+        // console.log("出來囉")
+    }
+}
+$('.btn').click(function(){
+    
 });

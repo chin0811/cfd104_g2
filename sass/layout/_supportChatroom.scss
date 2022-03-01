@@ -10,10 +10,11 @@ $uiColor:(
 );
 #supportApp{
     //客服最外層section
+    transition: right 0.3s;
     position: fixed;
     right: 20px;
     bottom: 20px;
-    z-index: 100;
+    z-index: 9999999999;
     &[class*="active"]{
         // 開啟客服時
         position: fixed;
@@ -39,7 +40,7 @@ $uiColor:(
     article,button{
         display: none;
     }
-    >span{
+    >img{
         display: block;
         font-size: 4em;
     }
@@ -51,13 +52,17 @@ $uiColor:(
     padding: 20px;
     width: 100%;
     margin:auto ;
-    // max-width: 90%;
+    max-width: 90%;
     right: 1em;
     bottom: 1em;
     box-sizing: border-box;
     box-shadow: 1px 1px 5px 0px #aaaaaa ;
-    >span{
+    @media screen and (min-width:768px) {
+        
+    }
+    >img{
         display: none;
+        
     }
     .chatroom{
         display: none;
@@ -68,6 +73,14 @@ $uiColor:(
             justify-content: space-between;
             align-content: center;
             align-items: center;
+            >h3{
+                line-height: 2em;
+            }
+            >img{
+                width: 2em;
+                cursor: pointer;
+                
+            }
         }
         .selectBtn{
             // width: 100%;
@@ -98,7 +111,7 @@ $uiColor:(
         margin: auto;
         padding: 20px;
         min-width: 40%;
-        max-width: 600px;
+        max-width: 400px;
         height: auto;
     }
 }
@@ -107,6 +120,7 @@ $uiColor:(
     >.selectRoom{
         display: none;
     }
+    
     >.chatroom , >.selectRoom{
         >.titleCell{
             display: flex;
@@ -115,10 +129,12 @@ $uiColor:(
             align-items: center;
             >h3{
                 flex-grow: 1;
+                line-height: 2em;
                 // margin-left: 1em;
             }
-            >span{
+            >img{
                 cursor: pointer;
+                width: 2em;
             }
         }
         
@@ -131,6 +147,7 @@ $uiColor:(
         .titleCell{
             >h3{
                 margin-left: 1em;
+                line-height: 2em;
             }
             @media screen and (min-width:768px) {
                 >h3::after{
