@@ -12,8 +12,87 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-    <!-- @@include('layout/header.html') -->
-    @@include('layout/headerNormal.html',{"headerClass":""})
+    
+        <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/header.js"></script>
+    <header>
+        <section class="headerNormalContain">
+            <section class="logoContain">
+                <div class="logo">
+                        <a href="homePage.html">
+                            <img src="assets/image/all_logo.png">
+                        </a>
+                </div>
+            </section>
+            <div class="hamburger"></div>
+            <nav class="mainMenu fullscreen">
+                <ul>    
+                    <li style="--animation-order: 1;">
+                        <input id="navMenu" type="checkbox">
+                        <label for="navMenu" class="deepColor">
+                            <a href="galleryDoor.html" class="deepColor">
+                                藝廊
+                            </a>
+                            <b>
+                                ▼
+                            </b>   
+                        </label>
+                        <ul>
+                            <li><a href="" class="lightColor">展示區</a></li>
+                            <li><a href="" class="lightColor">雕塑類</a></li>
+                            <li><a href="" class="lightColor">畫作類</a></li>
+                            <li><a href="" class="lightColor">公仔類</a></li>
+                            <li><a href="" class="lightColor">品牌合作</a></li>
+                        </ul>
+                    </li>
+                    <li style="--animation-order: 2;" >
+                        <a href="prouductAll.html" class="deepColor">拍賣廳</a>
+                    </li>
+                    <li style="--animation-order: 3;">
+                        <a href="articleAll.html" class="deepColor">藝論</a>
+                    </li>
+                    <li style="--animation-order: 4;">
+                        <a href="about.html" class="deepColor">關於我們</a>
+                    </li>
+                    <li style="--animation-order: 5;">
+                        <a href="3dSurroundView.html" class="deepColor">會員中心</a>
+                    </li>
+                    <!-- <li style="--animation-order: 6;">
+                        <section class="memberList">
+                            <div class="icon">
+                                    <a href="">
+                                        <img src="assets/image/home_header_iconBell.png">
+                                    </a>
+                            </div>
+                            <div class="icon">
+                                    <a href="3dSurroundView.html">
+                                        <img src="assets/image/home_header_iconMember.png">
+                                    </a>
+                            </div>
+                        </section>
+                    </li> -->
+                    <li style="--animation-order: 6;">
+                        <div class="login">
+                            <a href="login.html" class="whiteRound">登入</a>
+                            <a href="listing.html" class="round">上架</a>
+                            <div class="notice header">
+                                <i class="fas fa-bell"></i>
+                                <!-- 通知紅點 -->
+                                <span class="notice_dot">
+                                    <span class="notice_dotNumber"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="close">
+                    <div></div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
     <section class="articleContent">
         <div class="mainTitle">
             <h1 class="deepColor">
@@ -388,6 +467,63 @@
             </section>
         </section> -->
     </section>
-    @@include('layout/footer.html')
+        <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <footer>
+        <section class="footerContain">
+            <div class="logoContain">
+                    <div class="logo">
+                        <img src="assets/image/all_logo.png">
+                    </div>
+            </div>
+            <div class="socialContain">
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_facebook.png">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_instagram.png">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_twitter.png">
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <img src="assets/image/home_footer_line.png">
+                        </a>
+                    </div>
+            </div>
+            <nav>
+                    <ul>
+                        <li>
+                            <a href="galleryDoor.html">藝廊</a>
+                        </li>
+                        <li>
+                            <a href="prouductAll.html">拍賣廳</a>
+                        </li>
+                        <li>
+                            <a href="articleAll.html">藝論</a>
+                        </li>
+                        <li>
+                            <a href="about.html">關於我們</a>
+                        </li>
+                        <li>
+                            <a href="3dSurroundView.html">會員中心</a>
+                        </li>
+                    </ul>
+            </nav>
+            <div class="copyright">
+                <p>本網站為緯育TibaMe_前端設計工程師班第104期學員專題成果作品，本平台僅供學習、展示之用。<br>若有抵觸有關著作權，或有第三人主張侵害智慧財產權等情事，均由學員負法律上責任，緯育公司概不負責。<br>若有侵權疑慮，您可以私訊
+                <a href="https://www.facebook.com/TibaMe">緯育TibaMe</a>，後續會由專人協助處理。</p>
+                    
+            </div>
+        </section>
+    </footer>
+
 </body>
 </html>
