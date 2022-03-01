@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day 06 - OrbitControls、stats.js</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script src="OBJLoader.js"></script>
+    <script src="threex.domevents.js"></script>
+    <style>
+      .displayNone{
+        display: none;
+      }
+      .lightBox{
+          background-color: white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          height: 90vh;
+          border-radius: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stats"></div>
+    <div class="lightBox displayNone" id="lightBox">
+        <button id="closeLightBox">關掉</button>
+    </div>
+  </body>
+</html>
+
+
+
+
