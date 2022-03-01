@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/cssReset.css"> -->
+    <!-- <link rel="stylesheet" href="css/component.css"> -->
+    <!-- <link rel="stylesheet" href="css/accountManagement.css"> -->
+    <link rel="stylesheet" href="assets\css\style.css">
+    
+    <script src="https://kit.fontawesome.com/90d222f595.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button class="button bouncingButton">按鈕</button>
+
+    <section class="bouncingBox">
+        <section class="title">
+            <p>帳號管理
+                <span class="titleButton">
+                    <button class="button modifyData" type="button">修改資料</button>
+                    <button class="button confirmTheChanges" type="button">確認</button>
+                </span>
+            </p>
+            <span class="close"><i class="fas fa-times"></i></span>
+        </section>
+        <main>
+            <p class="information">會員編號：<span>ink（pk）</span></p>
+            <p class="information">會員暱稱：<input class="changeValue" value="text" disabled></input></p>
+            <p class="information">會員帳號：<span>ink（pk）</span></p>
+            <p class="information">會員密碼：<input class="changeValue" disabled></input></p>
+            <p class="information">姓名：<input class="changeValue" value="text" disabled></input></p>
+            <p class="information">信箱：<input class="changeValue" value="text" disabled></input></p>
+            <p class="information">電話：<input class="changeValue" value="varchar" disabled></input></p>
+            <p class="information">地址：<input class="changeValue" value="text" disabled></input></p>
+            <p class="information">信用卡：<input class="changeValue" value="int" disabled></input></p>
+            <p class="information">註冊日期：<input class="changeValue" value="date" disabled></input></p>
+            <p class="information">是否要收到最新消息信件 <i class="fas fa-question"></i></p>
+            <p>
+                <input class="radio changeValue" type="radio" name="radio" id="" value="true" checked disabled><span>是</span>
+                <input class="radio changeValue" type="radio" name="radio" id="" value="false" disabled><span>否</span>
+            </p>
+        </main>
+    </section>
+    
+    <script src="js/bouncingBox.js"></script>
+    <script src="js/changeValue.js"></script>
+
+</body>
+</html>

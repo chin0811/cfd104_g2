@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/backHome.css">
+    <link rel="stylesheet" href="assets/css/backOrder.css">
+    <script src="js/vue/vue.js"></script>
+</head>
+<body>
+    <section class="mainBanner">
+        <div class="titleBox">
+            <div class="logo">
+                <img src="assets/image/all_logo.png" alt="">
+            </div>
+            <div class="title">
+                <h1>後台管理</h1>
+            </div>
+        </div>
+        <div class="adminBox">
+            <div class="memPhoto">
+                <img src="assets/image/back_headphoto_temp.jpg" alt="">
+            </div>
+            <div class="name">
+                <p>火爆猴</p>
+            </div>
+        </div>
+    </section>
+    <section class="mainContainer">
+        <nav class="mainNav">
+            <ul>
+                <li><a href="backProduct.html">商品管理</a></li>
+                <li><a href="backOrder.html">訂單管理</a></li>
+                <li><a href="backAcution.html">拍賣管理</a></li>
+                <li><a href="backCustom.html">會員管理</a></li>
+                <li><a href="backRobSup.html">機器人客服管理</a></li>
+                <li><a href="backSup.html">真人客服管理</a></li>
+                <li><a href="backArticle.html">文章管理</a></li>
+                <li><a href="backObj.html">虛擬物件管理</a></li>
+                <li><a href="backAdmin.html">管理員管理</a></li>
+                <li><a href="backAnalyse.html">數據分析</a></li>
+            </ul>
+        </nav>
+        <section class="mainContent">
+            <div id="app">
+                <ul class="memeberTitle">
+                    <li v-for = 'title in titles'>{{title}}</li>
+                    <li></li>
+                </ul>
+                <ul v-for='(member,key) in members' 
+                class="memberList">            
+                    <li>{{member.auctionNo}}</li>
+                    <li>{{member.productName}}</li>
+                    <li>{{member.memNoSale}}</li>
+                    <li>{{member.memNoBuy}}</li>
+                    <li>{{member.productNumber}}</li>
+                    <li>{{member.orderAmount}}</li>
+                    <li>{{member.date}}</li>
+                    <li>{{member.orderStatus}}</li>        
+                    <li>編輯與查看</li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titles: ['拍賣編號', '商品名稱', '販售會員編號','得標會員編號', '商品編號', '訂單金額', '建立日期', '訂單狀態',  '', ],
+                members:[{
+                    'auctionNo':'001',
+                    'productName':'生命的凝視',
+                    'memNoSale':'123541',
+                    'memNoBuy':'555555',
+                    'productNumber':'66666',
+                    'orderAmount':'48,000',
+                    'date':'2021/01/01',
+                    'orderStatus':'寄送中'
+                },],
+            },
+            methods: {},
+            computed: {},
+            watch: {},
+        });
+    </script>
+</body>
+</html>

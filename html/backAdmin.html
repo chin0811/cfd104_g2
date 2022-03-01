@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/backHome.css">
+    <link rel="stylesheet" href="assets/css/backAdmin.css">
+    <script src="js/vue/vue.js"></script>
+</head>
+<body>
+    <section class="mainBanner">
+        <div class="titleBox">
+            <div class="logo">
+                <img src="assets/image/all_logo.png" alt="">
+            </div>
+            <div class="title">
+                <h1>後台管理</h1>
+            </div>
+        </div>
+        <div class="adminBox">
+            <div class="memPhoto">
+                <img src="assets/image/back_headphoto_temp.jpg" alt="">
+            </div>
+            <div class="name">
+                <p>火爆猴</p>
+            </div>
+        </div>
+    </section>
+    <section class="mainContainer">
+        <nav class="mainNav">
+            <ul>
+                <li><a href="backProduct.html">商品管理</a></li>
+                <li><a href="backOrder.html">訂單管理</a></li>
+                <li><a href="backAcution.html">拍賣管理</a></li>
+                <li><a href="backCustom.html">會員管理</a></li>
+                <li><a href="backRobSup.html">機器人客服管理</a></li>
+                <li><a href="backSup.html">真人客服管理</a></li>
+                <li><a href="backArticle.html">文章管理</a></li>
+                <li><a href="backObj.html">虛擬物件管理</a></li>
+                <li><a href="backAdmin.html">管理員管理</a></li>
+                <li><a href="backAnalyse.html">數據分析</a></li>
+            </ul>
+        </nav>
+        <section class="mainContent">
+            <div id="app">
+                <ul class="memeberTitle">
+                    <li v-for = 'title in titles'>{{title}}</li>
+                    <li></li>
+                </ul>
+                <ul v-for='(member,key) in members' 
+                class="memberList">            
+                    <li>{{member.adminNo}}</li>
+                    <li>{{member.adminId}}</li>
+                    <li>{{member.adminName}}</li>
+                    <li>{{member.adminClass}}</li>
+                    <li>{{member.adminState}}</li>  
+                    <li>編輯與查看</li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titles: ['管理員編號',  '帳號', '管理員姓名', '管理員種類', '狀態','', ],
+                members:[{
+                    'adminNo':'001',
+                    'adminId':'chinHappy',
+                    'adminName':'火爆猴',
+                    'adminClass':'一般管理員',
+                    'adminState':"正常",
+                },],
+            },
+            methods: {},
+            computed: {},
+            watch: {},
+        });
+    </script>
+</body>
+</html>
