@@ -53,7 +53,7 @@
 
 .consumptionRecord_bouncing main .record .recordGraphics .recordGraphicsOrderlist {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 70%;
     justify-content: space-around;
 }
@@ -84,7 +84,7 @@
 }
 
 .consumptionRecord_bouncing main::-webkit-scrollbar-thumb {
-    background-color: #d4aa70;
+    background-color: #FFD60A;
     border-radius: 100px;
 }
 

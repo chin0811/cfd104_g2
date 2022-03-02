@@ -1,4 +1,4 @@
-/*
+    /*
 .bouncingBox main{
     margin-top: 1em;
     padding-left: 1em;
@@ -26,81 +26,99 @@
 }
 
 */
-
-.accountManagement_bouncing main {
-    margin-top: 1em;
-    padding-left: 1em;
-    line-height: 2;
-    border-left: 3px solid #141414;
-    color: #141414;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* 頭像 */
-.accountManagement_bouncing main>*{
-    width: 50%;
-}
-.accountManagement_bouncing main .profilePicture{
-    display: flex;
-    align-items: flex-end;
-}
-.accountManagement_bouncing main .img{
-    width: 50%;
-}
-
-.question{
-    display: flex;
-    justify-content: flex-end;
-}
-.fa-question{
-    border-radius: 50%;
-    padding: 8px 10px;
-    border: 1px solid #000;
-}
-
-/* input */
-
-.accountManagement_bouncing main .changeValue {
-    border: none;
-    border-radius: 200px;
-    font-size: inherit;
-    font-family: inherit;
-    color: inherit;
-    background: inherit;
-    /* display: block;
+    
+    .accountManagement_bouncing main {
+        margin-top: 1em;
+        padding-left: 1em;
+        line-height: 2;
+        border-left: 3px solid #141414;
+        color: #141414;
+        display: flex;
+        justify-content: space-between;
+        overflow-y: hidden;
+    }
+    /* 頭像 */
+    
+    .accountManagement_bouncing main>* {
+        width: 50%;
+    }
+    
+    .accountManagement_bouncing main .profilePicture {
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .accountManagement_bouncing main .img {
+        width: 50%;
+    }
+    
+    .question {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .fa-question {
+        border-radius: 50%;
+        padding: 8px 10px;
+        border: 1px solid #000;
+    }
+    /* input */
+    
+    .accountManagement_bouncing main .changeValue {
+        border: none;
+        border-radius: 200px;
+        font-size: inherit;
+        font-family: inherit;
+        color: inherit;
+        background: inherit;
+        /* display: block;
     font-size: 1em;
     border-radius: 200px;
     /* -webkit-box-sizing: border-box; */
-    box-sizing: border-box;
-    padding: 0.5em 1em;
-    border: none;
-    /* -webkit-box-shadow: -1px -1px 2px 0px #ffffff inset, 1px 1px 3px 0px #aaaaaaaa inset; */
-    box-shadow: -1px -1px 2px 0px #ffffff inset, 1px 1px 3px 0px #aaaaaaaa inset;
-    /* margin: 0px 0px 20px 0px; */
-    /* width: 80%; */
-    line-height: 2em;
-    background-color: transparent;
-}
-
-/* input 樣式更改 */
-.accountManagement_bouncing main input.changeValue{
-    height: 35px;
-    padding-left: 15px;
-    margin: 10px 0 20px 0;
-}
-
-.accountManagement_bouncing main .changeValue:focus {
-    outline: none;
-    box-shadow: -2px -2px 3px 3px #ffffff inset, 2px 2px 5px 1px #aaaaaaaa inset;
-}
-
-
-/* 問號 */
-
-.accountManagement_bouncing main p .fa-question {
-    font-size: 1px;
-    padding: 4px;
-    border: 1px solid #999;
-    border-radius: 50%;
-}
+        box-sizing: border-box;
+        padding: 0.5em 1em;
+        border: none;
+        /* -webkit-box-shadow: -1px -1px 2px 0px #ffffff inset, 1px 1px 3px 0px #aaaaaaaa inset; */
+        box-shadow: -1px -1px 2px 0px #ffffff inset, 1px 1px 3px 0px #aaaaaaaa inset;
+        /* margin: 0px 0px 20px 0px; */
+        /* width: 80%; */
+        line-height: 2em;
+        background-color: transparent;
+    }
+    /* input 樣式更改 */
+    
+    .accountManagement_bouncing main input.changeValue {
+        height: 35px;
+        padding-left: 15px;
+        margin: 10px 0 20px 0;
+    }
+    
+    .accountManagement_bouncing main .changeValue:focus {
+        outline: none;
+        box-shadow: -2px -2px 3px 3px #ffffff inset, 2px 2px 5px 1px #aaaaaaaa inset;
+    }
+    /* 問號 */
+    
+    .accountManagement_bouncing main p .fa-question {
+        font-size: 1px;
+        padding: 4px;
+        border: 1px solid #999;
+        border-radius: 50%;
+    }
+    /* RWD */
+    
+    @media(max-width:769px) {
+        .accountManagement_bouncing main {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .accountManagement_bouncing main .img {
+            width: 100%;
+        }
+        .accountManagement_bouncing main>* {
+            width: 100%;
+        }
+        .accountManagement_information {
+            margin-top: 50px;
+        }
+    }
