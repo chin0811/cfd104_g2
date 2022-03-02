@@ -12,7 +12,7 @@
 	<script src="js/jquery/jquery-ui.js"></script>
     <script src="js/vue/vue.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>listing</title>
+    <title>商品上架</title>
     <!-- 頁籤icon -->
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
 
@@ -26,6 +26,14 @@
 			});
 		});
 	</script>
+    <!-- 方塊收起按鈕 -->
+    <script>
+        $(function () {
+            $(`#cubeBtn`).click(function(){
+                $('.cubeSide').slideToggle();
+            });
+        });
+    </script>
 </head>
 <body>
     @@include('layout/headerNormal.html')
@@ -34,7 +42,7 @@
     <section id="listingVue">
         <section class="safeFrame">
             <div class="listingSteps">
-                <h2 class="epBColor">上架競拍流程</h2>
+                <h2 class="epBColor">上架競拍</h2>
                 <h4>馬上開啟您的個人拍賣會</h4>
                 <!-- 收起按鈕 -->
                 <button id="slideButton" class="roundOutline"><h6>上架流程步驟 &nbsp;</h6><b class="arrow">▲</b></button>
@@ -53,7 +61,7 @@
                                 <img src="assets/image/listingImage/find_page_icon.png">
                                 <h6>步驟二: 找到競拍頁面</h6>
                             </div>
-                            <p>請到導覽列中按下"藝術品上架"，連結到賣家上架頁面。</p>
+                            <p>請到導覽列中按下"上架"，連結到賣家上架頁面。</p>
                         </div>
                         <div class="step aidBgColor">
                             <div class="stepTitle">
@@ -93,55 +101,70 @@
                 <h4 class="epBColor">藝廊效果廣告展示</h4>
             </div>
         </section>
-
+        
         <!-- 產品效果廣告展示 -->
         <section>
             <div class="owl-carousel owl-theme">
-                <div class="cube">
-                    <!-- <button id="cubeBtn" class="round">點我</button>     方塊收起按鈕 -->
-                    <div class="top"></div>
-                    <div>
-                        <span style="--i:0"></span>
-                        <span style="--i:1"></span>
-                        <span style="--i:2"></span>
-                        <span style="--i:3"></span>
+                <div class="banner">
+                    <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
+                </div>
+                <div class="wrap">
+                    <div class="card">
+                        <div class="cover">
+                            <h1 id="first"><img src="assets/image/listingImage/listing_bg_picture1.png" alt="none"></h1>
+                        </div>
+                        <div class="back">
+                            <p>Beauty is everywhere.</p>
+                        </div>
                     </div>
-            </div>
-            <div class="cigarette">
-                <div class="cigaretteBody">
-                    <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
                 </div>
-                <div class="cigaretteBody">
-                    <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                <div>
+                    <!-- 方塊收起按鈕 -->
+                    <button id="cubeBtn" class="round">點我</button>
+                    <div class="cube">
+                        <div class="top"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></div>
+                        <div>
+                            <span class="cubeSide"style="--i:0"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span class="cubeSide"style="--i:1"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span class="cubeSide"style="--i:2"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span class="cubeSide"style="--i:3"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cigaretteBody">
-                    <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                <div class="cigaretteBg">
+                    <div class="cigarette">
+                        <div class="cigaretteBody">
+                            <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cigaretteBody">
-                    <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-            </div>
-            <div class="banner">
-                <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
-            </div>
             </div>
         </section>
         <script src="js/carousel.js"></script>
@@ -227,26 +250,26 @@
                     <h5>產品種類:</h5>
                     <div class="allType">
                         <div class="type">
-                            <label>
-                                <input type="radio" name="type" required>
+                            <input type="radio" id="type1" name="type" required>
+                            <label for="type1">
                                 畫作類
                             </label>
                         </div>
-                        <div class="type">
-                            <label>
-                                <input type="radio" name="type">
+                        <div for="" class="type">
+                            <input type="radio" id="type2" name="type">
+                            <label for="type2">
                                 雕塑類
                             </label>
                         </div>
                         <div class="type">
-                            <label>
-                                <input type="radio" name="type">
+                            <input type="radio" type="type3" name="type">
+                            <label for="type3">
                                 公仔類
                             </label>
                         </div>
                         <div class="type">
-                            <label>
-                                <input type="radio" name="type">
+                            <input type="radio" id="type4" name="type">
+                            <label for="type4">
                                 品牌合作類
                             </label>
                         </div>
@@ -259,12 +282,12 @@
                             <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。<br>(如右方)達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
                         </div>
                     </div>
-                    <label>
-                        <input type="radio" name="ad" required>
+                    <input type="radio" id="ad1" name="ad" required>
+                    <label for="ad1">
                         購買廣告
                     </label>
-                    <label>
-                        <input type="radio" name="ad">
+                    <input type="radio" id="ad2" name="ad">
+                    <label for="ad2">
                         暫無需求
                     </label>
                 </div>
