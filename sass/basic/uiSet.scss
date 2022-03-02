@@ -13,6 +13,9 @@ input{
     font-family: 'Noto Serif TC', serif;
     // -webkit-appearance: none;
 }
+input[type*="text"],input[type*="password"],input[type*="email"],textarea{
+    -webkit-appearance: none;
+}
 // input check添加陰影
 input:not([type*="submit"]):focus,
 input:not([type*="reset"]):focus,
