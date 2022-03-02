@@ -107,8 +107,93 @@ if(windowWidth>=768){
 		bottom:"10%"
 	});
 }
+// 滑動區卡片彈出
+gsap.fromTo(
+	".homeGallery .txt",
+	{
+	  opacity: 0,
+	  scale:0.2,
+	},
+	{
+	  opacity: 1,
+	  scale:1,
+	  ease: "Expo.easeOut",
+	  scrollTrigger: {
+		trigger: ".homeGallery",
+			start:"-50% top",
+			// pin: true,
+			scrub: true,
+			endTrigger: ".homeGallery",
+			end:"center top",
+			// markers:true,
+			// id:"滑-1"
+	  	}
+	}
+  );
+gsap.fromTo(
+	".homeMember .txt",
+	{
+	  opacity: 0,
+	  scale:0.2,
+	},
+	{
+	  opacity: 1,
+	  scale:1,
+	  ease: "Expo.easeOut",
+	  scrollTrigger: {
+		trigger: ".homeMember",
+			start:"-50% top",
+			// pin: true,
+			scrub: true,
+			endTrigger: ".homeMember",
+			end:"center top",
+			// markers:true,
+			// id:"滑-1"
+	  	}
+	}
+  );
+
+// gsap.fromTo(picOverlay, 2, 
+// 	{skewX:30, scale:1.5}, 
+// 	{skewX:0, xPercent:100, transformOrigin: "0% 100%", ease: Power4.easeOut,
+//     scrollTrigger:{
+//     trigger: picOverlay,
+//     start: "top center",
+//     markers: "true",
+//     triggerActions: "restart none reset none",
+                                                      
+//   }});
+	
+
+
+
+
+
 
 // 新聞裝飾圖片
+gsap.fromTo(
+	".homeNews .newsContain",
+	{
+	  opacity: 0,
+	  scale:0.2,
+	  rotation:0,
+	},
+	{
+	  opacity: 1,
+	  scale:1,
+	  rotation:720,
+	  ease: "Elastic.easeOut.config(1 0.3)",
+	  scrollTrigger: {
+		trigger: ".homeNews",
+		start:"-50% top",
+		endTrigger:".homeNews",
+		end:"10% top",
+		scrub: true,
+		// markers:true,
+		// id:"新聞裝飾",
+	  	}
+	}
+  );
 gsap.to(".homeNews .decorate.Pictopleft", {
 	xPercent:10,
 	rotation:90,
