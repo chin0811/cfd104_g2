@@ -214,7 +214,8 @@ header{
 .headerContain .mainMenu .close div {
     width: 32px;
     height: 32px;
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
 }
 .headerContain .mainMenu .close div:before,.headerContain .mainMenu .close div:after {
     content: "";
@@ -223,6 +224,13 @@ header{
     border: 1px solid #394897;
     position: absolute;
     border-radius: 5px;
+    // 按鈕位置修正 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 .headerContain .mainMenu .close div:after {
     transform: rotate(90deg);

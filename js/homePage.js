@@ -5,7 +5,7 @@
 // 	c.style.top=e.clientY+'px';
 // }
 
-window.addEventListener("mousemove",pos)
+// window.addEventListener("mousemove",pos)
  gsap.registerPlugin(ScrollTrigger);
 	// 介紹區
 	let t2 =gsap.timeline({

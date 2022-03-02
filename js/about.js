@@ -114,7 +114,15 @@ function initAbout(){
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
-            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            if(!aboutMeBook.classList.contains("displayNone")){
+                setTimeout(function(){
+                    aboutMeBook.scrollIntoView({ behavior: 'smooth' });
+                },100);
+            };
+            // window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            // if(aboutMeBook.classList.indexOf("displayNone") == -1){
+            //     aboutMeBook.scrollIntoView({ behavior: 'smooth' });
+            // }
         }else if(i==2){
             ruleBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -122,7 +130,14 @@ function initAbout(){
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
-            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            if(!ruleBook.classList.contains("displayNone")){
+                setTimeout(function(){
+                    ruleBook.scrollIntoView({ behavior: 'smooth' });
+                },100);
+            };
+            // ruleBook.scrollIntoView({ behavior: 'smooth' });
+            // window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+
         }else if(i==3){
             buyerBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -130,7 +145,11 @@ function initAbout(){
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
-            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            if(!buyerBook.classList.contains("displayNone")){
+                setTimeout(function(){
+                    buyerBook.scrollIntoView({ behavior: 'smooth' });
+                },100);
+            };
         }else if(i==4){
             sellerBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -138,7 +157,12 @@ function initAbout(){
             buyerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
-            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            // window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            if(!sellerBook.classList.contains("displayNone")){
+                setTimeout(function(){
+                    sellerBook.scrollIntoView({ behavior: 'smooth' });
+                },100);
+            };
         }else if(i==5){
             contactBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -146,7 +170,12 @@ function initAbout(){
             buyerBook.classList.add("displayNone");
             sellerBook.classList.add("displayNone");
             cooperateBook.classList.add("displayNone");
-            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            // window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            if(!contactBook.classList.contains("displayNone")){
+                setTimeout(function(){
+                    contactBook.scrollIntoView({ behavior: 'smooth' });
+                },100);
+            };
         }else if(i==6){
             cooperateBook.classList.toggle("displayNone");
             aboutMeBook.classList.add("displayNone");
@@ -154,7 +183,13 @@ function initAbout(){
             buyerBook.classList.add("displayNone");
             sellerBook.classList.add("displayNone");
             contactBook.classList.add("displayNone");
-            window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            // window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+            if(!cooperateBook.classList.contains("displayNone")){   //判斷是否有此class
+                setTimeout(function(){  //delay 0.1s 等待0.1秒後執行(等畫面出現)
+                    cooperateBook.scrollIntoView({ behavior: 'smooth' });
+                    // 滑動到物件位置
+                },100);
+            };
         }
     }
 }
