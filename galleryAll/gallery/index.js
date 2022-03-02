@@ -4,6 +4,8 @@ let renderer, scene, camera
 let cameraControl, stats
 let lightBox
 let closeLightBox
+let galleryHint 
+let closeHint
 
 function initStats() {
   const stats = new Stats()
@@ -65,6 +67,57 @@ function init() {
       })
     }
   )
+  // 引入人偶
+  // loader.load(
+  //   "figure.json",
+  //   function(figure){
+  //     let figureClick = false;
+  //     scene.add(figure);
+  //     figure.position.set(29,-2,-5)
+  //     domEvents.addEventListener(figure, "click", event=>{
+  //       if(!figureClick){
+  //         figure.position.set(29,2,22)
+  //         figureClick = true;
+  //       }else{
+  //         figure.position.set(29,-2,-5)
+  //         figureClick = false;
+  //       }
+  //     })
+  //   }
+  // )
+  // 引入蒙娜麗莎
+  loader.load(
+    "cube.json",
+    function(cube){
+      scene.add(cube);
+      cube.position.set(54,3,-8)
+    }
+  )
+   // 引入彈跳公仔
+   loader.load(
+    "figure02.json",
+    function(figure02){
+      scene.add(figure02);
+      figure02.position.set(70,5,-5)
+    }
+  )
+     // 引入照片1
+     loader.load(
+      "photo01.json",
+      function(photo01){
+        scene.add(photo01);
+        photo01.position.set(12,3,0)
+      }
+    )
+      // 引入照片2
+      loader.load(
+      "photo02.json",
+      function(photo02){
+        scene.add(photo02);
+        photo02.position.set(41,3,-6.1)
+      }
+    )
+  
   // 建立監聽事件
   var domEvents = new THREEx.DomEvents(camera, renderer.domElement);
   let cubeClick = false;
@@ -74,6 +127,14 @@ function init() {
 
   closeLightBox.addEventListener("click",function(){
       lightBox.classList.toggle("displayNone");
+  });
+
+  galleryHint = document.querySelector("#galleryHint");
+  closeHint = document.querySelector("#closeHint");
+
+  closeHint.addEventListener("click",function(){
+      console.log("test")
+      galleryHint.classList.add("displayNone");
   });
 
 
