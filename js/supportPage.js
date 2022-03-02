@@ -1,23 +1,21 @@
-scrollsupport = 0;
+let scrollsupport = 0;
+let supportApp ;
 window.addEventListener('load',function(){
+    supportApp = document.querySelector("#supportApp");
+    
     
 window.addEventListener("scroll",function(){
-    // if(document.documentElement.scrollTop>300){
-    //     document.querySelector("header").style.top="-100px";
-    // }else{
-    //     document.querySelector("header").style.top="0px";
-    // }
-    if(this.scrollY > scrollsupport){
-        document.querySelector("#supportApp").style.right="-60px";
+    if(supportApp.classList != "active"){   //修正客服打開不隱藏
+        if(this.scrollY > scrollsupport){
+            supportApp.style.right="-60px";
+        }else{
+            supportApp.style.right="";
+        }
+        scrollsupport = this.scrollY;
     }else{
-        document.querySelector("#supportApp").style.right="";
-        
+        supportApp.style.right="";
     }
-    // scrollold = this.scrollY;
-    scrollsupport = this.scrollY;
-    // console.log(window.scrollY)
-    // console.log(scrollold)
-    // console.log(this.scrollY)
+    
   
   
   })

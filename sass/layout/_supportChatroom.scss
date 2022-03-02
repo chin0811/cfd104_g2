@@ -12,35 +12,45 @@ $uiColor:(
     //客服最外層section
     transition: right 0.3s;
     position: fixed;
-    // padding: 0.5em;
+    padding: 0.5em;
+    box-sizing: border-box;
     right: 20px;
     bottom: 20px;
     z-index: 9999999999;
-    background-color: #3e444a05;
+    background-color: #3e444a15;
+    // box-shadow: 1px 1px 2px 0px #aaaaaa25;
     backdrop-filter: blur(0.5em);
     // border: 1px solid #000;
     border-radius: 50%;
+    border: 2px solid #000;
 
     &[class*="active"]{
         // 開啟客服時
         position: fixed;
         // z-index: 10;
         top: 0;
+        border-radius: none;
         bottom: 0;
         right: 0;
         left: 0;
         content: '';
         background-color: #3e444a05;
+        border: none;
+        border-radius: 0;
         // background-color: #aaa;
         backdrop-filter: blur(0.5em);
+       
     }
+    // &:not([class*="active"]){
+        
+    // }
 }
 .supportChatroom:not([class*="active"]){
     /* 客服聯天室在首頁button */
     /* 圓 */
     border-radius: 50%;
     aspect-ratio: 1/1;
-    width: 4em;
+    width: 2em;
     background-color:transparent;
     cursor: pointer;
     article,button{
@@ -49,10 +59,16 @@ $uiColor:(
     >img{
         display: block;
         // font-size: 2em;
-        // width: 3em;
+        width: 2em;
         aspect-ratio: 1/1;
         margin: auto;
+        position: absolute;
+        top: 3px;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
+    
 }
 .supportChatroom.active{
     /* 客服聯天室區 */
@@ -189,29 +205,37 @@ $uiColor:(
         &::-webkit-scrollbar {
             /*卷軸的寬度*/
             // 首先，我們需要定義卷軸的大小。這可以是垂直卷軸的寬度，也可以是水平卷軸的高度。
-            width: 5px;
+            // width: 5px;
             background-color: transparent;
+            width: 8px;
         }
         &::-webkit-scrollbar-track {
             // 卷軸 track
             //這代表了卷軸的基礎。我們可以通過新增background、shadows、border-radius和border來對它進行造型。
             background-color: transparent;
+            // background-color: #e4e4e4;
+            border-radius: 100px;
         }
         &::-webkit-scrollbar-thumb {
             //卷軸 thumb
             //準備好了卷軸的基礎後，我們就需要對卷軸的thumb進行樣式設計。這很重要，因為使用者可能會拖動這個thumb與卷軸進行互動。
             // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            background-color: #aaa;
-            color: #000;
-            border-radius: 200px ;
+            // background-color: #aaa;
+            // color: #000;
+            // border-radius: 200px ;
             // background-color: #fde465 ;
             // background-color: #3e444a05;
-            box-shadow: 0.1em 0.5em 0.5em #252b3020;
+            // box-shadow: 0.1em 0.5em 0.5em #252b3020;
             // border: 1px solid #94969b50;
             // border-right: 1px solid #55595e20;
             // border-bottom: 1px solid #55595e20;
             // border-left: 1px solid #ffffff30;
-            backdrop-filter: blur(0.5em);
+            // backdrop-filter: blur(0.5em);
+            background-color: #d4aa70;
+            border-radius: 100px;
+
+            
+
             
         }
             >article{
@@ -245,7 +269,7 @@ $uiColor:(
             white-space:nowrap;
             padding: 0.2em;
             overflow-x: scroll;
-            min-height: 2.5em;
+            min-height: 3.5em;
            >button{
                 /* 機器人客服聯天室選項button */
                 font-size: 1em;
@@ -257,6 +281,23 @@ $uiColor:(
                 border: none;
                 margin: auto 0.3em;
                 cursor: pointer;
+            }
+            &::-webkit-scrollbar {
+                background-color: transparent;
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+                border-radius: 100px;
+            }
+            &::-webkit-scrollbar-thumb {
+                
+                background-color: #d4aa70;
+                border-radius: 100px;
+    
+                
+    
+                
             }
         }
         >.inputArea{
