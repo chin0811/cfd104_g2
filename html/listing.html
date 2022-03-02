@@ -26,6 +26,14 @@
 			});
 		});
 	</script>
+    <!-- 方塊收起按鈕 -->
+    <script>
+        $(function () {
+            $(`#cubeBtn`).click(function(){
+                $('.cubeSide').slideToggle();
+            });
+        });
+    </script>
 </head>
 <body>
     @@include('layout/headerNormal.html')
@@ -34,7 +42,7 @@
     <section id="listingVue">
         <section class="safeFrame">
             <div class="listingSteps">
-                <h2 class="epBColor">上架競拍流程</h2>
+                <h2 class="epBColor">上架競拍</h2>
                 <h4>馬上開啟您的個人拍賣會</h4>
                 <!-- 收起按鈕 -->
                 <button id="slideButton" class="roundOutline"><h6>上架流程步驟 &nbsp;</h6><b class="arrow">▲</b></button>
@@ -53,7 +61,7 @@
                                 <img src="assets/image/listingImage/find_page_icon.png">
                                 <h6>步驟二: 找到競拍頁面</h6>
                             </div>
-                            <p>請到導覽列中按下"藝術品上架"，連結到賣家上架頁面。</p>
+                            <p>請到導覽列中按下"上架"，連結到賣家上架頁面。</p>
                         </div>
                         <div class="step aidBgColor">
                             <div class="stepTitle">
@@ -93,55 +101,70 @@
                 <h4 class="epBColor">藝廊效果廣告展示</h4>
             </div>
         </section>
-
+        
         <!-- 產品效果廣告展示 -->
         <section>
             <div class="owl-carousel owl-theme">
-                <div class="cube">
-                    <!-- <button id="cubeBtn" class="round">點我</button>     方塊收起按鈕 -->
-                    <div class="top"></div>
-                    <div>
-                        <span style="--i:0"></span>
-                        <span style="--i:1"></span>
-                        <span style="--i:2"></span>
-                        <span style="--i:3"></span>
+                <div class="banner">
+                    <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
+                </div>
+                <div class="wrap">
+                    <div class="card">
+                        <div class="cover">
+                            <h1 id="first"><img src="assets/image/listingImage/listing_bg_picture1.png" alt="none"></h1>
+                        </div>
+                        <div class="back">
+                            <p>Beauty is everywhere.</p>
+                        </div>
                     </div>
-            </div>
-            <div class="cigarette">
-                <div class="cigaretteBody">
-                    <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
                 </div>
-                <div class="cigaretteBody">
-                    <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                <div>
+                    <!-- 方塊收起按鈕 -->
+                    <button id="cubeBtn" class="round">點我</button>
+                    <div class="cube">
+                        <div class="top"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></div>
+                        <div>
+                            <span class="cubeSide"style="--i:0"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span class="cubeSide"style="--i:1"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span class="cubeSide"style="--i:2"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span class="cubeSide"style="--i:3"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cigaretteBody">
-                    <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                <div class="cigaretteBg">
+                    <div class="cigarette">
+                        <div class="cigaretteBody">
+                            <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                        <div class="cigaretteBody">
+                            <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cigaretteBody">
-                    <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-                <div class="cigaretteBody">
-                    <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
-                </div>
-            </div>
-            <div class="banner">
-                <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
-            </div>
             </div>
         </section>
         <script src="js/carousel.js"></script>

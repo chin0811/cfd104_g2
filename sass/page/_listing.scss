@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-
 /* 100%安全框 */
 .listingVue{
     width: 100%;
 }
 .safeFrame{
     // width: 90%;
-    // max-width: 1200px;
+    max-width: 1200px;
     margin: auto;
 }
 /*上架步驟*/
@@ -38,7 +37,7 @@
 }
 .listingSteps h2{
     // text-align: center;
-    margin: 20px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
     padding: 10px 0px 0px 0px;
 }
 .listingSteps h4{
@@ -57,7 +56,7 @@
     margin-bottom: 30px;
 }
 .listingSteps .steps .step{
-    width: 300px;
+    width: 350px;
     height: 280px;
     padding: 10px;
     margin: 20px 0px 20px 0px;
@@ -136,6 +135,63 @@
 .owl-theme .owl-dots .owl-dot:hover span {
     background: #2caae1;
 }
+// flip效果
+.warp{
+    width: 800px;
+    height: 600px;
+    border: 5px solid red;
+    margin: auto;
+}
+.card{
+    width: 500px;
+    position: relative;
+    margin: auto;
+    transform: perspective(1000px);
+}
+.cover, .back{
+    width: 200px;
+    height: 120px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 20px;
+    left: 30%;
+    transition: .25s ease-in-out;
+    box-shadow: 1px 1px 3px 1px #999;
+    box-sizing: border-box;
+    -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .5));
+}
+.cover{
+    // background-image: url('../assets/image/listingImage/listing_bg_picture1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotatey(0deg);
+    display: flex;
+}
+.back{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+    color: white;
+    transform: perspective(1000px) rotatey(-180deg);
+    text-align: center;
+    // padding-top: 5%;
+}
+.back p{
+    text-shadow: 5px 5px 2px #333;
+    font-size: 22px;
+}
+.card:hover .cover{
+    transform: rotateY(180deg);
+}
+.card:hover .back{
+    transform: rotateY(0deg);
+}
+
+/* 綠色方塊收起按鈕 */
+#cubeBtn{
+    margin-left: 10%;
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+}
 /* 綠色方塊 */
 .cube{
     position: relative;
@@ -177,10 +233,14 @@
     left: 0;
     width: 100px;
     height: 100px;
-    background-image: url('../image/listingImage/green_arrow.png');
-    background-size: 100px 100px;
-    background-repeat: no-repeat;
+    background-image: ('../image/listingImage/green_arrow.png');
+    // background-size: 100px 100px;
+    // background-repeat: no-repeat;
     transform: rotateX(90deg) translateZ(50px);;
+}
+.cube .top img{
+    width: 100px;
+    height: 100px;
 }
 .top::before{
     content: '';
@@ -199,6 +259,10 @@
     0 0 500px rgba(0,255,0,1);
 }
 
+.cigaretteBg{
+    background-color: #000;
+    height: 200px;
+}
 /*香菸特效*/
 .cigarette{
     height: 200px;
@@ -207,7 +271,7 @@
     align-items: center;
     position: relative;
     margin-top: 50px;
-    transform: rotate(-25deg);
+    // transform: rotate(-25deg);
 }
 .cigarette .cigaretteBody{
     transform-style: preserve-3d;
@@ -406,7 +470,7 @@ margin-right: 2.9%;
     /* box-shadow: inset 2px 2px 2px 2px #ccc; */
     padding: 5px;
     outline: none;
-    /* appearance: none; */
+    // appearance: none;
 }
 
 .productType{
@@ -504,7 +568,7 @@ z-index: 1;
     box-shadow: inset 2px 2px 3px 3px #ccc;
 }
 .uploadFile .uploadPicture input{
-    /* display: none; */
+    // display: none;
     opacity: 0;
 }
 .uploadFile .uploadPicture li img{
@@ -749,6 +813,25 @@ box-sizing: border-box;
         right: 45%;
         opacity: 0.3;
     }
+    
+    .cover, .back{
+        width: 400px;
+        height: 280px;
+        top:80px;
+        left: 15%;
+        -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .5));
+    }
+    .back p{
+        text-shadow: 5px 5px 2px #333;
+        font-size: 36px;
+        padding-top: 20%;
+    }
+    // web綠色方塊按鈕
+    // #cubeBtn{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
         /*web綠色方塊旋轉效果*/
     .cube{
         position: relative;
@@ -769,7 +852,7 @@ box-sizing: border-box;
     }
     .cube div{
         position: absolute;
-        top: 50%;
+        top: 10%;
         left:100px;
         width: 100%;
         height: 100%;
@@ -777,7 +860,7 @@ box-sizing: border-box;
     }
     .cube div span{
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 100px;
         width: 100%;
         height: 100%;
@@ -786,17 +869,21 @@ box-sizing: border-box;
     }
     .cube .top{
         position: absolute;
-        top: 100%;
+        top: 50%;
         left: 200px;
         width: 200px;
         height: 200px;
-        background-image: url('../image/listingImage/green_arrow.png');
+        background-image: ('../image/listingImage/green_arrow.png');
         background-size: 200px 200px;
         background-repeat: no-repeat;
         /* background-image: radial-gradient( circle farthest-corner at 50.3% 44.5%,  rgba(116,147,179,1) 0%, rgba(62,83,104,1) 100.2% ); */
         /* background-color: #151515; */
         /* background-image: radial-gradient( circle farthest-corner at -1% 57.5%,  rgba(19,170,82,1) 0%, rgba(0,102,43,1) 90% ); */
         transform: rotateX(90deg) translateZ(100px);;
+    }
+    .cube .top img{
+        width: 200px;
+        height: 200px;
     }
     .top::before{
         content: '';
@@ -815,6 +902,10 @@ box-sizing: border-box;
         0 0 500px rgba(0,255,0,1);
     }
 
+    .cigaretteBg{
+        background-color: #000;
+        height: 500px;
+    }
     .cigarette{
         display: flex;
         justify-content: center;
