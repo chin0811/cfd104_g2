@@ -4,7 +4,6 @@
 // 	c.style.left=e.clientX+"px";
 // 	c.style.top=e.clientY+'px';
 // }
-
 // window.addEventListener("mousemove",pos)
  gsap.registerPlugin(ScrollTrigger);
 	// 介紹區
