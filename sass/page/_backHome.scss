@@ -1,0 +1,119 @@
+h1{
+    font-size: 0.9em;
+}
+p,img{
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+/* 主要banner 上方bar  */
+.mainBanner{
+    width: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #FBF7F3;
+    .titleBox{
+        /* 標題 logo + 文字*/
+        width: 20%;
+        height: 100%;
+        display: flex;
+        .logo{
+            width: 30%;
+            display: block;
+            min-width: 80px;
+            margin: auto;
+            box-sizing: border-box;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding:  15px 10px;
+            // a{
+            //     display: block;
+            //     margin: auto;
+            // }
+            img{
+                max-width: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+        .title{
+            display: block;
+            margin: auto;
+            white-space:nowrap;
+        }
+    }
+}
+
+.mainBanner .adminBox{
+    /* 登入成員 頭像 + 名字 */
+    width: 20%;
+    white-space:nowrap;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    .memPhoto{
+        // 頭像
+        // width: 20%;
+        margin-right: 0.5em;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        // position: relative;
+        img{
+            max-width: 100%;
+            max-height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+            vertical-align: top;
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+        }
+    }
+    .name{
+        // 名字
+        width: 30%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 0.6em;
+    }
+}
+
+
+/* 主要內容盒子 */
+.mainContainer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    height: 93vh;
+}
+.mainNav{
+    width: 18%;
+    background-color: #363636;
+    font-size: 20px;
+    color:black;
+}
+.mainNav ul{
+    width: 100%;
+    margin-top: 10%;
+}
+.mainNav ul li{
+    width: 100%;
+    border-bottom: 1px solid white;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5%;
+}
+/* 主要內容 */
+.mainContent{
+    width: 82%;
+   overflow: scroll;
+   background-color: rgb(122, 173, 190); 
+}

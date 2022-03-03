@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/backHome.css">
-    <link rel="stylesheet" href="assets/css/backAuction.css">
-    <script src="js/vue/vue.js"></script>
-</head>
-<body>
-        @@include('layout/backheader.html')
-        <section class="mainContent">
+@@include('layout/backheader.html',{title:"拍賣管理"})
+        <section class="mainContent backAuction">
             <div id="app">
                 <ul class="memeberTitle">
                     <li v-for = 'title in titles'>{{title}}</li>

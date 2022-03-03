@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>藝廊</title>
-    <title>gallery</title>
     <link rel="icon" href="../../assets/icon/a_icon.ico" type="art together icon">
     <link rel="stylesheet" href="./index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
@@ -15,9 +14,6 @@
     <script src="threex.domevents.js"></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
-      .displayNone{
-        display: none;
-      }
       .lightBox{
           background-color: white;
           position: absolute;
@@ -89,6 +85,37 @@
         text-decoration: none;
         color: #141414;
     }
+    .galleryHint{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        /* transform: translateY(-50%); */
+        transform: translateX(-50%);
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+        padding: 5%;
+        border-radius: 30px;
+        height: 50%;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .galleryHint p{
+        width: 60%;
+        font-size: large;
+    }
+    .galleryHint .closeHint{
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        right: 1%;
+        top: 8%;
+        cursor: pointer;
+    }
+    .displayNone{
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -216,6 +243,11 @@
             <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
             <a href="../../productSingle.html" class="goPrice round">前往出價</a>
         </div>
+    </div>
+    <div class="galleryHint" id="galleryHint">
+        <i class="closeHint fas fa-times" id="closeHint"></i>
+        <p>放大縮小：滾輪</p>
+        <p>移動：右鍵</p>
     </div>
 </body>
 </html>
