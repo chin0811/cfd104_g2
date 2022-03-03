@@ -36,7 +36,6 @@
     position: absolute;
     width: 400px;
     top: 50%;
-    left: 50%;
     transform: translateY(-50%);
 }
 .homeIntro .intro .pic img{
@@ -48,8 +47,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 10%;
+    left: 2%;
     width: 6em;
+    font-size:3em ;
     font-weight:550;
 }
 /* 滑鼠標示 */
@@ -104,6 +104,7 @@
         /* 定位在homeIntro */
         display: inline-block;
         border-right: 2px solid #8888;
+        font-size:4.375em ;
         position: absolute;    
         top: 50%;
         transform: translateY(-50%);
@@ -130,7 +131,7 @@
     display: flex;
     height: 100vh;
     align-items: center;
-    background-color: #FBF7F3;
+    background-color: #ececec;
     /* background-color: #f00; */
 }
 /* 分類區圖文設定*/

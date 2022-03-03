@@ -6,6 +6,8 @@
 // }
 // window.addEventListener("mousemove",pos)
  gsap.registerPlugin(ScrollTrigger);
+//  取得螢幕寬度
+ var windowWidth = window.innerWidth;
 	// 介紹區
 	let t2 =gsap.timeline({
 		scrollTrigger:{
@@ -19,12 +21,22 @@
 			// id:"介紹區"
 		},
 	});
-	t2.from(".homeIntro .intro .pic",{
-		left:"100%",
-	});
-	t2.to(".homeIntro .intro .pic",{
-		left:"50%",
-	});
+	console.log(windowWidth);
+	if(windowWidth >= 768){
+		t2.from(".homeIntro .intro .pic",{
+			left:"100%",
+		});
+		t2.to(".homeIntro .intro .pic",{
+			left:"60%",
+		});
+	}else{
+		t2.from(".homeIntro .intro .pic",{
+			left:"100%",
+		});
+		t2.to(".homeIntro .intro .pic",{
+			left:"30%",
+		});
+	}
 
 
 // 分類區
@@ -97,26 +109,28 @@ let t3 = gsap.timeline({
 		// id:"滑-1"
 	}
 });
-let windowWidth = window.innerWidth;
+
 if(windowWidth>=768){
 	t3.to(".scrollDown .scrollPic",{
 		bottom:"10%"
 	});
 }else{
 	t3.to(".scrollDown .scrollPic",{
-		bottom:"10%"
+		bottom:"15%"
 	});
 }
 // 滑動區卡片彈出
 gsap.fromTo(
 	".homeGallery .txt",
 	{
-	  opacity: 0,
-	  scale:0.2,
+	 'webkitFilter': 'blur(3px)',
+	 opacity: 0,
+	 scale:0,
 	},
 	{
 	  opacity: 1,
 	  scale:1,
+	  'webkitFilter': 'blur(0px)',
 	  ease: "Expo.easeOut",
 	  scrollTrigger: {
 		trigger: ".homeGallery",
@@ -133,10 +147,12 @@ gsap.fromTo(
 gsap.fromTo(
 	".homeMember .txt",
 	{
+	  'webkitFilter': 'blur(3px)',
 	  opacity: 0,
 	  scale:0.2,
 	},
 	{
+	  'webkitFilter': 'blur(0px)',
 	  opacity: 1,
 	  scale:1,
 	  ease: "Expo.easeOut",
