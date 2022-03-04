@@ -9,15 +9,27 @@ button{
     font-family: 'Noto Serif TC', serif;
     cursor: pointer;
 }
+// 透明物件
+.transparent{
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    background-color: #ffffff50;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+}
 input{
     font-family: 'Noto Serif TC', serif;
     // -webkit-appearance: none;
-    // 共用設定
+    // 文字設定
     font-size: 1em;
     box-sizing: border-box;
-    padding: 0.2em 0.5em;
+    padding: 0.2em 1em;
+    line-height:2;
     letter-spacing: 2px;
-    
+    // 內外陰影
+    border-radius: 555px;
     background-color: transparent;
     box-shadow: 0.1em 0.1em 0.1em #252b3020 inset;
     border: 1px solid #94969b50;
@@ -25,16 +37,18 @@ input{
     border-bottom: 2px solid #ffffff80;
     border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
-    line-height:2;
-    border-radius: 555px;
 }
 textarea{
+    // 文字設定
+    font-family: 'Noto Serif TC', serif;
     font-size: 1em;
     box-sizing: border-box;
-    padding: 0.2em 0.5em;
+    padding: 0.2em 1em;
     letter-spacing: 2px;
-    
-    font-family: 'Noto Serif TC', serif;
+    line-height:2;
+    // 不能調大小
+    resize: none;
+    // 內外陰影
     border-radius: 5px;
     background-color: transparent;
     box-shadow: 0.1em 0.1em 0.1em #252b3020 inset;
@@ -43,7 +57,17 @@ textarea{
     border-bottom: 2px solid #ffffff80;
     border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
-    line-height:2;
+}
+// 燈箱
+.lightBox{
+    border-radius: 1em;
+    background-color: #ffffff80;
+    box-shadow: 0.5em 0.5em 0.5em #252b3080;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left:1px solid  #ffffff80;
+    backdrop-filter: blur(1em);
 }
 input[type*="text"],input[type*="password"],input[type*="email"],textarea{
     -webkit-appearance: none;
@@ -208,7 +232,7 @@ span.small{
     transition: .3s;
 
     box-shadow: 0.1em 0.5em 0.5em #252b3020;
-    background-color: #3e444a10;
+    background-color: #ffffff80;
     border: 1px solid #94969b50;
     border-right: 1px solid #55595e20;
     border-bottom: 1px solid #55595e20;
@@ -224,7 +248,7 @@ span.small{
     border-radius: 5px;
     transition: .3s;
 
-    background-color: #3e444a05;
+    background-color: #ffffff80;
     box-shadow: 0.1em 0.5em 0.5em #252b3020;
     border: 1px solid #94969b50;
     border-right: 1px solid #55595e20;
@@ -247,7 +271,7 @@ span.small{
     padding: 5px 20px;
     border-radius: 200px;
 
-    background-color: #3e444a05;
+    background-color: #ffffff80;
     box-shadow: 0.1em 0.5em 0.5em #252b3020;
     border: 1px solid #94969b50;
     border-right: 1px solid #55595e20;
@@ -264,30 +288,19 @@ span.small{
     padding: 5px 20px;
     border-radius: 5px;
 
-    background-color: #3e444a05;
+    background-color: #ffffff80;
     box-shadow: 0.1em 0.5em 0.5em #252b3020;
     border: 1px solid #94969b50;
     border-right: 1px solid #55595e20;
     border-bottom: 1px solid #55595e20;
     border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
-    
 }
 /* 外框按鈕hover */
 .roundOutline:hover,.squareOutline:hover{
     color: #FFFFFF;
     background-color: #141414;
     border: 1px solid #141414;
-}
-// 燈箱
-.lightBox{
-    background-color: #ffffff80;
-    box-shadow: 0.5em 0.5em 0.5em #252b3080;
-    border: 1px solid #94969b50;
-    border-right: 1px solid #55595e80;
-    border-bottom: 1px solid #55595e80;
-    border-left:1px solid  #ffffff80;
-    backdrop-filter: blur(1em);
 }
 /* 90%外層 */
 .size{
