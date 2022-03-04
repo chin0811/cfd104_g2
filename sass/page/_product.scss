@@ -114,11 +114,19 @@
     right:2%;
     display: flex;
     border-radius:600px;
-    opacity: 50%;
+    opacity: 80%;
     padding: 8px 15px;
     box-sizing: border-box;
     align-items: center;
     cursor: pointer;
+    // 透明物件
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    background-color: #3e444a10;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 // 愛心
 .productMainSection .commomItem .like .pic{
@@ -131,7 +139,7 @@
 }
 // 愛心換顏色
 .productMainSection .commomItem .like .pic img:hover{
-    content: url(../image/articlePage_shareBar_likeHover.png);
+    content: url(../image/all_like_hover.png);
     transform: scale(1.02);
     vertical-align: bottom;
 }
@@ -161,7 +169,7 @@
     width: 100%;
     overflow: hidden;
     margin-bottom: 10%;
-    background-color: #FBF7F3;
+    background-color: #F7F7F7;
     padding:0 0 3% ;
     box-sizing: border-box;
 }
@@ -205,13 +213,13 @@
     display: flex;
     top: 50%; 
     transform: translateY(-50%);
+    
 }
 .productMainCarousel .right{
     right: -5.5%;
 }
 .productMainCarousel .arrowButton .leftArrow,
 .productMainCarousel .arrowButton .rightArrow{
-    background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -219,7 +227,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(36, 36, 36);
+    color: #ffffff;
+    // 透明物件
+    border-radius: 200px;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    background-color: #ffffff50;
+    border: 1px solid #55595e20;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .productMainCarousel .changeButton{
     margin: auto;

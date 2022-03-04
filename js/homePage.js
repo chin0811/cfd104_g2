@@ -21,13 +21,12 @@
 			// id:"介紹區"
 		},
 	});
-	console.log(windowWidth);
 	if(windowWidth >= 768){
 		t2.from(".homeIntro .intro .pic",{
 			left:"100%",
 		});
 		t2.to(".homeIntro .intro .pic",{
-			left:"60%",
+			left:"50%",
 		});
 	}else{
 		t2.from(".homeIntro .intro .pic",{
@@ -123,7 +122,7 @@ if(windowWidth>=768){
 gsap.fromTo(
 	".homeGallery .txt",
 	{
-	 'webkitFilter': 'blur(3px)',
+	 'webkitFilter': 'blur(1px)',
 	 opacity: 0,
 	 scale:0,
 	},
@@ -147,7 +146,7 @@ gsap.fromTo(
 gsap.fromTo(
 	".homeMember .txt",
 	{
-	  'webkitFilter': 'blur(3px)',
+	  'webkitFilter': 'blur(1px)',
 	  opacity: 0,
 	  scale:0.2,
 	},

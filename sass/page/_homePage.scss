@@ -23,7 +23,8 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    /* background-color: #f00; */
+     // 背景圖
+     background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;;
 }
 .homeIntro .intro{
     display: block;
@@ -131,7 +132,7 @@
     display: flex;
     height: 100vh;
     align-items: center;
-    background-color: #ececec;
+    background-color: #F7F7F7;
     /* background-color: #f00; */
 }
 /* 分類區圖文設定*/
@@ -289,6 +290,7 @@
     border-radius: 1em;
     padding: 10px;
     box-sizing: border-box;
+    color: #fff;
     // 透明卡片
     background-color: #3e444a05;
     box-shadow: 0.1em 0.5em 0.5em #252b3020;
@@ -350,6 +352,7 @@
     border-radius: 1em;
     padding: 10px;
     box-sizing: border-box;
+    color: #fff;
     // 透明卡片
     background-color: #3e444a05;
     box-shadow: 0.1em 0.5em 0.5em #252b3020;

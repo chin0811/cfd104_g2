@@ -32,6 +32,9 @@ a{
         margin: auto;
         margin-top: 60px;
     }
+    .SingleProductHead ul{
+        display: flex;
+    }
     .SingleProductIntro .sizeAdjustBox{
         box-sizing: border-box;
         padding-bottom: 1.5%;
@@ -215,14 +218,6 @@ a{
 }
 .SingleProductIntro .bidBox.inputBox input{
     width: 100%;
-    font-size: 1em;
-    border-radius: 200px;
-    box-sizing: border-box;
-    padding: 0.5em 1em;
-    border:1px solid rgba(136, 136, 136, 0.233);
-    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
-    line-height: 2em;
-    background-color: transparent;
 }
 @media screen and (min-width:992px){
     .SingleProductIntro .bidBox.inputBox input{
@@ -235,17 +230,25 @@ a{
 }
 // 收藏按鈕
 .SingleProductIntro .introBox .like{
-    // 定位在.SingleProductIntro .introBox
+    // 定位在.prouductItem .commomItem .img
     position: absolute;
-    top: 5%;
+    top: 2%;
     right:2%;
     display: flex;
     border-radius:600px;
-    opacity: 50%;
-    box-sizing: border-box;
+    opacity: 80%;
     padding: 8px 15px;
+    box-sizing: border-box;
     align-items: center;
     cursor: pointer;
+    // 透明物件
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    background-color: #3e444a10;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 // 愛心
 .SingleProductIntro .introBox .like .pic{
@@ -258,13 +261,48 @@ a{
 }
 // 愛心換顏色
 .SingleProductIntro .introBox .like .pic img:hover{
-    content: url(../image/articlePage_shareBar_likeHover.png);
+    content: url(../image/all_like_hover.png);
     transform: scale(1.02);
     vertical-align: bottom;
 }
 .SingleProductIntro .introBox .like span{
     margin: 0 5px;
 }
+.SingleProductIntro .introBox .img img{
+    width: 100%;
+}
+// // 收藏按鈕
+// .SingleProductIntro .introBox .like{
+//     // 定位在.SingleProductIntro .introBox
+//     position: absolute;
+//     top: 5%;
+//     right:2%;
+//     display: flex;
+//     border-radius:600px;
+//     opacity: 50%;
+//     box-sizing: border-box;
+//     padding: 8px 15px;
+//     align-items: center;
+//     cursor: pointer;
+// }
+// // 愛心
+// .SingleProductIntro .introBox .like .pic{
+//     width: 20px;
+// }
+// .SingleProductIntro .introBox .like .pic img{
+//     width: 100%;
+//     vertical-align: bottom;
+//     transition: .3s;
+// }
+// // 愛心換顏色
+// .SingleProductIntro .introBox .like .pic img:hover{
+//     content: url(../image/articlePage_shareBar_likeHover.png);
+//     transform: scale(1.02);
+//     vertical-align: bottom;
+// }
+// .SingleProductIntro .introBox .like span{
+//     margin: 0 5px;
+// }
 /* 商品介紹按鈕 */
 .SingleProductIntro .introButton{
     display: flex;

@@ -2,6 +2,8 @@
     width: 100%;
     padding: 50px 0 100px;
     box-sizing: border-box;
+    // 背景圖
+    background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;;
 }
 .articlePostContent{
     width: 90%;
@@ -29,43 +31,25 @@
     box-sizing: border-box;;
     position: relative;
 }
-// 上下分割線
-.articlePostContent .articleEdit::before{
-    // 定位在.articleEdit
-    position: absolute;
-    bottom: 0;
-    content: '';
-    width: 90%;
-    height: 1px;
-    background-color: #8888; 
-}
+// // 上下分割線
+// .articlePostContent .articleEdit::before{
+//     // 定位在.articleEdit
+//     position: absolute;
+//     bottom: 0;
+//     content: '';
+//     width: 90%;
+//     height: 1px;
+//     background-color: #8888; 
+// }
 // input主標題
 .articlePostContent #articleTitle{
     width: 100%;
-    // 共用設定
-    font-size: 1em;
-    border-radius: 200px;
-    box-sizing: border-box;
-    padding: 0.2em 0.5em;
-    border:1px solid rgba(136, 136, 136, 0.233);
-    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
-    line-height: 2em;
-    background-color: transparent;
 }
 // input內容
 .articlePostContent #articleArea{
     resize: none;
     width: 100%;
     height: 500px;
-    // 共用設定
-    font-size: 1em;
-    border-radius: 5px;
-    box-sizing: border-box;
-    padding: 0.2em 0.5em;
-    border:1px solid rgba(136, 136, 136, 0.233);
-    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
-    line-height: 2em;
-    background-color: transparent;
 }
 // 加圖區
 .articlePostContent .articleEdit label[for=articlePic]{
@@ -75,14 +59,19 @@
     width: 400px;
 }
 .articlePostContent .articleEdit label[for=articlePic] .pic{
-    width: 100px;
+    width: 50px;
+    padding: 2em;
     cursor: pointer;
+    border-radius: 0.5em;
+    background-color: transparent;
+    box-shadow: 0.1em 0.1em 0.1em #252b3020 inset;
+    border: 1px solid #94969b50;
+    border-right: 2px solid #ffffff80;
+    border-bottom: 2px solid #ffffff80;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
-.articlePostContent .articleEdit label[for=articlePic] .pic img:hover{
-    content: url(../image/upload_image_iconHover.png);
-    transform: scale(1.02);
-    transition: .3s;
-}
+
 .articlePostContent .articleEdit #articlePic{
     display: none;
 }
@@ -98,13 +87,33 @@
 .articlePostContent .articlePreview h2{
     padding-left:20px ;
 }
+.articlePostContent .articlePreview input{   border: none;
+    resize: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: none;
+    font-size: 1.25em;
+    line-height: 2;
+	letter-spacing:2px;
+}
+.articlePostContent .articlePreview textarea{   border: none;
+    resize: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .articlePostContent .articlePreview .page{
     width: 98%;
     padding: 20px;
     box-sizing: border-box;
     display: block;
     margin:0 auto 20px;
-    background-color: #fbf7f3;
+    background-color: #F7F7F7;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -143,17 +152,17 @@
         position: sticky;
         top: 0;
     }
-    //轉成左右分割線
-    .articlePostContent .articleEdit::before{
-        // 定位在.articleEdit
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        right: 0;
-        content: '';
-        width: 1px;
-        height: 95%;
-        background-color: #8888; 
-    }
+    // //轉成左右分割線
+    // .articlePostContent .articleEdit::before{
+    //     // 定位在.articleEdit
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     margin: auto;
+    //     right: 0;
+    //     content: '';
+    //     width: 1px;
+    //     height: 95%;
+    //     background-color: #8888; 
+    // }
 }

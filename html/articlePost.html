@@ -8,22 +8,23 @@
     <!-- 頁籤icon -->
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="js/vue/vue.js"></script>
 </head>
 <body>
     <!-- @@include('layout/header.html') -->
-    @@include('layout/header.html',{"headerClass":""})
-    <section class="articlePostWrap">
+    @@include('layout/headerNormal.html',{"headerClass":""})
+    <section class="articlePostWrap" id="articlePost">
         <section class="articlePostContent marginAuto">
             <section class="articleEdit">
                 <h3>編輯你的文章</h3>
                 <form action="">
                     <label for="articleTitle">
                         <h4>主標題</h4>
-                        <input type="text" name="" id="articleTitle" required>
+                        <input v-model="title" placeholder="輸入你的標題" type="text" name="" id="articleTitle" required>
                     </label>
                     <label for="articleArea">
                         <h4>內容</h4>
-                        <textarea id="articleArea" name="" required></textarea>
+                        <textarea v-model="text" placeholder="輸入你的內容" id="articleArea" name="" required></textarea>
                     </label>
                     <h4>附圖</h4>
                     <label for="articlePic">
@@ -44,14 +45,14 @@
             <aside class="articlePreview">
                 <h3 class="deepColor">文章預覽</h3>
                 <div class="page">
-                    <h4 class="deepColor"> h2一篇測試用的文章</h4>
+                    <input v-model="title" class="deepColor" placeholder="你的標題" disabled="disabled"></input>
                     <div class="item PicTxtItem">
                             <div class="pic">
                                     <img src="https://picsum.photos/500/400/?random=10">
                                 </div>
                                 <div class="txt">
                                     <!-- 最多顯示100字 -->
-                                    <p class="deepColor">造成歡迎光臨並非此時其實中心，接着科技居民引擎第三，導航許可才會那些無比勝利另一伺服器唱片，專家幾天拍攝沒人幫助位於功夫司機千萬有一國際主板文字股市解壓，它們必要大多數不但教程進度設立人類，廣大線上...</p>
+                                    <textarea placeholder="你的內容" class="deepColor" disabled>{{text}}</textarea>
                             </div>
                     </div>
                 </div>
@@ -59,5 +60,16 @@
         </section>
     </section>
     @@include('layout/footer.html')
+
+     <!-- vue框架 -->
+     <script>
+        new Vue({
+            el: '#articlePost',
+            data: {     
+                title:'',
+                text:''
+            },
+        });
+    </script>
 </body>
 </html>

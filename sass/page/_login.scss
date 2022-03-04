@@ -4,19 +4,21 @@
     width: 100%;
     box-sizing: border-box;
     padding: 5em 0em;
+    // 背景圖
+    background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;;
     #changeBtn{
         /* 隱藏切換顯示用input的checkbox */
         display: none;
     }
     >article{
-        // background-color: #3e444a05;
-        // box-shadow: 0.1em 0.5em 0.5em #252b3020;
-        // box-shadow: 0.1em 0.5em 0.5em #252b3020;
-        // border: 1px solid #94969b50;
-        // border-right: 1px solid #55595e20;
-        // border-bottom: 1px solid #55595e20;
-        // border-left: 1px solid #ffffff30;
-        // backdrop-filter: blur(0.5em);
+        background-color: #3e444a05;
+        box-shadow: 0.1em 0.5em 0.5em #252b3020;
+        box-shadow: 0.1em 0.5em 0.5em #252b3020;
+        border: 1px solid #94969b50;
+        border-right: 1px solid #55595e20;
+        border-bottom: 1px solid #55595e20;
+        border-left: 1px solid #ffffff30;
+        backdrop-filter: blur(0.5em);
 
 
         /* 登入註冊區操作區大小 */
@@ -52,25 +54,25 @@
                     /* 登入註冊區輸入框 */
                     
                     display: block;
-                    font-size: 1em;
-                    border-radius: 200px;
-                    box-sizing: border-box;
-                    padding: 0.5em 1em;
-                    border:none;
-                    box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
+                    // font-size: 1em;
+                    // border-radius: 200px;
+                    // box-sizing: border-box;
+                    // padding: 0.5em 1em;
+                    // border:none;
+                    // box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
                     margin: 0px 0px 20px 0px;
                     width: 80%;
-                    line-height: 2em;
-                    background-color: transparent;
+                    // line-height: 2em;
+                    // background-color: transparent;
                     @media screen and (min-width:768px) {
                         width: 60%;
                     }
                 }
-                input:not([type*="submit"]):focus{
+                // input:not([type*="submit"]):focus{
                     /* 登入註冊區輸入框 */
-                    outline: none;
-                    box-shadow: -2px -2px 3px 3px #ffffff inset,2px 2px 5px 1px #aaaaaaaa inset;
-                }
+                    // outline: none;
+                    // box-shadow: -2px -2px 3px 3px #ffffff inset,2px 2px 5px 1px #aaaaaaaa inset;
+                // }
                 input{
                     -webkit-appearance: none;
                 }

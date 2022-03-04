@@ -2,12 +2,14 @@ header{
     position: sticky;
     top:0;
     z-index: 9999;
-    background-color: #3e444a05;
-    box-shadow: 0.1em 0.2em 0.2em #252b3010;
-    border: 1px solid #94969b00;
-    border-right: 1px solid #55595e20;
-    border-bottom: 1px solid #55595e20;
-    border-left: 1px solid #ffffff30;
+    background-color: #F7F7F7;
+    // background-color: transparent;
+    // background-color: #3e444a05;
+    // box-shadow: 0.1em 0.2em 0.2em #252b3010;
+    // border: 1px solid #94969b00;
+    // border-right: 1px solid #55595e20;
+    // border-bottom: 1px solid #55595e20;
+    // border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
     padding: 1em 0;
     transition: top .3s;
@@ -163,7 +165,7 @@ header{
 }
 /* li上下間距 */
 .headerContain .mainMenu ul li {
-    padding: 10px 0;
+    padding: 15px 0;
     box-sizing: border-box;
     /* 讓li文字左右排 */
     display: flex;
@@ -185,6 +187,14 @@ header{
 .headerContain .login{
     display: flex;
     align-items: center; 
+}
+.headerContain .mainMenu li .login a{
+    text-decoration: none;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    border-radius: 200px;
+    transition: .3s;
+    margin: 0 2px;
 }
 /* login的a覆寫所有a:hover */
 .headerContain .mainMenu .login a:hover{
