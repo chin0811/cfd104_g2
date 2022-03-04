@@ -149,7 +149,7 @@
     transform: perspective(1000px);
 }
 .cover, .back{
-    width: 200px;
+    width: 160px;
     height: 120px;
     backface-visibility: hidden;
     position: absolute;
@@ -344,7 +344,7 @@ margin-right: 2.9%;
 }
 .tab-content .tag{
     cursor: pointer;
-    width: 200px;
+    width: 160px;
     height: 30px;
     box-sizing: border-box;
     padding: 5px 0px 5px 5px;
