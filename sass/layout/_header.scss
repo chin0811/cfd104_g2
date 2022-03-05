@@ -3,13 +3,6 @@ header{
     top:0;
     z-index: 9999;
     background-color: #F7F7F7;
-    // background-color: transparent;
-    // background-color: #3e444a05;
-    // box-shadow: 0.1em 0.2em 0.2em #252b3010;
-    // border: 1px solid #94969b00;
-    // border-right: 1px solid #55595e20;
-    // border-bottom: 1px solid #55595e20;
-    // border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
     padding: 1em 0;
     transition: top .3s;
@@ -87,38 +80,13 @@ header{
 .headerContain .mainMenu ul li label{
     cursor: pointer;
 }
-// /*------ 兩顆icon ------*/
-// .headerContain .mainMenu li .memberList{
-//     display: flex;
-//     align-items: center;
-// }
-// .headerContain .mainMenu li .memberList .icon{
-//     width: 30px;
-//     margin: 0 10px;
-// }
-// .headerContain .mainMenu li .memberList .icon img{
-//     width:100%;
-//     vertical-align: middle;
-//     cursor: pointer;
-// }
-// .headerContain .mainMenu li .memberList .icon img:hover{
-//     transform: scale(1.02);
-//     transition: .3s;
-// }
-// 原兩顆icon
-// .headerContain .mainMenu li .memberList .icon:first-child img:hover{
-//     content: url(../image/home_header_iconBellHover.png);
-// }
-// .headerContain .mainMenu li .memberList .icon:last-child img:hover{
-//     content: url(../image/home_header_iconMemberHover.png);
-// }
 /*------ 控制下拉式選單 ------*/
 /* 隱藏input按鈕 */
 #navMenu{
     display: none;
 }
 /* 隱藏下拉式選單 */
-.headerContain .mainMenu ul li:first-child ul{
+.headerContain .mainMenu ul li:nth-child(2) ul{
     display: none;
 }
 /* 按鈕按到打開下拉式選單 */
@@ -158,7 +126,7 @@ header{
 .headerContain .mainMenu ul ul {
     height: auto;
 }
-.headerContain .mainMenu ul li:first-child {
+.headerContain .mainMenu ul li:nth-child(2) {
     /* 讓下拉式選單能夠往下直排 */
     display: block;
     text-align: center;
@@ -200,15 +168,31 @@ header{
 .headerContain .mainMenu .login a:hover{
     color: #FFFFFF;
 }
-.headerContain .mainMenu .notice.header{
-    position: static;
-    margin-left: 10px;
+// 鈴鐺
+.headerContain .noticeHeader{
+    position: relative;
     height: 40px;
     width: 40px;
+    border-radius: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    cursor: pointer;
 }
-.headerContain .mainMenu .notice.header .notice_dot{
+.headerContain .noticeHeader .notice_dot{
+    // 定位在.noticeHeader
+    position: absolute;
     top: -5px;
     right: -6px;
+}
+// 鈴鐺消失
+.headerContain .noticeHeader.none{
+    display: none;
+}
+// 紅點文字
+.headerContain .noticeHeader .notice_dot span{
+    letter-spacing: 0;
 }
 /* ----關閉符號---- */
 .headerContain .mainMenu .close {
