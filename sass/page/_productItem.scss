@@ -265,6 +265,10 @@ a{
     transform: scale(1.02);
     vertical-align: bottom;
 }
+// 點擊收藏變愛心
+.SingleProductIntro .introBox .like .pic img.active{
+    content: url(../image/all_like_hover.png);
+}
 .SingleProductIntro .introBox .like span{
     margin: 0 5px;
 }

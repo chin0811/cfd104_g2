@@ -20,11 +20,11 @@
                 <form action="">
                     <label for="articleTitle">
                         <h4>主標題</h4>
-                        <input v-model="title" placeholder="輸入你的標題" type="text" name="" id="articleTitle" required>
+                        <input placeholder="輸入你的標題" type="text" name="" id="articleTitle" required>
                     </label>
                     <label for="articleArea">
                         <h4>內容</h4>
-                        <textarea v-model="text" placeholder="輸入你的內容" id="articleArea" name="" required></textarea>
+                        <textarea  placeholder="輸入你的內容" id="articleArea" name="" required></textarea>
                     </label>
                     <h4>附圖</h4>
                     <label for="articlePic">
@@ -43,7 +43,10 @@
                 </form>
             </section>
             <aside class="articlePreview">
-                <h3 class="deepColor">文章預覽</h3>
+                <div class="pic">
+                    <img src="assets/image/article_articleContent_beBear.png" alt="">
+                </div>
+                <!-- <h3 class="deepColor">文章預覽</h3>
                 <div class="page">
                     <input v-model="title" class="deepColor" placeholder="你的標題" disabled="disabled"></input>
                     <div class="item PicTxtItem">
@@ -51,18 +54,18 @@
                                     <img src="https://picsum.photos/500/400/?random=10">
                                 </div>
                                 <div class="txt">
-                                    <!-- 最多顯示100字 -->
+                                    最多顯示100字
                                     <textarea placeholder="你的內容" class="deepColor" disabled>{{text}}</textarea>
                             </div>
                     </div>
-                </div>
+                </div> -->
             </aside>
         </section>
     </section>
     @@include('layout/footer.html')
 
      <!-- vue框架 -->
-     <script>
+     <!-- <script>
         new Vue({
             el: '#articlePost',
             data: {     
@@ -70,6 +73,6 @@
                 text:''
             },
         });
-    </script>
+    </script> -->
 </body>
 </html>

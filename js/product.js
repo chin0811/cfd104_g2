@@ -59,3 +59,9 @@ let vm2 = new Vue({
         })
     }
 })
+$(document).ready(function(){
+    // 加入收藏
+    $('.like .pic img').click(function(e){
+        $(this).toggleClass('active');
+    });
+});

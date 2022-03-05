@@ -137,11 +137,15 @@
     vertical-align: bottom;
     transition: .3s;
 }
-// 愛心換顏色
+// hover愛心換顏色
 .productMainSection .commomItem .like .pic img:hover{
     content: url(../image/all_like_hover.png);
     transform: scale(1.02);
     vertical-align: bottom;
+}
+// 點擊收藏變愛心
+.productMainSection .commomItem .like .pic img.active{
+    content: url(../image/all_like_hover.png);
 }
 .productMainSection .commomItem .like span{
     margin: 0 5px;
