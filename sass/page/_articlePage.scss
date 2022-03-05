@@ -39,7 +39,7 @@
 /* 文章上面作者縮圖 */
 .articlePageContent .articlePageWrap .pageContent .authorShortIntro{
     display: flex;
-    justify-content: space-between;
+    // justify-content: start;
     align-items: center;
     padding: 10% 0 3%;
 }
@@ -53,6 +53,13 @@
     border-radius: 300px;
     overflow: hidden;
     margin-right:15px;
+}
+// 檢舉按鈕
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:5%;
 }
 .articlePageContent .articlePageWrap .pageContent .authorShortIntro .report .pic{
     width: 30px;
@@ -77,6 +84,45 @@
 .articlePageContent .articlePageWrap .pageContent .authorShortIntro .report .pic img:hover{
     content: url(../image/articlePage_authorShortIntro_exclamationHover.png);
 }
+//檢舉文字
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report span{
+    position: relative;
+    display: none;
+    color: #fff;
+    background-color: #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+// 檢舉左邊箭頭
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report span::before{
+    // 定位在.report span
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid transparent;
+    border-right: 5px solid #ccc;
+    border-bottom: 5px solid transparent;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 100%;
+}
+// 檢舉圖案hover顯示文字
+.articlePageContent .articlePageWrap .pageContent .authorShortIntro .report:hover > span{
+    display: block;   
+}
+
+
+
+
+
+
+
+
+
 /* 文章內容 */
 .articlePageContent .articlePageWrap .pageContent .page .picTxtitem .pic{
     width: 100%;
@@ -126,22 +172,7 @@
     transition: .3s;
     transform: scale(1.02);
 }
-// 分享icon
-.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .pic:last-child{
-    margin-left: 20px;
-    padding: 5px;
-    box-sizing: border-box;
-
-    // 透明物件
-    border-radius: 200px;
-    box-shadow: 0.1em 0.5em 0.5em #252b3020;
-    background-color: #ffffff50;
-    border: 1px solid #94969b50;
-    border-right: 1px solid #55595e20;
-    border-bottom: 1px solid #55595e20;
-    border-left: 1px solid #ffffff30;
-    backdrop-filter: blur(0.5em);
-}
+// 分享收藏愛心
 .articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like{
     display: flex;  
     align-items: center;
@@ -173,12 +204,34 @@
     vertical-align: bottom;
     transition: .3s;
 }
+// hover過去變色
 .articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like .pic img:hover{
     content: url(../image/all_like_hover.png);
 }
-.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .pic:last-child img:hover{
+// 點擊收藏變愛心
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like .pic img.active{
+    content: url(../image/all_like_hover.png);
+}
+// 留言icon
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic{
+    margin: 15px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    // 透明物件
+    border-radius: 200px;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    background-color: #ffffff50;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+}
+.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic img:hover{
     content: url(../image/articlePage_shareBar_commentHover.png);
 }
+// 社交媒體縮圖
 .articlePageContent .articlePageWrap .pageContent .shareBar .socialMedia{
     display: flex;
     align-items: center;
@@ -373,28 +426,22 @@
     position: absolute;
     top: 1%;
     right: 1%;
-    // background-color: aqua;
-    width: 2rem;
-    height: 2px;
-    transform: rotate(45deg);
     cursor: pointer;
-    border: 1px solid #394897;
-    border-radius: 5px;
 }
-.articlePageContent .articlePageWrap .commentArea .commentClose::before{
-    // 定位在.articlePageContent .articlePageWrap .commentArea .commentClose
-    content: '';
-    position: absolute;
-    top: 1%;
-    right: 1%;
-    // background-color: aqua;
-    width: 2rem;
-    height: 4px;
-    transform: rotate(90deg);
-    cursor: pointer;
-    background-color:#394897;
-    border-radius: 5px;
-}
+// .articlePageContent .articlePageWrap .commentArea .commentClose::before{
+//     // 定位在.articlePageContent .articlePageWrap .commentArea .commentClose
+//     content: '';
+//     position: absolute;
+//     top: 1%;
+//     right: 1%;
+//     // background-color: aqua;
+//     width: 2rem;
+//     height: 4px;
+//     transform: rotate(90deg);
+//     cursor: pointer;
+//     background-color:#394897;
+//     border-radius: 5px;
+// }
 // 輸入區 //
 .articlePageContent .articlePageWrap .commentArea .commentInput{
     margin-bottom: 10%;
