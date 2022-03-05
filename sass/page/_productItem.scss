@@ -65,6 +65,7 @@ a{
     width: 100%;
     vertical-align: top;
     cursor: pointer;
+    object-fit: cover;
 }
 .SingleProductIntro .imgBox>img{
     flex-shrink: 0;
@@ -158,6 +159,8 @@ a{
 }
 .SingleProductIntro .introBox .introtext{
     margin-bottom: 10%;
+    overflow-y:scroll;
+    height: 30%;
 }
 .SingleProductIntro .introBox .time{
     vertical-align: middle;
