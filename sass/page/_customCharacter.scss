@@ -8,38 +8,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    // height: 325px;
 }
 
 
 /* 點擊性別更換 */
 
 .customCharacter_bouncing main .main .controlBlock {
-    display: flex;
+    display: none;
+    // display: flex;
     flex-direction: column;
     width: 50%;
+    height: 100%;
 }
 
 
 /* 男女轉換 */
 
 .switchBetween {
-    margin: 30px 20px;
+    margin: 0px 20px;
     width: 50px;
     height: 30px;
-    background: #394897;
+    background: #ffffff80;
     position: relative;
     /* 男女文字位置擺放 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: #000;
     .switchBetween_round {
         z-index: 1;
         display: inline-block;
         width: 26px;
         height: 26px;
         border-radius: 50%;
-        background: #FFD60A;
+        background: #394897;
         position: absolute;
         /* .switchBetween */
         right: -9px;
@@ -49,7 +55,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background: red;
+        background-color: transparent;
         display: flex;
         justify-content: flex-start;
         align-items: center;

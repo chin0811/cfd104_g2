@@ -16,8 +16,8 @@ viewer = pannellum.viewer('panorama', {
         },
         {
             "id": "collect",
-            "pitch": 25,
-            "yaw": 160,
+            "pitch": -8,
+            "yaw": 125,
             "cssClass": "custom-hotspot collect",
             "createTooltipFunc": hotspot,
             "createTooltipArgs": "收藏",
@@ -97,8 +97,8 @@ window.onresize = function() {
     });
     viewer.addHotSpot({
         "id": "collect",
-        "pitch": 25,
-        "yaw": 160,
+        "pitch": -8,
+        "yaw": 125,
         "cssClass": "custom-hotspot collect",
         "createTooltipFunc": hotspot,
         "createTooltipArgs": "收藏",
