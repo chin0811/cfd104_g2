@@ -68,8 +68,12 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 5px;
+    margin: 0 15px;
     cursor: pointer;
+    @media screen and (min-width:768px) {
+        //手機以上
+        margin: 0 5px;
+    }
 }
 .headerNormalContain .noticeHeader .notice_dot{
     // 定位在.noticeHeader
@@ -205,7 +209,7 @@ header{
     /* 關閉符號 */
     .headerNormalContain .close {
         position: absolute;
-        top: 0.7rem;
+        top: 1rem;
         right: 3rem;
         width: 2rem;
         height: 2rem;
@@ -293,3 +297,20 @@ header{
         left: 0;
     }
 }
+
+
+// 開啟後漢堡消失 鈴鐺 漢堡按鈕
+.headerContain{
+    nav.active {
+        &~ .hamburger,&~ .noticeHeader{
+            display: none;
+        } 
+    }
+    @media screen and (min-width:768px) {
+        &~ .noticeHeader{
+            display: flex;
+        }
+    }
+   
+}
+

@@ -8,10 +8,20 @@
     border: none;
     backdrop-filter: none;
     padding: 0;
-    .headerContain {
+    
+    >.headerContain {
         //最大寬度 .size 覆蓋
         // max-width: none;
         // width: 100%;
+        >.logoContain{
+            >.logo{
+                position: fixed;
+                top: 10px;
+                left: 50px;
+                padding: 0em 0.5em;
+                border-radius: 10px
+            }
+        }
         .hamburger {
             position: fixed;
             top: 10px;
@@ -31,15 +41,28 @@
             aspect-ratio: 1/1;
             border-radius: 50%;
         }
-        .logo {
+        .noticeHeader{
+            //鈴鐺 位置定位
             position: fixed;
             top: 10px;
-            left: 50px;
-            padding: 0em 0.5em;
-            border-radius: 10px
+            right: 60px;
+            width: 50px;
+            height: 50px;
+           
         }
     }
 }
+//原本會員中心 鈴鐺 隱藏
+#panorama{
+    div.notice{
+        display: none;
+    }
+}
+
+
+
+
+
 
 #panorama {
     width: 100vw;
