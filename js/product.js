@@ -7,11 +7,12 @@ function selector(){
     productSelector.classList.toggle("displayNone")
 };
 
+
 // vue的東西
 let data={
     index:0,
     src:'https://picsum.photos/300/200/?random=8',
-    item:[    
+    items:[    
         {img:'https://picsum.photos/300/200/?random=8',title:'標題001',creator:'噴火龍',price:'30,000',time:'2022/02/22'},
         {img:'https://picsum.photos/300/200/?random=10',title:'標題002',creator:'水箭龜',price:'60,000',time:'2032/02/22'},
         {img:'https://picsum.photos/300/200/?random=3',title:'標題003',creator:'水箭龜',price:'60,000',time:'2032/02/22'},
@@ -29,17 +30,36 @@ let data={
 let vm = new Vue({
     el:'#app',
     data: data,
+    // 舊輪播
+    // methods:{
+    //     changeIndex:function(change){
+    //         console.log(this.index)
+    //         this.index= this.index+change;
+    //         if(this.index<0){
+    //             this.index=6
+    //         }else if (this.index>6){
+    //             this.index=0    
+    //         }
+    //     },
+    // },
     methods:{
         changeIndex:function(change){
+            let carouselItem = document.querySelectorAll(".carouselItem");
             console.log(this.index)
-            this.index= this.index+change;
-            if(this.index<0){
-                this.index=6
-            }else if (this.index>6){
-                this.index=0    
+            if(change==-1 && this.index>-7){
+                this.index = this.index-1;
+            }else if(change==1 && this.index<0){
+                this.index = this.index+1;
             }
-        },
-    },
+            let x=this.index*100;
+            y = x+"%";
+            if(this.index<=0 && this.index>=-7){
+                for(let i=0; i<carouselItem.length; i++){
+                    carouselItem[i].style.transform = `translateX(${y})`;
+                }
+            }
+        }
+    }
 })
 let vm2 = new Vue({
     el:"#app2",

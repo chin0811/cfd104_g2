@@ -193,6 +193,7 @@
 .productMainCarousel .carouselBox .prouductItem{
     width:66%;
     flex-shrink: 0;
+    // transform: translateX(-100%);
 }
 @media screen and (min-width:992px){
     .productMainCarousel .carouselBox .prouductItem{
@@ -296,7 +297,8 @@
     flex-wrap: wrap;
 }
 .productiMainProduct article{
-    width: 48%;
+    width: 90%;
+    margin: auto;
     box-sizing: border-box;
     margin-bottom: 1%;
 }
