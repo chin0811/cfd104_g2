@@ -60,7 +60,7 @@ let vm2 = new Vue({
         products:[],
     },
     methods:{
-                    // 控制篩選器
+        // 控制篩選器
         selector(select){
             let productSelector = document.querySelector("#productSelector");
             productSelector.classList.toggle("displayNone");

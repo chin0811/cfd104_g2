@@ -287,7 +287,13 @@
 .productiMainProduct .productSelector{
     width: 90%;
     margin: auto;
-    background-color: #FFD60A;
+    box-sizing: border-box;
+    padding: 0.5%;
+    margin-bottom: 1%;
+}
+.productiMainProduct .productSelector span{
+    margin-right: 1%;
+    cursor: pointer;
 }
 /* 商品欄 */
 .productiMainProduct .productSection{

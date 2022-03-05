@@ -119,8 +119,10 @@
                     <button class="square" id="selectorButton" v-on:click="selector(0)">篩選器</button>
                 </div>
             </div>
-            <section class="productSelector displayNone size marginAuto" id="productSelector">
-                aaa
+            <section class="productSelector displayNone size" id="productSelector">
+                <span>綜合排序</span>
+                <span>最新上架</span>
+                <span>分類</span>
             </section>
             <div class="productSection size marginAuto">
                 <article class="prouductItem commomItem" v-for="product in products">
