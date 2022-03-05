@@ -1,12 +1,3 @@
-// 控制篩選器
-var productSelector = document.querySelector("#productSelector");
-var selectorButton = document.querySelector("#selectorButton");
-console.log(selectorButton);
-selectorButton.addEventListener("click", function(){selector()},false);
-function selector(){
-    productSelector.classList.toggle("displayNone")
-};
-
 
 // vue的東西
 let data={
@@ -43,6 +34,7 @@ let vm = new Vue({
     //     },
     // },
     methods:{
+        // 輪播
         changeIndex:function(change){
             let carouselItem = document.querySelectorAll(".carouselItem");
             console.log(this.index)
@@ -66,6 +58,13 @@ let vm2 = new Vue({
     data:{
         productsData:[],
         products:[],
+    },
+    methods:{
+                    // 控制篩選器
+        selector(select){
+            let productSelector = document.querySelector("#productSelector");
+            productSelector.classList.toggle("displayNone");
+        }
     },
     mounted(){
         axios.get('json/productItems.json').then((res)=>{
