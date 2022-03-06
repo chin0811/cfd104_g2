@@ -74,10 +74,10 @@
                         &#62;
                     </div>
                 </div>
-                
-                <article class="prouductItem commomItem">
+                <!-- 輪播卡片們-->
+                <article class="prouductItem commomItem carouselItem" v-for="item in items">
                     <div class="img">
-                        <img :src="item[index].img">
+                        <img :src="item.img">
                         <!-- 定位absolute，父層prouductItem，定位position -->
                         <div class="like mainColor">
                             <div class="pic">
@@ -89,106 +89,22 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h4>{{item[index].title}}</h4>
+                        <h4 class="deepColor">{{item.title}}</h4>
                         <p>
                             <span class="small lightColor">創作者：</span>
-                            <span class="small lightColor">{{item[index].creator}}</span>
+                            <span class="small lightColor">{{item.creator}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span class="epBColor">{{item[index].price}}</span>
-                        <span class="small">{{item[index].time}}</span>
+                        <span class="epBColor">{{item.price}}</span>
+                        <span class="small deepColor">{{item.time}}</span>
                     </div>
                     <div class="productButton">
-                        <button class="round">出價</button>
+                        <a href="productSingle.html">
+                            <button class="round">出價</button>
+                        </a>
                     </div>
                     
-                </article>
-                <article class="prouductItem commomItem">
-                    <div class="img">
-                        <img :src="item[index+1].img">
-                        <!-- 定位absolute，父層prouductItem，定位position -->
-                        <div class="like mainColor">
-                            <div class="pic">
-                                <img src="assets/image/all_like.png" alt="">
-                            </div>
-                            <span class="small deepColor">
-                                75
-                            </span>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h4>{{item[index+1].title}}</h4>
-                        <p>
-                            <span class="small lightColor">創作者：</span>
-                            <span class="small lightColor">{{item[index+1].creator}}</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span class="epBColor">{{item[index+1].price}}</span>
-                        <span class="small">{{item[index+1].time}}</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">出價</button>
-                    </div>
-                    
-                </article>
-                <article class="prouductItem commomItem">
-                    <div class="img">
-                        <img :src="item[index+2].img">
-                        <!-- 定位absolute，父層prouductItem，定位position -->
-                        <div class="like mainColor">
-                            <div class="pic">
-                                <img src="assets/image/all_like.png" alt="">
-                            </div>
-                            <span class="small deepColor">
-                                75
-                            </span>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h4>{{item[index+2].title}}</h4>
-                        <p>
-                            <span class="small lightColor">創作者：</span>
-                            <span class="small lightColor">{{item[index+2].creator}}</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span class="epBColor">{{item[index+2].price}}</span>
-                        <span class="small">{{item[index+2].time}}</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">出價</button>
-                    </div>
-                    
-                </article>
-                <article class="prouductItem commomItem">
-                    <div class="img">
-                        <img :src="item[index+3].img">
-                        <!-- 定位absolute，父層prouductItem，定位position -->
-                        <div class="like mainColor">
-                            <div class="pic">
-                                <img src="assets/image/all_like.png" alt="">
-                            </div>
-                            <span class="small deepColor">
-                                75
-                            </span>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h4>{{item[index+3].title}}</h4>
-                        <p>
-                            <span class="small lightColor">創作者：</span>
-                            <span class="small lightColor">{{item[index+3].creator}}</span>
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <span class="epBColor">{{item[index+3].price}}</span>
-                        <span class="small">{{item[index+3].time}}</span>
-                    </div>
-                    <div class="productButton">
-                        <button class="round">出價</button>
-                    </div> 
                 </article>
             </section>
         </section>
@@ -200,11 +116,13 @@
             <div class="titleBox size marginAuto">
                 <h4>124件商品</h4>
                 <div class="buttonBox">
-                    <button class="square" id="selectorButton">篩選器</button>
+                    <button class="square" id="selectorButton" v-on:click="selector(0)">篩選器</button>
                 </div>
             </div>
-            <section class="productSelector displayNone size marginAuto" id="productSelector">
-                aaa
+            <section class="productSelector displayNone size" id="productSelector">
+                <span>綜合排序</span>
+                <span>最新上架</span>
+                <span>分類</span>
             </section>
             <div class="productSection size marginAuto">
                 <article class="prouductItem commomItem" v-for="product in products">

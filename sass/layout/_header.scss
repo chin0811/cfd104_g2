@@ -177,8 +177,12 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 5px;
+    margin: 0 15px;
     cursor: pointer;
+    @media screen and (min-width:768px) {
+        //手機以上
+        // margin: 0 5px;
+    }
 }
 .headerContain .noticeHeader .notice_dot{
     // 定位在.noticeHeader
@@ -256,5 +260,20 @@ header{
     .headerContain .mainMenu .close {
         top: 5%;
         right: 2rem;
+    }
+}
+
+
+// 開啟後漢堡消失 鈴鐺 漢堡按鈕
+.headerNormalContain{
+    nav.active {
+        &~ .hamburger,&~ .noticeHeader{
+            display: none;
+        }
+        @media screen and(min-width:768px) {
+            &~ .noticeHeader{
+                display: flex;
+            }
+        }
     }
 }

@@ -65,6 +65,7 @@ a{
     width: 100%;
     vertical-align: top;
     cursor: pointer;
+    object-fit: cover;
 }
 .SingleProductIntro .imgBox>img{
     flex-shrink: 0;
@@ -158,6 +159,8 @@ a{
 }
 .SingleProductIntro .introBox .introtext{
     margin-bottom: 10%;
+    overflow-y:scroll;
+    height: 30%;
 }
 .SingleProductIntro .introBox .time{
     vertical-align: middle;
@@ -264,6 +267,10 @@ a{
     content: url(../image/all_like_hover.png);
     transform: scale(1.02);
     vertical-align: bottom;
+}
+// 點擊收藏變愛心
+.SingleProductIntro .introBox .like .pic img.active{
+    content: url(../image/all_like_hover.png);
 }
 .SingleProductIntro .introBox .like span{
     margin: 0 5px;

@@ -1,22 +1,22 @@
    
     <!-- 客服區 -->
-    <section id="supportApp" :class='openSelect ? "active":"" '>
+    <section id="supportApp" :class='openSelect ? "active ":"transparent" '>
         <article :class="btnClass"   > 
             <!-- <span class="material-icons" >help</span> -->
             <img src="assets\image\supportPage_message_icon.svg" alt="" @click="openSelect = !openSelect">
             <article class="selectRoom">
                 <article class="titleCell">
-                    <h3>客服</h3>
+                    <!-- <h3>客服</h3> -->
                     <!-- <span class="material-icons" @click="openSelect = !openSelect">close</span> -->
                     <img src="assets\image\supportPage_close_icon.svg" alt="" @click="openSelect = !openSelect">
                 </article>
                 <article class="selectBtn">
                     <div @click="openRobotBool = true">
-                        <img src="assets/image/supportPage_robot_icon.svg" alt="">
+                        <img src="assets/image/supportPage_robot_icon.svg" alt="" class="transparent">
                         <p>智能客服</p>
                     </div>
                     <div @click="openPeopleBool = true">
-                        <img src="assets/image/supportPage_people_icon.svg" alt="">
+                        <img src="assets/image/supportPage_people_icon.svg" alt="" class="transparent">
                         <p>線上客服</p>
                     </div>
                 </article>
@@ -72,7 +72,7 @@
                 </article>
                 <article action="#" class="inputArea" v-show="openPeopleBool">
                     <textarea name="" id="" ></textarea>
-                   <img src="assets/image/supportPage_sent_icon.png" alt="">
+                   <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent">
                 </article>
            </article>
         </article>
@@ -97,9 +97,10 @@
                 btnClass(){
                         return {
                             supportChatroom:true,
-                            aidBgColor:true,
+                            // aidBgColor:true,
                             active: this.openSelect,
                             selectRoomActive:this.openRobotBool  || this.openPeopleBool,
+                            lightBox :this.openSelect,
                         };
                 },
                 btnSelectClass(){
