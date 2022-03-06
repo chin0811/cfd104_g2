@@ -32,7 +32,10 @@
 @import 'page/customCharacter';
 @import 'page/myListing';
 @import 'page/notice';
-@import '../assets/3dCss/pannellum.css';
+
+//只有 .scss才能打包... 0.0
+// @import '../assets/3dCss/pannellum.css';
+
 //商品刊登
 @import 'page/listing';
 //藝廊
