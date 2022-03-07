@@ -1,11 +1,12 @@
 
-.loginArea{
+#loginArea{
+    --heightlogin:30em;
     /* 登入註冊區的最外層section */
     width: 100%;
     box-sizing: border-box;
     padding: 5em 0em;
     // 背景圖
-    background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;;
+    background: #ffffff url(../image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;;
     #changeBtn{
         /* 隱藏切換顯示用input的checkbox */
         display: none;
@@ -20,7 +21,6 @@
         border-left: 1px solid #ffffff30;
         backdrop-filter: blur(0.5em);
 
-
         /* 登入註冊區操作區大小 */
         /* 定位內部2塊 登入註冊區 切換區 定位用 */
         display: flex;
@@ -30,7 +30,7 @@
         position: relative;
         border-radius: 10px;
         box-shadow: 0px 0px 5px 0px #aaaaaa55 inset;
-        height: 50em;
+        height: calc(var( --heightlogin) * 2) ;
         @media screen and (min-width:768px) {
             height: auto;
         }
@@ -41,29 +41,19 @@
             box-sizing: border-box;
             // padding: 3em 0em;
             border-radius: 10px;
-            height: 25em;
+            height:  var(--heightlogin);
             @media screen and (min-width:768px) {
                 height: auto;
                 top: 0;
                 bottom: 0;
             }
             >form{
-                // z-index: 0;
-                // transition: z-index 0.3s 0.2s ;
+                
                 input:not([type*="submit"]){
                     /* 登入註冊區輸入框 */
-                    
                     display: block;
-                    // font-size: 1em;
-                    // border-radius: 200px;
-                    // box-sizing: border-box;
-                    // padding: 0.5em 1em;
-                    // border:none;
-                    // box-shadow: -1px -1px 2px 0px #ffffff inset,1px 1px 3px 0px #aaaaaaaa inset;
                     margin: 0px 0px 20px 0px;
                     width: 80%;
-                    // line-height: 2em;
-                    // background-color: transparent;
                     @media screen and (min-width:768px) {
                         width: 60%;
                     }
@@ -76,6 +66,17 @@
                 input{
                     -webkit-appearance: none;
                 }
+                label{
+                    // text-align: left;
+                    width: 80%;
+                    box-sizing: border-box;
+                    line-height: 2em;
+                    padding-left: 1em ;
+                    @media screen and (min-width:768px) {
+                        width: 60%;
+                    }
+
+                }
 
             }
             >form,>article{
@@ -85,6 +86,29 @@
                 align-items: center;
                 justify-content: center;
                 height: 100%;
+                width: 100%;
+            }
+            >form:last-of-type{
+                // 註冊輸入框區
+                width: 100%;
+                // flex-direction: row;
+                // >div{
+                //     height: 100%;
+                //     width: 200%;
+                //     display: flex;
+                //     flex-wrap: wrap;
+                //     >div{
+                //         height: 100%;
+                //         width: 100%;
+                //         display: flex;
+                //         flex-direction: column;
+                //         align-items: center;
+                //         justify-content: center;
+                //     }
+                //     >div:first-of-type{
+                        
+                //     }
+                // }
             }
         }
         >article:first-of-type{
@@ -93,7 +117,7 @@
            
             width: 100%;
             // top: 0;
-            bottom: 25em;
+            bottom: var(--heightlogin);
             transition: bottom 1s ;
             @media screen and (min-width:768px) {
                 right: calc( 100%/5 * 2);
@@ -106,7 +130,7 @@
             /* 選取登入註冊切換區 */
             width: 100%;
             box-shadow: 0px 0px 8px 1px #aaaaaa55 ;
-            top: 25em;
+            top: var( --heightlogin);
             transition: top 1s ;
             // background-color: #fde465 ;
             background-color: #3e444a05;
@@ -117,16 +141,16 @@
             // border-bottom: 1px solid #55595e20;
             // border-left: 1px solid #ffffff30;
             backdrop-filter: blur(0.5em);
-            .roundOutline{
-                /* 橢圓形外框按鈕 */
-                // Box-shadow: 0px 0px 5px 0px #00000055 ;
-                transform: scale(1);
-            }
-            .roundOutline:hover,.squareOutline:hover{
-                /* hover橢圓形外框按鈕 */
-                transform: scale(0.95);
-                transition: transform 0.5s ;
-            }
+            // .roundOutline{
+            //     /* 橢圓形外框按鈕 */
+            //     // Box-shadow: 0px 0px 5px 0px #00000055 ;
+            //     transform: scale(1);
+            // }
+            // .roundOutline:hover,.squareOutline:hover{
+            //     /* hover橢圓形外框按鈕 */
+            //     transform: scale(0.95);
+            //     transition: transform 0.5s ;
+            // }
 
 
             @media screen and (min-width:768px) {
@@ -151,7 +175,8 @@
             }
         }
     }
-    >input[type*="checkbox"]:not(:checked) + article{
+    // >input[type*="checkbox"]:not(:checked) + article{
+    &:not([class*="active"]) > article:first-of-type{
         
         >article:first-of-type>form:last-of-type{
             /* 登入註冊輸入區顯示切換(一開始顯示) */
@@ -167,7 +192,8 @@
         }
 
     }
-    >input[type*="checkbox"]:checked + article{
+    // >input[type*="checkbox"]:checked + article{
+    &[class*="active"]  > article:first-of-type{
         :first-of-type{
             /*選取切換區塊(input在checked時)*/
             bottom: 0;

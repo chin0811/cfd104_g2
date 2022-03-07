@@ -23,8 +23,8 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-     // 背景圖
-     background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;;
+    // 背景圖
+    background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / auto 100%;
 }
 .homeIntro .intro{
     display: block;
@@ -94,6 +94,10 @@
     text-align: center;
 }
 @media screen and (min-width:768px){
+    .homeIntro{
+        // 背景圖
+        background: #ffffff url(../../assets/image/all_bgimg.png) scroll no-repeat 50% 50% / 100% 100%;
+    }
     .homeIntro .intro .pic{
         position: absolute;
         width: 600px;

@@ -73,8 +73,12 @@ input[type*="text"],input[type*="password"],input[type*="email"],textarea{
     -webkit-appearance: none;
 }
 // input check添加陰影
-input:not([type*="submit"]):focus,
-input:not([type*="reset"]):focus,
+input[type*="text"]:focus,
+input[type*="password"]:focus,
+input[type*="password"]:focus,
+input[type*="email"]:focus,
+input[type*="number"]:focus,
+input[type*="tel"]:focus,
 textarea:focus{
     background-color: transparent;
     box-shadow: 0.1em 0.1em 0.2em #252b3020;
@@ -83,6 +87,7 @@ textarea:focus{
     border-bottom: 1px solid #55595e20;
     border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
+    outline: none;
 }
 /* 主要的顏色 */
 .mainColor{

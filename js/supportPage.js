@@ -5,7 +5,7 @@ window.addEventListener('load',function(){
     
     
 window.addEventListener("scroll",function(){
-    if(supportApp.classList != "active"){   //修正客服打開不隱藏
+    if(!supportApp.classList.contains("active")){   //修正客服打開不隱藏
         if(this.scrollY > scrollsupport){
             supportApp.style.right="-60px";
         }else{

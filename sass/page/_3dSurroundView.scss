@@ -8,11 +8,21 @@
     border: none;
     backdrop-filter: none;
     padding: 0;
-    .headerContain {
+    
+    >.headerContain {
         //最大寬度 .size 覆蓋
         // max-width: none;
         // width: 100%;
-        .hamburger{
+        >.logoContain{
+            >.logo{
+                position: fixed;
+                top: 10px;
+                left: 50px;
+                padding: 0em 0.5em;
+                border-radius: 10px
+            }
+        }
+        .hamburger {
             position: fixed;
             top: 10px;
             // background-color: #3e444a05;
@@ -24,7 +34,6 @@
             background: #eeeeee66;
             backdrop-filter: blur(0.5em);
         }
-    
         .hamburger {
             right: 10px;
             width: 50px;
@@ -32,15 +41,28 @@
             aspect-ratio: 1/1;
             border-radius: 50%;
         }
-        .logo {
+        .noticeHeader{
+            //鈴鐺 位置定位
             position: fixed;
             top: 10px;
-            left: 50px;
-            padding: 0em 0.5em;
-            border-radius: 10px
+            right: 60px;
+            width: 50px;
+            height: 50px;
+           
         }
     }
 }
+//原本會員中心 鈴鐺 隱藏
+#panorama{
+    div.notice{
+        display: none;
+    }
+}
+
+
+
+
+
 
 #panorama {
     width: 100vw;
@@ -51,7 +73,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #FFD60A;
+    background: #394897;
     opacity: .8;
 }
 
@@ -63,7 +85,7 @@
     position: absolute;
     /* .custom-hotspot */
     /* 同 .custom-hotspot */
-    background: #FFD60A;
+    background: #394897;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -91,6 +113,12 @@
     margin-left: -17.5px;
     margin-top: -74px;
     white-space: nowrap;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left: 1px solid #ffffff80;
+    -webkit-backdrop-filter: blur(1em);
+    backdrop-filter: blur(1em);
 }
 
 .consumptionRecord span {
@@ -99,6 +127,12 @@
     margin-left: -17.5px;
     margin-top: -74px;
     white-space: nowrap;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left: 1px solid #ffffff80;
+    -webkit-backdrop-filter: blur(1em);
+    backdrop-filter: blur(1em);
 }
 
 .collect span {
@@ -107,6 +141,12 @@
     margin-left: -17.5px;
     margin-top: -74px;
     white-space: nowrap;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left: 1px solid #ffffff80;
+    -webkit-backdrop-filter: blur(1em);
+    backdrop-filter: blur(1em);
 }
 
 .myListing span {
@@ -115,6 +155,12 @@
     margin-left: -17.5px;
     margin-top: -74px;
     white-space: nowrap;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left: 1px solid #ffffff80;
+    -webkit-backdrop-filter: blur(1em);
+    backdrop-filter: blur(1em);
 }
 
 .customCharacter span {
@@ -123,6 +169,12 @@
     margin-left: -17.5px;
     margin-top: -74px;
     white-space: nowrap;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left: 1px solid #ffffff80;
+    -webkit-backdrop-filter: blur(1em);
+    backdrop-filter: blur(1em);
 }
 
 
@@ -236,7 +288,6 @@ div.custom-tooltip span {
     // div.custom-tooltip span {
     //     visibility: hidden;
     // }
-
     div.custom-tooltip:hover span:after {
         content: '';
         position: absolute;
@@ -297,4 +348,19 @@ div.custom-tooltip span {
         flex-wrap: wrap;
         flex-direction: column;
     }
+}
+
+.round3dBtn {
+    text-decoration: none;
+    padding: 10px 25px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 200px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    margin: 0 2px;
+}
+
+.titleButton {
+    font-size: 0.5em;
 }
