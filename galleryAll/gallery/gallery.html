@@ -34,7 +34,7 @@
           cursor: pointer;
       }
       .lightBox .photoBox{
-          background-color:rgb(0, 0, 0);
+          /* background-color:rgb(0, 0, 0); */
           width: 50%;
           height: 80%;
           display: inline-block;
@@ -116,6 +116,9 @@
     .displayNone{
         display: none;
       }
+      #banksy{
+     height: 100vh;
+    }
     </style>
   </head>
   <body>
@@ -245,25 +248,83 @@
             <a href="../../productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </div>
-    <!-- 第二個 -->
+    <!-- slitting -->
     <section class="lightBox displayNone">
         <i class="closeLightBox fas fa-times"></i>
-        <div class="photoBox"></div>
+        <div class="photoBox">
+            <div class="slitting">
+                <main id="banksy">
+                    <!-- <header>
+                    <a href="https://medium.com/@leemartin/how-to-recreate-the-banksy-artwork-shredder-using-css-grid-ff20c0f5a19" target="blank">Read Tutorial on Medium</a>
+                    </header> -->
+                    <div id="piece" @click="$refs.art.click()">
+                    <div id="holder">
+                        <div id="painting">
+                        <div id="shredded">
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        </div>
+                        <div id="original"></div>
+                        </div>
+                    </div>
+                    <div id="frame"></div>
+                </div>
+                <input ref="art" type="file" accept="image/*" @change="artSelected">
+                </main>
+                        </div>
+            </div>
         <div class="lightBoxContent">test01</div>
     </section>
-    <!-- 第三個 -->
+    <!-- flip -->
     <section class="lightBox displayNone">
         <i class="closeLightBox fas fa-times"></i>
-        <div class="photoBox"></div>
+        <div class="photoBox">
+            <div class="flip">
+                <div class="wrap">
+                    <div class="card">
+                        <div class="cover">
+                            <h1 id="first"></h1>
+                        </div>
+                        <div class="back">
+                            <p>Beauty is everywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="lightBoxContent">test02</div>
     </section>
-    <!-- 第四個 -->
-    <section class="lightBox displayNone">
+    <!-- Mona Lisa -->
+    <section class="lightBox">
         <i class="closeLightBox fas fa-times"></i>
-        <div class="photoBox"></div>
+        <div class="photoBox">
+            <div class="MonaLisa">
+                <div class="wrap">
+                    <button id="cubeBtn" class="round">點我</button>
+                    <div class="cube">
+                        <div class="top"></div>
+                        <div>
+                            <span style="--i:0"></span>
+                            <span style="--i:1"></span>
+                            <span style="--i:2"></span>
+                            <span style="--i:3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="lightBoxContent">test03</div>
     </section>
-    <!-- 第五個 -->
+    <!-- bounce -->
     <section class="lightBox displayNone">
         <i class="closeLightBox fas fa-times"></i>
         <div class="photoBox"></div>
@@ -279,5 +340,86 @@
 </html>
 
 <link rel="stylesheet" href="../../assets/css/cigarette.css">
+
+<!-- slitting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
+<link rel="stylesheet" href="../../assets/galleryCss/sliting.css">
+<script>
+const app = new Vue({
+    el: '#banksy',
+    data() {
+    return {
+        shredding: null,
+        dropping: null
+    }
+    },
+    methods: {
+    shred() {
+        this.shredding = anime({
+        targets: '#original',
+        height: 0,
+        duration: 10000,
+        easing: 'linear'
+        })
+
+        this.dropping = anime({
+        targets: '#painting',
+        translateY: '101%',
+        duration: 10000,
+        easing: 'linear'
+        })
+    },
+    artSelected(e) {
+        this.shredding.pause()
+        this.dropping.pause()
+
+        loadImage(
+        e.target.files[0],
+        canvas => {
+            let url = canvas.toDataURL('image/jpeg')
+
+            document.getElementById('original').style.backgroundImage = `url(${url})`
+
+            let elements = Array.from(document.getElementsByClassName('shred'))
+
+            elements.forEach(element => {
+            element.style.backgroundImage = `url(${url})`
+            })
+
+            document.getElementById('original').style.height    = '100%'
+            document.getElementById('painting').style.transform = 'translateY(0)'
+
+            this.shred()
+        }, {
+            canvas: true,
+            crop: true,
+            maxHeight: 566,
+            maxWidth: 392,
+            orientation: true
+        }
+        )
+    }
+    },
+    mounted() {
+    this.shred()
+    }
+})
+</script>
+
+<!-- flip -->
+<link rel="stylesheet" href="../../assets/galleryCss/flip.css">
+
+<!-- Mona Lisa -->
+<link rel="stylesheet" href="../../assets/galleryCss/cube.css">
+<script src="../../jquery.js"></script>
+<script>
+    $(function () {
+        $(`#cubeBtn`).click(function(){
+            $('span').slideToggle();
+        });
+    });
+</script>
 
 

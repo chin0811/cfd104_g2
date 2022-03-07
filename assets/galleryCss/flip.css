@@ -1,0 +1,50 @@
+body{
+    background-color: black;
+}
+.warp{
+    width: 800px;
+    height: 600px;
+    border: 5px solid red;
+    margin: auto;
+}
+.card{
+    width: 500px;
+    position: relative;
+    margin: auto;
+    transform: perspective(1000px);
+}
+.cover, .back{
+    width: 350px;
+    height: 245px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 150px;
+    left: 15%;
+    transition: .25s ease-in-out;
+    box-shadow: 1px 1px 3px 1px #999;
+}
+.cover{
+    background-image: url(listing_bg_picture1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotatey(0deg);
+    display: flex;
+}
+.back{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+    color: white;
+    transform: perspective(1000px) rotatey(-180deg);
+    text-align: center;
+    padding-top: 12%;
+    box-sizing: border-box;
+}
+.back p{
+    text-shadow: 5px 5px 2px #333;
+    font-size: 36px;
+}
+.card:hover .cover{
+    transform: rotateY(180deg);
+}
+.card:hover .back{
+    transform: rotateY(0deg);
+}
