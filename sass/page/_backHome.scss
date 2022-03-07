@@ -14,7 +14,7 @@ a{
     font-size: 30px;
     display: flex;
     justify-content: space-between;
-    height: 60px;
+    height: 10vh;
     background-color: #FBF7F3;
     .titleBox{
         /* 標題 logo + 文字*/
@@ -92,7 +92,7 @@ a{
     width: 100%;
     position: relative;
     display: flex;
-    height: 93vh;
+    height: 90vh;
 }
 .mainNav{
     width: 18%;
@@ -114,6 +114,6 @@ a{
 /* 主要內容 */
 .mainContent{
     width: 82%;
-   overflow: scroll;
+//    overflow: scroll;
    background-color: rgb(122, 173, 190); 
 }
