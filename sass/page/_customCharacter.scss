@@ -32,7 +32,7 @@
     margin: 0px 20px;
     width: 50px;
     height: 30px;
-    background: #ffffff80;
+    background: #bcbcbc;
     position: relative;
     /* 男女文字位置擺放 */
     display: flex;
@@ -111,6 +111,9 @@
     overflow: hidden;
 }
 
+.customCharacter_bouncing main .main .sliderCharacters .avatar .characterAdjustment{
+    margin-bottom: -2%;
+}
 
 /* 人像控制桿 */
 
@@ -159,6 +162,11 @@
     border-radius: 16px;
     background: #999;
     position: relative;
+    box-shadow: none;
+    padding: 0;
+    line-height: 0;
+    border-radius: 0;
+    backdrop-filter: none;
 }
 
 
