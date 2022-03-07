@@ -205,9 +205,9 @@
     transition: .3s;
 }
 // hover過去變色
-.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like .pic img:hover{
-    content: url(../image/all_like_hover.png);
-}
+// .articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like .pic img:hover{
+//     content: url(../image/all_like_hover.png);
+// }
 // 點擊收藏變愛心
 .articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .like .pic img.active{
     content: url(../image/all_like_hover.png);
