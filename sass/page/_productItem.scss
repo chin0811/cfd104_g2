@@ -262,12 +262,12 @@ a{
     vertical-align: bottom;
     transition: .3s;
 }
-// 愛心換顏色
-.SingleProductIntro .introBox .like .pic img:hover{
-    content: url(../image/all_like_hover.png);
-    transform: scale(1.02);
-    vertical-align: bottom;
-}
+// // 愛心換顏色
+// .SingleProductIntro .introBox .like .pic img:hover{
+//     content: url(../image/all_like_hover.png);
+//     transform: scale(1.02);
+//     vertical-align: bottom;
+// }
 // 點擊收藏變愛心
 .SingleProductIntro .introBox .like .pic img.active{
     content: url(../image/all_like_hover.png);

@@ -31,7 +31,7 @@
         margin-top: 1em;
         padding-left: 1em;
         line-height: 2;
-        border-left: 3px solid #141414;
+        //border-left: 3px solid #141414;
         color: #141414;
         display: flex;
         justify-content: space-between;
@@ -47,9 +47,10 @@
         display: flex;
         align-items: flex-end;
     }
-    
-    .accountManagement_bouncing main .img {
+
+    .accountManagement_bouncing main .characterAdjustment_box {
         width: 50%;
+        margin-bottom: -2em;
     }
     
     .question {

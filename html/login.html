@@ -14,7 +14,6 @@
 
 <body>
     @@include('layout/headerNormal.html')
-
     <!-- 登入註冊區 -->
     <section id="loginArea" :class="liginClass">
         <!-- 切換顯示用input display:none -->
@@ -30,24 +29,29 @@
                     <input type="submit" value="登入" class="round">
                 </form>
                 <form action="#">
-                    
-                            <!-- <label for="memName">姓名</label>
-                            <input type="text" placeholder="藝起" required id="memName">
-                            <label for="memTel">電話</label>
-                            <input type="password" placeholder="0900000000" required id="memTel">
-                            <label for="memAddress">地址</label>
-                            <input type="password" placeholder="桃園市中壢區復興路46號9樓" required id="memAddress">
-                            <input type="submit" value="註冊" class="round"> -->
-                        
-                            <label for="addMemId">帳號</label>
-                            <input type="text" placeholder="ArtTogether" required id="addMemId">
-                            <label for="addMemPsw">密碼</label>
-                            <input type="password" placeholder="＊＊＊＊" required id="addMemPsw">
-                            <label for="addMemPswAgain">確認密碼</label>
-                            <input type="password" placeholder="＊＊＊＊" required id="addMemPswAgain">
-                            <label for="email">信箱</label>
-                            <input type="email" placeholder="ArtTogether@gmail.com" required id="email">
-                            <input type="submit" value="下一步" class="round">
+                        <div>
+                            <div>
+                                <label for="memName">姓名</label>
+                                <input type="text" placeholder="藝起" required id="memName">
+                                <label for="memTel">電話</label>
+                                <input type="password" placeholder="0900000000" required id="memTel">
+                                <label for="memAddress">地址</label>
+                                <input type="password" placeholder="桃園市中壢區復興路46號9樓" required id="memAddress">
+                                <input type="submit" value="註冊" class="round">
+                            </div>
+                            <div>
+                                <label for="addMemId">帳號</label>
+                                <input type="text" placeholder="ArtTogether" required id="addMemId">
+                                <label for="addMemPsw">密碼</label>
+                                <input type="password" placeholder="＊＊＊＊" required id="addMemPsw">
+                                <label for="addMemPswAgain">確認密碼</label>
+                                <input type="password" placeholder="＊＊＊＊" required id="addMemPswAgain">
+                                <label for="email">信箱</label>
+                                <input type="email" placeholder="ArtTogether@gmail.com" required id="email">
+                                <input type="submit" value="下一步" class="round">
+                            </div>
+                        </div>
+                           
                        
                 </form>
             </article>

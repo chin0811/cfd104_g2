@@ -184,6 +184,9 @@ header{
         // margin: 0 5px;
     }
 }
+.headerContain .noticeHeader:hover{
+    filter: brightness(0.9);
+}
 .headerContain .noticeHeader .notice_dot{
     // 定位在.noticeHeader
     position: absolute;

@@ -55,8 +55,10 @@
 .articlePostContent .articleEdit label[for=articlePic]{
     display: inline-block;
 }
-.articlePostContent .articleEdit label[for=articlePic] .selectPic{
-    width: 400px;
+// 圖片的容器
+.articlePostContent .articleEdit #articlePicSelect{
+    max-width: 400px;
+    max-height: 400px;
 }
 .articlePostContent .articleEdit label[for=articlePic] .pic{
     width: 50px;
@@ -162,6 +164,7 @@
         width: 40%;
         justify-content: center;
         align-items: flex-end;
+        opacity: 0.8;
     }
     // //轉成左右分割線
     // .articlePostContent .articleEdit::before{
