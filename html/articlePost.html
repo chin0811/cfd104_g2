@@ -9,6 +9,7 @@
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/vue/vue.js"></script>
+    <script src="js/articlePost.js"></script>
 </head>
 <body>
     <!-- @@include('layout/header.html') -->
@@ -20,22 +21,22 @@
                 <form action="">
                     <label for="articleTitle">
                         <h4>主標題</h4>
-                        <input placeholder="輸入你的標題" type="text" name="" id="articleTitle" required>
+                        <input maxlength="11" placeholder="輸入你的標題" type="text" name="" id="articleTitle" required @input="descInput" v-model="desc" ><span class="leftText lightColor small">剩餘字數：{{remnant}}/11</span>
                     </label>
-                    <label for="articleArea">
+                    <label  for="articleArea">
                         <h4>內容</h4>
                         <textarea  placeholder="輸入你的內容" id="articleArea" name="" required></textarea>
                     </label>
-                    <h4>附圖</h4>
+                    <h4>附圖(請選擇一張圖片)</h4>
+                    <!-- 選到圖片的容器 -->
                     <label for="articlePic">
-                        <!-- 選到圖片的容器 -->
-                        <div class="selectPic displayNone"></div>
-                        <div class="pic">
+                        <img id="articlePicSelect">
+                        <div class="pic" >
                                 <!-- 後端抓到資料庫要替換掉 -->
                                 <img src="assets/image/upload_image_icon.png" alt="">
                         </div>
                     </label>
-                    <input type="file" id="articlePic" accept="image/png, image/jpeg" required>
+                    <input type="file" id="articlePic" accept="image/png, image/jpeg"  required>
                     <div class="buttonList">
                         <input class="squareOutline" type="reset" value="取消" >
                         <input class="square" type="submit" value="刊登">
@@ -65,14 +66,21 @@
     @@include('layout/footer.html')
 
      <!-- vue框架 -->
-     <!-- <script>
+     <script>
         new Vue({
             el: '#articlePost',
-            data: {     
-                title:'',
-                text:''
+            data(){
+                return{
+                remnant: 11
+                }
             },
+            methods:{
+                descInput(){
+                var txtVal = this.desc.length;
+                this.remnant = 11 - txtVal;
+                }
+            }
         });
-    </script> -->
+    </script>
 </body>
 </html>
