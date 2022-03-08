@@ -11,6 +11,79 @@
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
 }
+// sweetAlert
+// 跳窗本身
+.swal-modal{
+    border-radius: 30px;
+    background-color: #ffffff80;
+    box-shadow: 0.5em 0.5em 0.5em #252b3080;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left:1px solid  #ffffff80;
+    backdrop-filter: blur(1em);
+}
+// title
+.swal-title{
+    font-size: 24px;
+    line-height: 2;
+	letter-spacing:2px;
+}
+//icon
+.swal-icon{
+    width: 20%;
+}
+// 跳窗開啟後頁面
+.swal-overlay {
+    background-color: #3333337e;
+    backdrop-filter: blur(0.5em);
+}
+// 取消按鈕
+.swal-button.cancel{
+    color: #141414;
+    border: 1px solid transparent;
+    border-radius: 200px;
+    transition: .3s;
+
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    background-color: #ffffff80;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+}
+// 檢舉按鈕
+.swal-button.report{
+    color: #FFFFFF;
+    background-color: #394897;
+    border: 1px solid #394897;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border-radius: 200px;
+    transition: .3s;
+}
+// 返回按鈕
+.swal-button.goBack{
+    color: #FFFFFF;
+    background-color: #394897;
+    border: 1px solid #394897;
+    box-shadow: 0.1em 0.5em 0.5em #252b3020;
+    border-radius: 200px;
+    transition: .3s;
+}
+// 按鈕hover
+.swal-button.cancel:hover,
+.swal-button.report:hover,
+.swal-button.goBack:hover{
+    color: #FFFFFF;
+    background-color: #141414;
+    border: 1px solid #141414;
+}
+// 按鈕置中
+.swal-footer{
+    display: flex;
+    justify-content: center;
+}
 /* 所有a設定 */
 .articlePageContent{
     position: relative;
