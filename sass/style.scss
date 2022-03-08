@@ -32,6 +32,8 @@
 @import 'page/customCharacter';
 @import 'page/myListing';
 @import 'page/notice';
+// 共用卷軸(scrollbar)樣式
+@import 'layout/scrollbar';
 
 //只有 .scss才能打包... 0.0
 // @import '../assets/3dCss/pannellum.css';

@@ -1,0 +1,129 @@
+html, body, main{
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+main{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#piece{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
+    cursor: pointer;
+    height: 50vh;
+    max-height: 820px;
+    position: relative;
+    width: calc(50vh * 0.774);
+}
+
+#frame{
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/banksy-frame.png);
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#holder{
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/banksy-back.jpg);
+    background-size: cover;
+    height: calc(50vh * 0.69);
+    left: 18.9%;
+    position: absolute;
+    top: 15.4%;
+    width: calc(50vh * 0.774 * 0.617);
+}
+
+#painting{
+    height: 100%;
+    position: absolute;
+    transform: translateY(0%);
+    width: 100%;
+}
+
+#original, .shred{
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/anne-painting.jpg);
+    background-size: cover;
+}
+
+#original{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#shredded{
+    bottom: 0;
+    display: grid;
+    grid-column-gap: 3px;
+    grid-template-columns: repeat(11, 1fr);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#shredded .shred{
+    background-position: top center;
+}
+
+#shredded .shred:nth-child(1){
+    background-position: 0% 0%;
+}
+
+#shredded .shred:nth-child(2){
+    background-position: 10% 0%;
+}
+
+#shredded .shred:nth-child(3){
+    background-position: 20% 0%;
+}
+
+#shredded .shred:nth-child(4){
+    background-position: 30% 0%;
+}
+
+#shredded .shred:nth-child(5){
+    background-position: 40% 0%;
+}
+
+#shredded .shred:nth-child(6){
+    background-position: 50% 0%;
+}
+
+#shredded .shred:nth-child(7){
+    background-position: 60% 0%;
+}
+
+#shredded .shred:nth-child(8){
+    background-position: 70% 0%;
+}
+
+#shredded .shred:nth-child(9){
+    background-position: 80% 0%;
+}
+
+#shredded .shred:nth-child(10){
+    background-position: 90% 0%;
+}
+
+#shredded .shred:nth-child(11){
+    background-position: 100% 0%;
+}
+
+input{
+    display: none;
+}
+
+header{
+    position: absolute;
+    top: 2em;
+}
+
+header a{
+    color: black;
+}
