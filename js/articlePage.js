@@ -15,6 +15,46 @@ $(document).ready(function(){
     $('.like .pic img').click(function(e){
         $(this).toggleClass('active');
     });
+
+    // 跳窗套件
+    $('.articlePageContent .authorShortIntro .report').click(function(){
+        swal({
+            title: "您是否要檢舉？",
+            icon: '../assets/image/articlePage_authorShortIntro_exclamation.png',
+            buttons: {
+                // 取消按鈕
+                Cancel: {
+                    text: "取消",
+                    value: null,
+                    // 新增class
+                    className:'cancel',
+                },
+                // 檢舉按鈕
+                report: {
+                    text: "檢舉",
+                    value: 'report',
+                    // 新增class
+                    className:'report',
+                },  
+            }
+            // 如果按鈕值是report，則會有下一個跳窗
+        }).then((value)=>{
+            if(value == 'report'){
+                swal({
+                    text: "感謝您的檢舉，平台會審核內容。",
+                    buttons:{
+                        goBack: {
+                            text: "返回",
+                            className:'goBack',
+                        }
+                    },
+                    // 跳回文章總覽
+                }).then(function() {
+                    window.location = "articleAll.html";
+                });
+            }
+        })
+    });
 });
 
 
