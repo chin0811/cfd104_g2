@@ -13,6 +13,9 @@
     <script src="galleryAll/js/OBJLoader.js"></script>
     <script src="galleryAll/gallery/threex.domevents.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="js/vue/vue.min.js"></script>
+    <!-- 彈跳公仔JS -->
+    <script src="js/galleryBounceDoll.js" async></script>
   </head>
   <body>
     @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })
@@ -155,7 +158,15 @@
     <!-- bounce -->
     <section class="lightBox displayNone" id="lightBoxBo">
         <i class="closeLightBox fas fa-times" id="closeLightBoxBo"></i>
-        <div class="photoBox"></div>
+        <div class="photoBox photoBoxBounceDoll">
+            <div id="bounceDoll" v-on:mousemove="updateCoordinates">
+                <div class="bounce" >
+                    <div class="bounceA">
+                        <img src="assets/image/gallery_bounceDoll.png" alt="" class="ball" v-on:mousedown="move"  >
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="lightBoxContent">
             <h3>寂寞菸火</h3>
             <p>創作者:噴火龍</p>
