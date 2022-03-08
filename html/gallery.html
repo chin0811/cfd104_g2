@@ -5,97 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>藝廊</title>
-    <link rel="icon" href="../../assets/icon/a_icon.ico" type="art together icon">
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
+    <link rel="stylesheet" href="galleryAll/gallery/index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
-    <script type="module" src="./index_1.js"></script>
-    <script src="../js/OBJLoader.js"></script>
-    <script src="threex.domevents.js"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script type="module" src="galleryAll/gallery/index.js"></script>
+    <script src="galleryAll/js/OBJLoader.js"></script>
+    <script src="galleryAll/gallery/threex.domevents.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <!-- header -->
-    <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../../js/header.js"></script>
-    <header class="SurroundViewHeader">
-        <section class="headerContain">
-            <div class="logoContain">
-                <div class="logo">
-                    <a href="../../homePage.html">
-                        <img src="../../assets/image/all_logo.png">
-                    </a>
-                </div>
-            </div>
-            <div class="hamburger"></div>
-            <nav class="mainMenu fullscreen">
-                <ul>
-                    <li style="--animation-order: 1;">
-                        <input id="navMenu" type="checkbox">
-                        <label for="navMenu" class="deepColor">
-                            <a href="../../galleryDoor.html" class="deepColor">
-                                藝廊
-                            </a>
-                            <b>
-                                ▼
-                            </b>
-                        </label>
-                        <ul>
-                            <li><a href="../../galleryAll/gallery/gallery.html" class="lightColor">展示區</a></li>
-                            <li><a href="../../galleryAll/gallery/gallery.html" class="lightColor">雕塑類</a></li>
-                            <li><a href="../../galleryAll/gallery/gallery.html" class="lightColor">畫作類</a></li>
-                            <li><a href="../../galleryAll/gallery/gallery.html" class="lightColor">公仔類</a></li>
-                            <li><a href="../../galleryAll/gallery/gallery.html" class="lightColor">品牌合作</a></li>
-                        </ul>
-                    </li>
-                    <li style="--animation-order: 2;" >
-                        <a href="../../prouductAll.html" class="deepColor">拍賣廳</a>
-                    </li>
-                    <li style="--animation-order: 3;">
-                        <a href="../../articleAll.html" class="deepColor">藝論</a>
-                    </li>
-                    <li style="--animation-order: 4;">
-                        <a href="../../about.html" class="deepColor">關於我們</a>
-                    </li>
-                    <li style="--animation-order: 5;">
-                        <a href="../../3dSurroundView.html" class="deepColor">會員中心</a>
-                    </li>
-                    <!-- <li style="--animation-order: 6;">
-                        <div class="memberList">
-                            <div class="icon">
-                                <a href="">
-                                    <img src="assets/image/home_header_iconBell.png">
-                                </a>
-                            </div>
-                            <div class="icon">
-                                <a href="">
-                                    <img src="assets/image/home_header_iconMember.png">
-                                </a>
-                            </div>
-                        </div>
-                    </li> -->
-                    <li style="--animation-order: 6;">
-                        <div class="login">
-                            <a href="../../login.html" class="whiteRound">登入</a>
-                            <a href="../../listing.html" class="round">上架</a>
-                            <div class="notice header">
-                                <i class="fas fa-bell"></i>
-                                <!-- 通知紅點 -->
-                                <span class="notice_dot">
-                                    <span class="notice_dotNumber"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="close">
-                    <div></div>
-                </div>
-            </nav>
-        </section>
-    </header>
-    <!-- header結束 -->
+    @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })
     <div id="stats"></div>
     <!-- 香菸 -->
     <div class="lightBox displayNone cigaretteBox" id="lightBoxCi">
@@ -138,7 +58,7 @@
             <h3>寂寞菸火</h3>
             <p>創作者:噴火龍</p>
             <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
-            <a href="../../productSingle.html" class="goPrice round">前往出價</a>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </div>
     <!-- slitting -->
@@ -179,7 +99,7 @@
             <h3>寂寞菸火</h3>
             <p>創作者:噴火龍</p>
             <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
-            <a href="../../productSingle.html" class="goPrice round">前往出價</a>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </section>
     <!-- flip -->
@@ -203,7 +123,7 @@
             <h3>寂寞菸火</h3>
             <p>創作者:噴火龍</p>
             <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
-            <a href="../../productSingle.html" class="goPrice round">前往出價</a>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </section>
     <!-- Mona Lisa -->
@@ -229,7 +149,7 @@
             <h3>寂寞菸火</h3>
             <p>創作者:噴火龍</p>
             <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
-            <a href="../../productSingle.html" class="goPrice round">前往出價</a>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </section>
     <!-- bounce -->
@@ -240,7 +160,7 @@
             <h3>寂寞菸火</h3>
             <p>創作者:噴火龍</p>
             <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
-            <a href="../../productSingle.html" class="goPrice round">前往出價</a>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </section>
     <!-- 提示 -->
@@ -252,13 +172,13 @@
 </body>
 </html>
 
-<link rel="stylesheet" href="../../assets/css/cigarette.css">
+<link rel="stylesheet" href="assets/css/cigarette.css">
 
 <!-- slitting -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
-<link rel="stylesheet" href="../../assets/galleryCss/sliting.css">
+<link rel="stylesheet" href="assets/galleryCss/sliting.css">
 <script>
 const app = new Vue({
     el: '#banksy',
@@ -322,11 +242,11 @@ const app = new Vue({
 </script>
 
 <!-- flip -->
-<link rel="stylesheet" href="../../assets/galleryCss/flip.css">
+<link rel="stylesheet" href="assets/galleryCss/flip.css">
 
 <!-- Mona Lisa -->
-<link rel="stylesheet" href="../../assets/galleryCss/cube.css">
-<script src="../../jquery.js"></script>
+<link rel="stylesheet" href="assets/galleryCss/cube.css">
+<script src="js/jquery/jquery.min.js"></script>
 <script>
     $(function () {
         $(`#cubeBtn`).click(function(){
