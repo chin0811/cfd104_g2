@@ -50,7 +50,7 @@ function init() {
   var gallery;
   loader.load
   (
-    "galleryAll/gallery/scene_05.json",
+    "scene_05.json",
     function(gallery){
       scene.add(gallery);
       gallery.position.set(0, -2, -3);
@@ -78,7 +78,7 @@ function init() {
 		lightBoxCi.classList.toggle("displayNone");
 	});
 	loader.load(
-		"galleryAll/gallery/smoke.json",
+		"smoke.json",
 		function(smoke){
 		scene.add(smoke);
 		smoke.position.set(-3, 8, -15);
@@ -121,7 +121,7 @@ function init() {
 	});
 	// 引入蒙娜麗莎
 	loader.load(
-	"galleryAll/gallery/cube.json",
+	"cube.json",
 	function(cube){
 		scene.add(cube);
 		cube.position.set(54,3,-8)
@@ -146,7 +146,7 @@ function init() {
 	});
    // 引入彈跳公仔
    loader.load(
-    "galleryAll/gallery/figure02.json",
+    "figure02.json",
     function(figure02){
 		scene.add(figure02);
 		figure02.position.set(70,5,-5)
@@ -170,7 +170,7 @@ function init() {
 	});
      // 引入照片1
 	loader.load(
-	"galleryAll/gallery/photo01.json",
+	"photo01.json",
 	function(photo01){
 	scene.add(photo01);
 	photo01.position.set(12,3,0)
@@ -195,7 +195,7 @@ function init() {
 	});
     // 引入照片2
 	loader.load(
-	"galleryAll/gallery/photo02.json",
+	"photo02.json",
 	function(photo02){
 		scene.add(photo02);
 		photo02.position.set(41,3,-6.1)
