@@ -475,14 +475,14 @@ height: 200px;
     left: 0;
     width: 100px;
     height: 100px;
-    background-color: #0f0;
+    background-color: rgb(255, 0, 170);
     transform: translateZ(-150px);
     filter: blur(20px);
-    box-shadow: 0 0 120px rgba(0,255,0,0.2),
-    0 0 200px rgba(0,255,0,0.4),
-    0 0 300px rgba(0,255,0,0.6),
-    0 0 400px rgba(0,255,0,0.8),
-    0 0 500px rgba(0,255,0,1);
+    box-shadow: 0 0 120px rgba(255,0,170,0.2),
+    0 0 200px rgba(255,0,170,0.4),
+    0 0 300px rgba(255,0,170,0.6),
+    0 0 400px rgba(255,0,170,0.8),
+    0 0 500px rgba(255,0,170,1);
 }
 
 /*背景圖*/
@@ -1210,7 +1210,7 @@ font-size: 1.2rem;
     /* 綠色方塊收起按鈕 */
     .card_body h4{
         text-align: center;
-        padding-top: 15%;
+        // padding-top: 15%;
         font-size: 1.5em;
         line-height: 2;
         letter-spacing:2px;
@@ -1284,14 +1284,14 @@ font-size: 1.2rem;
         left: 0;
         width: 150px;
         height: 150px;
-        background-color: #0f0;
+        background-color: rgb(255, 0, 170);
         transform: translateZ(-250px);
         filter: blur(20px);
-        box-shadow: 0 0 120px rgba(0,255,0,0.2),
-        0 0 200px rgba(0,255,0,0.4),
-        0 0 300px rgba(0,255,0,0.6),
-        0 0 400px rgba(0,255,0,0.8),
-        0 0 500px rgba(0,255,0,1);
+        box-shadow: 0 0 120px rgba(255, 0, 170,0.2),
+        0 0 200px rgba(255, 0, 170,0.4),
+        0 0 300px rgba(255, 0, 170,0.6),
+        0 0 400px rgba(255, 0, 170,0.8),
+        0 0 500px rgba(255, 0, 170,1);
     }
 
     /* 上架填寫分頁1+分頁2 */
