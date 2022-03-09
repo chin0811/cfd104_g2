@@ -1,41 +1,47 @@
+.collect_bouncing main,
 .myListing_bouncing main {
     margin-top: 1em;
 }
 
+.collect_bouncing main .commodityGroup,
 .myListing_bouncing main .commodityGroup {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
 }
 
+.collect_bouncing main .commodityGroup .commodity,
 .myListing_bouncing main .commodityGroup .commodity {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 2em 0;
+    padding: 2em 1em;
     // border-bottom: 1px solid #000;
     margin-top: 2em;
     background-color: #ffffff50;
     border-radius: 1em;
 }
 
+.collect_bouncing main .commodityGroup .commodity:first-child
 .myListing_bouncing main .commodityGroup .commodity:first-child {
     margin-top: 1em;
 }
 
+.collect_bouncing main .commodityGroup .commodity:last-child,
 .myListing_bouncing main .commodityGroup .commodity:last-child {
     border-bottom: 0px solid #000;
 }
 
 
 /* 圖文 */
-
+.collect_bouncing main .commodityGroup .commodity .graphics,
 .myListing_bouncing main .commodityGroup .commodity .graphics {
     position: relative;
 }
 
+.collect_bouncing main .commodityGroup .commodity .graphics .love,
 .myListing_bouncing main .commodityGroup .commodity .graphics .love {
     width: 3em;
     padding: 4px;
@@ -46,38 +52,44 @@
     left: 0.5em;
 }
 
+.collect_bouncing main .commodityGroup .commodity .graphics p,
 .myListing_bouncing main .commodityGroup .commodity .graphics p {
     line-height: 1.5;
 }
 
 
 /* 競標 */
-
+.collect_bouncing main .commodityGroup .commodity .bid>*,
 .myListing_bouncing main .commodityGroup .commodity .bid>* {
     margin-top: 1em;
 }
 
+.collect_bouncing main .commodityGroup .commodity .bid .information,
 .myListing_bouncing main .commodityGroup .commodity .bid .information {
     display: flex;
     flex-direction: column;
 }
 
+.collect_bouncing main .commodityGroup .commodity .bid .information>*,
 .myListing_bouncing main .commodityGroup .commodity .bid .information>* {
     display: flex;
     justify-content: space-between;
 }
 
+.collect_bouncing main .commodityGroup .commodity .bid .information .time,
 .myListing_bouncing main .commodityGroup .commodity .bid .information .time {
     margin-top: 1em;
     color: #999;
 }
 
+.collect_bouncing main .commodityGroup .commodity .bid .information .timeAndButton,
 .myListing_bouncing main .commodityGroup .commodity .bid .information .timeAndButton {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
+.collect_bouncing main .commodityGroup .commodity .bid .information .timeAndButton>*,
 .myListing_bouncing main .commodityGroup .commodity .bid .information .timeAndButton>* {
     margin-bottom: 1em;
 }
@@ -97,9 +109,11 @@
 /* RWD */
 
 @media(min-width:769px) {
+    .collect_bouncing main,
     .myListing_bouncing main {
         margin-top: 1em;
     }
+    .collect_bouncing main .commodityGroup .commodity,
     .myListing_bouncing main .commodityGroup .commodity {
         flex-direction: row;
         justify-content: center;
@@ -109,12 +123,15 @@
         width: 40%;
     }
     */
+    .collect_bouncing main .commodityGroup .commodity .bid,
     .myListing_bouncing main .commodityGroup .commodity .bid {
         padding-left: 3em;
     }
+    .collect_bouncing main .commodityGroup .commodity .bid .information .time,
     .myListing_bouncing main .commodityGroup .commodity .bid .information .time {
         margin-top: 0em;
     }
+    .collect_bouncing main .commodityGroup .commodity .bid .information,
     .myListing_bouncing main .commodityGroup .commodity .bid .information {
         flex-direction: row;
         justify-content: space-between;

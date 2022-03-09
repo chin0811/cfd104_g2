@@ -1,3 +1,4 @@
+/*
 .collect_bouncing main {
     margin-top: 1em;
 }
@@ -12,9 +13,9 @@
 .collect_bouncing main .commodityGroup .commodity {
     margin-top: 1em;
 }
+*/
 
-
-/* 圖文 */
+/* 圖文 
 
 .collect_bouncing main .commodityGroup .commodity .graphics {
     position: relative;
@@ -25,7 +26,7 @@
     padding: 4px;
     border-radius: 30px;
     position: absolute;
-    /* .collect_bouncing main .commodityGroup .commodity .graphics */
+    /* .collect_bouncing main .commodityGroup .commodity .graphics 
     top: .5em;
     left: 0.5em;
 }
@@ -34,8 +35,9 @@
     line-height: 1.5;
 }
 
+*/
 
-/* 競標 */
+/* 競標 
 
 .collect_bouncing main .commodityGroup .commodity .bid>* {
     margin-top: 1em;
@@ -63,7 +65,7 @@
 */
 
 
-/* RWD */
+/* RWD 
 
 @media(min-width:769px) {
     .collect_bouncing main .commodityGroup {
@@ -81,3 +83,6 @@
         justify-content: space-between;
     }
 }
+
+*/
+

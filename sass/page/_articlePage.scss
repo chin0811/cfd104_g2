@@ -425,6 +425,9 @@
         width: 80%;
     }
     /* 測欄相關文章 */
+    .articlePageContent .articlePageWrap .sideInfo{
+        z-index: 2;
+    }
     .articlePageContent .articlePageWrap .sideInfo .relativeSide{
         margin-top: 40px;
     }
