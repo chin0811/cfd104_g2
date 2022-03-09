@@ -271,60 +271,138 @@ font-size: 1.2rem;
     background: #2caae1;
 }
 // flip效果
-.warp{
-    width: 800px;
-    height: 600px;
-    border: 5px solid red;
-    margin: auto;
-}
-.warp .card{
-    width: 500px;
-    position: relative;
-    margin: auto;
-    transform: perspective(1000px);
-}
+// .warp{
+//     width: 800px;
+//     height: 600px;
+//     border: 5px solid red;
+//     margin: auto;
+// }
+// .warp .card{
+//     width: 500px;
+//     position: relative;
+//     margin: auto;
+//     transform: perspective(1000px);
+// }
 // .warp .card .cover #first img{
 //     height: 120px;
 // }
-.cover, .back{
-    width: 160px;
-    height: 120px;
-    backface-visibility: hidden;
-    position: absolute;
-    top: 20px;
-    left: 35%;
-    transition: .25s ease-in-out;
-    box-shadow: 1px 1px 3px 1px #999;
-    box-sizing: border-box;
+// .cover, .back{
+//     width: 160px;
+//     height: 120px;
+//     backface-visibility: hidden;
+//     position: absolute;
+//     top: 20px;
+//     left: 35%;
+//     transition: .25s ease-in-out;
+//     box-shadow: 1px 1px 3px 1px #999;
+//     box-sizing: border-box;
+//     -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .5));
+// }
+// .cover{
+//     // background-image: url('../assets/image/listingImage/listing_bg_picture1.png');
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     transform: rotatey(0deg);
+//     display: flex;
+// }
+// .cover img{
+// height: 120px;
+// }
+// .back{
+//     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+//     color: white;
+//     transform: perspective(1000px) rotatey(-180deg);
+//     text-align: center;
+// }
+// .back p{
+//     text-shadow: 5px 5px 2px #333;
+//     font-size: 22px;
+// }
+// .card:hover .cover{
+//     transform: rotateY(180deg);
+// }
+// .card:hover .back{
+//     transform: rotateY(0deg);
+// }
+
+/*flip_click*/
+.card {
+    // margin: 100px auto 0;
+    margin-left: 30%;
+    margin-top: 2%;
+    width: 200px;
+    height: 140px;
+    perspective: 1000px;
     -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .5));
-}
-.cover{
-    // background-image: url('../assets/image/listingImage/listing_bg_picture1.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotatey(0deg);
+    }
+.card_inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    }
+.card_inner.is-flipped {
+    transform: rotateY(180deg);
+    }
+.card_face {
+    position: absolute;
+    width: 200px;
+    height: 140px;
+    /* height: 100%; */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    /* border-radius: 16px; */
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    }
+.card_face img{
+    width: 200px;
+    height: 140px;
+    }
+.card_face--front {
+    // background-image: url('card-flip-click/listing_bg_picture1.png');
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
     display: flex;
-}
-.cover img{
-height: 120px;
-}
-.back{
+    align-items: center;
+    justify-content: center;
+    }
+.card_face--back {
+    // width: 400px;
+    // background-color: blue;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
     color: white;
-    transform: perspective(1000px) rotatey(-180deg);
-    text-align: center;
-    // padding-top: 5%;
-}
-.back p{
-    text-shadow: 5px 5px 2px #333;
-    font-size: 22px;
-}
-.card:hover .cover{
     transform: rotateY(180deg);
-}
-.card:hover .back{
-    transform: rotateY(0deg);
-}
+    }
+.card_content {
+    width: 100%;
+    height: 100%;
+    }
+    .card_header {
+    position: relative;
+    padding: 30px 30px 40px;
+    }
+    .card_header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+    z-index: -1;
+    border-radius: 0px 0px 50% 0px;
+    }
+    .card_body h4{
+    text-align: center;
+    padding-top: 15%;
+    font-size: 22px;
+    }
+
+
+
 /* banner圖片*/
 .banner img{
 height: 200px;
@@ -1089,21 +1167,46 @@ font-size: 1.2rem;
         right: 46%;
         opacity: 0.3;
     }
-    .cover, .back{
+    // .cover, .back{
+    //     width: 400px;
+    //     height: 280px;
+    //     top: 60px;
+    //     left: 35%;
+    //     -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .5));
+    // }
+    // .cover img{
+    //     height: 282px;
+    //     }
+    // .back p{
+    //     text-shadow: 5px 5px 2px #333;
+    //     font-size: 36px;
+    //     padding-top: 20%;
+    // }
+
+
+    /*flipClick*/
+    .card {
+        margin: 100px auto 0;
         width: 400px;
         height: 280px;
-        top: 60px;
-        left: 35%;
+        perspective: 1000px;
         -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .5));
-    }
-    .cover img{
-        height: 282px;
         }
-    .back p{
-        text-shadow: 5px 5px 2px #333;
-        font-size: 36px;
-        padding-top: 20%;
-    }
+    .card_face {
+        position: absolute;
+        width: 400px;
+        height: 280px;
+        /* height: 100%; */
+        // -webkit-backface-visibility: hidden;
+        // backface-visibility: hidden;
+        // overflow: hidden;
+        /* border-radius: 16px; */
+        // box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+        }
+    .card_face img{
+        width: 400px;
+        height: 280px;
+        }
     /* 綠色方塊收起按鈕 */
     #cubeBtn{
     position: absolute;
@@ -1115,7 +1218,14 @@ font-size: 1.2rem;
     width: 80px;
     height: 40px;
     font-size: 16px;
-}
+    }
+    .card_body h4{
+    text-align: center;
+    padding-top: 15%;
+    font-size: 1.5em;
+    line-height: 2;
+	letter-spacing:2px;
+    }
         /*web綠色方塊旋轉效果*/
     .cube{
         position: relative;
