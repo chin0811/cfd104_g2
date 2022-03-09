@@ -2,7 +2,8 @@ body{
     background-color: #151515;
 }
 .wrap{
-    margin-top: 10%;
+    margin-top: 0;
+    margin-right: 20%;
 }
 #cubeBtn{
     color: #141414;
@@ -18,9 +19,10 @@ body{
 }
 .cube{
     position: relative;
-    margin-left: 45%;
-    width: 100px;
-    height: 100px;
+    margin-top: 0;
+    margin-left: 45%;   
+    width: 200px;
+    height: 200px;
     transform-style: preserve-3d;
     transform: rotatex(-30deg);
     animation: animate 10s linear infinite;
@@ -48,32 +50,33 @@ body{
     width: 100%;
     height: 100%;
     background: linear-gradient(#151515,#00ec00);
-    transform: rotateY(calc(90deg*var(--i))) translateZ(50px);
+    transform: rotateY(calc(90deg*var(--i))) translateZ(100px);
 }
 .cube .top{
     position: absolute;
     top: 50%;
     left: 0;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-image: url('mona_lisa_ps.png');
-    background-size: 100px 100px;
+    background-size: 200px 200px;
     background-repeat: no-repeat;
-    transform: rotateX(90deg) translateZ(50px);;
+    transform: rotateX(90deg) translateZ(100px);;
 }
 .top::before{
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
-    background-color: #0f0;
-    transform: translateZ(-150px);
+    width: 200px;
+    height: 200px;
+    /* background-color: #0f0; */
+    background-color: rgb(255, 0, 170);
+    transform: translateZ(-250px);
     filter: blur(20px);
-    box-shadow: 0 0 120px rgba(0,255,0,0.2),
-    0 0 200px rgba(0,255,0,0.4),
-    0 0 300px rgba(0,255,0,0.6),
-    0 0 400px rgba(0,255,0,0.8),
-    0 0 500px rgba(0,255,0,1);
+    box-shadow: 0 0 120px rgba(255,0,170,0.2),
+    0 0 200px rgba(255, 0, 170, 0.4),
+    0 0 300px rgba(255,0,170,0.6),
+    0 0 400px rgba(255,0,170,0.8),
+    0 0 500px rgba(255,0,170,1);
 }

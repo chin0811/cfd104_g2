@@ -1208,6 +1208,15 @@ font-size: 1.2rem;
         height: 280px;
         }
     /* 綠色方塊收起按鈕 */
+    .card_body h4{
+        text-align: center;
+        padding-top: 15%;
+        font-size: 1.5em;
+        line-height: 2;
+        letter-spacing:2px;
+    }
+
+    /*web綠色方塊旋轉效果*/
     #cubeBtn{
     position: absolute;
     // top: 180%;
@@ -1219,14 +1228,6 @@ font-size: 1.2rem;
     height: 40px;
     font-size: 16px;
     }
-    .card_body h4{
-    text-align: center;
-    padding-top: 15%;
-    font-size: 1.5em;
-    line-height: 2;
-	letter-spacing:2px;
-    }
-        /*web綠色方塊旋轉效果*/
     .cube{
         position: relative;
         margin-left: 43%;
