@@ -63,12 +63,14 @@
                                 .text{
                                     //定位父層wrap
                                     position: absolute;
-                                    left: -35%;
-                                    top: 50%;
+                                    left: 50%;
+                                    top: -5%;
+                                    transform: translate(-50%, -50%);
                                     opacity: 0;
                                     
                                     p{
                                         font-size: 1.2em;
+                                        letter-spacing: 0.5em;
                                     }
                                 }
                             }
@@ -79,4 +81,3 @@
         }
     }
 }
-
