@@ -148,6 +148,10 @@
     .articlePostContent #articleTitle{
         width: 60%;
     }
+    // 剩餘字數
+    .articlePostContent .articleEdit .leftText{
+        margin-left: 10px;
+    }
     // input內容
     .articlePostContent #articleArea{
         width: 100%;

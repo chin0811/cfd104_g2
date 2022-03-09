@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藝廊</title>
+    <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
+    <link rel="stylesheet" href="galleryAll/gallery/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+    <script type="module" src="galleryAll/gallery/index.js"></script>
+    <script src="galleryAll/js/OBJLoader.js"></script>
+    <script src="galleryAll/gallery/threex.domevents.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="js/vue/vue.min.js"></script>
+    <!-- 彈跳公仔JS -->
+    <script src="js/galleryBounceDoll.js" async></script>
+  </head>
+  <body>
+    @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })
+    <div id="stats"></div>
+    <!-- 香菸 -->
+    <div class="lightBox displayNone cigaretteBox" id="lightBoxCi">
+        <i class="closeLightBox fas fa-times" id="closeLightBoxCi"></i>
+        <div class="photoBox">
+            <div class="cigarette">
+                <div class="cigaretteBody">
+                    <span style="--i:1"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:2"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:3"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:4"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:5"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:6"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:7"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:8"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:9"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+                <div class="cigaretteBody">
+                    <span style="--i:10"><i>Nooooo</i>Smoooooooking<i>|</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="lightBoxContent">
+            <h3>寂寞菸火</h3>
+            <p>創作者:噴火龍</p>
+            <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
+        </div>
+    </div>
+    <!-- slitting -->
+    <section class="lightBox displayNone" id="lightBoxSl">
+        <i class="closeLightBox fas fa-times" id="closeLightBoxSl"></i>
+        <div class="photoBox">
+            <div class="slitting">
+                <main id="banksy">
+                    <!-- <header>
+                    <a href="https://medium.com/@leemartin/how-to-recreate-the-banksy-artwork-shredder-using-css-grid-ff20c0f5a19" target="blank">Read Tutorial on Medium</a>
+                    </header> -->
+                    <div id="piece" @click="$refs.art.click()">
+                    <div id="holder">
+                        <div id="painting">
+                        <div id="shredded">
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        <div class="shred"></div>
+                        </div>
+                        <div id="original"></div>
+                        </div>
+                    </div>
+                    <div id="frame"></div>
+                </div>
+                <input ref="art" type="file" accept="image/*" @change="artSelected">
+                </main>
+            </div>
+        </div>
+        <div class="lightBoxContent">
+            <h3>寂寞菸火</h3>
+            <p>創作者:噴火龍</p>
+            <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
+        </div>
+    </section>
+    <!-- flip -->
+    <section class="lightBox displayNone" id="lightBoxFl">
+        <i class="closeLightBox fas fa-times" id="closeLightBoxFl" ></i>
+        <div class="photoBox">
+            <div class="flip">
+                <div class="wrap">
+                    <div class="card">
+                        <div class="cover">
+                            <h1 id="first"></h1>
+                        </div>
+                        <div class="back">
+                            <p>Beauty is everywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightBoxContent">
+            <h3>寂寞菸火</h3>
+            <p>創作者:噴火龍</p>
+            <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
+        </div>
+    </section>
+    <!-- Mona Lisa -->
+    <section class="lightBox  displayNone" id="lightBoxMo">
+        <i class="closeLightBox fas fa-times" id="closeLightBoxMo"></i>
+        <div class="photoBox">
+            <div class="MonaLisa">
+                <div class="wrap">
+                    <button id="cubeBtn" class="round">點我</button>
+                    <div class="cube">
+                        <div class="top"></div>
+                        <div>
+                            <span style="--i:0"></span>
+                            <span style="--i:1"></span>
+                            <span style="--i:2"></span>
+                            <span style="--i:3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightBoxContent">
+            <h3>寂寞菸火</h3>
+            <p>創作者:噴火龍</p>
+            <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
+        </div>
+    </section>
+    <!-- bounce -->
+    <section class="lightBox displayNone" id="lightBoxBo">
+        <i class="closeLightBox fas fa-times" id="closeLightBoxBo"></i>
+        <div class="photoBox photoBoxBounceDoll">
+            <div id="bounceDoll" v-on:mousemove="updateCoordinates">
+                <div class="bounce" >
+                    <div class="bounceA">
+                        <img src="assets/image/gallery_bounceDoll.png" alt="" class="ball" v-on:mousedown="move"  >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightBoxContent">
+            <h3>寂寞菸火</h3>
+            <p>創作者:噴火龍</p>
+            <p>藝術家企圖透過這件作品表達一種身處聲音風景的想像。在環境中，每個對話、每個聲音都有其獨特的頻率，在人與人對話或人與自然環境互動的同時也被這些獨特的頻率穿透，因此藝術家創造了一種可以讓身體接收穿越的視聽感受。</p>
+            <a href="productSingle.html" class="goPrice round">前往出價</a>
+        </div>
+    </section>
+    <!-- 提示 -->
+    <div class="galleryHint" id="galleryHint">
+        <i class="closeHint fas fa-times" id="closeHint"></i>
+        <p>放大縮小：滾輪</p>
+        <p>移動：右鍵</p>
+    </div>
+</body>
+</html>
+
+<link rel="stylesheet" href="assets/css/cigarette.css">
+
+<!-- slitting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
+<link rel="stylesheet" href="assets/galleryCss/sliting.css">
+<script>
+const app = new Vue({
+    el: '#banksy',
+    data() {
+    return {
+        shredding: null,
+        dropping: null
+    }
+    },
+    methods: {
+    shred() {
+        this.shredding = anime({
+        targets: '#original',
+        height: 0,
+        duration: 10000,
+        easing: 'linear'
+        })
+
+        this.dropping = anime({
+        targets: '#painting',
+        translateY: '101%',
+        duration: 10000,
+        easing: 'linear'
+        })
+    },
+    artSelected(e) {
+        this.shredding.pause()
+        this.dropping.pause()
+
+        loadImage(
+        e.target.files[0],
+        canvas => {
+            let url = canvas.toDataURL('image/jpeg')
+
+            document.getElementById('original').style.backgroundImage = `url(${url})`
+
+            let elements = Array.from(document.getElementsByClassName('shred'))
+
+            elements.forEach(element => {
+            element.style.backgroundImage = `url(${url})`
+            })
+
+            document.getElementById('original').style.height    = '100%'
+            document.getElementById('painting').style.transform = 'translateY(0)'
+
+            this.shred()
+        }, {
+            canvas: true,
+            crop: true,
+            maxHeight: 566,
+            maxWidth: 392,
+            orientation: true
+        }
+        )
+    }
+    },
+    mounted() {
+    this.shred()
+    }
+})
+</script>
+
+<!-- flip -->
+<link rel="stylesheet" href="assets/galleryCss/flip.css">
+
+<!-- Mona Lisa -->
+<link rel="stylesheet" href="assets/galleryCss/cube.css">
+<script src="js/jquery/jquery.min.js"></script>
+<script>
+    $(function () {
+        $(`#cubeBtn`).click(function(){
+            $('span').slideToggle();
+        });
+    });
+</script>
+
+

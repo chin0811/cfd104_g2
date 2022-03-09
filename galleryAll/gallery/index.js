@@ -2,8 +2,16 @@ import { OrbitControls } from '../js/OrbitControls.js'
 
 let renderer, scene, camera
 let cameraControl, stats
-let lightBox
-let closeLightBox
+// 香菸
+let lightBoxCi,closeLightBoxCi
+// slitting
+let lightBoxSl,closeLightBoxSl
+// flip
+let lightBoxFl,closeLightBoxFl
+// 蒙娜麗莎
+let lightBoxMo,closeLightBoxMo
+// 彈跳公仔
+let lightBoxBo,closeLightBoxBo
 let galleryHint 
 let closeHint
 
@@ -31,14 +39,18 @@ function init() {
   stats = initStats()
 
   // 渲染器設定
-  renderer = new THREE.WebGLRenderer()
+  renderer = new THREE.WebGLRenderer({
+    //增加下面兩個屬性，可以抗鋸齒
+    antialias:true,
+    alpha:true
+    });
   renderer.setSize(window.innerWidth, window.innerHeight)
   // 引入場景
   var loader = new THREE.ObjectLoader();
   var gallery;
   loader.load
   (
-    "scene_05.json",
+    "galleryAll/gallery/scene_05.json",
     function(gallery){
       scene.add(gallery);
       gallery.position.set(0, -2, -3);
@@ -47,26 +59,41 @@ function init() {
       gallery.rotation.z=0;
     }
   );
-  // 引入畫作
-  loader.load(
-    "smoke.json",
-    function(smoke){
-      scene.add(smoke);
-      smoke.position.set(-3, 8, -15);
-      smoke.scale.set( 8.415, 5.814, 1.484 );
-      domEvents.addEventListener(smoke, "click", event=>{
-        if(!cubeClick){
-          console.log(lightBox);
-          console.log(closeLightBox)
-          lightBox.classList.toggle("displayNone");
-          cubeClick = true;
-        }else{
-          lightBox.classList.toggle("displayNone");
-          cubeClick = false;
-        }
-      })
-    }
-  )
+   // 建立監聽事件
+   var domEvents = new THREEx.DomEvents(camera, renderer.domElement);
+   let cubeClick = false;
+
+	// 藝廊提示
+	galleryHint = document.querySelector("#galleryHint");
+	closeHint = document.querySelector("#closeHint");
+	closeHint.addEventListener("click",function(){
+		galleryHint.classList.add("displayNone");
+	});
+	// 引入香菸
+	// 抓取html香菸
+	lightBoxCi = document.querySelector("#lightBoxCi");
+	closeLightBoxCi = document.querySelector("#closeLightBoxCi");
+	// 關掉html香菸
+	closeLightBoxCi.addEventListener("click",function(){
+		lightBoxCi.classList.toggle("displayNone");
+	});
+	loader.load(
+		"galleryAll/gallery/smoke.json",
+		function(smoke){
+		scene.add(smoke);
+		smoke.position.set(-3, 8, -15);
+		smoke.scale.set( 8.415, 5.814, 1.484 );
+		domEvents.addEventListener(smoke, "click", event=>{
+			if(!cubeClick){
+			lightBoxCi.classList.toggle("displayNone");
+			cubeClick = true;
+			}else{
+			lightBoxCi.classList.toggle("displayNone");
+			cubeClick = false;
+			}
+		})
+		}
+	)
   // 引入人偶
   // loader.load(
   //   "figure.json",
@@ -85,58 +112,107 @@ function init() {
   //     })
   //   }
   // )
-  // 引入蒙娜麗莎
-  loader.load(
-    "cube.json",
-    function(cube){
-      scene.add(cube);
-      cube.position.set(54,3,-8)
-    }
-  )
+  	// 抓取html蒙娜麗莎
+	lightBoxMo = document.querySelector("#lightBoxMo");
+	closeLightBoxMo = document.querySelector("#closeLightBoxMo");
+	// 關掉html蒙娜麗莎
+	closeLightBoxMo.addEventListener("click",function(){
+		lightBoxMo.classList.toggle("displayNone");
+	});
+	// 引入蒙娜麗莎
+	loader.load(
+	"galleryAll/gallery/cube.json",
+	function(cube){
+		scene.add(cube);
+		cube.position.set(54,3,-8)
+		domEvents.addEventListener(cube, "click", event=>{
+			console.log("test")
+			if(!cubeClick){
+			lightBoxMo.classList.toggle("displayNone");
+			cubeClick = true;
+			}else{
+			lightBoxMo.classList.toggle("displayNone");
+			cubeClick = false;
+			}
+		})
+	}
+	)
+	// 抓取html彈跳公仔
+	lightBoxBo = document.querySelector("#lightBoxBo");
+	closeLightBoxBo = document.querySelector("#closeLightBoxBo");
+	// 關掉html彈跳公仔
+	closeLightBoxBo.addEventListener("click",function(){
+		lightBoxBo.classList.toggle("displayNone");
+	});
    // 引入彈跳公仔
    loader.load(
-    "figure02.json",
+    "galleryAll/gallery/figure02.json",
     function(figure02){
-      scene.add(figure02);
-      figure02.position.set(70,5,-5)
+		scene.add(figure02);
+		figure02.position.set(70,5,-5)
+		domEvents.addEventListener(figure02, "click", event=>{
+		if(!cubeClick){
+		lightBoxBo.classList.toggle("displayNone");
+		cubeClick = true;
+		}else{
+		lightBoxBo.classList.toggle("displayNone");
+		cubeClick = false;
+		}
+	})
     }
   )
+	// 抓取html照片1
+	lightBoxSl = document.querySelector("#lightBoxSl");
+	closeLightBoxSl = document.querySelector("#closeLightBoxSl");
+	// 關掉html照片1
+	closeLightBoxSl.addEventListener("click",function(){
+		lightBoxSl.classList.toggle("displayNone");
+	});
      // 引入照片1
-     loader.load(
-      "photo01.json",
-      function(photo01){
-        scene.add(photo01);
-        photo01.position.set(12,3,0)
-      }
-    )
-      // 引入照片2
-      loader.load(
-      "photo02.json",
-      function(photo02){
-        scene.add(photo02);
-        photo02.position.set(41,3,-6.1)
-      }
-    )
+	loader.load(
+	"galleryAll/gallery/photo01.json",
+	function(photo01){
+	scene.add(photo01);
+	photo01.position.set(12,3,0)
+	domEvents.addEventListener(photo01, "click", event=>{
+		console.log("test")
+		if(!cubeClick){
+		lightBoxSl.classList.toggle("displayNone");
+		cubeClick = true;
+		}else{
+		lightBoxSl.classList.toggle("displayNone");
+		cubeClick = false;
+		}
+	})
+	}
+	)
+	// 抓取html照片2
+	lightBoxFl = document.querySelector("#lightBoxFl");
+	closeLightBoxFl = document.querySelector("#closeLightBoxFl");
+	// 關掉html照片2
+	closeLightBoxFl.addEventListener("click",function(){
+		lightBoxFl.classList.toggle("displayNone");
+	});
+    // 引入照片2
+	loader.load(
+	"galleryAll/gallery/photo02.json",
+	function(photo02){
+		scene.add(photo02);
+		photo02.position.set(41,3,-6.1)
+		domEvents.addEventListener(photo02, "click", event=>{
+			console.log("test")
+			if(!cubeClick){
+			lightBoxFl.classList.toggle("displayNone");
+			cubeClick = true;
+			}else{
+			lightBoxFl.classList.toggle("displayNone");
+			cubeClick = false;
+			}
+		})
+	}
+	)
   
-  // 建立監聽事件
-  var domEvents = new THREEx.DomEvents(camera, renderer.domElement);
-  let cubeClick = false;
-    
-  lightBox = document.querySelector("#lightBox");
-  closeLightBox = document.querySelector("#closeLightBox");
-
-  closeLightBox.addEventListener("click",function(){
-      lightBox.classList.toggle("displayNone");
-  });
-
-  galleryHint = document.querySelector("#galleryHint");
-  closeHint = document.querySelector("#closeHint");
-
-  closeHint.addEventListener("click",function(){
-      console.log("test")
-      galleryHint.classList.add("displayNone");
-  });
-
+ 
 
   // 建立 OrbitControls
   cameraControl = new OrbitControls(camera, renderer.domElement)
