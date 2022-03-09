@@ -105,18 +105,20 @@
             <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </section>
-    <!-- flip -->
+    <!-- flipClick -->
     <section class="lightBox displayNone" id="lightBoxFl">
         <i class="closeLightBox fas fa-times" id="closeLightBoxFl" ></i>
         <div class="photoBox">
             <div class="flip">
-                <div class="wrap">
-                    <div class="card">
-                        <div class="cover">
-                            <h1 id="first"></h1>
+                <div class="card">
+                    <div class="card_inner">
+                        <div class="card_face card_face--front">
+                            <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
                         </div>
-                        <div class="back">
-                            <p>Beauty is everywhere.</p>
+                        <div class="card_face card_face--back">
+                                <div class="card_body">
+                                    <h4>Beauty is everywhere!</h4>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -252,8 +254,16 @@ const app = new Vue({
 })
 </script>
 
-<!-- flip -->
-<link rel="stylesheet" href="assets/galleryCss/flip.css">
+<!-- flipClick -->
+<link rel="stylesheet" href="assets/galleryCss/flipClick.css">
+
+<script>
+    const card = document.querySelector(".card_inner");
+
+    card.addEventListener("click", function (e) {
+    card.classList.toggle('is-flipped');
+    });
+</script>
 
 <!-- Mona Lisa -->
 <link rel="stylesheet" href="assets/galleryCss/cube.css">
