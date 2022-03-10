@@ -22,3 +22,22 @@
 ::-webkit-scrollbar-thumb:hover{
     background-color: #394897;
 }
+
+/* 新樣式覆蓋 */
+::-webkit-scrollbar{
+    width: 1em;
+}
+//軌道樣式
+::-webkit-scrollbar-track{
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+// bar樣式
+::-webkit-scrollbar-thumb{
+    background-color: #FFD60A;
+    border-radius: 100px;
+}
+// bar:hover樣式
+.consumptionRecord_bouncing main::-webkit-scrollbar-thumb:hover{
+    background-color: #394897;
+}
