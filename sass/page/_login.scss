@@ -49,7 +49,7 @@
             }
             >form{
                 
-                input:not([type*="submit"]){
+                input[type*="text"],input[type*="tel"],input[type*="password"],input[type*="email"]{
                     /* 登入註冊區輸入框 */
                     display: block;
                     margin: 0px 0px 20px 0px;
@@ -101,6 +101,7 @@
                     align-items: center;
                     flex-direction: row-reverse;
                     margin-left: -100%;
+                    transition: margin 0.3s;
                     >div{
                         box-sizing: border-box;
                         height: 100%;
@@ -113,6 +114,12 @@
                     >div:first-of-type{
                         
                     }
+                }
+            }
+            >form:last-of-type.active{
+                // 註冊切換
+                >div{
+                    margin-left: 0%;
                 }
             }
         }

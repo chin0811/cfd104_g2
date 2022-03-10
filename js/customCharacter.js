@@ -1,5 +1,6 @@
 /* 人物更換 */
 const adjustmentLever = document.querySelectorAll(".adjustmentLever");
+const adjust = document.querySelector(".adjust");
 const checkbox = document.querySelectorAll(".checkbox");
 const characterAdjustment = document.querySelectorAll(".characterAdjustment");
 const pictureChange = document.querySelectorAll(".pictureChange img");
@@ -432,6 +433,7 @@ characterModification.onclick = function() {
     characterModification.style.display = "none"
     characterConfirmation.style.display = "block"
     controlBlock.classList.remove('mask');
+    adjust.classList.remove('mask');
     document.querySelector(".controlBlock").style.display = "flex";
 };
 
@@ -443,6 +445,7 @@ characterConfirmation.onclick = function() {
     characterConfirmation.style.display = "none"
     characterModification.style.display = "block"
     controlBlock.classList.add('mask');
+    adjust.classList.add('mask');
     document.querySelector(".controlBlock").style.display = "none";
 };
 

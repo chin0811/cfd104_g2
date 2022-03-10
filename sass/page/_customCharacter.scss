@@ -155,6 +155,7 @@
     justify-content: center;
 }
 
+/*
 .customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever {
     display: inline-block;
     width: 10em;
@@ -167,6 +168,33 @@
     line-height: 0;
     border-radius: 0;
     backdrop-filter: none;
+}
+*/
+
+.customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever {
+    appearance: none;
+    padding: 0;
+    width: 160px;
+    height: 1em;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    cursor: pointer;
+    &::-webkit-slider-runnable-track{
+        appearance: none;
+        width: inherit;
+        height: inherit;
+        background-color: none;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    &::-webkit-slider-thumb{
+        appearance: none;
+        width: 1em;
+        height: 1em;
+        background-color: #394897;
+        box-shadow: -100vw 0 0 100vw #394897;
+    }
 }
 
 

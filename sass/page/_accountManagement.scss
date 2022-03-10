@@ -27,7 +27,7 @@
 
 */
     
-    .accountManagement_bouncing main {
+    .accountManagement_bouncing.accountManagement_bouncing main {
         margin-top: 1em;
         padding-left: 1em;
         line-height: 2;
@@ -35,7 +35,7 @@
         color: #141414;
         display: flex;
         justify-content: space-between;
-        overflow-y: hidden;
+        overflow-y: auto;
     }
     /* 頭像 */
     
@@ -44,25 +44,68 @@
     }
     
     .accountManagement_bouncing main .profilePicture {
+        /*
         display: flex;
         align-items: flex-end;
+        */
     }
-
+    .accountManagement_bouncing main .characterAdjustment { /* 裁切圖中黃色部分 */
+        position: relative;
+        bottom: -10px;
+    }
     .accountManagement_bouncing main .characterAdjustment_box {
         width: 50%;
         margin-bottom: -2em;
     }
-    
     .question {
         display: flex;
         justify-content: flex-end;
     }
-    
     .fa-question {
         border-radius: 50%;
-        padding: 8px 10px;
+        padding: 4px 6px;
+        font-size: 8px;
         border: 1px solid #000;
     }
+
+    /* 提示視窗 */
+    .promptWindow-main{
+        position: relative;
+        margin-left: 50%;
+    }
+    .promptWindow{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+    }
+    .promptWindow::before{
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 26.0px 15px 0;
+        border-color: transparent #ccc transparent transparent;
+        position: absolute; /* .promptWindow */
+        left: 40px;
+    }
+    .promptWindow::after{
+        content: '此圖示為客製化人物的虛擬意象，請至客製化人物燈箱修改';
+        display: block;
+        position: absolute; /* .promptWindow */
+        color: #666;
+        background-color: #ccc;
+        top: -130px;
+        left: 60px;
+        width: 100px;
+
+        padding: 10px;
+        border-radius: 10px;
+    }
+
     /* input */
     
     .accountManagement_bouncing main .changeValue {
@@ -121,5 +164,33 @@
         }
         .accountManagement_information {
             margin-top: 50px;
+        }
+        /* 提示視窗 */
+        .promptWindow-main{
+            margin-left: 80%;
+        }
+        .promptWindow::before{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 26.0px;
+            border-color: transparent transparent transparent #ccc;
+            position: absolute; /* .promptWindow */
+            left: -30px;
+        }
+        .promptWindow::after{
+            content: '此圖示為客製化人物的虛擬意象，請至客製化人物燈箱修改';
+            display: block;
+            position: absolute; /* .promptWindow */
+            color: #666;
+            background-color: #ccc;
+            top: -130px;
+            left: -140px;
+            width: 100px;
+    
+            padding: 10px;
+            border-radius: 10px;
         }
     }

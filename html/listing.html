@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 頁面css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="sass/style.css">
     <!-- 貓頭鷹css -->
     <link rel="stylesheet" href="assets/owlCss/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlCss/owl.theme.default.min.css">
@@ -127,32 +127,20 @@
                 <h4>藝廊效果廣告展示</h4>
             </div>
         </section>
-
+        
         <!-- 產品效果廣告展示 -->
         <section>
             <div class="owl-carousel owl-theme">
                 <div class="banner">
                     <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
                 </div>
-                <!-- <div class="wrap">
+                <div class="wrap">
                     <div class="card">
                         <div class="cover">
                             <h1 id="first"><img src="assets/image/listingImage/listing_bg_picture1.png" alt="none"></h1>
                         </div>
                         <div class="back">
                             <p>Beauty is everywhere.</p>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="card">
-                    <div class="card_inner">
-                        <div class="card_face card_face--front">
-                            <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
-                        </div>
-                        <div class="card_face card_face--back">
-                                <div class="card_body">
-                                    <h4>Beauty is everywhere!</h4>
-                                </div>
                         </div>
                     </div>
                 </div>
@@ -469,15 +457,6 @@
         $(".option").click(function(){
             $(".option").removeClass("active");
             $(this).addClass("active");
-        });
-    </script>
-
-    <!-- flipClick -->
-    <script>
-        const card = document.querySelector(".card_inner");
-
-        card.addEventListener("click", function (e) {
-        card.classList.toggle('is-flipped');
         });
     </script>
 
