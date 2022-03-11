@@ -111,9 +111,10 @@
     overflow: hidden;
 }
 
-.customCharacter_bouncing main .main .sliderCharacters .avatar .characterAdjustment{
+.customCharacter_bouncing main .main .sliderCharacters .avatar .characterAdjustment {
     margin-bottom: -2%;
 }
+
 
 /* 人像控制桿 */
 
@@ -155,6 +156,7 @@
     justify-content: center;
 }
 
+
 /*
 .customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever {
     display: inline-block;
@@ -170,6 +172,7 @@
     backdrop-filter: none;
 }
 */
+
 
 /*
 .customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever {
@@ -198,42 +201,42 @@
     }
 }
 */
-$inputWidth: 200;
 
+$inputWidth: 200;
 @function getProgress($inputWidth, $color) {
     $val: -5px 0 0 -10px $color;
     @for $i from 6 through $inputWidth {
-        $val: #{$val}, -#{$i}px 0 0 -10px #{$color}
+        $val: #{$val},
+        -#{$i}px 0 0 -10px #{$color}
     }
     @return $val
 }
 
-body {
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+// body {
+//     height: 100vh;
+//     margin: 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
 .range-input-container {
     padding: 0 5px;
 }
 
-input[type="range"] { 
-        margin: auto;
-        -webkit-appearance: none;
-        outline: none;
-        overflow: hidden;
-        height: 40px;
-        width: #{$inputWidth}px;
-        cursor: pointer;
-        border-radius: 0;
+input[type="range"] {
+    margin: auto;
+    -webkit-appearance: none;
+    outline: none;
+    overflow: hidden;
+    height: 40px;
+    width: #{$inputWidth}px;
+    cursor: pointer;
+    border-radius: 0;
     &::-webkit-slider-runnable-track {
         background: #ddd;
         height: 20px;
     }
-    ::-moz-range-track{
+     ::-moz-range-track {
         background: #ddd;
         height: 20px;
     }
@@ -248,7 +251,7 @@ input[type="range"] {
         border-radius: 50%;
         // transform: translatex(2px)
     }
-    &::-moz-range-thumb{
+    &::-moz-range-thumb {
         margin-top: -10px;
         -webkit-appearance: none;
         width: 40px;
