@@ -281,13 +281,15 @@
                         <ol class="uploadPicture">
                             <li>
                                 <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
-                                <label for="pic" id="pic-preview"><img src="assets/image/listingImage/upload_image_icon.png" alt="none">
-                                    <div></div>
+                                <label for="pic" id="pic-preview"><img src="assets/image/listingImage/upload_image_icon.png" alt="none" id="imageAdd" @load="imageChange">
+                                <!-- <label for="pic"><img id="" :src="changeImg" alt="none"></label> -->
+                                <div></div>
                                 </label>
                             </li>
                             <li>
                                 <input type="file" id="pic1" name="pic" accept=".png,.jpg">
                                 <label for="pic1"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                                <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <!--
                             <li></li>
@@ -337,6 +339,7 @@
                             <li>
                                 <input type="file" id="pic2" name="pic" accept=".png,.jpg" onchange="showPreview(event)" required>
                                 <label for="pic2"><img id="" src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
+                                <!-- <label for="pic2"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <li>
                                 <input type="file" id="pic3" name="pic" accept=".png,.jpg">
@@ -372,7 +375,7 @@
             <div class="modal-container" id="modal_container">
                 <div class="modal">
                     <div class="modalPic">
-                        <img src="https://picsum.photos/300/250/?random=10">
+                        <img :src="changeImg">
                     </div>
                     <div class="modalProductInfo">
                         <div class="modalProductInput">
@@ -435,18 +438,47 @@
                 pitch:'',
                 type:'',
                 ad:'',
+
+                changeImg: '',
             },
             methods: {  //函數大部份放在這!
                 setMessage(e){
                     this.message = e.target.value;
                 },
+                insertData() {
+                    // 避免抓到ajax的this
+                    let thisVue = this;
+                    console.log(thisVue.administrators);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'g2_fetchHtmlConnectSend.php',
+                        data: {
+                            administrators:JSON.stringify(thisVue.administrators),
+                        },
+                        success: function(data) {
+                            console.log(data.message);
+                            console.log("成功了嗎?");
+                        },
+                        error: function() {
+                            console.log('ajax error');
+                        }
+                    });
+                    
+                },
+                imageChange(){
+                    this.changeImg = document.querySelector('imageAdd').src
+                }
             },
             computed: {  //函數也可以放在這!但是放在這裡的函數，不能傳參數，一定要有回傳值
                 preserve(){
                     return{
                         whiteSpace: 'pre',
                         font: '13.333px monospace'
+
                     };
+                },
+                changeImg(){
+                    return 'assets/image/listingImage/green_arrow.png';
                 }
             },
         });
