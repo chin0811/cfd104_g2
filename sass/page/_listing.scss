@@ -67,22 +67,76 @@ padding-bottom: 5px;
 }
 
 .listingSteps .options .option:nth-child(1) {
---defaultBackground: #ed5565ee;
+// --defaultBackground: #ed5565ee;
+-webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
+box-shadow: 0.1em 0.5em 0.5em #252b3020;
+background-color: #aaaaaa50;
+border: 1px solid #94969b50;
+border-right: 1px solid #55595e20;
+border-bottom: 1px solid #55595e20;
+border-left: 1px solid #ffffff30;
+-webkit-backdrop-filter: blur(0.5em);
+backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(2) {
---defaultBackground: #fc6e51ee;
+// --defaultBackground: #fc6e51ee;
+-webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
+box-shadow: 0.1em 0.5em 0.5em #252b3020;
+background-color: #aaaaaa50;
+border: 1px solid #94969b50;
+border-right: 1px solid #55595e20;
+border-bottom: 1px solid #55595e20;
+border-left: 1px solid #ffffff30;
+-webkit-backdrop-filter: blur(0.5em);
+backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(3) {
---defaultBackground: #ffce54ee;
+// --defaultBackground: #ffce54ee;
+-webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
+box-shadow: 0.1em 0.5em 0.5em #252b3020;
+background-color: #aaaaaa50;
+border: 1px solid #94969b50;
+border-right: 1px solid #55595e20;
+border-bottom: 1px solid #55595e20;
+border-left: 1px solid #ffffff30;
+-webkit-backdrop-filter: blur(0.5em);
+backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(4) {
---defaultBackground: #2ecc71ee;
+// --defaultBackground: #2ecc71ee;
+-webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
+box-shadow: 0.1em 0.5em 0.5em #252b3020;
+background-color: #aaaaaa50;
+border: 1px solid #94969b50;
+border-right: 1px solid #55595e20;
+border-bottom: 1px solid #55595e20;
+border-left: 1px solid #ffffff30;
+-webkit-backdrop-filter: blur(0.5em);
+backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(5) {
---defaultBackground: #5d9cecee;
+// --defaultBackground: #5d9cecee;
+-webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
+box-shadow: 0.1em 0.5em 0.5em #252b3020;
+background-color: #aaaaaa50;
+border: 1px solid #94969b50;
+border-right: 1px solid #55595e20;
+border-bottom: 1px solid #55595e20;
+border-left: 1px solid #ffffff30;
+-webkit-backdrop-filter: blur(0.5em);
+backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(6) {
---defaultBackground: #ac92ecee;
+// --defaultBackground: #ac92ecee;
+-webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
+box-shadow: 0.1em 0.5em 0.5em #252b3020;
+background-color: #aaaaaa50;
+border: 1px solid #94969b50;
+border-right: 1px solid #55595e20;
+border-bottom: 1px solid #55595e20;
+border-left: 1px solid #ffffff30;
+-webkit-backdrop-filter: blur(0.5em);
+backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option.active {
 flex-grow: 10000;
@@ -138,7 +192,7 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 .listingSteps .options .option .sub{
 transition-delay: 0.1s;
-color: white;
+color: #394897;
 font-weight: bold;
 font-size: 1.2rem;
 padding-top: 30px;
@@ -168,6 +222,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 margin-left: 10px;
+// color: white;
 color: white;
 /* white-space: pre; */
 }
@@ -190,7 +245,8 @@ font-size: 1.2rem;
 
 /* 產品效果廣告展示-貓頭鷹owl-carousel */
 .owl-carousel{
-    background-color:  #FBF7F3;
+    // background-color:  #FBF7F3;
+    background-color:  #cccccc55;
     margin-bottom: -11px;
     margin-top: 50px;
 }
@@ -953,17 +1009,17 @@ backdrop-filter: blur(0.5em);
     text-align: left;
     // padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 14px;
+    font-size: 16px;
 }
 .modalProductInput .modalValueText{
-    // width: 50%;
+    width: 100%;
     // display: flex;
     // margin: 10px 0px;
     text-align: left;
 }
 .modalProductInput .modalValueText p{
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
     margin: 10px 0px;
     word-wrap: break-word;
 }
@@ -1109,7 +1165,7 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 .listingSteps .options .option .sub{
 transition-delay: 0.1s;
-color: white;
+color: #394897;
 font-weight: bold;
 font-size: 1.2rem;
 padding-top: 30px;
