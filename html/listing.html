@@ -185,7 +185,7 @@
                 <input type="radio" id="tab1" class="" name="mytabs" checked="checked" required>
                 <label for="tab1" class="tag">上架藝術品</label>
                 <!-- 上架競標藝術品頁面 -->
-                <form action="homePage.html" id="form1" class="content" name="page1" method="get">  <!--onclick="return false"-->
+                <form action="homePage.html" id="form1" class="content" name="page1" method="post" enctype="multipart/form-data">  <!--onclick="return false"-->
                         <div class="artTitle">
                             <label for="">
                                 <h4>藝術品名</h4>
@@ -295,12 +295,22 @@
                                 <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
                                 <label for="pic" id="pic-preview"><img src="assets/image/listingImage/upload_image_icon.png" alt="none" id="imageAdd" @load="imageChange">
                                 <!-- <label for="pic"><img id="" :src="changeImg" alt="none"></label> -->
-                                <div></div>
+                                <!-- <div></div> -->
                                 </label>
                             </li>
                             <li>
                                 <input type="file" id="pic1" name="pic" accept=".png,.jpg">
                                 <label for="pic1"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                                <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
+                            </li>
+                            <li>
+                                <input type="file" id="pic2" name="pic" accept=".png,.jpg">
+                                <label for="pic2"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                                <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
+                            </li>
+                            <li>
+                                <input type="file" id="pic3" name="pic" accept=".png,.jpg">
+                                <label for="pic3"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
                                 <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <!--
@@ -349,13 +359,13 @@
                         <h4>藝術品圖檔上傳</h4>
                         <ol class="uploadPicture">
                             <li>
-                                <input type="file" id="pic2" name="pic" accept=".png,.jpg" onchange="showPreview(event)" required>
-                                <label for="pic2"><img id="" src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
+                                <input type="file" id="pic4" name="pic" accept=".png,.jpg" onchange="showPreview(event)" required>
+                                <label for="pic4"><img id="" src="assets/image/listingImage/upload_image_icon.png" alt="none"></label>
                                 <!-- <label for="pic2"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <li>
-                                <input type="file" id="pic3" name="pic" accept=".png,.jpg">
-                                <label for="pic3"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                                <input type="file" id="pic5" name="pic" accept=".png,.jpg">
+                                <label for="pic5"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
                             </li>
                             <!--
                             <li></li>
