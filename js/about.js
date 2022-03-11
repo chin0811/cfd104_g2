@@ -195,7 +195,7 @@ function initAbout(){
 }
 
 // 回到最上方按鈕
-myButton = document.getElementById("BackToTopBtn");
+myButton = document.getElementById("backToTopBtn");
 function topFunction() {
     window.scrollTo({
         // 滾到最上面
@@ -204,4 +204,11 @@ function topFunction() {
         behavior: 'smooth',
     });
 };
-
+//高度小於400就隱藏按鈕
+window.addEventListener("scroll",function(){
+    if(document.documentElement.scrollTop > 400){
+        document.getElementById("backToTop").classList.remove("backToTopNone");
+    }else{
+        document.getElementById("backToTop").classList.add("backToTopNone");
+    }
+});
