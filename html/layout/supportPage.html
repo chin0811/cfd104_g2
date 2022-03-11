@@ -64,10 +64,8 @@
                         <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                 </article>
-                <article class="keyButton" v-show="openRobotBool">
-                    <button>AAAA</button>
-                    <button>AAAA</button>
-                    <button>AAAA</button>
+                <article class="keyButton" v-show="openRobotBool" v-for="key in keyArray">
+                    
                     <button>AAAA</button>
                 </article>
                 <article action="#" class="inputArea" v-show="openPeopleBool">
@@ -85,7 +83,8 @@
                 message:'',
                 openSelect:false,
                 openRobotBool:false,
-                openPeopleBool:false
+                openPeopleBool:false,
+                keyArray:[],
             },
             methods: {  //函數大部分放在這裡
                 closedRoom(){
@@ -107,9 +106,32 @@
                     return{
                         selectRoom:true,
                         active: this.openRobotBool  || this.openPeopleBool,
-                    }
-                } 
+                    };
+                } ,
+                keySelect(){
+                    axios({
+                        method: 'post',
+                        url: 'php/g2_fetchHtmlConnectSend.php',
+                        //API要求的資料
+                        data: {
+                            sendData:JSON.stringify(`${this.addMemId},${this.addMemPsw},${this.addMemPswAgain},${this.emailText},${this.telText},${this.nameText},${this.addressText}`)
+                        }
+                    })
+                    .then((response) => console.log(response))
+                    .catch((error) => console.log(error))
+                }
+
             },
+            mounted(){
+                axios.get('https://www.dcard.tw/service/api/v2/posts').then((res)=>{
+                    console.log("從php傳來的東西",res)
+                    this.keyArray = res.data;
+                    // console.log("陣列的樣子",this.administrators);
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            },
+        }
         });
         
 

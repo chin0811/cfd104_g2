@@ -119,11 +119,13 @@ input{
     display: none;
 }
 
-header{
-    position: absolute;
-    top: 2em;
-}
 
+/* 會蓋到header 請改class 或 Id */
+header{
+    /* position: absolute; */
+    /* top: 2em; */
+    
+}
 header a{
     color: black;
 }

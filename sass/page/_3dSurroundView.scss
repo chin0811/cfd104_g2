@@ -235,8 +235,8 @@ div.custom-tooltip span {
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-animation-name: hvr-hang-sink, hvr-hang, bounce;
-    animation-name: hvr-hang-sink, hvr-hang, bounce;
+    -webkit-animation-name: hvr-hang-sink, hvr-hang;
+    animation-name: hvr-hang-sink, hvr-hang;
     -webkit-animation-duration: .3s, 1.5s, 1s;
     animation-duration: .3s, 1.5s, 1s;
     -webkit-animation-delay: 0s, .3s;

@@ -134,7 +134,7 @@
                 <div class="banner">
                     <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
                 </div>
-                <!-- <div class="wrap">
+                <div class="wrap">
                     <div class="card">
                         <div class="cover">
                             <h1 id="first"><img src="assets/image/listingImage/listing_bg_picture1.png" alt="none"></h1>
@@ -143,29 +143,17 @@
                             <p>Beauty is everywhere.</p>
                         </div>
                     </div>
-                </div> -->
-                <div class="card">
-                    <div class="card_inner">
-                        <div class="card_face card_face--front">
-                            <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
-                        </div>
-                        <div class="card_face card_face--back">
-                                <div class="card_body">
-                                    <h4>Beauty is everywhere!</h4>
-                                </div>
-                        </div>
-                    </div>
                 </div>
                 <div>
                 <!-- 方塊收起按鈕 -->
                 <button id="cubeBtn" class="round">點我</button>
                 <div class="cube">
-                    <div class="top"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></div>
+                    <div class="top"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></div>
                     <div>
-                        <span class="cubeSide"style="--i:0"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
-                        <span class="cubeSide"style="--i:1"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
-                        <span class="cubeSide"style="--i:2"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
-                        <span class="cubeSide"style="--i:3"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                        <span class="cubeSide"style="--i:0"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                        <span class="cubeSide"style="--i:1"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                        <span class="cubeSide"style="--i:2"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                        <span class="cubeSide"style="--i:3"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
                     </div>
                 </div>
                 </div>
@@ -501,15 +489,6 @@
         $(".option").click(function(){
             $(".option").removeClass("active");
             $(this).addClass("active");
-        });
-    </script>
-
-    <!-- flipClick -->
-    <script>
-        const card = document.querySelector(".card_inner");
-
-        card.addEventListener("click", function (e) {
-        card.classList.toggle('is-flipped');
         });
     </script>
 
