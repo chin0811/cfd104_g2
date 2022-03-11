@@ -835,15 +835,18 @@ z-index: 1;
     /* background-color: #fbf7f0; */
     box-shadow: inset 2px 2px 3px 3px #ccc;
 }
-.uploadFile .uploadPicture input{
-    display: none;
-    // opacity: 0;
-}
 .uploadFile .uploadPicture li:nth-child(3){
     display: none;
 }
 .uploadFile .uploadPicture li:nth-child(4){
     display: none;
+}
+.uploadFile .uploadPicture li:nth-child(2).active {
+    display: none;
+}
+.uploadFile .uploadPicture input{
+    display: none;
+    // opacity: 0;
 }
 .uploadFile .uploadPicture li img{
     display: block;

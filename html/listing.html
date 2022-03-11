@@ -70,7 +70,7 @@
                         <div class="sub">完成填寫商品資訊，上傳商品圖片，並注意<img src="assets/image/listingImage/help_question_icon.png" alt="none">圖示的說明。</div>
                         <div class="shadow"></div>
                         <div class="label">
-                            <div class="icon">
+                        <div class="icon">
                                 <!-- <i class="fas fa-tree"></i> -->
                                 <i><img src="assets/image/listingImage/write_info_icon.png" alt=""></i>
                             </div>
@@ -134,13 +134,25 @@
                 <div class="banner">
                     <img src="assets/image/listingImage/urban_art_banner.png" alt="none">
                 </div>
-                <div class="wrap">
+                <!-- <div class="wrap">
                     <div class="card">
                         <div class="cover">
                             <h1 id="first"><img src="assets/image/listingImage/listing_bg_picture1.png" alt="none"></h1>
                         </div>
                         <div class="back">
                             <p>Beauty is everywhere.</p>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="card">
+                    <div class="card_inner">
+                        <div class="card_face card_face--front">
+                            <img src="assets/image/listingImage/listing_bg_picture1.png" alt="none">
+                        </div>
+                        <div class="card_face card_face--back">
+                                <div class="card_body">
+                                    <h4>Beauty is everywhere!</h4>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -499,6 +511,15 @@
         $(".option").click(function(){
             $(".option").removeClass("active");
             $(this).addClass("active");
+        });
+    </script>
+
+    <!-- flipClick -->
+    <script>
+        const card = document.querySelector(".card_inner");
+
+        card.addEventListener("click", function (e) {
+        card.classList.toggle('is-flipped');
         });
     </script>
 
