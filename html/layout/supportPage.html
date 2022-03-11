@@ -65,8 +65,7 @@
                     </article>
                 </article>
                 <article class="keyButton" v-show="openRobotBool" v-for="key in keyArray">
-                    
-                    <button>AAAA</button>
+                    <button>{{key}}</button>
                 </article>
                 <article action="#" class="inputArea" v-show="openPeopleBool">
                     <textarea name="" id="" ></textarea>
@@ -123,7 +122,7 @@
 
             },
             mounted(){
-                axios.get('https://www.dcard.tw/service/api/v2/posts').then((res)=>{
+                axios.get('php/').then((res)=>{
                     console.log("從php傳來的東西",res)
                     this.keyArray = res.data;
                     // console.log("陣列的樣子",this.administrators);
@@ -131,7 +130,7 @@
                     console.log(err)
                 })
             },
-        }
+        
         });
         
 
