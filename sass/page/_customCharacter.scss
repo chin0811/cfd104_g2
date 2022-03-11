@@ -171,6 +171,7 @@
 }
 */
 
+/*
 .customCharacter_bouncing main .main .sliderCharacters .adjust .adjustmentLever {
     appearance: none;
     padding: 0;
@@ -195,6 +196,71 @@
         background-color: #394897;
         box-shadow: -100vw 0 0 100vw #394897;
     }
+}
+*/
+$inputWidth: 200;
+
+@function getProgress($inputWidth, $color) {
+    $val: -5px 0 0 -10px $color;
+    @for $i from 6 through $inputWidth {
+        $val: #{$val}, -#{$i}px 0 0 -10px #{$color}
+    }
+    @return $val
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.range-input-container {
+    padding: 0 5px;
+}
+
+input[type="range"] { 
+        margin: auto;
+        -webkit-appearance: none;
+        outline: none;
+        overflow: hidden;
+        height: 40px;
+        width: #{$inputWidth}px;
+        cursor: pointer;
+        border-radius: 0;
+    &::-webkit-slider-runnable-track {
+        background: #ddd;
+        height: 20px;
+    }
+    ::-moz-range-track{
+        background: #ddd;
+        height: 20px;
+    }
+    &::-webkit-slider-thumb {
+        margin-top: -10px;
+        -webkit-appearance: none;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        box-shadow: getProgress($inputWidth, #69EAAB);
+        border: 2px solid #999;
+        border-radius: 50%;
+        // transform: translatex(2px)
+    }
+    &::-moz-range-thumb{
+        margin-top: -10px;
+        -webkit-appearance: none;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        box-shadow: getProgress($inputWidth, #69EAAB);
+        border: 2px solid #999;
+        border-radius: 50%;
+    }
+    box-shadow: none;
+    border: none;
+    backdrop-filter: blur(0);
 }
 
 

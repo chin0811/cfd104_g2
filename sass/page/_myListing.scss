@@ -59,6 +59,9 @@
 
 
 /* 競標 */
+.collect_bouncing main .commodityGroup .commodity .bid{
+    max-width: 500px;
+}
 .collect_bouncing main .commodityGroup .commodity .bid>*,
 .myListing_bouncing main .commodityGroup .commodity .bid>* {
     margin-top: 1em;
@@ -92,6 +95,13 @@
 .collect_bouncing main .commodityGroup .commodity .bid .information .timeAndButton>*,
 .myListing_bouncing main .commodityGroup .commodity .bid .information .timeAndButton>* {
     margin-bottom: 1em;
+}
+/* 圖片固定 */
+.collect_bouncing .img{
+    max-width: initial;
+    img{
+        width: 300px;
+    }
 }
 
 // .myListing_bouncing main .commodityGroup .commodity .bid .button {
