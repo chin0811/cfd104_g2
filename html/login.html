@@ -30,6 +30,7 @@
                 <form action="" :class="registerChange ? 'active':''" id="registerForm">
                     <div>
                         <div>
+                            
                             <label for="addMemId">帳號</label>
                             <input type="text" placeholder="ArtTogether"  id="addMemId" v-model="addMemId" >
                             <label for="addMemPsw">密碼</label>
@@ -42,6 +43,8 @@
                         </div>
                         
                         <div>
+                            <label for="memNickText">暱稱</label>
+                            <input type="text" placeholder="ArtTogether"  id="memNickText" v-model="memNickText" >
                             <label for="memName">姓名</label>
                             <input type="text" placeholder="藝起"  id="memName" v-model="nameText">
                             <label for="memTel">電話</label>
@@ -86,6 +89,7 @@
                 telText:'',
                 nameText:'',
                 addressText:'',
+                memNickText:'',
             },
             methods: {  //函數大部份放在這!
                 registerWatch(){
@@ -108,13 +112,15 @@
                     }else{
                         axios({
                                 method: 'post',
-                                url: 'php/g2_fetchHtmlConnectSend.php',
+                                url: 'php/loginRegister.php',
                                 //API要求的資料
                                 data: {
-                                    sendData:JSON.stringify(`${this.addMemId},${this.addMemPsw},${this.addMemPswAgain},${this.emailText},${this.telText},${this.nameText},${this.addressText}`)
+                                    sendData:JSON.stringify(`'${this.memNickText}','${this.addMemId}','${this.addMemPsw}','${this.nameText}','${this.emailText}','${this.telText}','${this.addressText}'`)
                                 }
                             })
-                            .then((response) => console.log(response))
+                            .then((response) => {console.log(response)
+                                // location.reload()
+                            })
                             .catch((error) => console.log(error))
                     }
                 }
