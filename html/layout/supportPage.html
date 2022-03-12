@@ -33,7 +33,7 @@
                     <img src="assets\image\supportPage_close_icon.svg" alt="" @click="openSelect = !openSelect">
                 </article>
                 <article class="txtArea">
-                    <article class="meTxt">
+                    <!-- <article class="meTxt">
                         <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
                     </article>
                     <article>
@@ -62,10 +62,11 @@
                     </article>
                     <article class="meTxt">
                         <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
-                    </article>
+                    </article> -->
+                    <messageart v-for="item in messageObject" v-bind="item"/>
                 </article>
-                <article class="keyButton" v-show="openRobotBool" v-for="key in keyArray">
-                    <button>{{key}}</button>
+                <article class="keyButton" v-show="openRobotBool" >
+                    <button v-for="key in keyArray" @click="keySelect">{{key.keyWord}}</button>
                 </article>
                 <article action="#" class="inputArea" v-show="openPeopleBool">
                     <textarea name="" id="" ></textarea>
@@ -84,11 +85,37 @@
                 openRobotBool:false,
                 openPeopleBool:false,
                 keyArray:[],
+                messageObject: [
+                    // {message: '', class: 'meTxt'},
+                    // {message: '', class: 'robotTxt'},
+                ],
+            },
+            components: {
+                messageart: {
+                    props: ['message','class'],
+                    template: `<article class=""><p class="small">{{message}}</p></article>`,
+                },
             },
             methods: {  //函數大部分放在這裡
                 closedRoom(){
                     this.openPeopleBool = false;
                     this.openRobotBool = false;
+                },
+                keySelect(key){
+                    this.messageObject.push({message: `${key.target.innerText}` , class: 'meTxt'})
+                    setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                    axios({
+                    method:'post',
+                    url:`php/robSupKey.php?selectkey=${key.target.innerText}`,
+                    }).then((res)=>{
+                        console.log("從php傳來的東西",res)
+                        setTimeout(()=>{
+                            this.messageObject.push({message: `${res.data[0].ans}` , class: 'robotTxt'})
+                            setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                    },500)
+                    }).catch((err)=>{
+                        console.log(err)
+                    })
                 }
             },
             computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值
@@ -106,32 +133,20 @@
                         selectRoom:true,
                         active: this.openRobotBool  || this.openPeopleBool,
                     };
-                } ,
-                keySelect(){
-                    axios({
-                        method: 'post',
-                        url: 'php/g2_fetchHtmlConnectSend.php',
-                        //API要求的資料
-                        data: {
-                            sendData:JSON.stringify(`${this.addMemId},${this.addMemPsw},${this.addMemPswAgain},${this.emailText},${this.telText},${this.nameText},${this.addressText}`)
-                        }
-                    })
-                    .then((response) => console.log(response))
-                    .catch((error) => console.log(error))
-                }
+                },
 
             },
             mounted(){
-                axios.get('php/').then((res)=>{
-                    console.log("從php傳來的東西",res)
+                axios({
+                    method:'post',
+                    url:"php/robSupKey.php",
+                }).then((res)=>{
+                    // console.log("從php傳來的東西",res)
                     this.keyArray = res.data;
-                    // console.log("陣列的樣子",this.administrators);
-                }).catch((err)=>{
-                    console.log(err)
-                })
+                }).catch((err)=>{ console.log(err) })
             },
         
         });
         
-
+        
     </script>

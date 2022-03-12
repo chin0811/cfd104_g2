@@ -102,7 +102,7 @@ $uiColor:(
                 line-height: 2em;
             }
             >img{
-                width: 2em;
+                width: 1em;
                 cursor: pointer;
                 // @media screen and (min-width:768px) {
                 //     width: 2em;
@@ -167,7 +167,7 @@ $uiColor:(
             }
             >img{
                 cursor: pointer;
-                width: 2em;
+                width: 1em;
             }
             >span{
                 cursor: pointer;
@@ -185,6 +185,9 @@ $uiColor:(
                 margin-left: 1em;
                 line-height: 2em;
             }
+            img{
+                width: 1em;
+            }
             @media screen and (min-width:768px) {
                 >h3::after{
                     /* 客服聯天室標語 */
@@ -195,7 +198,7 @@ $uiColor:(
                 }
                 
             }
-            
+
         }
         .txtArea{
             /*對話紀錄區*/
@@ -213,42 +216,42 @@ $uiColor:(
             //儘管這個新語法很簡單，但它是有限制的。我們只能新增顏色。我們不能新增shadows`、gradients、rounded，或任何類似的東西，我們被允許客製化的只是顏色。
 
 
-        &::-webkit-scrollbar {
-            /*卷軸的寬度*/
-            // 首先，我們需要定義卷軸的大小。這可以是垂直卷軸的寬度，也可以是水平卷軸的高度。
-            // width: 5px;
-            background-color: transparent;
-            width: 8px;
-        }
-        &::-webkit-scrollbar-track {
-            // 卷軸 track
-            //這代表了卷軸的基礎。我們可以通過新增background、shadows、border-radius和border來對它進行造型。
-            background-color: transparent;
-            // background-color: #e4e4e4;
-            border-radius: 100px;
-        }
-        &::-webkit-scrollbar-thumb {
-            //卷軸 thumb
-            //準備好了卷軸的基礎後，我們就需要對卷軸的thumb進行樣式設計。這很重要，因為使用者可能會拖動這個thumb與卷軸進行互動。
-            // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            // background-color: #aaa;
-            // color: #000;
-            // border-radius: 200px ;
-            // background-color: #fde465 ;
-            // background-color: #3e444a05;
-            // box-shadow: 0.1em 0.5em 0.5em #252b3020;
-            // border: 1px solid #94969b50;
-            // border-right: 1px solid #55595e20;
-            // border-bottom: 1px solid #55595e20;
-            // border-left: 1px solid #ffffff30;
-            // backdrop-filter: blur(0.5em);
-            background-color: #d4aa70;
-            border-radius: 100px;
+        // &::-webkit-scrollbar {
+        //     /*卷軸的寬度*/
+        //     // 首先，我們需要定義卷軸的大小。這可以是垂直卷軸的寬度，也可以是水平卷軸的高度。
+        //     // width: 5px;
+        //     background-color: transparent;
+        //     width: 8px;
+        // }
+        // &::-webkit-scrollbar-track {
+        //     // 卷軸 track
+        //     //這代表了卷軸的基礎。我們可以通過新增background、shadows、border-radius和border來對它進行造型。
+        //     background-color: transparent;
+        //     // background-color: #e4e4e4;
+        //     border-radius: 100px;
+        // }
+        // &::-webkit-scrollbar-thumb {
+        //     //卷軸 thumb
+        //     //準備好了卷軸的基礎後，我們就需要對卷軸的thumb進行樣式設計。這很重要，因為使用者可能會拖動這個thumb與卷軸進行互動。
+        //     // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        //     // background-color: #aaa;
+        //     // color: #000;
+        //     // border-radius: 200px ;
+        //     // background-color: #fde465 ;
+        //     // background-color: #3e444a05;
+        //     // box-shadow: 0.1em 0.5em 0.5em #252b3020;
+        //     // border: 1px solid #94969b50;
+        //     // border-right: 1px solid #55595e20;
+        //     // border-bottom: 1px solid #55595e20;
+        //     // border-left: 1px solid #ffffff30;
+        //     // backdrop-filter: blur(0.5em);
+        //     background-color: #d4aa70;
+        //     border-radius: 100px;
 
             
 
             
-        }
+        // }
             >article{
                 /*單個對話紀錄框*/
                 margin: 3em 0em;
@@ -309,23 +312,23 @@ $uiColor:(
                 margin: auto 0.3em;
                 cursor: pointer;
             }
-            &::-webkit-scrollbar {
-                background-color: transparent;
-                width: 8px;
-            }
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-                border-radius: 100px;
-            }
-            &::-webkit-scrollbar-thumb {
+            // &::-webkit-scrollbar {
+            //     background-color: transparent;
+            //     width: 8px;
+            // }
+            // &::-webkit-scrollbar-track {
+            //     background-color: transparent;
+            //     border-radius: 100px;
+            // }
+            // &::-webkit-scrollbar-thumb {
                 
-                background-color: #d4aa70;
-                border-radius: 100px;
+            //     background-color: #d4aa70;
+            //     border-radius: 100px;
     
                 
     
                 
-            }
+            // }
         }
         >.inputArea{
              /* 真人客服聯天室輸入區 */
