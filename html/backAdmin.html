@@ -5,35 +5,98 @@
                     <li v-for = 'title in titles'>{{title}}</li>
                     <li></li>
                 </ul>
-                <ul v-for='(member,key) in members' 
+                <ul v-for='(administrator,key) in administrators' 
                 class="memberList">            
-                    <li>{{member.adminNo}}</li>
-                    <li>{{member.adminId}}</li>
-                    <li>{{member.adminName}}</li>
-                    <li>{{member.adminClass}}</li>
-                    <li>{{member.adminState}}</li>  
-                    <li>編輯與查看</li>
+                    <li>{{administrator.adminNo}}</li>
+                    <li>{{administrator.adminId}}</li>
+                    <li>{{administrator.adminName}}</li>
+                    <li>{{administrator.adminClass}}</li>
+                    <li>{{administrator.adminSatate}}</li>  
+                    <li v-on:click="openLightBox(key)">編輯與查看</li>
                 </ul>
+                <section class="backLightBox adminLigthtBox displayNone" id="adminLigthtBox">
+                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
+                    <ul>            
+                        <li>{{lightIndex.adminNo}}</li>
+                        <li>{{lightIndex.adminId}}</li>
+                        <li>{{lightIndex.adminName}}</li>
+                        <li>{{lightIndex.adminClass}}</li>
+                    </ul>
+                    <select v-model="changedStatus">                                        
+                        <option :value="status.name" v-for="status in statusList" >{{status.name}}</option>                                    
+                    </select>
+                    <button v-on:click="confirmChange">確認</button>
+                </section>
             </div>
         </section>
     </section>
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                titles: ['管理員編號',  '帳號', '管理員姓名', '管理員種類', '狀態','', ],
-                members:[{
-                    'adminNo':'001',
-                    'adminId':'chinHappy',
-                    'adminName':'火爆猴',
-                    'adminClass':'一般管理員',
-                    'adminState':"正常",
-                },],
+        let vm = new Vue({
+        el:"#app",
+        data:{
+            adminNo:[],
+            titles: ['管理員編號',  '帳號', '管理員姓名', '管理員種類', '離職','', ],
+            administrators:[],
+            lightIndex:[],
+            adminLigthtBox : document.querySelector("#adminLigthtBox"),
+            statusList:[
+                {name: "是"},
+                {name: "否"}
+            ],
+            changedStatus: '',
+        },
+        created(){
+            // this.changedStatus = this.statusList[0].choice;
+        },
+        methods:{
+            openLightBox:function(key){
+                adminLigthtBox.classList.toggle("displayNone"); 
+                this.lightIndex = this.administrators[key];
+                this.adminNo = key+1;
+                if(this.lightIndex.adminSatate=="否"){
+                    this.changedStatus = this.statusList[1].name;
+                }else{
+                    this.changedStatus = this.statusList[0].name;
+                }
             },
-            methods: {},
-            computed: {},
-            watch: {},
-        });
+            backCloseLight:function(){
+                adminLigthtBox.classList.toggle("displayNone"); 
+            },
+            confirmChange:function(){
+                adminLigthtBox.classList.toggle("displayNone");
+                console.log("哈哈",this.changedStatus);
+                console.log("哈哈",this.lightIndex.adminSatate);
+                if(this.changedStatus=="是"){
+                    this.lightIndex.adminSatate = "是";
+                }else{
+                    this.lightIndex.adminSatate = "否";
+                }
+                let thisVue = this;
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/backReviseAdmin.php',
+                    data: {
+                        adminNo:JSON.stringify(thisVue.adminNo),
+                        changedStatus:thisVue.changedStatus,
+                    },
+                    success: function(data) {
+                        console.log(data.message);
+                        console.log("成功了嗎?");
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                    }
+                });
+            },
+        },
+        mounted(){
+            axios.get('php/g2_fetchHtmlConnect.php').then((res)=>{
+                this.administrators = res.data;
+            }).catch((err)=>{
+                console.log(err)
+            })
+        }
+    })
     </script>
 </body>
 </html>
