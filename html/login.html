@@ -102,7 +102,7 @@
                 registerWatch(){
                     if(this.addMemId.length < 5){
                         alert('帳號字數少於5個字')
-                    }else if(this.addMemPsw < 8){
+                    }else if(this.addMemPsw.length < 8){
                         alert('密碼字數不得小於8個字')
                     }else if(this.addMemPsw != this.addMemPswAgain){
                         alert('輸入密碼不相符')
@@ -145,8 +145,8 @@
                         })
                         .then((response) => {
                             if(response.data == 1){
-                                location = "homePage.html";
                                 loginBtn.innerText = "登出";
+                                location = "homePage.html";
                             }else{
                                 alert("帳號密碼錯誤")
                             }
