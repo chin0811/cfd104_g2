@@ -116,4 +116,24 @@ a{
     width: 82%;
    overflow-y: scroll;
    background-color: rgb(122, 173, 190); 
+   position: relative;
+}
+// 燈箱設計
+.backLightBox{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 3%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ffc489;
+}
+i{
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    cursor: pointer;
 }
