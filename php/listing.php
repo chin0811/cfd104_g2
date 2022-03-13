@@ -4,7 +4,7 @@
         $host = "cfd104g5.asuscomm.com";
         $dbname = "cdf104_g2";//資料庫名子
         $user = "root"; // 記得改成自己的名字
-        $password = "Eric20212022";
+        $password = "123";
         $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
         $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
     
