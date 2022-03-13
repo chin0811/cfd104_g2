@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 修改資料庫
 
     // 資料庫語法
-    $table ='bidhis';//資料庫的table名稱
+    $table ='com';//資料庫的table名稱
     switch($_FILES["pic"]["error"]){ //["input name"][""]
         case UPLOAD_ERR_OK:
             $dir = "images";
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "系統暫時不能提供服務~";
     }
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $value = "{$_POST['artName']},{$_POST['artistName']},1,1000";
+    $value = "{$_POST['商品編號']},{$_POST['販售會員編號']},{$newName},{$_POST['販售狀態']},{$_POST['商品資訊']},{$_POST['廣告狀態']},{$_POST['商品鑑定證書']},{$_POST['商品分類']},{$_POST['審核狀態']},{$_POST['artistName']}";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
     //資料放入sql之指令
     $sql = "insert into $table values($value)";
     echo $sql;
