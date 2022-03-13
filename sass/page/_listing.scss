@@ -816,7 +816,7 @@ z-index: 1;
     /* margin: auto; */
     margin-right: 10px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
     border: 0px;
     outline: 0px;
     // background-color: #3e444a05;;
@@ -841,8 +841,13 @@ z-index: 1;
 .uploadFile .uploadPicture li:nth-child(4){
     display: none;
 }
-.uploadFile .uploadPicture li:nth-child(2).active {
-    display: none;
+.uploadFile .uploadPicture li .pic2.here {
+    display: block;
+	pointer-events: auto;
+}
+.uploadFile .uploadPicture li:nth-child(4).show {
+    opacity: 1;
+	pointer-events: auto;
 }
 .uploadFile .uploadPicture input{
     display: none;
@@ -869,7 +874,7 @@ width: 120px;
 height: 120px;
 box-sizing: border-box;
 // padding-top: 15px;
-border-radius: 30px;
+border-radius: 10px;
 border: 0px;
 outline: 0px;
 // background-color: #3e444a05;;
