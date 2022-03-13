@@ -308,7 +308,7 @@
                             </li>
                             <li>
                                 <input type="file" id="pic1" name="pic" accept=".png,.jpg">
-                                <label for="pic1"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                                <label for="pic1"><img id="imgAdd"src="assets/image/listingImage/add_icon.png" alt="none"></label>
                                 <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <li>
@@ -584,6 +584,23 @@
         close.addEventListener('click', () => {
             modal.classList.remove('show');
         });
+    </script>
+
+    <!-- 圖片上傳方框生成 -->
+    <script>
+        const appear = document.getElementById('imgAdd');
+        // const appear1 = document.getElementById('pic2');
+        // const close = document.getElementById('lightboxBtn');
+        const upload = document.getElementById('pic2');
+        appear.addEventListener('click', () => {
+            upload.classList.add('here');
+        });
+        // upload1.addEventListener('click', () => {
+        //     modal.classList.add('show');
+        // });
+        // // close.addEventListener('click', () => {
+        // //     modal.classList.remove('show');
+        // });
     </script>
 
     @@include('layout/footer.html')
