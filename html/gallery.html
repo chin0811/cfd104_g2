@@ -16,6 +16,14 @@
     <script src="js/vue/vue.min.js"></script>
     <!-- 彈跳公仔JS -->
     <script src="js/galleryBounceDoll.js" async></script>
+    <!-- 登入  -->
+    <script src="js/loginCheck.js"></script>
+    <script >
+        window.addEventListener('load',function(){
+            loginCheck(false);
+        })
+    </script>
+    <!-- 登入ＥＮＤ  -->
   </head>
   <body>
     @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })

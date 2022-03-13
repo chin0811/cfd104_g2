@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/vue/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <script src="js/loginCheck.js"></script>
+    <script >
+        window.addEventListener('load',function(){
+            loginCheck(false);
+        })
+    </script>
 </head>
 <body>
     @@include('layout/headerNormal.html')
@@ -20,17 +26,16 @@
         <article class="size aidBgColor">
             <!-- 輸入區 -->
             <article>
-                <form action="#">
+                <form action="#" @submit.prevent="loginSelect">
                     <label for="memId">帳號</label>
-                    <input type="text" placeholder="ArtTogether" id="memId">
+                    <input type="text" placeholder="ArtTogether" id="memId" v-model="loginMemId" required>
                     <label for="memPsw">密碼</label>
-                    <input type="password" placeholder="＊＊＊＊" id="memPsw">
-                    <input type="submit" value="登入" class="round">
+                    <input type="password" placeholder="＊＊＊＊" id="memPsw" v-model="loginMemPsw" required>
+                    <input type="submit" value="登入" class="round" >
                 </form>
                 <form action="" :class="registerChange ? 'active':''" id="registerForm">
                     <div>
                         <div>
-                            
                             <label for="addMemId">帳號</label>
                             <input type="text" placeholder="ArtTogether"  id="addMemId" v-model="addMemId" >
                             <label for="addMemPsw">密碼</label>
@@ -90,6 +95,8 @@
                 nameText:'',
                 addressText:'',
                 memNickText:'',
+                loginMemPsw:'',
+                loginMemId:'',
             },
             methods: {  //函數大部份放在這!
                 registerWatch(){
@@ -119,12 +126,42 @@
                                 }
                             })
                             .then((response) => {console.log(response)
-                                // location.reload()
+                                location.reload()
                             })
                             .catch((error) => console.log(error))
                     }
+                },
+                loginSelect(){
+                    let loginBtn = document.querySelector('.login a:first-of-type');
+                    if(loginBtn.innerText == '登入'){
+                        axios({
+                            method: 'post',
+                            url: 'php/login.php',
+                            //API要求的資料
+                            data: {
+                                loginMemPsw:this.loginMemPsw,
+                                loginMemId:this.loginMemId,
+                            }
+                        })
+                        .then((response) => {
+                            if(response.data == 1){
+                                location = "homePage.html";
+                                loginBtn.innerText = "登出";
+                            }else{
+                                alert("帳號密碼錯誤")
+                            }
+                           
+                        })
+                        .catch((error) => console.log(error))
+                    }else{
+                        axios({
+                            method: 'post',
+                            url: 'php/logout.php',
+                        })
+                        .then((response) => {location.reload();})
+                        .catch((error) => console.log(error))
+                    }
                 }
-                
             },
             computed: {  //函數也可以放在這!但是放在這裡的函數，不能傳參數，一定要有回傳值
                 liginClass(){
