@@ -90,7 +90,7 @@
             },
         },
         mounted(){
-            axios.get('php/g2_fetchHtmlConnect.php').then((res)=>{
+            axios.get('php/backAdminFetch.php').then((res)=>{
                 this.administrators = res.data;
             }).catch((err)=>{
                 console.log(err)
