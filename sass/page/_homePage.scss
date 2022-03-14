@@ -434,6 +434,15 @@
     padding: 10px;
     box-sizing: border-box;
 }
+// 新聞圖片設定
+.homeNews .newsContain .item .pic{
+    max-height: 400px;
+    max-width: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
 .homeNews .newsContain .item .pic img{
     width: 100%;
 }

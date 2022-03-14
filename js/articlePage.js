@@ -1,26 +1,80 @@
 $(document).ready(function(){
     // 展開留言
-    $(".articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic").click(function(){
-        $(".articlePageContent .articlePageWrap .commentArea").toggleClass("slideIn");
-    });
+    // $(".articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic").click(function(){
+    //     $(".articlePageContent .articlePageWrap .commentArea").toggleClass("slideIn");
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+        
+    // });
+    
     // 展開留言滑到最上面
-    $(".articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic").click(function(){
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-    });
+    // $(".articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic").click(function(){
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    // });
+
     // 關閉留言
     $(".articlePageContent .articlePageWrap .commentArea .commentClose").click(function(){
         $(".articlePageContent .articlePageWrap .commentArea").removeClass("slideIn");
     });
     // 加入收藏
-    $('.like .pic img').click(function(e){
-        $(this).toggleClass('active');
-    });
+    // $('.like .pic img').click(function(e){
+    //     $(this).toggleClass('active');
+    // });
 
     // 跳窗套件
-    $('.articlePageContent .authorShortIntro .report').click(function(){
+    // $('.articlePageContent .authorShortIntro .report').click(function(){
+    //     swal({
+    //         title: "您是否要檢舉？",
+    //         icon: 'assets/image/articlePage_authorShortIntro_exclamation.png',
+    //         buttons: {
+    //             // 取消按鈕
+    //             Cancel: {
+    //                 text: "取消",
+    //                 value: null,
+    //                 // 新增class
+    //                 className:'cancel',
+    //             },
+    //             // 檢舉按鈕
+    //             report: {
+    //                 text: "檢舉",
+    //                 value: 'report',
+    //                 // 新增class
+    //                 className:'report',
+    //             },  
+    //         }
+    //         // 如果按鈕值是report，則會有下一個跳窗
+    //     }).then((value)=>{
+    //         if(value == 'report'){
+    //             swal({
+    //                 text: "感謝您的檢舉，平台會審核內容。",
+    //                 buttons:{
+    //                     goBack: {
+    //                         text: "返回",
+    //                         className:'goBack',
+    //                     }
+    //                 },
+    //                 // 跳回文章總覽
+    //             }).then(function() {
+    //                 window.location = "articleAll.html";
+    //             });
+    //         }
+    //     })
+    // });
+});
+
+
+
+window.addEventListener('load',function(){
+    document.querySelector('.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic').addEventListener('click',function(){
+        $(".articlePageContent .articlePageWrap .commentArea").toggleClass("slideIn");
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+    document.querySelector('.like .pic img').addEventListener('click',function(){
+        $(this).toggleClass('active');
+    });
+    document.querySelector('.articlePageContent .authorShortIntro .report').addEventListener('click',function(){
         swal({
             title: "您是否要檢舉？",
-            icon: '../assets/image/articlePage_authorShortIntro_exclamation.png',
+            icon: 'assets/image/articlePage_authorShortIntro_exclamation.png',
             buttons: {
                 // 取消按鈕
                 Cancel: {
@@ -50,13 +104,9 @@ $(document).ready(function(){
                     },
                     // 跳回文章總覽
                 }).then(function() {
-                    window.location = "articleAll.html";
+                    // window.location = "articleAll.html";
                 });
             }
         })
     });
-});
-
-
-
-
+})

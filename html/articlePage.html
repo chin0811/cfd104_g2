@@ -9,253 +9,267 @@
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 引入vue -->
+    <script src="js/vue/vue.js"></script>
     <script src="js/articlePage.js"></script>
     <!-- 跳窗套件 -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- 引入axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <!-- 主標32px letter-spacing:-0.512px line-height:40px
-    副標22px letter-spacing:normal line-height:28px
-    內文20px letter-spacing:-0.06px line-height:32px -->
     <!-- @@include('layout/header.html') -->
     @@include('layout/headerNormal.html',{"headerClass":""})
     <section class="articlePageContent">
-        <section class="articlePageWrap">
-            <div class="pageContent">
-                <div class="breadcrumb">
-                    <ul>
-                        <li><a href="homePage.html" class="lightColor">首頁</a></li>
-                        <li ><a href="articleAll.html" class="lightColor">>藝論</a></li>
-                        <li><a href="articlePage.html" class="epBColor">>這篇文章</a></li>
-                    </ul>
-                </div>
-                <div class="authorShortIntro">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="https://picsum.photos/90/90/?random=10">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">h4JERRY</h4>
-                            <p class="lightColor small">Feb 6 .2021</p>
-                        </div>
+        <!-- Vue作用域開始 -->
+        <div id="articlePage">
+            <section class="articlePageWrap">
+                <div class="pageContent">
+                    <div class="breadcrumb">
+                        <ul>
+                            <li><a href="homePage.html" class="lightColor">首頁</a></li>
+                            <li ><a href="articleAll.html" class="lightColor">>藝論</a></li>
+                            <li><a href="articlePage.html" class="epBColor">>這篇文章</a></li>
+                        </ul>
                     </div>
-                    <div class="report">
-                        <div class="pic">
-                            <img src="assets/image/articlePage_authorShortIntro_exclamation.png">
-                        </div>
-                        <span class="small">檢舉</span>
-                    </div>
-                </div>
-                <article class="page">
-                    <h2 class="deepColor"> h2一篇測試用的文章</h2>
-                    <div class="item picTxtitem">
-                        <div class="pic">
-                            <img src="https://picsum.photos/500/400/?random=10">
-                        </div>
-                        <div class="txt">
-                            <p class="deepColor">生活中，若報告出現了，我們就不得不考慮它出現了的事實。拿破崙在不經意間這樣說過，勇氣如愛情，需要希望來滋養。我希望諸位也能好好地體會這句話。孟子在不經意間這樣說過，君子有三樂，而王天下不與存焉。父母俱存，兄弟無故，一樂也; 仰不愧于天，俯不怍於人，二樂也; 得天下英才而教育之，三樂也。君子有三樂，而王天下不與存焉。<br>希望大家能從這段話中有所收穫。阿拉伯說過一句富有哲理的話，你可以相信一座山移動了位置，卻不必去相信一個人改變了自己的個性。我希望諸位也能好好地體會這句話。泰戈爾說過一句富有哲理的話，有勇氣在自己生活中嘗試解決人生新問題的人，正是那些使社會臻於偉大的人！那些僅僅循規蹈矩過活的人，並不是在使社會進步，只是在使社會得以維持下去。這段話可說是震撼了我。報告對我來說，已經成為了我生活的一部分。老舊的想法已經過時了。<br>培根說過一句很有意思的話，時間是衡量事業的標準。這激勵了我。不要先入為主覺得報告很複雜，實際上，報告可能比你想的還要更複雜。報告改變了我的命運。萊辛曾經說過，我們的驕傲多半是基於我們的無知！ 這段話看似複雜，其中的邏輯思路卻清晰可見。報告必定會成為未來世界的新標準。屈原說過一句很有意思的話，路漫漫其修遠兮，吾將上下而求索。這段話讓我所有的疑惑頓時豁然開朗。儘管如此，我們仍然需要對報告保持懷疑的態度。伯爾曾經認為，消磨時間是一種多麼勞累、多麼可怕的事情啊，這只肉眼看不見的秒針無時不在地平線下轉圈，你一再醉生夢死地消磨時間，到頭來你還得明白，它仍在繼續轉圈，無情地繼續轉圈。這段話看似複雜，其中的邏輯思路卻清晰可見。說到報告，你會想到什麼呢？若能夠洞悉報告各種層面的含義，勢必能讓思維再提高一個層級。<br>徐悲鴻說過，每個人的一生都應該給後代留下一些高尚有益的東西。帶著這句話，我們還要更加慎重的審視這個問題。做好報告這件事，可以說已經成為了全民運動。拉伯雷在過去曾經講過，在病人即將痊癒時，請來的醫生是幸運的。這段話令我陷入了沈思。想必大家都能了解報告的重要性。報告的出現，必將帶領人類走向更高的巔峰。報告的存在，令我無法停止對他的思考。每個人都不得不面對這些問題。在面對這種問題時，務必詳細考慮報告的各種可能。<br>巴爾扎克曾講過，只有那些曉得控制他們的缺點，不讓這些缺點控制自己的人才是強者。這段話讓我的心境提高了一個層次。對報告進行深入研究，在現今時代已經無法避免了。不難發現，問題在於該用什麼標準來做決定呢？在人生的歷程中，報告的出現是必然的。動機，可以說是最單純的力量。我們要學會站在別人的角度思考。吳起說過一句發人省思的話，用兵必須審敵虛實而趨其危。這是撼動人心的。所謂報告，關鍵是報告需要如何解讀。</p>
-                        </div>
-                    </div>
-                    <div class="shareBar">
-                        <div class="shareComment">
-                            <!-- <div class="like">
-                                <div class="pic">
-                                    <img src="assets/image/articlePage_shareBar_like.png">
-                                </div>
-                                <span>999</span>
-                            </div> -->
-                            <div class="like mainColor deepColor">
-                                <div class="pic">
-                                    <img src="assets/image/all_like.png" alt="">
-                                </div>
-                                <span class="small">
-                                    99
-                                </span>
-                            </div>
-                            <div class="pic commentPic">
-                                <img src="assets/image/articlePage_shareBar_comment.png">
-                            </div>
-                            <!-- <div class="report">
-                                <div class="pic">
-                                    <img src="assets/image/articlePage_authorShortIntro_exclamation.png">
-                                </div>
-                                <span>檢舉</span>
-                            </div> -->
-                        </div>
-                        <div class="socialMedia">
+                    <div class="authorShortIntro" v-for="discusArt in discusArtAll">
+                        <div class="item">
                             <div class="pic">
-                                <a href="">
-                                    <img src="assets/image/home_footer_facebook.png">
-                                </a>
-                            </div>
-                            <div class="pic">
-                                <a href="">
-                                    <img src="assets/image/home_footer_instagram.png">
-                                </a>
-                            </div>
-                            <div class="pic">
-                                <a href="">
-                                    <img src="assets/image/home_footer_twitter.png">
-                                </a>
-                            </div>
-                            <div class="pic">
-                                <a href="">
-                                    <img src="assets/image/home_footer_line.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <section class="relative">
-                    <h2>h2相關文章</h2>
-                    <div class="item">
-                        <div class="pic">
-                            <img src="https://picsum.photos/90/90/?random=10">
-                        </div>
-                        <div class="txt">
-                            <h4>h4下面的文章</h4>
-                            <p class="deepColor small">p small這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pic">
-                            <img src="https://picsum.photos/90/90/?random=10">
-                        </div>
-                        <div class="txt">
-                            <h4>h4下面的文章</h4>
-                            <p class="deepColor small">p small這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="pic">
-                            <img src="https://picsum.photos/90/90/?random=10">
-                        </div>
-                        <div class="txt">
-                            <h4>h4下面的文章</h4>
-                            <p class="deepColor small">p small這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？這篇文章在講甚麼？</p>
-                        </div>
-                    </div>
-                </section>
-            </div>           
-            <aside class="sideInfo">
-                <div class="authorIntro">
-                    <div class="pic">
-                        <img src="https://picsum.photos/200/200/?random=10">
-                    </div>
-                    <div class="txt">
-                        <p>p JERRY</p>
-                        <p class="lightColor small">p small 我是誰？皮卡丘。分享關於神奇寶貝的最新資訊，皮卡皮卡啾~
-                        </p>
-                    </div>
-                </div>
-                <div class="relativeSide">
-                    <h4>h4我的文章</h4>
-                    <div class="item">
-                        <a href="">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/300/?random=10">
-                        </div>
-                        <div class="txt">
-                            <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <div class="pic">
-                                <img src="https://picsum.photos/300/300/?random=10">
+                                <img src="https://picsum.photos/90/90/?random=10">
                             </div>
                             <div class="txt">
-                                <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                                <h4 class="deepColor">{{discusArt.memName}}</h4>
+                                <p class="lightColor small">{{discusArt.time}}</p>
                             </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="">
+                        </div>
+                        <div class="report">
                             <div class="pic">
-                                <img src="https://picsum.photos/300/300/?random=10">
+                                <img src="assets/image/articlePage_authorShortIntro_exclamation.png">
+                            </div>
+                            <span class="small">檢舉</span>
+                        </div>
+                    </div>
+                    <article class="page" v-for="discusArt in discusArtAll">
+                        <h2 class="deepColor">{{discusArt.title}}</h2>
+                        <div class="item picTxtitem">
+                            <div class="pic">
+                                <img :src="src+discusArt.pic">
                             </div>
                             <div class="txt">
-                                <p class="lightColor  small">p small 側邊的文章在講甚麼？側邊的文章在講甚麼？側邊的文章在講甚麼？</p>
+                                <p class="deepColor">{{discusArt.content}}</p>
                             </div>
-                        </a>
-                    </div>
-                </div>
-            </aside>
-            <!-- 要隱藏留言區用的 -->
-            <section class="hiddenArea">
-                <section class="commentArea">
-                    <span class="commentClose">
-                        <i class="fas fa-times"></i>
-                    </span>
-                    <h4>回應(<span>6</span>)</h4>
-                    <div class="commentInput">
-                        <div class="memberIcon">
+                        </div>
+                        <div class="shareBar">
+                            <div class="shareComment">
+                                <div class="like mainColor deepColor">
+                                    <div class="pic">
+                                        <img src="assets/image/all_like.png" alt="">
+                                    </div>
+                                    <span class="small">
+                                        {{discusArt.likes}}
+                                    </span>
+                                </div>
+                                <div class="pic commentPic">
+                                    <img src="assets/image/articlePage_shareBar_comment.png">
+                                </div>
+                            </div>
+                            <div class="socialMedia">
+                                <div class="pic">
+                                    <a href="">
+                                        <img src="assets/image/home_footer_facebook.png">
+                                    </a>
+                                </div>
+                                <div class="pic">
+                                    <a href="">
+                                        <img src="assets/image/home_footer_instagram.png">
+                                    </a>
+                                </div>
+                                <div class="pic">
+                                    <a href="">
+                                        <img src="assets/image/home_footer_twitter.png">
+                                    </a>
+                                </div>
+                                <div class="pic">
+                                    <a href="">
+                                        <img src="assets/image/home_footer_line.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <section class="relative">
+                        <h2>最新文章</h2>
+                        <div class="item" v-for="latestArticle in latestArticles">
                             <div class="pic">
-                                <img src="https://picsum.photos/100/100/?random=20">
+                                <img :src='src+latestArticle.pic'>
                             </div>
                             <div class="txt">
-                                <p class="deepColor">JEERY</p>
+                                <h4>{{latestArticle.title}}</h4>
+                                <p class="deepColor small">{{latestArticle.content | ellipsis}}</p>
                             </div>
                         </div>
-                        <div class="txtArea">
-                            <form action="">
-                                <textarea name="" id=""></textarea>
-                                <div class="item">
-                                    <input class="round" type="submit" value="評論" >
-                                    <input class="roundOutline" type="reset" value="取消">
-                                </div>
-                            </form>
+                    </section>
+                </div>           
+                <aside class="sideInfo">
+                    <div class="authorIntro"  v-for="discusArt in discusArtAll">
+                        <div class="pic">
+                            <img src="https://picsum.photos/200/200/?random=10">
+                        </div>
+                        <div class="txt">
+                            <h4>{{discusArt.memName}}</h4>
                         </div>
                     </div>
-                    <div class="commentElse">
-                        <div class="item">
-                            <div class="memberIcon">
-                                <div class="pic">
-                                    <img src="https://picsum.photos/100/100/?random=15">
-                                </div>
-                                <div class="txt">
-                                    <p class="deepColor small">FIREDRAGON</p>
-                                    <p class="lightColor small"><span>1</span>天前</p>
-                                </div>
+                    <div class="relativeSide">
+                        <h4>我的文章</h4>
+                        <div class="item" v-for="MyArticle in MyArticles">
+                            <a href="">
+                            <div class="pic">
+                                <img :src="src+MyArticle.pic">
                             </div>
-                            <div class="reply">
-                                <p class="deepColor small">我覺得這篇文章不錯，因為是我切的板所以不錯。</p>
+                            <div class="txt">
+                                <p class="lightColor  small">{{MyArticle.content | ellipsis}}</p>
                             </div>
+                            </a>
                         </div>
-                        <div class="item">
-                            <div class="memberIcon">
-                                <div class="pic">
-                                    <img src="https://picsum.photos/100/100/?random=12">
-                                </div>
-                                <div class="txt">
-                                    <p class="deepColor small">PIKACHU</p>
-                                    <p class="lightColor small"><span>1</span>天前</p>
-                                </div>
-                            </div>
-                            <div class="reply">
-                                <p class="deepColor small">我覺得這篇文章不錯，因為是我切的板所以不錯。</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="memberIcon">
-                                <div class="pic">
-                                    <img src="https://picsum.photos/100/100/?random=19">
-                                </div>
-                                <div class="txt">
-                                    <p class="deepColor small">FROGGY</p>
-                                    <p class="lightColor small"><span>1</span>天前</p>
-                                </div>
-                            </div>
-                            <div class="reply">
-                                <p class="deepColor small">我覺得這篇文章不錯，因為是我切的板所以不錯。我覺得這篇文章不錯，因為是我切的板所以不錯。</p>
-                            </div>
-                        </div>   
                     </div>
-                </section>  
-            </section>                
-        </section>
+                </aside>
+                <!-- 要隱藏留言區用的 -->
+                <section class="hiddenArea">
+                    <section class="commentArea">
+                        <span class="commentClose">
+                            <i class="fas fa-times"></i>
+                        </span>
+                        <h4>回應(<span>{{ArticleComments.length}}</span>)</h4>
+                        <div class="commentInput">
+                            <div class="memberIcon">
+                                <div class="pic">
+                                    <img src="https://picsum.photos/100/100/?random=20">
+                                </div>
+                                <div class="txt">
+                                    <p class="deepColor">JEERY</p>
+                                </div>
+                            </div>
+                            <div class="txtArea">
+                                <form>
+                                    <textarea  v-model="MyComment" id="">{{MyComment}}</textarea>
+                                    <div class="item">
+                                        <input class="round" type="button" value="評論" @click="insertMyComment">
+                                        <input class="roundOutline" type="reset" value="取消">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="commentElse">
+                            <div class="item" v-for="ArticleComment in ArticleComments">
+                                <div class="memberIcon">
+                                    <div class="pic">
+                                        <img src="https://picsum.photos/100/100/?random=15">
+                                    </div>
+                                    <div class="txt">
+                                        <p class="deepColor small">{{ArticleComment.memName}}</p>
+                                        <p class="lightColor small">{{ArticleComment.messageTime}}</p>
+                                    </div>
+                                </div>
+                                <div class="reply">
+                                    <p class="deepColor small">{{ArticleComment.content}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>  
+                </section>                
+            </section>
+        </div>
+        <!-- Vue作用域結束 -->
     </section>
     @@include('layout/footer.html')
+
+
+
+    <script>
+        new Vue({
+            el:"#articlePage",
+            data:{
+                discusArtAll:[],
+                MyArticles:[],
+                latestArticles:[],
+                ArticleComments:[],
+                src:'assets/image/',
+                // 同步留言內容
+                MyComment:`${this.discusArtAll[0].articleNo},1,1,"這是測試用留言。","2022-03-14 09:24:00"`,
+            },
+            //新增監聽器
+            filters: {
+                ellipsis(value) {
+                    const len = 30;
+                    if (!value) return "";
+                    if (value.length > len) {
+                        return value.slice(0, len) + "...";
+                    }
+                    return value;
+                }
+            },
+
+            methods: {
+                insertMyComment() {
+                    // 避免抓到ajax的this
+                    let thisVue = this;
+                    console.log(thisVue.MyComment);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'g2_articleCommentSend.php',
+                        data: {
+                            MyComment:JSON.stringify(thisVue.MyComment),
+                        },
+                        success: function(data) {
+                            console.log(data.message);
+                            console.log("成功了嗎?");
+                        },
+                        error: function() {
+                            console.log('ajax error');
+                        }
+                    });
+                },
+            },
+
+            mounted(){
+                // 撈主要文章內容
+                // 只有編號1的文章會被抓回來
+                axios.get('php/g2_fetchArticlePageConnect.php').then((res)=>{
+                    this.discusArtAll = res.data;
+                    console.log(this.discusArtAll)
+                }).catch((err)=>{
+                    console.log(err)
+                });
+
+                // 撈我的文章內容
+                // 只有會員編號是1的內容會被抓回來
+                axios.get('php/g2_fetchMyArticleConnect.php').then((resMyArticles)=>{
+                    // console.log("MyArticle",resMyArticles)
+                    this.MyArticles = resMyArticles.data;
+                }).catch((err)=>{
+                    console.log(err)
+                });
+
+                //撈最新文章
+                axios.get('php/g2_fetchArticleAllConnect.php').then((res)=>{
+                    // console.log("latestArticles",res)
+                    // 最新文章只取前三筆
+                    this.latestArticles = res.data.slice(0,3);
+                }).catch((err)=>{
+                    console.log(err)
+                }),
+
+                //撈編號1的文章留言
+                axios.get('php/g2_fetchMyArticleCommentConnect.php').then((res)=>{
+                    // console.log("ArticleComments",res)
+                    this.ArticleComments = res.data;
+                }).catch((err)=>{
+                    console.log(err)
+                });
+                
+            },
+        })
+    </script>
+    
 </body>
 </html>
