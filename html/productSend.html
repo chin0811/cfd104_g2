@@ -11,7 +11,17 @@
 <body>
     <div id="app">
         <input type="text" v-model="number">
-        <a href="#" @click="send">傳送</a>
+        <p v-for='(index, key) in indexs'  >           
+            <!-- <a :href="createHref()" @click="send">
+                {{index}}
+                傳送
+            </a> -->
+            <a :href="createHref()" @click="send(key)">
+                {{index}}
+                傳送
+            </a>
+        </p>
+       
     </div>
 <script>
 let vm2 = new Vue({
@@ -19,17 +29,19 @@ let vm2 = new Vue({
     data:{
         products:["test"],
         number:"",
+        indexs:["a","b","c"],
+        key:"",
     },
     methods:{
-        send:function(){
-            console.log("test")
-            console.log(this.number)
+        send:function(key){
+            this.key = key;
+            console.log("test",this.key)
             let thisVue = this;
             $.ajax({
                 type: 'GET',
                 url: 'php/productSearch.php',
                 data: {
-                    number:thisVue.number,
+                    number:thisVue.key+1,
                 },
                 success: function(data) {
                     console.log(data.message);
@@ -39,6 +51,9 @@ let vm2 = new Vue({
                     console.log('ajax error');
                 }
             });
+        },
+        createHref:function() {
+            return `produtFromPhp.html?number=${this.key+1}`;
         }
     },
     mounted(){

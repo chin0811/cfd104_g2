@@ -68,75 +68,51 @@ padding-bottom: 5px;
 
 .listingSteps .options .option:nth-child(1) {
 // --defaultBackground: #ed5565ee;
--webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-background-color: #aaaaaa50;
-border: 1px solid #94969b50;
-border-right: 1px solid #55595e20;
-border-bottom: 1px solid #55595e20;
-border-left: 1px solid #ffffff30;
--webkit-backdrop-filter: blur(0.5em);
-backdrop-filter: blur(0.5em);
+    background-color: #39489730;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(2) {
 // --defaultBackground: #fc6e51ee;
--webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-background-color: #aaaaaa50;
-border: 1px solid #94969b50;
-border-right: 1px solid #55595e20;
-border-bottom: 1px solid #55595e20;
-border-left: 1px solid #ffffff30;
--webkit-backdrop-filter: blur(0.5em);
-backdrop-filter: blur(0.5em);
+    background-color: #39489730;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(3) {
 // --defaultBackground: #ffce54ee;
--webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-background-color: #aaaaaa50;
-border: 1px solid #94969b50;
-border-right: 1px solid #55595e20;
-border-bottom: 1px solid #55595e20;
-border-left: 1px solid #ffffff30;
--webkit-backdrop-filter: blur(0.5em);
-backdrop-filter: blur(0.5em);
+    background-color: #39489730;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(4) {
 // --defaultBackground: #2ecc71ee;
--webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-background-color: #aaaaaa50;
-border: 1px solid #94969b50;
-border-right: 1px solid #55595e20;
-border-bottom: 1px solid #55595e20;
-border-left: 1px solid #ffffff30;
--webkit-backdrop-filter: blur(0.5em);
-backdrop-filter: blur(0.5em);
+    background-color: #39489730;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(5) {
 // --defaultBackground: #5d9cecee;
--webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-background-color: #aaaaaa50;
-border: 1px solid #94969b50;
-border-right: 1px solid #55595e20;
-border-bottom: 1px solid #55595e20;
-border-left: 1px solid #ffffff30;
--webkit-backdrop-filter: blur(0.5em);
-backdrop-filter: blur(0.5em);
+    background-color: #39489730;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option:nth-child(6) {
 // --defaultBackground: #ac92ecee;
--webkit-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-box-shadow: 0.1em 0.5em 0.5em #252b3020;
-background-color: #aaaaaa50;
-border: 1px solid #94969b50;
-border-right: 1px solid #55595e20;
-border-bottom: 1px solid #55595e20;
-border-left: 1px solid #ffffff30;
--webkit-backdrop-filter: blur(0.5em);
-backdrop-filter: blur(0.5em);
+    background-color: #39489730;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 .listingSteps .options .option.active {
 flex-grow: 10000;
@@ -150,7 +126,7 @@ transform:scale(0.9);
 } */
 }
 .listingSteps .options .option.active .shadow {
-box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+box-shadow: inset 0 -120px 120px -120px #14141420, inset 0 -120px 120px -100px #14141420;
 }
 .listingSteps .options .option.active .label {
 bottom: 20px;
@@ -172,7 +148,7 @@ opacity: 0;
 }
 .listingSteps .options .option:not(.active) .shadow {
 bottom: -40px;
-box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+box-shadow: inset 0 -120px 0px -120px #14141420, inset 0 -120px 0px -100px #14141420;
 }
 .listingSteps .options .option:not(.active) .label {
 bottom: 10px;
@@ -192,8 +168,7 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 .listingSteps .options .option .sub{
 transition-delay: 0.1s;
-color: #394897;
-font-weight: bold;
+color: #141414;
 font-size: 1.2rem;
 padding-top: 30px;
 }
@@ -216,6 +191,14 @@ height: 30px;
 border-radius: 100%;
 background-color: white;
 color: var(--defaultBackground);
+}
+.listingSteps .options .option .label .icon i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listingSteps .options .option .label .icon i img{
+    width: 70%;
 }
 .listingSteps .options .option .label .info {
 display: flex;
@@ -1107,24 +1090,14 @@ box-sizing: border-box;
     vertical-align: middle;
     padding-bottom: 5px;
 }
-.listingSteps .options .option:nth-child(1) {
---defaultBackground: #ed5565ee;
+.listingSteps .options .option{
+    background-color: #3e444a05;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
-.listingSteps .options .option:nth-child(2) {
---defaultBackground: #fc6e51ee;
-}
-.listingSteps .options .option:nth-child(3) {
---defaultBackground: #ffce54ee;
-}
-.listingSteps .options .option:nth-child(4) {
---defaultBackground: #2ecc71ee;
-}
-.listingSteps .options .option:nth-child(5) {
---defaultBackground: #5d9cecee;
-}
-.listingSteps .options .option:nth-child(6) {
---defaultBackground: #ac92ecee;
-}
+
 .listingSteps .options .option.active {
 flex-grow: 10000;
 transform: scale(1);
@@ -1137,7 +1110,7 @@ background-size: auto 100%;
 } */
 }
 .listingSteps .options .option.active .shadow {
-box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+box-shadow: inset 0 -120px 120px -120px #14141420, inset 0 -120px 120px -100px #14141420;
 }
 .listingSteps .options .option.active .label {
 bottom: 20px;
@@ -1159,7 +1132,7 @@ opacity: 0;
 }
 .listingSteps .options .option:not(.active) .shadow {
 bottom: -40px;
-box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+box-shadow: inset 0 -120px 0px -120px #14141430, inset 0 -120px 0px -100px #14141430;
 }
 .listingSteps .options .option:not(.active) .label {
 bottom: 10px;
@@ -1179,8 +1152,7 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 .listingSteps .options .option .sub{
 transition-delay: 0.1s;
-color: #394897;
-font-weight: bold;
+color: #141414;
 font-size: 1.2rem;
 padding-top: 30px;
 }
@@ -1218,6 +1190,7 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
 .listingSteps .options .option .label .info .main {
 font-weight: bold;
+color: #394897;
 font-size: 1.2rem;
 }
 

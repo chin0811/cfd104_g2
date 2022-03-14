@@ -7,27 +7,47 @@
     <title>產品測試</title>
     <script src="js/vue/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery/jquery.js"></script>
 </head>
 <body>
     <div id="app">
         <p>test</p>
-        <p></p>
+        <p>{{admin.adminName}}</p>
     </div>
 <script>
-let vm2 = new Vue({
-    el:"#app",
-    data:{
-        products:[],
-    },
-    methods:{
-    },
-    mounted(){
-        axios.get('php/productSearch.php').then((res)=>{
-            this.products = res.data;
-        }).catch((err)=>{
-            console.log(err)
-        })
-    }
+$(document).ready(function() {  
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    var number = urlParams.get('number')
+    console.log(number);
+    let vm2 = new Vue({
+        el:"#app",
+        data:{
+            number:number,
+            admin:[],
+        },
+        methods:{
+        },
+        mounted(){
+            let thisVue = this;
+            $.ajax({
+                type: 'GET',
+                url: 'php/productSearch.php',
+                data: {
+                    number:thisVue.number,
+                },
+                success: function(data) {
+                    thisVue.admin = JSON.parse(data);
+                    console.log(data);
+                    console.log(thisVue.admin);
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+        }
+    })
 })
 </script>
 </body>
