@@ -1,8 +1,10 @@
 //藝廊入口 Body
 .galleryDoorWrap{
     //隱藏超出畫面的物件(卷軸)
-    width: 100%;
-    overflow: hidden;
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    background-color: #f7f7f7;
 
     .galleryDoorMain{
         position: relative;
@@ -23,8 +25,8 @@
                 //定位父層galleryDoorMain
                 position: absolute;
                 perspective: 1000px;
-                width: 300px;
-                height: 400px;  
+                width: 400px;
+                height: 500px;  
                 left:50%;
                 top:50%;
                 transform:translate(-50%,-50%);

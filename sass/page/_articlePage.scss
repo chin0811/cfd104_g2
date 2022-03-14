@@ -436,10 +436,11 @@
         align-items: center;
     }
     .articlePageContent .articlePageWrap .sideInfo .relativeSide .item .pic{
-        width: 50px;
-        height: 50px;
-        border-radius: 200px;
+        width: 30%;
+        max-height: 80px;
         overflow: hidden;
+        display: flex;
+        align-items: center;
     }
     .articlePageContent .articlePageWrap .sideInfo .relativeSide .item .txt{
         width: 70%;

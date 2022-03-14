@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品測試</title>
+    <script src="js/vue/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>test</p>
+        <p>{{admin.adminName}}</p>
+    </div>
+<script>
+$(document).ready(function() {  
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    var number = urlParams.get('number')
+    console.log(number);
+    let vm2 = new Vue({
+        el:"#app",
+        data:{
+            number:number,
+            admin:[],
+        },
+        methods:{
+        },
+        mounted(){
+            let thisVue = this;
+            $.ajax({
+                type: 'GET',
+                url: 'php/productSearch.php',
+                data: {
+                    number:thisVue.number,
+                },
+                success: function(data) {
+                    thisVue.admin = JSON.parse(data);
+                    console.log(data);
+                    console.log(thisVue.admin);
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+        }
+    })
+})
+</script>
+</body>
+</html>

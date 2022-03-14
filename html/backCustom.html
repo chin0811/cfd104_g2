@@ -17,9 +17,6 @@
                     <li>{{member.enrollDate}}</li>        
                     <li>編輯與查看</li>
                 </ul>
-                <div class="test">
-                    aaa
-                </div>
                 <div class="pageIndex">
                     <ul>
                         <li><a href="#" @click="prePage"> < </a></li>
@@ -32,6 +29,19 @@
             </div>
         </section>
     </section>
+    <!-- <style>
+    .pageIndex ul{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    .pageIndex ul li{
+        margin-right: 1%;
+    }
+    .pageIndex a{
+        color: black;
+    }
+    </style> -->
     <script>
     $(document).ready(function() {    
         new Vue({
@@ -53,6 +63,7 @@
                     },
                     success: function(data) {
                         thisVue.members = data;
+                        console.log(thisVue.members);
                     },
                     error: function() {
                         console.log('ajax error');
