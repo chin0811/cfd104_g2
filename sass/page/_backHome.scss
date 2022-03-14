@@ -131,10 +131,17 @@ a{
     transform: translate(-50%,-50%);
     background-color: #ffc489;
 }
+.backLightBox .image{
+    max-width: 20%;
+}
+.backLightBox .image img{
+    width: 100%;
+}
 i{
     position: absolute;
     top: 3%;
     right: 4%;
     cursor: pointer;
 }
+
 
