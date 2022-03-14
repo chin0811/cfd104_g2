@@ -2,7 +2,7 @@
 viewer = pannellum.viewer('panorama', {
     "type": "equirectangular",
     //背景圖
-    "panorama": "assets/image/3dSurroundView.jpg",
+    "panorama": "assets/image/3dSurroundView.page.jpg",
     "hfov": "120",
     "autoLoad": true,
     "hotSpots": [{
@@ -186,9 +186,9 @@ closes3D[4].onclick = function(e) {
 /* 提示視窗 */
 const promptWindow_main = document.querySelector(".promptWindow-main");
 const promptWindow = document.querySelector(".promptWindow");
-promptWindow_main.onmouseover = function(){
+promptWindow_main.onmouseover = function() {
     promptWindow.style.display = "block"
 }
-promptWindow_main.onmouseleave = function(){
+promptWindow_main.onmouseleave = function() {
     promptWindow.style.display = "none"
 }
