@@ -12,19 +12,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/articleAll.js"></script>
-<<<<<<< HEAD
     <script src="js/loginCheck.js"></script>
     <script >
         window.addEventListener('load',function(){
             loginCheck(false);
         })
     </script>
-=======
     <!-- 引入vue -->
     <script src="js/vue/vue.js"></script>
     <!-- 引入axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
->>>>>>> ZING
 </head>
     <!-- @@include('layout/header.html') -->
     @@include('layout/headerNormal.html',{"headerClass":""})
@@ -296,7 +293,7 @@
             },
             
             mounted(){
-                axios.get('g2_fetchArticleAllConnect.php').then((res)=>{
+                axios.get('php/articleAllConnect.php').then((res)=>{
                     console.log("從php傳來的東西",res)
                     // 全部文章
                     this.discusArtAll = res.data;

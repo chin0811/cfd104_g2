@@ -70,7 +70,7 @@
                         <div class="shareBar">
                             <div class="shareComment">
                                 <div class="like mainColor deepColor">
-                                    <div class="pic">
+                                    <div class="pic" @click="discusArt.likes+=1">
                                         <img src="assets/image/all_like.png" alt="">
                                     </div>
                                     <span class="small">
@@ -162,7 +162,7 @@
                                     <textarea  v-model="MyComment" id="">{{MyComment}}</textarea>
                                     <div class="item">
                                         <input class="round" type="button" value="評論" @click="insertMyComment">
-                                        <input class="roundOutline" type="reset" value="取消">
+                                        <input class="roundOutline" type="button" @click="MyComment = ''" value="取消">
                                     </div>
                                 </form>
                             </div>
@@ -194,7 +194,7 @@
 
 
     <script>
-        new Vue({
+        let articlePage123 = new Vue({
             el:"#articlePage",
             data:{
                 discusArtAll:[],
@@ -203,7 +203,7 @@
                 ArticleComments:[],
                 src:'assets/image/',
                 // 同步留言內容
-                MyComment:`${this.discusArtAll[0].articleNo},1,1,"這是測試用留言。","2022-03-14 09:24:00"`,
+                MyComment:'',
             },
             //新增監聽器
             filters: {
@@ -219,39 +219,56 @@
 
             methods: {
                 insertMyComment() {
-                    // 避免抓到ajax的this
-                    let thisVue = this;
-                    console.log(thisVue.MyComment);
-                    $.ajax({
-                        type: 'POST',
-                        url: 'g2_articleCommentSend.php',
-                        data: {
-                            MyComment:JSON.stringify(thisVue.MyComment),
-                        },
-                        success: function(data) {
-                            console.log(data.message);
-                            console.log("成功了嗎?");
-                        },
-                        error: function() {
-                            console.log('ajax error');
-                        }
-                    });
+                    if(this.MyComment == ""){
+                        alert('請輸入留言');
+                    }else{
+                        // 避免抓到ajax的this
+                        let thisVue = this;
+                        // console.log(thisVue.MyComment);
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/articlePageCommentSend.php',
+                            data: {
+                                MyComment:JSON.stringify(`${thisVue.discusArtAll[0].articleNo},1,'${thisVue.MyComment}'`),
+                            },
+                            success: function(data) {
+                                // console.log(data);
+                                console.log("成功了嗎?");
+                                // console.log(this.MyComment)
+                                thisVue.refreshComments();
+                                thisVue.MyComment='';
+                                
+                            },
+                            error: function() {
+                                console.log('ajax error');
+                                thisVue.refreshComments();
+                            }
+                        });
+                    }
+                },
+                refreshComments(){
+                    axios.get('php/articlePageComment.php').then((res)=>{
+                            // console.log("ArticleComments",res)
+                            this.ArticleComments = res.data;
+                        }).catch((err)=>{
+                            console.log(err)
+                        });
                 },
             },
 
             mounted(){
                 // 撈主要文章內容
                 // 只有編號1的文章會被抓回來
-                axios.get('php/g2_fetchArticlePageConnect.php').then((res)=>{
+                axios.get('php/articlePage.php').then((res)=>{
                     this.discusArtAll = res.data;
-                    console.log(this.discusArtAll)
+                    // console.log(this.discusArtAll);
                 }).catch((err)=>{
                     console.log(err)
                 });
 
                 // 撈我的文章內容
                 // 只有會員編號是1的內容會被抓回來
-                axios.get('php/g2_fetchMyArticleConnect.php').then((resMyArticles)=>{
+                axios.get('php/articlePagemyArticle.php').then((resMyArticles)=>{
                     // console.log("MyArticle",resMyArticles)
                     this.MyArticles = resMyArticles.data;
                 }).catch((err)=>{
@@ -259,7 +276,7 @@
                 });
 
                 //撈最新文章
-                axios.get('php/g2_fetchArticleAllConnect.php').then((res)=>{
+                axios.get('php/articleAllConnect.php').then((res)=>{
                     // console.log("latestArticles",res)
                     // 最新文章只取前三筆
                     this.latestArticles = res.data.slice(0,3);
@@ -268,7 +285,7 @@
                 }),
 
                 //撈編號1的文章留言
-                axios.get('php/g2_fetchMyArticleCommentConnect.php').then((res)=>{
+                axios.get('php/articlePageComment.php').then((res)=>{
                     // console.log("ArticleComments",res)
                     this.ArticleComments = res.data;
                 }).catch((err)=>{
