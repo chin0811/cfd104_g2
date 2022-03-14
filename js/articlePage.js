@@ -64,13 +64,22 @@ $(document).ready(function(){
 
 
 window.addEventListener('load',function(){
+    // 留言滑到最上面
     document.querySelector('.articlePageContent .articlePageWrap .pageContent .shareBar .shareComment .commentPic').addEventListener('click',function(){
         $(".articlePageContent .articlePageWrap .commentArea").toggleClass("slideIn");
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
+    // 加入收藏
     document.querySelector('.like .pic img').addEventListener('click',function(){
         $(this).toggleClass('active');
+        // alert(articlePage.discusArt.likes);
+        // if(this.classList == 'active'){
+        //     articlePage.discusArt.likes=articlePage.discusArt.likes+1
+        // }else{
+        //     articlePage.discusArt.likes=articlePage.discusArt.likes-1
+        // };
     });
+    // 檢舉
     document.querySelector('.articlePageContent .authorShortIntro .report').addEventListener('click',function(){
         swal({
             title: "您是否要檢舉？",
@@ -104,7 +113,7 @@ window.addEventListener('load',function(){
                     },
                     // 跳回文章總覽
                 }).then(function() {
-                    // window.location = "articleAll.html";
+                    window.location = "articleAll.html";
                 });
             }
         })

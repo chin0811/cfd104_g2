@@ -3,7 +3,7 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select M.memName, F.content, F.messageTime 
+	$sql = "select M.memName, F.content, F.messageTime
 			from forumMes F join member M on F.memNo=M.memNo
 			where F.articleNo = 1 
 			order by F.messageTime DESC;";
