@@ -262,25 +262,25 @@
                     }else{
                         this.discusArtAll[0].likes -= 1;
                         this.click = !this.click;
-                    }
+                    };
                     // 避免抓到ajax的this
                     let thisVue = this;
-                        // console.log(thisVue.MyComment);
-                        $.ajax({
-                            type: 'POST',
-                            url: 'php/articlePageLikeSend.php',
-                            data: {
-                                Likes:JSON.stringify(`${thisVue.discusArtAll[0].likes}`),
-                                ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
-                            },
-                            success: function(data) {
-                                // console.log(data);
-                                console.log("成功了嗎?");
-                                // console.log(this.MyComment);
-                            },
-                            error: function() {
-                                console.log('ajax error');
-                            }
+                    // console.log(thisVue.MyComment);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/articlePageLikeSend.php',
+                        data: {
+                            Likes:JSON.stringify(`${thisVue.discusArtAll[0].likes}`),
+                            ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            console.log("成功了嗎?");
+                            // console.log(this.MyComment);
+                        },
+                        error: function() {
+                            console.log('ajax error');
+                        }
                     });
                 },
             },

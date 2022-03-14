@@ -55,19 +55,6 @@
                 <div class="pic">
                     <img src="assets/image/article_articleContent_beBear.png" alt="">
                 </div>
-                <!-- <h3 class="deepColor">文章預覽</h3>
-                <div class="page">
-                    <input v-model="title" class="deepColor" placeholder="你的標題" disabled="disabled"></input>
-                    <div class="item PicTxtItem">
-                            <div class="pic">
-                                    <img src="https://picsum.photos/500/400/?random=10">
-                                </div>
-                                <div class="txt">
-                                    最多顯示100字
-                                    <textarea placeholder="你的內容" class="deepColor" disabled>{{text}}</textarea>
-                            </div>
-                    </div>
-                </div> -->
             </aside>
         </section>
     </section>
@@ -77,10 +64,8 @@
      <script>
         new Vue({
             el: '#articlePost',
-            data(){
-                return{
+            data:{
                 remnant: 11
-                }
             },
             methods:{
                 descInput(){

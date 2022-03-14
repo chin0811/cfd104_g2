@@ -95,14 +95,33 @@ window.addEventListener('load',function(){
                 // 檢舉按鈕
                 report: {
                     text: "檢舉",
-                    value: 'report',
+                    value: '檢舉',
                     // 新增class
                     className:'report',
                 },  
             }
             // 如果按鈕值是report，則會有下一個跳窗
         }).then((value)=>{
-            if(value == 'report'){
+            if(value == '檢舉'){
+                console.log("123");
+                $.ajax({
+                    type: 'POST',
+                    url: '../php/articlePageReportSend.php',
+                    data: {
+                        Report:value,
+                    },
+                    success: function(data) {
+                        // console.log(data);
+                        console.log("成功了嗎?");
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                        console.log(value);
+                    }
+                });
+
+                console.log(value)
+                
                 swal({
                     text: "感謝您的檢舉，平台會審核內容。",
                     buttons:{
@@ -113,9 +132,12 @@ window.addEventListener('load',function(){
                     },
                     // 跳回文章總覽
                 }).then(function() {
-                    window.location = "articleAll.html";
+                    // window.location = "articleAll.html";
                 });
             }
-        })
+        });
+
+
+
     });
 })
