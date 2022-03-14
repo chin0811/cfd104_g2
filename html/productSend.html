@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品傳送</title>
+    <script src="js/vue/vue.js"></script>
+    <script src="js/jquery/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="number">
+        <a href="#" @click="send">傳送</a>
+    </div>
+<script>
+let vm2 = new Vue({
+    el:"#app",
+    data:{
+        products:["test"],
+        number:"",
+    },
+    methods:{
+        send:function(){
+            console.log("test")
+            console.log(this.number)
+            let thisVue = this;
+            $.ajax({
+                type: 'GET',
+                url: 'php/productSearch.php',
+                data: {
+                    number:thisVue.number,
+                },
+                success: function(data) {
+                    console.log(data.message);
+                    console.log("成功了嗎?");
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+        }
+    },
+    mounted(){
+    }
+})
+</script>
+</body>
+</html>
