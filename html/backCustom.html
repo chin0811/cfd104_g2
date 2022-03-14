@@ -29,7 +29,7 @@
             </div>
         </section>
     </section>
-    <style>
+    <!-- <style>
     .pageIndex ul{
         box-sizing: border-box;
         display: flex;
@@ -41,7 +41,7 @@
     .pageIndex a{
         color: black;
     }
-    </style>
+    </style> -->
     <script>
     $(document).ready(function() {    
         new Vue({
@@ -63,6 +63,7 @@
                     },
                     success: function(data) {
                         thisVue.members = data;
+                        console.log(thisVue.members);
                     },
                     error: function() {
                         console.log('ajax error');
