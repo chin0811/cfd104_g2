@@ -31,18 +31,84 @@
     <title>會員中心</title>
     <!-- 頁籤icon -->
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
-     <!-- 登入  -->
-     <script src="js/loginCheck.js"></script>
-     <script >
-         window.addEventListener('load',function(){
-             loginCheck(false);
-         })
-     </script>
-     <!-- 登入ＥＮＤ  -->
 </head>
 
 <body>
-    @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })
+    <script src="https://kit.fontawesome.com/1a00250e22.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/header.js"></script>
+    <header class="SurroundViewHeader">
+        <section class="headerContain">
+            <div class="logoContain">
+                <div class="logo">
+                    <a href="homePage.html">
+                        <img src="assets/image/all_logo.png">
+                    </a>
+                </div>
+            </div>
+            <nav class="mainMenu fullscreen">
+                <ul>
+                    <li class="--animation-order: 1;">
+                        <div class="logoContain">
+                            <div class="logo">
+                                <a href="homePage.html">
+                                    <img src="assets/image/all_logo.png">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="--animation-order: 2;">
+                        <input id="navMenu" type="checkbox">
+                        <label for="navMenu" class="deepColor">
+                            <a href="galleryDoor.html" class="deepColor">
+                                藝廊
+                            </a>
+                            <b>
+                                ▼
+                            </b>
+                        </label>
+                        <ul>
+                            <li><a href="gallery.html" class="lightColor">展示區</a></li>
+                            <li><a href="gallery.html" class="lightColor">雕塑類</a></li>
+                            <li><a href="gallery.html" class="lightColor">畫作類</a></li>
+                            <li><a href="gallery.html" class="lightColor">公仔類</a></li>
+                            <li><a href="gallery.html" class="lightColor">品牌合作</a></li>
+                        </ul>
+                    </li>
+                    <li style="--animation-order: 3;">
+                        <a href="prouductAll.html" class="deepColor">拍賣廳</a>
+                    </li>
+                    <li style="--animation-order: 4;">
+                        <a href="articleAll.html" class="deepColor">藝論</a>
+                    </li>
+                    <li style="--animation-order: 5;">
+                        <a href="about.html" class="deepColor">關於我們</a>
+                    </li>
+                    <li style="--animation-order: 6;">
+                        <a href="3dSurroundView.html" class="deepColor">會員中心</a>
+                    </li>
+                    <li style="--animation-order: 7;">
+                        <div class="login">
+                            <a href="login.html" class="whiteRound">登入</a>
+                            <a href="listing.html" class="round">上架</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="close">
+                    <div></div>
+                </div>
+            </nav>
+            <div class="noticeHeader  transparent">
+                <i class="fas fa-bell"></i>
+                <!-- 通知紅點 -->
+                <span class="notice_dot">
+                    <span class="notice_dotNumber">99</span>
+                </span>
+            </div>
+            <div class="hamburger"></div>
+        </section>
+    </header>
+
 
     <!--3D背景-->
     <div id="panorama">
