@@ -26,14 +26,14 @@
         <section class="articlePostContent marginAuto">
             <section class="articleEdit">
                 <h3>編輯你的文章</h3>
-                <form action="">
+                <form action="homePage.html" name="page1" method="post" enctype="multipart/form-data">
                     <label for="articleTitle">
                         <h4>主標題</h4>
-                        <input maxlength="11" placeholder="輸入你的標題" type="text" name="" id="articleTitle" required @input="descInput" v-model="desc" ><span class="leftText lightColor small">剩餘字數：{{remnant}}/11</span>
+                        <input maxlength="11" placeholder="輸入你的標題" type="text" name="title" id="articleTitle" required @input="descInput" v-model="title" ><span class="leftText lightColor small">剩餘字數：{{remnant}}/11</span>
                     </label>
                     <label  for="articleArea">
                         <h4>內容</h4>
-                        <textarea  placeholder="輸入你的內容" id="articleArea" name="" required></textarea>
+                        <textarea  placeholder="輸入你的內容" id="articleArea" name="content" v-model="content" required></textarea>
                     </label>
                     <h4>附圖(請選擇一張圖片)</h4>
                     <!-- 選到圖片的容器 -->
@@ -44,7 +44,7 @@
                                 <img src="assets/image/upload_image_icon.png" alt="">
                         </div>
                     </label>
-                    <input type="file" id="articlePic" accept="image/png, image/jpeg"  required>
+                    <input type="file" id="articlePic" accept="image/png, image/jpeg" name="pic" @change="pic($event)"  required>
                     <div class="buttonList">
                         <input class="squareOutline" type="reset" value="取消" >
                         <input class="square" type="submit" value="刊登">
@@ -65,12 +65,18 @@
         new Vue({
             el: '#articlePost',
             data:{
-                remnant: 11
+                remnant: 11,
+                title:'',
+                content:'',
+                articlePic:'',
             },
             methods:{
                 descInput(){
-                var txtVal = this.desc.length;
+                var txtVal = this.title.length;
                 this.remnant = 11 - txtVal;
+                },
+                pic(event){
+                    this.articlePic=event.target.files[0]
                 }
             }
         });
