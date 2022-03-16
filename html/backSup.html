@@ -1,18 +1,71 @@
 @@include('layout/backheader.html',{title:"真人客服管理"})
         <section class="mainContent backSup">
-            <article v-for="data in datas">
+            <article>
                 <table>
-                    <tr>
-                        <td>{{data.quizNo}}</td>
-                        <td>{{data.memNo}}</td>
-                        <td>{{data.adminNo}}</td>
-                        <td>{{data.stTimer}}</td>
-                        <td>
-                            <button>{{data.finishState}}</button>
-                        </td>
-                        
-                    </tr>
+                    <thead>
+                        <tr>
+                            <td>聊天室編號</td>
+                            <td>會員名稱</td>
+                            <td>客服名稱</td>
+                            <td>開始時間</td>
+                            <td>狀態</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="data in datas">
+                            <td>{{data.quizNo}}</td>
+                            <td>{{data.memName}}</td>
+                            <td>{{data.adminName}}</td>
+                            <td>{{data.stTimer}}</td>
+                            <td>
+                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'">{{data.finishState}}</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
+            </article>
+            <article class="txtLightBox lightBox">
+                <div>
+                    <p>會員名稱：</p>
+                    <button></button>
+                </div>
+                <article class="txtArea">
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <!-- <messageart v-for="item in messageObject" v-bind="item"/> -->
+                </article>
+                <div>
+                    <textarea></textarea>
+                    <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent">
+                </div>
             </article>
         </section>
     </section>

@@ -1,9 +1,9 @@
 <?php
-	$dbname = "cdf104_g2";
+	$dbname = "cfd104_g2";
 	$user = "root";
-	$password = "0911024335";
+	$password = "root";
 
-	$dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8";
+	$dsn = "mysql:host=localhost;port=8889;dbname=$dbname;charset=utf8";
 
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
 	
