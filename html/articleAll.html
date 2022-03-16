@@ -12,6 +12,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/articleAll.js"></script>
+    <script src="js/loginCheck.js"></script>
+    <script >
+        window.addEventListener('load',function(){
+            loginCheck(false);
+        })
+    </script>
+    <!-- 引入vue -->
+    <script src="js/vue/vue.js"></script>
+    <!-- 引入axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
     <!-- @@include('layout/header.html') -->
     @@include('layout/headerNormal.html',{"headerClass":""})
@@ -20,36 +30,18 @@
             <h1 class="deepColor">
                 藝‧論
             </h1>
-            <!-- <p>
-                在這裡發現更多的美好，<br>
-                藝論那些最新的事，<br>
-                藝論那些美好的事，<br>
-                更多的美好在這裡發現。
-            </p> -->
         </div>
-        <!-- 2022年3月2日星期三 -->
-        <!-- WEDNESDAY, 2ND MARCH 2022 -->
         <div class="subTitle">
             <h2 class="deepColor">
                 WEDNESDAY, 2ND MARCH 2022
             </h2>
             <a href="articlePost.html" class="square">刊登</a>
         </div>
-        <div id="app">
+        <!-- Vue作用域開始 -->
+        <div id="articleALL" >
             <section class="wrap flat">
                 <!-- 最多68個字 -->
                 <!-- <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_silk.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">這是一個背包</h4>
-                            <p class="lightColor small">一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。</p>
-                        </div>
-                    </div>
-                </a> -->
-                <a href="articlePage.html">
                     <div class="item">
                         <div class="pic">
                             <img src="assets/image/articleAll_articleContent_silk.png" alt="">
@@ -95,10 +87,21 @@
                                 </p>
                         </div>
                     </div>
+                </a> -->
+                <a href="articlePage.html"  v-for="flatDiscusArt in flatDiscusArts">
+                    <div class="item">
+                        <div class="pic">
+                            <img :src='src+flatDiscusArt.pic'>
+                        </div>
+                        <div class="txt">
+                            <h4 class="deepColor">{{flatDiscusArt.title}}</h4>
+                            <p class="lightColor small">{{flatDiscusArt.content | ellipsis}}</p>
+                        </div>
+                    </div>
                 </a>
             </section>
             <section class="wrap twoRows">
-                <a href="articlePage.html">
+                <!-- <a href="articlePage.html">
                     <div class="item">
                         <div class="pic">
                             <img src="assets/image/articleAll_articleContent_glass.png" alt="">
@@ -121,10 +124,21 @@
                             <p class="lightColor small">它不只是一顆氣球，nonono它是一顆氣球。跟知名大師聯名，買到賺到，因為它是一顆金屬氣球，怎麼樣玩它都不會破。</p>
                         </div>
                     </div>
+                </a> -->
+                <a href="articlePage.html"  v-for="twoRowsDiscusArt in twoRowsDiscusArts">
+                    <div class="item">
+                        <div class="pic">
+                            <img :src='src+twoRowsDiscusArt.pic'>
+                        </div>
+                        <div class="txt">
+                            <h4 class="deepColor">{{twoRowsDiscusArt.title}}</h4>
+                            <p class="lightColor small">{{twoRowsDiscusArt.content | ellipsis}}</p>
+                        </div>
+                    </div>
                 </a>
             </section>
             <section class="wrap threeRows">
-                <a href="articlePage.html">
+                <!-- <a href="articlePage.html">
                     <div class="item">
                         <div class="pic">
                             <img src="assets/image/article_articleContent_beBear.png" alt="">
@@ -157,11 +171,22 @@
                             <p class="lightColor small">這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。</p>
                         </div>
                     </div>
+                </a> -->
+                <a href="articlePage.html"  v-for="threeRowsDiscusArt in threeRowsDiscusArts">
+                    <div class="item">
+                        <div class="pic">
+                            <img :src='src+threeRowsDiscusArt.pic'>
+                        </div>
+                        <div class="txt">
+                            <h4 class="deepColor">{{threeRowsDiscusArt.title}}</h4>
+                            <p class="lightColor small">{{threeRowsDiscusArt.content | ellipsis}}</p>
+                        </div>
+                    </div>
                 </a>
             </section>
             <section class="wrap fourRows">
                 <!-- 最多68個字 -->
-                <a href="articlePage.html">
+                <!-- <a href="articlePage.html">
                     <div class="item">
                         <div class="pic">
                             <img src="assets/image/articleAll_articleContent_silk.png" alt="">
@@ -207,9 +232,22 @@
                                 </p>
                         </div>
                     </div>
+                </a> -->
+                <a href="articlePage.html" v-for="fourRowsDiscusArt in fourRowsDiscusArts">
+                    <div class="item">
+                        <div class="pic">
+                            <img :src='src+fourRowsDiscusArt.pic'>
+                        </div>
+                        <div class="txt">
+                            <h4 class="deepColor">{{fourRowsDiscusArt.title}}</h4>
+                            <!-- <p class="lightColor small">{{ellipsis(fourRowsDiscusArt.content)}}</p> -->
+                            <p class="lightColor small">{{fourRowsDiscusArt.content | ellipsis}}</p>
+                        </div>
+                    </div>
                 </a>
             </section>
         </div>
+        <!-- Vue作用域結束 -->
         <div class="articletPageChange">
             <ul>
                 <li><a href="">&laquo;</a></li>
@@ -232,15 +270,46 @@
 
 
     <script>
-        let vm = new Vue({
-            el:"#app",
+        new Vue({
+            el:"#articleALL",
             data:{
-                discusArts:[],
+                discusArtAll:[],
+                flatDiscusArts:[],
+                twoRowsDiscusArts:[],
+                threeRowsDiscusArts:[],
+                fourRowsDiscusArts:[],
+                src:'assets/image/',
             },
+            //新增監聽器
+            filters: {
+                ellipsis(value) {
+                    const len = 30;
+                    if (!value) return "";
+                    if (value.length > len) {
+                        return value.slice(0, len) + "...";
+                    }
+                    return value;
+                }
+            },
+            
             mounted(){
-                // 從php撈到的json裡面撈資料(待寫)
-                axios.get('g2_fetchHtmlConnect.php').then((res)=>{
-                    this.discusArts = res.data;
+                axios.get('php/articleAllConnect.php').then((res)=>{
+                    console.log("從php傳來的東西",res)
+                    // 全部文章
+                    this.discusArtAll = res.data;
+                    
+                    // 文章第一行
+                    this.flatDiscusArts = this.discusArtAll.slice(0,4);
+                    // silce(start,end)=start~end-1
+
+                    // 文章第二行
+                    this.twoRowsDiscusArts = this.discusArtAll.slice(4,6);
+                    // 文章第三行
+                    this.threeRowsDiscusArts = this.discusArtAll.slice(6,9);
+                    // 文章第四行
+                    this.fourRowsDiscusArts = this.discusArtAll.slice(9,13);
+
+
                 }).catch((err)=>{
                     console.log(err)
                 })

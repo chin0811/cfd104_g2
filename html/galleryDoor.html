@@ -10,6 +10,14 @@
     <!-- galleryDoor.css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/galleryDoor.css">
+    <!-- 登入  -->
+    <script src="js/loginCheck.js"></script>
+    <script >
+        window.addEventListener('load',function(){
+            loginCheck(false);
+        })
+    </script>
+    <!-- 登入ＥＮＤ  -->
 </head>
 <body>
     <div class="galleryDoorWrap">
@@ -19,6 +27,14 @@
 
     <!-- 伶_藝廊大門_main區域 -->
     <main class="galleryDoorMain">
+        <div class="operate bounce">
+            <p>點擊大門進入藝廊</p>
+            <div class="arrow">
+                <div class="curve">
+                    <div class="point"></div>
+                </div>
+            </div>
+        </div>
         <div class="stage">
             <div class="size">
                 <div class="ring">

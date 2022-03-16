@@ -204,8 +204,6 @@ gsap.fromTo(
 		endTrigger:".homeNews",
 		end:"10% top",
 		scrub: true,
-		// markers:true,
-		// id:"新聞裝飾",
 	  	}
 	}
   );
@@ -216,8 +214,7 @@ gsap.to(".homeNews .decorate.Pictopleft", {
 	scrollTrigger: {
 		trigger: ".homeNews",
 		scrub: true,
-		// markers:true,
-		// id:"新聞裝飾",
+		
 	}
 });
 gsap.to(".homeNews .decorate.Pictopright", {
@@ -235,16 +232,18 @@ gsap.to(".homeNews .decorate.Picbottomleft", {
 	rotation:90,
 	ease: "none",
 	scrollTrigger: {
-		trigger: ".homeNews .newsContain .item",
+		trigger: ".homeNews",
 		start:"top top",
 		scrub: true,
-	}
+		// markers:true,
+		// id:"新聞裝飾",
+	},
 });
 gsap.to(".homeNews .decorate.Picbottomright", {
 	xPercent:-30,
 	ease: "none",
 	scrollTrigger: {
-		trigger: ".homeNews .newsContain .item",
+		trigger: ".homeNews",
 		start:"top top",
 		scrub: true,
 	}

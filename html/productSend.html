@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品傳送</title>
+    <script src="js/vue/vue.js"></script>
+    <script src="js/jquery/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="number">
+        <p v-for='(index, key) in indexs'  >           
+            <!-- <a :href="createHref()" @click="send">
+                {{index}}
+                傳送
+            </a> -->
+            <a :href="createHref()" @click="send(key)">
+                {{index}}
+                傳送
+            </a>
+        </p>
+       
+    </div>
+<script>
+let vm2 = new Vue({
+    el:"#app",
+    data:{
+        products:["test"],
+        number:"",
+        indexs:["a","b","c"],
+        key:"",
+    },
+    methods:{
+        send:function(key){
+            this.key = key;
+            console.log("test",this.key)
+            let thisVue = this;
+            $.ajax({
+                type: 'GET',
+                url: 'php/productSearch.php',
+                data: {
+                    number:thisVue.key+1,
+                },
+                success: function(data) {
+                    console.log(data.message);
+                    console.log("成功了嗎?");
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+        },
+        createHref:function() {
+            return `produtFromPhp.html?number=${this.key+1}`;
+        }
+    },
+    mounted(){
+    }
+})
+</script>
+</body>
+</html>

@@ -5,42 +5,102 @@
                     <li v-for = 'title in titles'>{{title}}</li>
                     <li></li>
                 </ul>
-                <ul v-for='(member,key) in members' 
+                <ul v-for='(member,key) in membersData' 
                 class="memberList">            
-                    <li>{{member.memberNo}}</li>
+                    <li>{{member.memNo}}</li>
                     <li>{{member.memId}}</li>
                     <li>{{member.email}}</li>
                     <li>{{member.memName}}</li>
                     <li>{{member.phone}}</li>
-                    <li>{{member.warnings}}</li>
+                    <li>{{member.warning}}</li>
                     <li>{{member.state}}</li>
-                    <li>{{member.registerDate}}</li>        
+                    <li>{{member.enrollDate}}</li>        
                     <li>編輯與查看</li>
                 </ul>
+                <div class="pageIndex">
+                    <ul>
+                        <li><a href="#" @click="prePage"> < </a></li>
+                        <li v-for="(value,index) in pageNumber">
+                            <a href="#" @click="thisPage(index)">{{ index+1 }}</a>
+                        </li>
+                        <li><a href="#" @click="nextPage"> > </a></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </section>
+    <!-- <style>
+    .pageIndex ul{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    .pageIndex ul li{
+        margin-right: 1%;
+    }
+    .pageIndex a{
+        color: black;
+    }
+    </style> -->
     <script>
+    $(document).ready(function() {    
         new Vue({
             el: '#app',
             data: {
                 titles: ['會員編號', '帳號', '信箱', '姓名', '手機', '警告次數', '帳號狀態','創建時間', '', ],
-                members:[{'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'002','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'004','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'張昭','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                {'memberNo':'001','memId':'a12345','email':'Harukadou@gmail.com','memName':'可','phone':'0910123456','warnings':0,'state':"正常",'registerDate':'2021/01/01',},
-                ],
+                members:[],
+                table:'member',
+                pageSize:5,//每頁大小
+                currentPage:0, //當前頁碼
             },
-            methods: {},
-            computed: {},
+            mounted(){
+                let thisVue = this;
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/selectAll.php',
+                    data: {
+                        table:JSON.stringify(thisVue.table),
+                    },
+                    success: function(data) {
+                        thisVue.members = data;
+                        console.log(thisVue.members);
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                    }
+                })
+            },
+            methods: {
+                //上一頁
+                nextPage: function(){
+                    if (this.currentPage == this.pageNumber - 1) return;
+                    this.currentPage++;
+                },
+                 //下一頁
+                prePage: function(){
+                    if (this.currentPage == 0) return;
+                    this.currentPage--;
+                },
+                //頁碼
+                thisPage: function(index){
+                    this.currentPage = index;
+                }
+            },/*執行觸發函式*/
+            computed: {
+            //分頁資料
+                membersData: function(){
+                let left = this.currentPage*this.pageSize;
+                let right = Math.min((this.currentPage+1)*this.pageSize,this.members.length)
+                return this.members.slice(left, right);//取出一頁資料
+            },  
+            //共有多少頁
+            pageNumber: function(){
+                return Math.ceil(this.members.length / this.pageSize)||1;
+            }
+            },/*動態計算屬性*/
             watch: {},
         });
+    });
     </script>
 </body>
 </html>

@@ -49,31 +49,37 @@
         align-items: flex-end;
         */
     }
-    .accountManagement_bouncing main .characterAdjustment { /* 裁切圖中黃色部分 */
+    
+    .accountManagement_bouncing main .characterAdjustment {
+        /* 裁切圖中黃色部分 */
         position: relative;
         bottom: -10px;
     }
+    
     .accountManagement_bouncing main .characterAdjustment_box {
         width: 50%;
         margin-bottom: -2em;
     }
+    
     .question {
         display: flex;
         justify-content: flex-end;
     }
+    
     .fa-question {
         border-radius: 50%;
         padding: 4px 6px;
         font-size: 8px;
         border: 1px solid #000;
     }
-
     /* 提示視窗 */
-    .promptWindow-main{
+    
+    .promptWindow-main {
         position: relative;
         margin-left: 50%;
     }
-    .promptWindow{
+    
+    .promptWindow {
         display: none;
         position: absolute;
         top: 0;
@@ -81,7 +87,8 @@
         width: inherit;
         height: inherit;
     }
-    .promptWindow::before{
+    
+    .promptWindow::before {
         content: '';
         display: block;
         width: 0;
@@ -89,23 +96,24 @@
         border-style: solid;
         border-width: 15px 26.0px 15px 0;
         border-color: transparent #ccc transparent transparent;
-        position: absolute; /* .promptWindow */
+        position: absolute;
+        /* .promptWindow */
         left: 40px;
     }
-    .promptWindow::after{
+    
+    .promptWindow::after {
         content: '此圖示為客製化人物的虛擬意象，請至客製化人物燈箱修改';
         display: block;
-        position: absolute; /* .promptWindow */
+        position: absolute;
+        /* .promptWindow */
         color: #666;
         background-color: #ccc;
         top: -130px;
         left: 60px;
         width: 100px;
-
         padding: 10px;
         border-radius: 10px;
     }
-
     /* input */
     
     .accountManagement_bouncing main .changeValue {
@@ -166,10 +174,10 @@
             margin-top: 50px;
         }
         /* 提示視窗 */
-        .promptWindow-main{
+        .promptWindow-main {
             margin-left: 80%;
         }
-        .promptWindow::before{
+        .promptWindow::before {
             content: '';
             display: block;
             width: 0;
@@ -177,19 +185,20 @@
             border-style: solid;
             border-width: 15px 0 15px 26.0px;
             border-color: transparent transparent transparent #ccc;
-            position: absolute; /* .promptWindow */
+            position: absolute;
+            /* .promptWindow */
             left: -30px;
         }
-        .promptWindow::after{
+        .promptWindow::after {
             content: '此圖示為客製化人物的虛擬意象，請至客製化人物燈箱修改';
             display: block;
-            position: absolute; /* .promptWindow */
+            position: absolute;
+            /* .promptWindow */
             color: #666;
             background-color: #ccc;
             top: -130px;
             left: -140px;
             width: 100px;
-    
             padding: 10px;
             border-radius: 10px;
         }

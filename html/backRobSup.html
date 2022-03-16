@@ -1,6 +1,98 @@
 @@include('layout/backheader.html',{title:"機器人客服管理"})
         <section class="mainContent backRobSup">
+            <table>
+                <thead>
+                    <tr class="robSupTitle">
+                        <th>關鍵字</th>
+                        <th>回答</th>
+                        <th>編輯</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="robSupTxt" v-for="(data,index) in datas">
+                        <td>{{data.keyWord}}</td>
+                        <td>{{data.ans}}</td>
+                        <td><button @click="selectData(index)">編輯</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <article class="txtBox lightBox" v-show="txtBoxShow ">
+                <p>編號: {{robSupNo}} </p>
+                <div>
+                    <label>關鍵字: </label>
+                    <input type="text" v-model="robSupKey" >
+                </div>
+                <div>
+                    <label for="ansWord">回答:</label>
+                    <textarea v-model="robSupWord"></textarea>
+                </div>
+                <div>
+                    <button @click="txtBoxShow = !txtBoxShow">取消</button>
+                    <button @click="changeData">確認</button>
+                </div>
+            </article>
         </section>
     </section>
+
+    <script>
+new Vue({
+            el: '.backRobSup',
+            data: {         //變數放在這裡
+                datas:[],
+                txtBoxShow:false,
+                robSupNo:"",
+                robSupKey:"",
+                robSupWord:"",
+
+            },
+            methods: {  //函數大部分放在這裡
+                selectData(index){
+                    this.txtBoxShow = !this.txtBoxShow;
+                    this.robSupNo = this.datas[index].issueNo;
+                    this.robSupKey = this.datas[index].keyWord;
+                    this.robSupWord = this.datas[index].ans;
+                },
+                changeData(){
+                    axios({
+                            method: 'post',
+                            url: 'php/robSupChange.php',
+                            //API要求的資料
+                            data: {
+                                robSupNo:JSON.stringify(`${this.robSupNo}`),
+                                robSupKey:JSON.stringify(`${this.robSupKey}`),
+                                robSupWord:this.robSupWord,
+                            }
+                        })
+                        .then((response) => {
+                            dataLoad()
+                        })
+                        .catch((error) => console.log(error))
+                },
+                dataLoad(){
+                    axios({
+                        method:'post',
+                        url:"php/robSupBack.php",
+                    }).then((res)=>{
+                        this.datas = res.data;
+                        console.log(res.data)
+                    }).catch((err)=>{ console.log(err) })
+                }
+
+            },
+            computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值
+                
+            },
+            mounted(){
+                axios({
+                        method:'post',
+                        url:"php/robSupBack.php",
+                    }).then((res)=>{
+                        this.datas = res.data;
+                        console.log(res.data)
+                    }).catch((err)=>{ console.log(err) })
+            },
+        
+        });
+    </script>
 </body>
 </html>

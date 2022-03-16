@@ -58,3 +58,15 @@
         cursor: pointer;
     }
 }
+
+.pageIndex ul{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.pageIndex ul li{
+    margin-right: 1%;
+}
+.pageIndex a{
+    color: black;
+}

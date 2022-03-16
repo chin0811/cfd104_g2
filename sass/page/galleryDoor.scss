@@ -1,8 +1,85 @@
 //藝廊入口 Body
 .galleryDoorWrap{
     //隱藏超出畫面的物件(卷軸)
-    width: 100%;
-    overflow: hidden;
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    // 改變滑鼠
+    cursor: w-resize;
+
+    //標語
+    .operate{
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+
+        //箭頭
+        .arrow{
+            position: relative;
+            margin: 0 auto;
+            width: 100px;
+
+            .curve{
+                border: 2px solid #394897;
+                border-color: transparent transparent transparent #394897;
+                height: 150px;
+                width: 300px;
+                border-radius: 230px 0 0 150px;
+
+                .point{
+                    position: absolute;
+                    left: 15px;
+                    top: 130px;
+                }
+
+                .point:before {
+                    top: -11px;
+                    left: -11px;
+                    transform: rotate(-74deg);
+                    -webkit-transform: rotate(-74deg);
+                    -moz-transform: rotate(-74deg);
+                    -ms-transform: rotate(-74deg);
+                }
+
+                .point:before, .point:after {
+                    border: 1px solid #394897;
+                    height: 25px;
+                    content: "";
+                    position: absolute;
+                }
+
+                .point:after {
+                    top: -20px;
+                    left: 5px;
+                    transform: rotate(12deg);
+                    -webkit-transform: rotate(12deg);
+                    -moz-transform: rotate(12deg);
+                    -ms-transform: rotate(12deg);
+                }
+            }
+        }
+    }
+    .bounce {
+        // animation:name duration | timing-function | delay | iteration-count | direction | fill-mode | play-state;
+        animation: bounce 3s 0s infinite normal none running;
+    }
+    .opacity{
+        opacity:0;
+        transition: opacity 1s 0s;
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+        40% {
+                transform: translateY(-15px);
+                
+            }
+        60% {
+                transform: translateY(-7px);
+        }
+    }
 
     .galleryDoorMain{
         position: relative;
@@ -23,8 +100,8 @@
                 //定位父層galleryDoorMain
                 position: absolute;
                 perspective: 1000px;
-                width: 300px;
-                height: 400px;  
+                width: 400px;
+                height: 500px;  
                 left:50%;
                 top:50%;
                 transform:translate(-50%,-50%);
@@ -80,4 +157,15 @@
             }
         }
     }
+}
+
+/*手機專用*/
+@media screen and (max-width: 767px) {
+    .galleryDoorWrap{
+        .operate{
+            top: 5%;
+            left: 35%;
+        }
+    }
+
 }
