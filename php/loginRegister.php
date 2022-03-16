@@ -9,8 +9,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sqlNumber = "select memNo from member ORDER BY memNo DESC LIMIT 1";
     $datas = $pdo->query($sqlNumber);
 	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
-    $today = date('Y-m-d H:i:s');
     $memNoNew = $dataNumber[0]["memNo"] + 1;
+    $today = date('Y-m-d H:i:s');
     //刪除""
     $str_sec = explode('"',$getData);
     // echo print_r($str_sec);

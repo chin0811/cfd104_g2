@@ -313,7 +313,7 @@
                             </li>
                             <li>
                                 <input type="file" id="pic2" name="pic" accept=".png,.jpg">
-                                <label for="pic2"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
+                                <label for="pic2"><img id="imgAdd1" src="assets/image/listingImage/add_icon.png" alt="none"></label>
                                 <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <li>
@@ -589,11 +589,16 @@
     <!-- 圖片上傳方框生成 -->
     <script>
         const appear = document.getElementById('imgAdd');
+        const appear1 = document.getElementById('imgAdd1');
         // const appear1 = document.getElementById('pic2');
         // const close = document.getElementById('lightboxBtn');
         const upload = document.getElementById('pic2');
+        const upload1 = document.getElementById('pic3');
         appear.addEventListener('click', () => {
-            upload.classList.add('here');
+            upload.parentNode.classList.add('here');
+        });
+        appear1.addEventListener('click', () => {
+            upload1.parentNode.classList.add('here');
         });
         // upload1.addEventListener('click', () => {
         //     modal.classList.add('show');
