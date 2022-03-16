@@ -3,18 +3,16 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$data = json_decode(file_get_contents('php://input'), true);
-	// $getAll = json_decode($data,true);
-	echo $data['robSupKey'];
-	// $robSupKey = $data['robSupKey'];
-	// $robSupWord = $data['robSupWord'];
-	// $robSupNo = $data['robSupNo'];
-	// $sql = "select * from member where memId=:memId and memPwd=:memPsw";
-	// $sql = "update robsup set keyWord='$robSupKey' ,ans='$robSupWords' where issueNo = $robSupNo";
-	// echo $sql;
-	// $dataChange = $pdo->exec($sql);
 
-
+	// $getJSON = file_get_contents('php://input');
+    // $getAll = json_decode($getJSON,true);
+    // $getData = $getAll['datas'];
+	$robSupNo = $_POST['robSupNo'];
+	$robSupKey = $_POST['robSupKey'];
+	$robSupWord = $_POST['robSupWord'];
+	$sql = "update robsup set keyWord='$robSupKey' ,ans='$robSupWord' where issueNo = $robSupNo";
+	$pdo->exec($sql);
+	header('Refresh:0.5;url=../backRobSup.html');
 
 } catch (Exception $e) {
 	echo "錯誤行號 : ", $e->getLine(), "<br>";
