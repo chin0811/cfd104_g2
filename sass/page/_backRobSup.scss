@@ -1,0 +1,95 @@
+.backRobSup{
+    table{
+        width: 100%;
+        .robSupTitle,.robSupTxt{
+            // display: flex;
+            width: 100%;
+        }
+        .robSupTitle{
+            th{
+                box-sizing: border-box;
+                padding: 0.5em 0.5em;
+                text-align: center;
+                &:nth-child(1){
+                    width: 8em;
+                }
+                &:nth-child(2){
+                   flex-grow: 1;
+                }
+                &:nth-child(3){
+                    width: 5em;
+                }
+            }
+        }
+        .robSupTxt{
+            box-sizing: border-box;
+            padding: 0.5em 0.5em;
+            text-align: center;
+            td{
+                box-sizing: border-box;
+                padding: 0.5em 0.5em;
+                text-align: left;
+                &:nth-child(1){
+                    width: 5em;
+                }
+                &:nth-child(2){
+                    flex-grow: 1;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; //行數
+                    -webkit-box-orient: vertical;
+                    white-space: normal;
+                }
+                &:nth-child(3){
+                    width: 8em;
+                    text-align: center;
+                }
+            }
+            
+        }
+
+
+
+    }
+    .txtBox{
+        position: fixed;
+        box-sizing: border-box;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 15%;
+        margin: auto;
+        width: 70%;
+        height: 70%;
+        padding: 2em;
+        form{
+            width: 100%;
+            height: 100%;
+            // background-color: #afa;
+            display: flex;
+            flex-direction: column;
+            div{
+                label{
+                    display: inline-block;
+                    width: 5em;
+                }
+                padding: 0.5em;
+                input[type*="text"]{
+                    width: 80%;
+                }
+            }
+            div:nth-of-type(3){
+                flex-grow: 1;
+                display: flex;
+                textarea{
+                    width: 80%;
+                    height:100%;
+                }
+            }
+            div:nth-child(4){
+                
+            }
+        }
+       
+
+    }
+}

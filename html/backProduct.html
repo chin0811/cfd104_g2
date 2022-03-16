@@ -23,11 +23,11 @@
                         <li>{{titles[1]}} {{lightIndex.prodClass}}</li>
                         <li>{{titles[2]}} {{lightIndex.productName}}</li>
                         <li>{{titles[3]}}</li>
-                        <select v-model="changedStatus">                                        
-                            <option :value="status.name" v-for="status in statusList" >{{status.name}}</option>                                    
+                        <select v-model="lightIndex.auditState">                                        
+                            <option  v-for="status in statusList" >{{status.name}}</option>                                    
                         </select>
                         <li>{{titles[4]}} {{lightIndex.adStatus}}</li>
-                        <li>{{titles[5]}} {{lightIndex.saleStatus}}</li> 
+                        <li>{{titles[5]}}</li> 
                         <select v-model="changedSaleStatus">                                        
                             <option :value="sale.name" v-for="sale in saleList" >{{sale.name}}</option>                                    
                         </select>
@@ -95,13 +95,13 @@
                 openLightBox:function(key){
                     productLigthtBox.classList.toggle("displayNone"); 
                     this.lightIndex = this.products[key];
-                    if(this.lightIndex.auditState=="審核中"){
-                        this.changedStatus = this.statusList[0].name;
-                    }else if(this.lightIndex.auditState=="通過"){
-                        this.changedStatus = this.statusList[1].name;
-                    }else{
-                        this.changedStatus = this.statusList[2].name;
-                    }
+                    // if(this.lightIndex.auditState=="審核中"){
+                    //     this.changedStatus = this.statusList[0].name;
+                    // }else if(this.lightIndex.auditState=="通過"){
+                    //     this.changedStatus = this.statusList[1].name;
+                    // }else{
+                    //     this.changedStatus = this.statusList[2].name;
+                    // }
                     // 販售狀態
                     if(this.lightIndex.saleStatus=="未上架"){
                         this.changedSaleStatus = this.saleList[0].name;
@@ -126,13 +126,13 @@
                 },
                 confirmChange:function(){
                     productLigthtBox.classList.toggle("displayNone");
-                    if(this.changedStatus=="審核中"){
-                        this.lightIndex.auditState = "審核中";
-                    }else if(this.changedStatus=="通過"){
-                        this.lightIndex.auditState = "通過";
-                    }else if(this.changedStatus=="未通過"){
-                        this.lightIndex.auditState = "未通過";
-                    };
+                    // if(this.changedStatus=="審核中"){
+                    //     this.lightIndex.auditState = "審核中";
+                    // }else if(this.changedStatus=="通過"){
+                    //     this.lightIndex.auditState = "通過";
+                    // }else if(this.changedStatus=="未通過"){
+                    //     this.lightIndex.auditState = "未通過";
+                    // };
                     // 販售狀態
                     if(this.changedSaleStatus=="未上架"){
                         this.lightIndex.saleStatus = "未上架";

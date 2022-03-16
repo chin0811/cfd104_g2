@@ -1,6 +1,128 @@
 @@include('layout/backheader.html',{title:"機器人客服管理"})
         <section class="mainContent backRobSup">
+            <table>
+                <thead>
+                    <tr class="robSupTitle">
+                        <th>關鍵字</th>
+                        <th>回答</th>
+                        <th>
+                            <button @click="txtBoxShowInput = !txtBoxShowInput">新增</button>
+                            
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="robSupTxt" v-for="(data,index) in datas">
+                        <td>{{data.keyWord}}</td>
+                        <td>{{data.ans}}</td>
+                        <td><button @click="selectData(index)">編輯</button><button @click="selectDelete(data.issueNo)">刪除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <article class="txtBox lightBox" v-show="txtBoxShow"  >
+                <form action="php/robSupChange.php" method="post" >
+                    <div>
+                        <label for="">編號:</label>
+                        <input type="text" v-model="robSupNo" name="robSupNo" readonly>
+                    </div>
+                    <div>
+                        <label>關鍵字: </label>
+                        <input type="text" v-model="robSupKey" name="robSupKey">
+                    </div>
+                    <div>
+                        <label for="ansWord">回答:</label>
+                        <textarea v-model="robSupWord" name="robSupWord"></textarea>
+                    </div>
+                    <div>
+                        <input type="button" value="取消" @click="txtBoxShow = !txtBoxShow">
+                        <input type="submit" value="確認">
+                    </div>
+                </form>
+            </article>
+            <article class="txtBox lightBox" v-show="txtBoxShowInput"  >
+                <form action="php/robSupInput.php" method="post" >
+                    <div>
+                        <label for="">編號:</label>
+                        <input type="text" name="robSupNo" readonly>
+                    </div>
+                    <div>
+                        <label>關鍵字: </label>
+                        <input type="text" name="robSupKey">
+                    </div>
+                    <div>
+                        <label for="ansWord">回答:</label>
+                        <textarea name="robSupWord"></textarea>
+                    </div>
+                    <div>
+                        <input type="button" value="取消" @click="txtBoxShowInput = !txtBoxShowInput">
+                        <input type="submit" value="確認">
+                    </div>
+                </form>
+            </article>
         </section>
     </section>
+
+    <script>
+new Vue({
+            el: '.backRobSup',
+            data: {         //變數放在這裡
+                datas:[],
+                txtBoxShow:false,
+                txtBoxShowInput:false,
+                robSupNo:"",
+                robSupKey:"",
+                robSupWord:"",
+
+            },
+            methods: {  //函數大部分放在這裡
+                selectData(index){
+                    this.txtBoxShow = !this.txtBoxShow;
+                    this.robSupNo = this.datas[index].issueNo;
+                    this.robSupKey = this.datas[index].keyWord;
+                    this.robSupWord = this.datas[index].ans;
+                },
+                selectDelete(index){
+                    var yes = confirm('你確定嗎？');
+                    if(yes){
+                        axios({
+                            method: 'post',
+                            url: `php/robSupDelete.php?index=${index}`,
+                            //API要求的資料
+                            data: {
+                            },
+                        })
+                        .then((response) => { 
+                            this.dataLoad()
+                        })
+                        .catch((error) => console.log(error))
+                    }
+                    
+                },
+                dataLoad(){
+                    axios({
+                        method:'post',
+                        url:"php/robSupBack.php",
+                    }).then((res)=>{
+                        this.datas = res.data;
+                        console.log(res.data)
+                    }).catch((err)=>{ console.log(err) })
+                }
+
+            },
+            computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值
+                
+            },
+            mounted(){
+                axios({
+                        method:'post',
+                        url:"php/robSupBack.php",
+                    }).then((res)=>{
+                        this.datas = res.data;
+                        console.log(res.data)
+                    }).catch((err)=>{ console.log(err) })
+            },
+        
+        });
+    </script>
 </body>
 </html>
