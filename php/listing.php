@@ -7,7 +7,7 @@
         $password = "123";
         $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
         $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
-    
+
         // 建立pdo物件
         $pdo = new PDO($dsn, $user, $password, $options);
     }
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "系統暫時不能提供服務~";
     }
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $value = "{$_POST['商品編號']},{$_POST['販售會員編號']},{$newName},{$_POST['販售狀態']},{$_POST['商品資訊']},{$_POST['廣告狀態']},{$_POST['商品鑑定證書']},{$_POST['商品分類']},{$_POST['審核狀態']},{$_POST['artistName']}";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
+    $value = "{$_POST['商品編號1']},{$_POST['販售會員編號1']},{$newName('assets/image/listingImage/kaws_action_figure.png)'},{$_POST['販售狀態(販售中/結單)']},{$_POST['商品資訊(productIntro)']},{$_POST['廣告狀態(ad)']},{$_POST['商品鑑定證書(paper)']},{$_POST['商品分類(productType)']},{$_POST['審核狀態(通過/未通過)']},{$_POST['商品名子(artistName)']}";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
     //資料放入sql之指令
     $sql = "insert into $table values($value)";
     echo $sql;
@@ -75,7 +75,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     catch (PDOException $e){
         $msg['msg'] = $e -> getMessage();
     }
-
 
 }else{
 	$message['message'] = "大失敗";
