@@ -7,11 +7,11 @@ let model;
 // 藝廊
 let gallery;
 let photo03, lightBoxP3, closeLightBoxP3;
-let photo04;
-let photo05;
-let pumpkin;
-let pumpkin02;
-let monkey;
+let photo04, lightBoxP4, closeLightBoxP4;
+let photo05, lightBoxP5, closeLightBoxP5;
+let pumpkin, lightBoxPumpkin, closeLightBoxPumpkin;
+let pumpkin02, lightBoxPumpkin02, closeLightBoxPumpkin02;
+let monkey, lightBoxMonkey, closeLightBoxMonkey;
 
 
 
@@ -98,46 +98,128 @@ loader.load(
     }
 );
 // 引入畫作04
+// 抓取html畫作04
+lightBoxP4 = document.querySelector("#lightBoxP4");
+closeLightBoxP4 = document.querySelector("#closeLightBoxP4");
+// 關掉html畫作04
+closeLightBoxP4.addEventListener("click",function(){
+    lightBoxP4.classList.toggle("displayNone");
+});
 loader.load
   (
     "photo04.json",
     function(photo04){
       scene.add(photo04);
       photo04.position.set(6, 5, -10);
+      domEvents.addEventListener(photo04, "click", event=>{
+        if(!cubeClick){
+        lightBoxP4.classList.toggle("displayNone");
+        cubeClick = true;
+        }else{
+        lightBoxP4.classList.toggle("displayNone");
+        cubeClick = false;
+        }
+    })
     }
   );
 // 引入畫作05
+// 抓取html畫作05
+lightBoxP5 = document.querySelector("#lightBoxP5");
+closeLightBoxP5 = document.querySelector("#closeLightBoxP5");
+// 關掉html畫作05
+closeLightBoxP5.addEventListener("click",function(){
+    lightBoxP5.classList.toggle("displayNone");
+});
 loader.load
   (
     "photo05.json",
     function(photo05){
       scene.add(photo05);
       photo05.position.set(35, 5, -15);
+      domEvents.addEventListener(photo05, "click", event=>{
+        if(!cubeClick){
+        lightBoxP5.classList.toggle("displayNone");
+        cubeClick = true;
+        }else{
+        lightBoxP5.classList.toggle("displayNone");
+        cubeClick = false;
+        }
+    })
     }
 );
 // 引入南瓜
+// 抓取html畫作南瓜
+lightBoxPumpkin = document.querySelector("#lightBoxPumpkin");
+closeLightBoxPumpkin = document.querySelector("#closeLightBoxPumpkin");
+// 關掉html畫作南瓜
+closeLightBoxPumpkin.addEventListener("click",function(){
+    lightBoxPumpkin.classList.toggle("displayNone");
+});
 loader.load
   (
     "pumpkin.json",
     function(pumpkin){
       scene.add(pumpkin);
       pumpkin.position.set(62, 6, -5);
+      domEvents.addEventListener(pumpkin, "click", event=>{
+        if(!cubeClick){
+        lightBoxPumpkin.classList.toggle("displayNone");
+        cubeClick = true;
+        }else{
+        lightBoxPumpkin.classList.toggle("displayNone");
+        cubeClick = false;
+        }
+    })
     }
 );
+// 引入南瓜2
+// 抓取html畫作南瓜2
+lightBoxPumpkin02 = document.querySelector("#lightBoxPumpkin02");
+closeLightBoxPumpkin02 = document.querySelector("#closeLightBoxPumpkin02");
+// 關掉html畫作南瓜2
+closeLightBoxPumpkin02.addEventListener("click",function(){
+    lightBoxPumpkin02.classList.toggle("displayNone");
+});
 loader.load
   (
     "pumpkin02.json",
     function(pumpkin02){
       scene.add(pumpkin02);
       pumpkin02.position.set(72, 6, -5);
+      domEvents.addEventListener(pumpkin02, "click", event=>{
+        if(!cubeClick){
+        lightBoxPumpkin02.classList.toggle("displayNone");
+        cubeClick = true;
+        }else{
+        lightBoxPumpkin02.classList.toggle("displayNone");
+        cubeClick = false;
+        }
+    })
     }
 );
+// 引入猴子
+// 抓取html畫作猴子
+lightBoxMonkey = document.querySelector("#lightBoxMonkey");
+closeLightBoxMonkey = document.querySelector("#closeLightBoxMonkey");
+// 關掉html畫作猴子
+closeLightBoxMonkey.addEventListener("click",function(){
+    lightBoxMonkey.classList.toggle("displayNone");
+});
 loader.load
   (
     "monkey.json",
     function(monkey){
       scene.add(monkey);
       monkey.position.set(90, 6, 0);
+      domEvents.addEventListener(monkey, "click", event=>{
+        if(!cubeClick){
+        lightBoxMonkey.classList.toggle("displayNone");
+        cubeClick = true;
+        }else{
+        lightBoxMonkey.classList.toggle("displayNone");
+        cubeClick = false;
+        }
+    })
     }
 );
 
