@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
     <!-- 登入  -->
     <script src="js/loginCheck.js"></script>
-    <script >
-        window.addEventListener('load',function(){
+    <script>
+        window.addEventListener('load', function() {
             loginCheck(false);
         })
     </script>
@@ -24,157 +25,157 @@
     <!-- 引入axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <!-- <span class="cursor"></span> -->
     @@include('layout/headerNormal.html')
-        <section class="homeWrap">
-            <section class="homeIntro">
-                <div class="intro">
-                    <section class="pic">
-                        <img src="assets/image/home_homeIntro_suitcase.png" alt="">
-                    </section>
-                    <h1 class="deepColor">不是缺少美，是缺少發現。</h1>  
-                </div>
-                <div class="scrollMouse">
-                    <section class="pic">
-                        <img src="assets/image/home_homeIntro_mouse.png" alt="">
-                    </section>
-                    <p class="lightColor small">Scroll Down</p>
-                </div>
-            </section>
-            <section class="homeCatalog">
-                <div class="catalog">
-                    <div class="card start">
-                        <div class="txt">
-                            <h1 class="deepColor">在藝起，發現<mark class="epBColor">美</mark></h1>
-                        </div>
-                    </div>
-                    <div class="card sculpture">
-                        <div class="pic">
-                                <img src="assets/image/home_homeCatalog_man.png"  alt="">
-                        </div>
-                        <div class="txt">
-                                <h2 class="deepColor">雕塑類</h2>
-                                <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                                <button class="round">競標</button>
-                        </div>
-                    </div>
-                    <div class="card paint">
-                            <div class="pic">
-                                <img src="assets/image/home_homeCatalog_smilePaint.png"  alt="">
-                            </div>
-                            <div class="txt">
-                                <h2 class="deepColor">畫作類</h2>
-                                <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                                <button class="round">競標</button>
-                            </div>
-                    </div>
-                    <div class="card toy">
-                            <div class="pic">
-                                <img src="assets/image/home_homeCatalog_elmoSculpt.png"  alt="">
-                            </div>
-                            <div class="txt">
-                                <h2 class="deepColor">公仔類</h2>
-                                <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                                <button class="round">競標</button>
-                            </div>
-                    </div>
-                    <div class="card brame">
-                            <div class="pic">
-                                <img src="assets/image/home_homeCatalog_lavbag.png"  alt="">
-                            </div>
-                            <div class="txt">
-                                <h2 class="deepColor">品牌合作</h2>
-                                <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                                <button class="round">競標</button>
-                            </div>
+    <section class="homeWrap">
+        <section class="homeIntro">
+            <div class="intro">
+                <section class="pic">
+                    <img src="assets/image/home_homeIntro_suitcase.png" alt="">
+                </section>
+                <h1 class="deepColor">不是缺少美，是缺少發現。</h1>
+            </div>
+            <div class="scrollMouse">
+                <section class="pic">
+                    <img src="assets/image/home_homeIntro_mouse.png" alt="">
+                </section>
+                <p class="lightColor small">Scroll Down</p>
+            </div>
+        </section>
+        <section class="homeCatalog">
+            <div class="catalog">
+                <div class="card start">
+                    <div class="txt">
+                        <h1 class="deepColor">在藝起，發現<mark class="epBColor">美</mark></h1>
                     </div>
                 </div>
-            </section>
-            <section class="scrollDown">
-                <div class="scrollPic">
-                    <img src="assets/image/home_homeCatalog_lavbag.png"  alt="">
-                </div>
-                <section class="homeGallery">
-                    <!-- <div class="scrollPic">
-                        <img src="assets/image/home_homeCatalog_lavbag.png"  alt="">
-                    </div> -->
+                <div class="card sculpture">
                     <div class="pic">
-                        <img src="assets/image/home_homGallery_gallery.png" alt="">
+                        <img src="assets/image/home_homeCatalog_man.png" alt="">
                     </div>
                     <div class="txt">
-                        <h2 class="deepColor">藝起逛逛</h2>
-                        <p>多樣化的展品，<br>豐富的展演方式。<br>在這裡，美不只有一種形式。</p>
-                        <button class="round">藝廊</button>
+                        <h2 class="deepColor">雕塑類</h2>
+                        <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
+                        <button class="round">競標</button>
                     </div>
-                </section>
-                <section class="homeMember">
-                    <!-- <div class="scrollPic">
-                        <img src="assets/image/home_homeCatalog_lavbag.png"  alt="">
-                    </div> -->
+                </div>
+                <div class="card paint">
                     <div class="pic">
-                        <img src="assets/image/3dSurroundView.jpg" alt="">
+                        <img src="assets/image/home_homeCatalog_smilePaint.png" alt="">
                     </div>
                     <div class="txt">
-                        <h2 class="deepColor">會員中心</h2>
-                        <p>將美通通包含其中，<br>將所有體驗美的過程記錄下來。</p>
-                        <button class="round">會員中心</button>
+                        <h2 class="deepColor">畫作類</h2>
+                        <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
+                        <button class="round">競標</button>
                     </div>
-                </section>
-            </section>
-            <section class="homeNews">
-                <div class="newsContain">
-                    <h2 class="deepColor">藝論</h2>
-                    <!-- Vue作用域開始 -->
-                    <div id="homePage">
-                        <article class="item">
-                            <div class="pic">
-                                <img :src='src+homeDiscusArts.pic'>
-                            </div>
-                            <div class="txtContent">
-                                <div class="txt">
-                                    <h3 class="deepColor">{{homeDiscusArts.title}}</h3>
-                                        <p class="lightColor">{{homeDiscusArts.content | ellipsis}}</p>
-                                </div>
-                                <button class="roundOutline">
-                                    看更多
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                    <!-- Vue作用域結束 -->
                 </div>
-                <!-- 裝飾圖片 -->
-                <section class="decorate Pictopleft">
-                    <img src="assets/image/home_homeCatalog_elmoSculpt.png" alt="">
-                </section>
-                <section class="decorate Pictopright">
-                    <img src="assets/image/galley__KAWSxUniqloTshirt.png" alt="">
-                </section>
-                <section class="decorate Picbottomleft">
-                    <img src="assets/image/home_homeCatalog_man.png" alt="">
-                </section>
-                <section class="decorate Picbottomright">
-                    <img src="assets/image/galley__lavKoonsbag.png" alt="">
-                </section>
+                <div class="card toy">
+                    <div class="pic">
+                        <img src="assets/image/home_homeCatalog_elmoSculpt.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2 class="deepColor">公仔類</h2>
+                        <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
+                        <button class="round">競標</button>
+                    </div>
+                </div>
+                <div class="card brame">
+                    <div class="pic">
+                        <img src="assets/image/home_homeCatalog_lavbag.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2 class="deepColor">品牌合作</h2>
+                        <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
+                        <button class="round">競標</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="scrollDown">
+            <div class="scrollPic">
+                <img src="assets/image/home_homeCatalog_lavbag.png" alt="">
+            </div>
+            <section class="homeGallery">
+                <!-- <div class="scrollPic">
+                        <img src="assets/image/home_homeCatalog_lavbag.png"  alt="">
+                    </div> -->
+                <div class="pic">
+                    <img src="assets/image/home_homGallery_gallery.png" alt="">
+                </div>
+                <div class="txt">
+                    <h2 class="deepColor">藝起逛逛</h2>
+                    <p>多樣化的展品，<br>豐富的展演方式。<br>在這裡，美不只有一種形式。</p>
+                    <button class="round">藝廊</button>
+                </div>
+            </section>
+            <section class="homeMember">
+                <!-- <div class="scrollPic">
+                        <img src="assets/image/home_homeCatalog_lavbag.png"  alt="">
+                    </div> -->
+                <div class="pic">
+                    <img src="assets/image/3dSurroundView.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <h2 class="deepColor">會員中心</h2>
+                    <p>將美通通包含其中，<br>將所有體驗美的過程記錄下來。</p>
+                    <button class="round">會員中心</button>
+                </div>
             </section>
         </section>
-    
-    @@include('layout/supportPage.html')
-    @@include('layout/footer.html')
-    
+        <section class="homeNews">
+            <div class="newsContain">
+                <h2 class="deepColor">藝論</h2>
+                <!-- Vue作用域開始 -->
+                <div id="homePage">
+                    <article class="item">
+                        <div class="pic">
+                            <img :src='src+homeDiscusArts.pic'>
+                        </div>
+                        <div class="txtContent">
+                            <div class="txt">
+                                <h3 class="deepColor">{{homeDiscusArts.title}}</h3>
+                                <p class="lightColor">{{homeDiscusArts.content | ellipsis}}</p>
+                            </div>
+                            <button class="roundOutline">
+                                    看更多
+                                </button>
+                        </div>
+                    </article>
+                </div>
+                <!-- Vue作用域結束 -->
+            </div>
+            <!-- 裝飾圖片 -->
+            <section class="decorate Pictopleft">
+                <img src="assets/image/home_homeCatalog_elmoSculpt.png" alt="">
+            </section>
+            <section class="decorate Pictopright">
+                <img src="assets/image/galley__KAWSxUniqloTshirt.png" alt="">
+            </section>
+            <section class="decorate Picbottomleft">
+                <img src="assets/image/home_homeCatalog_man.png" alt="">
+            </section>
+            <section class="decorate Picbottomright">
+                <img src="assets/image/galley__lavKoonsbag.png" alt="">
+            </section>
+        </section>
+    </section>
+
+    @@include('layout/supportPage.html') @@include('layout/footer.html')
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <!-- 首頁gsap -->
     <script src="js/homePage.js"></script>
-    
+
     <script>
         new Vue({
-            el:"#homePage",
-            data:{
-                discusArtAll:[],
-                homeDiscusArts:[],
-                src:'assets/image/',
+            el: "#homePage",
+            data: {
+                discusArtAll: [],
+                homeDiscusArts: [],
+                src: 'assets/image/',
             },
             //新增監聽器
             filters: {
@@ -187,21 +188,22 @@
                     return value;
                 }
             },
-            
-            mounted(){
-                axios.get('php/articleAllConnect.php').then((res)=>{
+
+            mounted() {
+                axios.get('php/articleAllConnect.php').then((res) => {
                     // 全部文章
                     this.discusArtAll = res.data;
-                    
+
                     // 首頁只要第一筆文章   
                     this.homeDiscusArts = this.discusArtAll[0];
-                    console.log("homeDiscusArts取得的資料",this.homeDiscusArts)
+                    console.log("homeDiscusArts取得的資料", this.homeDiscusArts)
 
-                }).catch((err)=>{
+                }).catch((err) => {
                     console.log(err)
                 })
             }
         })
     </script>
 </body>
+
 </html>
