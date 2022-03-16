@@ -20,32 +20,56 @@ modifyData.onclick = function(e) {
         try {
             document.querySelectorAll('.changeValue')[i].style.display = "inline-block";
             document.querySelectorAll('.showChangeValue')[i].style.display = "none";
-            // changeValue[i].style.border = "1px solid #000"
+            $($('.changeValue')[i]).val($($('.showChangeValue')[i]).text());
             changeValue[i].removeAttribute("disabled");
-        } catch {}
+            console.log('yes');
+        } catch {
+            console.log('err');
+        }
     }
     modifyData.style.display = "none"
-        // $('.modifyData').hide();
     confirmTheChanges.style.display = "block"
-        // $('.confirmTheChanges').show();
 }
 
 confirmTheChanges.onclick = function(e) {
     // arr = [] // 資料清空
-    for (let i = 0; i < 10; i++) {
-        // arr.push(changeValue[i].getAttribute("value")); // 寫入新資料
-        try {
-            document.querySelectorAll('.changeValue')[i].style.display = "none";
-            document.querySelectorAll('.showChangeValue')[i].style.display = "inline-block";
-            document.querySelectorAll('.showChangeValue')[i].innerHTML = document.querySelectorAll('.changeValue')[i].value;
-            changeValue[i].style.border = "none"
-            changeValue[i].setAttribute("disabled", "");
-        } catch {}
-    }
-    modifyData.style.display = "block"
-        // $('.modifyData').show();
-    confirmTheChanges.style.display = "none"
-        // $('.confirmTheChanges').hide();
+    $.ajax({
+        type: 'POST',
+        url: 'php/modifyMember.php',
+        data: {
+            "memNo": $('#memNo3DPage').text(),
+            "memNickName": $('.changeValue[name="1"]').val(),
+            "memName": $('.changeValue[name="2"]').val(),
+            "email": $('.changeValue[name="3"]').val(),
+            "phone": $('.changeValue[name="4"]').val(),
+            "address": $('.changeValue[name="5"]').val(),
+            "creditCard": $('.changeValue[name="6"]').val(),
+        },
+        success(res) {
+            if (res.msg !== false) {
+                for (let i = 0; i < 10; i++) {
+                    try {
+                        document.querySelectorAll('.changeValue')[i].style.display = "none";
+                        document.querySelectorAll('.showChangeValue')[i].style.display = "inline-block";
+                        document.querySelectorAll('.showChangeValue')[i].innerHTML = document.querySelectorAll('.changeValue')[i].value;
+                        changeValue[i].style.border = "none"
+                        changeValue[i].setAttribute("disabled", "");
+                    } catch {}
+                }
+                modifyData.style.display = "block";
+                confirmTheChanges.style.display = "none";
+            } else {
+                alert("修改失敗，請重新登入。");
+                location.href = "login.html";
+            }
+
+        },
+        error(e) {
+            console.log('ajax error');
+            console.log(e.responseText);
+            console.log(e);
+        }
+    });
 }
 
 /* 關閉視窗後

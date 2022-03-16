@@ -138,6 +138,33 @@ window.onresize = function() {
 //帳號管理
 function accountManagement() {
     accountManagement_bouncing.style.display = "block"
+    getaccountManagement();
+
+}
+
+//去後PHP得帳號session
+async function getaccountManagement() {
+    let url = 'php/loginCheck.php';
+    try {
+        let res = await fetch(url);
+        // return await res.json();
+        let memData = await res.json();
+        console.log(memData);
+        $('#memNo3DPage').text(memData.memNo);
+        $('#memNickName3DPage').text(memData.memNickName);
+        $('#memId3DPage').text(memData.memId);
+        $('#memPwd3DPage').text(memData.memPwd);
+        $('#memName3DPage').text(memData.memName);
+        $('#email3DPage').text(memData.email);
+        $('#phone3DPage').text(memData.phone);
+        $('#address3DPage').text(memData.address);
+        $('#creditCard3DPage').text(memData.creditCard);
+        $('#enrollDate3DPage').text(memData.enrollDate);
+    } catch (error) {
+        // console.log(error);
+        memChange(true);
+        // location.href = "login.html";
+    }
 }
 //收藏
 function collect() {
