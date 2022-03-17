@@ -56,7 +56,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "系統暫時不能提供服務~";
     }
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $value = "{$_POST['商品編號1']},{$_POST['販售會員編號1']},{$newName('assets/image/listingImage/kaws_action_figure.png)'},{$_POST['販售狀態(販售中/結單)']},{$_POST['商品資訊(productIntro)']},{$_POST['廣告狀態(ad)']},{$_POST['商品鑑定證書(paper)']},{$_POST['商品分類(productType)']},{$_POST['審核狀態(通過/未通過)']},{$_POST['商品名子(artistName)']}";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
+    $sqlNumber = "select prodNo from com ORDER BY prodNo DESC LIMIT 1";
+    $datas = $pdo->query($sqlNumber);
+	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
+    $memNoNew = $dataNumber[0]["prodNo"] + 1;
+    $sqlNumber = "select memNo from com ORDER BY memNo DESC LIMIT 1";
+    $datas = $pdo->query($sqlNumber);
+	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
+    $memNoNew1 = $dataNumber[0]["memNo"] + 1;
+    $productIntro = $_POST['productIntro'];
+    $ad = $_POST['ad'];
+    $papers = $_FILES['papers']['name'];
+    $type = $_POST['type'];
+    $artistName = $_POST['artistName'];
+    $value = "$memNoNew,$memNoNew1,'$newName','NULL','$productIntro','$ad','$papers','$type','未審查','$artistName'";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
     //資料放入sql之指令
     $sql = "insert into $table values($value)";
     echo $sql;
@@ -79,4 +92,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }else{
 	$message['message'] = "大失敗";
 }
+echo $msg['msg'];
 ?>
