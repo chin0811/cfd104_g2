@@ -1,7 +1,130 @@
 @@include('layout/backheader.html',{title:"真人客服管理"})
+<<<<<<< HEAD
         <section class="mainContent">
             
+=======
+        <section class="mainContent backSup">
+            <article>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>聊天室編號</td>
+                            <td>會員名稱</td>
+                            <td>客服名稱</td>
+                            <td>開始時間</td>
+                            <td>狀態</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="data in datas">
+                            <td>{{data.quizNo}}</td>
+                            <td>{{data.memName}}</td>
+                            <td>{{data.adminName}}</td>
+                            <td>{{data.stTimer}}</td>
+                            <td>
+                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'">{{data.finishState}}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="txtLightBox lightBox">
+                <div>
+                    <p>會員名稱：</p>
+                    <button></button>
+                </div>
+                <article class="txtArea">
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article>
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <article class="meTxt">
+                        <p class="small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, distinctio?</p>
+                    </article>
+                    <!-- <messageart v-for="item in messageObject" v-bind="item"/> -->
+                </article>
+                <div>
+                    <textarea></textarea>
+                    <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent">
+                </div>
+            </article>
+>>>>>>> 491e7b06361fe02494447f38b7e8380220c4a602
         </section>
     </section>
+    <script>
+        new Vue({
+                el: '.backSup',
+                data: {         //變數放在這裡
+                    datas:[],
+    
+                },
+                methods: {  //函數大部分放在這裡
+                   
+                    selectDelete(index){
+                        var yes = confirm('你確定嗎？');
+                        if(yes){
+                            axios({
+                                method: 'post',
+                                url: `php/robSupDelete.php?index=${index}`,
+                                //API要求的資料
+                                data: {
+                                },
+                            })
+                            .then((response) => { 
+                                this.dataLoad()
+                            })
+                            .catch((error) => console.log(error))
+                        }
+                        
+                    },
+                    dataLoad(){
+                        axios({
+                            method:'post',
+                            url:"php/robSupBack.php",
+                        }).then((res)=>{
+                            this.datas = res.data;
+                            console.log(res.data)
+                        }).catch((err)=>{ console.log(err) })
+                    }
+    
+                },
+                computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值
+                    
+                },
+                mounted(){
+                    axios({
+                            method:'post',
+                            url:"php/supKey.php",
+                        }).then((res)=>{
+                            this.datas = res.data;
+                            console.log(res.data)
+                        }).catch((err)=>{ console.log(err) })
+                },
+            
+            });
+        </script>
 </body>
 </html>

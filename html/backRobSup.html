@@ -5,31 +5,59 @@
                     <tr class="robSupTitle">
                         <th>關鍵字</th>
                         <th>回答</th>
-                        <th>編輯</th>
+                        <th>
+                            <button @click="txtBoxShowInput = !txtBoxShowInput" class="round">新增</button>
+                            
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="robSupTxt" v-for="(data,index) in datas">
                         <td>{{data.keyWord}}</td>
                         <td>{{data.ans}}</td>
-                        <td><button @click="selectData(index)">編輯</button></td>
+                        <td><button @click="selectData(index)" class="round">編輯</button><button @click="selectDelete(data.issueNo)" class="whiteRound">刪除</button></td>
                     </tr>
                 </tbody>
             </table>
-            <article class="txtBox lightBox" v-show="txtBoxShow ">
-                <p>編號: {{robSupNo}} </p>
-                <div>
-                    <label>關鍵字: </label>
-                    <input type="text" v-model="robSupKey" >
-                </div>
-                <div>
-                    <label for="ansWord">回答:</label>
-                    <textarea v-model="robSupWord"></textarea>
-                </div>
-                <div>
-                    <button @click="txtBoxShow = !txtBoxShow">取消</button>
-                    <button @click="changeData">確認</button>
-                </div>
+            <article class="txtBox lightBox" v-show="txtBoxShow"  >
+                <form action="php/robSupChange.php" method="post" >
+                    <div>
+                        <label for="">編號:</label>
+                        <input type="text" v-model="robSupNo" name="robSupNo" readonly>
+                    </div>
+                    <div>
+                        <label>關鍵字: </label>
+                        <input type="text" v-model="robSupKey" name="robSupKey">
+                    </div>
+                    <div>
+                        <label for="ansWord">回答:</label>
+                        <textarea v-model="robSupWord" name="robSupWord"></textarea>
+                    </div>
+                    <div>
+                        <input type="button" value="取消" @click="txtBoxShow = !txtBoxShow" class="whiteRound">
+                        <input type="submit" value="確認"  class="round">
+                    </div>
+                </form>
+            </article>
+            <article class="txtBox lightBox" v-show="txtBoxShowInput"  >
+                <form action="php/robSupInput.php" method="post" >
+                    <div>
+                        <label for="">編號:</label>
+                        <input type="text" name="robSupNo" readonly>
+                    </div>
+                    <div>
+                        <label>關鍵字: </label>
+                        <input type="text" name="robSupKey">
+                    </div>
+                    <div>
+                        <label for="ansWord">回答:</label>
+                        <textarea name="robSupWord"></textarea>
+                    </div>
+                    <div>
+                        <input type="button" value="取消" @click="txtBoxShowInput = !txtBoxShowInput" class="whiteRound">
+                        <input type="submit" value="確認" class="round">
+                    </div>
+                </form>
             </article>
         </section>
     </section>
@@ -40,6 +68,7 @@ new Vue({
             data: {         //變數放在這裡
                 datas:[],
                 txtBoxShow:false,
+                txtBoxShowInput:false,
                 robSupNo:"",
                 robSupKey:"",
                 robSupWord:"",
@@ -52,21 +81,22 @@ new Vue({
                     this.robSupKey = this.datas[index].keyWord;
                     this.robSupWord = this.datas[index].ans;
                 },
-                changeData(){
-                    axios({
+                selectDelete(index){
+                    var yes = confirm('你確定嗎？');
+                    if(yes){
+                        axios({
                             method: 'post',
-                            url: 'php/robSupChange.php',
+                            url: `php/robSupDelete.php?index=${index}`,
                             //API要求的資料
                             data: {
-                                robSupNo:JSON.stringify(`${this.robSupNo}`),
-                                robSupKey:JSON.stringify(`${this.robSupKey}`),
-                                robSupWord:this.robSupWord,
-                            }
+                            },
                         })
-                        .then((response) => {
-                            dataLoad()
+                        .then((response) => { 
+                            this.dataLoad()
                         })
                         .catch((error) => console.log(error))
+                    }
+                    
                 },
                 dataLoad(){
                     axios({

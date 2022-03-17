@@ -87,19 +87,16 @@ a{
     left: 50%;
     /* transform: translateY(-50%); */
     transform: translateX(-50%);
-    background-color: rgb(255, 255, 255);
+    background-color: #fbfbfb;
     box-sizing: border-box;
     padding: 5%;
     border-radius: 30px;
     height: 50%;
+    width: 40%;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
     justify-content: center;
-}
-.galleryHint p{
-    width: 60%;
-    font-size: large;
 }
 .galleryHint .closeHint{
     width: 10%;
@@ -108,6 +105,23 @@ a{
     right: 1%;
     top: 8%;
     cursor: pointer;
+}
+.galleryHint img{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1em;
+}
+.galleryHint p{
+    font-size: 0.5em;
+    text-align: center;
+    background-color: transparent;
+    padding-bottom: 5em;
+}
+.galleryHint .owl-carousel{
+    background-color: transparent;
+}
+.galleryHint .owl-carousel .owl-nav button{
+    display: none;
 }
 #banksy{
     height: 100vh;

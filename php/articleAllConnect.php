@@ -3,10 +3,10 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select pic, title, content 
-			from discusArt
+	$sql = "select pic, title, content ,articleNo
+			from discusart
 			where visibleStale = '是'
-			order by time DESC;";
+			order by postTime DESC;";
 	$discusArts = $pdo->query($sql);
 	$prodRow = $discusArts->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($prodRow,JSON_UNESCAPED_UNICODE);

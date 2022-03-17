@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>藝廊</title>
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
+    <!-- OwlCarousel -->
+    <link rel="stylesheet" href="assets/owlCss/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlCss/owl.theme.default.min.css">
     <link rel="stylesheet" href="galleryAll/gallery/index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
@@ -14,6 +17,7 @@
     <script src="galleryAll/gallery/threex.domevents.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/vue/vue.min.js"></script>
+    <script src="js/jquery/jquery.min.js"></script>
     <!-- 彈跳公仔JS -->
     <script src="js/galleryBounceDoll.js" async></script>
     <!-- 登入  -->
@@ -147,12 +151,12 @@
                 <div class="wrap">
                     <button id="cubeBtn" class="round">點我</button>
                     <div class="cube">
-                        <div class="top"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></div>
+                        <div class="top"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></div>
                         <div>
-                            <span style="--i:0"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
-                            <span style="--i:1"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
-                            <span style="--i:2"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
-                            <span style="--i:3"><img src="../assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span style="--i:0"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span style="--i:1"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span style="--i:2"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
+                            <span style="--i:3"><img src="assets/image/listingImage/mona_lisa_ps.png" alt="none"></span>
                         </div>
                     </div>
                 </div>
@@ -187,12 +191,24 @@
     <!-- 提示 -->
     <div class="galleryHint" id="galleryHint">
         <i class="closeHint fas fa-times" id="closeHint"></i>
-        <p>放大縮小：滾輪</p>
-        <p>移動：右鍵</p>
+        <div class="owl-carousel owl-theme">
+            <div>
+                <img src="assets/image/instruction_1.gif" alt="操作動畫">
+            </div>
+            <div>
+                <img src="assets/image/instruction_2.gif" alt="操作動畫">
+            </div>
+        </div>
     </div>
 </body>
 </html>
 
+<!-- 燈箱.js -->
+<!-- OwlCarousel -->
+
+<script src="js/owl/owl.carousel.js"></script>
+<script src="js/owl/owl.carousel.min.js"></script>
+<script src="js/gallery.js"></script>
 <link rel="stylesheet" href="assets/css/cigarette.css">
 
 <!-- slitting -->
@@ -275,7 +291,6 @@ const app = new Vue({
 
 <!-- Mona Lisa -->
 <link rel="stylesheet" href="assets/galleryCss/cube.css">
-<script src="js/jquery/jquery.min.js"></script>
 <script>
     $(function () {
         $(`#cubeBtn`).click(function(){

@@ -3,10 +3,11 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
+	$articleNo = $_GET['articleNo'];
 	$sql = "select pic, content
 			from discusArt 
-			where memNo = 1
-			order by time DESC
+			where memNo = (SELECT memNo FROM discusart WHERE articleNo = $articleNo )
+			order by postTime DESC
 			limit 3;";
 	$myArticles = $pdo->query($sql);
 	$prodRow = $myArticles->fetchAll(PDO::FETCH_ASSOC);
