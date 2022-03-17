@@ -1,25 +1,26 @@
 <?php
-    try {
+    // try {
         // 資料庫設定
         $host = "cfd104g5.asuscomm.com";
-        $dbname = "cdf104_g2";//資料庫名子
+        $dbname = "cfd104_g2";//資料庫名子
         $user = "root"; // 記得改成自己的名字
-        $password = "123";
+        $password = "Eric20212022";
         $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
         $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
 
         // 建立pdo物件
         $pdo = new PDO($dsn, $user, $password, $options);
-    }
-    catch (Exception $e) {
-        echo "錯誤行號 : ", $e->getLine(), "<br>";
-        echo "錯誤原因 : ", $e->getMessage(), "<br>";
-    }
+    // }
+    // catch (Exception $e) {
+    //     echo "錯誤行號 : ", $e->getLine(), "<br>";
+    //     echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    // }
 ?>
 
 <?php
 header('Content-Type: application/json; charset=utf-8');
 // require_once("g2_dataConnect.php");
+$newName ='';
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 確認是否收到form給我的資料
 	$message['message'] = "傳成功了";
@@ -66,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $memNoNew1 = $dataNumber[0]["memNo"] + 1;
     $productIntro = $_POST['productIntro'];
     $ad = $_POST['ad'];
-    $papers = $_FILES['papers']['name'];
+    $papers = $_FILES['paper']['name'];
     $type = $_POST['type'];
     $artistName = $_POST['artistName'];
     $value = "$memNoNew,$memNoNew1,'$newName','NULL','$productIntro','$ad','$papers','$type','未審查','$artistName'";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
