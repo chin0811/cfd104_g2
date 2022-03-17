@@ -1,15 +1,16 @@
 <?php
+    require_once("g2_dataConnect.php");
     // try {
         // 資料庫設定
-        $host = "cfd104g5.asuscomm.com";
-        $dbname = "cfd104_g2";//資料庫名子
-        $user = "root"; // 記得改成自己的名字
-        $password = "Eric20212022";
-        $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
-        $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
+        //$host = "cfd104g5.asuscomm.com";
+        //$dbname = "cfd104_g2";//資料庫名子
+        //$user = "root"; // 記得改成自己的名字
+        //$password = "Eric20212022";
+        //$dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
+        //$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
 
         // 建立pdo物件
-        $pdo = new PDO($dsn, $user, $password, $options);
+        //$pdo = new PDO($dsn, $user, $password, $options);
     // }
     // catch (Exception $e) {
     //     echo "錯誤行號 : ", $e->getLine(), "<br>";
