@@ -1,8 +1,4 @@
 @@include('layout/backheader.html',{title:"真人客服管理"})
-<<<<<<< HEAD
-        <section class="mainContent">
-            
-=======
         <section class="mainContent backSup">
             <article>
                 <table>
@@ -22,16 +18,16 @@
                             <td>{{data.adminName}}</td>
                             <td>{{data.stTimer}}</td>
                             <td>
-                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'">{{data.finishState}}</button>
+                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'" @click="chatroomShow = !chatroomShow">{{data.finishState}}</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </article>
-            <article class="txtLightBox lightBox">
-                <div>
+            <article class="txtLightBox lightBox" v-show="chatroomShow">
+                <div class="title">
                     <p>會員名稱：</p>
-                    <button></button>
+                    <img src="assets\image\supportPage_close_icon.svg" alt="" @click="chatroomShow = false">
                 </div>
                 <article class="txtArea">
                     <article class="meTxt">
@@ -71,7 +67,6 @@
                     <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent">
                 </div>
             </article>
->>>>>>> 491e7b06361fe02494447f38b7e8380220c4a602
         </section>
     </section>
     <script>
@@ -79,6 +74,7 @@
                 el: '.backSup',
                 data: {         //變數放在這裡
                     datas:[],
+                    chatroomShow:false,
     
                 },
                 methods: {  //函數大部分放在這裡
