@@ -5,11 +5,11 @@ html, body, main{
     width: 100%;
 }
 
-main{
+/* main{
     align-items: center;
     display: flex;
     justify-content: center;
-}
+} */
 
 #piece{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
@@ -119,12 +119,11 @@ input{
     display: none;
 }
 
+header{
+    position: absolute;
+    top: 2em;
+}
 
-/* 會蓋到header 請改class 或 Id */
-/* header{
-    position: absolute; */
-    /* top: 2em;
-} */
 header a{
     color: black;
 }
