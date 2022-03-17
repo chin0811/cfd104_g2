@@ -10,10 +10,10 @@ try {
 	$robSupNo = $_POST['robSupNo'];
 	$robSupKey = $_POST['robSupKey'];
 	$robSupWord = $_POST['robSupWord'];
-	$sql = "update robsup set keyWord='$robSupKey' ,ans='$robSupWord' where issueNo = $robSupNo";
-	$pdo->exec($sql);
+	$sql = "update robSup SET keyWord='$robSupKey',ans='$robSupWord' WHERE issueNo=$robSupNo";
+	$statement = $pdo->prepare($sql);
+	$result = $statement->execute();
 	header('Refresh:0.5;url=../backRobSup.html');
-
 } catch (Exception $e) {
 	echo "錯誤行號 : ", $e->getLine(), "<br>";
 	echo "錯誤原因 : ", $e->getMessage(), "<br>";

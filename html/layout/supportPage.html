@@ -11,11 +11,13 @@
                     <img src="assets\image\supportPage_close_icon.svg" alt="" @click="openSelect = !openSelect">
                 </article>
                 <article class="selectBtn">
-                    <div @click="openRobotBool = true">
+                    <!-- <div @click="openRobotBool = true"> -->
+                    <div @click="openRobot">
                         <img src="assets/image/supportPage_robot_icon.svg" alt="" class="transparent">
                         <p>智能客服</p>
                     </div>
-                    <div @click="openPeopleBool = true">
+                    <!-- <div @click="openPeopleBool = true"> -->
+                    <div @click="openPeople">
                         <img src="assets/image/supportPage_people_icon.svg" alt="" class="transparent">
                         <p>線上客服</p>
                     </div>
@@ -96,6 +98,35 @@
                 },
             },
             methods: {  //函數大部分放在這裡
+                openRobot(){
+                    this.openRobotBool = true;
+                    this.messageObject = [];
+                },
+                openPeople(){
+                    this.openPeopleBool = true;
+                    this.messageObject = [];
+                    if(memData){
+                        axios({
+                            method:'post',
+                            url:`php/supPeople.php?memNo=${memData.memNo}`,
+                            // }).then((res)=>{
+                            //     console.log("從php傳來的東西",res)
+                            //     setTimeout(()=>{
+                            //         this.messageObject.push({message: `${res.data[0].ans}` , class: 'robotTxt'})
+                            //         setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                            // },500)
+                            }).catch((err)=>{
+                                console.log(err)
+                            })
+                    }else{
+                        this.openPeopleBool = !this.openPeopleBool;
+                        if(confirm("請登入")){
+                            window.location = "login.html"
+                        }
+                    }
+                    
+
+                },
                 closedRoom(){
                     this.openPeopleBool = false;
                     this.openRobotBool = false;
@@ -143,6 +174,7 @@
                     // console.log("從php傳來的東西",res)
                     this.keyArray = res.data;
                 }).catch((err)=>{ console.log(err) })
+                
             },
         
         });

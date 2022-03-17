@@ -143,32 +143,36 @@
 .homeCatalog .catalog{
     display: flex;
 }
-.homeCatalog .catalog .card{
+.homeCatalog .catalog .cardDing{
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     width: 100vw;
+    
 }
-.homeCatalog .catalog .card .pic{
+.homeCatalog .catalog .cardDing .pic{
     width: 250px;
     padding: 0px 10px;
     box-sizing: border-box;
 }
-.homeCatalog .catalog .card .pic img{
+.homeCatalog .catalog .cardDing:not(:last-child) .pic{
+    -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(0, 0, 0, .2));
+}
+.homeCatalog .catalog .cardDing .pic img{
     width: 100%;
 }
-.homeCatalog .catalog .card .txt{
+.homeCatalog .catalog .cardDing .txt{
     display: block;
     width: 200px;
     padding: 0px 5px;
     box-sizing: border-box;
 }
-.homeCatalog .catalog .card button{
+.homeCatalog .catalog .cardDing button{
     margin-top: 20px;
 }
 // start card設定
-.homeCatalog .catalog .card.start .txt{
+.homeCatalog .catalog .cardDing.start .txt{
     display: block;
     width: auto;
     padding: 0px 5px;
@@ -176,14 +180,14 @@
     position: relative;
     overflow: hidden;
 }
-.homeCatalog .catalog .card.start .txt mark{
+.homeCatalog .catalog .cardDing.start .txt mark{
     background-color: transparent;
     font-weight: 500;
 }
 // start card毛玻璃
-.homeCatalog .catalog .card.start .txt:before{
+.homeCatalog .catalog .cardDing.start .txt:before{
     content: '';
-    // 定位在.card.start
+    // 定位在.cardDing.start
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -203,7 +207,7 @@
     animation-direction: alternate;
 }
 // 特別挑整手機h1大小，讓他不縮排
-.homeCatalog .catalog .card.start .txt h1{
+.homeCatalog .catalog .cardDing.start .txt h1{
     font-size: 1.953em;
 }
 @keyframes blur {
@@ -215,14 +219,14 @@
     }
 }
 @media screen and (min-width:768px){
-    .homeCatalog .catalog .card .pic{
+    .homeCatalog .catalog .cardDing .pic{
         width: 400px;
     }
-    .homeCatalog .catalog .card .txt{
+    .homeCatalog .catalog .cardDing .txt{
         width: 400px;
     }
     // 確保h1不覆寫
-    .homeCatalog .catalog .card.start .txt h1{
+    .homeCatalog .catalog .cardDing.start .txt h1{
         font-size: 4.375em;
     }
 }

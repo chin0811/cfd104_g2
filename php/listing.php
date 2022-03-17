@@ -1,25 +1,27 @@
 <?php
-    try {
+    require_once("g2_dataConnect.php");
+    // try {
         // 資料庫設定
-        $host = "cfd104g5.asuscomm.com";
-        $dbname = "cdf104_g2";//資料庫名子
-        $user = "root"; // 記得改成自己的名字
-        $password = "123";
-        $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
-        $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
+        //$host = "cfd104g5.asuscomm.com";
+        //$dbname = "cfd104_g2";//資料庫名子
+        //$user = "root"; // 記得改成自己的名字
+        //$password = "Eric20212022";
+        //$dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8"; // 本地端伺服器port
+        //$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
 
         // 建立pdo物件
-        $pdo = new PDO($dsn, $user, $password, $options);
-    }
-    catch (Exception $e) {
-        echo "錯誤行號 : ", $e->getLine(), "<br>";
-        echo "錯誤原因 : ", $e->getMessage(), "<br>";
-    }
+        //$pdo = new PDO($dsn, $user, $password, $options);
+    // }
+    // catch (Exception $e) {
+    //     echo "錯誤行號 : ", $e->getLine(), "<br>";
+    //     echo "錯誤原因 : ", $e->getMessage(), "<br>";
+    // }
 ?>
 
 <?php
 header('Content-Type: application/json; charset=utf-8');
 // require_once("g2_dataConnect.php");
+$newName ='';
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 確認是否收到form給我的資料
 	$message['message'] = "傳成功了";
@@ -56,7 +58,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "系統暫時不能提供服務~";
     }
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $value = "{$_POST['商品編號1']},{$_POST['販售會員編號1']},{$newName('assets/image/listingImage/kaws_action_figure.png)'},{$_POST['販售狀態(販售中/結單)']},{$_POST['商品資訊(productIntro)']},{$_POST['廣告狀態(ad)']},{$_POST['商品鑑定證書(paper)']},{$_POST['商品分類(productType)']},{$_POST['審核狀態(通過/未通過)']},{$_POST['商品名子(artistName)']}";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
+    $sqlNumber = "select prodNo from com ORDER BY prodNo DESC LIMIT 1";
+    $datas = $pdo->query($sqlNumber);
+	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
+    $memNoNew = $dataNumber[0]["prodNo"] + 1;
+    $sqlNumber = "select memNo from com ORDER BY memNo DESC LIMIT 1";
+    $datas = $pdo->query($sqlNumber);
+	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
+    $memNoNew1 = $dataNumber[0]["memNo"] + 1;
+    $productIntro = $_POST['productIntro'];
+    $ad = $_POST['ad'];
+    $papers = $_FILES['paper']['name'];
+    $type = $_POST['type'];
+    $artistName = $_POST['artistName'];
+    $value = "$memNoNew,$memNoNew1,'$newName','NULL','$productIntro','$ad','$papers','$type','未審查','$artistName'";//商品編號	販售會員編號 圖片 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
     //資料放入sql之指令
     $sql = "insert into $table values($value)";
     echo $sql;
@@ -79,4 +94,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }else{
 	$message['message'] = "大失敗";
 }
+echo $msg['msg'];
 ?>

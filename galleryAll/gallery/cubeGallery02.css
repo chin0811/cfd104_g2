@@ -1,0 +1,79 @@
+body{
+    background-color: #151515;
+}
+.wrap{
+    margin-top: 10%;
+}
+#cubeBtn{
+    color: #141414;
+    font-size: 1em;
+    background-color: #FFD60A;
+    /* font-weight: 600; */
+    padding: 5px 10px;
+    border-radius: 200px;
+    border: 2px solid #FFD60A;
+    -webkit-transition: .3s;
+    transition: .3s;
+    margin-left: 450px;
+}
+.cube{
+    position: relative;
+    margin-left: 45%;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotatex(-30deg);
+    animation: animate 10s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(-360deg);
+    }
+}
+.cube div{
+    position: absolute;
+    top: 50%;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515,#00ec00);
+    transform: rotateY(calc(90deg*var(--i))) translateZ(50px);
+}
+.cube .top{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url('mona_lisa_ps.png');
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    transform: rotateX(90deg) translateZ(50px);;
+}
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #0f0;
+    transform: translateZ(-150px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0,255,0,0.2),
+    0 0 200px rgba(0,255,0,0.4),
+    0 0 300px rgba(0,255,0,0.6),
+    0 0 400px rgba(0,255,0,0.8),
+    0 0 500px rgba(0,255,0,1);
+}
