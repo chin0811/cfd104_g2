@@ -3,7 +3,7 @@
 try {
 	require_once("g2_dataConnect.php");
 	if (empty($_GET['selectkey'])){
-		$sql = "select * from livesup";
+		$sql = "select * from liveSup";
 	}else{
 		// $sql = "select * from robSup where keyWord = '{$_GET['selectkey']}'";
 	}

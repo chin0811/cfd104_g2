@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $MemNo = json_decode($_POST['MemNo']);
 	$message['message'] = "傳成功了";
     // 抓到文章編號
-    $sqlNumber = "select articleNo from discusart ORDER BY articleNo DESC LIMIT 1";
+    $sqlNumber = "select articleNo from discusArt ORDER BY articleNo DESC LIMIT 1";
     $sqlNos = $pdo->query($sqlNumber);
     $sqlNo = $sqlNos->fetchAll(PDO::FETCH_ASSOC);
     // 文章編號+1

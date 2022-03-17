@@ -6,7 +6,7 @@ try {
 	$articleNo = $_GET['articleNo'];
 	// echo $articleNo;
 	$sql = "select M.memName, M.virChaNo, M.virBgNo, D.postTime, D.pic, D.title, D.content, D.articleLikes, D.articleNo
-			from MEMBER M join discusArt D on M.memNo =D.memNo
+			from member M join discusArt D on M.memNo =D.memNo
 			where articleNo = $articleNo";
 	$discusArts = $pdo->query($sql);
 	$prodRow = $discusArts->fetchAll(PDO::FETCH_ASSOC);
