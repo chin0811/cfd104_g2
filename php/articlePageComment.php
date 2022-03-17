@@ -4,9 +4,15 @@ try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
 	$articleNo = $_GET['articleNo'];
-	$sql = "select M.memName, F.content, F.messageTime
+	$sql = "select M.memName, M.virChaNo, M.virBgNo,  
+				   F.content, F.messageTime, 
+				   C.picture
+
 			from forumMes F join member M on F.memNo=M.memNo
+							join charobj C on F.memNo=C.objNo
+
 			where F.articleNo = $articleNo 
+
 			order by F.messageTime DESC;";
 	$myArticleComments = $pdo->query($sql);
 	$prodRow = $myArticleComments->fetchAll(PDO::FETCH_ASSOC);
