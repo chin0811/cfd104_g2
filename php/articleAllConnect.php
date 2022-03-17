@@ -4,7 +4,7 @@ try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
 	$sql = "select pic, title, content ,articleNo
-			from discusart
+			from discusArt
 			where visibleStale = '是'
 			order by postTime DESC;";
 	$discusArts = $pdo->query($sql);
