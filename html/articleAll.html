@@ -25,246 +25,83 @@
 </head>
     <!-- @@include('layout/header.html') -->
     @@include('layout/headerNormal.html',{"headerClass":""})
-    <section class="articleContent">
-        <div class="mainTitle">
-            <h1 class="deepColor">
-                藝‧論
-            </h1>
-        </div>
-        <div class="subTitle">
-            <h2 class="deepColor">
-                WEDNESDAY, 2ND MARCH 2022
-            </h2>
-            <a href="articlePost.html" class="square">刊登</a>
-        </div>
+    <section class="articleContent">   
         <!-- Vue作用域開始 -->
-        <div id="articleALL" >
-            <section class="wrap flat">
-                <!-- 最多68個字 -->
-                <!-- <a href="articlePage.html">
+        <div id="articleALL">
+            <div class="mainTitle">
+                <h1 class="deepColor">
+                    藝‧論
+                </h1>
+            </div>
+            <div class="subTitle">
+                <h2 class="deepColor">
+                    WEDNESDAY, 2ND MARCH 2022
+                </h2>
+                <button class="square" @click="logIn">刊登</button>
+            </div>
+            <section class="wrap flat" >
+                <!-- <a href="articlePage.html"  v-for="flatDiscusArt in flatDiscusArts"> -->
+                <a href="articlePage.html" v-for="(page,index) in rows.slice(startPage, startPage + perPage-9)">
                     <div class="item">
                         <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_silk.png" alt="">
+                            <img :src='src+page.pic'>
                         </div>
                         <div class="txt">
-                            <h4 class="deepColor">這是一個背包</h4>
-                            <p class="lightColor small">一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_hermesHelmetpng.jpg" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">看起來普通的氣球</h4>
-                            <p class="lightColor small">它不只是一顆氣球，nonono它是一顆氣球。跟知名大師聯名，買到賺到，因為它是一顆金屬氣球，怎麼樣玩它都不會破。</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_30M.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">盤子的歷史</h4>
-                            <p class="lightColor small">
-                                物價飆漲，甚麼都漲就連海平面也漲，為什麼我的錢包就是沒有漲？為了這個問題，我深入研究了許久，終於得到答案。
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_sotheby.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">花畫畫畫花</h4>
-                                <p class="lightColor small">但你不願 你不再 你不再 你不願再想起,有我的過去 有我的記憶,你曾說 曾經你說過 我藏著秘密，我不夠透明 我不夠真心。
-                                </p>
-                        </div>
-                    </div>
-                </a> -->
-                <a href="articlePage.html"  v-for="flatDiscusArt in flatDiscusArts">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+flatDiscusArt.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{flatDiscusArt.title}}</h4>
-                            <p class="lightColor small">{{flatDiscusArt.content | ellipsis}}</p>
+                            <h4 class="deepColor">{{page.title}}</h4>
+                            <p class="lightColor small">{{page.content | ellipsis}}</p>
                         </div>
                     </div>
                 </a>
             </section>
-            <section class="wrap twoRows">
-                <!-- <a href="articlePage.html">
+            <section class="wrap twoRows" v-show="(rows.slice(startPage+4, startPage + perPage-7) != '')">
+                <a href="articlePage.html"  v-for="(page,index) in rows.slice(startPage+4, startPage + perPage-7)">
+
                     <div class="item">
                         <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_glass.png" alt="">
+                            <img :src='src+page.pic'>
                         </div>
                         <div class="txt">
-                            <h4 class="deepColor">盤子的歷史</h4>
-                            <p class="lightColor small">
-                                你是否常常也有一樣的疑問，為什麼我買的東西就是比較貴？物價飆漲，甚麼都漲就連海平面也漲，為什麼我的錢包就是沒有漲？為了這個問題，我深入研究了許久，終於得到答案。
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_hermesHelmetpng.jpg" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">看起來普通的氣球</h4>
-                            <p class="lightColor small">它不只是一顆氣球，nonono它是一顆氣球。跟知名大師聯名，買到賺到，因為它是一顆金屬氣球，怎麼樣玩它都不會破。</p>
-                        </div>
-                    </div>
-                </a> -->
-                <a href="articlePage.html"  v-for="twoRowsDiscusArt in twoRowsDiscusArts">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+twoRowsDiscusArt.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{twoRowsDiscusArt.title}}</h4>
-                            <p class="lightColor small">{{twoRowsDiscusArt.content | ellipsis}}</p>
+                            <h4 class="deepColor">{{page.title}}</h4>
+                            <p class="lightColor small">{{page.content | ellipsis}}</p>
                         </div>
                     </div>
                 </a>
             </section>
-            <section class="wrap threeRows">
-                <!-- <a href="articlePage.html">
+            <section class="wrap threeRows" v-show="(rows.slice(startPage+6, startPage + perPage-4)) != ''">
+                <a href="articlePage.html"  v-for="(page,index) in rows.slice(startPage+6, startPage + perPage-4)">
                     <div class="item">
                         <div class="pic">
-                            <img src="assets/image/article_articleContent_beBear.png" alt="">
+                            <img :src='src+page.pic'>
                         </div>
                         <div class="txt">
-                            <h4 class="deepColor">盤子的歷史</h4>
-                            <p class="lightColor small">物價飆漲，甚麼都漲就連海平面也漲，為什麼我的錢包就是沒有漲？
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_30M.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">看起來普通的氣球</h4>
-                            <p class="lightColor small">它不只是一顆氣球，nonono它是一顆氣球。跟知名大師聯名，買到賺到，因為它是一顆金屬氣球。</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_matthew.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">這是一個背包</h4>
-                            <p class="lightColor small">這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。</p>
-                        </div>
-                    </div>
-                </a> -->
-                <a href="articlePage.html"  v-for="threeRowsDiscusArt in threeRowsDiscusArts">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+threeRowsDiscusArt.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{threeRowsDiscusArt.title}}</h4>
-                            <p class="lightColor small">{{threeRowsDiscusArt.content | ellipsis}}</p>
+                            <h4 class="deepColor">{{page.title}}</h4>
+                            <p class="lightColor small">{{page.content | ellipsis}}</p>
                         </div>
                     </div>
                 </a>
             </section>
-            <section class="wrap fourRows">
-                <!-- 最多68個字 -->
-                <!-- <a href="articlePage.html">
+            <section class="wrap fourRows" v-show="(rows.slice(startPage+9, startPage + perPage) != '')">
+                <a href="articlePage.html" v-for="(page,index) in rows.slice(startPage+9, startPage + perPage)">
                     <div class="item">
                         <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_silk.png" alt="">
+                            <img :src='src+page.pic'>
                         </div>
                         <div class="txt">
-                            <h4 class="deepColor">這是一個背包</h4>
-                            <p class="lightColor small">一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。這是一個你買不起的背包，因為它是跟設計師聯名。</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_hermesHelmetpng.jpg" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">看起來普通的氣球</h4>
-                            <p class="lightColor small">它不只是一顆氣球，nonono它是一顆氣球。跟知名大師聯名，買到賺到，因為它是一顆金屬氣球，怎麼樣玩它都不會破。</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_30M.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">盤子的歷史</h4>
-                            <p class="lightColor small">
-                                物價飆漲，甚麼都漲就連海平面也漲，為什麼我的錢包就是沒有漲？為了這個問題，我深入研究了許久，終於得到答案。
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="articlePage.html">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="assets/image/articleAll_articleContent_sotheby.png" alt="">
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">花畫畫畫花</h4>
-                                <p class="lightColor small">但你不願 你不再 你不再 你不願再想起,有我的過去 有我的記憶,你曾說 曾經你說過 我藏著秘密，我不夠透明 我不夠真心。
-                                </p>
-                        </div>
-                    </div>
-                </a> -->
-                <a href="articlePage.html" v-for="fourRowsDiscusArt in fourRowsDiscusArts">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+fourRowsDiscusArt.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{fourRowsDiscusArt.title}}</h4>
-                            <!-- <p class="lightColor small">{{ellipsis(fourRowsDiscusArt.content)}}</p> -->
-                            <p class="lightColor small">{{fourRowsDiscusArt.content | ellipsis}}</p>
+                            <h4 class="deepColor">{{page.title}}</h4>
+                            <p class="lightColor small">{{page.content | ellipsis}}</p>
                         </div>
                     </div>
                 </a>
             </section>
+            <div class="articletPageChange">
+                <ul>
+                    <li :class="{disabled: currentPage === 1}" @click="setPage(currentPage-1)"><a href="">&laquo;</a></li>
+                    <li v-for="n in totalPage" @click="setPage(n)"><a href="#">{{n}}</a></li>
+                    <li :class="{disabled: currentPage === totalPage}" @click="setPage(currentPage+1)"><a href="">&raquo;</a></li>
+                </ul>
+            </div>
         </div>
         <!-- Vue作用域結束 -->
-        <div class="articletPageChange">
-            <ul>
-                <li><a href="">&laquo;</a></li>
-                <li><a href="" class="small">1</a></li>
-                <li><a href="" class="small">2</a></li>
-                <li><a href="" class="small">3</a></li>
-                <li><a href="" class="small">4</a></li>
-                <li><a href="" class="small">5</a></li>
-                <li><a href="" class="small">6</a></li>
-                <li><a href="" class="small">7</a></li>
-                <li><a href="" class="small">8</a></li>
-                <li><a href="" class="small">9</a></li>
-                <li><a href="" class="small">10</a></li>
-                <li><a href="">&raquo;</a></li>
-            </ul>
-        </div>
-        
     </section>
     @@include('layout/footer.html')
 
@@ -273,14 +110,18 @@
         new Vue({
             el:"#articleALL",
             data:{
-                discusArtAll:[],
-                flatDiscusArts:[],
-                twoRowsDiscusArts:[],
-                threeRowsDiscusArts:[],
-                fourRowsDiscusArts:[],
+                // 創造頁籤
+                rows: [],
+                perPage: 13,
+                currentPage: 1,
+
+                // 圖片地址
                 src:'assets/image/',
+
+                // 抓到會員編號
+                memData:{},
             },
-            //新增監聽器
+            //限制字數
             filters: {
                 ellipsis(value) {
                     const len = 30;
@@ -291,29 +132,41 @@
                     return value;
                 }
             },
-            
-            mounted(){
+
+            created() {
                 axios.get('php/articleAllConnect.php').then((res)=>{
-                    console.log("從php傳來的東西",res)
-                    // 全部文章
-                    this.discusArtAll = res.data;
-                    
-                    // 文章第一行
-                    this.flatDiscusArts = this.discusArtAll.slice(0,4);
-                    // silce(start,end)=start~end-1
-
-                    // 文章第二行
-                    this.twoRowsDiscusArts = this.discusArtAll.slice(4,6);
-                    // 文章第三行
-                    this.threeRowsDiscusArts = this.discusArtAll.slice(6,9);
-                    // 文章第四行
-                    this.fourRowsDiscusArts = this.discusArtAll.slice(9,13);
-
-
+                    this.rows = res.data;
+                    console.log(this.rows);
                 }).catch((err)=>{
                     console.log(err)
                 })
-            }
+            },
+
+            methods: {
+                setPage(thePage){
+                    this.currentPage = thePage;
+                },
+                logIn(){
+                    this.memData = memData;
+                    if(this.memData){
+                        window.location="articlePost.html";
+                    }else{
+                        alert("請登入");
+                        window.location="login.html";
+                    }
+                },
+
+            },
+            computed: {
+                totalPage(){
+                    return Math.ceil(this.rows.length / this.perPage);
+                },
+                startPage(){
+                    return (this.currentPage - 1) * this.perPage;
+                },
+            },
+            
+
         })
     </script>
 </body>

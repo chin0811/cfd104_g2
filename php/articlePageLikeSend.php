@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $value = "$Likes";
     $thisArticleNo = "$ArticleNo";
     //傳進來的東西，是要可以直接寫進sql的行式
-    $sql = "update $table set likes $value where articleNo = 1";
+    $sql = "update $table set articleLikes=$value where articleNo = $thisArticleNo";
     // 傳到資料庫裏面去
     try {
         $statement = $pdo->prepare($sql);

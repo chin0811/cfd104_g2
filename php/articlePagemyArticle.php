@@ -6,7 +6,7 @@ try {
 	$sql = "select pic, content
 			from discusArt 
 			where memNo = 1
-			order by time DESC
+			order by postTime DESC
 			limit 3;";
 	$myArticles = $pdo->query($sql);
 	$prodRow = $myArticles->fetchAll(PDO::FETCH_ASSOC);

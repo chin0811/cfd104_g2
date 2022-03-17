@@ -3,7 +3,7 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select M.memName, M.virChaNo, M.virBgNo, D.time
+	$sql = "select M.memName, M.virChaNo, M.virBgNo, D.postTime
 			from MEMBER M join discusArt D on M.memNo =D.memNo
 			where articleNo = 1;";
 	$myArticles = $pdo->query($sql);
