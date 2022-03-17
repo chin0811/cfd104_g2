@@ -3,7 +3,7 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select pic, title, content 
+	$sql = "select pic, title, content ,articleNo
 			from discusart
 			where visibleStale = '是'
 			order by postTime DESC;";

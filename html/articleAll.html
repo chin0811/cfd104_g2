@@ -40,8 +40,8 @@
                 <button class="square" @click="logIn">刊登</button>
             </div>
             <section class="wrap flat" >
-                <!-- <a href="articlePage.html"  v-for="flatDiscusArt in flatDiscusArts"> -->
-                <a href="articlePage.html" v-for="(page,index) in rows.slice(startPage, startPage + perPage-9)">
+                <!-- <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="flatDiscusArt in flatDiscusArts"> -->
+                <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage, startPage + perPage-9)">
                     <div class="item">
                         <div class="pic">
                             <img :src='src+page.pic'>
@@ -54,7 +54,7 @@
                 </a>
             </section>
             <section class="wrap twoRows" v-show="(rows.slice(startPage+4, startPage + perPage-7) != '')">
-                <a href="articlePage.html"  v-for="(page,index) in rows.slice(startPage+4, startPage + perPage-7)">
+                <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="(page,index) in rows.slice(startPage+4, startPage + perPage-7)">
 
                     <div class="item">
                         <div class="pic">
@@ -68,7 +68,7 @@
                 </a>
             </section>
             <section class="wrap threeRows" v-show="(rows.slice(startPage+6, startPage + perPage-4)) != ''">
-                <a href="articlePage.html"  v-for="(page,index) in rows.slice(startPage+6, startPage + perPage-4)">
+                <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="(page,index) in rows.slice(startPage+6, startPage + perPage-4)">
                     <div class="item">
                         <div class="pic">
                             <img :src='src+page.pic'>
@@ -81,7 +81,7 @@
                 </a>
             </section>
             <section class="wrap fourRows" v-show="(rows.slice(startPage+9, startPage + perPage) != '')">
-                <a href="articlePage.html" v-for="(page,index) in rows.slice(startPage+9, startPage + perPage)">
+                <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage+9, startPage + perPage)">
                     <div class="item">
                         <div class="pic">
                             <img :src='src+page.pic'>

@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- 引入vue -->
     <script src="js/vue/vue.js"></script>
-    <!-- <script src="js/articlePage.js"></script> -->
+    <script src="js/articlePage.js"></script>
     <!-- 跳窗套件 -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- 登入  -->
@@ -42,8 +42,8 @@
                     </div>
                     <div class="authorShortIntro" v-for="discusArt in discusArtAll">
                         <div class="item">
-                            <div class="pic">
-                                <img src="https://picsum.photos/90/90/?random=10">
+                            <div class="pic" style="background-color: yellow;">
+                                <img src="assets/image/customCharacter/PowerPeople_Christopher002.png">
                             </div>
                             <div class="txt">
                                 <h4 class="deepColor">{{discusArt.memName}}</h4>
@@ -77,7 +77,7 @@
                                         {{discusArt.articleLikes}}
                                     </span>
                                 </div>
-                                <div class="pic commentPic" @click="temp">
+                                <div class="pic commentPic" @click="memNameRender">
                                     <img src="assets/image/articlePage_shareBar_comment.png">
                                 </div>
                             </div>
@@ -191,8 +191,6 @@
     </section>
     @@include('layout/footer.html')
 
-
-
     <script>
         new Vue({
             el:"#articlePage",
@@ -222,67 +220,72 @@
             },
 
             methods: {
-                temp(){
+                memNameRender(){
                     // 抓到會員登入的資料，寫入vue data
-                    // console.log(memData)
                     this.memData = memData;
                 },
                 
                 // 檢舉
                 report(){
                     // alert('');
-                    swal({
-                        title: "您是否要檢舉？",
-                        icon: 'assets/image/articlePage_authorShortIntro_exclamation.png',
-                        buttons: {
-                            // 取消按鈕
-                            Cancel: {
-                                text: "取消",
-                                value: null,
-                                // 新增class
-                                className:'cancel',
-                            },
-                            // 檢舉按鈕
-                            report: {
-                                text: "檢舉",
-                                value: '檢舉',
-                                // 新增class
-                                className:'report',
-                            },  
-                        }
-                        // 如果按鈕值是report，則會有下一個跳窗
-                    }).then((value)=>{
-                        let thisVue = this;// 避免抓到ajax的this                     
-                        if(value == '檢舉'){  
-                            $.ajax({
-                                type: 'POST',
-                                url: 'php/articlePageReportSend.php',
-                                data: {
-                                    Report:value,
-                                    ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
+                    if(memData){
+                        swal({
+                            title: "您是否要檢舉？",
+                            icon: 'assets/image/articlePage_authorShortIntro_exclamation.png',
+                            buttons: {
+                                // 取消按鈕
+                                Cancel: {
+                                    text: "取消",
+                                    value: null,
+                                    // 新增class
+                                    className:'cancel',
                                 },
-                                success: function(data) {
-                                    console.log(data);
-                                    console.log("成功了嗎?");
-                                },
-                                error: function() {
-                                    console.log('ajax error');
-                                }
-                            });
-                            swal({
-                                text: "感謝您的檢舉，平台會審核內容。",
-                                buttons:{
-                                    goBack: {
-                                        text: "返回",
-                                        className:'goBack',
+                                // 檢舉按鈕
+                                report: {
+                                    text: "檢舉",
+                                    value: '檢舉',
+                                    // 新增class
+                                    className:'report',
+                                },  
+                            }
+                            // 如果按鈕值是report，則會有下一個跳窗
+                        }).then((value)=>{
+                            let thisVue = this;// 避免抓到ajax的this                     
+                            if(value == '檢舉'){  
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'php/articlePageReportSend.php',
+                                    data: {
+                                        Report:value,
+                                        ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
+                                    },
+                                    success: function(data) {
+                                        console.log(data);
+                                        console.log("成功了嗎?");
+                                    },
+                                    error: function() {
+                                        console.log('ajax error');
                                     }
-                                },
-                                // 跳回文章總覽
-                            }).then(function() {
-                                // window.location = "articleAll.html";
-                            });
-                        }
-                    });
+                                });
+                                swal({
+                                    text: "感謝您的檢舉，平台會審核內容。",
+                                    buttons:{
+                                        goBack: {
+                                            text: "返回",
+                                            className:'goBack',
+                                        }
+                                    },
+                                    // 跳回文章總覽
+                                }).then(function() {
+                                    // window.location = "articleAll.html";
+                                });
+                            }
+                        });
+                    }else{
+                        alert("請登入");
+                        window.location="login.html";
+                    }
+                        
                 },
 
                 // 留言輸入
@@ -323,7 +326,9 @@
 
                 // 重整留言
                 refreshComments(){
-                    axios.get('php/articlePageComment.php').then((res)=>{
+                    let getUrlString = location.href;
+                    let url = new URL(getUrlString);
+                    axios.get(`php/articlePageComment.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                             // console.log("ArticleComments",res)
                             this.ArticleComments = res.data;
                         }).catch((err)=>{
@@ -364,9 +369,12 @@
             },
 
             mounted(){
+                let getUrlString = location.href;
+                let url = new URL(getUrlString);
+                // console.log(url.searchParams.get('articleNo'))
                 // 撈主要文章內容
                 // 只有編號1的文章會被抓回來
-                axios.get('php/articlePage.php').then((res)=>{
+                axios.get(`php/articlePage.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     this.discusArtAll = res.data;
                     // console.log(this.discusArtAll);
                 }).catch((err)=>{
@@ -375,7 +383,7 @@
 
                 // 撈我的文章內容
                 // 只有會員編號是1的內容會被抓回來
-                axios.get('php/articlePagemyArticle.php').then((resMyArticles)=>{
+                axios.get(`php/articlePagemyArticle.php?articleNo=${url.searchParams.get('articleNo')}`).then((resMyArticles)=>{
                     // console.log("MyArticle",resMyArticles)
                     this.MyArticles = resMyArticles.data;
                 }).catch((err)=>{
@@ -392,7 +400,7 @@
                 }),
 
                 //撈編號1的文章留言
-                axios.get('php/articlePageComment.php').then((res)=>{
+                axios.get(`php/articlePageComment.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     // console.log("ArticleComments",res)
                     this.ArticleComments = res.data;
                 }).catch((err)=>{
