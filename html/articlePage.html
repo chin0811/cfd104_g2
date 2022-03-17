@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- 引入vue -->
     <script src="js/vue/vue.js"></script>
-    <script src="js/articlePage.js"></script>
+    <!-- <script src="js/articlePage.js"></script> -->
     <!-- 跳窗套件 -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- 登入  -->
@@ -47,11 +47,11 @@
                             </div>
                             <div class="txt">
                                 <h4 class="deepColor">{{discusArt.memName}}</h4>
-                                <p class="lightColor small">{{discusArt.time}}</p>
+                                <p class="lightColor small">{{discusArt.postTime}}</p>
                             </div>
                         </div>
                         <div class="report">
-                            <div class="pic">
+                            <div class="pic" @click="report">
                                 <img src="assets/image/articlePage_authorShortIntro_exclamation.png">
                             </div>
                             <span class="small">檢舉</span>
@@ -74,10 +74,10 @@
                                         <img src="assets/image/all_like.png" alt="">
                                     </div>
                                     <span class="small">
-                                        {{discusArt.likes}}
+                                        {{discusArt.articleLikes}}
                                     </span>
                                 </div>
-                                <div class="pic commentPic">
+                                <div class="pic commentPic" @click="temp">
                                     <img src="assets/image/articlePage_shareBar_comment.png">
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                                     <img src="https://picsum.photos/100/100/?random=20">
                                 </div>
                                 <div class="txt">
-                                    <p class="deepColor">JEERY</p>
+                                    <p class="deepColor" v-if="memData">{{memData.memName}}</p>
                                 </div>
                             </div>
                             <div class="txtArea">
@@ -194,7 +194,7 @@
 
 
     <script>
-        let articlePage123 = new Vue({
+        new Vue({
             el:"#articlePage",
             data:{
                 discusArtAll:[],
@@ -205,6 +205,9 @@
                 // 同步留言內容
                 MyComment:'',
                 click:false,
+
+                // 抓到會員編號
+                memData:{},
             },
             //新增監聽器
             filters: {
@@ -219,34 +222,106 @@
             },
 
             methods: {
+                temp(){
+                    // 抓到會員登入的資料，寫入vue data
+                    // console.log(memData)
+                    this.memData = memData;
+                },
+                
+                // 檢舉
+                report(){
+                    // alert('');
+                    swal({
+                        title: "您是否要檢舉？",
+                        icon: 'assets/image/articlePage_authorShortIntro_exclamation.png',
+                        buttons: {
+                            // 取消按鈕
+                            Cancel: {
+                                text: "取消",
+                                value: null,
+                                // 新增class
+                                className:'cancel',
+                            },
+                            // 檢舉按鈕
+                            report: {
+                                text: "檢舉",
+                                value: '檢舉',
+                                // 新增class
+                                className:'report',
+                            },  
+                        }
+                        // 如果按鈕值是report，則會有下一個跳窗
+                    }).then((value)=>{
+                        let thisVue = this;// 避免抓到ajax的this                     
+                        if(value == '檢舉'){  
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/articlePageReportSend.php',
+                                data: {
+                                    Report:value,
+                                    ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
+                                },
+                                success: function(data) {
+                                    console.log(data);
+                                    console.log("成功了嗎?");
+                                },
+                                error: function() {
+                                    console.log('ajax error');
+                                }
+                            });
+                            swal({
+                                text: "感謝您的檢舉，平台會審核內容。",
+                                buttons:{
+                                    goBack: {
+                                        text: "返回",
+                                        className:'goBack',
+                                    }
+                                },
+                                // 跳回文章總覽
+                            }).then(function() {
+                                // window.location = "articleAll.html";
+                            });
+                        }
+                    });
+                },
+
+                // 留言輸入
                 insertMyComment() {
-                    if(this.MyComment == ""){
+                    if(!this.MyComment){
+                        // console.log(memData.memName);
                         alert('請輸入留言');
                     }else{
-                        // 避免抓到ajax的this
-                        let thisVue = this;
-                        // console.log(thisVue.MyComment);
-                        $.ajax({
-                            type: 'POST',
-                            url: 'php/articlePageCommentSend.php',
-                            data: {
-                                MyComment:JSON.stringify(`${thisVue.discusArtAll[0].articleNo},1,'${thisVue.MyComment}'`),
-                            },
-                            success: function(data) {
-                                // console.log(data);
-                                console.log("成功了嗎?");
-                                // console.log(this.MyComment)
-                                thisVue.refreshComments();
-                                thisVue.MyComment='';
-                                
-                            },
-                            error: function() {
-                                console.log('ajax error');
-                                thisVue.refreshComments();
-                            }
-                        });
+                        let thisVue = this;// 避免抓到ajax的this
+                        if(memData){
+                            // console.log(thisVue.MyComment);
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/articlePageCommentSend.php',
+                                data: {
+                                    MyComment:JSON.stringify(`${thisVue.discusArtAll[0].articleNo},1,'${thisVue.MyComment}'`),
+                                },
+                                success: function(data) {
+                                    // console.log(data);
+                                    console.log("成功了嗎?");
+                                    // console.log(this.MyComment)
+                                    thisVue.refreshComments();
+                                    thisVue.MyComment='';
+                                    
+                                },
+                                error: function() {
+                                    console.log('ajax error');
+                                    thisVue.refreshComments();
+                                }
+                            });
+                        }else{
+                            alert("請登入");
+                            window.location="login.html";
+                        }
+                        
                     }
                 },
+
+                // 重整留言
                 refreshComments(){
                     axios.get('php/articlePageComment.php').then((res)=>{
                             // console.log("ArticleComments",res)
@@ -255,12 +330,14 @@
                             console.log(err)
                         });
                 },
+
+                // 收藏切換
                 toggleLikes(){
                     if(!this.click){
-                        this.discusArtAll[0].likes += 1;
+                        this.discusArtAll[0].articleLikes += 1;
                         this.click = !this.click;
                     }else{
-                        this.discusArtAll[0].likes -= 1;
+                        this.discusArtAll[0].articleLikes -= 1;
                         this.click = !this.click;
                     };
                     // 避免抓到ajax的this
@@ -270,7 +347,7 @@
                         type: 'POST',
                         url: 'php/articlePageLikeSend.php',
                         data: {
-                            Likes:JSON.stringify(`${thisVue.discusArtAll[0].likes}`),
+                            Likes:JSON.stringify(`${thisVue.discusArtAll[0].articleLikes}`),
                             ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
                         },
                         success: function(data) {
@@ -283,6 +360,7 @@
                         }
                     });
                 },
+                
             },
 
             mounted(){
