@@ -6,7 +6,7 @@ try {
 	$articleNo = $_GET['articleNo'];
 	$sql = "select pic, content
 			from discusArt 
-			where memNo = (SELECT memNo FROM discusart WHERE articleNo = $articleNo )
+			where memNo = (SELECT memNo FROM discusArt WHERE articleNo = $articleNo )
 			order by postTime DESC
 			limit 3;";
 	$myArticles = $pdo->query($sql);
