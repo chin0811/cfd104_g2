@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$MyComment = json_decode($_POST['MyComment']);
 	$message['message'] = "傳成功了";
     // 抓到留言編號
-    $sqlNumber = "select messageNo from forummes ORDER BY messageNo DESC LIMIT 1";
+    $sqlNumber = "select messageNo from forumMes ORDER BY messageNo DESC LIMIT 1";
     $datas = $pdo->query($sqlNumber);
     $dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
     $messageNoNew = $dataNumber[0]["messageNo"] + 1;
