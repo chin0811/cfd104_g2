@@ -33,6 +33,8 @@ modifyData.onclick = function(e) {
 
 confirmTheChanges.onclick = function(e) {
     // arr = [] // 資料清空
+    var dmemPwd = $('.changeValue[name="7"]').val() == "***********" ? "***********" : $('.changeValue[name="7"]').val();
+    var dcreditCard = $('.changeValue[name="6"]').val() == '' ? 0 : $('.changeValue[name="6"]').val();
     $.ajax({
         type: 'POST',
         url: 'php/modifyMember.php',
@@ -43,26 +45,21 @@ confirmTheChanges.onclick = function(e) {
             "email": $('.changeValue[name="3"]').val(),
             "phone": $('.changeValue[name="4"]').val(),
             "address": $('.changeValue[name="5"]').val(),
-            "creditCard": $('.changeValue[name="6"]').val(),
+            "creditCard": dcreditCard,
+            "memPwd": dmemPwd
         },
         success(res) {
-            if (res.msg !== false) {
-                for (let i = 0; i < 10; i++) {
-                    try {
-                        document.querySelectorAll('.changeValue')[i].style.display = "none";
-                        document.querySelectorAll('.showChangeValue')[i].style.display = "inline-block";
-                        document.querySelectorAll('.showChangeValue')[i].innerHTML = document.querySelectorAll('.changeValue')[i].value;
-                        changeValue[i].style.border = "none"
-                        changeValue[i].setAttribute("disabled", "");
-                    } catch {}
-                }
-                modifyData.style.display = "block";
-                confirmTheChanges.style.display = "none";
-            } else {
-                alert("修改失敗，請重新登入。");
-                location.href = "login.html";
+            for (let i = 0; i < 10; i++) {
+                try {
+                    document.querySelectorAll('.changeValue')[i].style.display = "none";
+                    document.querySelectorAll('.showChangeValue')[i].style.display = "inline-block";
+                    document.querySelectorAll('.showChangeValue')[i].innerHTML = document.querySelectorAll('.changeValue')[i].value;
+                    changeValue[i].style.border = "none"
+                    changeValue[i].setAttribute("disabled", "");
+                } catch {}
             }
-
+            modifyData.style.display = "block";
+            confirmTheChanges.style.display = "none";
         },
         error(e) {
             console.log('ajax error');
