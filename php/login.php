@@ -4,7 +4,9 @@ try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
 	$data = json_decode(file_get_contents('php://input'), true);
-	$sql = "select * from member where memId=:memId and memPwd=:memPsw";
+	// $sql = "select * from member where memId=:memId and memPwd=:memPsw";
+	$sql = "select * from member M join charObj C on M.virChaNo = C.objNo				
+					 where memId=:memId and memPwd=:memPsw";
 
 	$member = $pdo->prepare($sql);
 	$member -> bindValue(":memId",$data['loginMemId']);
@@ -17,6 +19,16 @@ try {
 		$memRow = $member->fetch(PDO::FETCH_ASSOC);
 		//寫入server端的session
 		session_start();
+		// $_SESSION["memNo"] = $memRow["memNo"];
+		// $_SESSION["memNickName"] = $memRow["memNickName"];
+		// $_SESSION["memId"] = $memRow["memId"];
+		// $_SESSION["memName"] = $memRow["memName"];
+		// $_SESSION["email"] = $memRow["email"];
+		// $_SESSION["phone"] = $memRow["phone"];
+		// $_SESSION["address"] = $memRow["address"];
+		// $_SESSION["creditCard"] = $memRow["creditCard"];
+		// $_SESSION["virChaNo"] = $memRow["virChaNo"];
+		// $_SESSION["virBgNo"] = $memRow["virBgNo"];
 		$_SESSION["memNo"] = $memRow["memNo"];
 		$_SESSION["memNickName"] = $memRow["memNickName"];
 		$_SESSION["memId"] = $memRow["memId"];
@@ -27,6 +39,7 @@ try {
 		$_SESSION["creditCard"] = $memRow["creditCard"];
 		$_SESSION["virChaNo"] = $memRow["virChaNo"];
 		$_SESSION["virBgNo"] = $memRow["virBgNo"];
+		$_SESSION["charObj"] = $memRow["picture"];
 		echo 1;  
 	}
 

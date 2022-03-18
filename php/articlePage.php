@@ -5,8 +5,11 @@ try {
 	//執行sql指令並取得pdoStatement
 	$articleNo = $_GET['articleNo'];
 	// echo $articleNo;
-	$sql = "select M.memName, M.virChaNo, M.virBgNo, D.postTime, D.pic, D.title, D.content, D.articleLikes, D.articleNo
+	$sql = "select M.memName, M.virChaNo, M.virBgNo, 
+				   D.postTime, D.pic, D.title, D.content, D.articleLikes, D.articleNo, 
+				   C.picture
 			from member M join discusArt D on M.memNo =D.memNo
+						  join charObj C on M.virChaNo=C.objNo
 			where articleNo = $articleNo";
 	$discusArts = $pdo->query($sql);
 	$prodRow = $discusArts->fetchAll(PDO::FETCH_ASSOC);

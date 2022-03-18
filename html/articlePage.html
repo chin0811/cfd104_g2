@@ -42,8 +42,8 @@
                     </div>
                     <div class="authorShortIntro" v-for="discusArt in discusArtAll">
                         <div class="item">
-                            <div class="pic" style="background-color: yellow;">
-                                <img src="assets/image/customCharacter/PowerPeople_Christopher002.png">
+                            <div class="pic"  :style=discusArt.virBgNo>
+                                <img :src="headSrc+discusArt.picture">
                             </div>
                             <div class="txt">
                                 <h4 class="deepColor">{{discusArt.memName}}</h4>
@@ -120,8 +120,8 @@
                 </div>           
                 <aside class="sideInfo">
                     <div class="authorIntro"  v-for="discusArt in discusArtAll">
-                        <div class="pic">
-                            <img src="https://picsum.photos/200/200/?random=10">
+                        <div class="pic" :style=discusArt.virBgNo>
+                            <img :src="headSrc+discusArt.picture">
                         </div>
                         <div class="txt">
                             <h4>{{discusArt.memName}}</h4>
@@ -150,8 +150,8 @@
                         <h4>回應(<span>{{ArticleComments.length}}</span>)</h4>
                         <div class="commentInput">
                             <div class="memberIcon">
-                                <div class="pic">
-                                    <img src="https://picsum.photos/100/100/?random=20">
+                                <div class="pic" v-if="memData" :style=memData.virBgNo>
+                                    <img v-if="memData" :src="headSrc+memData.charObjPic">
                                 </div>
                                 <div class="txt">
                                     <p class="deepColor" v-if="memData">{{memData.memName}}</p>
@@ -170,8 +170,8 @@
                         <div class="commentElse">
                             <div class="item" v-for="ArticleComment in ArticleComments">
                                 <div class="memberIcon">
-                                    <div class="pic">
-                                        <img src="https://picsum.photos/100/100/?random=15">
+                                    <div class="pic" :style=ArticleComment.virBgNo>
+                                        <img :src="headSrc+ArticleComment.picture">
                                     </div>
                                     <div class="txt">
                                         <p class="deepColor small">{{ArticleComment.memName}}</p>
@@ -205,7 +205,9 @@
                 click:false,
 
                 // 抓到會員編號
-                memData:{},
+                memData:'',
+                // 會員圖片路徑
+                headSrc:'assets/image/customCharacter/',
             },
             //新增監聽器
             filters: {
@@ -223,6 +225,17 @@
                 memNameRender(){
                     // 抓到會員登入的資料，寫入vue data
                     this.memData = memData;
+                    switch (this.memData.virBgNo) {
+                        case 0:
+                            this.memData.virBgNo = 'background-color:#FFD60A';
+                            break;
+                        case 1:
+                            this.memData.virBgNo = 'background-color:#394897';
+                            break;
+                        case 2:
+                            this.memData.virBgNo = 'background-color:#BCBCBC';
+                            break;
+                    }
                 },
                 
                 // 檢舉
@@ -338,32 +351,37 @@
 
                 // 收藏切換
                 toggleLikes(){
-                    if(!this.click){
-                        this.discusArtAll[0].articleLikes += 1;
-                        this.click = !this.click;
+                    if(memData){
+                        if(!this.click){
+                            this.discusArtAll[0].articleLikes += 1;
+                            this.click = !this.click;
+                        }else{
+                            this.discusArtAll[0].articleLikes -= 1;
+                            this.click = !this.click;
+                        };
+                        // 避免抓到ajax的this
+                        let thisVue = this;
+                        // console.log(thisVue.MyComment);
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/articlePageLikeSend.php',
+                            data: {
+                                Likes:JSON.stringify(`${thisVue.discusArtAll[0].articleLikes}`),
+                                ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
+                            },
+                            success: function(data) {
+                                // console.log(data);
+                                console.log("成功了嗎?");
+                                // console.log(this.MyComment);
+                            },
+                            error: function() {
+                                console.log('ajax error');
+                            }
+                        });
                     }else{
-                        this.discusArtAll[0].articleLikes -= 1;
-                        this.click = !this.click;
-                    };
-                    // 避免抓到ajax的this
-                    let thisVue = this;
-                    // console.log(thisVue.MyComment);
-                    $.ajax({
-                        type: 'POST',
-                        url: 'php/articlePageLikeSend.php',
-                        data: {
-                            Likes:JSON.stringify(`${thisVue.discusArtAll[0].articleLikes}`),
-                            ArticleNo:JSON.stringify(`${thisVue.discusArtAll[0].articleNo}`),
-                        },
-                        success: function(data) {
-                            // console.log(data);
-                            console.log("成功了嗎?");
-                            // console.log(this.MyComment);
-                        },
-                        error: function() {
-                            console.log('ajax error');
-                        }
-                    });
+                        alert("請登入");
+                        window.location="login.html";
+                    }
                 },
                 
             },
@@ -376,7 +394,18 @@
                 // 只有編號1的文章會被抓回來
                 axios.get(`php/articlePage.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     this.discusArtAll = res.data;
-                    // console.log(this.discusArtAll);
+                    //人物背景色
+                    switch (this.discusArtAll[0].virBgNo) {
+                        case 0:
+                            this.discusArtAll[0].virBgNo = 'background-color:#FFD60A';
+                            break;
+                        case 1:
+                            this.discusArtAll[0].virBgNo = 'background-color:#394897';
+                            break;
+                        case 2:
+                            this.discusArtAll[0].virBgNo = 'background-color:#BCBCBC';
+                            break;
+                    }
                 }).catch((err)=>{
                     console.log(err)
                 });
@@ -403,6 +432,21 @@
                 axios.get(`php/articlePageComment.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     // console.log("ArticleComments",res)
                     this.ArticleComments = res.data;
+                    for(let i=0;i<this.ArticleComments.length;i++){
+                        //人物背景色
+                        switch (this.ArticleComments[i].virBgNo) {
+                            case 0:
+                                this.ArticleComments[i].virBgNo = 'background-color:#FFD60A';
+                                break;
+                            case 1:
+                                this.ArticleComments[i].virBgNo = 'background-color:#394897';
+                                break;
+                            case 2:
+                                this.ArticleComments[i].virBgNo = 'background-color:#BCBCBC';
+                                break;
+                        }
+                    }
+
                 }).catch((err)=>{
                     console.log(err)
                 });

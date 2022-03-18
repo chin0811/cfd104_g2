@@ -23,13 +23,13 @@
                         <li>{{titles[1]}} {{lightIndex.prodClass}}</li>
                         <li>{{titles[2]}} {{lightIndex.productName}}</li>
                         <li>{{titles[3]}}</li>
-                        <select v-model="lightIndex.auditState">                                        
+                        <select v-model="lightIndex.auditState ">                                        
                             <option  v-for="status in statusList" >{{status.name}}</option>                                    
                         </select>
                         <li>{{titles[4]}} {{lightIndex.adStatus}}</li>
                         <li>{{titles[5]}}</li> 
-                        <select v-model="changedSaleStatus">                                        
-                            <option :value="sale.name" v-for="sale in saleList" >{{sale.name}}</option>                                    
+                        <select v-model="lightIndex.saleStatus">                                        
+                            <option  v-for="sale in saleList" >{{sale.name}}</option>                                    
                         </select>
                         <li>{{titles[6]}} {{lightIndex.memNo}}</li>
                     </ul>
@@ -51,6 +51,7 @@
                 titles: ['商品編號',  '商品類別', '商品名稱','審核狀態','廣告狀態','販售狀態','上架會員編號','', ],
                 table:'com',
                 products:[],
+                prodNo:[],
                 productLigthtBox : document.querySelector("#productLigthtBox"),
                 lightIndex:[],
                 certification:[],
@@ -66,8 +67,51 @@
                 {name: "販售中"},
                 {name: "已販售"}
                 ],
-                changedStatus: '',
-                changedSaleStatus:'',
+                auditChanged:"",
+                saleChanged:"",
+            },
+            methods: {
+                openLightBox:function(key){
+                    productLigthtBox.classList.toggle("displayNone"); 
+                    this.lightIndex = this.products[key];
+                    this.prodNo = key+1;
+                    this.certification = "assets/image/commodity/"+this.lightIndex.certification;
+                    this.indexImage=[];
+                    for(let i=0; i<this.prodImage.length; i++){
+                        if(key+1 ==this.prodImage[i].prodNo){
+                            // console.log(this.prodImage[i].prodNo);
+                            // console.log(this.prodImage[i].img);
+                            this.indexImage.push("assets/image/commodity/"+this.prodImage[i].img);
+                        }
+                    }
+                },
+                backCloseLight:function(){
+                    productLigthtBox.classList.toggle("displayNone"); 
+                },
+                confirmChange:function(){
+                    productLigthtBox.classList.toggle("displayNone");
+                    // console.log(this.lightIndex.auditState);
+                    this.auditChanged = this.lightIndex.auditState ;
+                    this.saleChanged = this.lightIndex.saleStatus ;
+                    // console.log("斷點",this.auditChanged);
+                    let thisVue = this;
+                    $.ajax({
+                    type: 'POST',
+                    url: 'php/backRevise.php',
+                    data: {
+                        table:JSON.stringify(thisVue.table),
+                        prodNo:JSON.stringify(thisVue.prodNo),
+                        auditChanged :thisVue.auditChanged,
+                        saleChanged :thisVue.saleChanged,
+                    },
+                    success: function(data) {
+                        console.log("成功了唷");
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                    }
+                });
+                },
             },
             mounted(){
                 let thisVue = this;
@@ -80,6 +124,7 @@
                     success: function(data) {
                         thisVue.products = data;
                         // console.log(thisVue.products);
+                        
                     },
                     error: function() {
                         console.log('ajax error');
@@ -90,59 +135,6 @@
                 }).catch((err)=>{
                     console.log(err)
                 })
-            },
-            methods: {
-                openLightBox:function(key){
-                    productLigthtBox.classList.toggle("displayNone"); 
-                    this.lightIndex = this.products[key];
-                    // if(this.lightIndex.auditState=="審核中"){
-                    //     this.changedStatus = this.statusList[0].name;
-                    // }else if(this.lightIndex.auditState=="通過"){
-                    //     this.changedStatus = this.statusList[1].name;
-                    // }else{
-                    //     this.changedStatus = this.statusList[2].name;
-                    // }
-                    // 販售狀態
-                    if(this.lightIndex.saleStatus=="未上架"){
-                        this.changedSaleStatus = this.saleList[0].name;
-                    }else if(this.lightIndex.saleStatus=="販售中"){
-                        this.changedSaleStatus = this.saleList[1].name;
-                    }else{
-                        this.changedSaleStatus = this.saleList[2].name;
-                    }
-                    this.certification = "assets/image/commodity/"+this.lightIndex.certification;
-                    this.indexImage=[];
-                    for(let i=0; i<this.prodImage.length; i++){
-                        if(key+1 ==this.prodImage[i].prodNo){
-                            console.log(this.prodImage[i].prodNo);
-                            console.log(this.prodImage[i].img);
-                            this.indexImage.push("assets/image/commodity/"+this.prodImage[i].img);
-                            console.log("斷點");
-                        }
-                    }
-                },
-                backCloseLight:function(){
-                    productLigthtBox.classList.toggle("displayNone"); 
-                },
-                confirmChange:function(){
-                    productLigthtBox.classList.toggle("displayNone");
-                    // if(this.changedStatus=="審核中"){
-                    //     this.lightIndex.auditState = "審核中";
-                    // }else if(this.changedStatus=="通過"){
-                    //     this.lightIndex.auditState = "通過";
-                    // }else if(this.changedStatus=="未通過"){
-                    //     this.lightIndex.auditState = "未通過";
-                    // };
-                    // 販售狀態
-                    if(this.changedSaleStatus=="未上架"){
-                        this.lightIndex.saleStatus = "未上架";
-                    }else if(this.changedSaleStatus=="販售中"){
-                        this.lightIndex.saleStatus = "販售中";
-                    }else if(this.changedSaleStatus=="已販售"){
-                        this.lightIndex.saleStatus = "已販售";
-                    };
-                let thisVue = this;
-                },
             },
             computed: {},
             watch: {},

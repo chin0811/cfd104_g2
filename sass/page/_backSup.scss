@@ -11,6 +11,25 @@ $uiColor:(
 .backSup{
     //真人客服最外框
     box-sizing: border-box;
+    width: 100%;
+    .title{
+        display: flex;
+        justify-content: space-between;
+        img{
+            vertical-align: top;
+            width: 1em;
+            cursor: pointer;
+        }
+    }
+    table{
+        text-align: center;
+        width: 100%;
+        tr{
+            box-sizing: border-box;
+            // padding: 0.5em 1em;
+            line-height: 3em;
+        }
+    }
 
     .txtLightBox{
         //燈箱
