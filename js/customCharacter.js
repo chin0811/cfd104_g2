@@ -31,8 +31,8 @@ window.onload = function() {
 for (let i = 0; 6 > i; i++) {
     pictureChange[i].onclick = function(e) {
         //chk(checkbox[0])
-        // adjustmentLever[0].value = i;
-        // adjustmentLever[1].value = 0;
+        adjustmentLever[0].value = i;
+        adjustmentLever[1].value = 0;
         cookie_adjustmentArr[1] = i;
         cookie_adjustmentArr[2] = 0;
         console.log(i);
@@ -68,12 +68,18 @@ switchBetween_round.addEventListener('click', function(e) {
 
 //ChangeCookieImg();
 
-function ChangeCookieImg() {
+function ChangeCookieImg(s = false) {
     // adjustmentArr[1] = adjustmentLever[0].value
     // adjustmentArr[2] = adjustmentLever[1].value
     adjustmentArr[0] = cookie_adjustmentArr[0];
     adjustmentArr[1] = cookie_adjustmentArr[1];
     adjustmentArr[2] = cookie_adjustmentArr[2];
+
+    if (s == true) {
+        adjustmentArr[2] = $($('.adjustmentLever')[1]).val();
+        cookie_adjustmentArr[2] = $($('.adjustmentLever')[1]).val();
+    }
+
     if (adjustmentArr[0] == 0) {
         if (adjustmentArr[1] == 0) {
             characterAdjustment[0].setAttribute("src", "assets/image/customCharacter/PowerPeople_Christopher001.png");
