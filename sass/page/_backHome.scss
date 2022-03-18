@@ -130,6 +130,7 @@ a{
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: #ffc489;
+    overflow-y: scroll;
 }
 .backLightBox .image{
     max-width: 20%;
