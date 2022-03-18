@@ -1,6 +1,38 @@
 @@include('layout/backheader.html',{title:"虛擬物件管理"})
         <section class="mainContent backObj">
+            <div id="app">
+                <ul class="memeberTitle">
+                    <li v-for = 'title in titles'>{{title}}</li>
+                    <li></li>
+                </ul>
+                <ul v-for='(charobj,key) in charobjs'
+                class="memberList">            
+                    <li>{{charobj.objNo}}</li>
+                    <li>{{charobj.objType}}</li>
+                    <li>{{charobj.picture}}</li>   
+                    <li>編輯與查看</li>
+                </ul>
+            </div>
         </section>
     </section>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titles: ['人物物件編號',  '種類', '圖片', '', ],
+                charobjs:[],
+            },
+            mounted(){
+                axios.get('php/backObjSelect.php').then((res)=>{
+                    this.charobjs = res.data;
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            },
+            methods: {},
+            computed: {},
+            watch: {},
+        });
+    </script>
 </body>
 </html>

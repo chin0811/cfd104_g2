@@ -5,16 +5,16 @@
                     <li v-for = 'title in titles'>{{title}}</li>
                     <li></li>
                 </ul>
-                <ul v-for='(member,key) in members' 
+                <ul v-for='(order,key) in orders' 
                 class="memberList">            
-                    <li>{{member.auctionNo}}</li>
-                    <li>{{member.productName}}</li>
-                    <li>{{member.memNoSale}}</li>
-                    <li>{{member.memNoBuy}}</li>
-                    <li>{{member.productNumber}}</li>
-                    <li>{{member.orderAmount}}</li>
-                    <li>{{member.date}}</li>
-                    <li>{{member.orderStatus}}</li>        
+                    <li>{{order.auctionNo}}</li>
+                    <li>{{order.productName}}</li>
+                    <li>{{order.memNoSale}}</li>
+                    <li>{{order.memNoBuy}}</li>
+                    <li>{{order.productNumber}}</li>
+                    <li>{{order.closingPrice}}</li>
+                    <li>{{order.creatDate}}</li>
+                    <li>{{order.orderStatus}}</li>        
                     <li>編輯與查看</li>
                 </ul>
             </div>
@@ -25,18 +25,16 @@
             el: '#app',
             data: {
                 titles: ['拍賣編號', '商品名稱', '販售會員編號','得標會員編號', '商品編號', '訂單金額', '建立日期', '訂單狀態',  '', ],
-                members:[{
-                    'auctionNo':'001',
-                    'productName':'生命的凝視',
-                    'memNoSale':'123541',
-                    'memNoBuy':'555555',
-                    'productNumber':'66666',
-                    'orderAmount':'48,000',
-                    'date':'2021/01/01',
-                    'orderStatus':'寄送中'
-                },],
+                orders:[],
             },
             methods: {},
+            mounted(){
+                axios.get('php/backOrderSelect.php').then((res)=>{
+                    this.orders = res.data;
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            },
             computed: {},
             watch: {},
         });
