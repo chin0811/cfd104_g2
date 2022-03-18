@@ -58,7 +58,9 @@
                     <div class="txt">
                         <h2 class="deepColor">雕塑類</h2>
                         <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                        <button class="round">競標</button>
+                        <a href="prouductAll.html">
+                            <button class="round">競標</button>
+                        </a>
                     </div>
                 </div>
                 <div class="cardDing paint">
@@ -68,7 +70,9 @@
                     <div class="txt">
                         <h2 class="deepColor">畫作類</h2>
                         <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                        <button class="round">競標</button>
+                        <a href="prouductAll.html">
+                            <button class="round">競標</button>
+                        </a>
                     </div>
                 </div>
                 <div class="cardDing toy">
@@ -78,7 +82,9 @@
                     <div class="txt">
                         <h2 class="deepColor">公仔類</h2>
                         <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                        <button class="round">競標</button>
+                        <a href="prouductAll.html">
+                            <button class="round">競標</button>
+                        </a>
                     </div>
                 </div>
                 <div class="cardDing brame">
@@ -88,7 +94,9 @@
                     <div class="txt">
                         <h2 class="deepColor">品牌合作</h2>
                         <p class="lightColor">顯然夥伴蘋果求助幾個，奇蹟石油提供一般中間大哥直接，我市媒體這麼多聲明天堂搜尋引擎還不好好桃園尋引擎還不好好桃園內</p>
-                        <button class="round">競標</button>
+                        <a href="prouductAll.html">
+                            <button class="round">競標</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -107,7 +115,7 @@
                 <div class="txt">
                     <h2 class="deepColor">藝起逛逛</h2>
                     <p>多樣化的展品，<br>豐富的展演方式。<br>在這裡，美不只有一種形式。</p>
-                    <button class="round">藝廊</button>
+                    <a href="galleryDoor.html"><button class="round">藝廊</button></a>
                 </div>
             </section>
             <section class="homeMember">
@@ -120,7 +128,7 @@
                 <div class="txt">
                     <h2 class="deepColor">會員中心</h2>
                     <p>將美通通包含其中，<br>將所有體驗美的過程記錄下來。</p>
-                    <button class="round">會員中心</button>
+                    <a href="3dSurroundView.html"><button class="round">會員中心</button></a>
                 </div>
             </section>
         </section>
@@ -138,9 +146,9 @@
                                 <h3 class="deepColor">{{homeDiscusArts.title}}</h3>
                                 <p class="lightColor">{{homeDiscusArts.content | ellipsis}}</p>
                             </div>
-                            <button class="roundOutline">
-                                    看更多
-                                </button>
+                            <a :href="'articlePage.html?articleNo='+homeDiscusArts.articleNo">
+                                <button class="round">看更多</button>
+                            </a>
                         </div>
                     </article>
                 </div>
