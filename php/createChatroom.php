@@ -1,7 +1,8 @@
 <?php 
 header('Content-Type: application/json; charset=utf-8');
 require_once("g2_dataConnect.php");
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
     $getJSON = file_get_contents('php://input');
     $getAll = json_decode($getJSON,true);
     $getData = $getAll['sendData'];
