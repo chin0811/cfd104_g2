@@ -9,7 +9,7 @@ try {
 				   C.picture
 
 			from forumMes F join member M on F.memNo=M.memNo
-							join charobj C on F.memNo=C.objNo
+							join charObj C on F.memNo=C.objNo
 
 			where F.articleNo = $articleNo 
 
