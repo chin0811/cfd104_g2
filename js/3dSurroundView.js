@@ -162,14 +162,20 @@ async function getaccountManagement() {
             case "0":
                 characterAdjustment_box[0].style.background = "#FFD60A";
                 characterAdjustment_box[1].style.background = "#FFD60A";
+                characterAdjustment_box[0].setAttribute("name", 0);
+                characterAdjustment_box[1].setAttribute("name", 0);
                 break;
             case "1":
                 characterAdjustment_box[0].style.background = "#394897";
                 characterAdjustment_box[1].style.background = "#394897";
+                characterAdjustment_box[0].setAttribute("name", 1);
+                characterAdjustment_box[1].setAttribute("name", 1);
                 break;
             case "2":
                 characterAdjustment_box[0].style.background = "#BCBCBC";
                 characterAdjustment_box[1].style.background = "#BCBCBC";
+                characterAdjustment_box[0].setAttribute("name", 2);
+                characterAdjustment_box[1].setAttribute("name", 2);
                 break;
         }
 

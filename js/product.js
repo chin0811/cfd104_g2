@@ -1,38 +1,33 @@
 
 // vue的東西
-let data={
-    index:0,
-    src:'https://picsum.photos/300/200/?random=8',
-    items:[    
-        {img:'https://picsum.photos/300/200/?random=8',title:'標題001',creator:'噴火龍',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'30,000',time:'2022/02/22'},
-        {img:'https://picsum.photos/300/200/?random=10',title:'標題002',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=3',title:'標題003',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=2',title:'標題004',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=1',title:'標題005',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=4',title:'標題006',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=8',title:'標題001',creator:'噴火龍',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'30,000',time:'2022/02/22'},
-        {img:'https://picsum.photos/300/200/?random=9',title:'標題002',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=3',title:'標題003',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=2',title:'標題004',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=1',title:'標題005',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-        {img:'https://picsum.photos/300/200/?random=4',title:'標題006',creator:'水箭龜',intro:'這是一幅很美的畫這是一幅很美的這是一幅很美的',price:'60,000',time:'2032/02/22'},
-    ]
-}
 let vm = new Vue({
     el:'#app',
-    data: data,
-    // 舊輪播
-    // methods:{
-    //     changeIndex:function(change){
-    //         console.log(this.index)
-    //         this.index= this.index+change;
-    //         if(this.index<0){
-    //             this.index=6
-    //         }else if (this.index>6){
-    //             this.index=0    
-    //         }
-    //     },
-    // },
+    data:{
+        index:0,
+        products:[],
+        prodImage:[],
+        lightIndex:[],
+        prodNo:[],
+        key:[],
+    },
+    mounted(){
+        // 抓圖
+        axios.get('php/frontImageSelect.php').then((res)=>{
+            this.prodImage = res.data;
+            console.log(this.prodImage)
+        }).catch((err)=>{
+            console.log(err)
+        })
+        // 抓商品
+        axios.get('php/frontProductSelect.php').then((res)=>{
+            this.products = res.data;
+            for(let i =0; i<this.products.length; i++){
+                this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[i].img}`);
+            }
+        }).catch((err)=>{
+            console.log(err)
+        })
+    },
     methods:{
         // 輪播
         changeIndex:function(change){
@@ -50,33 +45,89 @@ let vm = new Vue({
                     carouselItem[i].style.transform = `translateX(${y})`;
                 }
             }
+        },
+        // 傳送網址
+        send:function(key){
+            this.key = key;
+            console.log("test",this.key)
+            let thisVue = this;
+            $.ajax({
+                type: 'GET',
+                url: 'php/productSearch.php',
+                data: {
+                    number:thisVue.key+1,
+                },
+                success: function(data) {
+                    console.log(data.message);
+                    console.log("成功了嗎?");
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+        },
+        createHref:function() {
+            return `produtFromPhp.html?number=${this.key+1}`;
         }
     }
 })
 let vm2 = new Vue({
     el:"#app2",
     data:{
-        productsData:[],
         products:[],
+        prodImage:[],
+        lightIndex:[],
+        prodNo:[],
+        key:[],
     },
     methods:{
         // 控制篩選器
         selector(select){
             let productSelector = document.querySelector("#productSelector");
             productSelector.classList.toggle("displayNone");
+        },
+        // 傳送網址
+        send:function(key){
+            this.key = key;
+            console.log("test",this.key)
+            let thisVue = this;
+            $.ajax({
+                type: 'GET',
+                url: 'php/productSearch.php',
+                data: {
+                    number:thisVue.key+1,
+                },
+                success: function(data) {
+                    console.log(data.message);
+                    console.log("成功了嗎?");
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+        },
+        createHref:function() {
+            return `produtFromPhp.html?number=${this.key+1}`;
         }
     },
     mounted(){
-        axios.get('json/productItems.json').then((res)=>{
-            console.log(res)
-            this.productsData = res.data;
-            console.log(this.productsData);
-            this.products = this.productsData.slice(0,12);
-            console.log(this.products);
+        // 抓圖
+        axios.get('php/frontImageSelect.php').then((res)=>{
+            this.prodImage = res.data;
+            console.log(this.prodImage)
         }).catch((err)=>{
             console.log(err)
         })
-    }
+        // 抓商品
+        axios.get('php/frontProductSelect.php').then((res)=>{
+            this.products = res.data;
+            for(let i =0; i<this.products.length; i++){
+                this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[i].img}`);
+            }
+        }).catch((err)=>{
+            console.log(err)
+        })
+        }
 })
 $(document).ready(function(){
     // 加入收藏

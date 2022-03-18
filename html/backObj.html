@@ -9,22 +9,34 @@
                 class="memberList">            
                     <li>{{charobj.objNo}}</li>
                     <li>{{charobj.objType}}</li>
-                    <li>{{charobj.picture}}</li>   
+                    <li>
+                        <img :src="charobj.url" alt="">
+                    </li>   
                     <li>編輯與查看</li>
                 </ul>
             </div>
         </section>
     </section>
+    <style>
+        .memberList li img{
+            width: 100px;
+        }
+    </style>
     <script>
         new Vue({
             el: '#app',
             data: {
                 titles: ['人物物件編號',  '種類', '圖片', '', ],
                 charobjs:[],
+                // url:[`assets/image/customCharacter/${charobj.picture}`],
+
             },
             mounted(){
                 axios.get('php/backObjSelect.php').then((res)=>{
                     this.charobjs = res.data;
+                    for(let i =0; i<this.charobjs.length; i++){
+                        this.$set(this.charobjs[i],"url", `assets/image/customCharacter/${this.charobjs[i].picture}`);
+                    }
                 }).catch((err)=>{
                     console.log(err)
                 })
