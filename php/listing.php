@@ -21,49 +21,78 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 // require_once("g2_dataConnect.php");
-$newName ='';
+//$newName =''; //多圖打開
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 確認是否收到form給我的資料
 	$message['message'] = "傳成功了";
     // 修改資料庫
     $newName = [];
-
+    // 資料庫語法
+    $table ='com';//資料庫的table名稱
+    switch($_FILES["pic"]["error"]){ //["input name"][""]
+        case UPLOAD_ERR_OK:
+            $dir = "images";
+            if(file_exists($dir)==false){
+                mkdir($dir); //make directory
+            }
+                $from = $_FILES['pic']['tmp_name']; //含路徑['input name']['暫存路徑']
+                $fileName = $_FILES['pic']['name']; //AAAA.png['input name']['附檔名']
+                $name = explode('.',$fileName);	// [AAAA,png]//檔案全名
+                //流水號產生
+                $newName = uniqid().".".$name[1];
+                // $to = "$dir/" . $_FILES['pic']['name'];
+                $to = $dir."/".$newName;
+            if(copy($from, $to)){
+                echo $to;
+                echo "上傳成功~";
+            }else{
+                echo "上傳失敗~";
+            }
+            break;
+        //為上傳檔案
+        case UPLOAD_ERR_NO_FILE:
+            echo "檔案未選 <br>";
+            break;
+        //
+        default:
+            echo "系統暫時不能提供服務~";
+    }
 
 
     // 資料庫語法
-    $table ='com';//資料庫的table名稱
-    foreach($_FILES["pic"]["error"] as $i=>$error){//["input name"][""]
-        switch($error){
-            case UPLOAD_ERR_OK:
-                $dir = "../assets/image";
-                if(file_exists($dir)==false){
-                    mkdir($dir); //make directory
-                }
-                    $from = $_FILES['pic']['tmp_name']; //含路徑['input name']['暫存路徑']
-                    $fileName = $_FILES['pic']['name']; //AAAA.png['input name']['附檔名']
-                    $name = explode('.',$fileName);	// [AAAA,png]//檔案全名
+    //$table ='com';//資料庫的table名稱
+    //foreach($_FILES["pic"]["error"] as $i=>$error){//["input name"][""]
+        //switch($error){
+            //case UPLOAD_ERR_OK:
+                //$dir = "../assets/image";
+                //if(file_exists($dir)==false){
+                    //mkdir($dir); //make directory
+                //}
+                    //$from = $_FILES['pic']['tmp_name']; //含路徑['input name']['暫存路徑']
+                    //$fileName = $_FILES['pic']['name']; //AAAA.png['input name']['附檔名']
+                    //$name = explode('.',$fileName);	// [AAAA,png]//檔案全名
                     //流水號產生
-                    $newName1 = uniqid().".".$name[1];
+                    //$newName1 = uniqid().".".$name[1];
 
-                    array_push($newName,$newName1); //(變數,流水號新增放入前面變數)
+                    //array_push($newName,$newName1); //(變數,流水號新增放入前面變數)
                     // $to = "$dir/" . $_FILES['pic']['name'];
-                    $to = $dir."/".$newName;
-                if(copy($from, $to)){
-                    echo $to;
-                    echo "上傳成功~";
-                }else{
-                    echo "上傳失敗~";
-                }
-                break;
+                    //$to = $dir."/".$newName;
+                //if(copy($from, $to)){
+                    //echo $to;
+                    //echo "上傳成功~";
+                //}else{
+                    //echo "上傳失敗~";
+                //}
+                //break;
             //為上傳檔案
-            case UPLOAD_ERR_NO_FILE:
-                echo "檔案未選 <br>";
-                break;
+            //case UPLOAD_ERR_NO_FILE:
+                //echo "檔案未選 <br>";
+                //break;
             //
-            default:
-                echo "系統暫時不能提供服務~";
-        }
-    }
+            //default:
+                //echo "系統暫時不能提供服務~";
+        //}
+    //}
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
     $sqlNumber = "select prodNo from com ORDER BY prodNo DESC LIMIT 1";
     $datas = $pdo->query($sqlNumber);
