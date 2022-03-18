@@ -287,37 +287,37 @@
                                 <p>藝廊廣告將展示於線上藝廊中，隨機以不同的動態效果呈現您的藝術品。達到與客戶端互動賞玩的作用。購買前還請謹慎決定，切勿造成工作人員負擔，謝謝。</p>
                             </div>
                         </div>
-                        <input type="radio" id="ad1" name="ad" v-model="ad" value="購買廣告" required>
+                        <input type="radio" id="ad1" name="ad" v-model="ad" value="購買" required>
                         <label for="ad1">
-                            購買廣告
+                            購買
                         </label>
-                        <input type="radio" id="ad2" name="ad" v-model="ad" value="暫無需求">
+                        <input type="radio" id="ad2" name="ad" v-model="ad" value="未購買">
                         <label for="ad2">
-                            暫無需求
+                            未購買
                         </label>
                     </div>
                     <div class="uploadFile">
                         <h4>藝術品圖檔上傳</h4>
                         <ol class="uploadPicture">
                             <li>
-                                <input type="file" id="pic" name="pic" accept=".png,.jpg" required>
+                                <input type="file" id="pic" name="pic[]" accept=".png,.jpg" required>
                                 <label for="pic" id="pic-preview"><img src="assets/image/listingImage/upload_image_icon.png" alt="none" class="imageAdd" @load="imageChange">
                                 <!-- <label for="pic"><img id="" :src="changeImg" alt="none"></label> -->
                                 <!-- <div></div> -->
                                 </label>
                             </li>
                             <li>
-                                <input type="file" id="pic1" name="pic1" accept=".png,.jpg">
+                                <input type="file" id="pic1" name="pic[]" accept=".png,.jpg">
                                 <label for="pic1"><img id="imgAdd"src="assets/image/listingImage/add_icon.png" alt="none"></label>
                                 <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <li>
-                                <input type="file" id="pic2" name="pic2" accept=".png,.jpg">
+                                <input type="file" id="pic2" name="pic[]" accept=".png,.jpg">
                                 <label for="pic2"><img id="imgAdd1" src="assets/image/listingImage/add_icon.png" alt="none"></label>
                                 <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
                             <li>
-                                <input type="file" id="pic3" name="pic3" accept=".png,.jpg">
+                                <input type="file" id="pic3" name="pic[]" accept=".png,.jpg">
                                 <label for="pic3"><img src="assets/image/listingImage/add_icon.png" alt="none"></label>
                                 <!-- <label for="pic1"><img id="" :src="changeImg" alt="none"></label> -->
                             </li>
