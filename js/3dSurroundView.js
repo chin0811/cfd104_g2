@@ -202,10 +202,82 @@ async function getaccountManagement() {
         // location.href = "login.html";
     }
 }
+
 //收藏
 function collect() {
     collect_bouncing.style.display = "block"
+
+    let Status = '0';
+    $.ajax({
+        type: 'POST',
+        url: 'php/getCollect3DPage.php',
+        data: {
+            "Status": Status
+        },
+        success(res) {
+            var arrOrder = JSON.parse(res);
+            var showOrder = "";
+            for (let i = 0; i < arrOrder.length; i++) {
+                showOrder += `
+                <section class="commodity" name="${arrOrder[i].favoriteListNumber}">
+                    <section class="graphics">
+                        <section class="love" name="love_${arrOrder[i].favoriteListNumber}"><i class="bi bi-heart-fill"></i></section>
+                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].certification}" alt="拍攝商品圖"></section>
+                    </section>
+                    <section class="bid">
+                        <p>${arrOrder[i].productName}</p>
+                        <section class="information">
+                            <section>
+                                <p>未出價</p>
+                            </section>
+                            <section class="timeAndButton">
+                                <span class="time">剩餘2小時47分17秒</span>
+                                <button class="round round3dBtn" type="button"><a href="/CFD104G2/productSingle.html?prodNo=${arrOrder[i].prodNo}">前往商品頁面</a></button>
+                            </section>
+                        </section>
+
+                    </section>
+                </section>`;
+
+            }
+            $('.commodityGroup').html(showOrder);
+            $('.commodityGroup a').css('color', '#ffffff');
+            $('.commodityGroup .bid').css('width', '50%');
+            $('.commodityGroup .bi-heart-fill').css('color', '#fff');
+            love();
+            // $('.commodityGroup').css('width', '300px');
+        },
+        error(e) {
+            console.log('ajax error');
+            console.log(e.responseText);
+            console.log(e);
+        }
+    });
 }
+
+function love() {
+    $('.love').click(function() {
+        let Status = '1';
+        let favoriteListNumber = $(this).attr('name').split("_")[1];
+        $.ajax({
+            type: 'POST',
+            url: 'php/getCollect3DPage.php',
+            data: {
+                "Status": Status,
+                "favoriteListNumber": favoriteListNumber
+            },
+            success(res) {
+                $('section[name="' + favoriteListNumber + '"]').remove();
+            },
+            error(e) {
+                console.log('ajax error');
+                console.log(e.responseText);
+                console.log(e);
+            }
+        });
+    });
+}
+
 //消費紀錄
 function consumptionRecord() {
     consumptionRecord_bouncing.style.display = "block"

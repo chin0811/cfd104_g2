@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,13 @@
     <!-- 縮圖 -->
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/articleAll.js"></script>
     <script src="js/loginCheck.js"></script>
-    <script >
-        window.addEventListener('load',function(){
+    <script>
+        window.addEventListener('load', function() {
             loginCheck(false);
         })
     </script>
@@ -23,151 +24,152 @@
     <!-- 引入axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-    <!-- @@include('layout/header.html') -->
-    @@include('layout/headerNormal.html',{"headerClass":""})
-    <section class="articleContent">   
-        <!-- Vue作用域開始 -->
-        <div id="articleALL">
-            <div class="mainTitle">
-                <h1 class="deepColor">
-                    藝‧論
-                </h1>
-            </div>
-            <div class="subTitle">
-                <h2 class="deepColor">
-                    WEDNESDAY, 2ND MARCH 2022
-                </h2>
-                <button class="square" @click="logIn">刊登</button>
-            </div>
-            <section class="wrap flat" >
-                <!-- <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="flatDiscusArt in flatDiscusArts"> -->
-                <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage, startPage + perPage-9)">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+page.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{page.title}}</h4>
-                            <p class="lightColor small">{{page.content | ellipsis}}</p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <section class="wrap twoRows" v-show="(rows.slice(startPage+4, startPage + perPage-7) != '')">
-                <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="(page,index) in rows.slice(startPage+4, startPage + perPage-7)">
-
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+page.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{page.title}}</h4>
-                            <p class="lightColor small">{{page.content | ellipsis}}</p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <section class="wrap threeRows" v-show="(rows.slice(startPage+6, startPage + perPage-4)) != ''">
-                <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="(page,index) in rows.slice(startPage+6, startPage + perPage-4)">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+page.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{page.title}}</h4>
-                            <p class="lightColor small">{{page.content | ellipsis}}</p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <section class="wrap fourRows" v-show="(rows.slice(startPage+9, startPage + perPage) != '')">
-                <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage+9, startPage + perPage)">
-                    <div class="item">
-                        <div class="pic">
-                            <img :src='src+page.pic'>
-                        </div>
-                        <div class="txt">
-                            <h4 class="deepColor">{{page.title}}</h4>
-                            <p class="lightColor small">{{page.content | ellipsis}}</p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <div class="articletPageChange">
-                <ul>
-                    <li :class="{disabled: currentPage === 1}" @click="setPage(currentPage-1)"><a href="">&laquo;</a></li>
-                    <li v-for="n in totalPage" @click="setPage(n)"><a href="#">{{n}}</a></li>
-                    <li :class="{disabled: currentPage === totalPage}" @click="setPage(currentPage+1)"><a href="">&raquo;</a></li>
-                </ul>
-            </div>
+<!-- @@include('layout/header.html') -->
+@@include('layout/headerNormal.html',{"headerClass":""})
+<section class="articleContent">
+    <!-- Vue作用域開始 -->
+    <div id="articleALL">
+        <div class="mainTitle">
+            <h1 class="deepColor">
+                藝‧論
+            </h1>
         </div>
-        <!-- Vue作用域結束 -->
-    </section>
-    @@include('layout/footer.html')
+        <div class="subTitle">
+            <h2 class="deepColor">
+                WEDNESDAY, 2ND MARCH 2022
+            </h2>
+            <button class="square" @click="logIn">刊登</button>
+        </div>
+        <section class="wrap flat">
+            <!-- <a :href="'articlePage.html?articleNo='+page.articleNo"  v-for="flatDiscusArt in flatDiscusArts"> -->
+            <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage, startPage + perPage-9)">
+                <div class="item">
+                    <div class="pic">
+                        <img :src='src+page.pic'>
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">{{page.title}}</h4>
+                        <p class="lightColor small">{{page.content | ellipsis}}</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="wrap twoRows" v-show="(rows.slice(startPage+4, startPage + perPage-7) != '')">
+            <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage+4, startPage + perPage-7)">
+
+                <div class="item">
+                    <div class="pic">
+                        <img :src='src+page.pic'>
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">{{page.title}}</h4>
+                        <p class="lightColor small">{{page.content | ellipsis}}</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="wrap threeRows" v-show="(rows.slice(startPage+6, startPage + perPage-4)) != ''">
+            <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage+6, startPage + perPage-4)">
+                <div class="item">
+                    <div class="pic">
+                        <img :src='src+page.pic'>
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">{{page.title}}</h4>
+                        <p class="lightColor small">{{page.content | ellipsis}}</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="wrap fourRows" v-show="(rows.slice(startPage+9, startPage + perPage) != '')">
+            <a :href="'articlePage.html?articleNo='+page.articleNo" v-for="(page,index) in rows.slice(startPage+9, startPage + perPage)">
+                <div class="item">
+                    <div class="pic">
+                        <img :src='src+page.pic'>
+                    </div>
+                    <div class="txt">
+                        <h4 class="deepColor">{{page.title}}</h4>
+                        <p class="lightColor small">{{page.content | ellipsis}}</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <div class="articletPageChange">
+            <ul>
+                <li :class="{disabled: currentPage === 1}" @click="setPage(currentPage-1)"><a href="">&laquo;</a></li>
+                <li v-for="n in totalPage" @click="setPage(n)"><a href="#">{{n}}</a></li>
+                <li :class="{disabled: currentPage === totalPage}" @click="setPage(currentPage+1)"><a href="">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Vue作用域結束 -->
+</section>
+@@include('layout/footer.html')
 
 
-    <script>
-        new Vue({
-            el:"#articleALL",
-            data:{
-                // 創造頁籤
-                rows: [],
-                perPage: 13,
-                currentPage: 1,
+<script>
+    new Vue({
+        el: "#articleALL",
+        data: {
+            // 創造頁籤
+            rows: [],
+            perPage: 13,
+            currentPage: 1,
 
-                // 圖片地址
-                src:'assets/image/',
+            // 圖片地址
+            src: 'assets/image/',
 
-                // 抓到會員編號
-                memData:{},
+            // 抓到會員編號
+            memData: {},
+        },
+        //限制字數
+        filters: {
+            ellipsis(value) {
+                const len = 30;
+                if (!value) return "";
+                if (value.length > len) {
+                    return value.slice(0, len) + "...";
+                }
+                return value;
+            }
+        },
+
+        created() {
+            axios.get('php/articleAllConnect.php').then((res) => {
+                this.rows = res.data;
+                console.log(this.rows);
+            }).catch((err) => {
+                console.log(err)
+            })
+        },
+
+        methods: {
+            setPage(thePage) {
+                this.currentPage = thePage;
             },
-            //限制字數
-            filters: {
-                ellipsis(value) {
-                    const len = 30;
-                    if (!value) return "";
-                    if (value.length > len) {
-                        return value.slice(0, len) + "...";
-                    }
-                    return value;
+            logIn() {
+                this.memData = memData;
+                if (this.memData) {
+                    window.location = "articlePost.html";
+                } else {
+                    alert("請登入");
+                    window.location = "login.html";
                 }
             },
 
-            created() {
-                axios.get('php/articleAllConnect.php').then((res)=>{
-                    this.rows = res.data;
-                    console.log(this.rows);
-                }).catch((err)=>{
-                    console.log(err)
-                })
+        },
+        computed: {
+            totalPage() {
+                return Math.ceil(this.rows.length / this.perPage);
             },
-
-            methods: {
-                setPage(thePage){
-                    this.currentPage = thePage;
-                },
-                logIn(){
-                    this.memData = memData;
-                    if(this.memData){
-                        window.location="articlePost.html";
-                    }else{
-                        alert("請登入");
-                        window.location="login.html";
-                    }
-                },
-
+            startPage() {
+                return (this.currentPage - 1) * this.perPage;
             },
-            computed: {
-                totalPage(){
-                    return Math.ceil(this.rows.length / this.perPage);
-                },
-                startPage(){
-                    return (this.currentPage - 1) * this.perPage;
-                },
-            },
-            
+        },
 
-        })
-    </script>
+
+    })
+</script>
 </body>
+
 </html>
