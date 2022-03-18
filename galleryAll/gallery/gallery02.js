@@ -264,12 +264,25 @@ loader.load
   let spotLight = new THREE.SpotLight(0xFFFFFF)
   spotLight.position.set(-10, 100, 30)
   scene.add(spotLight)
-  // let spotLight2 = new THREE.SpotLight(0xCCCCCC)
-  // spotLight2.position.set(0, 20, 90)
-  // scene.add(spotLight2)
-  // let spotHelper = new THREE.SpotLightHelper(spotLight)
-  // scene.add(spotHelper)
-
+   // 照亮物體
+   let directionalLight = new THREE.DirectionalLight( 0xffffff, 0.3 );
+   directionalLight.position.set(1, -10, 1000)
+   scene.add( directionalLight );
+    // 物件上的點光源
+    let pointLight = new THREE.PointLight( 0xffffff, 0.3);
+    pointLight.position.set(5, 10, 10);
+    pointLight.castShadow = true;
+    scene.add( pointLight );
+    // 物件上的點光源
+    let pointLight02 = new THREE.PointLight( 0xffffff, 0.2);
+    pointLight02.position.set(30, 10, 10);
+    pointLight02.castShadow = true;
+    scene.add( pointLight02 );
+    // 物件上的點光源
+    let pointLight03 = new THREE.PointLight( 0xffffff, 0.2);
+    pointLight03.position.set(65, 10, 10);
+    pointLight03.castShadow = true;
+    scene.add( pointLight03 );
   // 將渲染出來的畫面放到網頁上的 DOM
   document.body.appendChild(renderer.domElement)
 }
