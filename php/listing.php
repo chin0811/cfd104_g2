@@ -19,7 +19,7 @@
 
 header('Content-Type: application/json; charset=utf-8');
 require_once("g2_dataConnect.php");
-// echo 
+// echo
 // $newName =['','','','']; //多圖打開
 // if($_SERVER['REQUEST_METHOD'] === 'POST') {
 //     // 確認是否收到form給我的資料
@@ -109,9 +109,10 @@ require_once("g2_dataConnect.php");
                     mkdir($dir); //make directory
                 }
                     $from = $_FILES['pic']['tmp_name'][$i]; //含路徑['input name']['暫存路徑']
+                    // 流水號產生
                     $fileName = $_FILES['pic']['name'][$i]; //AAAA.png['input name']['附檔名']
                     $name = explode('.',$fileName);	// [AAAA,png]//檔案全名
-                    // 流水號產生
+                    $newName = uniqid().".".$name[1];
 
                     $sqlImgNumber = "select imgNo from comimg ORDER BY imgNo DESC LIMIT 1";
                     $imgdatas = $pdo->query($sqlImgNumber);
@@ -119,12 +120,12 @@ require_once("g2_dataConnect.php");
                     $imgNoNew = $imgdataNumber[0]["imgNo"] + 1;
 
 
-                    $newName = uniqid().".".$name[1];
+
                     // $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
                     $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
                     $sqlImg = "insert into comimg values($valueImg)";
                     echo $sqlImg;
-                    
+
                     // echo $valueImg;
                     // $newName[$i] = $newName1;
                     // array_push($newName,$newName1); //(變數,流水號新增放入前面變數)
@@ -132,7 +133,7 @@ require_once("g2_dataConnect.php");
                     // $to = $dir."/".$newName;
                     $statement1 = $pdo->prepare($sqlImg);
                     $result1 = $statement1->execute();
-                   
+
 
                 if(copy($from, $to)){
                     // echo $to;
@@ -145,7 +146,7 @@ require_once("g2_dataConnect.php");
             case UPLOAD_ERR_NO_FILE:
                 // echo "檔案未選 <br>";
                 break;
-            
+
             default:
                 // echo "系統暫時不能提供服務~";
         }
