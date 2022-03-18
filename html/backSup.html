@@ -18,7 +18,7 @@
                             <td>{{data.adminName}}</td>
                             <td>{{data.stTimer}}</td>
                             <td>
-                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'" @click="selectChatroom(index)">{{data.finishState}}</button>
+                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'" @click="selectChatroom(data,index)">{{data.finishState}}</button>
                             </td>
                         </tr>
                     </tbody>
@@ -82,31 +82,58 @@
                     messageObject:{},
                     memData:'',
                     inputTxt:'',
+                    currentlyIndex:0,
 
                 },
                 methods: {  //函數大部分放在這裡
-                    selectChatroom(index){
+                    selectChatroom(data,index){
                         this.chatroomShow = !this.chatroomShow;
-                        this.messageObject = {};
-                        this.memData = this.datas[index];
-                        console.log(this.memData.quizNo);
+                        this.messageObject = [];
+                        this.memData = data;
+                        this.currentlyIndex = data.quizNo;
+                        // console.log(this.memData.quizNo);
+                        // console.log('安安');
                         axios({
                                 method: 'GET',
-                                url: `php/supAll.php?index=${this.memData.quizNo}`,
+                                url: `php/supAll.php?index=${data.quizNo}`,
                                 //API要求的資料
                             })
                             .then((response) => { 
-                                this.messageData = response.data;
+                                // this.messageData = response.data;
                                 // console.log(response.data)
+                                response.data.forEach(element => {
+                                    this.messageObject.push({message: `${element.content}` , classS: `${(element.memType == '客服') ? 'meTxt':'AA'}`})
+                                    console.log(element);
+                                });
+                                // this.messageObject.push({message: `${response.data[0].content}` , classS: `${(response.data[0].memType == '客服') ? 'meTxt':'AA'}`})
+                                // setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                             })
-                            .catch((error) => console.log(error))
-                        if(false){
-                           
-
-                        }
+                            .catch((error) => {console.log(error)} )
+                        
                     },
                     sendTxt(){
+                        // this.currentlyIndex
+                        axios({
+                        method:'post',
+                        url:`php/supMessageIn.php`,
+                        data:{
+                            quizNo:this.currentlyIndex,
+                            inputTxt:this.inputTxt,
+                            memType:'客服',
+                            
+                        },
+                        }).then((res)=>{
+                            console.log("從php傳來的東西",res)
+                            setTimeout(()=>{
+                                this.messageObject.push({message: `${res.data[0].ans}` , class: 'robotTxt'})
+                                setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                        },500)
+                        }).catch((err)=>{
+                            console.log(err)
+                        })
 
+
+                        this.inputTxt = ''
                     },
                     selectDelete(index){
                         var yes = confirm('你確定嗎？');
@@ -141,8 +168,8 @@
                 },
                 components: {
                     messageart: {
-                        props: ['message','class'],
-                        template: `<article class=""><p class="small">{{message}}</p></article>`,
+                        props: ['message','classS'],
+                        template: `<article :class="classS"><p class="small">{{message}}</p></article>`,
                     },
                 },
                 mounted(){
