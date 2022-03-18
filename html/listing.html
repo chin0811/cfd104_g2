@@ -181,6 +181,15 @@
         </section>
         <!-- 貓頭鷹調整 -->
         <script src="js/carousel.js"></script>
+        <!--memNo-->
+        <script>
+            window.addEventListener('load',function(){
+               setTimeout(function(){
+                // document.querySelector('form1').action = `php/listing.php?memNo=${memData.memNo}`
+                document.querySelector('#form1').setAttribute('action', `php/listing.php?memNo=${memData.memNo}`) ;
+               },1000)
+            })
+        </script>
 
 
         <section class="background">
