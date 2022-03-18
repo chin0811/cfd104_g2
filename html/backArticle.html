@@ -4,7 +4,7 @@
                 <ul class="articleTitle">
                     <li v-for="title in titles">{{title}}</li>
                 </ul>
-                <ul class="articleList" v-for="article in articleAll">
+                <ul class="articleList" v-for="(article,key) in articleAll">
                     <li>{{article.articleNo}}</li>
                     <li>{{article.memNo}}</li>
                     <li>{{article.title}}</li>
@@ -12,14 +12,19 @@
                     <li>{{article.reportState}}</li>
                     <li>{{article.auditState}}</li>
                     <li>{{article.visibleStale}}</li>
-                    <li v-on:click="openLightBox(key)">編輯與查看</li>
+                    <li @click="openLightBox(key)">編輯與查看</li>
                 </ul>
 
 
-                <section class="backLightBox articleLigthtBox displayNone" id="productLigthtBox">
-                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
-                    
+                <section class="backLightBox articleLigthtBox displayNone" id="articleLigthtBox">
+                    <i class="fas fa-times" @click="backCloseLight">x</i>
+                    <ul>
+                        <li v-for=" lightBoxTitle in lightBoxTitles">{{lightBoxTitle}}</li>
+                    </ul>
                 </section>
+
+
+
             </div>
             
         </section>
@@ -28,8 +33,10 @@
         new Vue({
             el:'#backArticle',
             data:{
-                titles: ['文章編號', '作者編號', '刊登時間','檢舉狀態','審核狀態','文章標題','是否顯示',''],
+                titles: ['文章編號','作者編號','文章標題','刊登時間','檢舉狀態','審核狀態','是否顯示',''],
+                lightBoxTitles: ['文章編號','作者編號','檢舉狀態','審核狀態','是否顯示','文章標題','文章內容','刊登時間'],
                 articleAll:{},
+                articleLigthtBox : document.querySelector("#articleLigthtBox"),
             },
             
             mounted(){
@@ -45,7 +52,10 @@
             methods: {
                 openLightBox:function(key){
                     articleLigthtBox.classList.toggle("displayNone");
-                } 
+                },
+                backCloseLight:function(){
+                    articleLigthtBox.classList.toggle("displayNone"); 
+                },
             },
         })
     </script>
