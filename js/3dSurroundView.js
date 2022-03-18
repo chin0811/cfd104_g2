@@ -334,15 +334,17 @@ $('#nowOrder3dBtn').click(function() {
                 <section class="recordFooter">
                     <section>
                         <p>訂單金額:${arrOrder[i].closingPrice}</p>
+                        </section>
+                        <!-- <section class="buttonGroup">
+                        <button class="round round3dBtn" type="button">按鈕</button>
+                        <button class="round round3dBtn" type="button">按鈕</button>
+                        </section> -->
                     </section>
-                    <!-- <section class="buttonGroup">
-                        <button class="round round3dBtn" type="button">按鈕</button>
-                        <button class="round round3dBtn" type="button">按鈕</button>
-                    </section> -->
                 </section>
-            </section>`;
-
-            }
+                <section class="Payment">
+                <button class="round round3dBtn" type="button">前往付款頁面</button>
+                </section>`
+            };
             $('.consumptionRecord_bouncing main').html(showOrder);
             $('.consumptionRecord_bouncing main .img').css('width', '100px');
         },
@@ -404,9 +406,8 @@ $('#oldOrder3dBtn').click(function() {
                         <button class="round round3dBtn" type="button">按鈕</button>
                     </section> -->
                 </section>
-            </section>`;
-
-            }
+            </section>`
+            };
             $('.consumptionRecord_bouncing main').html(showOrder);
             $('.consumptionRecord_bouncing main .img').css('width', '100px');
         },

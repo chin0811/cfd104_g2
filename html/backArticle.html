@@ -1,10 +1,14 @@
 @@include('layout/backheader.html',{title:"文章管理"})
+
         <section class="mainContent backArticle">
             <div id="backArticle">
+                <!-- 標題 -->
                 <ul class="articleTitle">
                     <li v-for="title in titles">{{title}}</li>
                 </ul>
-                <ul class="articleList" v-for="(article,key) in articleAll">
+                
+                <!-- 撈後臺數據 -->
+                <ul class="articleList" v-for="(article,key) in articleAll.slice(startPage, startPage + perPage)">
                     <li>{{article.articleNo}}</li>
                     <li>{{article.memNo}}</li>
                     <li>{{article.title}}</li>
@@ -15,13 +19,54 @@
                     <li @click="openLightBox(key)">編輯與查看</li>
                 </ul>
 
-
+                 <!-- 每個燈箱 -->
                 <section class="backLightBox articleLigthtBox displayNone" id="articleLigthtBox">
                     <i class="fas fa-times" @click="backCloseLight">x</i>
                     <ul>
-                        <li v-for=" lightBoxTitle in lightBoxTitles">{{lightBoxTitle}}</li>
+                        <!-- '文章標題','文章圖片','文章內容','檢舉狀態','審核狀態','是否顯示' -->
+                        <!-- <li>{{lightBoxTitles[0]}}{{lightBoxContent.articleNo}}</li>
+
+                        <li>{{lightBoxTitles[1]}}{{lightBoxContent.memNo}}</li> -->
+
+                        <li>{{lightBoxTitles[0]}}</li>
+                        <p>{{lightBoxContent.title}}</p>
+
+                        <li>{{lightBoxTitles[1]}}</li>
+                        <div class="pic">
+                            <img :src="src+lightBoxContent.pic" alt="">
+                        </div>
+
+                        <li>{{lightBoxTitles[2]}}</li>
+                        <p>{{lightBoxContent.content}}</p>
+
+                        <li>{{lightBoxTitles[3]}}</li>
+                        <select v-model="lightBoxContent.reportState">                                        
+                            <option  v-for="reportState in reportStateList" >{{reportState.name}}</option>                                    
+                        </select>
+
+                        <li>{{lightBoxTitles[4]}}</li>
+                        <select v-model="lightBoxContent.auditState">                                        
+                            <option  v-for="auditState in auditStateList" >{{auditState.name}}</option>                                    
+                        </select>
+
+                        <li>{{lightBoxTitles[5]}}</li>
+                        <select v-model="lightBoxContent.visibleStale">                                        
+                            <option  v-for="visibleStale in visibleStaleList" >{{visibleStale.name}}</option>                                    
+                        </select>
+
+
+                        <button @click="confirmChange">確認更改</button>
                     </ul>
                 </section>
+
+
+                <div  class="pageIndex">
+                    <ul>
+                        <li :class="{disabled: currentPage === 1}" @click="setPage(currentPage-1)"><a href="">< </a></li>
+                        <li v-for="n in totalPage" @click="setPage(n)"><a href="#">{{n}}</a></li>
+                        <li :class="{disabled: currentPage === totalPage}" @click="setPage(currentPage+1)"><a href="">></a></li>
+                    </ul>
+                </div>
 
 
 
@@ -34,27 +79,110 @@
             el:'#backArticle',
             data:{
                 titles: ['文章編號','作者編號','文章標題','刊登時間','檢舉狀態','審核狀態','是否顯示',''],
-                lightBoxTitles: ['文章編號','作者編號','檢舉狀態','審核狀態','是否顯示','文章標題','文章內容','刊登時間'],
-                articleAll:{},
+                // lightBoxTitles: ['文章編號','作者編號','文章標題','文章圖片','文章內容','檢舉狀態','審核狀態','是否顯示'],
+                lightBoxTitles: ['文章標題','文章圖片','文章內容','檢舉狀態','審核狀態','是否顯示'],
+
+                // 資料庫全部抓回來的資料
+                articleAll:[],
                 articleLigthtBox : document.querySelector("#articleLigthtBox"),
+                
+                // 每個燈箱的資料
+                lightBoxContent:[],
+
+                // 圖片路徑
+                src:'assets/image/',
+
+                // 創造頁籤
+                // rows: [],
+                perPage: 10,
+                currentPage: 1,
+
+                // 檢舉狀態選項
+                reportStateList:[
+                    {name: "檢舉"},
+                    {name: "未檢舉"},
+                ],
+
+                // 審核狀態選項
+                auditStateList:[
+                    {name: "無須審核"},
+                    {name: "待審核"},
+                    {name: "審核完成"},
+                    {name: "審核下架"},
+                ],
+
+                // 顯示狀態選項
+                visibleStaleList:[
+                    {name: "是"},
+                    {name: "否"},
+                ],
+
+                // 變更後檢舉狀態
+                reportStateChanged: '',
+                // 變更後審核狀態
+                auditStateChanged: '',
+            	// 變更後顯示狀態
+                visibleStaleChanged: '',
             },
-            
             mounted(){
                 let thisVue = this;
                 axios.get('php/backArticleSelect.php').then((res)=>{
                     this.articleAll = res.data;
-                    // console.log(this.articleAll);
                 }).catch((err)=>{
                     console.log(err)
-                })
+                });
+
+                
             },
 
             methods: {
                 openLightBox:function(key){
                     articleLigthtBox.classList.toggle("displayNone");
+                    this.lightBoxContent = this.articleAll[key];
                 },
                 backCloseLight:function(){
                     articleLigthtBox.classList.toggle("displayNone"); 
+                },
+                setPage(thePage){
+                    this.currentPage = thePage;
+                },
+                confirmChange(){
+                    let thisVue = this;
+                    // 檢舉狀態更新
+                    thisVue.reportStateChanged = thisVue.lightBoxContent.reportState ;
+                    // 審核狀態更新
+                    thisVue.auditStateChanged = thisVue.lightBoxContent.auditState ;
+                    // 顯示狀態更新
+                    thisVue.visibleStaleChanged = thisVue.lightBoxContent.visibleStale ;
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/backArticleRevise.php',
+                        data: {
+                            // 抓到文章編號
+                            articleNo:thisVue.lightBoxContent.articleNo,
+                            // 變更後檢舉狀態
+                            reportChanged:thisVue.reportStateChanged,
+                            // 變更後審核狀態
+                            auditChanged:thisVue.auditStateChanged,
+                            // 變更後顯示狀態
+                            visibleChanged:thisVue.visibleStaleChanged,
+                        },
+                        success: function(data) {
+                            console.log('修改成功');
+                        },
+                        error: function() {
+                            console.log('ajax error');
+                        }
+                    });
+                    articleLigthtBox.classList.toggle("displayNone");
+                }
+            },
+            computed: {
+                totalPage(){
+                    return Math.ceil(this.articleAll.length / this.perPage);
+                },
+                startPage(){
+                    return (this.currentPage - 1) * this.perPage;
                 },
             },
         })

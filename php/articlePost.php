@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $today = date('Y-m-d H:i:s');
     
     // 資料庫語法
-    $table ='discusart';//資料庫的table名稱
+    $table ='discusArt';//資料庫的table名稱
     $value = "$sqlNoNew,$MemNo,'$today',$articleContent";//文章編號+會員編號+時間
     
     $sql = "insert into $table value ($value)";
