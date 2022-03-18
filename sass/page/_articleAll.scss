@@ -1,33 +1,38 @@
-.articleContent{
+.articleContent {
     width: 90%;
     max-width: 1200px;
     padding: 10px;
-    margin:60px auto ;
+    margin: 60px auto;
     box-sizing: border-box;
     // 報紙效果
     background-color: #F7F7F7;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
+
 // articleContent所有a設定
-.articleContent a{
+.articleContent a {
     text-decoration: none;
 }
+
 // articleContent所有img設定
-.articleContent img{
+.articleContent img {
     width: 100%;
     vertical-align: middle;
     transition: .3s;
     filter: saturate(30%);
 }
-.articleContent img:hover{
+
+.articleContent img:hover {
     transform: scale(1.02);
     filter: saturate(100%);
 }
+
 // 主標
-.articleContent .mainTitle h1{
+.articleContent .mainTitle h1 {
     text-align: center;
 }
+
 // .articleContent .mainTitle p{
 //     position: absolute;
 //     top: 50%;
@@ -39,11 +44,12 @@
 //     display: inline-block;
 // }
 // 次標
-.articleContent .subTitle{
+.articleContent .subTitle {
     position: relative;
     margin-bottom: 15%;
 }
-.articleContent .subTitle  h2{
+
+.articleContent .subTitle h2 {
     text-align: center;
     position: relative;
     // 90%裡面80%
@@ -53,8 +59,9 @@
     font-size: 0.8em;
     line-height: 5;
 }
+
 .articleContent .subTitle h2:before,
-.articleContent .subTitle h2:after{
+.articleContent .subTitle h2:after {
     content: '';
     background-color: #222222b2;
     width: 100%;
@@ -65,45 +72,52 @@
     right: 0;
     margin: auto;
 }
-.articleContent .subTitle h2:before{
+
+.articleContent .subTitle h2:before {
     top: 10px;
 }
-.articleContent .subTitle h2:after{
+
+.articleContent .subTitle h2:after {
     bottom: 10px;
 }
-.articleContent .subTitle button{
+
+.articleContent .subTitle button {
     // 定位在.subTitle
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 105%;
 }
+
 // 手機直向排列設定
-.articleContent .wrap{
+.articleContent .wrap {
     display: block;
     // 90%裡面90%
     width: 90%;
-    margin:auto;
-} 
-.articleContent .wrap .item .pic{
+    margin: auto;
+}
+
+.articleContent .wrap .item .pic {
     width: 100%;
     max-height: 140px;
     overflow: hidden;
 }
-.articleContent .wrap .item{
+
+.articleContent .wrap .item {
     margin-bottom: 10%;
 }
-@media screen and (min-width:768px){
+
+@media screen and (min-width:768px) {
     // 電腦橫向排列設定
-    .articleContent .wrap{
+    .articleContent .wrap {
         display: flex;
-        margin:0 auto 2%;
+        margin: 0 auto 2%;
     }
     // 次標
-    .articleContent .subTitle{
+    .articleContent .subTitle {
         margin-bottom: 0%;
     }
-    .articleContent .subTitle  h2{
+    .articleContent .subTitle h2 {
         text-align: center;
         position: relative;
         // 90%裡面80%
@@ -112,7 +126,7 @@
         font-size: 1.953em;
         line-height: 3;
     }
-    .articleContent .subTitle button{
+    .articleContent .subTitle button {
         // 定位在.subTitle
         position: absolute;
         top: 50%;
@@ -121,49 +135,54 @@
         // 覆寫rwd
         left: auto;
     }
-    .articleContent .wrap:not(:last-child){
+    .articleContent .wrap:not(:last-child) {
         border-bottom: 8px solid #222222b2;
     }
     // 四欄設計
-    .articleContent .flat a,.articleContent .fourRows a{
+    .articleContent .flat a,
+    .articleContent .fourRows a {
         width: calc(100%/4);
         padding: 0 5px;
         box-sizing: border-box;
     }
     // 二欄設計
-    .articleContent .twoRows a{
+    .articleContent .twoRows a {
         width: calc(100%/2);
         padding: 0 5px;
         box-sizing: border-box;
     }
-    .articleContent .twoRows .item .pic{
+    .articleContent .twoRows .item .pic {
         max-height: 200px;
     }
     // 三欄設計
-    .articleContent .threeRows a{
+    .articleContent .threeRows a {
         width: calc(100%/3);
         padding: 0 5px;
         box-sizing: border-box;
     }
-    .articleContent .threeRows .item .pic{
+    .articleContent .threeRows .item .pic {
         max-height: 220px;
     }
-
 }
+
 // 切換數字
-.articletPageChange{
+.articletPageChange {
     margin: 5% auto 7% auto;
 }
-.articletPageChange ul{
+
+.articletPageChange ul {
     display: flex;
     justify-content: center;
 }
-.articletPageChange ul li{
-    margin:0 1%;
+
+.articletPageChange ul li {
+    margin: 0 1%;
 }
-.articletPageChange ul li a{
+
+.articletPageChange ul li a {
     color: #BCBCBC;
 }
-.articletPageChange ul li a:hover{
+
+.articletPageChange ul li a:hover {
     color: #394897;
 }

@@ -100,6 +100,8 @@
 //定位在圖片
 .productMainSection .commomItem .img{
     position: relative;
+    height: 200px;
+    overflow: hidden;
 }
 // 圖片左上右上原角
 .productMainSection .commomItem .img img{
@@ -156,6 +158,13 @@
 // 創作者名字
 .productMainSection .commomItem .text{
     flex-grow: 1;
+}
+.productMainSection .commomItem .text .introText{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 // 價格和日期
 .productMainSection .commomItem .footer{
