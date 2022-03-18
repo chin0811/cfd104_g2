@@ -16,8 +16,21 @@
                     <li>{{auction.startDate}}</li>
                     <li>{{auction.finishDate}}</li>
                     <li>{{auction.auctionStatus}}</li>    
-                    <li>編輯與查看</li>
+                    <li v-on:click="openLightBox(key)">編輯與查看</li>
                 </ul>
+                <section class="backLightBox auctionLigthtBox displayNone" id="auctionLigthtBox">
+                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
+                    <li>{{titles[0]}} {{lightIndex.auctionNo}}</li>
+                    <li>{{titles[1]}} {{lightIndex.productName}}</li>
+                    <li>{{titles[2]}} {{lightIndex.productName}}</li>
+                    <li>{{titles[3]}} {{lightIndex.memNo}}</li>
+                    <li>{{titles[4]}} {{lightIndex.startingPrice}}</li>
+                    <li>{{titles[5]}} {{lightIndex.price}}</li>
+                    <li>{{titles[6]}} {{lightIndex.startDate}}</li>
+                    <li>{{titles[7]}} {{lightIndex.finishDate}}</li>
+                    <li>{{titles[8]}} {{lightIndex.auctionStatus}}</li>
+                    <button v-on:click="confirmChange">確認</button>
+                </section>
             </div>
         </section>
     </section>
@@ -27,6 +40,9 @@
             data: {
                 titles: ['拍賣編號',  '拍賣商品', '商品名稱',  '上架會員', '起標價', '定價', '開始時間', '結束時間', '拍賣狀態','', ],
                 auctions:[],
+                auctionNo:[],
+                auctionLigthtBox : document.querySelector("#auctionLigthtBox"),
+                lightIndex:[],  
             },
             mounted(){
                 axios.get('php/backAuctionSelect.php').then((res)=>{
@@ -35,7 +51,19 @@
                     console.log(err)
                 })
             },
-            methods: {},
+            methods: {
+                openLightBox:function(key){
+                    auctionLigthtBox.classList.toggle("displayNone");
+                    this.lightIndex = this.auctions[key]; 
+                    this.auctionNo = key+1;
+                },
+                backCloseLight:function(){
+                    auctionLigthtBox.classList.toggle("displayNone"); 
+                },
+                confirmChange:function(){
+                    auctionLigthtBox.classList.toggle("displayNone");
+                }
+            },
             computed: {},
             watch: {},
         });

@@ -15,8 +15,23 @@
                     <li>{{order.closingPrice}}</li>
                     <li>{{order.creatDate}}</li>
                     <li>{{order.orderStatus}}</li>        
-                    <li>編輯與查看</li>
+                    <li v-on:click="openLightBox(key)">編輯與查看</li>
                 </ul>
+                <section class="backLightBox orderLigthtBox displayNone" id="orderLigthtBox">
+                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
+                    <li>{{titles[0]}} {{lightIndex.auctionNo}}</li>
+                    <li>{{titles[1]}} {{lightIndex.productName}}</li>
+                    <li>{{titles[2]}} {{lightIndex.memNoSale}}</li>
+                    <li>{{titles[3]}} {{lightIndex.memNoBuy}}</li>
+                    <li>{{titles[4]}} {{lightIndex.productNumber}}</li>
+                    <li>{{titles[5]}} {{lightIndex.closingPrice}}</li>
+                    <li>{{titles[6]}} {{lightIndex.creatDate}}</li>
+                    <li>{{titles[7]}} {{lightIndex.orderStatus}}</li>
+                    <select v-model="lightIndex.orderStatus ">                                        
+                        <option  v-for="orderStatus in orderStatusList" >{{orderStatus.name}}</option>                                    
+                    </select>
+                    <button v-on:click="confirmChange">確認</button>
+                </section>
             </div>
         </section>
     </section>
@@ -26,11 +41,51 @@
             data: {
                 titles: ['拍賣編號', '商品名稱', '販售會員編號','得標會員編號', '商品編號', '訂單金額', '建立日期', '訂單狀態',  '', ],
                 orders:[],
+                orderLigthtBox : document.querySelector("#orderLigthtBox"),
+                lightIndex:[],               
+                orderStatusList:[
+                {name: "訂單結單"},
+                {name: "出貨中"},
+                {name: "買家未付款"}
+                ],
+                auctionNo:[],
+                orderChanged:"",
             },
-            methods: {},
+            methods: {
+                openLightBox:function(key){
+                    console.log("haha")
+                    orderLigthtBox.classList.toggle("displayNone");
+                    this.lightIndex = this.orders[key]; 
+                    this.auctionNo = key+1;
+                },
+                backCloseLight:function(){
+                    orderLigthtBox.classList.toggle("displayNone"); 
+                },
+                confirmChange:function(){
+                    orderLigthtBox.classList.toggle("displayNone");
+                    this.orderChanged = this.lightIndex.orderStatus;
+                    console.log(this.orderChanged);
+                    let thisVue = this;
+                    $.ajax({
+                    type: 'POST',
+                    url: 'php/backReviseOrder.php',
+                    data: {
+                        auctionNo:JSON.stringify(thisVue.auctionNo),
+                        orderChanged :thisVue.orderChanged,
+                    },
+                    success: function(data) {
+                        console.log("成功了唷");
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                    }
+                    });
+                },
+            },
             mounted(){
                 axios.get('php/backOrderSelect.php').then((res)=>{
                     this.orders = res.data;
+                    console.log("抓到了")
                 }).catch((err)=>{
                     console.log(err)
                 })

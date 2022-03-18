@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select * from charobj";
+	$sql = "select * from charObj";
 	$discusArts = $pdo->query($sql);
 	$prodRow = $discusArts->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($prodRow,JSON_UNESCAPED_UNICODE);
