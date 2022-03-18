@@ -1,6 +1,53 @@
 @@include('layout/backheader.html',{title:"文章管理"})
         <section class="mainContent backArticle">
+            <div id="backArticle">
+                <ul class="articleTitle">
+                    <li v-for="title in titles">{{title}}</li>
+                </ul>
+                <ul class="articleList" v-for="article in articleAll">
+                    <li>{{article.articleNo}}</li>
+                    <li>{{article.memNo}}</li>
+                    <li>{{article.title}}</li>
+                    <li>{{article.postTime}}</li>
+                    <li>{{article.reportState}}</li>
+                    <li>{{article.auditState}}</li>
+                    <li>{{article.visibleStale}}</li>
+                    <li v-on:click="openLightBox(key)">編輯與查看</li>
+                </ul>
+
+
+                <section class="backLightBox articleLigthtBox displayNone" id="productLigthtBox">
+                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
+                    
+                </section>
+            </div>
+            
         </section>
     </section>
+    <script>
+        new Vue({
+            el:'#backArticle',
+            data:{
+                titles: ['文章編號', '作者編號', '刊登時間','檢舉狀態','審核狀態','文章標題','是否顯示',''],
+                articleAll:{},
+            },
+            
+            mounted(){
+                let thisVue = this;
+                axios.get('php/backArticleSelect.php').then((res)=>{
+                    this.articleAll = res.data;
+                    // console.log(this.articleAll);
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            },
+
+            methods: {
+                openLightBox:function(key){
+                    articleLigthtBox.classList.toggle("displayNone");
+                } 
+            },
+        })
+    </script>
 </body>
 </html>
