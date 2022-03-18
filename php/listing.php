@@ -151,7 +151,7 @@ require_once("g2_dataConnect.php");
                 // echo "系統暫時不能提供服務~";
         }
     }
-
+    header('Refresh:0.5;url=../homePage.html');
 // }else{
 // 	$message['message'] = "大失敗";
 // }
