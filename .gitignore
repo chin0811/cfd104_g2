@@ -1,7 +1,7 @@
 node_modules
 css
 .vscode
-
+*.html
 package-lock.json
 dist
 g2_dataConnect.php
