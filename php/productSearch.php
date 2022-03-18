@@ -1,7 +1,7 @@
 <?php 
 try{
 	require_once("g2_dataConnect.php");
-	$sql = "select * from administrator where adminNo = {$_GET["number"]}";
+	$sql = "select * from actord join com on actord.productNumber = com.prodNo  where com.prodNo = {$_GET["number"]}";
 	$products = $pdo->query($sql);
 	$prodRow = $products->fetch(PDO::FETCH_ASSOC);
     echo json_encode($prodRow,JSON_UNESCAPED_UNICODE);
