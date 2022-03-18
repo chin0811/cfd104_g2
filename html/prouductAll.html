@@ -20,6 +20,15 @@
         })
     </script>
     <!-- 登入ＥＮＤ  -->
+    <style>
+    .productMainSection .commomItem .text .introText{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    </style>
 </head>
 <body>
     <!-- 許瑀芹 -->
@@ -83,9 +92,9 @@
                     </div>
                 </div>
                 <!-- 輪播卡片們-->
-                <article class="prouductItem commomItem carouselItem" v-for="item in items">
+                <article class="prouductItem commomItem carouselItem" v-for="(product, key) in products">
                     <div class="img">
-                        <img :src="item.img">
+                        <img :src="product.url">
                         <!-- 定位absolute，父層prouductItem，定位position -->
                         <div class="like mainColor">
                             <div class="pic">
@@ -97,21 +106,21 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h4 class="deepColor">{{item.title}}</h4>
+                        <h4 class="deepColor">{{product.productName}}</h4>
                         <p>
                             <span class="small lightColor">創作者：</span>
-                            <span class="small lightColor">{{item.creator}}</span>
+                            <span class="small lightColor">{{product.creator}}</span>
                         </p>
                         <p class="introText">
-                            <span>{{item.intro}}</span>
+                            <span>{{product.info}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span class="epBColor">{{item.price}}</span>
-                        <span class="small deepColor">{{item.time}}</span>
+                        <span class="epBColor">{{product.startingPrice}}</span>
+                        <span class="small deepColor">{{product.finishDate}}</span>
                     </div>
                     <div class="productButton">
-                        <a href="productSingle.html">
+                        <a :href="createHref()" @click="send(key)">
                             <button class="round">出價</button>
                         </a>
                     </div>
@@ -136,13 +145,13 @@
                 <span>分類</span>
             </section>
             <div class="productSection size marginAuto">
-                <article class="prouductItem commomItem" v-for="product in products">
+                <article class="prouductItem commomItem" v-for='(product, key) in products'>
                     <div class="img">
-                        <img :src="product.img">
+                        <img :src="product.url">
                         <!-- 定位absolute，父層prouductItem，定位position -->
                         <div class="like mainColor">
                             <div class="pic">
-                                <img src="assets/image/all_like.png" alt="">
+                                <img :src="product.url" alt="">
                             </div>
                             <span class="small deepColor">
                                 75
@@ -150,25 +159,24 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h4 class="deepColor">{{product.title}}</h4>
+                        <h4 class="deepColor">{{product.productName}}</h4>
                         <p>
                             <span class="small lightColor">創作者：</span>
                             <span class="small lightColor">{{product.creator}}</span>
                         </p>
                         <p class="introText">
-                            <span>{{product.intro}}</span>
+                            <span>{{product.info}}</span>
                         </p>
                     </div>
                     <div class="footer">
-                        <span class="epBColor">{{product.price}}</span>
-                        <span class="small deepColor">{{product.time}}</span>
+                        <span class="epBColor">${{product.startingPrice}}</span>
+                        <span class="small deepColor">{{product.finishDate}}</span>
                     </div>
                     <div class="productButton">
-                        <a href="productSingle.html">
+                        <a :href="createHref()" @click="send(key)">
                             <button class="round">出價</button>
                         </a>
                     </div>
-                    
                 </article>
             </div>
         </section>

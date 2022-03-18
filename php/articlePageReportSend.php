@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $thisArticleNo = "$ArticleNo";
     //傳進來的東西，是要可以直接寫進sql的行式
     $sql = "update $table set reportState ='$Report',
-                              auditState = '審核中'
+                              auditState = '待審核'
                               where articleNo = $thisArticleNo";
     // 傳到資料庫裏面去
     try {
