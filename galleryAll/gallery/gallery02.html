@@ -15,10 +15,14 @@
     <script type="module" src="gallery02.js"></script>
     <script src="../js/OBJLoader.js"></script>
     <script src="../js/threex.domevents.js"></script>
-    <!-- 香菸 -->
+
     <section class="lightBox displayNone" id="lightBoxP3">
         <i class="closeLightBox fas fa-times" id="closeLightBoxP3">x</i>
+        <!-- 圖片ease-in-out-->
         <div class="photoBox">
+            <div class="ease">
+                <img src="https://picsum.photos/500/300/?random=10">
+            </div>
         </div>
         <div class="lightBoxContent">
             <h3>寂寞菸火</h3>
@@ -30,6 +34,19 @@
     <section class="lightBox displayNone" id="lightBoxP4">
         <i class="closeLightBox fas fa-times" id="closeLightBoxP4">x</i>
         <div class="photoBox">
+            <!-- 方塊旋轉 -->
+            <div class="wrap">
+                <button id="cubeBtn" class="round">點我</button>     <!--方塊收起按鈕-->
+                <div class="cube">
+                    <div class="top"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></div>
+                    <div>
+                        <span style="--i:0"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
+                        <span style="--i:1"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
+                        <span style="--i:2"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
+                        <span style="--i:3"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="lightBoxContent">
             <h3>哈哈哈哈哈</h3>
@@ -41,6 +58,26 @@
     <section class="lightBox displayNone" id="lightBoxP5">
         <i class="closeLightBox fas fa-times" id="closeLightBoxP5">x</i>
         <div class="photoBox">
+            <div class="card">
+                <div class="card_inner">
+                    <div class="card_face card_face--front">
+                        <!-- <h2>Card Front</h2> -->
+                        <img src="../../assets/image/listingImage/listing_bg_picture1.png" alt="none">
+                    </div>
+                    <div class="card_face card_face--back">
+                        <!-- <div class="card__content">
+                            <div class="card__header">
+                                <img src="pp.jpg" alt="" class="pp" />
+                                <h2>Tyler Potts</h2>
+                            </div> -->
+                            <div class="card_body">
+                                <h3>Beauty is everywhere!</h3>
+                                <!-- <p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p> -->
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="lightBoxContent">
             <h3>哦哦哦哦</h3>
@@ -52,6 +89,34 @@
     <section class="lightBox displayNone" id="lightBoxPumpkin">
         <i class="closeLightBox fas fa-times" id="closeLightBoxPumpkin">x</i>
         <div class="photoBox">
+            <!-- slitting -->
+            <main id="banksy">
+                <!-- <header>
+                <a href="https://medium.com/@leemartin/how-to-recreate-the-banksy-artwork-shredder-using-css-grid-ff20c0f5a19" target="blank">Read Tutorial on Medium</a>
+                </header> -->
+            <div id="piece" @click="$refs.art.click()">
+                <div id="holder">
+                    <div id="painting">
+                    <div id="shredded">
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    <div class="shred"></div>
+                    </div>
+                    <div id="original"></div>
+                    </div>
+                </div>
+                <div id="frame"></div>
+            </div>
+            <!-- <input ref="art" type="file" accept="image/*" @change="artSelected"> -->
+            </main>
         </div>
         <div class="lightBoxContent">
             <h3>微笑南瓜</h3>
@@ -62,7 +127,17 @@
     </section>
     <section class="lightBox displayNone" id="lightBoxPumpkin02">
         <i class="closeLightBox fas fa-times" id="closeLightBoxPumpkin02">x</i>
+        <!-- afterImage -->
         <div class="photoBox">
+            <div class="container">
+                <div class="compare">
+                    <div class="before">
+                        <div class="after"></div>
+                    </div>
+                    <p>請拖曳藍線</p>
+                    <input type="range" min="0" max="540" step="10" id="compare-ip">
+                </div>
+            </div>
         </div>
         <div class="lightBoxContent">
             <h3>生氣南瓜</h3>
@@ -84,6 +159,111 @@
     </section>
 </body>
 </html>
+<!-- 圖片ease-in-out-->
+<link rel="stylesheet" href="ease.css">
+
+<!-- 方塊旋轉 -->
+<link rel="stylesheet" href="cubeGallery02.css">
+<script src="../js/jquery.min.js"></script>
+<!--方塊收起-->
+<script>
+    $(function () {
+        $(`#cubeBtn`).click(function(){
+            $('span').slideToggle();
+        });
+    });
+</script>
+
+<!-- flipClick -->
+<link rel="stylesheet" href="flipClick.css">
+<script>
+    const card = document.querySelector(".card_inner");
+    
+    card.addEventListener("click", function (e) {
+      card.classList.toggle('is-flipped');
+    });
+</script>
+
+<!-- slitting -->
+<link rel="stylesheet" href="slittingGallery02.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
+<!-- <link rel="stylesheet" href="assets/galleryCss/sliting.css"> -->
+<script>
+const app = new Vue({
+    el: '#banksy',
+    data() {
+    return {
+        shredding: null,
+        dropping: null
+    }
+    },
+    methods: {
+    shred() {
+        this.shredding = anime({
+        targets: '#original',
+        height: 0,
+        duration: 10000,
+        easing: 'linear',
+        loop:true
+        })
+
+        this.dropping = anime({
+        targets: '#painting',
+        translateY: '101%',
+        duration: 10000,
+        easing: 'linear',
+        loop:true
+        })
+    },
+    artSelected(e) {
+        this.shredding.pause()
+        this.dropping.pause()
+
+        loadImage(
+        e.target.files[0],
+        canvas => {
+            let url = canvas.toDataURL('image/jpeg')
+
+            document.getElementById('original').style.backgroundImage = `url(${url})`
+
+            let elements = Array.from(document.getElementsByClassName('shred'))
+
+            elements.forEach(element => {
+            element.style.backgroundImage = `url(${url})`
+            })
+
+            document.getElementById('original').style.height    = '100%'
+            document.getElementById('painting').style.transform = 'translateY(0)'
+
+            this.shred()
+        }, {
+            canvas: true,
+            crop: true,
+            maxHeight: 566,
+            maxWidth: 392,
+            orientation: true
+        }
+        )
+    }
+    },
+    mounted() {
+    this.shred()
+    }
+})
+</script>
+
+<!-- afterImage -->
+<link rel="stylesheet" href="afterImageGallery02.css">
+
+<script>
+    document.querySelector('.compare #compare-ip').addEventListener('input', function(e){
+        document.querySelector('.compare .before .after').style.width = (+e.target.value) + "px";
+    });
+</script>
+
+
 
 
 

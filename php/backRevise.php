@@ -3,18 +3,16 @@ header('Content-Type: application/json; charset=utf-8');
 require_once("g2_dataConnect.php");
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 確認是否收到js給我的資料
-    // 收到檢舉的VALUE
-	$Report = ($_POST['Report']);
-    $ArticleNo = json_decode($_POST['ArticleNo']);
+	$prodNo = $_POST['prodNo'];
+    $auditChanged = $_POST['auditChanged'];
+    $saleChanged = $_POST['saleChanged'];
 	$message['message'] = "傳成功了";
-
+    // 修改資料庫
     // 資料庫語法
-    $table ='discusArt';//資料庫的table名稱
-    $thisArticleNo = "$ArticleNo";
-    //傳進來的東西，是要可以直接寫進sql的行式
-    $sql = "update $table set reportState ='$Report',
-                              auditState = '審核中'
-                              where articleNo = $thisArticleNo";
+    $table ='com';//資料庫的table名稱
+
+    $sql = "update $table SET auditState='$auditChanged', saleStatus='$saleChanged' WHERE prodNo=$prodNo";
+
     // 傳到資料庫裏面去
     try {
         $statement = $pdo->prepare($sql);
@@ -34,6 +32,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }else{
 	$message['message'] = "大失敗";
 }
-	echo json_encode($message,JSON_UNESCAPED_UNICODE);
-    // echo json_encode($msg,JSON_UNESCAPED_UNICODE);
+	// echo json_encode($message,JSON_UNESCAPED_UNICODE);
+    echo json_encode($sql,JSON_UNESCAPED_UNICODE);
 ?>

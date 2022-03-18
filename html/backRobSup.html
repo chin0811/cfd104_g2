@@ -6,7 +6,7 @@
                         <th>關鍵字</th>
                         <th>回答</th>
                         <th>
-                            <button @click="txtBoxShowInput = !txtBoxShowInput">新增</button>
+                            <button @click="txtBoxShowInput = !txtBoxShowInput" class="round">新增</button>
                             
                         </th>
                     </tr>
@@ -15,7 +15,7 @@
                     <tr class="robSupTxt" v-for="(data,index) in datas">
                         <td>{{data.keyWord}}</td>
                         <td>{{data.ans}}</td>
-                        <td><button @click="selectData(index)">編輯</button><button @click="selectDelete(data.issueNo)">刪除</button></td>
+                        <td><button @click="selectData(index)" class="round">編輯</button><button @click="selectDelete(data.issueNo)" class="whiteRound">刪除</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -34,8 +34,8 @@
                         <textarea v-model="robSupWord" name="robSupWord"></textarea>
                     </div>
                     <div>
-                        <input type="button" value="取消" @click="txtBoxShow = !txtBoxShow">
-                        <input type="submit" value="確認">
+                        <input type="button" value="取消" @click="txtBoxShow = !txtBoxShow" class="whiteRound">
+                        <input type="submit" value="確認"  class="round">
                     </div>
                 </form>
             </article>
@@ -54,8 +54,8 @@
                         <textarea name="robSupWord"></textarea>
                     </div>
                     <div>
-                        <input type="button" value="取消" @click="txtBoxShowInput = !txtBoxShowInput">
-                        <input type="submit" value="確認">
+                        <input type="button" value="取消" @click="txtBoxShowInput = !txtBoxShowInput" class="whiteRound">
+                        <input type="submit" value="確認" class="round">
                     </div>
                 </form>
             </article>

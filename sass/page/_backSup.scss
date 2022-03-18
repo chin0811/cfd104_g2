@@ -1,0 +1,104 @@
+$uiColor:(
+	"main":#FFFFFF,
+	"strongBtn":#FFD60A,
+	"strongTxt":#394897,
+    "deepTxt":#141414,
+    "lightTxt":#BCBCBC,
+    "error":#EF5C5C,
+    "correct":#7AC74F,
+    "background":#FBF7F3,
+);
+.backSup{
+    //真人客服最外框
+    box-sizing: border-box;
+    width: 100%;
+    .title{
+        display: flex;
+        justify-content: space-between;
+        img{
+            vertical-align: top;
+            width: 1em;
+            cursor: pointer;
+        }
+    }
+    table{
+        text-align: center;
+        width: 100%;
+        tr{
+            box-sizing: border-box;
+            // padding: 0.5em 1em;
+            line-height: 3em;
+        }
+    }
+
+    .txtLightBox{
+        //燈箱
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 20%;
+        margin: auto;
+        width: 75%;
+        height: 85%;
+        box-sizing: border-box;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+
+        .txtArea{
+            //聊天內容區
+            margin: 1em 0em;
+            flex-grow: 1;
+            padding: 0em 1em;
+            overflow-y: scroll;
+            -webkit-appearance: none;
+            >article{
+                /*單個對話紀錄框*/
+                margin: 3em 0em;
+                width: 100%;
+                display: flex;
+                p{
+                    /*對話紀錄內文*/
+                    color: map-get( $uiColor , "deepTxt" );
+                    background-color: map-get($uiColor, "main" );
+                    border-radius: 20px;
+                    box-sizing: border-box;
+                    padding: 1em 1em;
+                    max-width: 70%;
+                    box-shadow: 1px 1px 5px 0px #aaa5;
+                    position: relative;
+                }
+            }
+            >.meTxt{
+                //自己留言框
+                flex-direction: row-reverse;
+                p{
+                    /*對話紀錄內文*/
+                    color: map-get( $uiColor , "main" );
+                    background-color: map-get($uiColor, "strongTxt" );
+                }
+            }
+        }
+        div:last-of-type{
+            display: flex;
+            //輸入區 按鈕
+            textarea{
+                flex-grow: 1;
+                min-height: 100px;
+            }
+            img{
+                //按紐
+                margin: auto 1em;
+                vertical-align: top;
+                // width: 50%;
+                width: 50px;
+                box-sizing: border-box;
+                border-radius: 50%;
+                aspect-ratio: 1/1;
+                padding: 0.5em;
+            }
+        }
+        
+    }
+}

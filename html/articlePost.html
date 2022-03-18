@@ -44,10 +44,10 @@
                                 <img src="assets/image/upload_image_icon.png" alt="">
                         </div>
                     </label>
-                    <input type="file" id="articlePic" accept="image/png, image/jpeg" name="pic" @change="pic($event)"  required>
+                    <input type="file" id="articlePic" accept="image/png, image/jpeg" name="pic" @change="pic($event)" required>
                     <div class="buttonList">
-                        <input class="squareOutline" type="reset" value="取消" >
-                        <input class="square" type="submit" value="刊登">
+                        <input class="squareOutline" type="button" value="取消" @click="resetArticle">
+                        <input class="square" type="button" value="刊登" @click="insertArticle">
                     </div>
                 </form>
             </section>
@@ -69,6 +69,7 @@
                 title:'',
                 content:'',
                 articlePic:'',
+                memData:{},
             },
             methods:{
                 descInput(){
@@ -76,9 +77,41 @@
                 this.remnant = 11 - txtVal;
                 },
                 pic(event){
-                    this.articlePic=event.target.files[0]
+                    this.articlePic=event.target.files[0].name;
+                },
+                insertArticle() {
+                    this.memData = memData;
+                    if(this.title == "" | this.content == "" | this.articlePic == ""){
+                        alert('請輸入完整資訊');
+                    }else{
+                        // 避免抓到ajax的this
+                        let thisVue = this;
+                        // console.log(thisVue.MyComment);
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/articlePost.php',
+                            data: {
+                                MemNo:JSON.stringify(`${thisVue.memData.memNo}`),
+                                ArticleContent:JSON.stringify(`'未檢舉','無須檢舉',0,'${thisVue.articlePic}','${thisVue.title}','${thisVue.content}','是'`),
+                            },
+                            success: function(data) {
+                                // console.log(data);
+                                console.log("成功了嗎?");
+                            },
+                            error: function() {
+                                console.log('ajax error');
+                            }
+                        });
+                        alert('新增成功');
+                        window.location='articleALL.html';
+                    }
+                },
+                resetArticle(){
+                    this.title = "" ;
+                    this.content = "" ;
+                    this.articlePic = "";
                 }
-            }
+            },
         });
     </script>
 </body>

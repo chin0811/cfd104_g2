@@ -7,6 +7,7 @@
         }
         .robSupTitle{
             th{
+               
                 box-sizing: border-box;
                 padding: 0.5em 0.5em;
                 text-align: center;
@@ -16,9 +17,9 @@
                 &:nth-child(2){
                    flex-grow: 1;
                 }
-                &:nth-child(3){
-                    width: 5em;
-                }
+                // &:nth-child(3){
+                //     width: 5em;
+                // }
             }
         }
         .robSupTxt{
@@ -30,7 +31,8 @@
                 padding: 0.5em 0.5em;
                 text-align: left;
                 &:nth-child(1){
-                    width: 5em;
+                    // width: 5em;
+                    white-space: normal;
                 }
                 &:nth-child(2){
                     flex-grow: 1;
@@ -40,7 +42,8 @@
                     white-space: normal;
                 }
                 &:nth-child(3){
-                    width: 8em;
+                    // width: 15em;
+                    white-space: nowrap;
                     text-align: center;
                 }
             }

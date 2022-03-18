@@ -1,10 +1,10 @@
 .displayNone{
     display: none;
 }
-body {
+/* body {
     margin: 0;
     overflow: hidden;
-}
+} */
 #stats {
     position: absolute;
     left: 0;
@@ -92,4 +92,3 @@ a{
     cursor: pointer;
 }
 
-  

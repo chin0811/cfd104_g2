@@ -16,8 +16,10 @@ try {
     //     $msg['msg'] = '更新失敗';
     // }
     $index = $_GET['index'];
-    $sql = "DELETE FROM robsup WHERE issueNo = $index";
-    $pdo->exec($sql);
+    $sql="DELETE FROM robSup WHERE issueNo=$index";
+    $statement = $pdo->exec($sql);
+    // $statement = $pdo->prepare($sql);
+    // $result = $statement->execute();
     // header('Refresh:0.5;url=../backRobSup.html');
     $msg['msg'] = "成功";
 }

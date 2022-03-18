@@ -8,11 +8,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$message['message'] = "傳成功了";
 
     // 資料庫語法
-    $table ='discusart';//資料庫的table名稱
+    $table ='discusArt';//資料庫的table名稱
     $value = "$Likes";
     $thisArticleNo = "$ArticleNo";
     //傳進來的東西，是要可以直接寫進sql的行式
-    $sql = "update $table set likes $value where articleNo = 1";
+    $sql = "update $table set articleLikes=$value where articleNo = $thisArticleNo";
     // 傳到資料庫裏面去
     try {
         $statement = $pdo->prepare($sql);

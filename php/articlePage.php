@@ -3,9 +3,14 @@
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select M.memName, D.time, D.pic, D.title, D.content, D.likes, D.articleNo
-			from MEMBER M join discusArt D on M.memNo =D.memNo
-			where articleNo = 1";
+	$articleNo = $_GET['articleNo'];
+	// echo $articleNo;
+	$sql = "select M.memName, M.virChaNo, M.virBgNo, 
+				   D.postTime, D.pic, D.title, D.content, D.articleLikes, D.articleNo, 
+				   C.picture
+			from member M join discusArt D on M.memNo =D.memNo
+						  join charObj C on M.virChaNo=C.objNo
+			where articleNo = $articleNo";
 	$discusArts = $pdo->query($sql);
 	$prodRow = $discusArts->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($prodRow,JSON_UNESCAPED_UNICODE);
