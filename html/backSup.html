@@ -28,9 +28,9 @@
                 <div class="title">
                     <div>
                         <p>會員名稱：{{memData.memName}}</p>
-                        <button class="round">處理完成</button>
+                        <button class="round" @click="selectChange()">處理完成</button>
                     </div>
-                    <img src="assets\image\supportPage_close_icon.svg" alt="" @click="chatroomShow = false">
+                    <img src="assets\image\supportPage_close_icon.svg" alt="" @click="chatroomShowclosure">
                 </div>
                 <article class="txtArea">
                     <!-- <article class="meTxt">
@@ -83,33 +83,62 @@
                     memData:'',
                     inputTxt:'',
                     currentlyIndex:0,
+                    maxNumber:0,
+                    timer:'',
+                    timerAll:'',
 
                 },
                 methods: {  //函數大部分放在這裡
+
                     selectChatroom(data,index){
                         this.chatroomShow = !this.chatroomShow;
                         this.messageObject = [];
                         this.memData = data;
                         this.currentlyIndex = data.quizNo;
+                        this.maxNumber = 0;
+                        this.timer = setInterval(()=>{
+                            this.reLoad();
+                            console.log('AAA')
+                        },3000)
                         // console.log(this.memData.quizNo);
                         // console.log('安安');
                         axios({
                                 method: 'GET',
-                                url: `php/supAll.php?index=${data.quizNo}`,
+                                url: `php/supAll.php?index=${this.memData.quizNo}`,
                                 //API要求的資料
                             })
                             .then((response) => { 
                                 // this.messageData = response.data;
-                                // console.log(response.data)
+                                console.log(response.data)
                                 response.data.forEach(element => {
                                     this.messageObject.push({message: `${element.content}` , classS: `${(element.memType == '客服') ? 'meTxt':'AA'}`})
                                     console.log(element);
+                                    this.maxNumber = element.chatNo;
+                                    setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                                 });
-                                // this.messageObject.push({message: `${response.data[0].content}` , classS: `${(response.data[0].memType == '客服') ? 'meTxt':'AA'}`})
-                                // setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                                
                             })
                             .catch((error) => {console.log(error)} )
                         
+                    },
+                    reLoad(){
+                        axios({
+                                method: 'GET',
+                                url: `php/supAll.php?index=${this.memData.quizNo}&maxNumber=${this.maxNumber}`,
+                                //API要求的資料
+                            })
+                            .then((response) => { 
+                                response.data.forEach(element => {
+                                    this.messageObject.push({message: `${element.content}` , classS: `${(element.memType == '客服') ? 'meTxt':'AA'}`})
+                                    console.log(element);
+                                    this.maxNumber = element.chatNo;
+                                    setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                                });
+
+
+
+                            })
+                            .catch((error) => {console.log(error)} )
                     },
                     sendTxt(){
                         // this.currentlyIndex
@@ -123,10 +152,11 @@
                             
                         },
                         }).then((res)=>{
-                            console.log("從php傳來的東西",res)
+                            // console.log("從php傳來的東西",res)
                             setTimeout(()=>{
-                                this.messageObject.push({message: `${res.data[0].ans}` , class: 'robotTxt'})
-                                setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                                // this.messageObject.push({message: `${res.data[0].ans}` , class: 'robotTxt'})
+                                this.reLoad();
+                                
                         },500)
                         }).catch((err)=>{
                             console.log(err)
@@ -146,22 +176,34 @@
                                 },
                             })
                             .then((response) => {  
-                                console.log(response.data) 
+                                // console.log(response.data) 
                             })
                             .catch((error) => console.log(error))
                         }
                         
                     },
-                    // dataLoad(){
-                    //     axios({
-                    //         method:'post',
-                    //         url:"php/robSupBack.php",
-                    //     }).then((res)=>{
-                    //         this.datas = res.data;
-                    //         console.log(res.data)
-                    //     }).catch((err)=>{ console.log(err) })
-                    // }
-    
+                    chatroomShowclosure(){
+                        this.chatroomShow = false;
+                        clearInterval(this.timer);
+                    },
+                    selectChange(){
+                        var yes = confirm('你確定嗎？');
+                        if(yes){
+                            axios({
+                                method: 'post',
+                                url: `php/supChange.php?quizNo=${this.currentlyIndex}`,
+                                //API要求的資料
+                                data: {
+                                },
+                            })
+                            .then((response) => {  
+                                // console.log(response.data) 
+                                location.reload();
+                            })
+                            .catch((error) => console.log(error))
+                        }
+                    }
+
                 },
                 computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值
                     
@@ -173,12 +215,24 @@
                     },
                 },
                 mounted(){
+                    this.timerAll = setInterval(()=>{
+                        axios({
+                            method:'post',
+                            url:"php/supKey.php",
+                        }).then((res)=>{
+                            this.datas = res.data;
+                            console.log(res.data)
+                            // setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                        }).catch((err)=>{ console.log(err) })
+                        console.log('BBB')
+                    },3000)
                     axios({
                             method:'post',
                             url:"php/supKey.php",
                         }).then((res)=>{
                             this.datas = res.data;
                             console.log(res.data)
+                            // setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                         }).catch((err)=>{ console.log(err) })
                 },
             

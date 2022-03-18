@@ -9,7 +9,14 @@ try {
 	// echo json_encode($data,JSON_UNESCAPED_UNICODE);
 	// empty()
 	// isset()
-	$sql = "SELECT * FROM liveSupRec WHERE quizNo = '{$_GET['index']}'";
+	// echo $_GET['maxNumber'];
+	if(empty($_GET['maxNumber'])){
+		$sql = "SELECT * FROM liveSupRec WHERE quizNo = '{$_GET['index']}'";
+	}else{
+		$sql = "SELECT * FROM liveSupRec WHERE quizNo = '{$_GET['index']}' AND chatNo > {$_GET['maxNumber']} ";
+		
+	}
+	
 	// $sql = "SELECT * FROM liveSupRec WHERE quizNo = 1";
 	$datas = $pdo->query($sql);
 	$data = $datas->fetchAll(PDO::FETCH_ASSOC);
