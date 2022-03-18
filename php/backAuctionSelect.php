@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
-	$sql = "select * from actord join com on actord.productNumber = com.prodNo";
+	$sql = "select * from actOrd join com on actOrd.productNumber = com.prodNo";
 	$prodImage = $pdo->query($sql);
 	$prodRow = $prodImage->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($prodRow,JSON_UNESCAPED_UNICODE);
