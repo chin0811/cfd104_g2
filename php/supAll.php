@@ -10,6 +10,7 @@ try {
 	// empty()
 	// isset()
 	$sql = "SELECT * FROM liveSupRec WHERE quizNo = '{$_GET['index']}'";
+	// $sql = "SELECT * FROM liveSupRec WHERE quizNo = 1";
 	$datas = $pdo->query($sql);
 	$data = $datas->fetchAll(PDO::FETCH_ASSOC);
 	echo  json_encode($data,JSON_UNESCAPED_UNICODE);
