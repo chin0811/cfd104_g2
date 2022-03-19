@@ -18,7 +18,7 @@
                             <td>{{data.adminName}}</td>
                             <td>{{data.stTimer}}</td>
                             <td>
-                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'" @click="selectChatroom(data,index)">{{data.finishState}}</button>
+                                <button :class="(data.finishState == '未結束') ? 'round':'whiteRound'" @click="selectChatroom(data,index,data.finishState)">{{data.finishState}}</button>
                             </td>
                         </tr>
                     </tbody>
@@ -65,7 +65,7 @@
                     </article> -->
                     <messageart v-for="item in messageObject" v-bind="item"/>
                 </article>
-                <div>
+                <div v-show="(finishState == '未結束')">
                     <textarea v-model="inputTxt"></textarea>
                     <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent" @click="sendTxt">
                 </div>
@@ -86,19 +86,20 @@
                     maxNumber:0,
                     timer:'',
                     timerAll:'',
-                    
+                    finishState:'',
                 },
                 methods: {  //函數大部分放在這裡
 
-                    selectChatroom(data,index){
+                    selectChatroom(data,index,finishState){
                         this.chatroomShow = !this.chatroomShow;
+                        this.finishState = finishState,
                         this.messageObject = [];
                         this.memData = data;
                         this.currentlyIndex = data.quizNo;
                         this.maxNumber = 0;
                         this.timer = setInterval(()=>{
                             this.reLoad();
-                            console.log('AAA')
+                            // console.log('AAA')
                         },3000)
                         // console.log(this.memData.quizNo);
                         // console.log('安安');
@@ -109,10 +110,10 @@
                             })
                             .then((response) => { 
                                 // this.messageData = response.data;
-                                console.log(response.data)
+                                // console.log(response.data)
                                 response.data.forEach(element => {
                                     this.messageObject.push({message: `${element.content}` , classS: `${(element.memType == '客服') ? 'meTxt':'AA'}`})
-                                    console.log(element);
+                                    // console.log(element);
                                     this.maxNumber = element.chatNo;
                                     setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                                 });
@@ -211,17 +212,17 @@
                             url:"php/supKey.php",
                         }).then((res)=>{
                             this.datas = res.data;
-                            console.log(res.data)
+                            // console.log(res.data)
                             // setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                         }).catch((err)=>{ console.log(err) })
-                        console.log('BBB')
+                        // console.log('BBB')
                     },3000)
                     axios({
                             method:'post',
                             url:"php/supKey.php",
                         }).then((res)=>{
                             this.datas = res.data;
-                            console.log(res.data)
+                            // console.log(res.data)
                             // setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                         }).catch((err)=>{ console.log(err) })
                 },
