@@ -4,7 +4,7 @@ try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
 	$articleNo = $_GET['articleNo'];
-	$sql = "select pic, content
+	$sql = "select pic, content, articleNo
 			from discusArt 
 			where memNo = (SELECT memNo FROM discusArt WHERE articleNo = $articleNo )
 			order by postTime DESC

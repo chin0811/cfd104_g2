@@ -37,7 +37,7 @@
                         <ul>
                             <li><a href="homePage.html" class="lightColor">首頁</a></li>
                             <li ><a href="articleAll.html" class="lightColor">>藝論</a></li>
-                            <li><a href="articlePage.html" class="epBColor">>這篇文章</a></li>
+                            <li v-for="discusArt in discusArtAll"><a href="articlePage.html" class="epBColor">>{{discusArt.title}}</a></li>
                         </ul>
                     </div>
                     <div class="authorShortIntro" v-for="discusArt in discusArtAll">
@@ -64,7 +64,8 @@
                                 <img :src="src+discusArt.pic">
                             </div>
                             <div class="txt">
-                                <p class="deepColor">{{discusArt.content}}</p>
+                                <!-- <p class="deepColor">{{discusArt.content}}</p> -->
+                                <p class="deepColor" v-html="discusArt.content"></p>
                             </div>
                         </div>
                         <div class="shareBar">
@@ -107,15 +108,17 @@
                     </article>
                     <section class="relative">
                         <h2>最新文章</h2>
-                        <div class="item" v-for="latestArticle in latestArticles">
-                            <div class="pic">
-                                <img :src='src+latestArticle.pic'>
+                        <a :href="'articlePage.html?articleNo='+latestArticle.articleNo" v-for="latestArticle in latestArticles">
+                            <div class="item">
+                                <div class="pic">
+                                    <img :src='src+latestArticle.pic'>
+                                </div>
+                                <div class="txt">
+                                    <h4 class="deepColor">{{latestArticle.title}}</h4>
+                                    <p class="lightColor small">{{latestArticle.content | ellipsis}}</p>
+                                </div>
                             </div>
-                            <div class="txt">
-                                <h4>{{latestArticle.title}}</h4>
-                                <p class="deepColor small">{{latestArticle.content | ellipsis}}</p>
-                            </div>
-                        </div>
+                        </a>
                     </section>
                 </div>           
                 <aside class="sideInfo">
@@ -129,16 +132,16 @@
                     </div>
                     <div class="relativeSide">
                         <h4>我的文章</h4>
-                        <div class="item" v-for="MyArticle in MyArticles">
-                            <a href="">
-                            <div class="pic">
-                                <img :src="src+MyArticle.pic">
+                        <a :href="'articlePage.html?articleNo='+MyArticle.articleNo" v-for="MyArticle in MyArticles">
+                            <div class="item" >
+                                <div class="pic">
+                                    <img :src="src+MyArticle.pic">
+                                </div>
+                                <div class="txt">
+                                    <p class="lightColor  small">{{MyArticle.content | ellipsis}}</p>
+                                </div>
                             </div>
-                            <div class="txt">
-                                <p class="lightColor  small">{{MyArticle.content | ellipsis}}</p>
-                            </div>
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </aside>
                 <!-- 要隱藏留言區用的 -->
@@ -314,7 +317,7 @@
                                 type: 'POST',
                                 url: 'php/articlePageCommentSend.php',
                                 data: {
-                                    MyComment:JSON.stringify(`${thisVue.discusArtAll[0].articleNo},1,'${thisVue.MyComment}'`),
+                                    MyComment:JSON.stringify(`${thisVue.discusArtAll[0].articleNo},${thisVue.memData.memNo},'${thisVue.MyComment}'`),
                                 },
                                 success: function(data) {
                                     // console.log(data);
@@ -394,6 +397,14 @@
                 // 只有編號1的文章會被抓回來
                 axios.get(`php/articlePage.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     this.discusArtAll = res.data;
+                    
+                    console.log(this.discusArtAll[0].content);
+
+                    // 內容換行
+                    let reg=new RegExp("\n","g"); 
+                    let str=this.discusArtAll[0].content.replace(reg,"<br>");
+                    this.discusArtAll[0].content = str;
+                    
                     //人物背景色
                     switch (this.discusArtAll[0].virBgNo) {
                         case 0:
@@ -415,6 +426,7 @@
                 axios.get(`php/articlePagemyArticle.php?articleNo=${url.searchParams.get('articleNo')}`).then((resMyArticles)=>{
                     // console.log("MyArticle",resMyArticles)
                     this.MyArticles = resMyArticles.data;
+                    // console.log(this.MyArticles);
                 }).catch((err)=>{
                     console.log(err)
                 });

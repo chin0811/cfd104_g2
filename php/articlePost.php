@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dir = "../assets/image";
     $from = $_FILES['articlePic']['tmp_name'];
 	// $articleContent = json_decode($_POST['ArticleContent']);
-    $MemNo = json_decode($_POST['MemNo']);
+    // $MemNo = json_decode($_POST['MemNo']);
 	$message['message'] = "傳成功了";
 
     // 抓到文章編號
@@ -26,22 +26,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newName = uniqid().".".$name[1];
     $to = "$dir/".$newName;//複製之目標[路徑]以及[暫存檔名]
     if(copy($from,$to)){
-        echo "上傳成功";
+        // echo "上傳成功";
     }else{
-        echo "上傳失敗";
+        // echo "上傳失敗";
     }
 
     // 文章標題
     $articleTitle = $_POST['articleTitle'];
     // 文章內容
-    $articleContent = $_POST['articleContent'];
+    $articleContent = nl2br($_POST['articleContent']);
     
-
+    $memNo = $_GET['memNo'];
     // 資料庫語法
     $table ='discusArt';//資料庫的table名稱
     // $value = "$sqlNoNew,$MemNo,'$today','未檢舉','無須審核',0,'$newName','$articleTitle','$articleContent','是'";
-    $value = "$sqlNoNew,$MemNo,'$today','未檢舉','無須審核',0,'$newName','$articleTitle','$articleContent','是'";
-    echo $value;
+    $value = "$sqlNoNew,$memNo,'$today','未檢舉','無須審核',0,'$newName','$articleTitle','$articleContent','是'";
+    // echo $value;
     // 傳到資料庫裏面去
     $sql = "insert into $table values ($value)";
 
@@ -63,6 +63,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }else{
 	$message['message'] = "大失敗";
 }
+header('Refresh:0.1;url=../articleAll.html');
 	// echo json_encode($message,JSON_UNESCAPED_UNICODE);
     // echo json_encode($msg,JSON_UNESCAPED_UNICODE);
 ?>

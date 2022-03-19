@@ -20,13 +20,23 @@
       <!-- 登入ＥＮＤ  -->
 </head>
 <body>
+    <script>
+        window.addEventListener("load",function(){
+            setTimeout(function(){
+                if(memData){
+                    document.querySelector('#articlePostForm').setAttribute('action',`php/articlePost.php?memNo=${memData.memNo}`)
+                }
+            },1000)
+        })
+    </script>
+
     <!-- @@include('layout/header.html') -->
     @@include('layout/headerNormal.html',{"headerClass":""})
     <section class="articlePostWrap" id="articlePost">
         <section class="articlePostContent marginAuto">
             <section class="articleEdit">
                 <h3>編輯你的文章</h3>
-                <form action="php/articlePost.php" name="page1" method="post" enctype="multipart/form-data">
+                <form action="php/articlePost.php" name="page1" method="post" enctype="multipart/form-data" id="articlePostForm">
                     <label for="articleTitle">
                         <h4>主標題</h4>
                         <input maxlength="11" placeholder="輸入你的標題" type="text" name="articleTitle" id="articleTitle" required @input="descInput" v-model="title" ><span class="leftText lightColor small">剩餘字數：{{remnant}}/11</span>
@@ -84,26 +94,26 @@
                     if(this.title == "" | this.content == "" | this.articlePic == ""){
                         alert('請輸入完整資訊');
                     }else{
-                        // 避免抓到ajax的this
-                        let thisVue = this;
-                        // console.log(thisVue.MyComment);
-                        $.ajax({
-                            type: 'POST',
-                            url: 'php/articlePost.php',
-                            data: {
-                                MemNo:JSON.stringify(`${thisVue.memData.memNo}`),
-                                // ArticleContent:JSON.stringify(`
-                                // '未檢舉','無須檢舉',0,'${thisVue.articlePic}','${thisVue.title}','${thisVue.content}','是'
-                                // `),
-                            },
-                            success: function(data) {
-                                // console.log(data);
-                                console.log("成功了嗎?");
-                            },
-                            error: function() {
-                                console.log('ajax error');
-                            }
-                        });
+                        // // 避免抓到ajax的this
+                        // let thisVue = this;
+                        // // console.log(thisVue.MyComment);
+                        // $.ajax({
+                        //     type: 'POST',
+                        //     url: 'php/articlePost.php',
+                        //     data: {
+                        //         MemNo:JSON.stringify(`${thisVue.memData.memNo}`),
+                        //         // ArticleContent:JSON.stringify(`
+                        //         // '未檢舉','無須檢舉',0,'${thisVue.articlePic}','${thisVue.title}','${thisVue.content}','是'
+                        //         // `),
+                        //     },
+                        //     success: function(data) {
+                        //         // console.log(data);
+                        //         console.log("成功了嗎?");
+                        //     },
+                        //     error: function() {
+                        //         console.log('ajax error');
+                        //     }
+                        // });
                         alert('新增成功');
                         // window.location='articleALL.html';
                     }

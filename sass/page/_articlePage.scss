@@ -350,8 +350,11 @@
     display: block;
     margin: auto;
 }
+.articlePageContent .articlePageWrap .pageContent .relative a{
+    text-decoration: none;
+}
 .articlePageContent .articlePageWrap .pageContent .relative h2{
-    border-bottom: 1px solid #8888;
+    border-bottom: 1px solid #8888; 
 }
 .articlePageContent .articlePageWrap .pageContent .relative .item{
     display: flex;
@@ -431,7 +434,10 @@
     .articlePageContent .articlePageWrap .sideInfo .relativeSide{
         margin-top: 40px;
     }
-    .articlePageContent .articlePageWrap .sideInfo .relativeSide .item a{
+    .articlePageContent .articlePageWrap .sideInfo .relativeSide a{
+        display: flex;
+    }
+    .articlePageContent .articlePageWrap .sideInfo .relativeSide a .item {
         display: flex;
         align-items: center;
     }

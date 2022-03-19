@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 //在這裡取得資料的門票
 try {
 	require_once("g2_dataConnect.php");
