@@ -37,7 +37,7 @@
                         </div>
 
                         <li>{{lightBoxTitles[2]}}</li>
-                        <p>{{lightBoxContent.content}}</p>
+                        <p v-html="lightBoxContent.content"></p>
 
                         <li>{{lightBoxTitles[3]}}</li>
                         <select v-model="lightBoxContent.reportState">                                        
@@ -139,6 +139,11 @@
                 openLightBox:function(key){
                     articleLigthtBox.classList.toggle("displayNone");
                     this.lightBoxContent = this.articleAll[key];
+
+                    // 內容換行
+                    let reg=new RegExp("\n","g"); 
+                    let str=this.lightBoxContent.content.replace(reg,"<br>");
+                    this.lightBoxContent.content = str;
                 },
                 backCloseLight:function(){
                     articleLigthtBox.classList.toggle("displayNone"); 
