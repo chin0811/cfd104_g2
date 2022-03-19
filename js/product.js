@@ -14,19 +14,29 @@ let vm = new Vue({
         // 抓圖
         axios.get('php/frontImageSelect.php').then((res)=>{
             this.prodImage = res.data;
-            console.log(this.prodImage)
         }).catch((err)=>{
             console.log(err)
-        })
+        });
         // 抓商品
         axios.get('php/frontProductSelect.php').then((res)=>{
             this.products = res.data;
+            // for(let i =0; i<this.products.length; i++){
+            //     this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[i].img}`);
+            // }
             for(let i =0; i<this.products.length; i++){
-                this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[i].img}`);
+                // console.log(this.products[i].prodNo);
+                for(let j =0; j<this.prodImage.length; j++){
+                    // console.log(this.prodImage[j].prodNo);
+                    if(this.products[i].prodNo==this.prodImage[j].prodNo){
+                        console.log("test",this.products[i].prodNo,this.prodImage[j].prodNo)
+                        console.log(i,j);
+                        this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[j].img}`);
+                    }
+                }
             }
         }).catch((err)=>{
             console.log(err)
-        })
+        });
     },
     methods:{
         // 輪播
@@ -59,7 +69,6 @@ let vm = new Vue({
                 },
                 success: function(data) {
                     console.log(data.message);
-                    console.log("成功了嗎?");
                 },
                 error: function() {
                     console.log('ajax error');
@@ -110,23 +119,36 @@ let vm2 = new Vue({
             return `produtFromPhp.html?number=${this.key+1}`;
         }
     },
-    mounted(){
+    created(){
         // 抓圖
         axios.get('php/frontImageSelect.php').then((res)=>{
             this.prodImage = res.data;
-            console.log(this.prodImage)
         }).catch((err)=>{
             console.log(err)
-        })
+        });
         // 抓商品
         axios.get('php/frontProductSelect.php').then((res)=>{
             this.products = res.data;
+            // for(let i =0; i<this.products.length; i++){
+            //     this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[i].img}`);
+            // };
+            console.log(this.products);
+            console.log(this.prodImage);
             for(let i =0; i<this.products.length; i++){
-                this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[i].img}`);
+                // console.log(this.products[i].prodNo);
+                for(let j =0; j<this.prodImage.length; j++){
+                    // console.log(this.prodImage[j].prodNo);
+                    if(this.products[i].prodNo==this.prodImage[j].prodNo){
+                        console.log("test",this.products[i].prodNo,this.prodImage[j].prodNo)
+                        console.log(i,j);
+                        this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[j].img}`);
+                    }
+                }
             }
         }).catch((err)=>{
             console.log(err)
-        })
+        });
+
         }
 })
 $(document).ready(function(){

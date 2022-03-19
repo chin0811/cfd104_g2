@@ -3,8 +3,30 @@
             <div id="app">
                 <ul class="memeberTitle">
                     <li v-for = 'title in titles'>{{title}}</li>
-                    <li></li>
+                    <li @click="newRow">新增</li>
                 </ul>
+                <!-- 新增管理員的燈箱 -->
+                <section class="backLightBox newRowLigthtBox displayNone" id="newRowLigthtBox">
+                    <i class="fas fa-times" v-on:click="newRowCloseLight">x</i>
+                    <p>{{titles[0]}}{{pkey}}</p>
+                    <p>{{titles[1]}}
+                        <input type="text" v-model="adminId">
+                    </p>
+                    <p>{{titles[2]}}
+                        <input type="text" v-model="adminName">
+                    </p>
+                    <p>{{titles[3]}}
+                        <input type="text" v-model="adminClass">
+                    </p>
+                    <p>{{titles[4]}}
+                        <input type="text" v-model="adminSatate">
+                    </p>
+                    <p>
+                        密碼
+                        <input type="text" v-model="adminPwd">
+                    </p>
+                    <button v-on:click="newRowChange">確認</button>
+                </section>
                 <ul v-for='(administrator,key) in administrators' 
                 class="memberList">            
                     <li>{{administrator.adminNo}}</li>
@@ -39,11 +61,18 @@
             administrators:[],
             lightIndex:[],
             adminLigthtBox : document.querySelector("#adminLigthtBox"),
+            newRowLigthtBox : document.querySelector("#newRowLigthtBox"),
             statusList:[
                 {name: "是"},
                 {name: "否"}
             ],
             changedStatus: '',
+            pkey:'',
+            adminId:'',
+            adminName:'',
+            adminClass:'',
+            adminSatate:'',
+            adminPwd:'',
         },
         created(){
             // this.changedStatus = this.statusList[0].choice;
@@ -86,6 +115,35 @@
                     }
                 });
             },
+            newRow: function(){
+                newRowLigthtBox.classList.toggle("displayNone"); 
+                this.pkey=this.administrators.length+1;
+            },
+            newRowCloseLight: function(){
+                newRowLigthtBox.classList.toggle("displayNone"); 
+            },
+            newRowChange: function(){
+                newRowLigthtBox.classList.toggle("displayNone");
+                let thisVue = this;
+                    $.ajax({
+                    type: 'POST',
+                    url: 'php/adminNew.php',
+                    data: {
+                        pkey:thisVue.pkey,
+                        adminId:thisVue.adminId,
+                        adminName:thisVue.adminName,
+                        adminClass:thisVue.adminClass,
+                        adminSatate:thisVue.adminSatate,
+                        adminPwd:thisVue.adminPwd,
+                    },
+                    success: function(data) {
+                        console.log("成功了唷");
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                    }
+                    }); 
+            }
         },
         mounted(){
             axios.get('php/backAdminFetch.php').then((res)=>{

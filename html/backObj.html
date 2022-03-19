@@ -3,7 +3,7 @@
             <div id="app">
                 <ul class="memeberTitle">
                     <li v-for = 'title in titles'>{{title}}</li>
-                    <li></li>
+                    <li @click="newRow">新增</li>
                 </ul>
                 <ul v-for='(charobj,key) in charobjs'
                 class="memberList">            
@@ -12,8 +12,14 @@
                     <li>
                         <img :src="charobj.url" alt="">
                     </li>   
-                    <li>編輯與查看</li>
                 </ul>
+                <section class="backLightBox objNewLigthtBox displayNone" id="objNewLigthtBox">
+                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
+                    <p>{{newObj[0]}}</p>
+                    <p>{{newObj[1]}}</p>
+                    <input type="text" v-model="objName">
+                    <button v-on:click="confirmChange">確認</button>
+                </section>
             </div>
         </section>
     </section>
@@ -26,10 +32,12 @@
         new Vue({
             el: '#app',
             data: {
-                titles: ['人物物件編號',  '種類', '圖片', '', ],
+                titles: ['人物物件編號',  '種類', '圖片' ],
                 charobjs:[],
+                objNewLigthtBox : document.querySelector("#objNewLigthtBox"),
+                newObj:[],
+                objName:"",
                 // url:[`assets/image/customCharacter/${charobj.picture}`],
-
             },
             mounted(){
                 axios.get('php/backObjSelect.php').then((res)=>{
@@ -38,10 +46,39 @@
                         this.$set(this.charobjs[i],"url", `assets/image/customCharacter/${this.charobjs[i].picture}`);
                     }
                 }).catch((err)=>{
-                    console.log(err)
+                    console.log(err);
                 })
             },
-            methods: {},
+            methods: {
+                newRow: function(){
+                    objNewLigthtBox.classList.toggle("displayNone"); 
+                    this.newObj.push(this.charobjs.length+1);
+                    this.newObj.push("膚色");
+                },
+                backCloseLight:function(){
+                    objNewLigthtBox.classList.toggle("displayNone"); 
+                },
+                confirmChange: function(){
+                    objNewLigthtBox.classList.toggle("displayNone"); 
+                    this.newObj.push(this.objName);
+                    let thisVue = this;
+                    $.ajax({
+                    type: 'POST',
+                    url: 'php/objNew.php',
+                    data: {
+                        pkey:thisVue.charobjs.length+1,
+                        row2:"膚色",
+                        row3:thisVue.objName,
+                    },
+                    success: function(data) {
+                        console.log("成功了唷");
+                    },
+                    error: function() {
+                        console.log('ajax error');
+                    }
+                    });
+                }
+            },
             computed: {},
             watch: {},
         });
