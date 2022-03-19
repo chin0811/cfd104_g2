@@ -84,6 +84,7 @@
                             this.indexImage.push("assets/image/commodity/"+this.prodImage[i].img);
                         }
                     }
+                    console.log(this.lightIndex.saleStatus);
                 },
                 backCloseLight:function(){
                     productLigthtBox.classList.toggle("displayNone"); 
@@ -93,6 +94,11 @@
                     // console.log(this.lightIndex.auditState);
                     this.auditChanged = this.lightIndex.auditState ;
                     this.saleChanged = this.lightIndex.saleStatus ;
+                    // 新增一筆資料
+                    console.log(this.lightIndex.saleStatus);
+                    if(this.lightIndex.saleStatus=="販售中"){
+                        console.log(this.prodNo);
+                    }
                     // console.log("斷點",this.auditChanged);
                     let thisVue = this;
                     $.ajax({

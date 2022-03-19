@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="bidBox inputBox">
-                        <input type="text" :placeholder="product.startingPrice+product.bidInterval">
+                        <input type="text" :placeholder="product.startingPrice+product.bidInterval" v-model="inputPrice">
                     </div>
                     <div class="bidBox hint">
                         <span class="small lightColor">
@@ -110,7 +110,7 @@
                     </div>
                 </article>
                 <div class="introButton">
-                    <button class="squareOutline introButtonItem">出價</button>
+                    <button class="squareOutline introButtonItem" @click="bidding">出價</button>
                     <button class="square introButtonItem">直接價購買</button>
                 </div>
             </div>
@@ -138,14 +138,41 @@ $(document).ready(function() {
             prodImage:[],
             indexImage:[],
             indexImageUrl:[],
-            imgs:[
-            'https://picsum.photos/300/200/?random=10',
-            'https://picsum.photos/300/200/?random=8',
-            'https://picsum.photos/300/200/?random=1',
-            'https://picsum.photos/300/200/?random=2',
-            ]
+            inputPrice:"",
+            bidHis:[],
+            actOrd:[],
+            auctionNo:"",
+            memId:1,
         },
         methods:{
+            bidding:function(){
+            //   console.log(this.inputPrice); 
+            //   console.log(this.bidHis.length+1);
+              for(let i =0; i<this.actOrd.length;i++){
+                if(this.actOrd[i].prodNo==this.number){
+                    this.auctionNo = this.actOrd[i].auctionNo;
+                }
+              };
+            //   console.log(this.auctionNo);
+            //   console.log(this.memId);
+              let thisVue = this;
+            $.ajax({
+                type: 'POST',
+                url: 'php/bidInsert.php',
+                data: {
+                    inputPrice:thisVue.inputPrice,
+                    pKey:thisVue.bidHis.length+1,
+                    auctionNo:thisVue.auctionNo,
+                    memId:thisVue.memId,
+                },
+                success: function(data) {
+                    console.log(data.message);
+                },
+                error: function() {
+                    console.log('ajax error');
+                }
+            });
+            },
             changeIndex:function(change){
                 this.n= this.n+change;
                 if(this.n<0){
@@ -203,7 +230,17 @@ $(document).ready(function() {
                 }
             }).catch((err)=>{
                 console.log(err)
-            })
+            });
+            axios.get('php/bidSelect.php').then((res)=>{
+                this.bidHis = res.data;
+            }).catch((err)=>{
+                console.log(err)
+            });
+            axios.get('php/backOrderSelect.php').then((res)=>{
+                this.actOrd = res.data;
+            }).catch((err)=>{
+                console.log(err)
+            });
         }
     })
 });

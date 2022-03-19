@@ -6,8 +6,8 @@
         list-style: none;
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 1fr 1fr 1fr .8fr;
-            grid-template-columns: 1fr 1fr 1fr .8fr;
+        -ms-grid-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
         -webkit-column-gap: 10px;
                 column-gap: 10px;
         background-color: #bbbbbb;
@@ -23,8 +23,8 @@
         list-style: none;
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 1fr 1fr 1fr .8fr;
-            grid-template-columns: 1fr 1fr 1fr .8fr;
+        -ms-grid-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
         -webkit-column-gap: 10px;
                 column-gap: 10px;
         background-color: #ffffff;
@@ -46,15 +46,18 @@
         text-overflow: ellipsis;
         /* 出現省略符號 */
     }
-    .memberList li:last-child {
-        box-sizing: border-box;
-        padding: 5%;
-        background-color: #6599e8;
-        border-radius: 15px;
-        text-align: center;
-        color: #ffffff;
-    }
+    // .memberList li:last-child {
+    //     box-sizing: border-box;
+    //     padding: 5%;
+    //     background-color: #6599e8;
+    //     border-radius: 15px;
+    //     text-align: center;
+    //     color: #ffffff;
+    // }
     .memberList li:last-child:hover {
+        cursor: pointer;
+    }
+    .memeberTitle li:last-child:hover {
         cursor: pointer;
     }
 }
