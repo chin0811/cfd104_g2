@@ -69,8 +69,8 @@
                     <button v-for="key in keyArray" @click="keySelect">{{key.keyWord}}</button>
                 </article>
                 <article action="#" class="inputArea" v-show="openPeopleBool">
-                    <textarea name="" id="" ></textarea>
-                   <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent">
+                    <textarea name="" id="" v-model="messageTxt"></textarea>
+                    <img src="assets/image/supportPage_sent_icon.png" alt="" class="transparent" @click="sendData">
                 </article>
            </article>
         </article>
@@ -84,11 +84,14 @@
                 openRobotBool:false,
                 openPeopleBool:false,
                 keyArray:[],
+                messageTxt:'',
                 messageObject: [
                     // {message: '', class: 'meTxt'},
                     // {message: '', class: 'robotTxt'},
                 ],
                 chatroomData:{},
+                maxNumber:'',
+                timer:'',
             },
             components: {
                 messageart: {
@@ -111,26 +114,34 @@
                             method:'post',
                             url:`php/supChatroomLoad.php?memNo=${memData.memNo}`,
                         }).then((res)=>{
-                            if(res.data == '失敗'){
+                            // console.log(res.data)
+                            this.chatroomData = res.data[0];
+                            // console.log(this.chatroomData.quizNo)
+                            // if(res.data == '失敗'){
                                 axios({
                                     method:'post',
-                                    url:"php/robSupKey.php",
+                                    url:`php/supAll.php?index=${this.chatroomData.quizNo}`,
                                 }).then((res)=>{
-                                    // console.log("從php傳來的東西",res)
-                                    this.chatroomData = res.data;
+                                    // console.log(res.data);
+                                    // this.chatroomData = res.data;
+                                    res.data.forEach(element => {
+                                    this.messageObject.push({message: `${element.content}` , classS: `${(element.memType == '會員') ? 'meTxt':'AA'}`})
+                                    // console.log(element);
+                                    this.maxNumber = element.chatNo;
+                                    setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                                });
                                 }).catch((err)=>{ console.log(err) })
-                
-                            }else{
-
-                            }
                         }).catch((err)=>{ console.log(err) })
+                        this.timer = setInterval(()=>{this.reLoad()},3000) 
                     }else{
                         alert("請登入");
                         location = 'login.html';
                     }
-                   
                 },
                 closedRoom(){
+                    if(this.openPeopleBool){
+                        clearInterval(this.timer);
+                    }
                     this.openPeopleBool = false;
                     this.openRobotBool = false;
                 },
@@ -141,7 +152,7 @@
                     method:'post',
                     url:`php/robSupKey.php?selectkey=${key.target.innerText}`,
                     }).then((res)=>{
-                        console.log("從php傳來的東西",res)
+                        // console.log("從php傳來的東西",res)
                         setTimeout(()=>{
                             this.messageObject.push({message: `${res.data[0].ans}` , classS: 'robotTxt'})
                             setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
@@ -149,6 +160,41 @@
                     }).catch((err)=>{
                         console.log(err)
                     })
+                },
+                sendData(){
+                    if(this.messageTxt != ''){
+                        axios({
+                        method:'post',
+                        url:`php/supMessageIn.php`,
+                        data:{
+                            quizNo:this.chatroomData.quizNo,
+                            inputTxt:this.messageTxt,
+                            memType:'會員',
+                        },
+                        }).then((res)=>{
+                                this.reLoad();
+                        }).catch((err)=>{
+                            console.log(err)
+                        })
+                        this.messageTxt = ''
+                    }
+                    
+                },
+                reLoad(){
+                    axios({
+                            method: 'GET',
+                            url: `php/supAll.php?index=${this.chatroomData.quizNo}&maxNumber=${this.maxNumber}`,
+                            //API要求的資料
+                        })
+                        .then((response) => { 
+                            response.data.forEach(element => {
+                                this.messageObject.push({message: `${element.content}` , classS: `${(element.memType == '會員') ? 'meTxt':'AA'}`})
+                                console.log(element);
+                                this.maxNumber = element.chatNo;
+                                setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
+                            });
+                        })
+                        .catch((error) => {console.log(error)} )
                 }
             },
             computed: { //函數也可放在這裡,但是放在這裡的函數，不能傳參數，但一定要有回傳值

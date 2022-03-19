@@ -86,7 +86,7 @@
                     maxNumber:0,
                     timer:'',
                     timerAll:'',
-
+                    
                 },
                 methods: {  //函數大部分放在這裡
 
@@ -134,9 +134,6 @@
                                     this.maxNumber = element.chatNo;
                                     setTimeout(()=>{document.querySelector('.txtArea article:last-of-type').scrollIntoView({ behavior: 'smooth' });},100)
                                 });
-
-
-
                             })
                             .catch((error) => {console.log(error)} )
                     },
@@ -149,20 +146,13 @@
                             quizNo:this.currentlyIndex,
                             inputTxt:this.inputTxt,
                             memType:'客服',
-                            
                         },
                         }).then((res)=>{
                             // console.log("從php傳來的東西",res)
-                            setTimeout(()=>{
-                                // this.messageObject.push({message: `${res.data[0].ans}` , class: 'robotTxt'})
-                                this.reLoad();
-                                
-                        },500)
+                            this.reLoad();
                         }).catch((err)=>{
                             console.log(err)
                         })
-
-
                         this.inputTxt = ''
                     },
                     selectDelete(index){
