@@ -10,10 +10,12 @@
             grid-template-columns: 1fr 1fr 1fr  1fr 1fr 1fr 1fr  1fr  1fr .8fr;
         -webkit-column-gap: 10px;
                 column-gap: 10px;
-        background-color: #bbbbbb;
+                background-color: #ffffff;
         font-size: 16px;
         color: #000000;
         font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid #14141430;
     }
     /* 會員清單 */
     .memberList{
@@ -34,28 +36,32 @@
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        text-align: center;
     }
     .memberList:hover {
-        background-color: #f8f2ed;
+        background-color: #39489710;
     }
     .memberList li {
         white-space: nowrap;
         /* 不斷行 */
-        overflow: hidden;
+        // overflow: hidden;
         /* 隱藏 */
         text-overflow: ellipsis;
         /* 出現省略符號 */
     }
-    .memberList li:last-child {
-        box-sizing: border-box;
-        padding: 5%;
-        background-color: #6599e8;
-        border-radius: 15px;
-        text-align: center;
-        color: #ffffff;
-    }
-    .memberList li:last-child:hover {
-        cursor: pointer;
-    }
 }
 
+.auctionLigthtBox{
+    .txtArea{
+        line-height: 2;
+        hr{
+            border-bottom: 1px solid #14141430;
+        }
+        button{
+            position: fixed;
+            bottom: 8%;
+            right: 8%;
+            margin: 1em 0;
+        }
+    }
+}
