@@ -39,6 +39,9 @@ body {
 .cigaretteBox .photoBox{
 background-color:rgb(0, 0, 0);
 }
+.cigaretteBox .photoBox .cigarette{
+    margin-top: 35%;
+}
 .lightBox .lightBoxContent{
     width: 40%;
     /* background-color: rgb(255, 255, 255); */

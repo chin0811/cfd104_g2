@@ -1,9 +1,9 @@
-html, body, main{
+/* html, body, main{
     height: 100%;
     overflow: hidden;
     position: fixed;
     width: 100%;
-}
+} */
 
 /* main{
     align-items: center;
@@ -11,6 +11,11 @@ html, body, main{
     justify-content: center;
 } */
 
+#banksy{
+    /* margin: auto; */
+    margin-left: 20%;
+    margin-top: 10%;
+}
 #piece{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
     cursor: pointer;
@@ -46,8 +51,9 @@ html, body, main{
 }
 
 #original, .shred{
-    background: url(Balloon_girl.jpeg);
-    background-size: cover;
+    background: url(../../assets/image/commodity/commodity_17.jpg);
+    background-size: 150px;
+    /* background-repeat: no-repeat; */
 }
 
 #original{
