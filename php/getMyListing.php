@@ -3,8 +3,10 @@ try {
 	require_once("g2_dataConnect.php");
     session_start();
     $memNo=$_SESSION["memNo"];
-	$sql = "SELECT * FROM com  Where memNo='$memNo'";
+	$sql = "SELECT * FROM com INNER JOIN comimg ON com.prodNo = comimg.prodNo  INNER JOIN actord ON com.prodNo = actord.productNumber Where com.memNo='$memNo'";
 
+	$sql2 = 
+	// $sql = "SELECT * FROM actord INNER JOIN com ON actord.productNumber = com.prodNo Where orderStatus !='訂單結單' and memNoSale='$memNo'";
 
 	$datas = $pdo->query($sql);
 	$data = $datas->fetchAll(PDO::FETCH_ASSOC);

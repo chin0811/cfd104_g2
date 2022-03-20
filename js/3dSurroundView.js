@@ -228,17 +228,17 @@ function collect() {
                 <section class="commodity" name="${arrOrder[i].favoriteListNumber}">
                     <section class="graphics">
                         <section class="love" name="love_${arrOrder[i].favoriteListNumber}"><i class="bi bi-heart-fill"></i></section>
-                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].certification}" alt="拍攝商品圖"></section>
+                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].img}" alt="拍攝商品圖"></section>
                     </section>
                     <section class="bid">
                         <p>${arrOrder[i].productName}</p>
                         <section class="information">
                             <section>
-                                <p>未出價</p>
+                                <p>$${arrOrder[i].closingPrice}</p>
                             </section>
                             <section class="timeAndButton">
                                 <span class="time">剩餘2小時47分17秒</span>
-                                <button class="round round3dBtn" type="button"><a href="/CFD104G2/productSingle.html?prodNo=${arrOrder[i].prodNo}">前往商品頁面</a></button>
+                                <button class="round round3dBtn" type="button"><a href="/CFD104G2/produtFromPhp.html?number=${arrOrder[i].prodNo}">前往商品頁面</a></button>
                             </section>
                         </section>
 
@@ -318,7 +318,7 @@ $('#nowOrder3dBtn').click(function() {
                 </section>
                 <section class="recordGraphics">
                     <section class="recordGraphicsGraphics">
-                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].certification}" alt="商品圖"></section>
+                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].img}" alt="商品圖"></section>
                         <section class="recordGraphicsOrderlist">
                             <p>${arrOrder[i].productName}</p>
                             <p>數量 : 1</p>
@@ -333,7 +333,7 @@ $('#nowOrder3dBtn').click(function() {
                 </section>
                 <section class="recordFooter">
                     <section>
-                        <p>訂單金額:${arrOrder[i].closingPrice}</p>
+                        <p>訂單金額:$${arrOrder[i].closingPrice}</p>
                         </section>
                         <!-- <section class="buttonGroup">
                         <button class="round round3dBtn" type="button">按鈕</button>
@@ -384,7 +384,7 @@ $('#oldOrder3dBtn').click(function() {
                 </section>
                 <section class="recordGraphics">
                     <section class="recordGraphicsGraphics">
-                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].certification}" alt="商品圖"></section>
+                        <section class="img"><img src="assets/image/commodity/${arrOrder[i].img}" alt="商品圖"></section>
                         <section class="recordGraphicsOrderlist">
                             <p>${arrOrder[i].productName}</p>
                             <p>數量 : 1</p>
@@ -399,7 +399,7 @@ $('#oldOrder3dBtn').click(function() {
                 </section>
                 <section class="recordFooter">
                     <section>
-                        <p>訂單金額:${arrOrder[i].closingPrice}</p>
+                        <p>訂單金額:$${arrOrder[i].closingPrice}</p>
                     </section>
                     <!-- <section class="buttonGroup">
                         <button class="round round3dBtn" type="button">按鈕</button>
@@ -440,17 +440,17 @@ function myListing() {
                 <section class="commodity">
                 <section class="graphics">
                     <!-- <section class="love"><i class="bi bi-heart"></i> <span>75</span></section> -->
-                    <section class="img"><img src="assets/image/commodity/${arrOrder[i].certification}" alt="拍攝商品圖"></section>
+                    <section class="img"><img src="assets/image/commodity/${arrOrder[i].img}" alt="拍攝商品圖"></section>
                 </section>
                 <section class="bid">
                     <p>${arrOrder[i].productName}</p>
                     <section class="information">
                         <section>
-                            <p>未出價</p>
+                            <p>$${arrOrder[i].closingPrice}</p>
                         </section>
                         <section class="timeAndButton">
                             <span class="time">剩餘2小時47分17秒</span>
-                            <button class="round round3dBtn" type="button"><a href="/CFD104G2/productSingle.html?prodNo=${arrOrder[i].prodNo}">前往商品頁面</a></button>
+                            <button class="round round3dBtn" type="button"><a href="/CFD104G2/produtFromPhp.html?number=${arrOrder[i].prodNo}">前往商品頁面</a></button>
                         </section>
                     </section>
                 </section>

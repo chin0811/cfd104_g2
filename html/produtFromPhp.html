@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,243 +14,245 @@
     <script src="js/jquery/jquery.js"></script>
     <!-- 登入  -->
     <script src="js/loginCheck.js"></script>
-    <script >
-        window.addEventListener('load',function(){
+    <script>
+        window.addEventListener('load', function() {
             loginCheck(false);
         })
     </script>
     <!-- 登入ＥＮＤ  -->
 </head>
+
 <body>
-<!-- 商品單頁_頁首區域 -->
-<!-- @@include('layout/header.html') -->
-@@include('layout/headerNormal.html',{"headerClass":""})
-<!-- 許瑀芹 -->
-<!-- 麵包屑 -->
+    <!-- 商品單頁_頁首區域 -->
+    <!-- @@include('layout/header.html') -->
+    @@include('layout/headerNormal.html',{"headerClass":""})
+    <!-- 許瑀芹 -->
+    <!-- 麵包屑 -->
     <div id="app">
-    <section class="SingleProductHead">
-        <div class="productBread size marginAuto">
-            <ul>
-                <li><a href="homePage.html"  class="lightColor">首頁</a></li>
-                <li><a href="prouductAll.html"  class="lightColor">>拍賣廳</a></li>
-                <li><a href=""  class="epBColor">>{{product.productName}}</a></li>
-            </ul>
-        </div>
-    </section>
-<!-- 許瑀芹 -->
-    <section class="SingleProductIntro">
-        <div class="sizeAdjustBox size marginAuto">
-            <div class="imgBox">
-                <img :src="indexImageUrl" id="img01">
-                <!-- <img :src="imgs[index+x]" id="img02" v-on:click="smallToBig(index,x)">
+        <section class="SingleProductHead">
+            <div class="productBread size marginAuto">
+                <ul>
+                    <li><a href="homePage.html" class="lightColor">首頁</a></li>
+                    <li><a href="prouductAll.html" class="lightColor">>拍賣廳</a></li>
+                    <li><a href="" class="epBColor">>{{product.productName}}</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- 許瑀芹 -->
+        <section class="SingleProductIntro">
+            <div class="sizeAdjustBox size marginAuto">
+                <div class="imgBox">
+                    <img :src="indexImageUrl" id="img01">
+                    <!-- <img :src="imgs[index+x]" id="img02" v-on:click="smallToBig(index,x)">
                 <img :src="imgs[index+y]" id="img03" v-on:click="smallToBig(index,y)">
                 <img :src="imgs[index+z]" id="img04" v-on:click="smallToBig(index,z)"> -->
-                <!-- 定位absolute，父層imgBox，定位position -->
-                <div class="arrowButton linkItem" >
-                    <div class="leftArrow" v-on:click="changeIndex(-1)">
-                        &#60;
-                    </div>
-                </div>
-                <div class="arrowButton right linkItem" >
-                    <div class="rightArrow" v-on:click="changeIndex(1)">
-                        &#62;
-                    </div>
-                </div>
-                <div class="changeButton linkItem">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
-            </div>
-            <div class="introAll">
-                <article class="introBox">
-                    <h2 class="deepColor">{{product.productName}}</h2>
-                    <div class="introtext">
-                        <p class="deepColor">{{product.info}}</p>
-                    </div>
-                    <div class="time">
-                        <p class="lightColor">2小時47分17秒結束</p>
-                        <p class="lightColor">{{product.bidTimes}}</p>
-                    </div>
-                    <div class="bidBox bid">  
-                        <div>
-                            <h4 class="deepColor">
-                                目前出價：<span class="deepColor">${{product.startingPrice}}</span>
-                            </h4>
-                        </div>
-                        <div>
-                            <a href="">
-                                <span class="lightColor small">投標紀錄</span>
-                                <span class="lightColor small">30</span>
-                                <span class="lightColor small">筆</span>
-                            </a>
+                    <!-- 定位absolute，父層imgBox，定位position -->
+                    <div class="arrowButton linkItem">
+                        <div class="leftArrow" v-on:click="changeIndex(-1)">
+                            &#60;
                         </div>
                     </div>
-                    <div class="bidBox buy">  
-                        <div>
-                            <h4 class="deepColor">
-                                直購價：<span class="epBColor">${{product.closingPrice}}</span>
-                            </h4>
+                    <div class="arrowButton right linkItem">
+                        <div class="rightArrow" v-on:click="changeIndex(1)">
+                            &#62;
                         </div>
                     </div>
-                    <div class="bidBox inputBox">
-                        <input type="text" :placeholder="product.startingPrice+product.bidInterval" v-model="inputPrice">
+                    <div class="changeButton linkItem">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
                     </div>
-                    <div class="bidBox hint">
-                        <span class="small lightColor">
+                </div>
+                <div class="introAll">
+                    <article class="introBox">
+                        <h2 class="deepColor">{{product.productName}}</h2>
+                        <div class="introtext">
+                            <p class="deepColor">{{product.info}}</p>
+                        </div>
+                        <div class="time">
+                            <p class="lightColor">2小時47分17秒結束</p>
+                            <p class="lightColor">{{product.bidTimes}}</p>
+                        </div>
+                        <div class="bidBox bid">
+                            <div>
+                                <h4 class="deepColor">
+                                    目前出價：<span class="deepColor">${{product.startingPrice}}</span>
+                                </h4>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <span class="lightColor small">投標紀錄</span>
+                                    <span class="lightColor small">30</span>
+                                    <span class="lightColor small">筆</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bidBox buy">
+                            <div>
+                                <h4 class="deepColor">
+                                    直購價：<span class="epBColor">${{product.closingPrice}}</span>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="bidBox inputBox">
+                            <input type="text" :placeholder="product.startingPrice+product.bidInterval" v-model="inputPrice">
+                        </div>
+                        <div class="bidBox hint">
+                            <span class="small lightColor">
                             投入${{product.startingPrice+product.bidInterval}}或更多
                         </span>
-                    </div>
-                    <div class="like mainColor">
-                        <div class="pic">
-                            <img src="assets/image/all_like.png" alt="">
                         </div>
-                        <span class="small deepColor">
+                        <div class="like mainColor">
+                            <div class="pic">
+                                <img src="assets/image/all_like.png" alt="">
+                            </div>
+                            <span class="small deepColor">
                             75
                         </span>
+                        </div>
+                    </article>
+                    <div class="introButton">
+                        <button class="squareOutline introButtonItem" @click="bidding">出價</button>
+                        <button class="square introButtonItem">直接價購買</button>
                     </div>
-                </article>
-                <div class="introButton">
-                    <button class="squareOutline introButtonItem" @click="bidding">出價</button>
-                    <button class="square introButtonItem">直接價購買</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </div>
-<script>
-$(document).ready(function() {  
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-    var number = urlParams.get('number')
-    console.log(number);
-    let vm2 = new Vue({
-        el:"#app",
-        data:{
-            number:number,
-            product:[],
-            index: 0,
-            tem:0,
-            n:0,
-            x:1,
-            y:2,
-            z:3,
-            prodImage:[],
-            indexImage:[],
-            indexImageUrl:[],
-            inputPrice:"",
-            bidHis:[],
-            actOrd:[],
-            auctionNo:"",
-            memId:1,
-        },
-        methods:{
-            bidding:function(){
-            //   console.log(this.inputPrice); 
-            //   console.log(this.bidHis.length+1);
-              for(let i =0; i<this.actOrd.length;i++){
-                if(this.actOrd[i].prodNo==this.number){
-                    this.auctionNo = this.actOrd[i].auctionNo;
-                }
-              };
-            //   console.log(this.auctionNo);
-            //   console.log(this.memId);
-              let thisVue = this;
-            $.ajax({
-                type: 'POST',
-                url: 'php/bidInsert.php',
+    <script>
+        $(document).ready(function() {
+            const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+            var number = urlParams.get('number')
+            console.log(number);
+            let vm2 = new Vue({
+                el: "#app",
                 data: {
-                    inputPrice:thisVue.inputPrice,
-                    pKey:thisVue.bidHis.length+1,
-                    auctionNo:thisVue.auctionNo,
-                    memId:thisVue.memId,
+                    number: number,
+                    product: [],
+                    index: 0,
+                    tem: 0,
+                    n: 0,
+                    x: 1,
+                    y: 2,
+                    z: 3,
+                    prodImage: [],
+                    indexImage: [],
+                    indexImageUrl: [],
+                    inputPrice: "",
+                    bidHis: [],
+                    actOrd: [],
+                    auctionNo: "",
+                    memId: 1,
                 },
-                success: function(data) {
-                    console.log(data.message);
+                methods: {
+                    bidding: function() {
+                        //   console.log(this.inputPrice); 
+                        //   console.log(this.bidHis.length+1);
+                        for (let i = 0; i < this.actOrd.length; i++) {
+                            if (this.actOrd[i].prodNo == this.number) {
+                                this.auctionNo = this.actOrd[i].auctionNo;
+                            }
+                        };
+                        //   console.log(this.auctionNo);
+                        //   console.log(this.memId);
+                        let thisVue = this;
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/bidInsert.php',
+                            data: {
+                                inputPrice: thisVue.inputPrice,
+                                pKey: thisVue.bidHis.length + 1,
+                                auctionNo: thisVue.auctionNo,
+                                memId: thisVue.memId,
+                            },
+                            success: function(data) {
+                                console.log(data.message);
+                            },
+                            error: function() {
+                                console.log('ajax error');
+                            }
+                        });
+                    },
+                    changeIndex: function(change) {
+                        this.n = this.n + change;
+                        if (this.n < 0) {
+                            this.n = 3
+                        } else if (this.n > 3) {
+                            this.n = 0
+                        }
+                    },
+                    smallToBig: function(index, change) {
+                        console.log("change:" + change)
+                        console.log("n:" + this.n)
+                        if (change == this.x) {
+                            this.tem = this.n
+                            this.n = this.x
+                            this.x = this.tem
+                        } else if (change == this.y) {
+                            this.tem = this.n
+                            this.n = this.y
+                            this.y = this.tem
+                        } else if (change == this.z) {
+                            this.tem = this.n
+                            this.n = this.z
+                            this.z = this.tem
+                        }
+                    },
                 },
-                error: function() {
-                    console.log('ajax error');
+                mounted() {
+                    let thisVue = this;
+                    $.ajax({
+                            type: 'GET',
+                            url: 'php/productSearch.php',
+                            data: {
+                                number: thisVue.number,
+                            },
+                            success: function(data) {
+                                thisVue.product = JSON.parse(data);
+                                // console.log(data);
+                                // console.log(thisVue.product);
+                            },
+                            error: function() {
+                                console.log('ajax error');
+                            }
+                        }),
+                        axios.get('php/backImageSelect.php').then((res) => {
+                            this.prodImage = res.data;
+                            console.log(this.prodImage)
+                            for (let i = 0; i < this.prodImage.length; i++) {
+                                if (this.prodImage[i].prodNo == this.number) {
+                                    console.log("現在的網址", this.number);
+                                    this.indexImage.push("assets/image/commodity/" + this.prodImage[i].img);
+                                    console.log(this.indexImage);
+                                    this.indexImageUrl = this.indexImage[0];
+                                    console.log(this.indexImageUrl)
+                                }
+                            }
+                        }).catch((err) => {
+                            console.log(err)
+                        });
+                    axios.get('php/bidSelect.php').then((res) => {
+                        this.bidHis = res.data;
+                    }).catch((err) => {
+                        console.log(err)
+                    });
+                    axios.get('php/backOrderSelect.php').then((res) => {
+                        this.actOrd = res.data;
+                    }).catch((err) => {
+                        console.log(err)
+                    });
                 }
+            })
+        });
+        $(document).ready(function() {
+            // 加入收藏
+            $('.like .pic img').click(function(e) {
+                $(this).toggleClass('active');
             });
-            },
-            changeIndex:function(change){
-                this.n= this.n+change;
-                if(this.n<0){
-                    this.n=3
-                }else if (this.n>3){
-                    this.n=0
-                }
-            },
-            smallToBig:function(index,change){
-                console.log("change:"+change)
-                console.log("n:"+this.n)
-                if(change==this.x){
-                    this.tem = this.n
-                    this.n = this.x
-                    this.x = this.tem
-                }else if(change==this.y){
-                    this.tem = this.n
-                    this.n = this.y
-                    this.y = this.tem
-                }else if(change==this.z){
-                    this.tem = this.n
-                    this.n = this.z
-                    this.z = this.tem
-                }
-            },
-        },
-        mounted(){
-            let thisVue = this;
-            $.ajax({
-                type: 'GET',
-                url: 'php/productSearch.php',
-                data: {
-                    number:thisVue.number,
-                },
-                success: function(data) {
-                    thisVue.product = JSON.parse(data);
-                    // console.log(data);
-                    // console.log(thisVue.product);
-                },
-                error: function() {
-                    console.log('ajax error');
-                }
-            }),
-            axios.get('php/backImageSelect.php').then((res)=>{
-                this.prodImage = res.data;
-                console.log(this.prodImage)
-                for(let i =0; i<this.prodImage.length; i++){
-                    if(this.prodImage[i].prodNo == this.number){
-                        console.log("現在的網址",this.number);
-                        this.indexImage.push("assets/image/commodity/"+this.prodImage[i].img);
-                        console.log(this.indexImage);
-                        this.indexImageUrl =this.indexImage[0];
-                        console.log(this.indexImageUrl)
-                    }
-                }
-            }).catch((err)=>{
-                console.log(err)
-            });
-            axios.get('php/bidSelect.php').then((res)=>{
-                this.bidHis = res.data;
-            }).catch((err)=>{
-                console.log(err)
-            });
-            axios.get('php/backOrderSelect.php').then((res)=>{
-                this.actOrd = res.data;
-            }).catch((err)=>{
-                console.log(err)
-            });
-        }
-    })
-});
-$(document).ready(function(){
-    // 加入收藏
-    $('.like .pic img').click(function(e){
-        $(this).toggleClass('active');
-    });
-});
-</script>
+        });
+    </script>
 </body>
+
 </html>
