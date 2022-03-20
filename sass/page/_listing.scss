@@ -217,6 +217,9 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 font-weight: bold;
 font-size: 1.2rem;
 }
+.listingSteps .options .option .label .info .main b {
+    display: none;
+}
 
 /* 藝廊效果title */
 .bannerAdTopic h4{
@@ -1192,6 +1195,9 @@ transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 font-weight: bold;
 color: #394897;
 font-size: 1.2rem;
+}
+.listingSteps .options .option .label .info .main b {
+    display: inline-block;
 }
 
 // banner標題
