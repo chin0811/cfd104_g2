@@ -11,13 +11,10 @@ try {
 		// echo $data;
 	}else{
 		// echo '失敗';
-
-
 		$sqlNumber = "select quizNo from liveSup ORDER BY quizNo DESC LIMIT 1";
 		$datas = $pdo->query($sqlNumber);
 		$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
 		$quizNoNew = $dataNumber[0]["quizNo"] + 1;
-		
 		$today = date('Y-m-d H:i:s');
 
 		// 1 = 客服人員

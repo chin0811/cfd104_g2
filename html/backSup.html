@@ -87,6 +87,7 @@
                     timer:'',
                     timerAll:'',
                     finishState:'',
+                    adminData:'',
                 },
                 methods: {  //函數大部分放在這裡
 
@@ -140,6 +141,7 @@
                     },
                     sendTxt(){
                         // this.currentlyIndex
+                        this.adminData = memData;
                         axios({
                         method:'post',
                         url:`php/supMessageIn.php`,
@@ -147,6 +149,7 @@
                             quizNo:this.currentlyIndex,
                             inputTxt:this.inputTxt,
                             memType:'客服',
+                            adminNo:( this.memData.memName == this.adminData.adminName ) ? 0:this.adminData.adminNo,
                         },
                         }).then((res)=>{
                             // console.log("從php傳來的東西",res)

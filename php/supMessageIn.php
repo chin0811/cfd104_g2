@@ -5,6 +5,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $getJSON = file_get_contents('php://input');
     $getAll = json_decode($getJSON,true);
     // $getData = $getAll['sendData'];
+    $quizNo = $getAll['quizNo'];
+    $adminNo = $getAll['adminNo'];
+    if($adminNo != 0){
+        $sql = "update liveSup SET adminNo=$adminNo WHERE quizNo=$quizNo";
+	    $statement = $pdo->prepare($sql);
+	    $result = $statement->execute();
+    }
+    
     // echo $getData;
     $sqlNumber = "select chatNo from liveSupRec ORDER BY chatNo DESC LIMIT 1";
     // select pr from pr... wherer cat = "" AND careName = ""
@@ -15,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     //刪除""
     // $str_sec = explode('"',$getData);
     // echo print_r($str_sec);
-    $quizNo = $getAll['quizNo'];
+    
     $inputTxt = $getAll['inputTxt'];
     $memType = $getAll['memType'];
     // (編號,聊天室編號,會員or客服,時間,內容)
