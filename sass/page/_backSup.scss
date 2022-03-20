@@ -24,6 +24,14 @@ $uiColor:(
     table{
         text-align: center;
         width: 100%;
+        thead{
+            background-color: #ffffff;
+            border-bottom: 1px solid #14141430;
+            font-size: 16px;
+            color: #141414;
+            font-weight: bold;
+            text-align: center;
+        }
         tr{
             box-sizing: border-box;
             // padding: 0.5em 1em;

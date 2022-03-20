@@ -3,7 +3,7 @@
             <div id="app">
                 <ul class="memeberTitle">
                     <li v-for = 'title in titles'>{{title}}</li>
-                    <li @click="newRow">新增</li>
+                    <li><button @click="newRow" class="whiteRound">新增</button></li>
                 </ul>
                 <ul v-for='(charobj,key) in charobjs'
                 class="memberList">            
@@ -14,11 +14,15 @@
                     </li>   
                 </ul>
                 <section class="backLightBox objNewLigthtBox displayNone" id="objNewLigthtBox">
-                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
-                    <p>{{newObj[0]}}</p>
-                    <p>{{newObj[1]}}</p>
-                    <input type="text" v-model="objName">
-                    <button v-on:click="confirmChange">確認</button>
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
+                    </div>
+                    <div class="txtArea">
+                        <p>{{newObj[0]}}</p>
+                        <p>{{newObj[1]}}</p>
+                        <input type="text" v-model="objName">
+                        <button v-on:click="confirmChange" class="round">確認</button>
+                    </div>
                 </section>
             </div>
         </section>

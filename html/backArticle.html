@@ -16,46 +16,51 @@
                     <li>{{article.reportState}}</li>
                     <li>{{article.auditState}}</li>
                     <li>{{article.visibleStale}}</li>
-                    <li @click="openLightBox(key)">編輯與查看</li>
+                    <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
 
                  <!-- 每個燈箱 -->
                 <section class="backLightBox articleLigthtBox displayNone" id="articleLigthtBox">
-                    <i class="fas fa-times" @click="backCloseLight">x</i>
-                    <ul>
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
+                    </div>
+                    <ul class="txtArea">
                         <!-- '文章標題','文章圖片','文章內容','檢舉狀態','審核狀態','是否顯示' -->
                         <!-- <li>{{lightBoxTitles[0]}}{{lightBoxContent.articleNo}}</li>
 
                         <li>{{lightBoxTitles[1]}}{{lightBoxContent.memNo}}</li> -->
 
-                        <li>{{lightBoxTitles[0]}}</li>
-                        <p>{{lightBoxContent.title}}</p>
-
+                        <li>{{lightBoxTitles[0]}}&emsp;{{lightBoxContent.title}}</li>
+                        <hr>
                         <li>{{lightBoxTitles[1]}}</li>
                         <div class="pic">
                             <img :src="src+lightBoxContent.pic" alt="">
                         </div>
-
+                        <hr>
                         <li>{{lightBoxTitles[2]}}</li>
                         <p v-html="lightBoxContent.content"></p>
+                        <hr>
+                        <li>{{lightBoxTitles[3]}}&emsp;
+                            <select v-model="lightBoxContent.reportState">                                        
+                                <option  v-for="reportState in reportStateList" >{{reportState.name}}</option>                                    
+                            </select>
+                        </li>
+                        
+                        <li>{{lightBoxTitles[4]}}&emsp;
+                            <select v-model="lightBoxContent.auditState">                                        
+                                <option  v-for="auditState in auditStateList" >{{auditState.name}}</option>                                    
+                            </select>
+                        </li>
+                        
+                        <li>{{lightBoxTitles[5]}}&emsp;
+                            <select v-model="lightBoxContent.visibleStale">                                        
+                                <option  v-for="visibleStale in visibleStaleList" >{{visibleStale.name}}</option>                                    
+                            </select>
+                        </li>
+                        
 
-                        <li>{{lightBoxTitles[3]}}</li>
-                        <select v-model="lightBoxContent.reportState">                                        
-                            <option  v-for="reportState in reportStateList" >{{reportState.name}}</option>                                    
-                        </select>
 
-                        <li>{{lightBoxTitles[4]}}</li>
-                        <select v-model="lightBoxContent.auditState">                                        
-                            <option  v-for="auditState in auditStateList" >{{auditState.name}}</option>                                    
-                        </select>
-
-                        <li>{{lightBoxTitles[5]}}</li>
-                        <select v-model="lightBoxContent.visibleStale">                                        
-                            <option  v-for="visibleStale in visibleStaleList" >{{visibleStale.name}}</option>                                    
-                        </select>
-
-
-                        <button @click="confirmChange">確認更改</button>
+                        <button @click="confirmChange" class="round">確認更改</button>
                     </ul>
                 </section>
 

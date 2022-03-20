@@ -9,6 +9,7 @@ let vm = new Vue({
         lightIndex:[],
         prodNo:[],
         key:[],
+        sendNum:[],
     },
     mounted(){
         // 抓圖
@@ -31,6 +32,7 @@ let vm = new Vue({
                         console.log("test",this.products[i].prodNo,this.prodImage[j].prodNo)
                         console.log(i,j);
                         this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[j].img}`);
+                        this.sendNum.push(this.products[i].prodNo);
                     }
                 }
             }
@@ -76,7 +78,7 @@ let vm = new Vue({
             });
         },
         createHref:function() {
-            return `produtFromPhp.html?number=${this.key+1}`;
+            return `produtFromPhp.html?number=${this.sendNum[this.key]}`;
         }
     }
 })
@@ -88,6 +90,7 @@ let vm2 = new Vue({
         lightIndex:[],
         prodNo:[],
         key:[],
+        sendNum:[],
     },
     methods:{
         // 控制篩選器
@@ -116,7 +119,7 @@ let vm2 = new Vue({
             });
         },
         createHref:function() {
-            return `produtFromPhp.html?number=${this.key+1}`;
+            return `produtFromPhp.html?number=${this.sendNum[this.key]}`;
         }
     },
     created(){
@@ -142,13 +145,14 @@ let vm2 = new Vue({
                         console.log("test",this.products[i].prodNo,this.prodImage[j].prodNo)
                         console.log(i,j);
                         this.$set(this.products[i],"url", `assets/image/commodity/${this.prodImage[j].img}`);
+                        this.sendNum.push(this.products[i].prodNo);
                     }
                 }
-            }
+            };
+            console.log(this.sendNum);
         }).catch((err)=>{
             console.log(err)
         });
-
         }
 })
 $(document).ready(function(){

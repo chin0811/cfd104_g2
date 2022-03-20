@@ -16,20 +16,25 @@
                     <li>{{auction.startDate}}</li>
                     <li>{{auction.finishDate}}</li>
                     <li>{{auction.auctionStatus}}</li>    
-                    <li v-on:click="openLightBox(key)">編輯與查看</li>
+                    <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
                 <section class="backLightBox auctionLigthtBox displayNone" id="auctionLigthtBox">
-                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
-                    <li>{{titles[0]}} {{lightIndex.auctionNo}}</li>
-                    <li>{{titles[1]}} {{lightIndex.productName}}</li>
-                    <li>{{titles[2]}} {{lightIndex.productName}}</li>
-                    <li>{{titles[3]}} {{lightIndex.memNo}}</li>
-                    <li>{{titles[4]}} {{lightIndex.startingPrice}}</li>
-                    <li>{{titles[5]}} {{lightIndex.price}}</li>
-                    <li>{{titles[6]}} {{lightIndex.startDate}}</li>
-                    <li>{{titles[7]}} {{lightIndex.finishDate}}</li>
-                    <li>{{titles[8]}} {{lightIndex.auctionStatus}}</li>
-                    <button v-on:click="confirmChange">確認</button>
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
+                    </div>
+                    <ul class="txtArea">
+                        <li>{{titles[0]}}&emsp;{{lightIndex.auctionNo}}</li>
+                        <li>{{titles[1]}}&emsp;{{lightIndex.productName}}</li>
+                        <li>{{titles[2]}}&emsp;{{lightIndex.productName}}</li>
+                        <li>{{titles[3]}}&emsp;{{lightIndex.memNo}}</li>
+                        <li>{{titles[4]}}&emsp;{{lightIndex.startingPrice}}</li>
+                        <li>{{titles[5]}}&emsp;{{lightIndex.price}}</li>
+                        <li>{{titles[6]}}&emsp;{{lightIndex.startDate}}</li>
+                        <li>{{titles[7]}}&emsp;{{lightIndex.finishDate}}</li>
+                        <li>{{titles[8]}}&emsp;{{lightIndex.auctionStatus}}</li>
+                        <button v-on:click="confirmChange" class="round">確認</button>
+                    </ul>
+
                 </section>
             </div>
         </section>

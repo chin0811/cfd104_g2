@@ -15,22 +15,30 @@ a{
     display: flex;
     justify-content: space-between;
     height: 10vh;
-    background-color: #FBF7F3;
+    background-color: #3e444a10;
+    box-shadow: 0.1em 0.2em 0.2em #252b3020;
+    border-bottom: 1px solid #94969b50;
+    // border-right: 1px solid #55595e20;
+    // border-bottom: 1px solid #55595e20;
+    // border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+    box-sizing: border-box;
+    
     .titleBox{
         /* 標題 logo + 文字*/
         width: 20%;
         height: 100%;
         display: flex;
         .logo{
-            width: 30%;
+            width: 35%;
             display: block;
-            min-width: 80px;
-            margin: auto;
+            min-width: 120px;
+            margin:0em 15%;
             box-sizing: border-box;
             height: 100%;
             display: flex;
             align-items: center;
-            padding:  15px 10px;
+            padding:  5px 10px;
             // a{
             //     display: block;
             //     margin: auto;
@@ -65,8 +73,8 @@ a{
         overflow: hidden;
         // position: relative;
         img{
-            max-width: 100%;
-            max-height: 90%;
+            max-width: 80%;
+            max-height: 80%;
             border-radius: 50%;
             object-fit: cover;
             vertical-align: top;
@@ -95,42 +103,82 @@ a{
     height: 90vh;
 }
 .mainNav{
-    width: 18%;
-    background-color: #363636;
+    width: 12%;
     font-size: 20px;
-    color:black;
+    color:#141414;
+    // background-color: #3e444a10;
+    background: url(../../assets/image/backHome_bg.jpg) scroll no-repeat center center / 100% 100%;
+    box-sizing: border-box;
+    border: 1px solid #94969b50;
 }
 .mainNav ul{
     width: 100%;
-    margin-top: 10%;
+    // margin-top: 10%;
 }
 .mainNav ul li{
     width: 100%;
-    border-bottom: 1px solid white;
-    text-align: center;
+    border-bottom: 1px solid #14141420;
+}
+.mainNav ul li a{
+    color:#141414;
+    display: inline-block;
+    width: 100%;
+    height: 8.888888vh;
     box-sizing: border-box;
-    padding: 5%;
+    line-height: 8.888888vh;
+    text-align: center;
+    
+}
+.mainNav ul li a:hover{
+    background-color: #ffffff10;
+    box-sizing: border-box;
+    color:#394897;
+    box-shadow: 0em 0em 0.4em #252b3020;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e20;
+    border-bottom: 1px solid #55595e20;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
 }
 /* 主要內容 */
 .mainContent{
-    width: 82%;
-   overflow-y: scroll;
-   background-color: rgb(122, 173, 190); 
-   position: relative;
+    width: 88%;
+    overflow-y: scroll;
+    background-color: #ffffff; 
+    position: relative;
 }
 // 燈箱設計
 .backLightBox{
     position: absolute;
     width: 90%;
-    height: 90%;
+    height: 85%;
     border-radius: 30px;
     box-sizing: border-box;
-    padding: 3%;
+    padding: 2em;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: #ffc489;
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    overflow: hidden;
+    //透明
+    border-radius: 1em;
+    background-color: #ffffff80;
+    box-shadow: 0.5em 0.5em 0.5em #252b3080;
+    border: 1px solid #94969b50;
+    border-right: 1px solid #55595e80;
+    border-bottom: 1px solid #55595e80;
+    border-left: 1px solid  #55595e10;
+    backdrop-filter: blur(1em);
+
+    .title{
+        height: 1em;
+        text-align: right;
+        img{
+            vertical-align: top;
+            width: 1em;
+            cursor: pointer;
+        }
+    }
 }
 .backLightBox .image{
     max-width: 20%;
@@ -138,11 +186,48 @@ a{
 .backLightBox .image img{
     width: 100%;
 }
-i{
-    position: absolute;
-    top: 3%;
-    right: 4%;
-    cursor: pointer;
+// i{
+//     position: absolute;
+//     top: 3%;
+//     right: 4%;
+//     cursor: pointer;
+// }
+.txtArea{
+    //內容區
+    margin: 2em 0em 1em 0em;
+    padding: 0em 2em;
+    overflow-y: scroll;
+    -webkit-appearance: none;
+    height: 90%;
 }
+//當前頁面
+// .thisPage{
+//     color: #394897;
+// }
 
+// 卷軸
+::-webkit-scrollbar{
+    width: 0.6em;
+}
+//軌道樣式
+::-webkit-scrollbar-track{
+    border-radius: 100em;
+    border-radius: 555px;
+    // background-color: #ffffff50;
+    box-shadow: 0.1em 0.1em 0.1em #252b3040 inset;
+    border: 1px solid #94969b50;
+    border-right: 2px solid #252b3010;
+    border-bottom: 2px solid #252b3010;
+    border-left: 1px solid #ffffff30;
+    backdrop-filter: blur(0.5em);
+}
+// bar樣式
+::-webkit-scrollbar-thumb{
+    border-radius: 100em;
+    background-color: #14141480;
+}
+// bar:hover樣式
+::-webkit-scrollbar-thumb:hover{
+    background-color: #394897;
+}
 
