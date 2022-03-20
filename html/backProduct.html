@@ -14,32 +14,42 @@
                     <li>{{product.adStatus}}</li>
                     <li>{{product.saleStatus}}</li> 
                     <li>{{product.memNo}}</li>   
-                    <li v-on:click="openLightBox(key)">編輯與查看</li>
+                    <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
                 <section class="backLightBox productLigthtBox displayNone" id="productLigthtBox">
-                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
-                    <ul>            
-                        <li>{{titles[0]}} {{lightIndex.prodNo}}</li>
-                        <li>{{titles[1]}} {{lightIndex.prodClass}}</li>
-                        <li>{{titles[2]}} {{lightIndex.productName}}</li>
-                        <li>{{titles[3]}}</li>
-                        <select v-model="lightIndex.auditState ">                                        
-                            <option  v-for="status in statusList" >{{status.name}}</option>                                    
-                        </select>
-                        <li>{{titles[4]}} {{lightIndex.adStatus}}</li>
-                        <li>{{titles[5]}}</li> 
-                        <select v-model="lightIndex.saleStatus">                                        
-                            <option  v-for="sale in saleList" >{{sale.name}}</option>                                    
-                        </select>
-                        <li>{{titles[6]}} {{lightIndex.memNo}}</li>
-                    </ul>
-                    <div class="image">
-                        <img v-bind:src="certification" alt="">   
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
                     </div>
-                    <div class="image" v-for='(image) in indexImage' >
-                        <img v-bind:src="image" alt="">   
+                    <div class="txtArea">
+                        <ul>
+                            <li>{{titles[0]}}&emsp;{{lightIndex.prodNo}}</li>
+                            <li>{{titles[1]}}&emsp;{{lightIndex.prodClass}}</li>
+                            <li>{{titles[2]}}&emsp;{{lightIndex.productName}}</li>
+                            <li>{{titles[3]}}&emsp;
+                                <select v-model="lightIndex.auditState">
+                                    <option  v-for="status in statusList">{{status.name}}</option>
+                                </select>
+                            </li>
+                            <li>{{titles[4]}}&emsp;{{lightIndex.adStatus}}</li>
+                            <li>{{titles[5]}}&emsp;
+                                <select v-model="lightIndex.saleStatus">
+                                    <option  v-for="sale in saleList" >{{sale.name}}</option>
+                                </select>
+                            </li>
+                            <li>{{titles[6]}}&emsp;{{lightIndex.memNo}}</li>
+                        </ul>
+                        <hr>
+                        <div class="image">
+                            <p>證書</p>
+                            <img v-bind:src="certification" alt="">
+                        </div>
+                        <hr>
+                        <div class="image" v-for='(image) in indexImage'>
+                            <p>商品圖</p>
+                            <img v-bind:src="image" alt="">
+                        </div>
+                        <button v-on:click="confirmChange" class="round">確認</button>
                     </div>
-                    <button v-on:click="confirmChange">確認</button>
                 </section>
             </div>
         </section>

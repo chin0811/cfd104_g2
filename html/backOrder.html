@@ -15,22 +15,26 @@
                     <li>{{order.closingPrice}}</li>
                     <li>{{order.creatDate}}</li>
                     <li>{{order.orderStatus}}</li>        
-                    <li v-on:click="openLightBox(key)">編輯與查看</li>
+                    <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
                 <section class="backLightBox orderLigthtBox displayNone" id="orderLigthtBox">
-                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
-                    <li>{{titles[0]}} {{lightIndex.auctionNo}}</li>
-                    <li>{{titles[1]}} {{lightIndex.productName}}</li>
-                    <li>{{titles[2]}} {{lightIndex.memNoSale}}</li>
-                    <li>{{titles[3]}} {{lightIndex.memNoBuy}}</li>
-                    <li>{{titles[4]}} {{lightIndex.productNumber}}</li>
-                    <li>{{titles[5]}} {{lightIndex.closingPrice}}</li>
-                    <li>{{titles[6]}} {{lightIndex.creatDate}}</li>
-                    <li>{{titles[7]}} {{lightIndex.orderStatus}}</li>
-                    <select v-model="lightIndex.orderStatus ">                                        
-                        <option  v-for="orderStatus in orderStatusList" >{{orderStatus.name}}</option>                                    
-                    </select>
-                    <button v-on:click="confirmChange">確認</button>
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
+                    </div>
+                    <ul class="txtArea">
+                        <li>{{titles[0]}} {{lightIndex.auctionNo}}</li>
+                        <li>{{titles[1]}} {{lightIndex.productName}}</li>
+                        <li>{{titles[2]}} {{lightIndex.memNoSale}}</li>
+                        <li>{{titles[3]}} {{lightIndex.memNoBuy}}</li>
+                        <li>{{titles[4]}} {{lightIndex.productNumber}}</li>
+                        <li>{{titles[5]}} {{lightIndex.closingPrice}}</li>
+                        <li>{{titles[6]}} {{lightIndex.creatDate}}</li>
+                        <li>{{titles[7]}} {{lightIndex.orderStatus}}</li>
+                        <select v-model="lightIndex.orderStatus ">                                        
+                            <option  v-for="orderStatus in orderStatusList" >{{orderStatus.name}}</option>                                    
+                        </select>
+                        <button v-on:click="confirmChange" class="round">確認</button>
+                    </ul>
                 </section>
             </div>
         </section>
