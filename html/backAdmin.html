@@ -3,29 +3,33 @@
             <div id="app">
                 <ul class="memeberTitle">
                     <li v-for = 'title in titles'>{{title}}</li>
-                    <li @click="newRow">新增</li>
+                    <li><button @click="newRow" class="whiteRound">新增</button></li>
                 </ul>
                 <!-- 新增管理員的燈箱 -->
                 <section class="backLightBox newRowLigthtBox displayNone" id="newRowLigthtBox">
-                    <i class="fas fa-times" v-on:click="newRowCloseLight">x</i>
-                    <p>{{titles[0]}}{{pkey}}</p>
-                    <p>{{titles[1]}}
-                        <input type="text" v-model="adminId">
-                    </p>
-                    <p>{{titles[2]}}
-                        <input type="text" v-model="adminName">
-                    </p>
-                    <p>{{titles[3]}}
-                        <input type="text" v-model="adminClass">
-                    </p>
-                    <p>{{titles[4]}}
-                        <input type="text" v-model="adminSatate">
-                    </p>
-                    <p>
-                        密碼
-                        <input type="text" v-model="adminPwd">
-                    </p>
-                    <button v-on:click="newRowChange">確認</button>
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="newRowCloseLight">
+                    </div>
+                    <div class="txtArea">
+                        <p>{{titles[0]}}{{pkey}}</p>
+                        <p>{{titles[1]}}
+                            <input type="text" v-model="adminId">
+                        </p>
+                        <p>{{titles[2]}}
+                            <input type="text" v-model="adminName">
+                        </p>
+                        <p>{{titles[3]}}
+                            <input type="text" v-model="adminClass">
+                        </p>
+                        <p>{{titles[4]}}
+                            <input type="text" v-model="adminSatate">
+                        </p>
+                        <p>
+                            密碼
+                            <input type="text" v-model="adminPwd">
+                        </p>
+                        <button v-on:click="newRowChange" class="round">確認</button>
+                    </div>
                 </section>
                 <ul v-for='(administrator,key) in administrators' 
                 class="memberList">            
@@ -34,20 +38,22 @@
                     <li>{{administrator.adminName}}</li>
                     <li>{{administrator.adminClass}}</li>
                     <li>{{administrator.adminSatate}}</li>  
-                    <li v-on:click="openLightBox(key)">編輯與查看</li>
+                    <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
                 <section class="backLightBox adminLigthtBox displayNone" id="adminLigthtBox">
-                    <i class="fas fa-times" v-on:click="backCloseLight">x</i>
-                    <ul>            
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
+                    </div>
+                    <ul class="txtArea">            
                         <li>{{lightIndex.adminNo}}</li>
                         <li>{{lightIndex.adminId}}</li>
                         <li>{{lightIndex.adminName}}</li>
                         <li>{{lightIndex.adminClass}}</li>
+                        <select v-model="changedStatus">                                        
+                            <option :value="status.name" v-for="status in statusList" >{{status.name}}</option>                                    
+                        </select>
+                        <button v-on:click="confirmChange" class="round">確認</button>
                     </ul>
-                    <select v-model="changedStatus">                                        
-                        <option :value="status.name" v-for="status in statusList" >{{status.name}}</option>                                    
-                    </select>
-                    <button v-on:click="confirmChange">確認</button>
                 </section>
             </div>
         </section>

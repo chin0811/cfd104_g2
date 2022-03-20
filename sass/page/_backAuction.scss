@@ -32,7 +32,7 @@
         background-color: #ffffff;
         font-size: 16px;
         color: #000000;
-        font-weight: bold;
+        font-weight: normal;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
@@ -55,7 +55,7 @@
     .txtArea{
         line-height: 2;
         hr{
-            border-bottom: 1px solid #14141430;
+            border: 1px solid #14141420;
         }
         button{
             position: fixed;

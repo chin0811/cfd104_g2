@@ -22,14 +22,14 @@
                         <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
                     </div>
                     <ul class="txtArea">
-                        <li>{{titles[0]}} {{lightIndex.auctionNo}}</li>
-                        <li>{{titles[1]}} {{lightIndex.productName}}</li>
-                        <li>{{titles[2]}} {{lightIndex.memNoSale}}</li>
-                        <li>{{titles[3]}} {{lightIndex.memNoBuy}}</li>
-                        <li>{{titles[4]}} {{lightIndex.productNumber}}</li>
-                        <li>{{titles[5]}} {{lightIndex.closingPrice}}</li>
-                        <li>{{titles[6]}} {{lightIndex.creatDate}}</li>
-                        <li>{{titles[7]}} {{lightIndex.orderStatus}}</li>
+                        <li>{{titles[0]}}&emsp;{{lightIndex.auctionNo}}</li>
+                        <li>{{titles[1]}}&emsp;{{lightIndex.productName}}</li>
+                        <li>{{titles[2]}}&emsp;{{lightIndex.memNoSale}}</li>
+                        <li>{{titles[3]}}&emsp;{{lightIndex.memNoBuy}}</li>
+                        <li>{{titles[4]}}&emsp;{{lightIndex.productNumber}}</li>
+                        <li>{{titles[5]}}&emsp;{{lightIndex.closingPrice}}</li>
+                        <li>{{titles[6]}}&emsp;{{lightIndex.creatDate}}</li>
+                        <li>{{titles[7]}}&emsp;{{lightIndex.orderStatus}}</li>
                         <select v-model="lightIndex.orderStatus ">                                        
                             <option  v-for="orderStatus in orderStatusList" >{{orderStatus.name}}</option>                                    
                         </select>

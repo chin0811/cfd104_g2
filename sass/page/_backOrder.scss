@@ -32,13 +32,14 @@
         background-color: #ffffff;
         font-size: 16px;
         color: #141414;
-        font-weight: bold;
+        font-weight: normal;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        text-align: center;
     }
     .memberList:hover {
-        background-color: #f8f2ed;
+        background-color: #39489710;
     }
     .memberList li {
         white-space: nowrap;
@@ -54,7 +55,7 @@
     .txtArea{
         line-height: 2;
         hr{
-            border-bottom: 1px solid #14141430;
+            border: 1px solid #14141420;
         }
         button{
             position: fixed;

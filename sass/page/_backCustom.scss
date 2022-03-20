@@ -1,4 +1,5 @@
 .backCustom{
+    position: relative;
     .memeberTitle{
         width: 100%;
         box-sizing: border-box;
@@ -10,10 +11,12 @@
             grid-template-columns: 1fr 1fr 2fr 1fr 1fr .8fr .8fr 1fr 107px;
         -webkit-column-gap: 10px;
                 column-gap: 10px;
-        background-color: #bbbbbb;
+        background-color: #ffffff;
+        border-bottom: 1px solid #14141430;
         font-size: 16px;
-        color: #000000;
+        color: #141414;
         font-weight: bold;
+        text-align: center;
     }
     /* 會員清單 */
     .memberList{
@@ -30,35 +33,30 @@
         background-color: #ffffff;
         font-size: 16px;
         color: #000000;
-        font-weight: bold;
+        font-weight: normal;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        text-align: center;
     }
     .memberList:hover {
-        background-color: #f8f2ed;
+        background-color: #39489710;
     }
     .memberList li {
         white-space: nowrap;
         /* 不斷行 */
-        overflow: hidden;
+        // overflow: hidden;
         /* 隱藏 */
         text-overflow: ellipsis;
         /* 出現省略符號 */
     }
-    .memberList li:last-child {
-        box-sizing: border-box;
-        padding: 8%;
-        background-color: #6599e8;
-        border-radius: 15px;
-        text-align: center;
-        color: #ffffff;
-    }
-    .memberList li:last-child:hover {
-        cursor: pointer;
-    }
 }
-
+.pageIndex{
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .pageIndex ul{
     box-sizing: border-box;
     display: flex;
@@ -69,4 +67,5 @@
 }
 .pageIndex a{
     color: black;
+    padding: 0.5em;
 }
