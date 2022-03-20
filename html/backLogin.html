@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登入/註冊</title>
+    <title>後台登入</title>
     <!-- 頁籤icon -->
     <link rel="icon" href="assets/icon/a_icon.ico" type="art together icon">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="js/vue/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
-    <script src="js/loginCheck.js"></script>
+    <style>
+        .headerNormalContain .mainMenu{
+            display: none;
+        }
+        .headerNormalContain .noticeHeader{
+            display: none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+            document.querySelector('.headerNormalContain .logoContain .logo a').href = 'index.html';
+        })
+    </script>
+    <!-- <script src="js/loginCheck.js"></script>
     <script >
         window.addEventListener('load',function(){
             loginCheck(false);
         })
-    </script>
+    </script> -->
 </head>
 <body>
     @@include('layout/headerNormal.html')
@@ -33,48 +46,16 @@
                     <input type="password" placeholder="＊＊＊＊" id="memPsw" v-model="loginMemPsw" required>
                     <input type="submit" value="登入" class="round" >
                 </form>
-                <form action="" :class="registerChange ? 'active':''" id="registerForm">
-                    <div>
-                        <div>
-                            <label for="addMemId">帳號</label>
-                            <input type="text" placeholder="ArtTogether"  id="addMemId" v-model="addMemId" >
-                            <label for="addMemPsw">密碼</label>
-                            <input type="password" placeholder="＊＊＊＊"  id="addMemPsw" v-model="addMemPsw">
-                            <label for="addMemPswAgain">確認密碼</label>
-                            <input type="password" placeholder="＊＊＊＊"  id="addMemPswAgain" v-model="addMemPswAgain">
-                            <label for="email">信箱</label>
-                            <input type="email" placeholder="ArtTogether@gmail.com"  id="email" v-model="emailText">
-                            <input type="button" value="下一頁" class="roundOutline" @click="registerWatch">
-                        </div>
-                        
-                        <div>
-                            <label for="memNickText">暱稱</label>
-                            <input type="text" placeholder="ArtTogether"  id="memNickText" v-model="memNickText" >
-                            <label for="memName">姓名</label>
-                            <input type="text" placeholder="藝起"  id="memName" v-model="nameText">
-                            <label for="memTel">電話</label>
-                            <input type="tel" placeholder="0900000000"  id="memTel" v-model="telText">
-                            <label for="memAddress">地址</label>
-                            <input type="text" placeholder="桃園市中壢區復興路46號9樓"  id="memAddress" v-model="addressText">
-                            <div>
-                                <input type="button" value="上一頁" class="roundOutline" @click="registerChange = !registerChange">
-                                <input type="button" value="註冊" class="round" @click="registerWatch">
-                            </div>
-                        </div>
-                    </div>
+                <form action="" class="" id="registerForm">
                 </form>
             </article>
             <!-- 切換按鈕區 -->
             <article class="">
                 <article>
-                    <img src="assets\image\all_logo.png" alt="">
-                    <input type="button" value="註冊" class="roundOutline" @click="changeBtn = !changeBtn">
-                    <!-- <button>註冊</button> -->
+                    <!-- <img src="assets\image\all_logo.png" alt=""> -->
+                    <img src="assets\image\loading.gif" alt="">
                 </article>
                 <article>
-                    <img src="assets\image\all_logo.png" alt="">
-                    <input type="button" value="登入" class="roundOutline" @click="changeBtn = !changeBtn">
-                    <!-- <button>登入</button> -->
                 </article>
             </article>
         </article>
@@ -85,58 +66,26 @@
         new Vue({
             el: '#loginArea',
             data: {     //變數放在這!
-                changeBtn:false,
-                registerChange:false,
-                addMemId:'',
-                addMemPsw:'', 
-                addMemPswAgain:'',
-                emailText:'',
-                telText:'',
-                nameText:'',
-                addressText:'',
-                memNickText:'',
+            //     changeBtn:false,
+            //     registerChange:false,
+                // addMemId:'',
+                // addMemPsw:'', 
+                // addMemPswAgain:'',
+                // emailText:'',
+                // telText:'',
+                // nameText:'',
+                // addressText:'',
+                // memNickText:'',
                 loginMemPsw:'',
                 loginMemId:'',
             },
             methods: {  //函數大部份放在這!
-                registerWatch(){
-                    if(this.addMemId.length < 5){
-                        alert('帳號字數少於5個字')
-                    }else if(this.addMemPsw.length < 8){
-                        alert('密碼字數不得小於8個字')
-                    }else if(this.addMemPsw != this.addMemPswAgain){
-                        alert('輸入密碼不相符')
-                    }else if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.emailText)){
-                        alert('請確認信箱格式')
-                    }else if(!this.registerChange){
-                        this.registerChange = !this.registerChange
-                    }else if(/\D/.test(this.telText)){
-                        alert('請確認電話格式')
-                    }else if(!this.nameText){
-                        alert('請輸入姓名')
-                    }else if(!this.addressText){
-                        alert('請輸入地址')
-                    }else{
-                        axios({
-                                method: 'post',
-                                url: 'php/loginRegister.php',
-                                //API要求的資料
-                                data: {
-                                    sendData:JSON.stringify(`'${this.memNickText}','${this.addMemId}','${this.addMemPsw}','${this.nameText}','${this.emailText}','${this.telText}','${this.addressText}'`)
-                                }
-                            })
-                            .then((response) => {console.log(response)
-                                location.reload()
-                            })
-                            .catch((error) => console.log(error))
-                    }
-                },
                 loginSelect(){
                     let loginBtn = document.querySelector('.login a:first-of-type');
                     if(loginBtn.innerText == '登入'){
                         axios({
                             method: 'post',
-                            url: 'php/login.php',
+                            // url: 'php/login.php',
                             //API要求的資料
                             data: {
                                 loginMemPsw:this.loginMemPsw,
@@ -155,7 +104,7 @@
                     }else{
                         axios({
                             method: 'post',
-                            url: 'php/logout.php',
+                            // url: 'php/logout.php',
                         })
                         .then((response) => {location.reload();})
                         .catch((error) => console.log(error))
