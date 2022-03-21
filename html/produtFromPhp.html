@@ -113,7 +113,7 @@
                     </article>
                     <div class="introButton">
                         <button class="squareOutline introButtonItem" @click="bidding">出價</button>
-                        <button class="square introButtonItem">直接價購買</button>
+                        <button class="square introButtonItem" @click="directBuy">直接價購買</button>
                     </div>
                 </div>
             </div>
@@ -144,36 +144,60 @@
                     bidHis: [],
                     actOrd: [],
                     auctionNo: "",
-                    memId: 1,
+                    memId: "",
                 },
                 methods: {
+                    directBuy: function(){
+                        if(memData){
+                            location = '3dSurroundView.html'
+                        }else{
+                            alert('請登入')
+                            location = 'login.html'
+                        }
+                    },
                     bidding: function() {
-                        //   console.log(this.inputPrice); 
-                        //   console.log(this.bidHis.length+1);
-                        for (let i = 0; i < this.actOrd.length; i++) {
-                            if (this.actOrd[i].prodNo == this.number) {
-                                this.auctionNo = this.actOrd[i].auctionNo;
+                        if(memData){
+                            this.memId = memData.memNo;
+                            //   console.log(this.inputPrice); 
+                            //   console.log(this.bidHis.length+1);
+                            for (let i = 0; i < this.actOrd.length; i++) {
+                                if (this.actOrd[i].prodNo == this.number) {
+                                    this.auctionNo = this.actOrd[i].auctionNo;
+                                }
+                            };
+                            //   console.log(this.auctionNo);
+                            //   console.log(this.memId);
+                            if (this.inputPrice) {
+                                if(this.inputPrice>this.product.startingPrice){
+                                    alert("出價成功");
+                                    location = '3dSurroundView.html'
+                                }else{
+                                    alert("價格需大於"+this.product.startingPrice);
+                                }
+                            }else{
+                                alert("請出價")
                             }
-                        };
-                        //   console.log(this.auctionNo);
-                        //   console.log(this.memId);
-                        let thisVue = this;
-                        $.ajax({
-                            type: 'POST',
-                            url: 'php/bidInsert.php',
-                            data: {
-                                inputPrice: thisVue.inputPrice,
-                                pKey: thisVue.bidHis.length + 1,
-                                auctionNo: thisVue.auctionNo,
-                                memId: thisVue.memId,
-                            },
-                            success: function(data) {
-                                console.log(data.message);
-                            },
-                            error: function() {
-                                console.log('ajax error');
-                            }
-                        });
+                            let thisVue = this;
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/bidInsert.php',
+                                data: {
+                                    inputPrice: thisVue.inputPrice,
+                                    pKey: thisVue.bidHis.length + 1,
+                                    auctionNo: thisVue.auctionNo,
+                                    memId: thisVue.memId,
+                                },
+                                success: function(data) {
+                                    console.log(data.message);
+                                },
+                                error: function() {
+                                    console.log('ajax error');
+                                }
+                            });
+                        }else{
+                            alert('請登入')
+                            location = 'login.html'
+                        }                      
                     },
                     changeIndex: function(change) {
                         this.n = this.n + change;

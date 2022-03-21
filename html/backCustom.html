@@ -17,6 +17,28 @@
                     <li>{{member.enrollDate}}</li>        
                     <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
+                <section class="backLightBox customLigthtBox displayNone" id="customLigthtBox">
+                    <div class="title">
+                        <img src="assets\image\supportPage_close_icon.svg" v-on:click="backCloseLight">
+                    </div>
+                    <li>{{lightIndex.memNo}}</li>
+                    <li>{{lightIndex.memId}}</li>
+                    <li>{{lightIndex.email}}</li>
+                    <li>{{lightIndex.memName}}</li>
+                    <li>{{lightIndex.phone}}</li>
+                    <li>
+                        <select v-model="lightIndex.warning">
+                            <option  v-for="warning in warningList" >{{warning.name}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select v-model="lightIndex.state">
+                            <option  v-for="state in stateList" >{{state.name}}</option>
+                        </select>
+                    </li>
+                    <li>{{lightIndex.enrollDate}}</li>   
+                    <button v-on:click="confirmChange" class="round">確認</button>
+                </section>
                 <div class="pageIndex">
                     <ul>
                         <li><a href="#" @click="prePage"> < </a></li>
@@ -52,6 +74,16 @@
                 table:'member',
                 pageSize:5,//每頁大小
                 currentPage:0, //當前頁碼
+                customLigthtBox: document.querySelector("#customLigthtBox"),
+                lightIndex:[],
+                stateList:[
+                {name: "正常"},
+                {name: "凍結"},
+                ],
+                warningList:[
+                {name: 0},
+                {name: 1},
+                ],
             },
             mounted(){
                 let thisVue = this;
@@ -71,6 +103,16 @@
                 })
             },
             methods: {
+                openLightBox:function(key){
+                    customLigthtBox.classList.toggle("displayNone"); 
+                    this.lightIndex = this.members[key];
+                 },
+                backCloseLight:function(){
+                    customLigthtBox.classList.toggle("displayNone"); 
+                },
+                confirmChange:function(){
+                    customLigthtBox.classList.toggle("displayNone");
+                },
                 //上一頁
                 nextPage: function(){
                     if (this.currentPage == this.pageNumber - 1) return;
