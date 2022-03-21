@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="galllery02.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="galleryAll/gallery/galllery02.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- 登入  -->
+    <script src="js/loginCheck.js"></script>
+    <script >
+        window.addEventListener('load',function(){
+            loginCheck(false);
+        })
+    </script>
+    <!-- 登入ＥＮＤ  -->
     <title>藝廊2</title>
-
-     <!-- 登入  -->
-     <script src="js/loginCheck.js"></script>
-     <script >
-         window.addEventListener('DOMContentLoaded',function(){
-             loginCheck(false);
-         })
-     </script>
-     <!-- 登入ＥＮＤ  -->
-
-
 </head>
 <body>
+    @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })
     <div id="stats"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
-    <script type="module" src="gallery02.js"></script>
-    <script src="../js/OBJLoader.js"></script>
-    <script src="../js/threex.domevents.js"></script>
-    @@include('layout/header.html',{ "headerClass":"SurroundViewHeader" })
+    <script type="module" src="galleryAll/gallery/gallery02.js"></script>
+    <script src="galleryAll/js/OBJLoader.js"></script>
+    <script src="galleryAll/js/threex.domevents.js"></script>
+
     <section class="lightBox displayNone" id="lightBoxP3">
         <i class="closeLightBox fas fa-times" id="closeLightBoxP3">x</i>
         <!-- 圖片ease-in-out-->
         <div class="photoBox">
             <div class="ease">
-                <img src="https://picsum.photos/500/300/?random=10">
+                <img src="assets\image\commodity\commodity_15.jpg">
             </div>
         </div>
         <div class="lightBoxContent">
@@ -49,12 +47,12 @@
             <div class="wrap">
                 <button id="cubeBtn" class="round">點我</button>     <!--方塊收起按鈕-->
                 <div class="cube">
-                    <div class="top"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></div>
+                    <div class="top"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></div>
                     <div>
-                        <span style="--i:0"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
-                        <span style="--i:1"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
-                        <span style="--i:2"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
-                        <span style="--i:3"><img src="../../assets/image/listingImage/mona_lisa_ps.png" alt=""></span>
+                        <span style="--i:0"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span style="--i:1"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span style="--i:2"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span style="--i:3"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
                     </div>
                 </div>
             </div>
@@ -69,11 +67,12 @@
     <section class="lightBox displayNone" id="lightBoxP5">
         <i class="closeLightBox fas fa-times" id="closeLightBoxP5">x</i>
         <div class="photoBox">
+            <!-- flipClick -->
             <div class="card">
                 <div class="card_inner">
                     <div class="card_face card_face--front">
                         <!-- <h2>Card Front</h2> -->
-                        <img src="../../assets/image/listingImage/listing_bg_picture1.png" alt="none">
+                        <img src="assets/image/commodity/commodity_20_2.jpeg" alt="none">
                     </div>
                     <div class="card_face card_face--back">
                         <!-- <div class="card__content">
@@ -171,11 +170,11 @@
 </body>
 </html>
 <!-- 圖片ease-in-out-->
-<link rel="stylesheet" href="ease.css">
+<link rel="stylesheet" href="galleryAll/gallery/easeGallery02.css">
 
 <!-- 方塊旋轉 -->
-<link rel="stylesheet" href="cubeGallery02.css">
-<script src="../js/jquery.min.js"></script>
+<link rel="stylesheet" href="galleryAll/gallery/cubeGallery02.css">
+<script src="galleryAll/js/jquery.min.js"></script>
 <!--方塊收起-->
 <script>
     $(function () {
@@ -186,7 +185,7 @@
 </script>
 
 <!-- flipClick -->
-<link rel="stylesheet" href="flipClick.css">
+<link rel="stylesheet" href="galleryAll/gallery/flipClick.css">
 <script>
     const card = document.querySelector(".card_inner");
     
@@ -196,7 +195,7 @@
 </script>
 
 <!-- slitting -->
-<link rel="stylesheet" href="slittingGallery02.css">
+<link rel="stylesheet" href="galleryAll/gallery/slittingGallery02.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
@@ -266,7 +265,7 @@ const app = new Vue({
 </script>
 
 <!-- afterImage -->
-<link rel="stylesheet" href="afterImageGallery02.css">
+<link rel="stylesheet" href="galleryAll/gallery/afterImageGallery02.css">
 
 <script>
     document.querySelector('.compare #compare-ip').addEventListener('input', function(e){

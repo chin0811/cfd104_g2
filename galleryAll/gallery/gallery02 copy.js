@@ -64,7 +64,7 @@ function init() {
   var loader = new THREE.ObjectLoader();
   loader.load
   (
-    "galleryAll/gallery/gallery02.json",
+    "gallery02.json",
     function(gallery){
       scene.add(gallery);
       gallery.position.set(0, -2, -3);
@@ -82,7 +82,7 @@ closeLightBoxP3.addEventListener("click",function(){
     lightBoxP3.classList.toggle("displayNone");
 });
 loader.load(
-    "galleryAll/gallery/photo03.json",
+    "photo03.json",
     function(photo03){
       scene.add(photo03);
       photo03.position.set(-2, 5, -10);
@@ -107,7 +107,7 @@ closeLightBoxP4.addEventListener("click",function(){
 });
 loader.load
   (
-    "galleryAll/gallery/photo04.json",
+    "photo04.json",
     function(photo04){
       scene.add(photo04);
       photo04.position.set(6, 5, -10);
@@ -132,7 +132,7 @@ closeLightBoxP5.addEventListener("click",function(){
 });
 loader.load
   (
-    "galleryAll/gallery/photo05.json",
+    "photo05.json",
     function(photo05){
       scene.add(photo05);
       photo05.position.set(35, 5, -15);
@@ -157,7 +157,7 @@ closeLightBoxPumpkin.addEventListener("click",function(){
 });
 loader.load
   (
-    "galleryAll/gallery/pumpkin.json",
+    "pumpkin.json",
     function(pumpkin){
       scene.add(pumpkin);
       pumpkin.position.set(62, 6, -5);
@@ -182,7 +182,7 @@ closeLightBoxPumpkin02.addEventListener("click",function(){
 });
 loader.load
   (
-    "galleryAll/gallery/pumpkin02.json",
+    "pumpkin02.json",
     function(pumpkin02){
       scene.add(pumpkin02);
       pumpkin02.position.set(72, 6, -5);
@@ -207,7 +207,7 @@ closeLightBoxMonkey.addEventListener("click",function(){
 });
 loader.load
   (
-    "galleryAll/gallery/monkey.json",
+    "monkey.json",
     function(monkey){
       scene.add(monkey);
       monkey.position.set(90, 6, 0);
