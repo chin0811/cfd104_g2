@@ -35,6 +35,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $articleTitle = $_POST['articleTitle'];
     // 文章內容
     $articleContent = nl2br($_POST['articleContent']);
+    // 文章內容不要顯示br 
+    $str=str_replace("<br />"," ",$articleContent);
+    $articleContent=$str;
     
     $memNo = $_GET['memNo'];
     // 資料庫語法
