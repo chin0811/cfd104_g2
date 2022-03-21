@@ -177,12 +177,13 @@
 
 .articletPageChange ul li {
     margin: 0 1%;
+    cursor: pointer;
 }
 
-.articletPageChange ul li a {
+.articletPageChange ul li {
     color: #BCBCBC;
 }
 
-.articletPageChange ul li a:hover {
+.articletPageChange ul li:hover {
     color: #394897;
 }

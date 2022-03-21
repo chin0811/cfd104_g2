@@ -49,6 +49,10 @@
         text-overflow: ellipsis;
         /* 出現省略符號 */
     }
+    .pageIndex li{
+        margin: 0 0.5em;
+        cursor: pointer;
+    }
 }
 
 .articleLigthtBox{

@@ -96,9 +96,11 @@
         </section>
         <div class="articletPageChange">
             <ul>
-                <li :class="{disabled: currentPage === 1}" @click="setPage(currentPage-1)"><a href="">&laquo;</a></li>
-                <li v-for="n in totalPage" @click="setPage(n)"><a href="#">{{n}}</a></li>
-                <li :class="{disabled: currentPage === totalPage}" @click="setPage(currentPage+1)"><a href="">&raquo;</a></li>
+                <li :class="{displayNone: currentPage === 1}" @click="setPage(currentPage-1)">&laquo;</li>
+
+                <li v-for="n in totalPage" @click="setPage(n)">{{n}}</li>
+
+                <li :class="{displayNone: currentPage === totalPage}"  @click="setPage(currentPage+1)">&raquo;</li>
             </ul>
         </div>
     </div>
@@ -146,6 +148,7 @@
         methods: {
             setPage(thePage) {
                 this.currentPage = thePage;
+                $("html, body").animate({ scrollTop: 0 }, "slow");
             },
             logIn() {
                 this.memData = memData;
