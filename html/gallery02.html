@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="galleryAll/gallery/galllery02.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <script src="js/vue/vue.min.js"></script>
+    <!-- 彈跳公仔JS -->
+    <script src="js/galleryBounceDoll.js" async></script>
     <!-- 登入  -->
     <script src="js/loginCheck.js"></script>
     <script >
@@ -26,7 +30,7 @@
     <script src="galleryAll/js/threex.domevents.js"></script>
 
     <section class="lightBox displayNone" id="lightBoxP3">
-        <i class="closeLightBox fas fa-times" id="closeLightBoxP3">x</i>
+        <i class="closeLightBox fas fa-times" id="closeLightBoxP3"></i>
         <!-- 圖片ease-in-out-->
         <div class="photoBox">
             <div class="ease">
@@ -41,7 +45,7 @@
         </div>
     </section>
     <section class="lightBox displayNone" id="lightBoxP4">
-        <i class="closeLightBox fas fa-times" id="closeLightBoxP4">x</i>
+        <i class="closeLightBox fas fa-times" id="closeLightBoxP4"></i>
         <div class="photoBox">
             <!-- 方塊旋轉 -->
             <div class="wrap">
@@ -49,10 +53,10 @@
                 <div class="cube">
                     <div class="top"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></div>
                     <div>
-                        <span style="--i:0"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
-                        <span style="--i:1"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
-                        <span style="--i:2"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
-                        <span style="--i:3"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span class="closePic" style="--i:0"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span class="closePic" style="--i:1"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span class="closePic" style="--i:2"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
+                        <span class="closePic" style="--i:3"><img src="assets/image/commodity/commodity_1.jpeg" alt=""></span>
                     </div>
                 </div>
             </div>
@@ -65,7 +69,7 @@
         </div>
     </section>
     <section class="lightBox displayNone" id="lightBoxP5">
-        <i class="closeLightBox fas fa-times" id="closeLightBoxP5">x</i>
+        <i class="closeLightBox fas fa-times" id="closeLightBoxP5"></i>
         <div class="photoBox">
             <!-- flipClick -->
             <div class="card">
@@ -97,7 +101,7 @@
         </div>
     </section>
     <section class="lightBox displayNone" id="lightBoxPumpkin">
-        <i class="closeLightBox fas fa-times" id="closeLightBoxPumpkin">x</i>
+        <i class="closeLightBox fas fa-times" id="closeLightBoxPumpkin"></i>
         <div class="photoBox">
             <!-- slitting -->
             <main id="banksy">
@@ -136,7 +140,7 @@
         </div>
     </section>
     <section class="lightBox displayNone" id="lightBoxPumpkin02">
-        <i class="closeLightBox fas fa-times" id="closeLightBoxPumpkin02">x</i>
+        <i class="closeLightBox fas fa-times" id="closeLightBoxPumpkin02"></i>
         <!-- afterImage -->
         <div class="photoBox">
             <div class="container">
@@ -157,8 +161,15 @@
         </div>
     </section>
     <section class="lightBox displayNone" id="lightBoxMonkey">
-        <i class="closeLightBox fas fa-times" id="closeLightBoxMonkey">x</i>
-        <div class="photoBox">
+        <i class="closeLightBox fas fa-times" id="closeLightBoxMonkey"></i>
+        <div class="photoBox photoBoxBounceDoll">
+            <div id="bounceDoll" v-on:mousemove="updateCoordinates">
+                <div class="bounce" >
+                    <div class="bounceA">
+                        <img src="assets/image/gallery_bounceDoll.png" alt="" class="ball" v-on:mousedown="move"  >
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="lightBoxContent">
             <h3>莫名其妙猴</h3>
@@ -179,7 +190,7 @@
 <script>
     $(function () {
         $(`#cubeBtn`).click(function(){
-            $('span').slideToggle();
+            $('.closePic').slideToggle();
         });
     });
 </script>

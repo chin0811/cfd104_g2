@@ -127,7 +127,7 @@ input{
 
 header{
     position: absolute;
-    top: 2em;
+    /* top: 2em; */
 }
 
 header a{
