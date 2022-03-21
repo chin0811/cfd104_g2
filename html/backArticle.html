@@ -5,8 +5,7 @@
                 <!-- 標題 -->
                 <ul class="articleTitle">
                     <li v-for="title in titles">{{title}}</li>
-                </ul>
-                
+                </ul>         
                 <!-- 撈後臺數據 -->
                 <ul class="articleList" v-for="(article,key) in articleAll.slice(startPage, startPage + perPage)">
                     <li>{{article.articleNo}}</li>
@@ -18,7 +17,6 @@
                     <li>{{article.visibleStale}}</li>
                     <li><button v-on:click="openLightBox(key)" class="round">編輯與查看</button></li>
                 </ul>
-
                  <!-- 每個燈箱 -->
                 <section class="backLightBox articleLigthtBox displayNone" id="articleLigthtBox">
                     <div class="title">
@@ -63,8 +61,6 @@
                         <button @click="confirmChange" class="round">確認更改</button>
                     </ul>
                 </section>
-
-
                 <div  class="pageIndex">
                     <ul>
                         <li :class="{disabled: currentPage === 1}" @click="setPage(currentPage-1)"><a href="">< </a></li>
@@ -75,8 +71,7 @@
 
 
 
-            </div>
-            
+            </div>           
         </section>
     </section>
     <script>
@@ -99,7 +94,7 @@
 
                 // 創造頁籤
                 // rows: [],
-                perPage: 10,
+                perPage: 9,
                 currentPage: 1,
 
                 // 檢舉狀態選項
