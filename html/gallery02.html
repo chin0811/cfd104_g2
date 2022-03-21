@@ -10,6 +10,10 @@
     <script src="js/vue/vue.min.js"></script>
     <!-- 彈跳公仔JS -->
     <script src="js/galleryBounceDoll.js" async></script>
+    <!-- OwlCarousel -->
+    <link rel="stylesheet" href="assets/owlCss/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlCss/owl.theme.default.min.css">
+    <link rel="stylesheet" href="galleryAll/gallery/index.css" />
     <!-- 登入  -->
     <script src="js/loginCheck.js"></script>
     <script >
@@ -28,7 +32,7 @@
     <script type="module" src="galleryAll/gallery/gallery02.js"></script>
     <script src="galleryAll/js/OBJLoader.js"></script>
     <script src="galleryAll/js/threex.domevents.js"></script>
-
+    <script src="js/jquery/jquery.min.js"></script>
     <section class="lightBox displayNone" id="lightBoxP3">
         <i class="closeLightBox fas fa-times" id="closeLightBoxP3"></i>
         <!-- 圖片ease-in-out-->
@@ -178,14 +182,24 @@
             <a href="productSingle.html" class="goPrice round">前往出價</a>
         </div>
     </section>
+    <!-- 提示 -->
+    <div class="galleryHint" id="galleryHint">
+        <i class="closeHint fas fa-times" id="closeHint"></i>
+        <div class="owl-carousel owl-theme">
+        </div>
+    </div>
 </body>
 </html>
+<!-- 燈箱.js -->
+<!-- OwlCarousel -->
+<!-- <script src="js/owl/owl.carousel.js"></script> -->
+<script src="js/owl/owl.carousel.min.js"></script>
+<script src="js/gallery.js" ></script>
 <!-- 圖片ease-in-out-->
 <link rel="stylesheet" href="galleryAll/gallery/easeGallery02.css">
 
 <!-- 方塊旋轉 -->
 <link rel="stylesheet" href="galleryAll/gallery/cubeGallery02.css">
-<script src="galleryAll/js/jquery.min.js"></script>
 <!--方塊收起-->
 <script>
     $(function () {
