@@ -79,7 +79,7 @@ require_once("g2_dataConnect.php");
     //商品編號	販售會員編號 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
     //資料放入sql之指令
     $sql = "insert into $table values($value)";
-    echo $sql;
+    // echo $sql; //sql指令
     // 傳到資料庫裏面去
     // :src='images/xxxx'
 
@@ -127,7 +127,7 @@ $tableActord ='actord';//資料庫的table名稱
     //拍賣編號(流水) 商品編號(連結)	 販售會員編號(連結) 買家編號(固定)  起標價  定價  結標價(固定) 起始日(固定) 結速日(固定) 拍賣狀態(固定) 創建日期(固定) 訂單狀態(固定) 收件者(固定) 收件者phone(固定) 收記者地址(固定) 寄件者名子(固定) 寄件者phone(固定) 寄件者地址(固定) 標價間距 拍賣讚數(固定) 競標時間(固定) 拍賣天數
     //資料放入sql之指令
     $sqlActord = "insert into $tableActord values($value)";
-    echo $sqlActord;
+    // echo $sqlActord; //sql到sqlActord 表指令
     // 傳到資料庫裏面去
     // :src='images/xxxx'
 
@@ -174,7 +174,7 @@ $tableActord ='actord';//資料庫的table名稱
                     // $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
                     $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
                     $sqlImg = "insert into comimg values($valueImg)";
-                    echo $sqlImg;
+                    //echo $sqlImg;  //sql到Img表指令
                     
                     // echo $valueImg;
                     // $newName[$i] = $newName1;
@@ -206,4 +206,21 @@ $tableActord ='actord';//資料庫的table名稱
 // 	$message['message'] = "大失敗";
 // }
 // echo $msg['msg'];
+header('Refresh:2;url=../homePage.html');
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('上傳成功')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
