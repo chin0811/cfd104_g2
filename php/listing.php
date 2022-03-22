@@ -116,4 +116,22 @@ require_once("g2_dataConnect.php");
                 // echo "系統暫時不能提供服務~";
         }
     }
+
+    header('Refresh:2;url=../homePage.html');
+
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('上傳成功')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
