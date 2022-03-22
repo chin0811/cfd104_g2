@@ -227,14 +227,16 @@ const app = new Vue({
         targets: '#original',
         height: 0,
         duration: 10000,
-        easing: 'linear'
+        easing: 'linear',
+        loop: true
         })
 
         this.dropping = anime({
         targets: '#painting',
         translateY: '101%',
         duration: 10000,
-        easing: 'linear'
+        easing: 'linear',
+        loop: true
         })
     },
     artSelected(e) {

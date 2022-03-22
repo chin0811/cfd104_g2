@@ -212,7 +212,7 @@ $inputWidth: 160;
     @return $val;
 }
 
-input[type="range"] {
+input[type="range"].adjustmentLever {
     transform: translate(-15%, 35%) scale(.7);
     padding: 0;
     margin: auto;

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="galleryAll/gallery/galllery02.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     
     <script src="js/vue/vue.min.js"></script>
     <!-- 彈跳公仔JS -->
@@ -14,6 +13,8 @@
     <link rel="stylesheet" href="assets/owlCss/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlCss/owl.theme.default.min.css">
     <link rel="stylesheet" href="galleryAll/gallery/index.css" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- 登入  -->
     <script src="js/loginCheck.js"></script>
     <script >
@@ -21,6 +22,7 @@
             loginCheck(false);
         })
     </script>
+    
     <!-- 登入ＥＮＤ  -->
     <title>藝廊2</title>
 </head>
@@ -153,7 +155,7 @@
                         <div class="after"></div>
                     </div>
                     <p>請拖曳藍線</p>
-                    <input type="range" min="0" max="540" step="10" id="compare-ip">
+                    <input type="range" min="0" max="540" step="10" id="compare-ip" class="notInput">
                 </div>
             </div>
         </div>
@@ -296,6 +298,13 @@ const app = new Vue({
     document.querySelector('.compare #compare-ip').addEventListener('input', function(e){
         document.querySelector('.compare .before .after').style.width = (+e.target.value) + "px";
     });
+
+    window.addEventListener('load',function(){
+        
+        document.querySelector('#galleryHint #closeHint').addEventListener('click',()=>{
+            document.querySelector('#galleryHint').classList.add('displayNone');
+        })
+    })
 </script>
 
 
