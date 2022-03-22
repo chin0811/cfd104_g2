@@ -28,7 +28,7 @@
                 <!-- active -->
                 <article class="titleCell">
                     <span class="material-icons" @click="closedRoom">arrow_back_ios</span>
-                    <h3>Name</h3>
+                    <h3>{{(openPeopleBool) ? '客服':''}}</h3>
                     <!-- <span class="material-icons" @click="openSelect = !openSelect">close</span> -->
                     <img src="assets\image\supportPage_close_icon.svg" alt="" @click="openSelect = !openSelect">
                 </article>

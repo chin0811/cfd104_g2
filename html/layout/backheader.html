@@ -10,6 +10,15 @@
     <script src="js/vue/vue.js"></script>
     <script src="js/jquery/jquery.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="js/backLoginCheck.js"></script>
+    <script >
+        window.addEventListener('DOMContentLoaded',function(){
+            backLoginCheck(true);
+        })
+    </script>
+
+
 </head>
 <body>
         
@@ -29,9 +38,12 @@
                 <img src="assets/image/back_headphoto_temp.jpg" alt="">
             </div>
             <div class="name">
-                <p>火爆猴</p>
+                <!-- <p>火爆猴</p> -->
+                <p></p>
             </div>
+            <button class="loginOut whiteRound">登出</button>
         </div>
+       
     </section>
     <section class="mainContainer">
         <nav class="mainNav">

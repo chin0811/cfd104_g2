@@ -245,7 +245,7 @@ function scrollView(obj){
         setTimeout(function(){  //delay 0.1s 等待0.1秒後執行(等畫面出現)
             obj.scrollIntoView({ behavior: 'smooth' });
             // 滑動到物件位置
-        },100);
+        },200);
     };
 }
 // 回到最上方按鈕

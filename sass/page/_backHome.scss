@@ -8,6 +8,7 @@ a{
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
+
 /* 主要banner 上方bar  */
 .mainBanner{
     width: 100%;
@@ -23,6 +24,11 @@ a{
     // border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
     box-sizing: border-box;
+    .loginOut{
+        //登出按鈕
+        font-size: 16px;
+        margin: auto 2em;
+    }
     
     .titleBox{
         /* 標題 logo + 文字*/

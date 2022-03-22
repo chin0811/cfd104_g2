@@ -3,7 +3,7 @@
 try {
 	require_once("g2_dataConnect.php");
 	if (empty($_GET['selectkey'])){
-		$sql = "SELECT live.quizNo,mem.memName,amd.adminName,live.stTimer,live.finishState FROM liveSup live JOIN member mem on (live.memNo = mem.memNo ) JOIN administrator amd on (live.adminNo = amd.adminNo)";
+		$sql = "SELECT live.quizNo,mem.memName,amd.adminName,live.stTimer,live.finishState FROM liveSup live JOIN member mem on (live.memNo = mem.memNo ) JOIN administrator amd on (live.adminNo = amd.adminNo) ORDER BY stTimer DESC";
 	}else{
 		// $sql = "select * from robSup where keyWord = '{$_GET['selectkey']}'";
 	}

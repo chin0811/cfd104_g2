@@ -19,7 +19,7 @@ button{
     border-left: 1px solid #ffffff30;
     backdrop-filter: blur(0.5em);
 }
-input{
+input:not([class*='notInput']){
     font-family: 'Noto Serif TC', serif;
     // -webkit-appearance: none;
     // 文字設定
@@ -206,7 +206,7 @@ span.small{
 	letter-spacing:2px;
 }
 /* 橢圓形實心按鈕 */
-.round{
+.round,input.round{
     color: #FFFFFF;
     font-size: 1em;
     background-color: #394897;
@@ -228,7 +228,7 @@ span.small{
     transition: .3s;
 }
 /* 透明橢圓按鈕 */
-.whiteRound{
+.whiteRound,input.whiteRound{
     color: #141414;
     border: 1px solid transparent;
     font-size: 1em;
@@ -262,14 +262,14 @@ span.small{
     backdrop-filter: blur(0.5em);
 }
 /* 實心按鈕hover */
-.whiteRound:hover,.whiteSquare:hover,.round:hover,.square:hover{
+.whiteRound:hover,.whiteSquare:hover,.round:hover,.square:hover,input:hover.roundOutline{
     color: #FFFFFF;
     background-color: #141414;
     border: 1px solid #141414;
 }
 
 /* 橢圓形外框按鈕 */
-.roundOutline{
+.roundOutline,input.roundOutline{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
@@ -302,7 +302,7 @@ span.small{
     backdrop-filter: blur(0.5em);
 }
 /* 外框按鈕hover */
-.roundOutline:hover,.squareOutline:hover{
+.roundOutline:hover,.squareOutline:hover,input.roundOutline:hover,input.squareOutline:hover{
     color: #FFFFFF;
     background-color: #141414;
     border: 1px solid #141414;

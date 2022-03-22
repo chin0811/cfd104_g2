@@ -121,13 +121,13 @@
     background-position: 100% 0%;
 }
 
-input{
+/* input{
     display: none;
-}
+} */
 
 header{
     position: absolute;
-    top: 2em;
+    /* top: 2em; */
 }
 
 header a{
