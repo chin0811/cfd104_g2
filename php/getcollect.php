@@ -14,7 +14,7 @@
         // 查詢會員資料
         $id = $_POST['id'];
         // sql 查詢語法
-        $sql = "select * FROM favlist";
+        $sql = "select * FROM favList";
         //$msg['sql'] = $sql;   
 
             // 取得 join 資料表
