@@ -7,12 +7,12 @@ try {
     $Status =$_POST['Status'];
 
     if($Status == '0')//取得
-	$sql = "SELECT * FROM favlist INNER JOIN com ON favlist.productNumber = com.prodNo INNER JOIN comimg ON favlist.productNumber = comimg.prodNo INNER JOIN actord ON favlist.productNumber = actord.productNumber Where favlist.memNo='$memNo'";
+	$sql = "SELECT * FROM favList INNER JOIN com ON favList.productNumber = com.prodNo INNER JOIN comImg ON favList.productNumber = comImg.prodNo INNER JOIN actord ON favList.productNumber = actOrd.productNumber Where favList.memNo='$memNo'";
     else
     {
     $favoriteListNumber =$_POST['favoriteListNumber'];
 
-    $sql = "DELETE FROM favlist Where favoriteListNumber = '$favoriteListNumber' and memNo='$memNo'";
+    $sql = "DELETE FROM favList Where favoriteListNumber = '$favoriteListNumber' and memNo='$memNo'";
     }
 
 	$datas = $pdo->query($sql);

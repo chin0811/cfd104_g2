@@ -100,7 +100,7 @@ require_once("g2_dataConnect.php");
 
 $tableActord ='actOrd';//資料庫的table名稱
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $sqlNumberActOrd = "select auctionNo from actOrd ORDER BY auctionNo DESC LIMIT 1";
+    $sqlNumberActord = "select auctionNo from actOrd ORDER BY auctionNo DESC LIMIT 1";
     $datas = $pdo->query($sqlNumberActord);
 	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
     $actionNo = $dataNumber[0]["auctionNo"] + 1;

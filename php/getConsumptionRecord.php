@@ -5,9 +5,9 @@ try {
     $memNo=$_SESSION["memNo"];
     $orderStatus =$_POST['orderStatus'];
     if($orderStatus == '0')
-	$sql = "SELECT * FROM actord INNER JOIN com ON actord.productNumber = com.prodNo INNER JOIN comimg ON actord.productNumber = comimg.prodNo Where orderStatus !='訂單結單' and memNoSale='$memNo'";
+	$sql = "SELECT * FROM actOrd INNER JOIN com ON actOrd.productNumber = com.prodNo INNER JOIN comImg ON actOrd.productNumber = comImg.prodNo Where orderStatus !='訂單結單' and memNoSale='$memNo'";
     else
-    $sql = "SELECT * FROM actord INNER JOIN com ON actord.productNumber = com.prodNo INNER JOIN comimg ON actord.productNumber = comimg.prodNo Where orderStatus ='訂單結單' and memNoSale='$memNo'";
+    $sql = "SELECT * FROM actOrd INNER JOIN com ON actOrd.productNumber = com.prodNo INNER JOIN comImg ON actOrd.productNumber = comImg.prodNo Where orderStatus ='訂單結單' and memNoSale='$memNo'";
 
 	$datas = $pdo->query($sql);
 	$data = $datas->fetchAll(PDO::FETCH_ASSOC);
