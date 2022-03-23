@@ -238,7 +238,7 @@ function collect() {
                             </section>
                             <section class="timeAndButton">
                                 <span class="time">剩餘2小時47分17秒</span>
-                                <button class="round round3dBtn" type="button"><a href="/CFD104G2/produtFromPhp.html?number=${arrOrder[i].prodNo}">前往商品頁面</a></button>
+                                <button class="round round3dBtn" type="button"><a href="produtFromPhp.html?number=${arrOrder[i].prodNo}">前往商品頁面</a></button>
                             </section>
                         </section>
 
@@ -502,7 +502,7 @@ function myListing() {
                         </section>
                         <section class="timeAndButton">
                             <span class="time">剩餘2小時47分17秒</span>
-                            <button class="round round3dBtn" type="button"><a href="/CFD104G2/produtFromPhp.html?number=${arrOrder[i].prodNo}">前往商品頁面</a></button>
+                            <button class="round round3dBtn" type="button"><a href="produtFromPhp.html?number=${arrOrder[i].prodNo}">前往商品頁面</a></button>
                         </section>
                     </section>
                 </section>
