@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- 引入vue -->
     <script src="js/vue/vue.js"></script>
-    <script src="js/articlePage.js"></script>
+    <!-- <script src="js/articlePage.js"></script> -->
     <!-- 跳窗套件 -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- 登入  -->
@@ -147,7 +147,7 @@
                 <!-- 要隱藏留言區用的 -->
                 <section class="hiddenArea">
                     <section class="commentArea">
-                        <span class="commentClose">
+                        <span class="commentClose" @click="commentClose">
                             <i class="fas fa-times"></i>
                         </span>
                         <h4>回應(<span>{{ArticleComments.length}}</span>)</h4>
@@ -356,6 +356,7 @@
 
                 // 收藏切換
                 toggleLikes(){
+                    $('.like .pic img').toggleClass('active');
                     if(memData){
                         if(!this.click){
                             // this.discusArtAll[0].articleLikes += 1;
@@ -390,7 +391,11 @@
                         window.location="login.html";
                     }
                 },
-                
+
+                // 留言窗關閉
+                commentClose(){
+                    $(".articlePageContent .articlePageWrap .commentArea").removeClass("slideIn");
+                } 
             },
 
             mounted(){
