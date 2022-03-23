@@ -356,10 +356,12 @@
                 toggleLikes(){
                     if(memData){
                         if(!this.click){
-                            this.discusArtAll[0].articleLikes += 1;
+                            // this.discusArtAll[0].articleLikes += 1;
+                            this.discusArtAll[0].articleLikes = parseInt(this.discusArtAll[0].articleLikes) + 1;
                             this.click = !this.click;
                         }else{
-                            this.discusArtAll[0].articleLikes -= 1;
+                            // this.discusArtAll[0].articleLikes -= 1;
+                            this.discusArtAll[0].articleLikes = parseInt(this.discusArtAll[0].articleLikes) - 1;
                             this.click = !this.click;
                         };
                         // 避免抓到ajax的this
@@ -398,7 +400,7 @@
                 axios.get(`php/articlePage.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     this.discusArtAll = res.data;
                     
-                    console.log(this.discusArtAll[0].content);
+                    // console.log(this.discusArtAll[0].content);
 
                     // 內容換行
                     let reg=new RegExp("\n","g"); 
