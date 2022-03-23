@@ -309,7 +309,7 @@ $('#nowOrder3dBtn').click(function() {
             var showOrder = "";
             var n = Math.floor(Math.random() * 11);
             var k = Math.floor(Math.random() * 1000000);
-            var m = String.fromCharCode(n) + k;
+            var m = `art${k}`;
             newDateEP();
             for (let i = 0; i < arrOrder.length; i++) {
                 showOrder += `
@@ -352,7 +352,7 @@ $('#nowOrder3dBtn').click(function() {
                         <input type="hidden" name="MerchantTradeNo" value="${m}" class="form-control"/>
                     </label>
                     <label class="col-xs-12">
-                        <input type="hidden" name="MerchantTradeDate" value="${new Date().format('yyyy-MM-dd hh:mm:ss')}" class="form-control"/>
+                        <input type="hidden" name="MerchantTradeDate" value="${new Date().format('yyyy/MM/dd hh:mm:ss')}" class="form-control"/>
                     </label>
                     <label class="col-xs-12">
                         <input type="hidden" name="PaymentType" value="aio" class="form-control"/>
