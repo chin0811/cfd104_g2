@@ -17,7 +17,7 @@
     //     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     // }
 
-header('Content-Type: application/json; charset=utf-8');
+// header('Content-Type: application/json; charset=utf-8');
 require_once("g2_dataConnect.php");
 // echo
 // $newName =['','','','']; //多圖打開
