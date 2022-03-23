@@ -98,9 +98,9 @@ require_once("g2_dataConnect.php");
     }
 
 
-$tableActord ='actord';//資料庫的table名稱
+$tableActord ='actOrd';//資料庫的table名稱
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $sqlNumberActord = "select auctionNo from actord ORDER BY auctionNo DESC LIMIT 1";
+    $sqlNumberActOrd = "select auctionNo from actOrd ORDER BY auctionNo DESC LIMIT 1";
     $datas = $pdo->query($sqlNumberActord);
 	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
     $actionNo = $dataNumber[0]["auctionNo"] + 1;
@@ -164,7 +164,7 @@ $tableActord ='actord';//資料庫的table名稱
                     $name = explode('.',$fileName);	// [AAAA,png]//檔案全名
                     // 流水號產生
 
-                    $sqlImgNumber = "select imgNo from comimg ORDER BY imgNo DESC LIMIT 1";
+                    $sqlImgNumber = "select imgNo from comImg ORDER BY imgNo DESC LIMIT 1";
                     $imgdatas = $pdo->query($sqlImgNumber);
                     $imgdataNumber = $imgdatas->fetchAll(PDO::FETCH_ASSOC);
                     $imgNoNew = $imgdataNumber[0]["imgNo"] + 1;
@@ -173,7 +173,7 @@ $tableActord ='actord';//資料庫的table名稱
                     $newName = uniqid().".".$name[1];
                     // $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
                     $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
-                    $sqlImg = "insert into comimg values($valueImg)";
+                    $sqlImg = "insert into comImg values($valueImg)";
                     //echo $sqlImg;  //sql到Img表指令
                     
                     // echo $valueImg;
