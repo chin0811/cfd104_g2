@@ -31,8 +31,8 @@
     <!-- 登入  -->
     <script src="js/loginCheck.js"></script>
     <script >
-        window.addEventListener('true',function(){
-            loginCheck(false);
+        window.addEventListener('load',function(){
+            loginCheck(true);
         })
     </script>
     <!-- 登入ＥＮＤ  -->
@@ -429,19 +429,19 @@
                             </div>
                             <div class="modalValue">
                                 <h6>競拍時間:</h6>
-                                <p>{{time}}</p>
+                                <p>{{time}}天</p>
                             </div>
                             <div class="modalValue">
                                 <h6>起標價:</h6>
-                                <p>{{score}}</p>
+                                <p>NT{{score}}</p>
                             </div>
                             <div class="modalValue">
                                 <h6>每次標價間距:</h6>
-                                <p>{{pitch}}</p>
+                                <p>NT{{pitch}}</p>
                             </div>
                             <div class="modalValue">
                                 <h6>定價:</h6>
-                                <p>{{score1}}</p>
+                                <p>NT{{score1}}</p>
                             </div>
                             <div class="modalValue">
                                 <h6>商品種類:</h6>
