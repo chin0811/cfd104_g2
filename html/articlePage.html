@@ -228,6 +228,8 @@
                 memNameRender(){
                     // 抓到會員登入的資料，寫入vue data
                     this.memData = memData;
+                    $(".articlePageContent .articlePageWrap .commentArea").toggleClass("slideIn");
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
                     switch (this.memData.virBgNo) {
                         case 0:
                             this.memData.virBgNo = 'background-color:#FFD60A';
