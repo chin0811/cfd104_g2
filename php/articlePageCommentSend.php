@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $getData = json_decode($_POST['MyComment']);
 
     // 資料庫語法
-    $table ='forummes';//資料庫的table名稱
+    $table ='forumMes';//資料庫的table名稱
     $value = "$messageNoNew,$getData,'$today'";//傳進來的東西，是要可以直接寫進sql的行式
     // echo $value;
     $sql = "insert into $table value ($value)";

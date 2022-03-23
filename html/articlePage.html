@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- 引入vue -->
     <script src="js/vue/vue.js"></script>
-    <script src="js/articlePage.js"></script>
+    <!-- <script src="js/articlePage.js"></script> -->
     <!-- 跳窗套件 -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- 登入  -->
@@ -147,7 +147,7 @@
                 <!-- 要隱藏留言區用的 -->
                 <section class="hiddenArea">
                     <section class="commentArea">
-                        <span class="commentClose">
+                        <span class="commentClose" @click="commentClose">
                             <i class="fas fa-times"></i>
                         </span>
                         <h4>回應(<span>{{ArticleComments.length}}</span>)</h4>
@@ -228,6 +228,8 @@
                 memNameRender(){
                     // 抓到會員登入的資料，寫入vue data
                     this.memData = memData;
+                    $(".articlePageContent .articlePageWrap .commentArea").toggleClass("slideIn");
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
                     switch (this.memData.virBgNo) {
                         case 0:
                             this.memData.virBgNo = 'background-color:#FFD60A';
@@ -354,12 +356,15 @@
 
                 // 收藏切換
                 toggleLikes(){
+                    $('.like .pic img').toggleClass('active');
                     if(memData){
                         if(!this.click){
-                            this.discusArtAll[0].articleLikes += 1;
+                            // this.discusArtAll[0].articleLikes += 1;
+                            this.discusArtAll[0].articleLikes = parseInt(this.discusArtAll[0].articleLikes) + 1;
                             this.click = !this.click;
                         }else{
-                            this.discusArtAll[0].articleLikes -= 1;
+                            // this.discusArtAll[0].articleLikes -= 1;
+                            this.discusArtAll[0].articleLikes = parseInt(this.discusArtAll[0].articleLikes) - 1;
                             this.click = !this.click;
                         };
                         // 避免抓到ajax的this
@@ -386,7 +391,11 @@
                         window.location="login.html";
                     }
                 },
-                
+
+                // 留言窗關閉
+                commentClose(){
+                    $(".articlePageContent .articlePageWrap .commentArea").removeClass("slideIn");
+                } 
             },
 
             mounted(){
@@ -398,7 +407,7 @@
                 axios.get(`php/articlePage.php?articleNo=${url.searchParams.get('articleNo')}`).then((res)=>{
                     this.discusArtAll = res.data;
                     
-                    console.log(this.discusArtAll[0].content);
+                    // console.log(this.discusArtAll[0].content);
 
                     // 內容換行
                     let reg=new RegExp("\n","g"); 

@@ -17,7 +17,7 @@
     //     echo "錯誤原因 : ", $e->getMessage(), "<br>";
     // }
 
-header('Content-Type: application/json; charset=utf-8');
+// header('Content-Type: application/json; charset=utf-8');
 require_once("g2_dataConnect.php");
 // echo
 // $newName =['','','','']; //多圖打開
@@ -78,7 +78,7 @@ require_once("g2_dataConnect.php");
     $value = "$prodNoNew,$memNo,'未販售','$artName','$productIntro','$ad','$papers','$type','未審查','$artistName'";
     //商品編號	販售會員編號 販售狀態 商品資訊	廣告狀態 商品鑑定證書 商品分類 審核狀態	商品名稱
     //資料放入sql之指令
-    $sql = "insert into $table values($value)";
+    $sql = "INSERT INTO $table values($value)";
     // echo $sql; //sql指令
     // 傳到資料庫裏面去
     // :src='images/xxxx'
@@ -98,9 +98,9 @@ require_once("g2_dataConnect.php");
     }
 
 
-$tableActord ='actord';//資料庫的table名稱
+$tableActord ='actOrd';//資料庫的table名稱
     //input所對應之欄位['填寫input name'] //圖片欄位放{$newName}
-    $sqlNumberActord = "select auctionNo from actord ORDER BY auctionNo DESC LIMIT 1";
+    $sqlNumberActord = "SELECT auctionNo FROM actOrd ORDER BY auctionNo DESC LIMIT 1";
     $datas = $pdo->query($sqlNumberActord);
 	$dataNumber = $datas->fetchAll(PDO::FETCH_ASSOC);
     $actionNo = $dataNumber[0]["auctionNo"] + 1;
@@ -126,7 +126,7 @@ $tableActord ='actord';//資料庫的table名稱
     $value = "$actionNo,$prodNoNew,$memNo,null,$startPrice,$price,null,null,null,'未上架',null,null,null,null,null,null,null,null,$bidInterval,'0',null,$dateInterval";
     //拍賣編號(流水) 商品編號(連結)	 販售會員編號(連結) 買家編號(固定)  起標價  定價  結標價(固定) 起始日(固定) 結速日(固定) 拍賣狀態(固定) 創建日期(固定) 訂單狀態(固定) 收件者(固定) 收件者phone(固定) 收記者地址(固定) 寄件者名子(固定) 寄件者phone(固定) 寄件者地址(固定) 標價間距 拍賣讚數(固定) 競標時間(固定) 拍賣天數
     //資料放入sql之指令
-    $sqlActord = "insert into $tableActord values($value)";
+    $sqlActord = "INSERT INTO $tableActord values($value)";
     // echo $sqlActord; //sql到sqlActord 表指令
     // 傳到資料庫裏面去
     // :src='images/xxxx'
@@ -164,7 +164,7 @@ $tableActord ='actord';//資料庫的table名稱
                     $name = explode('.',$fileName);	// [AAAA,png]//檔案全名
                     // 流水號產生
 
-                    $sqlImgNumber = "select imgNo from comimg ORDER BY imgNo DESC LIMIT 1";
+                    $sqlImgNumber = "SELECT imgNo FROM comImg ORDER BY imgNo DESC LIMIT 1";
                     $imgdatas = $pdo->query($sqlImgNumber);
                     $imgdataNumber = $imgdatas->fetchAll(PDO::FETCH_ASSOC);
                     $imgNoNew = $imgdataNumber[0]["imgNo"] + 1;
@@ -173,7 +173,7 @@ $tableActord ='actord';//資料庫的table名稱
                     $newName = uniqid().".".$name[1];
                     // $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
                     $valueImg = "$imgNoNew,$prodNoNew,'$newName'";
-                    $sqlImg = "insert into comimg values($valueImg)";
+                    $sqlImg = "INSERT INTO comImg values($valueImg)";
                     //echo $sqlImg;  //sql到Img表指令
                     
                     // echo $valueImg;
@@ -206,8 +206,8 @@ $tableActord ='actord';//資料庫的table名稱
 // 	$message['message'] = "大失敗";
 // }
 // echo $msg['msg'];
-echo "<script> alert('送出成功');</script>";
-header('Refresh:2;url=../homePage.html');
+echo "<script> alert('送出成功'); location = '../homePage.html';</script>";
+// header('Refresh:0;url=../homePage.html');
 ?>
 
 <!-- <!DOCTYPE html>
