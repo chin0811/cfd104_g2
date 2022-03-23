@@ -217,7 +217,7 @@ span.small{
     transition: .3s;
 }
 /* 方形實心按鈕 */
-.square{
+.square,input.square{
     color: #FFFFFF;
     font-size: 1em;
     background-color: #394897;
@@ -245,7 +245,7 @@ span.small{
     backdrop-filter: blur(0.5em);
 }
 /* 透明方形按鈕 */
-.whiteSquare{
+.whiteSquare,input.whiteSquare{
     color: #141414;
     border: 1px solid transparent;
     font-size: 1em;
@@ -285,7 +285,7 @@ span.small{
     backdrop-filter: blur(0.5em);
 }
 /* 方形外框按鈕 */
-.squareOutline{
+.squareOutline,input.squareOutline{
     color: #141414;
     font-size: 1em;
     background-color: transparent;
@@ -302,7 +302,7 @@ span.small{
     backdrop-filter: blur(0.5em);
 }
 /* 外框按鈕hover */
-.roundOutline:hover,.squareOutline:hover,input.roundOutline:hover,input.squareOutline:hover{
+.roundOutline:hover,.squareOutline:hover,input.roundOutline:hover,input.squareOutline:hover,{
     color: #FFFFFF;
     background-color: #141414;
     border: 1px solid #141414;

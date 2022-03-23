@@ -1,5 +1,4 @@
 @@include('layout/backheader.html',{title:"文章管理"})
-
         <section class="mainContent backArticle">
             <div id="backArticle">
                 <!-- 標題 -->
@@ -55,13 +54,10 @@
                                 <option  v-for="visibleStale in visibleStaleList" >{{visibleStale.name}}</option>                                    
                             </select>
                         </li>
-                        
-
-
                         <button @click="confirmChange" class="round">確認更改</button>
                     </ul>
                 </section>
-                <div  class="pageIndex">
+                <!-- <div  class="pageIndex">
                     <ul>
                         <li :class="{displayNone: currentPage === 1}" @click="setPage(currentPage-1)">&laquo;</li>
 
@@ -69,10 +65,7 @@
 
                         <li :class="{displayNone: currentPage === totalPage}"  @click="setPage(currentPage+1)">&raquo;</li>
                     </ul>
-                </div>
-
-
-
+                </div> -->
             </div>           
         </section>
     </section>
@@ -96,7 +89,7 @@
 
                 // 創造頁籤
                 // rows: [],
-                perPage: 9,
+                perPage:100,
                 currentPage: 1,
 
                 // 檢舉狀態選項
@@ -141,6 +134,8 @@
                 openLightBox:function(key){
                     articleLigthtBox.classList.toggle("displayNone");
                     this.lightBoxContent = this.articleAll[key];
+                    // console.log(this.lightBoxContent);
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
 
                     // 內容換行
                     let reg=new RegExp("\n","g"); 
