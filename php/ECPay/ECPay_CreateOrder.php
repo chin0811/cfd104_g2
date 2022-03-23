@@ -32,7 +32,7 @@ $obj->Send['CustomField2']      = "";  				  	//額外的欄位
  
 //訂單的商品資料
 array_push($obj->Send['Items'], array(
-        'Name' => '藝術品',
+        'Name' => $_POST['ItemName'],
         'Price' => (int)$_POST['TotalAmount'],
         'Currency' => "元",
         'Quantity' => (int)"1"
