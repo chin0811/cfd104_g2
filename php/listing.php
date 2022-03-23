@@ -206,8 +206,8 @@ $tableActord ='actOrd';//資料庫的table名稱
 // 	$message['message'] = "大失敗";
 // }
 // echo $msg['msg'];
-echo "<script> alert('送出成功');</script>";
-header('Refresh:2;url=../homePage.html');
+echo "<script> alert('送出成功'); location = '../homePage.html';</script>";
+// header('Refresh:0;url=../homePage.html');
 ?>
 
 <!-- <!DOCTYPE html>
