@@ -7,7 +7,7 @@ try {
     $Status =$_POST['Status'];
 
     if($Status == '0')//取得
-	$sql = "SELECT * FROM favList INNER JOIN com ON favList.productNumber = com.prodNo INNER JOIN comImg ON favList.productNumber = comImg.prodNo INNER JOIN actord ON favList.productNumber = actOrd.productNumber Where favList.memNo='$memNo'";
+	$sql = "SELECT * FROM favList INNER JOIN com ON favList.productNumber = com.prodNo INNER JOIN comImg ON favList.productNumber = comImg.prodNo INNER JOIN actOrd ON favList.productNumber = actOrd.productNumber Where favList.memNo='$memNo'";
     else
     {
     $favoriteListNumber =$_POST['favoriteListNumber'];
