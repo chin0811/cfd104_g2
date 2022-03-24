@@ -6,11 +6,11 @@ try {
 	$articleNo = $_GET['articleNo'];
 	// echo $articleNo;
 	$sql = "select M.memName, M.virChaNo, M.virBgNo, 
-				   D.postTime, D.pic, D.title, D.content, D.articleLikes, D.articleNo, D.visibleStale
+				   D.postTime, D.pic, D.title, D.content, D.articleLikes, D.articleNo, D.visibleStale , D.visibleStale,
 				   C.picture
 			from member M join discusArt D on M.memNo =D.memNo
 						  join charObj C on M.virChaNo=C.objNo
-			where articleNo = $articleNo and visibleStale ='是'" ;
+			where articleNo = $articleNo and visibleStale ='是';" ;
 	$discusArts = $pdo->query($sql);
 	$prodRow = $discusArts->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($prodRow,JSON_UNESCAPED_UNICODE);
