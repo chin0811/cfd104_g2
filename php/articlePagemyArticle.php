@@ -4,9 +4,9 @@ try {
 	require_once("g2_dataConnect.php");
 	//執行sql指令並取得pdoStatement
 	$articleNo = $_GET['articleNo'];
-	$sql = "select pic, content, articleNo
+	$sql = "select pic, content, articleNo, visibleStale
 			from discusArt 
-			where memNo = (SELECT memNo FROM discusArt WHERE articleNo = $articleNo )
+			where memNo = (SELECT memNo FROM discusArt WHERE articleNo = $articleNo ) and visibleStale ='是'
 			order by postTime DESC
 			limit 3;";
 	$myArticles = $pdo->query($sql);
